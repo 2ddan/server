@@ -6,7 +6,7 @@ var handlerEvent = (request, response) => {
 
 /**
  * @description Set deal net message function
- * @param type{string} A key(linke url or path) what distinguish net  , like: "app/user" || "app/user@login"
+ * @param type{string} A key(like url or path) what distinguish net  , like: "app/user" || "app/user@login"
  *      handler{Function} 
  * @example
  */
