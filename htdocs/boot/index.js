@@ -14,8 +14,8 @@ console.log(router);
 
 /***** Module variables *****/
 
-const port = 1224,
-    serv;
+const port = 1224;
+let serv;
 
 /***** Module exports *****/
 
