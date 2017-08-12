@@ -1,2 +1,2 @@
 cd ../
-node process.cwd()
+npm init
