@@ -2,3 +2,6 @@
 /node_modules
 # apple .DS_Store
 *.DS_Store
+
+/*.DS_Store
+/htdocs/*.DS_Store
