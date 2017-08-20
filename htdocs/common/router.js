@@ -1,12 +1,12 @@
 ﻿
 let CONTENTTYPE = {
-    "TXT" : "text/plain; charset=UTF-8",
-    "HTML" : "text/html; charset=UTF-8",
-    "HTM" : "text/html; charset=UTF-8",
-    'JS': "application/javascript; charset=UTF-8",
-    "CSS" : "text/css; charset=UTF-8",
+    "TXT"      : "text/plain; charset=UTF-8",
+    "HTML"     : "text/html; charset=UTF-8",
+    "HTM"      : "text/html; charset=UTF-8",
+    'JS'       : "application/javascript; charset=UTF-8",
+    "CSS"      : "text/css; charset=UTF-8",
     "MANIFEST" : "text/cache-manifest; charset=UTF-8",
-    "DEFAULT" : "application/octet-stream"
+    "DEFAULT"  : "application/octet-stream"
 };
 
 var requestHandlers = {};
