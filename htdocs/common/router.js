@@ -1,41 +1,104 @@
-﻿
-let CONTENTTYPE = {
-    "TXT"      : "text/plain; charset=UTF-8",
-    "HTML"     : "text/html; charset=UTF-8",
-    "HTM"      : "text/html; charset=UTF-8",
-    'JS'       : "application/javascript; charset=UTF-8",
-    "CSS"      : "text/css; charset=UTF-8",
-    "MANIFEST" : "text/cache-manifest; charset=UTF-8",
-    "DEFAULT"  : "application/octet-stream"
+﻿/**
+ * @description Module dependencies.
+ * @private 
+ */
+
+/***** Module dependencies *****/
+//node modules
+const path = require('path');
+const http = require('http');
+//private modules
+const static = require('./static');
+
+/***** Module variables *****/
+let serv,
+    port,
+    root,
+    errorDefault;
+
+//response header content-type
+const CONTENTTYPE = {
+    "txt"      : "text/plain; charset=UTF-8",
+    "html"     : "text/html; charset=UTF-8",
+    "htm"      : "text/html; charset=UTF-8",
+    'js'       : "application/javascript; charset=UTF-8",
+    "css"      : "text/css; charset=UTF-8",
+    "manifest" : "text/cache-manifest; charset=UTF-8",
+    "default"  : "application/octet-stream"
+};
+//error
+const ERR = {
+    "404":"error 404 :: No such file!"
+};
+/**
+ * @description bind file content-type
+ * @param {json}file
+ */
+const bindContentType  = (file,_path) => {
+    let _ext = path.extname(_path).replace(".","");
+    console.log(_ext,_path,"==================");
+    file.contenttype = CONTENTTYPE[_ext] || CONTENTTYPE.default;
+};
+/**
+ * @description find root
+ * @param {json}file
+ */
+const findRoot = (file) => {
+    for(let _k of root){
+        let _r = static.getFile(_k,"utf8"); 
+        file.data = _r;
+        if(_r){
+            bindContentType(file,_k);
+            return;
+        }  
+    }
+
+};
+/**
+ * @description get the file data
+ */
+const getData = (url) => {
+    let _name = url.replace("/",""),
+        _r = {};
+    if(_name)
+        _r.data = static.getFile(_name,"utf8"); 
+    else findRoot(_r);
+    if(_r.data){
+        _r.statue = 200;
+        !_r.contenttype && bindContentType(_r,_name);
+    }else{
+        _r.statue = 404;
+        _r.data = static.getFile(errorDefault["404"],"utf8");
+        if(_r.data)
+            bindContentType(_r,errorDefault["404"]);
+        else{
+            _r.data =  ERR["404"];
+            _r.contenttype = CONTENTTYPE.txt;
+        }
+    }
+    return _r;  
 };
 
-var requestHandlers = {};
-
-var handlerEvent = (request, response) => {
-
-};
-
+/***** Module exports *****/
 /**
- * @description Set deal net message function
- * @param type{string} A key(like url or path) what distinguish net  , like: "app/user" || "app/user@login"
- *      handler{Function} 
- * @example
+ * @description create http server
+ * @param path{string} folder name 
  */
-exports.setHandler = (type,handler) => {
-    requestHandlers[type] = handler;
+exports.init = (cfg,callback) => {
+    root = cfg.router.root;
+    errorDefault = cfg.router.error;
+    port = cfg.port;
+    serv = http.createServer(function (request, response) {
+        console.log(request.url);
+        let _d = getData(request.url);
+        console.log(_d);
+        response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
+        response.write(_d.data);
+        response.end();
+    });
+    serv.listen(port);
+    callback();
 }
 
-/**
- * @description get the requestHandlers
- * @return  requestHandlers
- */
-exports.getHandlerList = () => {
-    return requestHandlers;
-}
+/***** local running ******/
 
-/**
- * @description response GET request
- */
-exports.GET = (request, response) => {
-    
-}

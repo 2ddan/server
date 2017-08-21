@@ -5,13 +5,11 @@
 
 /***** Module dependencies *****/
 //node modules
-const http = require('http');
 const url = require('url');
 const path = require("path");
 const fs = require('fs');
 //private modules
 const router = require("../common/router");
-console.log(router);
 const static = require("../common/static");
 
 /***** Module variables *****/
@@ -27,17 +25,10 @@ let serv;
 static.init(path.resolve(cfg.static),()=>{
     console.log("OK!!! Init static folder.");
 });
-
 /**
- * @description create http server module, distribute http events
+ * @description init routers
  */
-serv = http.createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text-plain' });
-    response.end('Hello World\n');
-	console.log(request.url);
-	//console.log(response);
-    router.GET(request, response);
+router.init(cfg,()=>{
+    console.log("OK!!! server start.");
+    console.log("Listen port: ",cfg.port);
 });
-serv.listen(cfg.port);
-console.log("OK!!! server start.");
-console.log("Listen port: ",cfg.port);
