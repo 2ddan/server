@@ -7,6 +7,8 @@
 //node modules
 const path = require('path');
 const http = require('http');
+const url = require("url");
+const EventEmitter = require('events');
 //private modules
 const static = require('./static');
 
@@ -15,7 +17,8 @@ let serv,
     port,
     root,
     errorDefault;
-
+//create event table
+const routerEvent = new EventEmitter();
 //response header content-type
 const CONTENTTYPE = {
     "txt"      : "text/plain; charset=UTF-8",
@@ -89,16 +92,22 @@ exports.init = (cfg,callback) => {
     errorDefault = cfg.router.error;
     port = cfg.port;
     serv = http.createServer(function (request, response) {
-        console.log(request.url);
-        let _d = getData(request.url);
+        let _url = url.parse(request.url);
+        let _d = getData(_url.pathname);
+        console.log(_url);
         console.log(_d);
         response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
         response.write(_d.data);
         response.end();
+        routerEvent.emit("httpRequest",_url);
     });
     serv.listen(port);
     callback();
 }
-
+/**
+ * @description regist router event handle
+ * @param path{string} folder name 
+ */
+exports.routerEvent = routerEvent;
 /***** local running ******/
 
