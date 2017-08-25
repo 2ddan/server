@@ -99,7 +99,8 @@ exports.init = (cfg,callback) => {
         response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
         response.write(_d.data);
         response.end();
-        routerEvent.emit("httpRequest",_url);
+        routerEvent.emit("event","httpRequest",_url);
+        console.log("send a httpRequest event!!");
     });
     serv.listen(port);
     callback();

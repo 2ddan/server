@@ -11,6 +11,7 @@ const fs = require('fs');
 //private modules
 const router = require("../common/router");
 const static = require("../common/static");
+const hotfix = require("../common/hotfix");
 
 /***** Module variables *****/
 const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8"));
