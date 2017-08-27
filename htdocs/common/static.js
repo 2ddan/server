@@ -71,7 +71,6 @@ const readdir = (dir) => {
  * @param path{string} folder name 
  */
 exports.init = (path,callback) => {
-    console.log(path);
     root = path;
     initBack = callback;
     readdir(root);

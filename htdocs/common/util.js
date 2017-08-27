@@ -5,9 +5,7 @@
 
 /***** Module dependencies *****/
 //node modules
-const fs = require('fs');
 //private modules
-const {routerEvent} = require('./router');
 
 /***** Module variables *****/
 /**

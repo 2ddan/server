@@ -16,7 +16,10 @@ const hotfix = require("../common/hotfix");
 /***** Module variables *****/
 const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8"));
 let serv;
-
+//current file directory
+let currPath = process.cwd();
+//hot fix directory
+let hotfixDir = path.resolve(currPath,"../");
 /***** Module exports *****/
 
 /***** local running ******/
@@ -27,9 +30,16 @@ static.init(path.resolve(cfg.static),()=>{
     console.log("OK!!! Init static folder.");
 });
 /**
- * @description init routers
+ * @description init router
  */
 router.init(cfg,()=>{
     console.log("OK!!! server start.");
     console.log("Listen port: ",cfg.port);
+});
+/**
+ * @description set hot-fix
+ */
+hotfix.init(hotfixDir,() => {
+    console.log("OK!!! Set watching of hot-fixing modules.");
+    console.log("hotfixDir: "+hotfixDir);
 });
