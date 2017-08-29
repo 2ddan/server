@@ -14,7 +14,7 @@ const static = require("../common/static");
 const hotfix = require("../common/hotfix");
 
 /***** Module variables *****/
-const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8"));
+const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8").replace(/\/\*.+\*\//g,""));
 let serv;
 //current file directory
 let currPath = process.cwd();

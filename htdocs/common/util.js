@@ -9,25 +9,15 @@
 
 /***** Module variables *****/
 /**
- * @description handle table
+ * @description 
  */
-let wait = {};
 
 /***** Module exports *****/
 /**
- * @description init static folder, Cache the data in memory
- * @param path{string} folder name 
+ * @description 
+ * @param 
  */
-exports.init = (path,callback) => {
-    fs.watch(path+"/", { recursive:true }, (eventType, filename) => {
-        console.log(eventType);
-        if (filename) {
-            console.log(filename);
-            // 输出: <Buffer ...>
-        }
-    });
-    callback && callback();
-}
+
 /***** local running ******/
 
 // routerEvent.on("event", (type,msg) => {
