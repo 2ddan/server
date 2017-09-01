@@ -26,6 +26,9 @@ const CONTENTTYPE = {
     "htm"      : "text/html; charset=UTF-8",
     'js'       : "application/javascript; charset=UTF-8",
     "css"      : "text/css; charset=UTF-8",
+    "png"      : "application/x-png",
+    "jpeg"     : "image/jpeg",
+    "jpg"     : "image/jpeg",
     "manifest" : "text/cache-manifest; charset=UTF-8",
     "default"  : "application/octet-stream"
 };
