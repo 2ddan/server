@@ -11,8 +11,9 @@ const {routerEvent} = require('./router');
 
 /***** Module variables *****/
 /**
- * @description free the memory
+ * @description handle table
  */
+let wait = {};
 
 /***** Module exports *****/
 /**
@@ -20,10 +21,17 @@ const {routerEvent} = require('./router');
  * @param path{string} folder name 
  */
 exports.init = (path,callback) => {
-    
+    fs.watch(path+"/", { recursive:true }, (eventType, filename) => {
+        console.log(eventType);
+        if (filename) {
+            console.log(filename);
+            // 输出: <Buffer ...>
+        }
+    });
+    callback && callback();
 }
 /***** local running ******/
 
-routerEvent.on("event", (type,msg) => {
-    console.log('trigger a httpRequest事件！');
-  });
+// routerEvent.on("event", (type,msg) => {
+//     console.log('trigger a httpRequest事件！');
+//   });

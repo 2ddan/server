@@ -58,7 +58,6 @@ const findRoot = (file) => {
             return;
         }  
     }
-
 };
 /**
  * @description get the file data

@@ -44,7 +44,7 @@ const readfile = (path) => {
 };
 /**
  * @description read folder
- * @param dir{string} folder name 
+ * @param {string}dir folder name 
  */
 const readdir = (dir) => {
     let files = fs.readdirSync(dir);
@@ -68,18 +68,17 @@ const readdir = (dir) => {
 /***** Module exports *****/
 /**
  * @description init static folder, Cache the data in memory
- * @param path{string} folder name 
+ * @param {string}path folder name 
  */
 exports.init = (path,callback) => {
-    console.log(path);
     root = path;
     initBack = callback;
     readdir(root);
 }
 /**
  * @description get static file data
- * @param path{string} file name 
- * @param encode{string} "utf8" or null(return binary)
+ * @param {string}path file name 
+ * @param {string}encode "utf8" or null(return binary)
  */
 exports.getFile = (path,encode) => {
     if(staticTable[path] && encode === "utf8")
