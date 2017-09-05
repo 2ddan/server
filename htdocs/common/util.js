@@ -14,9 +14,23 @@
 
 /***** Module exports *****/
 /**
- * @description 
- * @param 
+ * @description get the directory
+ * @param {Number}n directory's level
+ * @param {String}path directory's path 
+ * @example (1,"common/util.js") return "common/"
  */
+exports.getDirectory = (n,path) => {
+    let r = "",
+        c = 0;
+    for(let i=0,leng=path.length;i<leng;i++){
+        r = r+path[i];
+        if(path[i] === "/"){
+            c = c+1;
+        }
+        if(c === n)break;
+    }
+    return r;
+};
 
 /***** local running ******/
 

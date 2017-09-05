@@ -12,6 +12,7 @@ const fs = require('fs');
 const router = require("../common/router");
 const static = require("../common/static");
 const hotfix = require("../common/hotfix");
+const log = require("../common/log");
 
 /***** Module variables *****/
 const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8").replace(/\/\*.+\*\//g,""));
@@ -43,3 +44,7 @@ hotfix.init(hotfixDir,() => {
     console.log("OK!!! Set watching of hot-fixing modules.");
     console.log("hotfixDir: "+hotfixDir);
 });
+/**
+ * @description init log
+ */
+log.init();

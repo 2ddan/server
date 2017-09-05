@@ -11,6 +11,7 @@ const url = require("url");
 const EventEmitter = require('events');
 //private modules
 const static = require('./static');
+const hotfix = require("./hotfix");
 
 /***** Module variables *****/
 let serv,
@@ -87,7 +88,7 @@ const getData = (url) => {
 /***** Module exports *****/
 /**
  * @description create http server
- * @param path{string} folder name 
+ * @param {string}path folder name 
  */
 exports.init = (cfg,callback) => {
     root = cfg.router.root;
@@ -109,7 +110,7 @@ exports.init = (cfg,callback) => {
 }
 /**
  * @description regist router event handle
- * @param path{string} folder name 
+ * @param {string}path folder name 
  */
 exports.routerEvent = routerEvent;
 /***** local running ******/

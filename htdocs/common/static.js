@@ -8,6 +8,7 @@
 const fs = require('fs');
 const { StringDecoder } = require('string_decoder');
 //private modules
+const { hotFixEvent } = require('./hotfix');
 
 /***** Module variables *****/
 //Cache the files as binary of static folder
@@ -18,35 +19,30 @@ let initTotal = 0;
 let initCount = 0;
 //static root
 let root = "";
-//init callback (after read all files)
-let initBack;
 //decode binary to string
 const decoder = new StringDecoder('utf8');
 /**
  * @description read file
  * @param path{string} file name 
  */
-const readfile = (path) => {
+const readfile = (path,callback) => {
     initTotal += 1;
     fs.readFile(path,{},(err,data) => {
         if(err){
-            console.error(`Init static folder ::::: Read file "${path}" fail`);
+            delete staticTable[path.replace(root+"/","")];
+            console.error(`Init static folder ::::: Read file "${path}" fail::${err}`);
             return;
         }
         staticTable[path.replace(root+"/","")] = data;
         initCount += 1;
-        //check finish state
-        if(initCount === initTotal){
-           initBack && initBack();
-           console.log(staticTable);
-        }
+        callback && callback();
     });
 };
 /**
  * @description read folder
  * @param {string}dir folder name 
  */
-const readdir = (dir) => {
+const readdir = (dir,callback) => {
     let files = fs.readdirSync(dir);
     for(let i=0,len = files.length;i<len;i++){
         let _f = files[i],
@@ -57,7 +53,7 @@ const readdir = (dir) => {
             continue;
         //Read subdirectory
         else if(_index > 0)
-            readfile(_url);
+            readfile(_url,callback);
         else readdir(_url);
     }
 };
@@ -72,8 +68,13 @@ const readdir = (dir) => {
  */
 exports.init = (path,callback) => {
     root = path;
-    initBack = callback;
-    readdir(root);
+    readdir(root,() => {
+        //check finish state
+        if(initCount === initTotal){
+            callback && callback();
+            console.log(staticTable);
+        }
+    });
 }
 /**
  * @description get static file data
@@ -86,5 +87,11 @@ exports.getFile = (path,encode) => {
     return staticTable[path];
 }
 
+
 /***** local running ******/
 
+hotFixEvent.on("event",(type,filename)=>{
+    if(type === "static/"){
+        readfile(root+"/"+filename.replace("static/",""));
+    }
+})
