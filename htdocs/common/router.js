@@ -43,7 +43,6 @@ const ERR = {
  */
 const bindContentType  = (file,_path) => {
     let _ext = path.extname(_path).replace(".","");
-    console.log(_ext,_path,"==================");
     file.contenttype = CONTENTTYPE[_ext] || CONTENTTYPE.default;
 };
 /**
@@ -97,13 +96,10 @@ exports.init = (cfg,callback) => {
     serv = http.createServer(function (request, response) {
         let _url = url.parse(request.url);
         let _d = getData(_url.pathname);
-        console.log(_url);
-        console.log(_d);
         response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
         response.write(_d.data);
         response.end();
         routerEvent.emit("event","httpRequest",_url);
-        console.log("send a httpRequest event!!");
     });
     serv.listen(port);
     callback();

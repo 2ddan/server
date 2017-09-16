@@ -27,7 +27,7 @@ let hotfixDir = path.resolve(currPath,"../");
 /**
  * @description init static folder, Cache the data in RAM
  */
-static.init(path.resolve(cfg.static),()=>{
+static.init(cfg.static,()=>{
     console.log("OK!!! Init static folder.");
 });
 /**
@@ -47,4 +47,4 @@ hotfix.init(hotfixDir,() => {
 /**
  * @description init log
  */
-log.init();
+log.init(path.resolve(cfg.log));

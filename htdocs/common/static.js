@@ -6,6 +6,7 @@
 /***** Module dependencies *****/
 //node modules
 const fs = require('fs');
+const path = require('path');
 const { StringDecoder } = require('string_decoder');
 //private modules
 const { hotFixEvent } = require('./hotfix');
@@ -17,8 +18,10 @@ let staticTable = {};
 let initTotal = 0;
 //init count
 let initCount = 0;
-//static root
+//static root "workspace/server/static/"
 let root = "";
+//static directory "static/"
+let dir = "";
 //decode binary to string
 const decoder = new StringDecoder('utf8');
 /**
@@ -66,13 +69,14 @@ const readdir = (dir,callback) => {
  * @description init static folder, Cache the data in memory
  * @param {string}path folder name 
  */
-exports.init = (path,callback) => {
-    root = path;
+exports.init = (_path,callback) => {
+    root = path.resolve(_path);
+    dir = _path.replace(/\.\.\//g,"");
+    console.log(root,dir);
     readdir(root,() => {
         //check finish state
         if(initCount === initTotal){
             callback && callback();
-            console.log(staticTable);
         }
     });
 }
@@ -91,7 +95,7 @@ exports.getFile = (path,encode) => {
 /***** local running ******/
 
 hotFixEvent.on("event",(type,filename)=>{
-    if(type === "static/"){
-        readfile(root+"/"+filename.replace("static/",""));
+    if(type === dir){
+        readfile(root+"/"+filename.replace(dir,""));
     }
 })
