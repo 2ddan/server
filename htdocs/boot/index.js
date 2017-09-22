@@ -13,6 +13,7 @@ const router = require("../common/router");
 const static = require("../common/static");
 const hotfix = require("../common/hotfix");
 const log = require("../common/log");
+const mongodb = require("../common/mongodb");
 
 /***** Module variables *****/
 const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8").replace(/\/\*.+\*\//g,""));
@@ -43,6 +44,13 @@ router.init(cfg,()=>{
 hotfix.init(hotfixDir,() => {
     console.log("OK!!! Set watching of hot-fixing modules.");
     console.log("hotfixDir: "+hotfixDir);
+});
+/**
+ * @description init mongodb connect
+ */
+mongodb.init(cfg.dbpath,(err)=>{
+    if(err)console.log("Fail!!! Mongodb connect.");
+    else console.log("OK!!! Mongodb connect.");
 });
 /**
  * @description init log
