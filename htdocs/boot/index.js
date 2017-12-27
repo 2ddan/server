@@ -9,11 +9,13 @@ const url = require('url');
 const path = require("path");
 const fs = require('fs');
 //private modules
+const _require = require("../common/require");
 const router = require("../common/router");
 const static = require("../common/static");
 const hotfix = require("../common/hotfix");
 const log = require("../common/log");
 const mongodb = require("../common/mongodb");
+
 
 /***** Module variables *****/
 const cfg = JSON.parse(fs.readFileSync("./.cfg","utf-8").replace(/\/\*.+\*\//g,""));

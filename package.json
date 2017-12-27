@@ -10,5 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^2.2.31"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2ddan/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2ddan/server/issues"
+  },
+  "homepage": "https://github.com/2ddan/server#readme"
 }

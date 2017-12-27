@@ -110,4 +110,3 @@ exports.init = (cfg,callback) => {
  */
 exports.routerEvent = routerEvent;
 /***** local running ******/
-
