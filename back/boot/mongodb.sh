@@ -1,6 +1,6 @@
 cd ../
-mkdir db
+sudo mkdir db
 cd ../
-mkdir log
+sudo mkdir log
 cd back/boot
-mongod --config mongod.conf
+sudo mongod --config mongod.conf

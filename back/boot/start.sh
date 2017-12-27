@@ -1,3 +1,3 @@
 cd ../../
 cd htdocs/boot
-node index.js
+sudo node index.js
