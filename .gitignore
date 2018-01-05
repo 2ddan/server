@@ -6,4 +6,4 @@
 
 /*.DS_Store
 /htdocs/*.DS_Store
-/htdocs/db
+/boot/db
