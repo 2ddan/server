@@ -20,19 +20,7 @@ let serv,
     errorDefault;
 //create event table
 const routerEvent = new EventEmitter();
-//response header content-type
-const CONTENTTYPE = {
-    "txt"      : "text/plain; charset=UTF-8",
-    "html"     : "text/html; charset=UTF-8",
-    "htm"      : "text/html; charset=UTF-8",
-    'js'       : "application/javascript; charset=UTF-8",
-    "css"      : "text/css; charset=UTF-8",
-    "png"      : "application/x-png",
-    "jpeg"     : "image/jpeg",
-    "jpg"     : "image/jpeg",
-    "manifest" : "text/cache-manifest; charset=UTF-8",
-    "default"  : "application/octet-stream"
-};
+
 //error
 const ERR = {
     "404":"error 404 :: No such file!"
@@ -94,11 +82,13 @@ exports.init = (cfg,callback) => {
     errorDefault = cfg.router.error;
     port = cfg.port;
     serv = http.createServer(function (request, response) {
-        let _url = url.parse(request.url);
-        let _d = getData(_url.pathname);
-        response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
-        response.write(_d.data);
-        response.end();
+        // let _url = url.parse(request.url);
+        // let _d = getData(_url.pathname);
+        // response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
+        // response.write(_d.data);
+        // response.end();
+        console.log(request.url);
+        static.response(request, response);
         routerEvent.emit("event","httpRequest",_url);
     });
     serv.listen(port);
@@ -110,3 +100,4 @@ exports.init = (cfg,callback) => {
  */
 exports.routerEvent = routerEvent;
 /***** local running ******/
+
