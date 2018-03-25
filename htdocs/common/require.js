@@ -26,5 +26,5 @@ global.$require = (path) => {
 
 
 /***** local running ******/
-console.log(require.main.filename);
-console.log(require.cache);
+// console.log(require.main.filename);
+// console.log(require.cache);

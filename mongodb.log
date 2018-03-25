@@ -1,0 +1,47 @@
+2018-03-24T19:41:27.553+0800 I CONTROL  [initandlisten] MongoDB starting : pid=1705 port=29817 dbpath=/works/server//db 64-bit host=tangdandandeMacBook-Pro.local
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] db version v3.4.9
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] git version: 876ebee8c7dd0e2d992f36a848ff4dc50ee6603e
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 0.9.8zh 14 Jan 2016
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] allocator: system
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] modules: none
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten] build environment:
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-03-24T19:41:27.554+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-03-24T19:41:27.555+0800 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", port: 29817 }, storage: { dbPath: "/works/server//db" }, systemLog: { destination: "file", logAppend: true, path: "/works/server//mongodb.log" } }
+2018-03-24T19:41:27.560+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /works/server//db not found., terminating
+2018-03-24T19:41:27.560+0800 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2018-03-24T19:41:27.561+0800 I NETWORK  [initandlisten] shutdown: going to flush diaglog...
+2018-03-24T19:41:27.564+0800 I CONTROL  [initandlisten] now exiting
+2018-03-24T19:41:27.564+0800 I CONTROL  [initandlisten] shutting down with code:100
+2018-03-25T10:54:57.301+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] MongoDB starting : pid=6121 port=29817 dbpath=/works/server//db 64-bit host=tangdandandeMacBook-Pro.local
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] db version v3.4.9
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] git version: 876ebee8c7dd0e2d992f36a848ff4dc50ee6603e
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 0.9.8zh 14 Jan 2016
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] allocator: system
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] modules: none
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] build environment:
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-03-25T10:54:57.377+0800 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", port: 29817 }, storage: { dbPath: "/works/server//db" }, systemLog: { destination: "file", logAppend: true, path: "/works/server//mongodb.log" } }
+2018-03-25T10:54:57.380+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /works/server//db not found., terminating
+2018-03-25T10:54:57.380+0800 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2018-03-25T10:54:57.380+0800 I NETWORK  [initandlisten] shutdown: going to flush diaglog...
+2018-03-25T10:54:57.381+0800 I CONTROL  [initandlisten] now exiting
+2018-03-25T10:54:57.381+0800 I CONTROL  [initandlisten] shutting down with code:100
+2018-03-25T11:00:44.954+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] MongoDB starting : pid=6256 port=29817 dbpath=/works/server//db 64-bit host=tangdandandeMacBook-Pro.local
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] db version v3.4.9
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] git version: 876ebee8c7dd0e2d992f36a848ff4dc50ee6603e
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 0.9.8zh 14 Jan 2016
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] allocator: system
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] modules: none
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] build environment:
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-03-25T11:00:45.022+0800 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", port: 29817 }, storage: { dbPath: "/works/server//db" }, systemLog: { destination: "file", logAppend: true, path: "/works/server//mongodb.log" } }
+2018-03-25T11:00:45.025+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /works/server//db not found., terminating
+2018-03-25T11:00:45.025+0800 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2018-03-25T11:00:45.025+0800 I NETWORK  [initandlisten] shutdown: going to flush diaglog...
+2018-03-25T11:00:45.026+0800 I CONTROL  [initandlisten] now exiting
+2018-03-25T11:00:45.026+0800 I CONTROL  [initandlisten] shutting down with code:100

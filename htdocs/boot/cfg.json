@@ -1,0 +1,22 @@
+
+{
+    "port":8090,
+    "dbpath":"mongodb://localhost:29817/ni",
+    "static":{
+        "path" : "../static/",
+        "root":"index.html",
+        "error":{
+            "404":"error/404.html"
+        }
+    },
+    "app" : {
+        "path" : "../app/"
+    },
+    "log":"../../log/",
+    "router":{
+        
+    },
+    "hotfix":{
+        "without":["boot/"]
+    }
+}

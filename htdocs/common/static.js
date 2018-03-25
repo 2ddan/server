@@ -118,37 +118,26 @@ exports.init = (cfg,callback) => {
     root = path.resolve(cfg.path);
     dir = cfg.path.replace(/\.\.\//g,"");
     console.log(root,dir);
-    readdir(root,() => {
+    // readdir(root,() => {
         //check finish state
-        if(initCount === initTotal){
+    //     if(initCount === initTotal){
             callback && callback();
-        }
-    });
+    //     }
+    // });
 }
 /**
  * @description get static file data
  * @param {string}path file name 
  * @param {string}encode "utf8" or null(return binary)
  */
-exports.getFile = (path,encode) => {
-    // if(staticTable[path] && encode === "utf8")
-    //     return decoder.write(staticTable[path]);
-    // return 
-    staticTable[path];
-}
-
-exports.response = (request,response, callback) => {
-    // console.log(process.uptime(),request.url,"===========================");
-    var qs = querystring.unescape(request.url);
-    var pathname = url.parse(qs).pathname;
-    var realPath = path.resolve(path.join("../static", pathname));
-    // console.log(qs,realPath);
+exports.getFile = (realPath,response,callback) => {
     fs.exists(realPath, function (exists) {
         // console.log( realPath + ' %d', exists ? 200 : 404 );
         if (!exists) {
             response.writeHead(404, "Not Found", {'Content-Type': 'text/plain'});
             response.write(ERR[404]);
             response.end();
+            callback && callback(404);
         } else {
             var ext = path.extname(realPath);
             ext = ext ? ext.slice(1) : 'unknown';
@@ -167,6 +156,7 @@ exports.response = (request,response, callback) => {
                 if (request.headers[ifModifiedSince] && lastModified == request.headers[ifModifiedSince]) {
                     response.writeHead(304, "Not Modified");
                     response.end();
+                    callback && callback(304);
                 } else {
                     var raw = fs.createReadStream(realPath);
                     var acceptEncoding = request.headers['accept-encoding'] || "";
@@ -181,12 +171,22 @@ exports.response = (request,response, callback) => {
                         response.writeHead(200, "Ok");
                         raw.pipe(response);
                     }
+                    callback && callback(200);
                 }
             });
 
         }
 
     });
+}
+
+exports.response = (request,response, callback) => {
+    // console.log(process.uptime(),request.url,"===========================");
+    var qs = querystring.unescape(request.url);
+    var pathname = url.parse(qs).pathname;
+    var realPath = path.resolve(path.join("../static", pathname));
+    // console.log(qs,realPath);
+    exports.getFile(realPath, response, callback);
 }
 
 /***** local running ******/
