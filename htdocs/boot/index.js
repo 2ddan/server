@@ -15,6 +15,8 @@ const static = require("../common/static");
 const hotfix = require("../common/hotfix");
 const log = require("../common/log");
 const mongodb = require("../common/mongodb");
+//app modules
+const ports = require("../app/port");
 //cfg
 const cfg = require("./cfg.json");
 

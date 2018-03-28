@@ -22,7 +22,7 @@ exports.init = (url,callback) => {
         callback && callback(err);
         if(err)throw err;
         console.log("Connected correctly to server.");
-        db.close();
+        //db.close();
         mongodb = db;
       });
 };

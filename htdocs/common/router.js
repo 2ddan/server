@@ -82,14 +82,17 @@ exports.init = (cfg,callback) => {
     errorDefault = cfg.router.error;
     port = cfg.port;
     serv = http.createServer(function (request, response) {
-        // let _url = url.parse(request.url);
+        let _url = url.parse(request.url,true);
         // let _d = getData(_url.pathname);
         // response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
         // response.write(_d.data);
         // response.end();
-        console.log(request.url);
-        static.response(request, response);
-        routerEvent.emit("event","httpRequest",_url);
+        console.log(_url.query);
+        if(!_url.query.type){
+            static.response(request, response);
+        }else{
+            routerEvent.emit(_url.query.type,_url,response);
+        }
     });
     serv.listen(port);
     callback();
