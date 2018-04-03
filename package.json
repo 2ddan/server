@@ -1,6 +1,6 @@
 {
   "name": "2ddan",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "just run some example",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "tang2dan",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^2.2.31"
+    "mongodb": "^2.2.35"
   },
   "repository": {
     "type": "git",

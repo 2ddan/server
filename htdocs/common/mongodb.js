@@ -5,6 +5,8 @@
 
 /***** Module dependencies *****/
 //node modules
+const assert = require("assert");
+//out modules
 const MongoClient = require('mongodb').MongoClient;
 
 //private modules
@@ -22,6 +24,14 @@ exports.init = (url,callback) => {
         callback && callback(err);
         if(err)throw err;
         console.log("Connected correctly to server.");
+        var adminDb = db.admin();
+        // List all the available databases
+        adminDb.listDatabases(function(err, dbs) {
+            assert.equal(null, err);
+            assert.ok(dbs.databases.length > 0);
+            console.log(dbs);
+            db.close();
+        });
         //db.close();
         mongodb = db;
       });

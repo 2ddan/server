@@ -62,3 +62,10 @@ mongodb.init(cfg.dbpath,(err)=>{
  * @description init log
  */
 log.init(path.resolve(cfg.log));
+/**
+ * @description listen the process exit Press Control-D/Control-C
+ */
+process.on('SIGINT', function() {
+    console.log('Got SIGINT.  Press Control-D/Control-C to exit.');
+    mongodb.close();
+  });
