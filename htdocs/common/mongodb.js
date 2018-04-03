@@ -26,11 +26,27 @@ exports.init = (url,callback) => {
         console.log("Connected correctly to server.");
         var adminDb = db.admin();
         // List all the available databases
-        adminDb.listDatabases(function(err, dbs) {
-            assert.equal(null, err);
-            assert.ok(dbs.databases.length > 0);
-            console.log(dbs);
-            db.close();
+        // adminDb.listDatabases(function(err, dbs) {
+        //     assert.equal(null, err);
+        //     assert.ok(dbs.databases.length > 0);
+        //     console.log(dbs);
+        //     db.close();
+        // });
+
+        // Create a collection we want to drop later
+        var col = db.collection('createIndexExample1');
+        // Insert a bunch of documents
+        col.insert([{a:1, b:1}
+            , {a:2, b:2}, {a:3, b:3}
+            , {a:4, b:4}], {w:1}, function(err, result) {
+                assert.equal(null, err);
+                // Show that duplicate records got dropped
+                col.aggregation({}, {cursor: {}}).toArray(function(err, items) {
+                    assert.equal(null, err);
+                    assert.equal(4, items.length);
+                    console.log(items);
+                    db.close();
+                });
         });
         //db.close();
         mongodb = db;

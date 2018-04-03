@@ -67,5 +67,6 @@ log.init(path.resolve(cfg.log));
  */
 process.on('SIGINT', function() {
     console.log('Got SIGINT.  Press Control-D/Control-C to exit.');
-    mongodb.close();
-  });
+    // mongodb.close();
+    process.exit(0);
+});
