@@ -185,6 +185,7 @@ forelet.listener = (cmd,w) => {
     if(!paintNumeral)return;
     paintNumeral++;
     forelet.paint(getSkillHtmlData());
+    
 };
 
 /**

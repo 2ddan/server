@@ -202,6 +202,7 @@ let drop_out_effect = (arr,msg) => {
             mgr.modify(node_list["drop_out_"+i]);
         }
     }
+    
 }
 
 //计算坐标

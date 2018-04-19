@@ -961,6 +961,7 @@ const updateEffectPos = () => {
 			mgr.setOnlyPos(uiEffect[k],[p[0],p[2],p[1]]);
 		}
 	}
+	
 }
 /**
  * @description 场景modify

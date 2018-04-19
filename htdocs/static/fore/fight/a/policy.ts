@@ -69,6 +69,12 @@ export class Policy{
     static ai(f: Fighter, s: Scene):boolean{
         if(!f.ai)
             return;
+        if(f.path){
+            
+        }
+        if(!f.curSkill){
+            Util.selectSkill(f,s);
+        }
         return false;
     }
 }

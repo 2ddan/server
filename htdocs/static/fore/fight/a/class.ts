@@ -103,29 +103,27 @@
      curSkill = undefined
      // 当前选择的目标
      curTarget = null
-     // ui当前目标(头像)
-     curHeadTarget = null
-     //自动战斗 控制个人目标
-     ownTarget = undefined
      ss = 0
      // 记录fighter承受伤害对象，伤害
-     damageList = {}
+     damageList: any = {}
      //队伍id
-     groupId = -1
+     groupId: number = -1
      //状态 1:手动选怪 1000:不参与战斗计算，最高限制状态
-     status = 0
+     status: number = 0
      //战斗者显示类型 0-普通怪，1-boss，2-机器人，3-精英怪
-     show_type = 0
+     show_type: number = 0
      //是否是被动fighter
-     passive = false
+     passive: boolean = false
      //是否显示
-     hidden = false
-     // 随机数
-     rand = 0
+     hidden: boolean = false
+     // 记录选择目标是，目标到自身的距离平方
+     rand: number = 0
      //是否需要移除
-     remove = false
-     //是否ai,true: 
-     ai = false
+     remove: boolean = false
+     //是否ai,true: 自动选怪，自动移动，false：计算伤害等最后决策
+     ai: boolean = false
+     //移动路径Array<Pos>
+     path: Pos[] = undefined
 }
 
 export class Skill {

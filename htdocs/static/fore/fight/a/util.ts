@@ -69,7 +69,12 @@ export class Util{
         }
         return f.curSkill;
     }
-
+    /**
+     * @description 判断是否相同坐标点
+     */
+    static samePos(src,target){
+        return src.x === target.x && src.y === target.y && src.z === target.z
+    }
 
 
     /**

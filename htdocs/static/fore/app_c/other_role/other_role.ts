@@ -358,7 +358,6 @@ var getAttr = () => {
             data[attr[i][0]] = (data[attr[i][0]] || 0) + attr[i][1];
         }
     }
-    
     return data;
 }
 //获得神兵总属性
