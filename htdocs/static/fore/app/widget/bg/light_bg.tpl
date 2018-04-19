@@ -1,0 +1,2 @@
+<div style="background-image:url(app/widget/bg/images/light_bg.png);background-repeat:no-repeat;background-position:center center;text-align:center;line-height: 103px;height:{{it&&it.height || 53}}px;width:{{it&&it.width || 314}}px">
+</div>

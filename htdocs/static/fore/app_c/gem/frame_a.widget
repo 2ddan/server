@@ -1,0 +1,6 @@
+{
+    "tpl":"./frame_a.tpl",
+    "css":"./gem.wcss",
+    "js":"./gem.ts",
+    "forelet":"./gem.ts"
+}

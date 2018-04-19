@@ -1,0 +1,31 @@
+.attr_box{
+    width: 100%;
+    height: 26px;
+    color: #D5D5D5;
+    position: relative;
+    padding: 2px 0;
+    padding-left: 28px;
+}
+.attr_key{
+    position: absolute;
+    height: 24px;
+    width: 140px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    cursor: default;
+}
+.attr_value{
+    color: #D5D5D5;
+    position: absolute;
+    left: 160px;
+    background-color: #212125;
+    width: 130px;
+    height: 24px;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./disband.tpl",
+    "cfg":"./disband.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./disband.wcss"
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./role_m.tpl",
+    "cfg":"./role_m.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./role_m.wcss"
+}

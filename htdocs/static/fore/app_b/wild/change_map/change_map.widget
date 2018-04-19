@@ -1,0 +1,7 @@
+{
+    "tpl":"./change_map.tpl",
+    "js":"../wild.ts",
+    "forelet":"../wild.ts",
+    "cfg":"./change_map.cfg",
+    "css":"./change_map.wcss"
+}

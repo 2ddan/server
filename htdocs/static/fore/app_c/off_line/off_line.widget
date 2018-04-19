@@ -1,0 +1,5 @@
+{
+    "tpl": "./off_line.tpl",
+    "js": "./off_line.ts",
+    "forelet": "./off_line.ts"
+}

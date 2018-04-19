@@ -1,0 +1,4 @@
+{
+    "tpl":"./cdTime1.tpl",
+    "js":"pi/ui/countdown.ts"
+}

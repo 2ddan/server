@@ -1,0 +1,6 @@
+{
+    "tpl":"./chat.tpl",
+    "js":"./chat.ts",
+    "forelet":"./chat.ts",
+    "css":"./chat.wcss"
+}

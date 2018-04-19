@@ -1,0 +1,264 @@
+{{let module_cfg = _get("app/scene/plan_cfg/module_config").exports.module_cfg}}
+{{let parts_cfg = _get("app/scene/plan_cfg/parts_config").exports.parts_cfg}}
+{{let role = _get("app/scene/art_cfg/fighter").exports.default}}
+{{let weapon = _get("app/scene/art_cfg/weapon").exports.default}}
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{{let m2d = _get("app/scene/plan_cfg/config_m2d").exports.config_m2d}}
+{{let mgr = _get("app/scene/scene").exports.mgr}}
+{{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
+{{let player = _get("app/mod/db").exports.data.player}}
+{{let module = module_cfg[it.module].name}}
+{{let wpn= it.weapond>0?parts_cfg[it.weapond].module:it.weapond}}
+{{let weapond = wpn || module_cfg[it.module].init_weapon}}
+{{let state = it.state || "standby"}}
+{{let playAnim = it.playAnim || {"name": module_cfg[it.module][state]} }}
+{{let lookat = it.lookat || {value:[0,0,0]} }}
+
+{{let monster = _get("app/scene/art_cfg/monster").exports.default}}
+{{let monster_cfg = _get("app/scene/plan_cfg/monster_config").exports.monster_cfg}}
+{{let haspet = it.pet && !(it.pet > 0) && it.pet.monsterModule}}
+{{if scenename == "uiscene"}}
+    {{let _state = (state=="run" || state=="standby")?state:"standby"}}
+    {{if haspet}}
+        {{let module_name = monster_cfg[it.pet.monsterModule].name}}
+        {{let monsterPlayAnim = {"name":monster_cfg[it.pet.monsterModule][_state]} }}
+    {{end}}
+{{end}}
+
+{{if weapond}}
+{{let weapons = [{},{},{}]}}
+
+{{let child = null}}
+{{let s_eff = []}}
+{{for k, v of weapond}}
+    {{: weapons[k] = {"type":"prefab","tpl":"weapon","res":weapon[v[0]].res,"bindBone":v[1],"child":[null]} }}
+    {{if it.w_eff}}
+        {{: weapons[k].child = [mgr.getSceneFile(it.w_eff[k])]}}
+    {{end}}
+    {{if it.s_eff}}
+        {{:s_eff = []}}
+        {{if weapond && weapond.length >= 2}}
+            {{: s_eff = [it.s_eff,it.s_eff]}}
+        {{else}}
+            {{: s_eff = [it.s_eff]}}
+        {{end}}
+        {{: weapons[k].child.push(mgr.getSceneFile(s_eff[k]))}}
+    {{end}}
+{{end}}
+
+{{let bodyEff = null}}
+{{if it.body_eff}}
+    {{: bodyEff = mgr.getSceneFile(it.body_eff) }}
+{{end}}
+
+{{let Tchild = [] }}
+{{if it.treasure}}
+    {{for k, v of it.treasure.Tw_eff}}
+        {{if v}}
+            {{: Tchild.push(mgr.getSceneFile(it.treasure.Tw_eff[k]) )}}
+        {{end}}
+    {{end}}
+{{end}}
+
+{{end}}
+
+{{let scene2d = "" }}
+{{if it.scene_bg}}
+{{: scene2d = mgr.getSceneFile(it.scene_bg)}}
+{{end}}
+{{let scale = it.scale || 1}}
+{{let boold_visible = it.hidden?false:it.boold_visible}}
+{{: boold_visible = boold_visible === false?false:true}}
+{
+    
+    "type":"Node",
+    "name":"{{it.name}}",
+    "transform":{
+        "position":[{{it.x || 0}}, {{it.z || 0}}, {{it.y || 0}}],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "visible":{{!it.hidden}},
+    "children":[
+        {{if it.scene_bg}}
+        {{scene2d}}
+        ,
+        {{end}}
+        {
+            "type" : "prefab",
+            "tpl"  : "fighter",
+            "name":"111",
+            "res"  : {{role[module].res}},
+            "visible":{{!it.hidden}},
+            "playAnim":{{playAnim}},
+            "position":{{it.position || [0,0,0]}},
+            "scale":[{{scale}},{{scale}},{{scale}}],
+            "bones":{{role[module].bones}},
+            "rootbone":"{{role[module].rootbone || 'Bip01 Pelvis'}}",
+            "bounds":{{role[module].bounds}},
+            "controller":{{role.ainMod[role[module].aniControl]}},
+            "rotate":{{it.rotate || [0,0,0]}},
+            "rayID":{{if scenename == "city"}}0{{elseif scenename == "rebel" || scenename == "gang_war" || scenename == "fight" || scenename == "wild"}}{{it.mapId}}{{else}}{{it.sid || it.id || 0}}{{end}}{{if it.lookat}},
+            "lookatOnce":{
+                "value":[{{lookat.value[0]-(it.x || 0)}},{{lookat.value[2]-(it.z || 0)}},{{lookat.value[1]-(it.y || 0)}}],
+                "sign":{{lookat.sign || 0}}
+            }{{end}},
+            "filtercolor": {{it.filtercolor ? [["gray"]] : null}},
+            "sternum" : {"type":"node","transform":{
+                "position":[0,0,0],
+                "scale":[1,1,1],
+                "rotate":[0,0,0]
+            },"bindBone":"Bip001 Spine1","children":[null]}
+            {{if weapond}},
+            "weapon":{{weapons}}
+            {{end}}
+            {{if it.body_eff}},
+            "wing":{
+                "type":"node",
+                "transform":{
+                    "position":[0,0,0],
+                    "scale":[1,1,1],
+                    "rotate":[0,0,0]
+                },
+                "children":[
+                    {{bodyEff}}
+                ]
+            }
+            {{end}}
+        }{{if (scenename !=="uiscene" &&　scenename !=="loginscene" && scenename != "normal_ui_scene")}},
+        {
+            "type":"node",
+            "transform":{
+                "position":[0,{{module_cfg[it.module].high}},0],
+                "scale":[1,1,1],
+                "rotate":[0,0,0]
+            },
+            "children":[
+                {
+                    "type": "prefab",
+                    "tpl": "2dtext",
+                    "horizontalAlign": "center",
+                    "verticalAlign": "center",
+                    "visible":{{it.n_visible !== undefined ? it.n_visible : true }},
+                    "textcfg": {{it.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"]}},
+                    "show": "{{it.name}}",
+                    "position": [3, {{m2d.name}}, 0]
+                }
+                {{if scenename !== "city" && scenename !=="gang"}},
+                {{let image = (it.camp === 1)?"role_blood":"boss_blood"}}
+                {{let p = it.show_hp/it.max_hpCount}}
+                {
+                    "type" : "prefab",
+                    "tpl":"skill_image",
+                    "width": 60,
+                    "height": 6,
+                    "position": [3, {{m2d.blood}},0],
+                    "image": "images/blood_bg.jpg",
+                    "horizontalAlign":"center",
+                    "verticalAlign":"bottom",
+                    "visible":{{if boold_visible && it.show_hp>0}}true{{else}}false{{end}},
+                    "children":[{
+                        "type" : "prefab",
+                        "tpl":"skill_image",
+                        "width":57.2,
+                        "height":4,
+                        "image":"images/{{image}}.jpg",
+                        "position":[28.5,5,1],
+                        "horizontalAlign":"left",
+                        "scale":[{{it.show_hp>0?p:1}},1,1]
+                    }]
+                }
+                {{end}}
+            ]
+        }
+        {{end}}
+        {{if scenename !=="loginscene"}},
+        {
+            "type":"prefab",
+            "tpl":"yingzi",
+            "res":["DfrHPKoi1F3as85e1t6QgL.geo","255a3HGzcN6nD5L4xxpVLU.png"],
+            "position":{{it.position || [0,0,0]}}
+        }
+        {{end}}
+        {{if it.treasure && it.sid === player.role_id}}
+        ,
+        {
+            "type":"node",
+            "transform":{
+                "position":{{it.treasure.Tposition}},
+                "scale":[0.5,0.5,0.5],
+                "rotate":{{it.rotate || [0,0,0]}}
+            },
+            "children":[
+                {
+                    "type":"prefab",
+                    "tpl":"weapon",
+                    "res":{{weapon[it.treasure.Teffect].res}},
+                    {{if it.treasure.Tdouble}}
+                    "rotate":[-3.7,1.57,0],
+                    {{else}}
+                    "rotate":[{{Math.PI}},{{Math.PI / 2}},0],
+                    {{end}}
+                    "position":[0.2,0,0],
+                    "scale": [1,1,1],
+                    "child":{{Tchild}}
+                }{{if it.treasure.Tdouble}},{
+                    "type":"prefab",
+                    "tpl":"weapon",
+                    "res":{{weapon[it.treasure.Teffect].res}},
+                    "rotate": [-1.75,1.9,0.9],
+                    "position":[-0.3,-0.3,0],
+                    "scale":{{it.treasure.Tscale || [1,1,1]}},
+                    "child":{{Tchild}}
+                }{{end}}
+            ]
+        }
+        {{end}}
+        
+    
+        {{if scenename == "uiscene" && haspet}}
+        ,
+        {
+            "type":"node",
+            "transform":{
+                "position":{{it.pet.position || [0,0,0]}},
+                "scale":[0.5,0.5,0.5],
+                "rotate":{{it.rotate || [0,0,0]}}
+            },
+            "children":[
+                {
+                    "type" : "prefab",
+                    "tpl"  : "monster",
+                    
+                    "res"  : {{monster[module_name].res}},
+                    "playAnim":{{monsterPlayAnim}},
+                    "position":[0,0,0],
+                    "scale":[{{it.p_scale || 1}},{{it.p_scale || 1}},{{it.p_scale || 1}}],
+                    "aniBox":{{monster[module_name].aniBoxs}},
+                    "rootbone":"{{monster[module_name].rootbone || 'Bip01 Pelvis'}}",
+                    "bones":{{monster[module_name].bones}},
+                    "bounds":{{monster[module_name].bounds}},
+                    "rotate":[0,0,0],
+                    "rayID":0,
+                    "controller":{{monster.ainMod[monster[module_name].aniControl]}},
+                    "lookatOnce":{
+                        "value":[{{lookat.value[0]-(it.x || 0)}},{{lookat.value[2]-(it.z || 0)}},{{lookat.value[1]-(it.y || 0)}}],
+                        "sign":{{lookat.sign || 0}}
+                    },
+                    "filtercolor": null,
+                    "sternum" : {
+                        "type":"node",
+                        "transform":{
+                            "position":[0,0,0],
+                            "scale":[1,1,1],
+                            "rotate":[0,0,0]
+                        },
+                        "bindBone":"Bip001 Spine1",
+                        "children":null
+                    }
+                }
+            ]
+        }
+        {{end}}
+    ]
+}

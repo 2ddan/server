@@ -1,0 +1,7 @@
+{
+    "tpl":"./tips_boss.tpl",
+    "js":"../wild.ts",
+    "forelet":"../wild.ts",
+    "cfg":"./tips_boss.cfg",
+    "css":"./tips_boss.wcss"
+}

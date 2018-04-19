@@ -1,0 +1,7 @@
+{
+    "tpl":"./fast_sweep.tpl",
+    "css":"./fast_sweep.wcss",
+    "cfg":"./fast_sweep.cfg",
+    "js":"../tower.ts",
+    "forelet":"../tower.ts"
+}

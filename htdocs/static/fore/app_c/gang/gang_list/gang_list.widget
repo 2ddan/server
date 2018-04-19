@@ -1,0 +1,7 @@
+{
+    "tpl":"./gang_list.tpl",
+    "cfg":"./gang_list.cfg",
+    "css":"./gang_list.wcss",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts"
+}

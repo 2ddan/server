@@ -1,0 +1,39 @@
+{
+    "type":"node",
+    "transform":{
+        "position":[0,0,0],
+        "scale":[5,5,5],
+        "rotate":[0,0,0]
+    },
+    "children":[
+      {
+        "type" : "prefab",
+        "tpl":"skill_image",
+        "width": {{it.width}},
+        "height": {{it.height}},
+        "position": [0,{{it.height === 80 ? it.p + 50: it.p + 10}},10],
+        "scale": {{if it.scale}}[{{it.scale}},{{it.scale}},{{it.scale}}]{{else}}[1,1,1]{{end}},
+        "image": "images/chat_case.png",
+        "horizontalAlign":"center"
+      },
+      {
+        "type":"prefab",
+        "tpl":"2dtext",
+        "position": [{{it.width/2 - 10}},{{it.height === 80 ? it.p + 20 : it.p - 5}},12],
+        "show": "{{it.text}}",
+        "horizontalAlign":"left",
+        "verticalAlign":"center",
+        "textcfg":{
+          "font": "normal 400 20px arial,serif",
+          "color": "#ffffff",
+          {{if it.height === 80}}
+            "width":{{it.width-5}},
+            "height":-180,
+          {{end}}
+          "hfactor":1.2,
+          "textAlign":"left"
+        }
+      }
+
+    ]
+}

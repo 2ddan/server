@@ -1,0 +1,96 @@
+
+{
+  "name" : "sce_ui_szjm",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "sce_uibg01",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.400000005960464,
+          -8.03999996185303
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.9043755531311,
+          3.14159274101257,
+          3.14159274101257
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "FBQyMXHGMbzeFCbtPQsm8f.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "CLMvQo4CW9ZzVMeeN3XMuh.jpg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name" : "Camera",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          3.59999990463257,
+          8.40999984741211
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          -1.0
+        ],
+        "rotate"   : [
+          0.191986173391342,
+          3.14159297943115,
+          0.0
+        ]
+      },
+      "camera"    : {
+        "type" : "Camera",
+        "perspective" : [
+          30.0,
+          0.600000023841858,
+          0.300000011920929,
+          1000.0
+        ]
+      }
+    }
+  ]
+}

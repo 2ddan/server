@@ -1,0 +1,130 @@
+
+{
+  "name" : "eff_role8_skill1_1",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "eff_role8_skill1_1",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "eff_role8_skill1_1" : "3u31arHrjxy73iSd7R4RxG.ai"
+        },
+        "playAnim"   : {{it.playAnim?it.playAnim:null}}
+      },
+      "children"  : [
+        {
+          "name" : "a001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.256000012159348,
+              1.21399998664856,
+              1.12000000476837
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "children"  : [
+            {
+              "name" : "daoguang02",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "scale"    : [
+                  0.686025559902191,
+                  0.686025738716125,
+                  0.686025738716125
+                ],
+                "rotate"   : [
+                  1.17196702957153,
+                  1.57079637050629,
+                  4.71238899230957
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "Fh1KLhDSwXCLGaLMNZoDA1.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "wrap" : [
+                        1001,
+                        1001
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "45HmtQx6EyKAQwxviJux9k.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 205,
+                    "side"        : 2,
+                    "tintColor"   : 8421504,
+                    "tintOpacity" : 0.5,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+.tips_bg{
+	width: 242px;
+	height:27px;
+	line-height:24px;
+	font-size:16px;
+	text-align: center;
+	color:#fff;
+}
+.login_bg {
+	background-image: url(app_a/user/images/login_bg.jpg);
+	background-repeat:  no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.bg_2 {
+	background-image: url(app_a/user/images/bg_2.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 140px;
+	position:absolute;
+	left: 0px;
+    bottom: 0px;
+    background-size: 100% 100%;
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./commonShop.tpl",
+    "js":"../shop/shop.ts",
+    "forelet":"../shop/shop.ts",
+    "cfg":"./arena.cfg",
+    "css":"./commonShop.wcss"
+}

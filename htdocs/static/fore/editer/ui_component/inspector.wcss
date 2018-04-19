@@ -1,0 +1,254 @@
+
+.data_box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    overflow:hidden;
+}
+.inbox{
+    position: absolute;
+    width: calc(100% + 20px);
+    height: 100%;
+    overflow-x:hidden;
+    overflow-y: auto;
+}
+
+
+
+.clazz_box{
+    width: 100%;
+    position: relative;
+    background-color: rgb(15, 15, 26);
+}
+.title{
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    height:30px;
+    line-height: 30px;
+    background-color: rgb(27, 27, 41);
+    white-space: nowrap;
+}
+.content{
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    padding: 2px 0;
+    border: 1px solid rgb(15, 15, 26);
+}
+.content_other{
+    position: relative;
+    width: 100%;
+    height: 208px;
+    overflow: visible;
+    border: 1px solid rgb(15, 15, 26);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 2px 0;
+    padding-right: 20px;
+}
+.show_more{
+    position: relative;
+    width: 100%;
+    height:30px;
+    color: #D5D5D5;
+}
+/* 组件样式 */
+.attr_box{
+    width: 100%;
+    height: 26px;
+    color: #D5D5D5;
+    position: relative;
+    padding: 2px 0;
+    padding-left: 28px;
+}
+.spreatbox{
+    background-color: rgb(54, 54, 62);
+}
+.attr_key{
+    position: absolute;
+    height: 26px;
+    width: 140px;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    cursor: default;
+}
+.attr_value{
+    color: #D5D5D5;
+    position: absolute;
+    left: 160px;
+    background-color: #212125;
+    width: 130px;
+    height: 24px;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    text-overflow: ellipsis;
+}
+.rich_input{
+    text-indent: 3px;
+    height: 22px;
+    line-height: 22px;
+}
+.search{
+    color:#777;
+    position: absolute;
+    left: 160px;
+    background-color: #212125;
+    width:calc(100% - 160px);
+    padding-left:5px;
+    height: 28px;
+    line-height: 28px;
+    border: none;
+    outline: none;
+}
+.attr_add{
+    color: #D5D5D5;
+    position: absolute;
+    left: 160px;
+    background-color: #212125;
+    width: 130px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #9393c3;
+    text-align: center;
+    font-size: 14px;
+    cursor: default;
+}
+
+/* 删除确定按钮 */
+
+.delete{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    position: absolute;
+    left: 294px;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #888;
+    cursor: pointer;
+    position: absolute;
+}
+.no_edite{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: default;
+    position: absolute;
+    left: 346px;
+    font-size: 12px;
+}
+.add_to_star{
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    position: absolute;
+    left: 320px;
+    font-size: 12px;
+}
+
+/* class */
+.class_box{
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    background-color:rgb(15, 15, 26);
+    z-index: 2;
+    min-height: 24px;
+}
+.class_item{
+    color: #D5D5D5;
+    position: relative;
+    background-color: #31314c;
+    height: 24px;
+    line-height: 24px;
+    padding: 2px 6px;
+    margin-right: 4px;
+    font-size: 14px;
+    display: inline-block;
+    cursor: default;
+}
+.class_value{
+    width: calc(100% - 28px);
+    padding: 6px 0;
+    background-color:rgb(15, 15, 26);
+}
+.class_name{
+    position: absolute;
+    height: 26px;
+    width: 128px;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    cursor: default;
+    background-color: #271c2b;
+    text-indent: 4px;
+    border-radius: 4px;
+}
+.class_view{
+    position: relative;
+    background-color: rgb(15, 15, 26);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.class_show_item{
+    color: #888;
+    position: relative;
+    font-size: 14px;
+    text-indent: 6px;
+}
+
+/* 拾色器 */
+.color_input{
+    color: #868686;
+    background-color: #212125;
+    width: 101px;
+    height: calc(100% - 2px);
+    padding-left: 3px;
+    text-overflow: ellipsis;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    outline: none;
+}
+.color_icon{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    left: 106px;
+    top: 0;
+    text-align: center;
+}
+
+/* 跳转 */
+.goto_page_input{
+    color: #D5D5D5;
+    position: absolute;
+    left: 28px;
+    background-color: #212125;
+    width: 262px;
+    height: 24px;
+    line-height: 24px;
+    border: none;
+    outline: none;
+}

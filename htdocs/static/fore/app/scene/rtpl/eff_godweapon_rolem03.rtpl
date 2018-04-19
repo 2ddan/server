@@ -1,0 +1,3999 @@
+
+{
+  "name" : "eff_godweapon_rolem03",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "eff_godweapon_rolem03",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "eff_godweapon_rolem03" : "3prjhw18sXkwC7WtodW5i5.ai"
+        },
+        "playAnim"   : {{it.playAnim?it.playAnim:null}}
+      },
+      "children"  : [
+        {
+          "name" : "daoguang_5_1",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254176139832,
+              1.1170027256012,
+              0.678188800811768
+            ],
+            "rotate"   : [
+              1.4355491399765,
+              3.9503800868988,
+              2.27948522567749
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "daoguang_5_2",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254176139832,
+              1.1170027256012,
+              0.678188800811768
+            ],
+            "rotate"   : [
+              1.4355491399765,
+              3.9503800868988,
+              2.27948522567749
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "daoguang_5_3",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254176139832,
+              1.1170027256012,
+              0.678188800811768
+            ],
+            "rotate"   : [
+              1.4355491399765,
+              3.9503800868988,
+              2.27948522567749
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "daoguang_5_4",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254176139832,
+              1.1170027256012,
+              0.678188800811768
+            ],
+            "rotate"   : [
+              1.4355491399765,
+              3.9503800868988,
+              2.27948522567749
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "daoguang_5_5",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254176139832,
+              1.1170027256012,
+              0.678188800811768
+            ],
+            "rotate"   : [
+              1.4355491399765,
+              3.9503800868988,
+              2.27948522567749
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "daoguang_5_6",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0299999993294477,
+              1.49000000953674,
+              -0.280000001192093
+            ],
+            "scale"    : [
+              1.02254354953766,
+              1.11700177192688,
+              0.678188264369965
+            ],
+            "rotate"   : [
+              1.43554961681366,
+              3.95037937164307,
+              2.27948355674744
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "973SYheh3vYkE8WpZzXYBB.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "wrap" : [
+                    1001,
+                    1001
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2HzhiEJUt3n8q7dCW4Pmsf.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "shandian",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "children"  : [
+            {
+              "name" : "shandian_27",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  3.79999995231628,
+                  0.0
+                ],
+                "scale"    : [
+                  1.09697318077087,
+                  2.85149550437927,
+                  2.02955198287964
+                ],
+                "rotate"   : [
+                  0.01056934799999,
+                  1.19503057003021,
+                  3.1110622882843
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_28",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  3.8199999332428,
+                  0.0
+                ],
+                "scale"    : [
+                  1.08533978462219,
+                  2.85154795646667,
+                  1.57922327518463
+                ],
+                "rotate"   : [
+                  0.0305289253592491,
+                  2.76615047454834,
+                  3.15216660499573
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_29",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  1.62999999523163,
+                  3.32999992370605,
+                  0.0
+                ],
+                "scale"    : [
+                  1.42941999435425,
+                  3.7156720161438,
+                  2.64462924003601
+                ],
+                "rotate"   : [
+                  0.492759525775909,
+                  1.1411896944046,
+                  2.90180230140686
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_30",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  1.62999999523163,
+                  3.34999990463257,
+                  0.0
+                ],
+                "scale"    : [
+                  1.41426384449005,
+                  3.71575212478638,
+                  2.05783128738403
+                ],
+                "rotate"   : [
+                  0.210802987217903,
+                  2.82713150978088,
+                  3.64654684066772
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_31",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -1.62000000476837,
+                  3.35999989509583,
+                  0.0
+                ],
+                "scale"    : [
+                  1.35823583602905,
+                  3.53064680099487,
+                  -2.54051399230957
+                ],
+                "rotate"   : [
+                  5.83125734329224,
+                  1.17103981971741,
+                  3.30153393745422
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_32",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -1.62000000476837,
+                  3.38000011444092,
+                  0.0
+                ],
+                "scale"    : [
+                  -1.35858583450317,
+                  3.53070592880249,
+                  1.95534992218018
+                ],
+                "rotate"   : [
+                  6.13941812515259,
+                  2.81216430664063,
+                  2.68459749221802
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_33",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -0.00999999977648258,
+                  3.08999991416931,
+                  1.32000005245209
+                ],
+                "scale"    : [
+                  1.35824131965637,
+                  3.53065419197083,
+                  -2.54051113128662
+                ],
+                "rotate"   : [
+                  5.76482200622559,
+                  2.97825121879578,
+                  3.31595468521118
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_34",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -0.00999999977648258,
+                  3.10999989509583,
+                  1.32000005245209
+                ],
+                "scale"    : [
+                  -1.35859000682831,
+                  3.53070950508118,
+                  1.95534944534302
+                ],
+                "rotate"   : [
+                  6.13191747665405,
+                  4.63609933853149,
+                  2.6166296005249
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_35",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -0.00999999977648258,
+                  3.25,
+                  -1.75
+                ],
+                "scale"    : [
+                  -1.35859072208405,
+                  3.53071236610413,
+                  1.95535087585449
+                ],
+                "rotate"   : [
+                  0.149698376655579,
+                  4.67645454406738,
+                  3.62702369689941
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            },
+            {
+              "name" : "shandian_36",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  -0.00999999977648258,
+                  3.23000001907349,
+                  -1.75
+                ],
+                "scale"    : [
+                  1.35824000835419,
+                  3.53066205978394,
+                  -2.54051089286804
+                ],
+                "rotate"   : [
+                  0.479540050029755,
+                  3.02714848518372,
+                  2.9726927280426
+                ]
+              },
+              "geometry"  : {
+                "type" : "BufferGeometry",
+                "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+              },
+              "meshRender" : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "repeat" : [
+                        0.330000013113022,
+                        1.0
+                      ],
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "EsFyTr18J9dXdc72quaM4n.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name" : "Moxing_2",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.28999999165535,
+              0.0
+            ],
+            "scale"    : [
+              2.72909832000732,
+              2.72909927368164,
+              2.72909927368164
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "AQ8Gy4V1Jp3D7p5BGPpECW.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "8ku6x9gB7b46sNFR5Wh4aC.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 16777215,
+                "tintOpacity" : 0.0,
+                "layer"       : 4000,
+                "blending"    : 5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Particle",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "children"  : [
+        {
+          "name" : "shandian_1",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.21000003814697,
+              -0.0999999046325684
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              3.14159321784973,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 3241950942,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 1.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.5,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 25.0,
+              "startSizeXMultiplier"       : 25.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.720588207244873,
+                  "g" : 0.803448259830475,
+                  "b" : 1.0,
+                  "a" : 0.685000002384186
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.200000002980232,
+                "constantMin" : 0.5
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 25.0,
+                "constantMin" : 20.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 25.0,
+                "constantMin" : 20.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : 6.28318500518799,
+                "constantMin" : -6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : 6.28318500518799,
+                "constantMin" : -6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 2.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 2.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.0900000333786,
+                "y" : 0.649999976158142,
+                "z" : 0.330000013113022
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_2",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.21000003814697,
+              -0.110000133514404
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              3.14159321784973,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 1306826890,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 100,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.699999988079071,
+              "startRotation3D"            : false,
+              "startRotationMultiplier"    : 0.0,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 0.0,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 30.0,
+              "startSizeXMultiplier"       : 30.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.338235318660736,
+                  "g" : 0.424949556589127,
+                  "b" : 1.0,
+                  "a" : 0.640999972820282
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.699999988079071,
+                "constantMin" : 0.200000002980232
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 30.0,
+                "constantMin" : 15.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 30.0,
+                "constantMin" : 15.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationX"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 20.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 20.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.00999999046326,
+                "y" : 0.629999995231628,
+                "z" : 0.629999995231628
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "velocityOverLifetime" : {
+              "space" : 0,
+              "xMultiplier" : 0.0,
+              "yMultiplier" : 0.0,
+              "zMultiplier" : 0.0,
+              "x"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "y"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "z"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "sizeOverLifetime"     : {
+              "separateAxes" : false,
+              "sizeMultiplier" : 1.0,
+              "xMultiplier"    : 1.0,
+              "yMultiplier"    : 1.0,
+              "zMultiplier"    : 1.0,
+              "size"           : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 1.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "x"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 1.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "y"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "z"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              }
+            },
+            "colorOverLifetime"    : {
+              "color" : {
+                "mode" : 1,
+                "gradient" : {
+                  "alphaKeys" : [
+                    {
+                      "time" : 0.0,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.141176477074623,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.173525601625443,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.22058442234993,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.538231492042542,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.55883115530014,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.582360565662384,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 1.0,
+                      "alpha" : 1.0
+                    }
+                  ],
+                  "colorKeys" : [
+                    {
+                      "time" : 0.0,
+                      "color" : {
+                        "r" : 0.389705896377563,
+                        "g" : 0.696957528591156,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 1.0,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.255172252655029,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    }
+                  ],
+                  "mode"      : 0
+                }
+              }
+            },
+            "renderer"             : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_3",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.16999995708466,
+              -0.139999866485596
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              3.14159274101257,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 2325488773,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.5,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 3.14159274101257,
+              "startRotationYMultiplier"   : 3.14159274101257,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 10.0,
+              "startSizeXMultiplier"       : 10.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.0,
+                  "g" : 0.106490887701511,
+                  "b" : 0.617647051811218,
+                  "a" : 1.0
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.5,
+                "constantMin" : 0.199999988079071
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 30.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 30.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.3400000333786,
+                "y" : 0.779999971389771,
+                "z" : 0.569999992847443
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_4",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.16999995708466,
+              -0.139999866485596
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              3.14159274101257,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 2325488773,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.199999988079071,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 3.14159274101257,
+              "startRotationYMultiplier"   : 3.14159274101257,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 10.0,
+              "startSizeXMultiplier"       : 10.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.632352948188782,
+                  "g" : 0.695740401744843,
+                  "b" : 1.0,
+                  "a" : 1.0
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.100000008940697,
+                "constantMin" : 0.199999988079071
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 30.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 30.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.64999997615814,
+                "y" : 0.819999992847443,
+                "z" : 0.569999992847443
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_1_1",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.21000003814697,
+              -0.0999999046325684
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              4.71238899230957,
+              1.57079648971558
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 3241950942,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 1.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.5,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 25.0,
+              "startSizeXMultiplier"       : 25.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.720588207244873,
+                  "g" : 0.803448259830475,
+                  "b" : 1.0,
+                  "a" : 0.685000002384186
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.200000002980232,
+                "constantMin" : 0.5
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 25.0,
+                "constantMin" : 20.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 25.0,
+                "constantMin" : 20.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : 6.28318500518799,
+                "constantMin" : -6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : 6.28318500518799,
+                "constantMin" : -6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 2.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 2.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.0900000333786,
+                "y" : 0.649999976158142,
+                "z" : 0.330000013113022
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_2_2",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.21000003814697,
+              -0.110000133514404
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              4.71238899230957,
+              1.57079648971558
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 1306826890,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 100,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.699999988079071,
+              "startRotation3D"            : false,
+              "startRotationMultiplier"    : 0.0,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 0.0,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 30.0,
+              "startSizeXMultiplier"       : 30.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.338235318660736,
+                  "g" : 0.424949556589127,
+                  "b" : 1.0,
+                  "a" : 0.640999972820282
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.699999988079071,
+                "constantMin" : 0.200000002980232
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 30.0,
+                "constantMin" : 15.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 30.0,
+                "constantMin" : 15.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationX"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 20.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 20.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.00999999046326,
+                "y" : 0.629999995231628,
+                "z" : 0.629999995231628
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "velocityOverLifetime" : {
+              "space" : 0,
+              "xMultiplier" : 0.0,
+              "yMultiplier" : 0.0,
+              "zMultiplier" : 0.0,
+              "x"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "y"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "z"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "sizeOverLifetime"     : {
+              "separateAxes" : false,
+              "sizeMultiplier" : 1.0,
+              "xMultiplier"    : 1.0,
+              "yMultiplier"    : 1.0,
+              "zMultiplier"    : 1.0,
+              "size"           : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 1.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "x"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.0,
+                      "outTangent" : -1.0,
+                      "time"       : 1.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "y"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "z"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              }
+            },
+            "colorOverLifetime"    : {
+              "color" : {
+                "mode" : 1,
+                "gradient" : {
+                  "alphaKeys" : [
+                    {
+                      "time" : 0.0,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.141176477074623,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.173525601625443,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.22058442234993,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.538231492042542,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 0.55883115530014,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.582360565662384,
+                      "alpha" : 1.0
+                    },
+                    {
+                      "time" : 1.0,
+                      "alpha" : 1.0
+                    }
+                  ],
+                  "colorKeys" : [
+                    {
+                      "time" : 0.0,
+                      "color" : {
+                        "r" : 0.389705896377563,
+                        "g" : 0.696957528591156,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 1.0,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.255172252655029,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    }
+                  ],
+                  "mode"      : 0
+                }
+              }
+            },
+            "renderer"             : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_3_3",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.16999995708466,
+              -0.139999866485596
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              4.71238899230957,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 2325488773,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.5,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 3.14159274101257,
+              "startRotationYMultiplier"   : 3.14159274101257,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 10.0,
+              "startSizeXMultiplier"       : 10.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.0,
+                  "g" : 0.106490887701511,
+                  "b" : 0.617647051811218,
+                  "a" : 1.0
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.5,
+                "constantMin" : 0.199999988079071
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 30.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 30.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.3400000333786,
+                "y" : 0.779999971389771,
+                "z" : 0.569999992847443
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "shandian_4_4",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.0599999986588955,
+              1.16999995708466,
+              -0.139999866485596
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              4.71238899230957,
+              1.57079637050629
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 2325488773,
+            "useAutoRandomSeed" : false,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 1000,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 0.199999988079071,
+              "startRotation3D"            : true,
+              "startRotationMultiplier"    : 6.28318500518799,
+              "startRotationXMultiplier"   : 3.14159274101257,
+              "startRotationYMultiplier"   : 3.14159274101257,
+              "startRotationZMultiplier"   : 6.28318500518799,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 10.0,
+              "startSizeXMultiplier"       : 10.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.632352948188782,
+                  "g" : 0.695740401744843,
+                  "b" : 1.0,
+                  "a" : 1.0
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 0.100000008940697,
+                "constantMin" : 0.199999988079071
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 5.0,
+                "constantMin" : 10.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              },
+              "startRotationX"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 3,
+                "constantMax" : -6.28318500518799,
+                "constantMin" : 6.28318500518799
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 30.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 30.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 1.0,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 5,
+              "box"                   : {
+                "x" : 1.64999997615814,
+                "y" : 0.819999992847443,
+                "z" : 0.569999992847443
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "textureSheetAnimation" : {
+              "animation" : 0,
+              "cycleCount" : 1,
+              "flipU"      : 0.0,
+              "flipV"      : 0.0,
+              "frameOverTimeMultiplier" : 0.999899983406067,
+              "numTilesX"               : 4,
+              "numTilesY"               : 2,
+              "rowIndex"                : 0,
+              "startFrameMultiplier"    : 0.0,
+              "useRandomRow"            : true,
+              "uvChannelMask"           : -1,
+              "frameOverTime"           : {
+                "mode" : 1,
+                "curveMultiplier" : 0.999899983406067,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 1.0,
+                      "time"       : 0.0,
+                      "value"      : 0.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 1.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "startFrame"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "renderer"              : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "DetRj9qV6PyS4ALKBX9S7s.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "WuTzGZVbqBtbRjHKAMcRdf.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 3000,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "xunhuan_1",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.629999995231628,
+              -0.150000095367432
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 3219036527,
+            "useAutoRandomSeed" : true,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 200,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 1.5,
+              "startRotation3D"            : false,
+              "startRotationMultiplier"    : 0.0,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 0.0,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 2.0,
+              "startSizeXMultiplier"       : 2.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.0,
+                  "g" : 0.296551704406738,
+                  "b" : 1.0,
+                  "a" : 1.0
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 1.5,
+                "constantMin" : 1.0
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 1.5,
+                "constantMin" : 2.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 1.5,
+                "constantMin" : 2.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationX"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 3.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 3.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 0.00999999977648258,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 0,
+              "box"                   : {
+                "x" : 1.0,
+                "y" : 1.0,
+                "z" : 1.0
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "velocityOverLifetime" : {
+              "space" : 1,
+              "xMultiplier" : 0.0,
+              "yMultiplier" : 1.5,
+              "zMultiplier" : 0.0,
+              "x"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "y"           : {
+                "mode" : 0,
+                "constant" : 1.5
+              },
+              "z"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "rotationOverLifetime" : {
+              "separateAxes" : false,
+              "xMultiplier"  : 1.0,
+              "yMultiplier"  : 1.0,
+              "zMultiplier"  : 3.14159250259399,
+              "x"            : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "y"            : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "z"            : {
+                "mode" : 3,
+                "constantMax" : 3.14159250259399,
+                "constantMin" : -3.14159250259399
+              }
+            },
+            "sizeOverLifetime"     : {
+              "separateAxes" : false,
+              "sizeMultiplier" : 1.0,
+              "xMultiplier"    : 1.0,
+              "yMultiplier"    : 1.0,
+              "zMultiplier"    : 1.0,
+              "size"           : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.773461401462555,
+                      "outTangent" : 0.773461401462555,
+                      "time"       : 0.0,
+                      "value"      : 0.454210638999939,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.75315976142883,
+                      "outTangent" : -1.75315976142883,
+                      "time"       : 0.951217651367188,
+                      "value"      : 0.320402145385742,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "x"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.773461401462555,
+                      "outTangent" : 0.773461401462555,
+                      "time"       : 0.0,
+                      "value"      : 0.454210638999939,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -1.75315976142883,
+                      "outTangent" : -1.75315976142883,
+                      "time"       : 0.951217651367188,
+                      "value"      : 0.320402145385742,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "y"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "z"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              }
+            },
+            "colorOverLifetime"    : {
+              "color" : {
+                "mode" : 1,
+                "gradient" : {
+                  "alphaKeys" : [
+                    {
+                      "time" : 0.0,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.329411774873734,
+                      "alpha" : 0.65490198135376
+                    },
+                    {
+                      "time" : 0.626474380493164,
+                      "alpha" : 0.839215695858002
+                    },
+                    {
+                      "time" : 1.0,
+                      "alpha" : 0.0
+                    }
+                  ],
+                  "colorKeys" : [
+                    {
+                      "time" : 0.0,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.544827699661255,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 0.800000011920929,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.296551704406738,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 1.0,
+                      "color" : {
+                        "r" : 1.0,
+                        "g" : 1.0,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    }
+                  ],
+                  "mode"      : 0
+                }
+              }
+            },
+            "renderer"             : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "CRDaCPXRknpTtym6H6a5pH.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name" : "xunhuan_2",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.509999990463257,
+              -0.150000095367432
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "particlesystem" : {
+            "randomSeed" : 3967275372,
+            "useAutoRandomSeed" : true,
+            "main"              : {
+              "duration" : 1.20000004768372,
+              "gravityModifierMultiplier" : 0.0,
+              "loop"                      : false,
+              "prewarm"                   : false,
+              "maxParticles"              : 200,
+              "playOnAwake"               : true,
+              "randomizeRotationDirection" : 0.0,
+              "simulationSpeed"            : 1.0,
+              "startDelayMultiplier"       : 0.0,
+              "startLifetimeMultiplier"    : 1.5,
+              "startRotation3D"            : false,
+              "startRotationMultiplier"    : 0.0,
+              "startRotationXMultiplier"   : 0.0,
+              "startRotationYMultiplier"   : 0.0,
+              "startRotationZMultiplier"   : 0.0,
+              "startSize3D"                : false,
+              "startSizeMultiplier"        : 3.0,
+              "startSizeXMultiplier"       : 3.0,
+              "startSizeYMultiplier"       : 1.0,
+              "startSizeZMultiplier"       : 1.0,
+              "startSpeedMultiplier"       : 0.0,
+              "customSimulationSpace"      : false,
+              "scalingMode"                : 1,
+              "simulationSpace"            : 0,
+              "gravityModifier"            : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startColor"                 : {
+                "mode" : 0,
+                "color" : {
+                  "r" : 0.234077498316765,
+                  "g" : 0.132352948188782,
+                  "b" : 1.0,
+                  "a" : 0.433999985456467
+                }
+              },
+              "startDelay"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startLifetime"              : {
+                "mode" : 3,
+                "constantMax" : 1.5,
+                "constantMin" : 1.0
+              },
+              "startSize"                  : {
+                "mode" : 3,
+                "constantMax" : 2.0,
+                "constantMin" : 3.0
+              },
+              "startSizeX"                 : {
+                "mode" : 3,
+                "constantMax" : 2.0,
+                "constantMin" : 3.0
+              },
+              "startSizeY"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSizeZ"                 : {
+                "mode" : 3,
+                "constantMax" : 1.0,
+                "constantMin" : 0.0
+              },
+              "startSpeed"                 : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotation"              : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationX"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationY"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "startRotationZ"             : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "emission"          : {
+              "rateOverDistanceMultiplier" : 0.0,
+              "rateOverTimeMultiplier"     : 4.0,
+              "rateOverDistance"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "rateOverTime"               : {
+                "mode" : 0,
+                "constant" : 4.0
+              },
+              "bursts"                     : [
+              ]
+            },
+            "shape"             : {
+              "alignToDirection" : false,
+              "angle"            : 25.0,
+              "arc"              : 360.0,
+              "length"           : 5.0,
+              "meshScale"        : 1.0,
+              "meshShapeType"    : 0,
+              "normalOffset"     : 0.0,
+              "radius"           : 0.46000000834465,
+              "randomDirectionAmount" : 0.0,
+              "shapeType"             : 0,
+              "box"                   : {
+                "x" : 1.0,
+                "y" : 1.0,
+                "z" : 1.0
+              },
+              "sphericalDirectionAmount" : 0.0,
+              "useMeshColors"            : true,
+              "useMeshMaterialIndex"     : false
+            },
+            "velocityOverLifetime" : {
+              "space" : 1,
+              "xMultiplier" : 0.0,
+              "yMultiplier" : 1.5,
+              "zMultiplier" : 0.0,
+              "x"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              },
+              "y"           : {
+                "mode" : 0,
+                "constant" : 1.5
+              },
+              "z"           : {
+                "mode" : 0,
+                "constant" : 0.0
+              }
+            },
+            "rotationOverLifetime" : {
+              "separateAxes" : false,
+              "xMultiplier"  : 1.0,
+              "yMultiplier"  : 1.0,
+              "zMultiplier"  : 3.14159250259399,
+              "x"            : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "y"            : {
+                "mode" : 3,
+                "constantMax" : 0.0,
+                "constantMin" : 0.0
+              },
+              "z"            : {
+                "mode" : 3,
+                "constantMax" : 3.14159250259399,
+                "constantMin" : -3.14159250259399
+              }
+            },
+            "sizeOverLifetime"     : {
+              "separateAxes" : false,
+              "sizeMultiplier" : 1.0,
+              "xMultiplier"    : 1.0,
+              "yMultiplier"    : 1.0,
+              "zMultiplier"    : 1.0,
+              "size"           : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 1.19562029838562,
+                      "outTangent" : 1.19562029838562,
+                      "time"       : 0.0,
+                      "value"      : 0.563366591930389,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -2.64655303955078,
+                      "outTangent" : -2.64655303955078,
+                      "time"       : 0.975616455078125,
+                      "value"      : 0.0387287139892578,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "x"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 1.19562029838562,
+                      "outTangent" : 1.19562029838562,
+                      "time"       : 0.0,
+                      "value"      : 0.563366591930389,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : -2.64655303955078,
+                      "outTangent" : -2.64655303955078,
+                      "time"       : 0.975616455078125,
+                      "value"      : 0.0387287139892578,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "y"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              },
+              "z"              : {
+                "mode" : 1,
+                "curveMultiplier" : 1.0,
+                "curve"           : {
+                  "keys" : [
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 0.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    },
+                    {
+                      "inTangent" : 0.0,
+                      "outTangent" : 0.0,
+                      "time"       : 1.0,
+                      "value"      : 1.0,
+                      "tangentMode" : 0
+                    }
+                  ]
+                }
+              }
+            },
+            "colorOverLifetime"    : {
+              "color" : {
+                "mode" : 1,
+                "gradient" : {
+                  "alphaKeys" : [
+                    {
+                      "time" : 0.0,
+                      "alpha" : 0.0
+                    },
+                    {
+                      "time" : 0.329411774873734,
+                      "alpha" : 0.592156887054443
+                    },
+                    {
+                      "time" : 0.626474380493164,
+                      "alpha" : 0.823529422283173
+                    },
+                    {
+                      "time" : 1.0,
+                      "alpha" : 0.0
+                    }
+                  ],
+                  "colorKeys" : [
+                    {
+                      "time" : 0.0,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.627586305141449,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 0.538231492042542,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.420689582824707,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    },
+                    {
+                      "time" : 1.0,
+                      "color" : {
+                        "r" : 0.0,
+                        "g" : 0.544827461242676,
+                        "b" : 1.0,
+                        "a" : 1.0
+                      }
+                    }
+                  ],
+                  "mode"      : 0
+                }
+              }
+            },
+            "renderer"             : {
+              "sortingFudge" : 0.0,
+              "geometry"     : {
+                "type" : "BufferGeometry",
+                "res"  : "CRDaCPXRknpTtym6H6a5pH.geo"
+              },
+              "meshRender"   : {
+                "material" : [
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  },
+                  {
+                    "type" : "MeshParticlesMaterial",
+                    "map"  : {
+                      "filter" : [
+                        1006,
+                        1007
+                      ],
+                      "generateMipmaps" : true,
+                      "image"           : {
+                        "name" : "Es93vLGJSFVFKGbMeQ69NY.png"
+                      }
+                    },
+                    "transparent" : true,
+                    "blendSrc"    : 204,
+                    "blendDst"    : 201,
+                    "side"        : 2,
+                    "tintColor"   : 16777215,
+                    "tintOpacity" : 0.0,
+                    "layer"       : 4500,
+                    "blending"    : 5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

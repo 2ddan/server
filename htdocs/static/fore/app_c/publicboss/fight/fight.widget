@@ -1,0 +1,6 @@
+{
+    "tpl":"./fight.tpl",
+    "cfg":"./fight.cfg",
+    "js":"../publicboss.ts",
+    "forelet":"../publicboss.ts"
+}

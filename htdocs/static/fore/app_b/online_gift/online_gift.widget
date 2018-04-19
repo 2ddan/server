@@ -1,0 +1,6 @@
+{
+    "tpl":"./online_gift.tpl",
+    "js":"./online_gift.ts",
+    "cfg":"./online_gift.cfg",
+    "forelet":"./online_gift.ts"
+}

@@ -1,0 +1,10 @@
+.lv_up_logo {
+    position: absolute;
+    background-image: url(./images/lv_up_logo.png);
+    background-repeat: no-repeat;
+    width: 256px;
+    height: 128px;
+    left: 50%;
+    top: 270px;
+    transform: translate(-50%);
+}

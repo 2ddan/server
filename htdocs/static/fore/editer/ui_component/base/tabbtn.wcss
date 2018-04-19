@@ -1,0 +1,21 @@
+.select {
+    overflow: hidden;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgb(27, 27, 41);
+    color:#ccc;
+}
+
+.other {
+    overflow: hidden;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color:rgb(45, 45, 60);
+    color:#888;
+}

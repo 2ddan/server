@@ -1,0 +1,6 @@
+{
+    "tpl":"./recovery.tpl",
+    "js":"../cloth.ts",
+    "forelet":"../cloth.ts",
+    "cfg":"./recovery.cfg"
+}

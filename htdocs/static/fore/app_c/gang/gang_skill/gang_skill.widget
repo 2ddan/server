@@ -1,0 +1,7 @@
+{
+    "tpl":"./gang_skill.tpl",
+    "cfg":"./gang_skill.cfg",
+    "js":"./gang_skill.ts",
+    "forelet":"../gang.ts",
+    "css":"./gang_skill.wcss"
+}

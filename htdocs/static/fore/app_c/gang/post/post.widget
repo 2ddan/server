@@ -1,0 +1,7 @@
+{
+    "tpl":"./post.tpl",
+    "cfg":"./post.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./post.wcss"
+}

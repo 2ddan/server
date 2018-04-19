@@ -1,0 +1,7 @@
+{
+    "tpl": "./award.tpl",
+    "js": "../limit_gift.ts",
+    "forelet": "../limit_gift.ts",
+    "cfg": "./award.cfg",
+    "css": "./award.wcss"
+}

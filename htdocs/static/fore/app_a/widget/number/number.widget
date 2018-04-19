@@ -1,0 +1,6 @@
+{
+    "tpl":"./number.tpl",
+    "css":"./number.wcss",
+    "js":"pi/ui/selectnumber.ts",
+    "cfg":"./number.cfg"
+}

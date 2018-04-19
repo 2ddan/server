@@ -1,0 +1,5 @@
+{
+    "cfg":"./bar1.cfg",
+    "tpl":"./bar1.tpl",
+    "css":"./bar.wcss"
+}

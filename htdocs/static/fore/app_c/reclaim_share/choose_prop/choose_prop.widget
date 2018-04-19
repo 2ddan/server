@@ -1,0 +1,7 @@
+{
+    "tpl":"./choose_prop.tpl",
+    "js":"../reclaim.ts",
+    "forelet":"../reclaim.ts",
+    "cfg":"./choose_prop.cfg",
+    "css":"../reclaim.wcss"
+}

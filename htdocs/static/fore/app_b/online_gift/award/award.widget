@@ -1,0 +1,7 @@
+{
+    "tpl":"./award.tpl",
+    "css":"../online_gift.wcss",
+    "js":"../online_gift.ts",
+    "forelet":"../online_gift.ts",
+    "cfg":"./award.cfg"
+}

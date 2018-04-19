@@ -1,0 +1,6 @@
+{
+    "tpl":"./select_area.tpl",
+    "js":"",
+    "css":"./main.wcss",
+    "forelet":"./user.ts"
+}

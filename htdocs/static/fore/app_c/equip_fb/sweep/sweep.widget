@@ -1,0 +1,7 @@
+{
+    "tpl":"./sweep.tpl",
+    "js":"../equip_fb.ts",
+    "forelet":"../equip_fb.ts",
+    "css":"../equip_fb.wcss",
+    "cfg": "../box/box.cfg"
+}

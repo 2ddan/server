@@ -1,0 +1,7 @@
+{
+    "tpl":"./inherit.tpl",
+    "cfg":"./inherit.cfg",
+    "js":"app_c/gest/gest.ts",
+    "forelet":"app_c/gest/gest.ts",
+    "css":"./inherit.wcss"
+}

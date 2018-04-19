@@ -1,0 +1,214 @@
+.3 {
+    position: absolute;
+    width: 450px;
+    height: 506px;
+    left: 50%;
+    top: 50%;
+    margin-top: -284px;
+    margin-left: -225px;
+}
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 450px;
+    height: 506px;
+    opacity: 0.95;
+}
+.5 {
+    position: absolute;
+    left: -39px;
+    top: -25px;
+}
+.6 {
+    position: absolute;
+    left: -38px;
+    top: 492px;
+    z-index: 1;
+}
+.7 {
+    position: absolute;
+    left: 136px;
+    top: -30px;
+}
+.8 {
+    position: absolute;
+    left: -18px;
+    top: 0px;
+}
+.9 {
+    position: absolute;
+    left: 422px;
+    top: -32px;
+}
+.10 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+}
+.11 {
+    position: absolute;
+    width: 454px;
+    height: 407px;
+    left: -2px;
+    top: 0;
+}
+
+
+.18 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.19 {
+    position: absolute;
+    left: 31px;
+    top: 32px;
+}
+.20{
+    color:#ffd8a6;
+    top: -10px;
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.21{
+    position: absolute;
+    bottom:-9px;
+    left:11px;
+    font-size:20px;
+    z-index: 2;
+    font-family: mnjsh;  
+}
+.stone{
+    position: absolute;
+    width:56px;
+    height:56px;
+    z-index: 1;
+}
+.stone_0{
+    left: -6px;
+    top: 8px;
+}
+.stone_1{
+    left: 24px;
+    top: 141px;
+}
+.stone_2{
+    left: 65px;
+    top: 284px;
+}
+.stone_3{
+    left: 170px;
+    top: 188px;
+}
+.stone_4{
+    left: 282px;
+    top: 285px;
+}
+.stone_5{
+    left: 329px;
+    top: 153px;
+}
+.stone_6{
+    left: 149px;
+    top: 38px;
+}
+.stone_7{
+    left: 324px;
+    top: -5px;
+}
+
+.line_0{
+    top: 100px;
+    left: -27px;
+    transform: rotate(79deg);
+    width: 132px;
+}
+.line_1{
+    top: 239px;
+    left: 7px;
+    transform: rotate(74deg);
+    width: 132px;
+}
+.line_2{
+    top: 264px;
+    left: 76px;
+    transform: rotate(137deg);
+    width: 132px;
+}
+.line_3{
+    top: 260px;
+    left: 189px;
+    transform: rotate(41deg);
+    width: 132px;
+}
+.line_4{
+    top: 239px;
+    left: 270px;
+    transform: rotate(110deg);
+    width: 132px;
+}
+.line_5{
+    top: 120px;
+    left: 168px;
+    transform: rotate(33deg);
+    width: 210px;
+}
+.line_6{
+    top: 39px;
+    left: 185px;
+    transform: rotate(-14deg);
+    width: 167px;
+}
+
+
+.lights{
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    background-image: url(app_c/forge/images/lights.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.light_line{
+    position: absolute;
+    height: 13px;
+    background-image: url(app_c/forge/images/lights_line.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.soul_select{
+    position: absolute;
+    width: 49px;
+    height: 49px;
+    background-image: url(app_c/forge/images/soul_select.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.select_halo{
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    background-image: url(app_c/forge/images/select_halo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.stars_attr_bg{
+    position: absolute;
+    width: 96px;
+    height: 27px;
+    background-image: url(app_c/forge/images/stars_attr_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+

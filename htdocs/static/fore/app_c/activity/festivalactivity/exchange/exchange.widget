@@ -1,0 +1,7 @@
+{
+    "tpl":"./exchange.tpl",
+    "cfg":"./exchange.cfg",
+    "css":"../festivalactivity.wcss",
+    "forelet":"../festivalactivity.ts",
+    "js":"../festivalactivity.ts"
+}

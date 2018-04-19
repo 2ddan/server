@@ -1,0 +1,5 @@
+{
+    "tpl":"./number.tpl",
+    "css":"./btn.wcss",
+    "js":"pi/ui/tip.ts"
+}

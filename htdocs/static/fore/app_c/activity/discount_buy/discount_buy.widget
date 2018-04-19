@@ -1,0 +1,6 @@
+{
+    "tpl":"./discount_buy.tpl",
+    "forelet":"../activity.ts",
+     "js":"../activity.ts",
+     "css":"./discount_buy.wcss"
+}

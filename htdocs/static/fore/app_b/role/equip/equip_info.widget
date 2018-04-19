@@ -1,0 +1,6 @@
+{
+    "tpl":"./equip_info.tpl",
+    "js":"./equip.ts",
+    "cfg":"./equip_info.cfg",
+    "forelet":"./equip.ts"
+}

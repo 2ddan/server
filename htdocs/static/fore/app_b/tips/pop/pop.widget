@@ -1,0 +1,7 @@
+{
+    "tpl":"./pop.tpl",
+    "cfg":"./pop.cfg",
+    "js":"./pop.ts",
+    "forelet":"./pop.ts",
+    "css":"./pop.wcss"
+}

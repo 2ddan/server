@@ -1,0 +1,195 @@
+
+.pick_box {
+    width: 200px;
+    display: inline-block;
+    background: #fff;
+    position: absolute;
+    /* box-shadow: #aaa 0px 1px 2px 1px; */
+}
+/* 颜色面板 */
+.color_box {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 0;
+}
+.color_point {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-left: -6px;
+    margin-top: -6px;
+}
+
+/* 滑动选择区 */
+.bar {
+    width: 200px;
+    height: 50px;
+    position: relative;
+}
+.perview {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: #aaa 0px 1px 2px 1px;
+    overflow: hidden;
+    background-image:url(./images/opacity.jpg);
+}
+.hue_bar {
+    width: 130px;
+    height: 10px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border-radius: 2px;
+    background: linear-gradient(to right, hsla(0, 100%, 50%, 1), hsla(60, 100%, 50%, 1), hsla(120, 100%, 50%, 1), hsla(180, 100%, 50%, 1), hsla(240, 100%, 50%, 1), hsla(300, 100%, 50%, 1), hsla(360, 100%, 50%, 1));
+}
+
+.hue_point {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -2px;
+    left: 100%;
+    border-radius: 50%;
+    background: #fff;
+    margin-left: -7px;
+    box-shadow: #aaa 0px 1px 2px 1px;
+}
+
+.opacity_bar {
+    width: 130px;
+    height: 10px;
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    border-radius: 2px;
+    background: linear-gradient(to right, hsla(0, 0%, 50%, 0), hsla(0, 0%, 50%, 1)), url(./images/opacity.jpg);
+}
+.opacity_point {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -2px;
+    left: 130px;
+    border-radius: 50%;
+    background: #fff;
+    margin-left: -7px;
+    box-shadow: #aaa 0px 1px 2px 1px;
+}
+
+/* 值预览曲 */
+.value_box {
+    width: 200px;
+    height: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.value_rgba,.value_hex {
+    width: 180px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+.rgba_span{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    padding: 0 3px;
+}
+.rgba_input{
+    border: 1px solid #ccc;
+    outline: none;
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    
+}
+
+.hex_span{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    left: 10px;
+}
+.hex_input{
+    border: 1px solid #ccc;
+    outline: none;
+    width: 110px;
+    height: 16px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    right: 15px;
+}
+
+.change_type {
+    width: 12px;
+    height: 16px;
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    cursor: pointer;
+}
+.top{
+    border: 6px solid transparent;
+    border-top-color: #000;
+    position: absolute;
+    top: 9px;
+}
+.bot{
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+    position: absolute;
+    top: -5px;
+}
+
+/* 历史纪录 */
+.history {
+    border-top: 1px solid #ccc;
+    width: 190px;
+    min-height: 40px;
+    position: relative;
+    padding: 5px;
+}
+
+.his_pick {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: #ccc;
+    margin: 4px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.add {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin: 4px;
+    display: inline-block;
+    cursor: pointer;
+    background-image: url(./images/add.jpg)
+}

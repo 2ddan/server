@@ -1,0 +1,7 @@
+{
+    "tpl":"./help_tip.tpl",
+    "cfg":"./help_tip.cfg",
+    "css":"./help_tip.wcss",
+    "js":"./help_tip.ts",
+    "forelet":"./help_tip.ts"
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./change.tpl",
+    "js":"./change.ts",
+    "forelet":"./change.ts",
+    "cfg":"./change.cfg",
+    "css":"./change.wcss"
+}

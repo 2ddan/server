@@ -1,0 +1,6 @@
+{
+    "type":"prefab",
+    "tpl":"yingzi",
+    "res":["DfrHPKoi1F3as85e1t6QgL.geo","255a3HGzcN6nD5L4xxpVLU.png"],
+    "visible":{{it.visible? it.visible:false }}
+}

@@ -1,0 +1,6 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"./checkin.ts",
+    "forelet":"./checkin.ts",
+    "css":"../activity.wcss"
+}

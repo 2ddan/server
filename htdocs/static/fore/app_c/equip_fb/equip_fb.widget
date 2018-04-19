@@ -1,0 +1,7 @@
+{
+    "tpl":"./equip_fb.tpl",
+    "css":"./equip_fb.wcss",
+    "js":"./equip_fb.ts",
+    "forelet":"./equip_fb.ts",
+    "cfg":"./equip_fb.cfg"
+}

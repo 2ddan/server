@@ -1,0 +1,6 @@
+{
+    "tpl":"./fb_star.tpl",
+    "css":"./fb_star.wcss",
+    "js":"./fb_star.ts",
+    "forelet":"./fb_star.ts"
+}

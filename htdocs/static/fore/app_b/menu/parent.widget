@@ -1,0 +1,6 @@
+{
+    "tpl":"./parent.tpl",
+    "js":"./menu.ts",
+    "css":"./menu.wcss",
+    "forelet":"./menu.ts"
+}

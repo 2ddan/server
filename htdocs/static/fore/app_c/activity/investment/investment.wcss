@@ -1,0 +1,18 @@
+.bg_1 {
+    position: absolute;
+    width: 540px;
+    height: 360px;
+    background: url(./images/bg_01.png) no-repeat;
+    top: -170px;
+}
+
+.bg_container {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 4px;
+    right: 20px;
+    text-align: center;
+    color: rgb(253, 237, 215);
+    font-size: 15px;
+}

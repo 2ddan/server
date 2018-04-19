@@ -1,0 +1,7 @@
+{
+    "tpl":"./detail.tpl",
+    "css":"./detail.wcss",
+    "js":"../gest.ts",
+    "forelet":"../gest.ts",
+    "cfg":"./detail.cfg"
+}

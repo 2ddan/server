@@ -1,0 +1,6 @@
+{
+    "tpl":"./main.tpl",
+    "js":"../forge.ts",
+    "forelet":"../forge.ts",
+    "cfg":"./main.cfg"
+}

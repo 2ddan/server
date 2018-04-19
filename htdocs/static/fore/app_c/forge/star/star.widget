@@ -1,0 +1,6 @@
+{
+    "tpl":"./star.tpl",
+    "js":"./star.ts",
+    "forelet":"./star.ts",
+    "css":"../forge.wcss"
+}

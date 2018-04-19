@@ -1,0 +1,7 @@
+{
+    "tpl":"./box.tpl",
+    "css":"./box.wcss",
+    "js":"../money_tree.ts",
+    "forelet":"../money_tree.ts",
+    "cfg":"./box.cfg"
+}

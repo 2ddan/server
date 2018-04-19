@@ -1,0 +1,6 @@
+{
+    "tpl":"./liveness.tpl",
+    "css":"./liveness.wcss",
+    "js":"./liveness.ts",
+    "forelet":"./liveness.ts"
+}

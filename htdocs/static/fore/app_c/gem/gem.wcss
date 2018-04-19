@@ -1,0 +1,500 @@
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 540px;
+    height: 106px;
+}
+.5 {
+    position: absolute;
+    left: -23px;
+    top: -14px;
+    z-index: 1;
+}
+.6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 655px;
+}
+.7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 68px;
+    text-align:center;
+    font-family: mnjsh;
+    text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+    -webkit-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+    -moz-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+}
+.8 {
+    position: absolute;
+    width: 492px;
+    height: 655px;
+    left: 50%;
+    top: 105px;
+    margin-left: -246px;
+}
+.9 {
+    position: absolute;
+    width: 482px;
+    height: 564px;
+    top: 73px;
+    left:50%;
+    margin-left:-241px;
+    background-image:url(./images/gem_bg.png);
+    background-size:100% 100%;   
+}
+.10 {
+    position: relative;
+    width: 100%;
+    height: 136px;
+    display: inline-block;
+    margin-bottom: 9px;
+}
+/* .11 {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 478px;
+    height: 110px;
+} */
+.12 {
+    position: absolute;
+    width: 104%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.13{
+    position: absolute;
+    left: 105px;
+    top: 84px;
+    width:100px;
+    text-align:center;
+    overflow: hidden;
+}
+.14{
+    position: absolute;
+    left: 48px;
+    top: 59px;
+    transform: scale(1.1);
+}
+
+
+.15 {
+    position: absolute;
+    left: 93px;
+    top: 4px;
+    height: 106px;
+    width: 3px;
+}
+.16 {
+    position: absolute;
+    left: 113px;
+    top: 6px;
+    width: 82px;
+    height: 82px;
+    line-height: 9px;
+}
+.17 {
+    position: absolute;
+    color: #ffd8a6;
+    font-size: 22px;
+    left: 212px;
+    top: 37px;
+    width:100px;
+    text-align:center;
+}
+.18 {
+    position: absolute;
+    font-size: 16px;
+    left: 311px;
+    top: 30px;
+    overflow:hidden;
+    width: 180px;
+    white-space: nowrap;
+    bottom: 20px;
+    height:55px;
+    color:#fff;
+}
+.19 {
+    font-size: 18px;
+    color:#e46d33;
+    line-height: 37px;
+}
+.20 {
+    font-size: 20px;
+    color:#ffd8a6;
+    line-height: 34px;
+    margin-top: -6px;
+}
+.21 {
+    position: absolute;
+    width: 492px;
+    left: 50%;
+    top: 773px;
+    margin-left: -246px;
+}
+.22{
+	position: absolute;
+    left: 0;
+    top:0;
+    width:80px;
+    height:80px;
+}
+.23{
+	position: absolute;
+    left: 10px;
+    top: 54px;
+}
+.24{
+	position: absolute;
+    left: 0px;
+    bottom: -7px;
+    width: 100%;
+    height: 25px;
+    text-align:center;
+    font-family: mnjsh;
+    font-size: 20px;
+    color:#35e04d;
+    text-shadow:#180903 1px 0 0,#180903 0 1px 0,#180903 -1px 0 0,#180903 0 -1px 0;
+    -webkit-text-shadow:#180903 1px 0 0,#180903 0 1px 0,#180903 -1px 0 0,#180903 0 -1px 0;
+    -moz-text-shadow:#180903 1px 0 0,#180903 0 1px 0,#180903 -1px 0 0,#180903 0 -1px 0;
+}
+.25{
+	position: absolute;
+    left: 10px;
+    top:46px;
+    width:456px;
+    height:438px;
+}
+.26{
+	position: absolute;
+    left: 0px;
+    top:0;
+}
+.27{
+	position: absolute;
+    left: 50%;
+    top:78px;
+    background-image:url(./images/score_bg.png);
+    width:auto;
+    height:31px;
+    line-height: 41px;
+    text-align: center;
+    padding: 0 8px;
+    background-size: 100% 100%;
+    transform: translate(-49%);
+}
+.28{
+    width: 80px;
+    height: 74px;
+    position: absolute;
+    z-index: 1;
+}
+
+/* 领奖 */
+.29 {
+    position: absolute;
+    left: 50%;
+    margin-left:-90px;
+    width: 100px;
+    height: 30px;
+    top: 2px;
+}
+
+.30 {
+    position: absolute;
+    width: 540px;
+    height: 725px;
+    top: 50%;
+    margin-top: -362px;
+    left:50%;
+    margin-left:-270px;
+}
+.31 {
+    position: absolute;
+    left: 13px;
+    top: 26px;
+}
+.32 {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width:100%;
+}
+.33 {
+    position: absolute;
+    left: 451px;
+    top: -9px;
+}
+.34 {
+    position: absolute;
+    width: 94%;
+    height: 50px;
+    left: 3%;
+    top: 0px;
+    z-index: 2;
+}
+.35 {
+    position: absolute;
+    left: 3%;
+	top: 690px;
+	width: 94%;
+}
+.36 {
+	width: 450px;
+    height: 674px;
+	position: absolute;
+	top: 27px;
+    left: 45px;
+	opacity: .95;
+	overflow:hidden;
+}
+.37 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.38 {
+    color:#fde7ca;
+    font-size:20px;
+    font-family: mnjsh;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    position: absolute;
+    top:15px;
+    right:30px;
+}
+.39 {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height:620px;
+    top:46px;
+    left:0;
+    padding: 0 13px;
+}
+.40 {
+    position: relative;
+    width: 424px;
+    height:112px;
+}
+/* .41 {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+} */
+.42 {
+    position: absolute;
+    top:15px;
+    left:8px;
+}
+.43 {
+    position: absolute;
+    top:21px;
+    left:98px;
+}
+.44{
+    position: absolute;
+    top:46px;
+    left:99px;
+    color:#fde7ca;
+    font-size:18px;
+}
+.45{
+    position: absolute;
+    top:34px;
+    right:10px;
+}
+.46{
+    position: absolute;
+    top:542px;
+    left:18px;
+    color:#fde7ca;
+    font-size:20px;
+    font-family: mnjsh;
+    color:#ffd8a6;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    line-height: 28px;
+    width: 450px;
+    height: 148px;
+}
+.47{
+    font-family: "黑体";
+}
+
+.48{
+    width:258px;
+    height:24px;
+    position: absolute;
+    left:50%;
+    top:702px;
+    line-height: 27px;
+    color:#fde7ca;    
+    margin-left:-113px;
+    font-size:18px;
+    font-family: mnjsh;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+}
+
+/* 宝石连线 */
+.49{
+    width: 390px;
+    height: 375px;
+    position: absolute;
+    left: 44px;
+    top: 81px;
+}
+.50{
+    width:63px;
+    height:62px;
+    position: absolute;
+    background-image:url(./images/gem_hole.png);
+    background-position:center center;
+    background-repeat:no-repeat;
+    z-index: 1;
+}
+.51{
+    width:81px;
+    height:66px;
+    position: absolute;
+    left: -10px;
+    top: -3px;
+}
+
+.52{
+    height: 16px;    
+    position: absolute;
+    background-repeat: repeat-x;
+    transform-origin: center center;
+}
+
+.53{
+    transform: rotate(40deg);
+    width: 500px;
+    left: -58px;
+    top: 181px;
+}
+.54{
+    transform: rotate(-40deg);
+    width: 320px;
+    left: -17px;
+    top: 133px;
+}
+.55{
+    transform: rotate(40deg);
+    width: 320px;
+    left: 79px;
+    top: 128px;
+}
+.56{
+    transform: rotate(-40deg);
+    width: 500px;
+    left: -58px;
+    top: 181px;
+}
+.57{
+    transform: rotate(40deg);
+    width: 320px;
+    left: 0px;
+    top: 248px;
+}
+.58{
+    transform: rotate(-40deg);
+    width: 320px;
+    left: 77px;
+    top: 234px;
+}
+/* 石头 */
+
+.59{
+    left: 49px;
+    top:67px;
+}
+.60{
+    left: 161px;
+    top: 67px;
+}
+.61{
+    left: 270px;
+    top: 67px;
+}
+.62{
+    left: 103px;
+    top:111px;
+}
+.63{
+    left: 215px;
+    top: 111px;
+}
+.64{
+    left: 49px;
+    top: 159px;
+}
+.65{
+    left: 160px;
+    top:159px;
+}
+.66{
+    left: 270px;
+    top:159px;
+}
+.67{
+    left: 103px;
+    top: 204px;
+}
+.68{
+    left: 215px;
+    top: 204px;
+}
+.69{
+    left: 49px;
+    top:249px;
+}
+.70{
+    left: 160px;
+    top:249px;
+}
+.71{
+    left: 270px;
+    top:249px;
+}
+
+/* 线 */
+.72{
+    background-image: url(./images/line_dark.png);    
+}
+.73{
+    background-image: url(./images/line_light.png);    
+}
+
+
+
+.74{
+    width: 100px;
+    height: 20px;
+    font-size: 45px;
+    text-align: center;
+    color: rgb(174, 140, 100);
+    text-shadow: 1px 0px 0px rgb(6, 8, 54), -1px 0px 0px rgb(6, 8, 54), 0px 1px 0px rgb(6, 8, 54), 0px -1px 0px rgb(6, 8, 54);
+    position: absolute;
+    left: -3px;
+    top: 47px;
+    line-height: 20px;
+    font-family:mnjsh;
+}

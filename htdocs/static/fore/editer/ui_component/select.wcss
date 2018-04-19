@@ -1,0 +1,47 @@
+
+.pointer{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border: 2px solid #178BCA;
+    border-radius: 50%;
+}
+.p0{
+    cursor: nw-resize
+}
+.p1{
+    cursor: ns-resize
+}
+.p2{
+    cursor: ne-resize
+}
+.p3{
+    cursor: ew-resize
+}
+.p4{
+    cursor: ew-resize
+}
+.p5{
+    cursor: sw-resize
+}
+.p6{
+    cursor: ns-resize
+}
+.p7{
+    cursor: se-resize
+}
+
+
+.select{
+    width:0; 
+    height:0;
+    position:absolute;
+    overflow:visible;
+    z-index: 10;
+}
+.border{
+    position:absolute;
+    border: 1px solid #4AB4F1;
+    pointer-events:none;
+}

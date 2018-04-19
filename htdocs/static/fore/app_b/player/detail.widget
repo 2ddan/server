@@ -1,0 +1,7 @@
+{
+    "tpl":"./detail.tpl",
+    "js":"./player.ts",
+    "cfg":"./detail.cfg",
+    "forelet":"./player.ts",
+    "css":"./player.wcss"
+}

@@ -1,0 +1,35 @@
+.bg_1 {
+    width: 494px;
+    height: 487px;
+    position: absolute;
+    left: 50%;
+    margin-left: -247px;
+    top: 0px;
+}
+.element_bg {
+    background-image: url(./images/element_bg.png);
+    background-repeat: no-repeat;
+    width: 106px;
+    height: 106px;
+    position: absolute;
+}
+.element_0 {
+    left: 11px;
+    top: 11px;
+}
+.element_1 {
+    left: 4px;
+    top: 6px;
+}
+.element_2 {
+    left: 50%;
+    top: 50%;
+    margin-left: -45px;
+    margin-top: -45px;
+}
+.element_3 {
+    left: 50%;
+    top: 50%;
+    margin-left: -45px;
+    margin-top: -45px;
+}

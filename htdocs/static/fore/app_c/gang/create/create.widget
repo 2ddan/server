@@ -1,0 +1,7 @@
+{
+    "tpl":"./create.tpl",
+    "css":"./create.wcss",
+    "cfg":"./create.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts"
+}

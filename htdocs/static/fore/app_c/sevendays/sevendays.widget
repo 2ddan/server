@@ -1,0 +1,7 @@
+{
+    "cfg":"./sevendays.cfg",
+    "tpl":"./sevendays.tpl",
+    "js":"./sevendays.ts",
+    "forelet":"./sevendays.ts",
+    "css":"./sevendays.wcss"
+}

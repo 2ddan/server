@@ -1,0 +1,7 @@
+{
+    "tpl":"./line_up.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts",
+    "cfg":"./kill_info.cfg",
+    "css":"./kill_info.wcss"
+}

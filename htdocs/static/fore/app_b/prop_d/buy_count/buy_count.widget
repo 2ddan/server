@@ -1,0 +1,7 @@
+{
+    "tpl":"./buy_count.tpl",
+    "css":"./buy_count.wcss",
+    "cfg":"./buy_count.cfg",
+    "js":"./buy_count.ts",
+    "forelet":"./buy_count.ts"
+}

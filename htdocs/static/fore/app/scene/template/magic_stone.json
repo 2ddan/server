@@ -1,0 +1,18 @@
+{{let mgr = _get("app/scene/scene").exports.mgr}}
+{{let model_stone = mgr.getSceneFile(it.model_stone)}}
+{{if it.scale}}
+    {{let scale = it.scale || 1}}
+    {
+        "type":"node",
+        "transform":{
+            "position":{{it.position}},
+            "scale":{{[scale,scale,scale]}},
+            "rotate":[0,0,0]
+        },
+        "children":[
+            {{model_stone}}
+        ]
+    }
+{{else}}
+{{model_stone}}
+{{end}}

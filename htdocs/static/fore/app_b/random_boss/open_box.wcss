@@ -1,0 +1,42 @@
+.6 {
+    position: absolute;
+    left: 0;
+    top: 348px;
+    width: 100%;
+    height: 100%;
+}
+.7 {
+    position: absolute;
+    left: 0;
+    top: 348px;
+    width: 100%;
+    height: 195px;
+}
+.8 {
+    position: absolute;
+    left: 50%;
+    top: 505px;
+    width:260px;
+    height:23px;
+    margin-left: -130px;
+}
+.10 {
+    position: absolute;
+    left: 50%;
+    top: 470px;
+    margin-left: -52px;
+}
+.11 {
+    position: absolute;
+    left: 237px;
+    top: 390px;
+    width: 66px;
+    height: 62px;
+}
+.12 {
+    position: absolute;
+    left: 232px;
+    top: 383px;
+    width: 73px;
+    height: 74px;
+}

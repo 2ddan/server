@@ -1,0 +1,5 @@
+{
+    "tpl":"./menu_top.tpl",
+    "js":"../menu.ts",
+    "forelet":"../menu.ts"
+}

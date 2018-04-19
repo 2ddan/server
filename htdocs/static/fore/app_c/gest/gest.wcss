@@ -1,0 +1,148 @@
+
+.s3{
+    position: absolute;
+    top:838px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:18px;
+    z-index: 2;
+    color:#ffd8a6;
+    font-family: mnjsh;
+}
+.s4{
+    top: 219px;
+    left: 45px;
+    width: 450px;
+    height: 110px;
+    position: absolute;
+}
+.s5{
+    font-size:20px;
+    text-align:center;
+    color:#ffd8a6;
+    font-family: mnjsh;
+}
+.s6{
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    top: 83px;
+    line-height: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: rgb(222, 215, 152);
+}
+
+
+.s8 {
+    position: absolute;
+    width: 540px;
+    height: 356px;
+    top: 50%;
+    margin-top: -178px;
+    left:50%;
+    margin-left:-270px;
+}
+.s9 {
+    position: absolute;
+    left: 13px;
+    top: 26px;
+}
+.s10 {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width:100%;
+}
+.s11 {
+    position: absolute;
+    left: 451px;
+    top: -9px;
+}
+.s12 {
+    position: absolute;
+    width: 94%;
+    height: 50px;
+    left: 3%;
+    top: 0px;
+    z-index: 2;
+}
+.s13 {
+	width: 450px;
+    height: 310px;
+	position: absolute;
+	top: 25px;
+    left: 45px;
+	opacity: .95;
+	overflow:hidden;
+}
+.s14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.s15 {
+    position: absolute;
+    left: 0px;
+    top: 53px;
+    height: 134px;
+    width: 100%;
+    opacity: .95;
+}
+.s16 {
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    margin-left: -58px;
+}
+.s17 {
+    position: absolute;
+    left: 50%;
+    top: 1px;
+    z-index: 2;
+    font-size: 22px;
+    margin-left: -90px;
+}
+
+.s19{
+    position: absolute;
+    left: 3%;
+	top: 322px;
+	width: 94%;
+}
+.s20{
+	color:#fff;
+	text-align:center;
+    position: absolute;
+    left: 50%;
+	top: 82px;
+	margin-left:-225px;
+	width: 450px;
+	height:100px;
+    line-height:33px;
+    font-size: 18px;
+}
+.s21{
+	color:#fff;
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    z-index: 2;
+}
+
+
+.s22 {
+    position: absolute;
+    top: -14px; 
+    z-index: 4;
+}
+.s23 {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    height: 700px;
+    width: 490px;
+}
+

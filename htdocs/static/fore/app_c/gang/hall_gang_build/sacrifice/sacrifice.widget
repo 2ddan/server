@@ -1,0 +1,7 @@
+{
+    "tpl": "./sacrifice.tpl",
+    "css": "./sacrifice.wcss",
+    "cfg": "./sacrifice.cfg",
+    "js": "../gang_build.ts",
+    "forelet": "../../gang.ts"
+}

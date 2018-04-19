@@ -1,0 +1,7 @@
+{
+    "tpl":"./award_info.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts",
+    "cfg":"./award_info.cfg",
+    "css":"./award_info.wcss"
+}

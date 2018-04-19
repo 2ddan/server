@@ -1,0 +1,5 @@
+{
+    "tpl":"./recharge_single.tpl",
+    "js":"../activity.ts",
+    "forelet":"../activity.ts"
+}

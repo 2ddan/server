@@ -1,0 +1,7 @@
+{
+    "tpl":"./rankShop.tpl",
+    "js":"./rank.ts",
+    "forelet":"./rank.ts",
+    "cfg":"./rankShop.cfg",
+    "css":"./rankShop.wcss"
+}

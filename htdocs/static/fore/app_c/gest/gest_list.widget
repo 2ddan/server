@@ -1,0 +1,5 @@
+{
+    "tpl":"./gest_list.tpl",
+    "js":"./gest.ts",
+    "forelet":"./gest.ts"
+}

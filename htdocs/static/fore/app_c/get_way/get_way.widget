@@ -1,0 +1,7 @@
+{
+    "tpl":"./get_way.tpl",
+    "cfg":"./get_way.cfg",
+    "css":"./get_way.wcss",
+    "js":"./get_way.ts",
+    "forelet":"./get_way.ts"
+}

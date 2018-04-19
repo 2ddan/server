@@ -1,0 +1,4 @@
+{
+    "tpl": "./prop/prop.tpl",
+    "cfg": "./prop/prop.cfg"
+}

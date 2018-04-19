@@ -1,0 +1,7 @@
+{
+    "tpl":"./next_tips.tpl",
+    "cfg":"./next_tips.cfg",
+    "css":"./next_tips.wcss",
+    "js":"./tower.ts",
+    "forelet":"./tower.ts"
+}

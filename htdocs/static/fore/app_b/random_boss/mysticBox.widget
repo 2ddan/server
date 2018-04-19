@@ -1,0 +1,7 @@
+{
+    "tpl":"./mysticBox.tpl",
+    "js":"./mysticBox.ts",
+    "cfg":"./mysticBox.cfg",
+    "css":"./mysticBox.wcss",
+    "forelet":"./mysticBox.ts"
+} 

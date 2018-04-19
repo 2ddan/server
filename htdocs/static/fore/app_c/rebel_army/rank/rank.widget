@@ -1,0 +1,7 @@
+{
+    "tpl":"./rank.tpl",
+    "css":"../rebel_army.wcss",
+    "cfg":"./rank.cfg",
+    "forelet":"../rebel_army.ts",
+    "js":"../rebel_army.ts"
+}

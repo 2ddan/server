@@ -1,0 +1,5 @@
+{
+    "tpl":"./exchange_code.tpl",
+    "js":"./exchange_code.ts",
+    "css":"./exchange_code.wcss"
+}

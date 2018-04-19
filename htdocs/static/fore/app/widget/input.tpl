@@ -1,0 +1,1 @@
+<input placeholder={{it.placeholder || ""}} type={{it.type || "text"}} autocomplete="new-text" on-input="onInput" on-blur="onBlur" on-focus="onFocus" value=""/>

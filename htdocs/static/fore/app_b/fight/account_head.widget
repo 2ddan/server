@@ -1,0 +1,6 @@
+{
+    "tpl":"./account_head.tpl",
+    "css":"./account.wcss",
+    "js":"./fight.ts",
+    "forelet":"./fight.ts"
+}

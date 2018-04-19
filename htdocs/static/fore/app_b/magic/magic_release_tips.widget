@@ -1,0 +1,6 @@
+{
+    "tpl": "./magic_release_tips.tpl",
+    "forelet": "./magic.ts",
+    "css": "./magic.wcss",
+    "cfg": "./magic_release_tips.cfg"
+}

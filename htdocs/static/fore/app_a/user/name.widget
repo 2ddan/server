@@ -1,0 +1,6 @@
+{
+    "tpl":"./name.tpl",
+    "js":"./name.ts",
+    "css":"./main.wcss",
+    "forelet":"./user.ts"
+}

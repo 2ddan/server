@@ -1,0 +1,7 @@
+{
+    "tpl":"./gem.tpl",
+    "js":"./gem.ts",
+    "cfg":"./gem.cfg",
+    "forelet":"./gem.ts",
+    "css":"./gem.wcss"
+} 

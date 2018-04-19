@@ -1,0 +1,109 @@
+.3 {
+    position: relative;
+    width: 456px;
+    height: 109px;
+    left: 16px;
+    top: 0px;
+    margin-bottom: 45px;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.5 {
+    position: absolute;
+    width: 151px;
+    height: 150px;
+    left: -10px;
+    top: -23px;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-image:url(./image/name_bg.png);
+}
+.6 {
+    position: absolute;
+    left: 33px;
+    top: 19px;
+}
+.7 {
+    position: absolute;
+    left: 157px;
+    top: 6px;
+    padding: 0 20px;
+}
+.8 {
+    position: absolute;
+    width: 90px;
+    height: 48px;
+    left:141px;
+    top:53px;
+}
+.9 {
+    position: absolute;
+    right: 10px;
+    min-width:50px;
+    height:28px;
+    top: 70px;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-image:url(app_a/widget/pic_text/images/resource_bar.png);
+    color:#ffd8a6;
+    font-family:mnjsh;
+    font-size:16px;
+    line-height: 28px;
+    padding-left:87px;
+}
+.10 {
+    position: absolute;
+    right: 8px;
+    top: 9px;
+}
+.11 {
+    position: relative;
+    left: 203px;
+    top: 0;
+    margin-bottom:30px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.78 {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    height: 700px;
+    width: 490px;
+}
+
+.79 {
+    position: absolute;
+    width: 490px;
+    height: 680px;
+    left: 25px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 3px;
+}
+.80 {
+    position: absolute;
+    width: 105%;
+    height:  645px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 24px 0;
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./buy.tpl",
+    "css":"./buy.wcss",
+    "cfg":"./buy.cfg",
+    "js":"./buy.ts",
+    "forelet":"./buy.ts"
+}

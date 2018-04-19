@@ -1,0 +1,372 @@
+
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+
+
+
+
+.5 {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    height: 610px;
+    width: 490px;
+}
+
+.6 {
+    position: absolute;
+    width: 490px;
+    height: 608px;
+    left: 25px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding:10px 10px;
+    box-sizing: border-box;
+}
+.7{
+    position: absolute;
+    width: 105%;
+    height:  588px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.8{
+    position: absolute;
+    width: 100%;
+    height:  195px;
+    background-image:url(./images/top_bg.png);
+}
+.9{
+    position: absolute;
+    top:69px;
+    left:33px;
+}
+.10{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 44px;
+    height: 46px;
+    font-size: 20px;
+    font-family: mnjsh;
+    line-height: 22px;
+    color:#684815;
+}
+.11{
+    position: absolute;
+    top: 90px;
+    min-width: 295px;
+    height: 80px;
+    font-size: 20px;
+    font-family: mnjsh;
+    line-height: 22px;
+    color:#f3d6af;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+.12{
+    position: absolute;
+    top: 0;
+    height: 31px;
+    min-width: 295px;
+    width:auto;
+    background-image:url(./images/bg_1.png);
+    background-size:100% 100%;
+    line-height: 35px;    
+}
+.13{
+    vertical-align: middle; 
+}
+.14{
+    position: absolute;
+    top: 46px;
+    left: 6px;
+}
+.15{
+    position: relative;
+    height: 160px;
+    width: 142px;
+    background-image:url(./images/bg.png);
+    background-size:100% 100%;
+    display: inline-block;
+    margin: 5px 7px;
+}
+.16{
+    position: absolute;
+    height: 22px;
+    width: 88px;
+    left:27px;
+    top:8px;
+    font-size:20px;
+    text-align:center;
+    background-image:url(./images/title_bg.png);
+    background-size:100% 100%;
+    color:#ffd8a6;
+    line-height: 23px;
+}
+.17{
+    position: absolute;
+    height: 24px;
+    width: 116px;
+    left:13px;
+    bottom:7px;
+    font-size:20px;
+    text-align:center;
+    background-image:url(./images/bottom_bg.png);
+    background-size:100% 100%;
+    color:#fff;
+    line-height: 24px;
+    
+}
+.18{
+    position: absolute;
+    height: 114px;
+    width: 117px;;
+    left:13px;
+    top:20px;
+    background-image:url(./images/item_bg.png);
+    background-size:100% 100%;
+}
+.19{
+    position: absolute;
+    height: 55px;
+    width: 55px;;
+    right:0;
+    bottom:10px;
+    font-size:18px;
+    font-family:mnjsh;
+    background-image:url(./images/award.png);
+    background-size:100% 100%;
+    color:#ffd8a6;
+    text-align: center;
+    line-height: 35px;
+}
+.20{
+    position: absolute;
+    height: 86px;
+    width: 32px;;
+    right:-4px;
+    top:-2px;
+    font-size:16px;
+    font-family:mnjsh;
+    background-image:url(./images/detail.png);
+    background-size:100% 100%;
+    color:#ffd8a6;
+    padding: 2px 7px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.21{
+    position: absolute;
+    left: 9px;
+    top: 30px;
+    height: 82px;
+    width: 117px;
+    color:#ffd8a6;
+    font-size:16px;
+    font-family:mnjsh;
+    line-height: 20px;
+    white-space: nowrap;
+    background:none;
+}
+.22{
+    color:#7feb4a;
+}
+
+.s8 {
+    position: absolute;
+    width: 540px;
+    height: 356px;
+    top: 50%;
+    margin-top: -178px;
+    left:50%;
+    margin-left:-270px;
+}
+.s9 {
+    position: absolute;
+    left: 13px;
+    top: 26px;
+}
+.s10 {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width:100%;
+}
+.s11 {
+    position: absolute;
+    left: 451px;
+    top: -9px;
+}
+.s12 {
+    position: absolute;
+    width: 94%;
+    height: 50px;
+    left: 3%;
+    top: 0px;
+    z-index: 2;
+}
+.s13 {
+	width: 450px;
+    height: 261px;
+	position: absolute;
+	top: 25px;
+    left: 45px;
+    height:645px;
+	overflow:hidden;
+}
+.s14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.s15 {
+    position: absolute;
+    width: 450px;
+    height: 140px;
+    left:0;
+    top:18px;
+    background-image:url(./images/vip_top_bg.png);
+    background-size:100% 100%;
+}
+.s16 {
+    position: absolute;
+    width: 390px;
+    height: 40px;
+    left:30px;
+    top:32px;
+}
+.s17 {
+    position: absolute;
+    left: 50%;
+    top: 1px;
+    z-index: 2;
+    font-size: 22px;
+    margin-left: -90px;
+}
+.s18 {
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    left:0;
+    top:70px;
+    text-align: center;
+    font-size: 20px;
+    font-family: mnjsh;
+    color: #f3d6af;
+    line-height: 35px;  
+}
+.s19{
+    width: 192px;
+    height: 34px;   
+    line-height: 35px; 
+    background-image:url(./images/vip_title_bg.png);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 17px;  
+}
+.s20{
+    position: absolute;
+    width: 320px;
+    height: 199px;
+    left:94px;
+    top:60px;
+    text-align: left;
+    font-size: 18px;
+    font-family: mnjsh;
+    color: #b27d5c;
+    line-height: 26px; 
+    overflow: hidden; 
+}
+.s21{
+	color:#fff;
+    position: absolute;
+    right: 10px;
+    bottom: 3px;
+    z-index: 2;
+}
+.s22{
+    position: absolute;
+    top: 413px;
+    width: 100%;
+    height: 230px;
+    background-image:url(./images/power_bg.png);
+    background-size: 100% 100%;
+}
+.s23{
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.s24{
+    position:absolute;
+    top:50%;
+    left:15px;
+    transform:translateY(-50%) rotate(180deg) scale(0.85);
+    z-index: 4;
+    width: 40px;
+}
+.s25{
+    position:absolute;
+    top:50%;
+    right:15px;
+    transform:translateY(-50%) scale(0.85);
+    z-index: 4; 
+    width: 40px;   
+}
+
+.s34{
+    position: absolute;
+    top: 150px;
+    height: 259px;
+    left:0;
+    width:100%;
+}
+.s36{
+    position: absolute;
+    bottom: -1px;
+    left: 4%;
+    width: 92%;
+    height: 4px;
+}
+.s38{
+    position: absolute;
+    bottom: 34px;
+    left:170px;
+}
+.s41{
+    position: absolute;
+    top: 68px;
+    right:0;    
+    height: 87px;
+    width:341px;
+    overflow: hidden;
+    background-image:url(./images/googs_bg.png);
+    text-align: center;
+    color: #fff
+    
+}
+.s42{
+    position: absolute;
+    top: 0px;
+    left: 55px;
+    bottom: 0px;
+    height: 110px;
+    width: 250px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+}

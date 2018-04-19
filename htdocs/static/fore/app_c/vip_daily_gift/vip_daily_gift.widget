@@ -1,0 +1,5 @@
+{
+    "tpl":"./vip_daily_gift.tpl",
+    "js":"./vip_daily_gift.ts",
+    "forelet":"./vip_daily_gift.ts"
+}

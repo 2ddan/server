@@ -1,0 +1,7 @@
+{
+    "tpl":"./playermission.tpl",
+    "js":"./playermission.ts",
+    "forelet":"./playermission.ts",
+    "css":"./playermission.wcss",
+    "cfg":"./rankingaward.cfg"
+}

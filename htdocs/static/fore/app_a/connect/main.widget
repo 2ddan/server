@@ -1,0 +1,7 @@
+{
+    "tpl":"./main.tpl",
+    "js":"./main.ts",
+    "cfg":"./main.cfg",
+    "css":"./main.wcss",
+    "forelet":"pi/ui/con_mgr.ts"
+}

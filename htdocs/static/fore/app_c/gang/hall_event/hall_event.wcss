@@ -1,0 +1,43 @@
+
+.63 {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+.78 {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    height: 664px;
+    width: 490px;
+}
+.79 {
+    position: absolute;
+    width: 490px;
+    height: 640px;
+    left: 25px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.80 {
+    position: absolute;
+    width: 105%;
+    height:  645px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.81{
+    position:absolute;
+    left: 31px;
+    top:28px;
+    color: #ffe8bc;
+    font-size:19px;
+    font-family:mnjsh;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+}

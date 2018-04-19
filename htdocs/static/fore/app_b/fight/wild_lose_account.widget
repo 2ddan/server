@@ -1,0 +1,7 @@
+{
+    "tpl":"./wild_lose_account.tpl",
+    "css":"./account.wcss",
+    "js":"./fight.ts",
+    "forelet":"./fight.ts",
+    "cfg":"./account.cfg"
+}

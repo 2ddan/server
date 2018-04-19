@@ -1,0 +1,7 @@
+{
+    "tpl":"./festivalactivity.tpl",
+    "css":"./festivalactivity.wcss",
+    "js":"./festivalactivity.ts",
+    "forelet":"./festivalactivity.ts",
+    "cfg":"./festivalactivity.cfg"
+}

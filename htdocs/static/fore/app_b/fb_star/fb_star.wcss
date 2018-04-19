@@ -1,0 +1,27 @@
+.s1{
+    position:absolute;
+    left:0;
+    top: 0;
+    width: 170px;
+    font-family: mnjsh;
+    font-size: 18px;
+    color: #fde7ca;
+    line-height: 20px;
+    width:189px;
+    height:76px;
+    padding-left: 8px;
+    padding-top: 7px;
+    box-sizing: border-box;
+}
+.s2{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 1px;
+}
+.s3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}

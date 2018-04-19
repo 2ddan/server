@@ -1,0 +1,6 @@
+{
+    "tpl":"./achieve.tpl",
+    "css":"./achieve.wcss",
+    "js":"./achieve.ts",
+    "forelet":"./achieve.ts"
+}

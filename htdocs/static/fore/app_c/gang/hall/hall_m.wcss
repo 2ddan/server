@@ -1,0 +1,40 @@
+.setting_icon {
+	position:absolute;
+	background: url(../images/setting_icon.png);
+	background-size: 100% 100%;;
+	width:46px;
+	height: 49px;	
+}
+
+.scale8 {
+    transform: scale(0.8,0.8);
+    -webkit-transform: scale(0.8,0.8);
+    -moz-transform: scale(0.8,0.8);
+}
+
+
+.gang_bottom_bg{
+    width:389px;
+    height:61px;
+    background-image: url(../images/gang_bottom_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.gang_level_bg{
+    width:54px;
+    height:17px;
+    background-image: url(../images/gang_level_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.is_apply{
+	background: url(../images/is_apply.png) no-repeat;
+	width: 66px;
+	height: 38px;
+	background-size: 100% 100%;
+	position: absolute;	
+}

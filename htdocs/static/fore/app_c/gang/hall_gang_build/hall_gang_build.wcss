@@ -1,0 +1,19 @@
+
+.78 {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    height: 664px;
+    width: 490px;
+}
+.79 {
+    position: absolute;
+    width: 490px;
+    height: 640px;
+    left: 25px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,17 @@
+.magic_module_bg{
+    width: 341px;
+    height: 187px;;
+    background-image: url(./image/magic_module_bg.png);
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.target{
+    width: 324px;
+    height: 125px;;
+    background-image: url(./image/target.png);
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

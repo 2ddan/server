@@ -1,0 +1,1517 @@
+
+{
+  "name" : "eff_treasure_attack1_2",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.00000047683716,
+      1.00000047683716
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "eff_treasure_attack1_2",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          1.57079637050629,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "eff_treasure_attack1_2" : "DrP99TnQMGPz47bDoz2T3E.ai"
+        },
+        "playAnim"   : {{it.playAnim?it.playAnim:null}}
+      },
+      "children"  : [
+        {
+          "name" : "aa001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "children"  : [
+            {
+              "name" : "a001",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  -1.39999997615814
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  1.57079648971558,
+                  1.57079637050629
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "mod_eff_tuowei001",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      10.4300003051758
+                    ],
+                    "scale"    : [
+                      12.1410388946533,
+                      2.70852541923523,
+                      5.84641933441162
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "HCpUpG5ohWHdvmjLqx5VeJ.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei002",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      2.384186927884E-07,
+                      -2.38418579101563E-07,
+                      10.4300060272217
+                    ],
+                    "scale"    : [
+                      9.13143539428711,
+                      2.70853233337402,
+                      5.84642601013184
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      0.0
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "3VtczkbJzeFomp5DpQS2AY.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei003",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      3.57627914127079E-06,
+                      -3.814697265625E-06,
+                      10.4300060272217
+                    ],
+                    "scale"    : [
+                      6.06269645690918,
+                      2.70853233337402,
+                      5.84642601013184
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "HHkXVzddzc7Ka7pkFUiPjM.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "j001",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      -8.0
+                    ],
+                    "scale"    : [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "children"  : [
+                    {
+                      "name" : "Plane",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          -0.119999997317791,
+                          -1.2150000333786
+                        ],
+                        "scale"    : [
+                          0.842991054058075,
+                          0.752659618854523,
+                          0.412254393100739
+                        ],
+                        "rotate"   : [
+                          -6.21724936141735E-15,
+                          1.57079637050629,
+                          2.04529264635767E-08
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "7RZ39wDgfsaH6Hpq9RZRzL.png"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 201,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name" : "mod_eff_jian001",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          0.0,
+                          -3.40000009536743
+                        ],
+                        "scale"    : [
+                          3.67987155914307,
+                          4.22296190261841,
+                          3.67987704277039
+                        ],
+                        "rotate"   : [
+                          0.0,
+                          1.57079637050629,
+                          4.71238899230957
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "K4wvyeykD1scnyBLguR5PC.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "DuCFK9h6uqEZ2iAkr2FRsG.jpg"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 205,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name" : "a005",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  -1.40000128746033
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "mod_eff_tuowei004",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      2.29999995231628,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      3.1098108291626,
+                      3.10981106758118,
+                      4.64312124252319
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      4.71238899230957,
+                      0.0
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "WhLAWLBdeQ1x3iegryhAVz.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "MrQ5xMwwkQDBB22y8YzPzr.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei005",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.920000016689301,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      3.10981059074402,
+                      3.10981106758118,
+                      4.64312934875488
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      4.71238899230957,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "WhLAWLBdeQ1x3iegryhAVz.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "WB6WFo78ngHUEUFpZnaPMZ.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name" : "aa002",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              1.57079637050629
+            ]
+          },
+          "children"  : [
+            {
+              "name" : "a002",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  -1.39999997615814
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  1.57079648971558,
+                  1.57079637050629
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "mod_eff_tuowei001",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      10.4300003051758
+                    ],
+                    "scale"    : [
+                      12.1410388946533,
+                      2.70852541923523,
+                      5.84641933441162
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "HCpUpG5ohWHdvmjLqx5VeJ.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei002",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      2.384186927884E-07,
+                      -2.38418579101563E-07,
+                      10.4300060272217
+                    ],
+                    "scale"    : [
+                      9.13143539428711,
+                      2.70853233337402,
+                      5.84642601013184
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      0.0
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "3VtczkbJzeFomp5DpQS2AY.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei003",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      3.57627914127079E-06,
+                      -3.814697265625E-06,
+                      10.4300060272217
+                    ],
+                    "scale"    : [
+                      6.06269645690918,
+                      2.70853233337402,
+                      5.84642601013184
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "DB2GHdQuNVzQi6TMLCjqNQ.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "HHkXVzddzc7Ka7pkFUiPjM.png"
+                          }
+                        },
+                        "vertexColors" : 2,
+                        "transparent"  : true,
+                        "blendSrc"     : 204,
+                        "blendDst"     : 201,
+                        "side"         : 2,
+                        "tintColor"    : 16777215,
+                        "tintOpacity"  : 0.0,
+                        "layer"        : 3000,
+                        "blending"     : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "j002",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      -8.0
+                    ],
+                    "scale"    : [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "children"  : [
+                    {
+                      "name" : "Plane",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          -0.119999997317791,
+                          -1.2150000333786
+                        ],
+                        "scale"    : [
+                          0.842991054058075,
+                          0.752659618854523,
+                          0.412254393100739
+                        ],
+                        "rotate"   : [
+                          -6.21724936141735E-15,
+                          1.57079637050629,
+                          2.04529264635767E-08
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "7RZ39wDgfsaH6Hpq9RZRzL.png"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 201,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name" : "mod_eff_jian001",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          0.0,
+                          -3.40000009536743
+                        ],
+                        "scale"    : [
+                          3.67987155914307,
+                          4.22296190261841,
+                          3.67987704277039
+                        ],
+                        "rotate"   : [
+                          0.0,
+                          1.57079637050629,
+                          4.71238899230957
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "K4wvyeykD1scnyBLguR5PC.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "DuCFK9h6uqEZ2iAkr2FRsG.jpg"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 205,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name" : "a006",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  -1.40000116825104
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "mod_eff_tuowei004",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      2.29999995231628,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      3.1098108291626,
+                      3.10981106758118,
+                      4.64312124252319
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      4.71238899230957,
+                      0.0
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "WhLAWLBdeQ1x3iegryhAVz.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "MrQ5xMwwkQDBB22y8YzPzr.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "mod_eff_tuowei005",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.920000016689301,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      3.10981059074402,
+                      3.10981106758118,
+                      4.64312934875488
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      4.71238899230957,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "WhLAWLBdeQ1x3iegryhAVz.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "WB6WFo78ngHUEUFpZnaPMZ.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name" : "aa004",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              0.498710155487061,
+              0.498710215091705,
+              0.498710215091705
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "children"  : [
+            {
+              "name" : "a003",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "dl003",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0799999982118607,
+                      -0.159999996423721,
+                      0.0299999993294477
+                    ],
+                    "scale"    : [
+                      0.835954666137695,
+                      0.835954129695892,
+                      0.835954785346985
+                    ],
+                    "rotate"   : [
+                      5.78005313873291,
+                      4.71238899230957,
+                      1.57079648971558
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "PNR71fWXEZJKXsEfPi3M7p.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 205,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "dl004",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      -0.25,
+                      0.140000000596046,
+                      0.0299999993294477
+                    ],
+                    "scale"    : [
+                      1.17439436912537,
+                      1.17439365386963,
+                      1.17439460754395
+                    ],
+                    "rotate"   : [
+                      0.919440984725952,
+                      1.570796251297,
+                      4.71238899230957
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "7dBfPDdszUUBrF6ULSnF5o.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "g001",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      -0.0700000002980232,
+                      -0.0299999993294477,
+                      -0.469999998807907
+                    ],
+                    "scale"    : [
+                      1.5,
+                      2.0,
+                      1.5
+                    ],
+                    "rotate"   : [
+                      0.211225032806396,
+                      4.71238851547241,
+                      1.57079672813416
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "P3Nd7nodUUeAEgpUCVtao4.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "8pvmfWX1MkgbkK5rhsEGeF.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 16777215,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "g002",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      -0.0700000002980232,
+                      -0.0299999993294477,
+                      -0.200000002980232
+                    ],
+                    "scale"    : [
+                      7.8682861328125,
+                      18.6477794647217,
+                      7.86829042434692
+                    ],
+                    "rotate"   : [
+                      0.211225003004074,
+                      4.71238851547241,
+                      1.57079672813416
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "P3Nd7nodUUeAEgpUCVtao4.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "2dwKdATd66VJyvminfTQeV.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 8355711,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "lz001",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      20.2825260162354,
+                      22.7935352325439,
+                      22.7935409545898
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159274101257,
+                      0.0
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "8mMJrnF4fmPkMUq1PSKsA3.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "DJoeXcocebfRpUR5uptAHX.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 11908533,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name" : "lz002",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "scale"    : [
+                      16.0445213317871,
+                      18.0308513641357,
+                      18.0308589935303
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      3.14159297943115,
+                      3.14159274101257
+                    ]
+                  },
+                  "geometry"  : {
+                    "type" : "BufferGeometry",
+                    "res"  : "8mMJrnF4fmPkMUq1PSKsA3.geo"
+                  },
+                  "meshRender" : {
+                    "material" : [
+                      {
+                        "type" : "MeshParticlesMaterial",
+                        "map"  : {
+                          "wrap" : [
+                            1001,
+                            1001
+                          ],
+                          "filter" : [
+                            1006,
+                            1007
+                          ],
+                          "generateMipmaps" : true,
+                          "image"           : {
+                            "name" : "2sCL4ZkcL2JbXuqtACDN1r.png"
+                          }
+                        },
+                        "transparent" : true,
+                        "blendSrc"    : 204,
+                        "blendDst"    : 201,
+                        "side"        : 2,
+                        "tintColor"   : 8355711,
+                        "tintOpacity" : 0.0,
+                        "layer"       : 3000,
+                        "blending"    : 5
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name" : "a002",
+              "type" : "node",
+              "transform" : {
+                "position" : [
+                  0.0,
+                  0.0,
+                  -9.10200023651123
+                ],
+                "scale"    : [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "rotate"   : [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              },
+              "children"  : [
+                {
+                  "name" : "j004",
+                  "type" : "node",
+                  "transform" : {
+                    "position" : [
+                      0.0,
+                      0.0,
+                      9.46000003814697
+                    ],
+                    "scale"    : [
+                      1.0,
+                      1.0,
+                      1.0
+                    ],
+                    "rotate"   : [
+                      0.0,
+                      0.0,
+                      0.0
+                    ]
+                  },
+                  "children"  : [
+                    {
+                      "name" : "p001",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          -0.140000000596046,
+                          -1.79999995231628
+                        ],
+                        "scale"    : [
+                          1.18482196331024,
+                          1.05786085128784,
+                          0.579422295093536
+                        ],
+                        "rotate"   : [
+                          -6.21724936141735E-15,
+                          1.57079637050629,
+                          2.04529264635767E-08
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "7RZ39wDgfsaH6Hpq9RZRzL.png"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 201,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name" : "p002",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          0.180000007152557,
+                          -1.79999995231628
+                        ],
+                        "scale"    : [
+                          1.18481969833374,
+                          1.0578601360321,
+                          0.579420208930969
+                        ],
+                        "rotate"   : [
+                          -4.39789404893531E-09,
+                          1.57079637050629,
+                          4.3978936048461E-09
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "7RZ39wDgfsaH6Hpq9RZRzL.png"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 201,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "name" : "mod_eff_jian001",
+                      "type" : "node",
+                      "transform" : {
+                        "position" : [
+                          0.0,
+                          0.0,
+                          -4.84999990463257
+                        ],
+                        "scale"    : [
+                          5.22541761398315,
+                          5.99660634994507,
+                          5.22542572021484
+                        ],
+                        "rotate"   : [
+                          0.0,
+                          1.57079637050629,
+                          4.71238899230957
+                        ]
+                      },
+                      "geometry"  : {
+                        "type" : "BufferGeometry",
+                        "res"  : "K4wvyeykD1scnyBLguR5PC.geo"
+                      },
+                      "meshRender" : {
+                        "material" : [
+                          {
+                            "type" : "MeshParticlesMaterial",
+                            "map"  : {
+                              "filter" : [
+                                1006,
+                                1007
+                              ],
+                              "generateMipmaps" : true,
+                              "image"           : {
+                                "name" : "DuCFK9h6uqEZ2iAkr2FRsG.jpg"
+                              }
+                            },
+                            "transparent" : true,
+                            "blendSrc"    : 204,
+                            "blendDst"    : 205,
+                            "side"        : 2,
+                            "tintColor"   : 16777215,
+                            "tintOpacity" : 0.0,
+                            "layer"       : 3000,
+                            "blending"    : 5
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

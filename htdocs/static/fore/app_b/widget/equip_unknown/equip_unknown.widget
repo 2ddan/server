@@ -1,0 +1,7 @@
+{
+    "tpl":"./equip_unknown.tpl",
+    "cfg":"./equip_unknown.cfg",
+    "css":"./equip_unknown.wcss",
+    "js":"./equip_unknown.ts",
+    "forelet":"./equip_unknown.ts"
+}

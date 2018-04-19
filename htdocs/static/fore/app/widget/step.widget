@@ -1,0 +1,4 @@
+{
+    "tpl":"./step.tpl",
+    "js":"pi/ui/progressive.ts"
+}

@@ -1,0 +1,56 @@
+.3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.4 {
+    position: absolute;
+    width: 540px;
+    height: 40px;
+    margin-left: -270px;
+    left: 50%;
+}
+.5 {
+    position: absolute;
+    width: 325px;
+    height: 100%;
+    left: 26px;
+    top: 0px;
+    line-height: 40px;
+}
+.7 {
+    position: absolute;
+    color: #fff;
+}
+.8 {
+    position: absolute;
+    left: 425px;
+    top: -10px;
+}
+.11 {
+    position: absolute;
+    width: 540px;
+    height: 75%;
+    left: 50%;
+    top: 150px;
+    margin-left: -270px;
+}
+.13 {
+    position: absolute;
+    width: 445px;
+    height: 640px;
+    left: 50px;
+    top: 15px;
+}
+.10 {
+    position: absolute;
+    color: #fff;
+    left: 433px;
+    top: 14px;
+}
+.12 {
+    position: absolute;
+    left: 35px;
+    top: 0px;
+    height: 100%;
+}

@@ -1,0 +1,5 @@
+{
+    "tpl":"./root.tpl",
+    "css":"",
+    "forelet":"pi/ui/root.ts"
+}

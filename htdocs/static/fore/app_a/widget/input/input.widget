@@ -1,0 +1,5 @@
+{
+	"js":"pi/ui/input.ts",
+	"tpl":"./input.tpl",
+	"cfg":"./input.cfg"
+}

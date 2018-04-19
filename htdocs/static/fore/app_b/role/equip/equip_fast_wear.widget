@@ -1,0 +1,7 @@
+{
+    "tpl":"./equip_fast_wear.tpl",
+    "js":"./equip_fast_wear.ts",
+    "forelet":"./equip_fast_wear.ts",
+    "cfg":"./equip_fast_wear.cfg",
+    "css":"../role.wcss"
+}

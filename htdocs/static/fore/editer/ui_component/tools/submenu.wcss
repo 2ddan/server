@@ -1,0 +1,28 @@
+
+.item_box{
+    width:100%;
+    text-align:center;
+    height:100%;
+    line-height: 30px;
+    position:absolute;
+}
+.item {
+    width:80px;
+    line-height: 30px;
+    position: relative;
+    color: white;
+    font-size: 16px;
+    cursor: default;
+}
+.child_box{
+    width:150px;
+    background-color: rgb(61, 61, 77);
+    position:absolute;
+}
+.child {
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: default;
+}
+

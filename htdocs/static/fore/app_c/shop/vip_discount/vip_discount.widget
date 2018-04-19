@@ -1,0 +1,7 @@
+{
+    "tpl":"./vip_discount.tpl",
+    "css":"./vip_discount.wcss",
+    "js":"../shop.ts",
+    "forelet":"../shop.ts",
+    "cfg":"./vip_discount.cfg"
+}

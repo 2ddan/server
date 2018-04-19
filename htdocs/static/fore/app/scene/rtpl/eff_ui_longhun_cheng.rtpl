@@ -1,0 +1,174 @@
+
+{
+  "name" : "eff_ui_longhun_cheng",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "eff_ui_longhun_cheng",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          3.14159274101257,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "eff_ui_longhun_cheng" : "QiEpaPbLtp2M8g1SgFcF5r.ai"
+        },
+        "aniBox"     : {
+          "eff_ui_longhun_cheng" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "playAnim"   : {{it.playAnim?it.playAnim:null}}
+      },
+      "children"  : [
+        {
+          "name" : "85",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              0.720000028610229,
+              0.720000028610229,
+              0.720000028610229
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "5sKnjhyrj4LnHuupTQU8rk.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "offset" : [
+                    1.0,
+                    0.660000026226044
+                  ],
+                  "repeat" : [
+                    0.333000004291534,
+                    0.333000004291534
+                  ],
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "QdXSyTHPoJ7MGcMUB2dac3.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 205,
+                "side"        : 2,
+                "tintColor"   : 8355711,
+                "tintOpacity" : 0.5,
+                "layer"       : 3000,
+                "blending"    : 5
+              }
+            ]
+          }
+        },
+        {
+          "name" : "86",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              -0.0140000004321337,
+              0.100000001490116
+            ],
+            "scale"    : [
+              1.83351576328278,
+              1.83351612091064,
+              1.83351612091064
+            ],
+            "rotate"   : [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "5sKnjhyrj4LnHuupTQU8rk.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "Ey112KNYZqtGVNpUE89LVt.png"
+                  }
+                },
+                "blendSrc" : 204,
+                "blendDst" : 201,
+                "side"     : 2,
+                "tintColor" : 16777215,
+                "tintOpacity" : 0.472000002861023,
+                "layer"       : 2500,
+                "blending"    : 5
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

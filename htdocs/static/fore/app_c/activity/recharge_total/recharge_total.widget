@@ -1,0 +1,6 @@
+{
+    "tpl":"./recharge_total.tpl",
+    "js":"../activity.ts",
+    "forelet":"../activity.ts",
+    "css":"./recharge_total.wcss"
+}

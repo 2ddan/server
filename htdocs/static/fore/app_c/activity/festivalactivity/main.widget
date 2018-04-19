@@ -1,0 +1,5 @@
+{
+    "tpl":"./main.tpl",
+    "forelet":"./festivalactivity.ts",
+    "js":"./festivalactivity.ts"
+}

@@ -1,0 +1,6 @@
+{
+    "tpl":"./rank.tpl",
+    "js":"./rank.ts",
+    "cfg":"./rank.cfg",
+    "forelet":"./rank.ts"
+}

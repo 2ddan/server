@@ -1,0 +1,33 @@
+.bg_1 {
+    position: absolute;
+    width: 568px;
+    height: 399px;
+    background-image: url(../images/bg_1.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -284px;
+    top: 180px;
+}
+.close {
+    position: absolute;
+    right: 0px;
+    top: 80px;
+}
+.recharge {
+    position: absolute;
+    width: 123px;
+    height: 48px;
+    background-image: url(../images/recharge.png);
+    background-repeat: no-repeat;
+    top: 290px;
+    left: 300px;
+}
+.get_award {
+    position: absolute;
+    width: 123px;
+    height: 48px;
+    background-image: url(../images/get_award.png);
+    background-repeat: no-repeat;
+    top: 290px;
+    left: 300px;
+}

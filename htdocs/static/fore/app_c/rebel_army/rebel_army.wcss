@@ -1,0 +1,123 @@
+.light_bg {
+    position: absolute;
+    width: 326px;
+    height: 70px;
+    left: 50%;
+    margin-left: -163px;
+    background-image: url(./images/light_bg.png);
+    background-repeat: no-repeat;
+}
+
+.rebel_tip {
+    position: absolute;
+    width: 430px;
+    height: 33px;
+    left: 50%;
+    margin-left: -215px;
+    background-image: url(./images/rebel_tip.png);
+    background-repeat: no-repeat;
+    transform: scale(0.7);
+}
+
+.award_bg {
+    position: absolute;
+    width: 328px;
+    height: 210px;
+    left: 50%;
+    margin-left: -164px;
+    background-image: url(./images/award_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.kill_num_text {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    background-image: url(./images/kill_num_text.png);
+    background-repeat: no-repeat;
+    transform: scale(0.7);
+}
+
+.person_damage_text {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    background-image: url(./images/person_damage_text.png);
+    background-repeat: no-repeat;
+    transform: scale(0.7);
+}
+
+.award_over {
+    position: absolute;
+    width: 144px;
+    height: 26px;
+    background-image: url(./images/award_over.png);
+    background-repeat: no-repeat;
+    transform: scale(0.7);
+}
+
+.text_bg {
+    position: absolute;
+    width: 149px;
+    height: 20px;
+    background-image: url(./images/text_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.progress_bg {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background-image: url(./images/progress_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.progress {
+    position: absolute;
+    height: 16px;
+    background-image: url(./images/progress.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position-y: -2px;
+}
+
+.progress_light {
+    position: absolute;
+    width: 30px;
+    height: 16px;
+    right: -2px;
+    background-image: url(./images/progress_light.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.figure {
+    position: absolute;
+    width: 34px;
+    height: 20px;
+    background-image: url(./images/figure.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.random_award_bg {
+    position: absolute;
+    width: 57px;
+    height: 63px;
+    background-image: url(./images/random_award_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.text_shadow {
+    text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+    -webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+    -moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+    text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+}
+
+
+

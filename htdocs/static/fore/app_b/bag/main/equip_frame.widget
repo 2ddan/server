@@ -1,0 +1,5 @@
+{
+    "tpl":"./equip_frame.tpl",
+    "js":"../bag.ts",
+    "forelet":"../bag.ts"
+}

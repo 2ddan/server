@@ -1,0 +1,6 @@
+{
+    "tpl":"./level_up.tpl",
+    "js":"../forge.ts",
+    "forelet":"../forge.ts",
+    "css":"../forge.wcss"
+}

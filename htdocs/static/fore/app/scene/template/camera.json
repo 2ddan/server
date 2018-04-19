@@ -1,0 +1,25 @@
+{
+    "type": "node",
+    "transform": {
+        "position": [{{it.x}}, {{it.z || 0}}, {{it.y}}],
+        "scale":  [1,1,1],
+        "rotate": [0,0,0]
+    },
+    "children": [
+        {
+            "type": "node",
+            "transform" : {
+                "position" : {{it.position}},
+                "scale"    : [
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                "rotate"   : {{it.rotate || [0,0,0]}}
+            },
+            "camera": {
+                "perspective": {{it.perspective}}
+            }
+        }
+    ]
+}

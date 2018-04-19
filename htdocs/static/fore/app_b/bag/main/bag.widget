@@ -1,0 +1,6 @@
+{
+    "tpl":"./bag.tpl",
+    "js":"../bag.ts",
+    "forelet":"../bag.ts",
+    "cfg":"./bag.cfg"
+}

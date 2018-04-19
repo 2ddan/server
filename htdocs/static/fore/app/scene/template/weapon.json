@@ -1,0 +1,46 @@
+{{let weapon = _get("app/scene/art_cfg/weapon").exports.default}}
+{{let mgr = _get("app/scene/scene").exports.mgr}}
+{{let child = [] }}
+{{for k, v of it.w_eff}}
+    {{if v}}
+        {{: child.push(mgr.getSceneFile(it.w_eff[k]) )}}
+    {{end}}
+{{end}}
+{{let scene2d = "" }}
+{{if it.scene_bg}}
+    {{: scene2d = mgr.getSceneFile(it.scene_bg)}}
+{{end}}
+{{let rotate_1 = it.rotate[1] + 0.33}}
+{{let posi_1 = it.position[1]-0.3 }}
+{
+    "type":"node",
+    "transform":{
+        "position":[0,0,0],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "children":[
+        {{if it.scene_bg}}
+        {{scene2d}}
+        ,
+        {{end}}
+        {
+            "type":"prefab",
+            "tpl":"weapon",
+            "res":{{weapon[it.module].res}},
+            "rotate":[-0.55,1.57,3.14],
+            "position":{{it.position || [0,0,0]}},
+            "scale": {{it.scale || [1,1,1]}},
+            "rotate":{{it.rotate || [-0.55,1.57,3.14]}},
+            "child":{{child}}
+        }{{if it.double}},{
+            "type":"prefab",
+            "tpl":"weapon",
+            "res":{{weapon[it.module].res}},
+            "rotate": [-1.75,{{rotate_1}},0.9],
+            "position":[-0.3,{{posi_1}},0],
+            "scale":{{it.scale || [1,1,1]}},
+            "child":{{child}}
+        }{{end}}
+    ]
+}

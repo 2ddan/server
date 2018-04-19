@@ -1,0 +1,5 @@
+{
+    "tpl":"./cover.tpl",
+    "js":"./guide.ts",
+    "cfg":"./force.cfg"
+}

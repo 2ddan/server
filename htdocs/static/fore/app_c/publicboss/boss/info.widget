@@ -1,0 +1,6 @@
+{
+    "tpl":"./info.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts",
+    "css":"./info.wcss"
+}

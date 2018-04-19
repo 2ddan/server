@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame_task.tpl",
+    "js":"../festivalactivity.ts",
+    "forelet":"../festivalactivity.ts"
+}

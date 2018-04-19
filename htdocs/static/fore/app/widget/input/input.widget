@@ -1,0 +1,5 @@
+{
+	"js":"pi/ui/input.ts",
+	"css":"./input.wcss",
+	"tpl":"./input.tpl"
+}

@@ -1,0 +1,5 @@
+{
+    "tpl":"./attr_bg.tpl",
+    "css":"./attr_bg.wcss",
+    "js":"./change.ts"
+}

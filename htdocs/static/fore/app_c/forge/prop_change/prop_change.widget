@@ -1,0 +1,7 @@
+{
+    "tpl": "./prop_change.tpl",
+    "cfg": "./prop_change.cfg",
+    "js": "../forge.ts",
+    "css": "../forge.wcss",
+    "forelet": "../forge.ts"
+}

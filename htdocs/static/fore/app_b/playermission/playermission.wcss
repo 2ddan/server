@@ -1,0 +1,24 @@
+
+.prop_num_text{
+	z-index:1;
+	font-size:18px;
+	color:#fff;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000;
+}
+.text_tip{
+    background: url(./img/text_tip.png);
+    background-size: 100% 100%;
+    width: 21px;
+    height: 25px;
+	position:absolute;
+	-webkit-filter: grayscale(1);
+	filter:gray;
+	filter: grayscale(1);
+}
+.y2_head_in_bg_yellow{
+	background: url(./img/y2_head_in_bg_yellow.png) ;
+    background-size:100% 100%;
+	height:47px;
+    width:47px;
+    position:absolute;
+}

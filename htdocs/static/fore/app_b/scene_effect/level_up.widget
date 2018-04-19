@@ -1,0 +1,7 @@
+{
+    "tpl":"./level_up.tpl",
+    "cfg":"./scene_effect.cfg",
+    "js":"./scene_effect.ts",
+    "css":"./scene_effect.wcss",
+    "forelet":"./scene_effect.ts"
+}

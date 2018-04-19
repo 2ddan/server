@@ -1,0 +1,77 @@
+
+{
+  "name" : {{it.names[0]}},
+  "type" : "node",
+  "transform" : {
+    "position" : {{it.position?[it.position[0], it.position[1], it.position[2]]:[0,0,0]}},
+    "scale"    : {{it.scale?[it.scale[0], it.scale[1], it.scale[2]]:[1,1,1]}},
+    "rotate"   : {{it.rotate?[it.rotate[0], it.rotate[1], it.rotate[2]]:[0,0,0]}}
+  },
+  "animator"  : {
+    "controller" : {
+      "act_rolem_die" : {{it.controller.act_rolem_die}},
+      "act_rolem_run" : {{it.controller.act_rolem_run}},
+      "act_rolem_sk1_1" : {{it.controller.act_rolem_sk1_1}},
+      "act_rolem_sk1_2" : {{it.controller.act_rolem_sk1_2}},
+      "act_rolem_sk1_3" : {{it.controller.act_rolem_sk1_3}},
+      "act_rolem_sk2"   : {{it.controller.act_rolem_sk2}},
+      "act_rolem_sk3"   : {{it.controller.act_rolem_sk3}},
+      "act_rolem_sk4"   : {{it.controller.act_rolem_sk4}},
+      "act_rolem_sk5"   : {{it.controller.act_rolem_sk5}},
+      "act_rolem_sk6"   : {{it.controller.act_rolem_sk6}},
+      "act_rolem_standby" : {{it.controller.act_rolem_standby}}
+    },
+    "playAnim"   : {{it.playAnim?it.playAnim:null}}
+  },
+  "children"  : [
+    {
+      "type" : "Skeleton",
+      "res"  : {{it.res[2]}}
+    },
+    {
+      "name" : {{it.names[0]}},
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          0.999999940395355,
+          0.999999940395355,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : {{it.bones[0]}},
+        "bounds" : {{it.bounds[0]}},
+        "rootbone" : {{it.rootbone}},
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "offset" : {{it.offset0 || [0,0]}},
+              "repeat" : {{it.repeat0 || [1, 1]}},
+              "wrap"   : {{it.wrap0 || [1000, 1000]}},
+              "filter" : {{it.filter0 || [1006, 1006]}},
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : {{it.res[0]}}
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : {{it.res[1]}}
+        }
+      }
+    }
+  ]
+}

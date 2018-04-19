@@ -1,0 +1,7 @@
+{
+    "tpl":"./award.tpl",
+    "forelet":"./gem.ts",
+    "js":"./gem.ts",
+    "css":"./gem.wcss",
+    "cfg":"./award.cfg"
+}

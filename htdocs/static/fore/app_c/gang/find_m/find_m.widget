@@ -1,0 +1,7 @@
+{
+    "tpl":"./find_m.tpl",
+    "cfg":"./find_m.cfg",
+    "css":"./find_m.wcss",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts"
+}

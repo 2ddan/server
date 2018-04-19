@@ -1,0 +1,37 @@
+
+.outbox{
+    min-width: 130px;
+    height: 24px;
+    position: absolute;
+    background-color: #3C3C3F;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.input{
+    color: #A19D9D;
+    background-color: #3C3C3F;
+    width: calc(100% - 29px);
+    height: 22px;
+    padding-left: 3px;
+    text-overflow: ellipsis;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    outline: none;
+}
+.util{
+    color: #A19D9D;
+    background-color: #212125;
+    width: 23px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+}
+

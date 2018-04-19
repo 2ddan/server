@@ -1,0 +1,51 @@
+
+.win_title{
+    width: 498px;
+    height: 211px;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    background-image:url(./images/win_text.png);
+}
+.lose_title{
+    width: 498px;
+    height: 211px;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    background-image:url(./images/lose_text.png);
+}
+
+
+
+.star{
+    position: absolute;
+    width:80px;
+    height:78px;
+    background-image:url(app_a/widget/star/images/star_b.png);
+    background-size: 100% 100%;    
+}
+.dark{
+    background-image:url(app_a/widget/star/images/star_b_.png);    
+}
+
+.rotate_star0{
+    left: 144px;
+    top: 0;
+    transform: rotate(-20deg);
+ }
+.rotate_star1{
+    left: 230px;
+    top: -17px;
+}
+.rotate_star2{
+    right: 144px;
+    transform: rotate(16deg);
+    top: 0;
+}
+.s21{
+	color:#fff;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    z-index: 2;
+}
+/*              ***************************      new     ***********************                          */

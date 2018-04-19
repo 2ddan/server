@@ -1,0 +1,7 @@
+{
+    "tpl":"./fast_exchange.tpl",
+    "css":"../gest.wcss",
+    "js":"../gest.ts",
+    "forelet":"../gest.ts",
+    "cfg":"./fast_exchange.cfg"
+}

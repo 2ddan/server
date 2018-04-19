@@ -1,0 +1,7 @@
+{
+    "tpl":"./soul.tpl",
+    "js":"./soul.ts",
+    "forelet":"./soul.ts",
+    "cfg":"./soul.cfg",
+    "css":"./soul.wcss"
+}

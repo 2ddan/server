@@ -1,0 +1,7 @@
+{
+    "tpl":"../gem/rank.tpl",
+    "css":"../gem/gem.wcss",
+    "cfg":"../gem/gem.cfg",
+    "js":"./play_card.ts",
+    "forelet":"./play_card.ts"
+}

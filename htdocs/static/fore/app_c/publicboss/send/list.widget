@@ -1,0 +1,7 @@
+{
+    "tpl":"./list.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts",
+    "cfg":"./list.cfg",
+    "css":"./list.wcss"
+}

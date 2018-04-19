@@ -1,0 +1,7 @@
+{
+    "tpl":"./stars.tpl",
+    "cfg":"./stars.cfg",
+    "js":"./star.ts",
+    "css":"./stars.wcss",
+    "forelet":"./star.ts"
+}

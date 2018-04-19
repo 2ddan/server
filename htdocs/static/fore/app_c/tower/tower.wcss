@@ -1,0 +1,26 @@
+.tower_bg{
+    width:485px;
+    height:435px;
+    background-image: url(./images/tower_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.tower_num{
+    width:62px;
+    height:124px;
+    position: absolute;
+}
+
+
+
+
+.78 {
+    position: absolute;
+    left: 24px;
+    top: 112px;
+    height: 700px;
+    width: 490px;
+}
+

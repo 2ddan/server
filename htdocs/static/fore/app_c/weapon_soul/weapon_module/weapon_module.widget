@@ -1,0 +1,6 @@
+{
+    "tpl":"./weapon_module.tpl",
+    "js":"../weapon_soul.ts",
+    "forelet":"../weapon_soul.ts",
+    "css":"../weapon_soul.wcss"
+}

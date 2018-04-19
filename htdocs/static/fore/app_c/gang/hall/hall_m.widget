@@ -1,0 +1,7 @@
+{
+    "tpl":"./hall_m.tpl",
+    "cfg":"./hall_m.cfg",
+    "css":"./hall_m.wcss",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts"
+}

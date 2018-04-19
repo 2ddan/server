@@ -1,0 +1,7 @@
+{
+    "tpl":"./award.tpl",
+    "js":"./play_card.ts",
+    "cfg":"./play_card.cfg",
+    "forelet":"./play_card.ts",
+    "css":"./play_card.wcss"
+}

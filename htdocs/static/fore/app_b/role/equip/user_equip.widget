@@ -1,0 +1,5 @@
+{
+    "tpl":"./user_equip.tpl",
+    "js":"./equip.ts",
+    "forelet":"./equip.ts"
+}

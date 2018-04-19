@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"./investment.ts",
+    "forelet":"./investment.ts"
+}

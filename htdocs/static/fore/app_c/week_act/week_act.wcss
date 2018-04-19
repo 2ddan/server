@@ -1,0 +1,11 @@
+.bg {
+    position: absolute;
+    width: 492px;
+    height: 130px;
+    background-image: url(./images/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left: 50%;
+    margin-left: -246px;
+    top: 19px;
+}

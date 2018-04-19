@@ -1,0 +1,59 @@
+
+.outbox{
+    min-width: 130px;
+    background-color: #212125;
+    overflow: hidden;
+    z-index: 2;
+}
+.inbox{
+    width: 100%;
+    height: 24px;
+    position: relative;
+}
+.input{
+    color: #868686;
+    background-color: #212125;
+    width: calc(100% - 26px);
+    height: 100%;
+    padding-left: 3px;
+    padding-right: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    outline: none;
+}
+.icon{
+    color: #868686;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.enum_box{
+    width: 100%;
+    position: relative;
+    background-color: #212125;
+}
+.enum_item{
+    position: relative;
+    width: calc(100% - 3px);
+    left: 3px;
+    height: 24px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-top: 1px solid #2C2C33;
+    color: #868686;
+    font-size: 14px;
+    text-align: left;
+}

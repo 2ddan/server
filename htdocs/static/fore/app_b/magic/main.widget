@@ -1,0 +1,7 @@
+{
+    "tpl":"./main.tpl",
+    "js":"./magic.ts",
+    "cfg":"./main.cfg",
+    "forelet":"./magic.ts",
+    "css":"./main.wcss"
+}

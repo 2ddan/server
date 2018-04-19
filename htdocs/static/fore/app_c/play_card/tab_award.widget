@@ -1,0 +1,5 @@
+{
+    "tpl":"./tab_award.tpl",
+    "js":"./play_card.ts",
+    "forelet":"./play_card.ts"
+}

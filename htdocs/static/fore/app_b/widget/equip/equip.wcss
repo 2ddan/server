@@ -1,0 +1,8 @@
+.tab{
+    display:table;
+    text-align:center;
+}
+.tab-c{
+	display:table-cell;
+	vertical-align:middle;
+}

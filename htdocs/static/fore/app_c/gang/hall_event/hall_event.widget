@@ -1,0 +1,6 @@
+{
+    "tpl":"./hall_event.tpl",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./hall_event.wcss"
+}

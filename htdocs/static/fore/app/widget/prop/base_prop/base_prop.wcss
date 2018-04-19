@@ -1,0 +1,41 @@
+.quality{
+    background-image: url(./images/quality_2.jpg);
+    position:absolute;
+    width:86px;
+    height: 86px;
+    background-size: 100% 100%;
+}
+.chip_icon {
+    background-image: url(./images/chip_icon.png);
+    background-size:100% 100%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 2;
+}
+
+.font_light_white {
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+    position: absolute;
+    z-index: 3;
+    top: 2px;
+    left: 4px;
+    color: rgb(112,237,92);
+    letter-spacing: -1px;
+    -webkit-text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+}
+.star_width {
+    width: 56px;
+    height: 12px;
+    left: 3px;
+    right: 3px;
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+    top: 49px;
+    text-align: center;
+}

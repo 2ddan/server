@@ -1,0 +1,152 @@
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 540px;
+    height: 106px;
+}
+
+.57 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 473px;
+    height: 674px;
+}
+.58 {
+    position: absolute;
+    width: 473px;
+    height: 674px;
+    left: 50%;
+    top: 105px;
+    margin-left: -232px;
+}
+.59 {
+    position: absolute;
+    left: -26px;
+    top: -16px;
+}
+.60 {
+    position: absolute;
+    left: -27px;
+    top: 648px;
+}
+.61 {
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    top: 790px;
+    left: 50%;
+    margin-left: -270px;
+}
+.62 {
+    position: absolute;
+    left: 58px;
+    top: 1px;
+    line-height: 26px;
+    color: #FFD7A8;
+}
+.63 {
+    position: absolute;
+    left: 161px;
+    top: 0px;
+}
+.64 {
+    position: absolute;
+    left: 61px;
+    top: 2px;
+}
+.65 {
+    position: absolute;
+    left: 322px;
+    top: 0px;
+}
+.66 {
+    position: relative;
+    display: inline-block;
+}
+.67 {
+    position: absolute;
+    width: 140px;
+    height: 30px;
+    left: 315px;
+    top: 45px;
+    text-align: center;
+    color: #FFD7A8;
+}
+.68 {
+    position: absolute;
+    left: 463px;
+    top: -4px;
+}
+.69 {
+    position: absolute;
+    width: 440px;
+    height: 93%;
+    left: 10px;
+    top: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.70 {
+    position: absolute;
+    width: 104%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.c151098945976741 {
+    position: absolute;
+    width: 12px;
+    height: 24px;
+    z-index: 3;
+    left: 11px;
+    top: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: mnjsh;
+    font-size: 16px;
+}
+.13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 138px;
+    height: 186px;
+}
+.16 {
+    position: absolute;
+    left: 33px;
+    top: 13px;
+    color: rgb(255, 216, 166);
+}
+.17 {
+    width: 116px;
+    height: 45px;
+    position: absolute;
+    left: 9px;
+    top: 112px;
+}
+.18 {
+    position: absolute;
+    top: 156px;
+    width: 90px;
+    height: 23px;
+    text-align: center;
+    left: 50%;
+    margin-left: -45px;
+}
+.19 {
+    position: absolute;
+    left: 7px;
+    top: 11px;
+    width: 21px;
+}
+.22 {
+    position: relative;
+    width: 138px;
+    height: 186px;
+    display: inline-block;
+    margin: 10px 0 0 10px;
+}

@@ -1,0 +1,5 @@
+{
+    "tpl":"./tab_award_frame.tpl",
+    "js":"./play_card.ts",
+    "css":"./play_card.wcss"
+}

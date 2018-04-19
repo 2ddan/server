@@ -1,0 +1,109 @@
+@-webkit-keyframes tipTxt
+{
+0% {height:0px;transform:translate3d(0px,0px,0px);
+	-webkit-transform:translate3d(0px,0px,0px);
+	-moz-transform:translate3d(0px,0px,0px);
+	opacity:1;
+	}
+	30%{
+	height:50px;transform:translate3d(0px,-80px,0px);
+	-webkit-transform:translate3d(0px,-80px,0px);
+	-moz-transform:translate3d(0px,-80px,0px);
+	opacity:1;
+	}
+80% {height:50px;transform:translate3d(0px,-80px,0px) ;
+	-webkit-transform:translate3d(0px,-80px,0px);
+	-moz-transform:translate3d(0px,-80px,0px);
+	opacity:1;}
+
+100% {height:50px;transform:translate3d(0px,-240px,0px);
+	-webkit-transform:translate3d(0px,-240px,0px);
+	-moz-transform:translate3d(0px,-240px,0px);
+	opacity:0;}
+}
+@-webkit-keyframes attrTip
+{
+	0% {
+		top:0;
+		opacity:1;}
+	60% {
+		top:-100px;
+		opacity:1;}
+	100% {
+		top:-120px;
+		opacity:0;
+		dispaly:none;
+	}
+}
+@-webkit-keyframes barTip
+{
+	0% {
+		margin-top:0;
+		opacity:1;}
+	60% {
+		margin-top:-100px;
+		opacity:1;}
+	100% {
+		margin-top:-120px;
+		opacity:0;
+		dispaly:none;
+	}
+}
+@-webkit-keyframes goodsTip
+{
+	0% {
+		height:0;
+		opacity: 1
+	}
+	10% {
+		height:37px;
+		opacity: 1;
+	}
+	80% {
+		height:37px;
+		opacity: .8;
+	}
+	100% {
+		height:37px;
+		opacity: 0;
+	}
+	
+}
+@-webkit-keyframes errTip
+{
+	0% {
+		transform: scale(0);
+		opacity: 1
+	}
+	20% {
+		transform: scale(1.2);
+		opacity: 1
+	}
+	70% {
+		transform: scale(1.2);
+		opacity: 1
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	
+}
+
+
+/* 恭喜获得动画 */
+@-webkit-keyframes showNewRes
+{
+	0% {
+		top: 220px;
+		opacity:1;
+	} 
+	50%{
+		opacity:.8;
+	}
+	100% {
+		top: 100px;
+		opacity:0;
+	}
+	
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./attr.tpl",
+    "js":"./attr.ts",
+    "forelet":"./attr.ts",
+    "cfg":"./attr.cfg",
+    "css":"./attr.wcss"
+}

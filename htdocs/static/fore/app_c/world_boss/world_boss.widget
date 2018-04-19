@@ -1,0 +1,6 @@
+{
+    "tpl":"./world_boss.tpl",
+    "cfg":"./world_boss.cfg",
+    "js":"./world_boss.ts",
+    "forelet":"./world_boss.ts"
+}

@@ -1,0 +1,6 @@
+{
+    "tpl":"./login.tpl",
+    "forelet":"../activity.ts",
+    "cfg":"../activity.cfg",
+    "css":"./login.wcss"
+}

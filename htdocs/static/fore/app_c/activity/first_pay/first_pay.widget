@@ -1,0 +1,7 @@
+{
+    "tpl":"./first_pay.tpl",
+    "js":"./first_pay.ts",
+    "forelet":"./first_pay.ts",
+    "cfg":"./first_pay.cfg",
+    "css":"./first_pay.wcss"
+}

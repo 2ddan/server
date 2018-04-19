@@ -1,0 +1,29 @@
+.box-pad{
+    padding:5px 25px;
+}
+.f-left{
+    float:left;
+}
+.f-right{
+    float:right;
+}
+.clear{
+    float:none;
+    clear:both;
+}
+.tab{
+	width:100%;
+	display:table;
+}
+.tab-c{
+	display:table-cell;
+	vertical-align:middle;
+}
+.content-center{
+    position:absolute;
+    height:100%;
+    right:15px;
+    top:0;
+    display:flex;
+    align-items:center;
+}

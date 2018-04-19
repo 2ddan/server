@@ -1,0 +1,7 @@
+{
+    "tpl":"./gang_msg.tpl",
+    "cfg":"./gang_msg.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./gang_msg.wcss"
+}

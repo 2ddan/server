@@ -1,0 +1,6 @@
+{
+    "tpl":"./effect.tpl",
+    "js":"./wild.ts",
+    "forelet":"./wild.ts",
+    "cfg":"./effect.cfg"
+}

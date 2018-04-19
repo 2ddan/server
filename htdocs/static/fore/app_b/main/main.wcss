@@ -1,0 +1,9 @@
+
+
+.pm_bg{
+	background-image:url(./img/pm_bg.png);
+	width:277px;
+	height:57px;
+	position:absolute;
+	background-size: 100% 100%;
+}

@@ -1,0 +1,29 @@
+.title_left{
+	background-image:url(./images/title_left.png);
+	width:265px;
+	height:98px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.title_middle{
+	background-image:url(./images/title_middle.png);
+	height:98px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.title_right{
+	background-image:url(./images/title_right.png);
+	width:125px;
+	height:98px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.title_coin_count{
+	color:#e3d8bb;
+	height:26px;
+	position:absolute;
+	width:74px;
+	text-align: center;
+	left: 19px;
+	white-space: nowrap;
+}

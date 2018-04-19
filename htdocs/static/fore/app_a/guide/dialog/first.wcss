@@ -1,0 +1,6 @@
+.plot_txt_first{
+	width: 500px;position: absolute;left: 50%;margin-left: -250px;top:40%;overflow: hidden;
+}
+.plot_txt_first_ainm{
+    height: 120px;
+}

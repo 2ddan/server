@@ -1,0 +1,7 @@
+{
+    "tpl":"./fight_award.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts",
+    "cfg":"./fight_award.cfg",
+    "css":"./fight_award.wcss"
+}

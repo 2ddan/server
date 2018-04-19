@@ -1,0 +1,7 @@
+{
+    "tpl":"./gest_fb.tpl",
+    "cfg":"./gest_fb.cfg",
+    "js":"../gest.ts",
+    "forelet":"../gest.ts",
+    "css":"./gest_fb.wcss"
+}

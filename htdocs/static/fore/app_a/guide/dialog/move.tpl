@@ -1,0 +1,1 @@
+<div style="font-size: 24px;color: #fff;line-height: 40px;">{{it1.dialog.chat[0]}}</div>

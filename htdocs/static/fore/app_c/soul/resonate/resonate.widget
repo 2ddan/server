@@ -1,0 +1,7 @@
+{
+    "tpl": "./resonate.tpl",
+    "css": "../soul.wcss",
+    "js": "../soul.ts",
+    "forelet": "../soul.ts",
+    "cfg": "./resonate.cfg"
+}

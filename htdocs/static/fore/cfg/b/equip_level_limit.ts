@@ -1,0 +1,63 @@
+export const equip_level_limit = {
+    1:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },2:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },3:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },4:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },5:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },6:{
+        "open_level":1,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },7:{
+        "open_level":10,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },8:{
+        "open_level":10,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },9:{
+        "open_level":20,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    },10:{
+        "open_level":20,
+        "star_effects":11,
+        "gem_effects":32,
+        "red_open_level":40,
+        "stars_effects":1
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "tpl":"./progress.tpl",
+    "css":"../rebel_army.wcss",
+    "forelet":"../rebel_army.ts",
+    "js":"../rebel_army.ts"
+}

@@ -1,0 +1,6 @@
+{
+    "tpl":"./news_frame.tpl",
+    "js":"./news.ts",
+    "forelet":"./news.ts",
+    "css":"./news.wcss"
+} 

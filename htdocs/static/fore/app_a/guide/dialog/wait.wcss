@@ -1,0 +1,7 @@
+.guide_name_bg{
+	background-image:url(../images/guide_name_bg.png);
+	width: 208px;
+	height: 74px;
+	background-size:100% 100%;
+	position:absolute;
+}

@@ -1,0 +1,5 @@
+{
+    "tpl":"./gift_main.tpl",
+    "js":"./gift_main.ts",
+    "forelet":"./gift_main.ts"
+}

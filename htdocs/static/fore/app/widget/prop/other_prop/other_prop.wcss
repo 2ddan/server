@@ -1,0 +1,43 @@
+.quality{
+    background: url(./images/quality_2.jpg) no-repeat;
+    position:absolute;
+    width:86px;
+    height: 86px;
+    background-size: 100% 100%;
+}
+.chip_icon {
+    background: url(./images/chip_icon.png);
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+.equip_level_quality {
+    background: url(./images/equip_level_quality_2.png);
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: 2px;
+    left: 2px;
+}
+.font_light_white {
+    width: 27px;
+    height: 27px;
+    color: #fff;
+    font-size: 16px;
+    left: 2px;
+    left: 2px;
+    text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000;
+    text-align: center;
+    line-height: 27px;
+}
+.star_width {
+    height: 24px;
+    position: absolute;
+    bottom: 4px;
+    left: -10;
+    right: -10;
+    text-align: center;
+}
+

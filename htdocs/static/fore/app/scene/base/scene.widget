@@ -1,0 +1,5 @@
+{
+    "tpl":"./scene.tpl",
+    "js":"./scene.ts",
+    "forelet":"./scene.ts"
+}

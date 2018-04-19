@@ -1,0 +1,7 @@
+{
+    "tpl":"./stars_achieve.tpl",
+    "cfg":"./stars_achieve.cfg",
+    "js":"./star.ts",
+    "css":"./stars.wcss",
+    "forelet":"./star.ts"
+}

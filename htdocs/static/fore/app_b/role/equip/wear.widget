@@ -1,0 +1,6 @@
+{
+    "tpl":"./wear.tpl",
+    "js":"./equip.ts",
+    "cfg":"./wear.cfg",
+    "forelet":"./equip.ts"
+}

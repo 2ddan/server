@@ -1,0 +1,5 @@
+{
+    "tpl":"./award.tpl",
+    "forelet":"../publicboss.ts",
+    "js":"../publicboss.ts"
+}

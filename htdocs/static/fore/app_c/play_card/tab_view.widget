@@ -1,0 +1,6 @@
+{
+    "tpl":"./tab_view.tpl",
+    "css":"./play_card.wcss",
+    "js":"./play_card.ts",
+    "forelet":"./play_card.ts"
+}

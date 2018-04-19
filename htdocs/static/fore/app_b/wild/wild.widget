@@ -1,0 +1,7 @@
+{
+    "tpl":"./wild.tpl",
+    "js":"./wild.ts",
+    "forelet":"./wild.ts",
+    "cfg":"./wild.cfg",
+    "css":"./wild.wcss"
+}

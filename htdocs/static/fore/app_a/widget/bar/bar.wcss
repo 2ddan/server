@@ -1,0 +1,36 @@
+.bar_fg_0{
+    background-repeat: repeat-x;
+    position: absolute;
+    height: 16px;
+    background-size: 100% 100%;
+}
+.bar_bg{
+    background-image: url(./images/bar_bg_2.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    position:absolute;
+}
+.bar_light_2{
+    background-image: url(./images/bar_light_2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position:absolute;
+}
+
+.bar_bg_3{
+    width:81px;
+    height: 17px;
+    background-image: url(./images/bar_bg_3.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    position:absolute;
+}
+
+.bar_fg_3{
+    width:78px;
+    height: 14px;
+    background-image: url(./images/bar_fg_3.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    position:absolute;
+}

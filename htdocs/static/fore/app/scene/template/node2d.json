@@ -1,0 +1,47 @@
+{
+    "name": "dropnode",
+    "type": "node",
+    "transform": {
+        "position" : [{{it.x || 0}},{{it.y ||0}},{{it.z||0}}],
+        "scale"    : [{{it.scale || 1}},{{it.scale || 1}},1],
+        "rotate"   : [0,0,0]
+    },
+    "meshRender": {
+        "visible" :true,
+        "material": {
+            "transparent": true,
+            "map": {
+                "image": {
+                    "name": "{{it.image}}"
+                }
+            }                    
+        }
+    },
+    "attachment": "{{it.attachment || '3D'}}",
+    "geometry": {
+        "type":"Plane", 
+        "width":{{it.imgWidth}}, 
+        "height":{{it.imgHeight}},
+        "horizontalAlign":"left",
+        "verticalAlign":"top"
+    }
+    {{if it.quality}},
+    "children":[
+        {
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":44,
+            "width":44,
+            "image":"images/prop_border_{{it.quality}}.png",
+            "position":[0, 0, 0]
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":44,
+            "width":44,
+            "image":"images/prop_bg_{{it.quality}}.png",
+            "position":[0, 0, 0]
+        }
+    ]
+    {{end}}
+}

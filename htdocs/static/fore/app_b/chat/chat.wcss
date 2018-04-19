@@ -1,0 +1,71 @@
+.3 {
+    position: absolute;
+    width: 100%;
+    height: 46px;
+    
+}
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 46px;
+}
+.5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+.6 {
+    position: absolute;
+    right: 12px;
+    top: -10px;
+    transform: rotate(-90deg) scale(0.6);
+}
+
+.7 {
+    position: absolute;
+    width: 100%;
+    height: 353px;
+}
+.8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+	height: 353px;
+	opacity: 0.5;
+}
+.9 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+}
+.10 {
+    position: absolute;
+    left: 50%;
+    bottom: 45px;
+    margin-left: -270px;
+    z-index: 1;
+}
+.11 {
+    position: absolute;
+    left: 50%;
+    top: 310px;
+    margin-left: 171px;
+}
+.12 {
+    position: absolute;
+    left: 50%;
+    top: 312px;
+    width: 343px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .5);
+	padding-left: 6px;
+	font-size: 16px;
+    color: #b27d5c;
+    margin-left: -180px;
+}
+

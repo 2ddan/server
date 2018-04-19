@@ -1,0 +1,5 @@
+{
+    "tpl":"./exp_bar.tpl",
+    "js":"./exp_bar.ts",
+    "forelet":"./exp_bar.ts"
+    }

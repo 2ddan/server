@@ -1,0 +1,6 @@
+{
+    "tpl": "./open_fun.tpl",
+    "js": "./open_fun.ts",
+    "forelet": "./open_fun.ts",
+    "css": "./open_fun.wcss"
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./look_equip.tpl",
+    "cfg":"../other_role.cfg",
+    "js":"../other_role.ts",
+    "forelet":"../other_role.ts",
+    "css":"./look_equip.wcss"
+}

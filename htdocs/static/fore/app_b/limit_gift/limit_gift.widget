@@ -1,0 +1,5 @@
+{
+    "tpl": "./limit_gift.tpl",
+    "forelet": "./limit_gift.ts",
+    "js": "./limit_gift.ts"
+}

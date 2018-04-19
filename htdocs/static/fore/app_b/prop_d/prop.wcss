@@ -1,0 +1,18 @@
+.prop_name_bg{
+    width: 102px;
+    height:24px;
+    background-image: url(./image/prop_name_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.nomal{
+    top: 50%;
+    transform:translate(-50%,-50%);
+    left: 50%
+}
+/*修行任务特殊处理*/
+.task{
+    bottom: 275px;
+    right: 20px;
+}

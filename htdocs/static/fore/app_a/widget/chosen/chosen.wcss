@@ -1,0 +1,17 @@
+.chosen{
+	background-image: url(./images/chosen.png);
+	width: 140%;
+	height: 140%;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+.chosen_bg{
+	background-image: url(./images/chosen_bg.png);
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	position: absolute;
+}

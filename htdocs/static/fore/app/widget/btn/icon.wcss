@@ -1,0 +1,38 @@
+
+.icon_bg_1{
+    background-image: url(./images/icon_bg_1.png);
+    width: 67px;
+    height: 28px;
+    position: absolute;
+    background-size: 100% 100%;
+    bottom: 0;
+}
+.icon_bg_2{
+    background-image: url(./images/icon_bg_2.png);
+    width: 62px;
+    height: 19px;
+    position: absolute;
+    background-size: 100% 100%;
+    bottom: 0;
+}
+.icon_bg_3{
+    background-image: url(./images/icon_bg_3.png);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+.icon_bg_4{
+    background-image: url(./images/icon_bg_4.png);
+    width: 69px;
+    height: 69px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+.icon_bg_5{
+    background-image: url(./images/icon_bg_5.png);
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    background-size: 100% 100%;
+}

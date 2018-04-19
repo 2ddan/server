@@ -1,0 +1,7 @@
+{
+    "tpl":"./bind_phone.tpl",
+    "cfg":"../activity.cfg",
+    "js":"./bind_phone.ts",
+    "forelet":"./bind_phone.ts",
+    "css":"../activity.wcss"
+}

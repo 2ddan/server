@@ -1,0 +1,7 @@
+{
+    "tpl":"./reclaim_bg1.tpl",
+    "js":"./reclaim.ts",
+    "cfg":"./reclaim_bg1.cfg",
+    "forelet":"./reclaim.ts",
+    "css":"./reclaim_bg1.wcss"
+}

@@ -1,0 +1,24 @@
+{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let index = it.index || 0}}
+{
+    "type" : "prefab",
+    "width":150,
+    "height":150,
+    "position":[{{it.x || 0}},{{it.y|| 0}},{{it.z || 1000}}],
+    "horizontalAlign":"center",
+    "verticalAlign":"center",
+    "children":[
+        {{if it.effect}}
+        {
+            "type":"prefab",
+            "tpl":"{{it.effect}}",
+            "rayID":{{it.rayID || 0}},
+            "playAnim":{
+                "isOnce":{{it.isOnce || false}},
+                "name":"{{effect[it.effect][index]}}",
+                "id":{{it.id || 0}}
+            }
+        }
+        {{end}}
+    ] 
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./rank.tpl",
+    "css":"./gem.wcss",
+    "cfg":"./gem.cfg",
+    "js":"./gem.ts",
+    "forelet":"./gem.ts"
+}

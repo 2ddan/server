@@ -1,0 +1,7 @@
+{
+    "tpl": "./prop_change.tpl",
+    "cfg": "./prop_change.cfg",
+    "js": "../soul.ts",
+    "css": "../soul.wcss",
+    "forelet": "../soul.ts"
+}

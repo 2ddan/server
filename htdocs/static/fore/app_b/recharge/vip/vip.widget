@@ -1,0 +1,7 @@
+{
+    "tpl":"./vip.tpl",
+    "css":"../recharge.wcss",
+    "js":"./vip.ts",
+    "forelet":"./vip.ts",
+    "cfg":"./vip.cfg"
+}

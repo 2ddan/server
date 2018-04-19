@@ -1,0 +1,7 @@
+{
+    "tpl":"./account_middle.tpl",
+    "css":"./account.wcss",
+    "js":"./fight.ts",
+    "forelet":"./fight.ts",
+    "cfg":"./account_middle.cfg"
+}

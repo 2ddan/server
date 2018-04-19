@@ -1,0 +1,6 @@
+{
+    "tpl":"./week_act.tpl",
+    "js":"./week_act.ts",
+    "forelet":"./week_act.ts",
+    "css":"./week_act.wcss"
+}

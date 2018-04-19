@@ -1,0 +1,7 @@
+{
+    "tpl":"./daily_fb.tpl",
+    "css":"./daily_fb.wcss",
+    "js":"./daily_fb.ts",
+    "forelet":"./daily_fb.ts",
+    "cfg":"./daily_fb.cfg"
+}

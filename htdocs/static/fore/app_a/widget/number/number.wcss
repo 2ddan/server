@@ -1,0 +1,17 @@
+
+/*number*/
+.num_text{
+    width:40px;height:40px;font-size:15px;position: relative;display: inline-block;vertical-align: middle;margin:0 7px;color:#d3d1dc;border-radius:4px;line-height:40px;
+}
+.input_box{
+    font-size: 19px;
+    width:136px;
+    height: 37px;
+    outline:none;
+    vertical-align: middle;
+    color: #ffd8a6;
+    line-height: 37px;
+    border:none;
+    background-color: rgba(255,255,255,0);
+    text-align: center;
+}

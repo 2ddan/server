@@ -1,0 +1,5 @@
+{
+    "tpl": "./tip.tpl",
+    "js": "pi/ui/tip.ts",
+    "forelet": "./tip_forelet.ts"
+}

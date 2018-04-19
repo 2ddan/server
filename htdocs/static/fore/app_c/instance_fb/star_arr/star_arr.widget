@@ -1,0 +1,7 @@
+{
+    "tpl":"./star_arr.tpl",
+    "js":"../instance_fb.ts",
+    "forelet":"../instance_fb.ts",
+    "cfg":"../mission/mission.cfg",
+    "css":"./star_arr.wcss"
+}

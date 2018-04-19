@@ -1,0 +1,7 @@
+{
+    "tpl":"./effect_preview.tpl",
+    "js":"../weapon_soul.ts",
+    "forelet":"../weapon_soul.ts",
+    "cfg":"../weapon_soul.cfg",
+    "css":"../weapon_soul.wcss"
+}

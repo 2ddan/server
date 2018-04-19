@@ -1,0 +1,46 @@
+
+.wild_map_info{
+	width: 155px;
+	height: 65px;
+	position: absolute;
+}
+
+
+.exp_award{
+	background-image:url(./image/exp_award.png);
+	width:40px;
+	height:40px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.mission_title{
+	background-image:url(./image/mission_title.png);
+	width:191px;
+	height:26px;
+	position:absolute;
+	background-size: 100% 100%;
+	line-height: 27px;
+    padding-left: 42px;
+	box-sizing: border-box;
+	font-family:mnjsh;
+	color:#fde7ca;
+	font-size:17px;
+}
+.arrow_btn_roundBig{
+	background-image:url(./image/arrow_btn_roundBig.png);
+	width:54px;
+	height:54px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.title_money{
+	width: 76px;
+    height: 100%;
+    color: rgb(227, 216, 187);
+    font-size: 16px;
+    line-height: 26px;
+    position: absolute;
+    left: 28px;
+    text-align: center;
+}

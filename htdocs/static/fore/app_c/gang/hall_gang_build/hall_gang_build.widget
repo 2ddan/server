@@ -1,0 +1,6 @@
+{
+    "tpl":"./hall_gang_build.tpl",
+    "js":"./hall_gang_build.ts",
+    "forelet":"../gang.ts",
+    "css":"./hall_gang_build.wcss"
+}

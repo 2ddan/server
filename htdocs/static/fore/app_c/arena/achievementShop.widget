@@ -1,0 +1,7 @@
+{
+    "tpl":"./achievementShop.tpl",
+    "js":"./arena.ts",
+    "forelet":"./arena.ts",
+    "cfg":"./arena.cfg",
+    "css":"./achievementShop.wcss"
+}

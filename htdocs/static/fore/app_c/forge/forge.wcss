@@ -1,0 +1,120 @@
+.equip_select {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    z-index: 3;
+    background-image: url(./images/equip_select.png);
+    background-repeat: no-repeat;
+}
+
+.diam_bg{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-image: url(./images/diam_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.diam_info_bg{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url(./images/diam_info_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.diam_gray{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-image: url(./images/diam_gray.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.star_soul{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url(./images/star_soul.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.pic_equipstar_effect{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url(./images/pic_equipstar_effect.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.soul_bg{
+    position: absolute;
+    width: 331px;
+    height: 276px;
+    background-image: url(./images/soul_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.soul_line{
+    position: absolute;
+    width: 297px;
+    height: 183px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+.soul_line_1{background-image: url(./images/soul_line_1.png);}
+.soul_line_2{background-image: url(./images/soul_line_2.png);}
+.soul_line_3{background-image: url(./images/soul_line_3.png);}
+
+.lights{
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background-image: url(./images/lights.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.forge_equip_bg{
+    position: absolute;
+    width: 310px;
+    height: 333px;
+    background-image: url(./images/forge_equip_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.forge_stage{
+    position: absolute;
+    width: 305px;
+    height: 184px;
+    background-image: url(./images/forge_stage.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}
+
+.equip_select{
+    position: absolute;
+    width: 106px;
+    height: 106px;
+    background-image: url(./images/equip_select.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+}

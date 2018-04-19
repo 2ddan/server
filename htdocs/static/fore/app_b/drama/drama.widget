@@ -1,0 +1,6 @@
+{
+    "tpl":"./drama.tpl",
+    "js":"./drama.ts",
+    "cfg":"./drama.cfg",
+    "forelet":"./drama.ts"
+}

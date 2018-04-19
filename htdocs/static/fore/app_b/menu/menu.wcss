@@ -1,0 +1,32 @@
+
+
+.pm_bg{
+	background-image:url(./images/menu_parent.png);
+	width:423px;
+	height:66px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.parent_bg_left{
+	background-image:url(./images/parent_bg_left.png);
+	width:70px;
+	height:94px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.parent_bg_right{
+	background-image:url(./images/parent_bg_right.png);
+	width:70px;
+	height:94px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.parent_bg_middle{
+	background-image:url(./images/parent_bg_middle.png);
+	width:10px;
+	height:94px;
+	position:absolute;
+	background-size: 100% 100%;
+}

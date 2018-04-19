@@ -1,0 +1,7 @@
+{
+    "tpl":"./skill_up.tpl",
+    "js":"./skill_up.ts",
+    "forelet":"./skill_up.ts",
+    "cfg":"./skill_up.cfg",
+    "css":"./skill_up.wcss"
+}

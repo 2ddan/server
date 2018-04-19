@@ -1,0 +1,6 @@
+{
+    "tpl":"./logining.tpl",
+    "js":"",
+    "css":"./main.wcss",
+    "forelet":"./user.ts"
+}

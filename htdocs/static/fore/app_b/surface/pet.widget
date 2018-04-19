@@ -1,0 +1,7 @@
+{
+    "tpl":"./pet.tpl",
+    "js":"./cloth.ts",
+    "forelet":"./cloth.ts",
+    "cfg":"./main.cfg",
+    "css":"./pet.wcss"
+}

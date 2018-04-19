@@ -1,0 +1,53 @@
+export const publicboss_base = {
+    610101:{
+        "map_id":"scene_map07",
+        "player_site":[[0,0]],
+        "monster_site":[[-4.77,12.34]],
+        "level":20,
+        "refresh_time":-1,
+        "revive_time":5,
+        "map_player":7,
+        "challenge_time":90,
+        "bubble":1
+    },610102:{
+        "map_id":"scene_map07",
+        "player_site":[[0,0]],
+        "monster_site":[[-4.77,12.34]],
+        "level":30,
+        "refresh_time":-1,
+        "revive_time":20,
+        "map_player":7,
+        "challenge_time":90,
+        "bubble":1
+    },610103:{
+        "map_id":"scene_map07",
+        "player_site":[[0,0]],
+        "monster_site":[[-4.77,12.34]],
+        "level":40,
+        "refresh_time":-1,
+        "revive_time":40,
+        "map_player":7,
+        "challenge_time":90,
+        "bubble":1
+    },610104:{
+        "map_id":"scene_map07",
+        "player_site":[[0,0]],
+        "monster_site":[[-4.77,12.34]],
+        "level":50,
+        "refresh_time":-1,
+        "revive_time":60,
+        "map_player":7,
+        "challenge_time":90,
+        "bubble":1
+    },610105:{
+        "map_id":"scene_map07",
+        "player_site":[[0,0]],
+        "monster_site":[[-4.77,12.34]],
+        "level":60,
+        "refresh_time":-1,
+        "revive_time":360,
+        "map_player":7,
+        "challenge_time":90,
+        "bubble":1
+    }
+}

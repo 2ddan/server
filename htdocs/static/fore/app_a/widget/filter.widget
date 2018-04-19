@@ -1,0 +1,4 @@
+{
+    "tpl": "./filter/filter.tpl",
+    "cfg": "./filter/filter.cfg"
+}

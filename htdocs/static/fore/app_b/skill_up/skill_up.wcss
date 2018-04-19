@@ -1,0 +1,188 @@
+.3 {
+    position: absolute;
+    left: 50%;
+    top: 97px;
+    margin-left: -268px;
+}
+.5 {
+    position: relative;
+    width: 100%;
+    height: 136px;
+    margin-bottom: 30px;
+    /* top: 132px; */
+}
+.6 {
+    position: absolute;
+    left: 48px;
+    top: 0px;
+}
+.12 {
+    position: absolute;
+    left: 155px;
+    top: 14px;
+    width: 336px;
+    height: 249px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-family: mnjsh;
+}
+.13 {
+    position: absolute;
+    left: 54px;
+    top: 23px;
+    width: 91px;
+    height: 91px;
+}
+.17 {
+    position: absolute;
+    width: 208px;
+    height: 55px;
+    left: 156px;
+    top: 56px;
+    color: #FFD7A8;
+    font-size: 15px;
+    text-align: justify;
+}
+.18 {
+    position: absolute;
+    left: 50%;
+    top: 112px;
+    z-index: -1;
+    margin-left: -244px;
+}
+.19 {
+    position: absolute;
+    left: 392px;
+    top: 45px;
+}
+.20 {
+    position: absolute;
+    left: 406px;
+    top: 91px;
+    color: #FFD7A8;
+    white-space: nowrap;
+}
+.21 {
+    position: absolute;
+    width: 111px;
+    height: 25px;
+    left: 284px;
+    top: 14px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.22 {
+    position: absolute;
+    left: 50%;
+    top: 829px;
+    color: #FFFFFF;
+    line-height: 27px;
+    margin-left: -39px;
+}
+.23 {
+    position: absolute;
+    left: 50%;
+    top: 829px;
+    margin-left: 25px;
+}
+.24 {
+    position: absolute;
+    top: 830px;
+    left: 50%;
+    margin-left: -67px;
+}
+.25 {
+    position: absolute;
+    width:457px;
+    height:165px;
+    top: 160px;
+    left: 50%;
+    margin-left: -227px;
+}
+.26 {
+    position: absolute;
+    width: 406px;
+    height: auto;
+    top: 112px;
+    left: 69px;
+    color:#fff;
+    font-size: 15px;
+    font-family: mnjsh;
+}
+.27 {
+    position: absolute;
+    top: -2px;
+    left: 84px;
+    color:#8E8E8E;
+    line-height:20px;
+    width:300px;
+}
+.28 {
+    width:100%;
+    height:35px;
+    background-image:url(./images/skill_top.png);
+    background-size:100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.29 {
+    width:100%;
+    height:90px;
+    background-image:url(./images/skill_middle.png);
+    background-size:100% auto;
+    background-repeat-y:repeat;
+    position: absolute;
+    top: 35px;
+    left: 0;
+}
+.30 {
+    width:100%;
+    height:39px;
+    background-image:url(./images/skill_bottom.png);
+    position: absolute;
+    background-size:100% 100%;    
+    bottom: 0;
+    left: 0;
+}
+
+.31 {
+    position: relative;
+    left: 221px;
+    top: 132px;
+    margin-bottom:30px;
+    display: inline-block;
+}
+
+
+
+.48 {
+    position: absolute;
+    left: 374px;
+    top: 45px;
+}
+
+.51 {
+    position: absolute;
+    left: 385px;
+    top: 36px;
+    width: 79px;
+    height: 47px;
+}
+.52 {
+    position: absolute;
+    left: 392px;
+    top: 91px;
+    width: 83px;
+    height: 70px;
+}
+.53 {
+    position: absolute;
+    left: 392px;
+    top: 91px;
+}
+.55 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}

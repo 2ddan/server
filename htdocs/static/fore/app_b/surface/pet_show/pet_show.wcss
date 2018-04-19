@@ -1,0 +1,201 @@
+.3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.4 {
+    position: absolute;
+    width: 540px;
+    height: 790px;
+    top: 103px;
+}
+.5 {
+    position: absolute;
+    width: 492px;
+    height: 673px;
+    left: 24px;
+}
+.6 {
+    position: absolute;
+    width: 100%;
+    height: 420px;
+}
+.7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.8 {
+    position: absolute;
+    left: -22px;
+    top: -14px;
+}
+.11 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+}
+.13 {
+    position: absolute;
+    left: 168px;
+    top: 11px;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 20px;
+}
+.14 {
+    position: absolute;
+    left: 217px;
+    top: 43px;
+}
+.15 {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0px;
+    top: 420px;
+}
+.58 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 482px;
+    height: 233px;
+}
+.59 {
+    position: absolute;
+    left: 17px;
+    top: 20px;
+}
+.60 {
+    position: absolute;
+    left: 29px;
+    top: 33px;
+}
+.61 {
+    position: absolute;
+    left: 30px;
+    top: 55px;
+    width: 66px;
+    height: 22px;
+}
+.63 {
+    position: absolute;
+    left: 0px;
+    top: 352px;
+}
+.64 {
+    position: absolute;
+    color: #FFFA00;
+    bottom: 38px;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.66 {
+    position: absolute;
+    color: #FFD7A8;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    bottom: 13px;
+    z-index: 1;
+}
+.67 {
+    position: absolute;
+    width: 100%;
+    height: 105px;
+    left: 0px;
+    top: 15px;
+    text-align: center;
+}
+.68 {
+    position: absolute;
+    width: 90px;
+    height: 85px;
+    left: 112px;
+    top: 122px;
+}
+.69 {
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+.75 {
+    position: relative;
+    width: 90px;
+    height: 100%;
+}
+.76 {
+    position: relative;
+    width: 90px;
+    height: 100%;
+}
+.77 {
+    position: relative;
+    left: 5px;
+}
+.78 {
+    position: relative;
+    width: 90px;
+    height: 100%;
+}
+.79 {
+    position: relative;
+    left: 5px;
+}
+.80 {
+    position: relative;
+    width: 90px;
+    height: 100%;
+}
+.81 {
+    position: relative;
+    left: 5px;
+}
+.82 {
+    position: relative;
+    width: 90px;
+    height: 100%;
+}
+.83 {
+    position: relative;
+    left: 5px;
+}
+.84 {
+    position: absolute;
+    left: -5px;
+    top: 3px;
+    z-index: 2;
+}
+.85 {
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    width: 85px;
+    z-index: 1;
+}
+.90 {
+    position: relative;
+    left: 5px;
+}
+.91 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 21px;
+}
+.92 {
+    position: absolute;
+    left: 245px;
+    top: 150px;
+}
+.93 {
+    position: absolute;
+    left: 5px;
+    top: 78px;
+    color: #FFFFFF;
+}

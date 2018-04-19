@@ -1,0 +1,1 @@
+<div w-ev-tap='{"stop":false}' on-tap='guide' guide="{{it}}" on-up='up'  style="position:absolute;left:0;top:0;width:100%;height:100%;z-index:111;"></div>

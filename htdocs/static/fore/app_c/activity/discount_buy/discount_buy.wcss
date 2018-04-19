@@ -1,0 +1,8 @@
+.bg_1 {
+    position: absolute;
+    width: 540px;
+    height: 360px;
+    background-image: url(./images/bg_1.png);
+    background-repeat: no-repeat;
+    top: -161px;
+}

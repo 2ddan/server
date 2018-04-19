@@ -1,0 +1,44 @@
+{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let index = it.index || 0}}
+{
+    "type":"Node",
+    "transform":{
+        "position":[{{it.x || 0}}, {{it.z || 0}}, {{it.y || 0}}],
+        "scale":[{{ it.scale || 1}},{{it.scale ||1}},{{it.scale ||1}}],
+        "rotate":[0,0,0]
+    },
+    "children":[
+        {
+            "type":"prefab",
+            "tpl":"{{it.model}}",
+            "rayID":{{it.rayID || 0}},
+            "playAnim":{
+                "isOnce":{{it.isOnce || false}},
+                "name":"{{effect[it.model][index]}}",
+                "id":{{it.id || 0}}
+            }
+        }
+        {{if it.guangzhu}}
+        ,{
+            "type":"Node",
+            "transform":{
+                "position":[0,0,0],
+                "scale":[{{it.Gscale}},{{it.Gscale}},{{it.Gscale}}],
+                "rotate":[0,0,0]
+            },
+            "children":[
+                {
+                    "type":"prefab",
+                    "tpl":"{{it.guangzhu}}",
+                    "rayID":{{it.rayID || 0}},
+                    "playAnim":{
+                        "isOnce":{{it.guangisOnce || false}},
+                        "name":"{{it.guangzhu}}",
+                        "id":0
+                    }
+                }
+            ]
+        }
+        {{end}}
+    ]
+}

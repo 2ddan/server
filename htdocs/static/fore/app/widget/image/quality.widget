@@ -1,0 +1,4 @@
+{
+    "tpl":"./quality.tpl",
+    "js":"./image.ts"
+}

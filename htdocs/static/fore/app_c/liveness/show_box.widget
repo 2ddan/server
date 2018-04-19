@@ -1,0 +1,6 @@
+{
+    "cfg":"./show_box.cfg",
+    "tpl":"./show_box.tpl",
+    "js":"./liveness.ts",
+    "forelet":"./liveness.ts"
+}

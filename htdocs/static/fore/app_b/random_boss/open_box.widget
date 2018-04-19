@@ -1,0 +1,6 @@
+{
+    "tpl":"./open_box.tpl",
+    "css":"./open_box.wcss",
+    "js":"./mysticBox.ts",
+    "forelet":"./mysticBox.ts"
+} 

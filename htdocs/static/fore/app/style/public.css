@@ -1,0 +1,91 @@
+rule_in_sheet{
+    content: "标识"
+}
+/*隐藏未加载成功的图片边框*/
+img[src=""],img:not([src]){opacity:0;}
+/*input  placeholder颜色*/
+::-webkit-input-placeholder {
+    color: #ffd8a6;
+}
+::-moz-placeholder {
+    color: #ffd8a6;
+}
+/* WebKit browsers */
+input:focus::-webkit-input-placeholder { color: transparent; }
+
+/* Mozilla Firefox 4 to 18 */
+input:focus:-moz-placeholder { color: transparent; }
+
+/* Mozilla Firefox 19+ */
+input:focus::-moz-placeholder { color: transparent; }
+
+/* Internet Explorer 10+ */
+input:focus:-ms-input-placeholder { color: transparent; }
+
+/*默认的字体样式*/
+/* input{
+    font-family: 'kaiti_bold';
+} */
+.shadow{
+    text-shadow: 1px 0px 0px #000, -1px 0px 0px #000, 0px 1px 0px #000, 0px -1px 0px #000;
+}
+
+.shadow2{
+    text-shadow: 2px 0px 0px #000, -2px 0px 0px #000, 0px 2px 0px #000, 0px -2px 0px #000;
+}
+
+.shadow3{
+    text-shadow: 1px 0px 0px #282d3a, -1px 0px 0px #282d3a, 0px 1px 0px #282d3a, 0px -1px 0px #282d3a;
+}
+
+.shadow4{
+    text-shadow: 2px 0px 0px #834b1c, -2px 0px 0px #834b1c, 0px 2px 0px #834b1c, 0px -2px 0px #834b1c;
+}
+
+.shadow5{
+    text-shadow: 2px 0px 0px #383838, -2px 0px 0px #383838, 0px 2px 0px #383838, 0px -2px 0px #383838;
+}
+
+.shadow6{
+    text-shadow: 1px 0px 0px #312213, -1px 0px 0px #312213, 0px 1px 0px #312213, 0px -1px 0px #312213;
+}
+
+.shadow7{
+    text-shadow: 1px 0px 0px #1b0d08, -1px 0px 0px #1b0d08, 0px 1px 0px #1b0d08, 0px -1px 0px #1b0d08;
+}
+
+.shadow8{
+    text-shadow: 1px 0px 0px #1c0c05, -1px 0px 0px #1c0c05, 0px 1px 0px #1c0c05, 0px -1px 0px #1c0c05;
+}
+.shadow9{
+    text-shadow: 2px 0px 0px #1b3671, -2px 0px 0px #1b3671, 0px 2px 0px #1b3671, 0px -2px 0px #1b3671;
+}
+.shadow10{
+    text-shadow: 1px 0px 0px #2e2115, -1px 0px 0px #2e2115, 0px 1px 0px #2e2115, 0px -1px 0px #2e2115;
+}
+.shadow11{
+    text-shadow: 1px 0px 0px #ad3b09, -1px 0px 0px #ad3b09, 0px 1px 0px #ad3b09, 0px -1px 0px #ad3b09;
+}
+.shadow12{
+    text-shadow: 1px 0px 0px #ebe3ae, -1px 0px 0px #ebe3ae, 0px 1px 0px #ebe3ae, 0px -1px 0px #ebe3ae;
+}
+.shadow13{
+    text-shadow: 1px 0px 0px #5c280c, -1px 0px 0px #5c280c, 0px 1px 0px #5c280c, 0px -1px 0px #5c280c;
+}
+/*居中*/
+.center_h{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+}
+.center_t{
+    position:absolute;left:50%;transform: translateX(-50%);
+}
+.center_v{
+    position:absolute;top:50%;transform: translateY(-50%);
+}
+.center_hv{
+    position:absolute;left:50%;top:50%;transform: translate(-50%,-50%);
+}
+

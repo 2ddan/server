@@ -1,0 +1,55 @@
+.successAnim {
+    width: 128px;
+    height: 128px;
+    background-image: url(app_b/style/image_1/successAnim.png);
+    animation-name: frames_successAnim;
+    -webkit-animation-name: frames_successAnim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_successAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_successAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}

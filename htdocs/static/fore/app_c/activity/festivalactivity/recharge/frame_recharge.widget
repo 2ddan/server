@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame_recharge.tpl",
+    "js":"../festivalactivity.ts",
+    "forelet":"../festivalactivity.ts"
+}

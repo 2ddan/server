@@ -1,0 +1,82 @@
+{{let wing = {} }}
+{{if it.wing}}
+{{: wing = it.wing}}
+{{end}}
+{{let weapon = [{},{},{}]}}
+{{if it.weapon}}
+{{: weapon = it.weapon}}
+{{end}}
+{{let ww = weapon[0]}}
+{{let ee = weapon[1]}}
+{{let aa = weapon[2]}}
+{
+  "type" : "node",
+  "transform" : {
+    "position" : {{it.position?[it.position[0], it.position[1], it.position[2]]:[0,0,0]}},
+    "scale"    : {{it.scale?[it.scale[0], it.scale[1], it.scale[2]]:[1,1,1]}},
+    "rotate"   : {{it.rotate?[it.rotate[0], it.rotate[1], it.rotate[2]]:[0,0,0]}}
+  },
+  "animator"  : {
+    "controller" : {{it.controller}},
+    "playAnim"   : {{it.playAnim?it.playAnim:null}}
+  },
+  "lookatOnce":{{it.lookatOnce || null}},
+  "children"  : [
+    {
+      "type" : "Skeleton",
+      "res"  : "{{it.res[2]}}" 
+    },
+    {{ww}},{{ee}},{{aa}}, 
+    {
+      "name" : "Object002",
+      "type" : "node",
+      "rayID":{{it.rayID || 0}},
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "rootbone" : "{{it.rootbone}}",
+        "bones"    : {{it.bones[0]}},
+        "bounds"   : {{it.bounds[0]}},
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "offset" : {{it.offset0 || [0,0]}},
+              "repeat" : {{it.repeat0 || [1, 1]}},
+              "wrap"   : {{it.wrap0 || [1000, 1000]}},
+              "filter" : {{it.filter0 || [1006, 1006]}},
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "{{it.res[0]}}",
+                "filter": {{it.filtercolor || null}}
+              }
+            },
+            "side" : 1,
+            "transparent":false
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "{{it.res[1]}}"
+        }
+      }
+    },
+    {{it.sternum}},
+    {{wing}}
+  ]
+}

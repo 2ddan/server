@@ -1,0 +1,4 @@
+{
+    "tpl":"./guide.tpl",
+    "js":"pi/ui/guide.ts"
+}

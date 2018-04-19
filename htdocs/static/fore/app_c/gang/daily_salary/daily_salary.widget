@@ -1,0 +1,7 @@
+{
+    "tpl":"./daily_salary.tpl",
+    "cfg":"./daily_salary.cfg",
+    "js":"./daily_salary.ts",
+    "forelet":"../gang.ts",
+    "css":"./daily_salary.wcss"
+}

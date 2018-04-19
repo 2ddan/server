@@ -1,0 +1,167 @@
+.3 {
+    position: absolute;
+    left: 136px;
+    top: 366px;
+}
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 677px;
+    height: 26px;
+}
+.5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+.6 {
+    position: absolute;
+    width: 492px;
+    height: 702px;
+    left: 50%;
+    margin-left:-246px;
+    top: 109px;
+    z-index: 2;
+}
+.7 {
+    position: absolute;
+    left: -22px;
+    top: -13px;
+    z-index: 2;
+}
+.8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 492px;
+    height: 48px;
+}
+.9 {
+    position: absolute;
+    width: 492px;
+    height: 640px;
+    top: 55px;
+}
+.10 {
+    position: absolute;
+    width: 102%;
+    height: 98%;
+    left: 0px;
+    top: 10px;
+    bottom: -8px;
+}
+.11 {
+    position: absolute;
+    width: 492px;
+    height: 127px;
+}
+.12 {
+    position: absolute;
+    left: 23px;
+    top: 0px;
+    z-index: 2;
+    height: 127px;
+    width: 448px;
+}
+.13 {
+    position: absolute;
+    left: 98px;
+    top: 62px;
+    z-index: 2;
+}
+.14 {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    left: 156px;
+    top: 15px;
+    z-index: 2;
+}
+.15 {
+    position: absolute;
+    left: 147px;
+    top: 97px;
+    z-index: 2;
+    color: #FFFFFF;
+    font-family: mnjsh;
+    line-height: 27px;
+}
+.16 {
+    position: absolute;
+    left: 245px;
+    top: 0px;
+    z-index: 2;
+}
+.18 {
+    color: #FFD7A8;
+    font-size: 20px;
+    font-family: mnjsh;
+    z-index: 2;
+}
+.19 {
+    z-index: 2;
+    width: 11px;
+    height: 10px;
+}
+.20 {
+    z-index: 2;
+    width: 11px;
+    height: 10px;
+}
+.21 {
+    position: absolute;
+    color: #773700;
+    z-index: 2;
+    font-size: 16px;
+    font-family: mnjsh;
+    width: 50px;
+    height: 20px;
+    background-color: #CCAC6C;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 20px;
+    left: 254px;
+    top: 47px;
+}
+.22 {
+    position: absolute;
+    color: #773700;
+    z-index: 2;
+    font-size: 16px;
+    font-family: mnjsh;
+    width: 50px;
+    height: 20px;
+    background-color: #CCAC6C;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 20px;
+    left: 254px;
+    top: 75px;
+}
+.23 {
+    position: absolute;
+    color: #FFD7A8;
+    z-index: 2;
+    font-size: 15px;
+    /* left: 317px; */
+    /* top: 47px; */
+}
+.24 {
+    position: absolute;
+    color: #52E550;
+    font-size: 15px;
+    left: 316px;
+    top: 76px;
+    z-index: 2;
+}
+
+.28 {
+    position: absolute;
+    /* left: 426px; */
+    /* top: 51px; */
+    z-index: 2;
+}

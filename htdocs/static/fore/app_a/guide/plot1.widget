@@ -1,0 +1,5 @@
+{
+    "tpl":"./plot1.tpl",
+    "js":"./plot.ts",
+    "cfg":"./plot.cfg"
+}

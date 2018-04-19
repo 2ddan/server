@@ -1,0 +1,6 @@
+{
+    "tpl":"./frame_exchange.tpl",
+    "css":"../festivalactivity.wcss",
+    "js":"../festivalactivity.ts",
+    "forelet":"../festivalactivity.ts"
+}

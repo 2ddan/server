@@ -1,0 +1,7 @@
+{
+    "tpl":"./prop_d.tpl",
+    "cfg":"./prop_d.cfg",
+    "js":"./prop.ts",
+    "css":"./prop_d.wcss",
+    "forelet":"./prop.js"
+}

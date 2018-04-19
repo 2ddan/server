@@ -1,0 +1,127 @@
+.money{
+	background-image:url(./resource_bar/money.png);
+	width:25px;
+	height:21px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.diamond{
+	background-image:url(./resource_bar/diamond.png);
+	width:25px;
+	height:21px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.skill_icon{
+	background-image:url(./resource_bar/skill_points.png);
+	width:20px;
+	height:22px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.gest{
+	background-image:url(./resource_bar/gest_coin.png);
+	width:20px;
+	height:22px;
+	position: absolute;
+	background-size: 100% 100%;
+	background-position: center center;
+}
+.shovel{
+	background-image:url(./resource_bar/shovel.png);
+	width:20px;
+	height:21px;
+	position: absolute;
+	background-size: 100% 100%;
+	background-position: center center;
+}
+.exp{
+	background-image:url(./resource_bar/exp.png);
+	width:22px;
+	height:22px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.spirit{
+	background-image:url(./resource_bar/spirit.png);
+	width:25px;
+	height:21px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.own_contribute{
+	background-image:url(./resource_bar/own_contribute.png);
+	width:25px;
+	height:21px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.diamond_gest_coin{
+	background-image:url(./resource_bar/diamond_gest_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.equip_coin{
+	background-image:url(./resource_bar/equip_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.feather{
+	background-image:url(./resource_bar/feather.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+.gest_coin{
+	background-image:url(./resource_bar/gest_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.jjc_score{
+	background-image:url(./resource_bar/jjc_score.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.partner_coin{
+	background-image:url(./resource_bar/partner_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.soul_coin{
+	background-image:url(./resource_bar/soul_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.treasure_coin{
+	background-image:url(./resource_bar/treasure_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}
+
+.weapon_coin{
+	background-image:url(./resource_bar/weapon_coin.png);
+	width:30px;
+	height:30px;
+	position: absolute;
+	background-size: 100% 100%;
+}

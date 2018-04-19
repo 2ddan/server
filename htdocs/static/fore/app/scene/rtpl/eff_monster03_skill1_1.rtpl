@@ -1,0 +1,176 @@
+
+{
+  "name" : "eff_monster03_skill1_1",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "eff_monster03_skill1_1" : "5HozG5FQGnp8feweZQiaRH.ai"
+    },
+    "playAnim"   : {{it.playAnim?it.playAnim:null}}
+  },
+  "children"  : [
+    {
+      "name" : "mon3s1a",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.554000020027161,
+          0.815999984741211
+        ],
+        "scale"    : [
+          0.857551515102386,
+          0.857551753520966,
+          0.857551515102386
+        ],
+        "rotate"   : [
+          0.588841199874878,
+          5.80851554870605,
+          0.761171221733093
+        ]
+      },
+      "children"  : [
+        {
+          "name" : "eff_mons3a",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "PvQFBPyRJ7QN3dZ2yBy3Mk.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "3MB1gtZnThZJU4oqQNYCcy.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 8355711,
+                "tintOpacity" : 0.5,
+                "layer"       : 3000,
+                "blending"    : 5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name" : "mon3s1b",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.554000020027161,
+          0.815999984741211
+        ],
+        "scale"    : [
+          0.857551515102386,
+          0.857551753520966,
+          0.857551515102386
+        ],
+        "rotate"   : [
+          6.28179407119751,
+          0.054191704839468,
+          0.924677848815918
+        ]
+      },
+      "children"  : [
+        {
+          "name" : "eff_mons3b",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "CqNk3ZpVQhu1ZA2kpj63b.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "3MB1gtZnThZJU4oqQNYCcy.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 8355711,
+                "tintOpacity" : 0.5,
+                "layer"       : 3000,
+                "blending"    : 5
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

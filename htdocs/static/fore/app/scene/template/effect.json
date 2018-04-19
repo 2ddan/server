@@ -1,0 +1,26 @@
+{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let index = it.index || 0}}
+{
+    "type":"Node",
+    "transform":{
+        "position":[{{it.x || 0}}, {{it.z || 0}}, {{it.y || 0}}],
+        "scale":[{{ it.scale || 1}},{{it.scale ||1}},{{it.scale ||1}}],
+        "rotate":[0,0,0]
+    },
+    {{if it.lookat}}
+    "lookatOnce":{
+        "value":[{{it.lookat.value[0]}},{{it.lookat.value[2]}},{{it.lookat.value[1]}}],
+        "sign":{{it.lookat.sign || 0}}
+    },
+    {{end}}
+    "children":[{
+        "type":"prefab",
+        "tpl":"{{it.effect}}",
+        "rayID":{{it.rayID || 0}},
+        "playAnim":{
+            "isOnce":{{it.isOnce || false}},
+            "name":"{{effect[it.effect][index]}}",
+            "id":{{it.id || 0}}
+        }
+    }]
+}

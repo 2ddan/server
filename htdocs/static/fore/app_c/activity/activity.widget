@@ -1,0 +1,7 @@
+{
+    "tpl":"./activity.tpl",
+    "css":"./activity.wcss",
+    "cfg":"./activity.cfg",
+    "js":"./activity.ts",
+    "forelet":"./activity.ts"
+}

@@ -1,0 +1,119 @@
+.create {
+    position: absolute;
+    width: 180px;
+    height: 59px;
+    background-image: url(./images/create.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -90px;
+    bottom: 65px;
+}
+.name_bg {
+    position: absolute;
+    width: 472px;
+    height: 59px;
+    background-image: url(./images/name_bg.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    margin-left: -236px;
+    bottom: 152px;
+}
+.name_1 {
+    position: absolute;
+    width: 146px;
+    height: 80px;
+    background-image: url(./images/name_1.png);
+    background-repeat: no-repeat;
+}
+.name_2 {
+    position: absolute;
+    width: 146px;
+    height: 80px;
+    background-image: url(./images/name_2.png);
+    background-repeat: no-repeat;
+}
+.name_3 {
+    position: absolute;
+    width: 146px;
+    height: 80px;
+    background-image: url(./images/name_3.png);
+    background-repeat: no-repeat;
+}
+.select_bg {
+    position: absolute;
+    width: 121px;
+    height: 409px;
+    background-image: url(./images/select_bg.png);
+    background-repeat: no-repeat;
+    left: -40px;
+    top: 185px;
+}
+.icon_1 {
+    position: absolute;
+    width: 76px;
+    height: 80px;
+    background-image: url(./images/icon_1.png);
+    background-repeat: no-repeat;
+}
+.icon_2 {
+    position: absolute;
+    width: 76px;
+    height: 80px;
+    background-image: url(./images/icon_2.png);
+    background-repeat: no-repeat;
+}
+.icon_3 {
+    position: absolute;
+    width: 82px;
+    height: 77px;
+    background-image: url(./images/icon_3.png);
+    background-repeat: no-repeat;
+}
+.selected {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/selected.png);
+    background-repeat: no-repeat;
+}
+.icon_1_select {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/icon_1_select.png);
+    background-repeat: no-repeat;
+}
+.icon_2_select {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/icon_2_select.png);
+    background-repeat: no-repeat;
+}
+.icon_3_select {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/icon_3_select.png);
+    background-repeat: no-repeat;
+}
+.desc_bg {
+    position: relative;
+    width: 125px;
+    padding-left:20px;
+    height: 27px;
+    line-height:22px;
+    color:#fff9ee;
+    font-size:16px;
+    font-family: mnjsh;
+    background-image: url(./images/desc_bg.png);
+    background-repeat-x: no-repeat;
+    background-repeat-y: repeat;
+    text-shadow:#202b41 1px 0 0,#202b41 0 1px 0,#202b41 -1px 0 0,#202b41 0 -1px 0;
+    -webkit-text-shadow:#202b41 1px 0 0,#202b41 0 1px 0,#202b41 -1px 0 0,#202b41 0 -1px 0;
+    -moz-text-shadow:#202b41 1px 0 0,#202b41 0 1px 0,#202b41 -1px 0 0,#202b41 0 -1px 0;
+}
+
+
+
+

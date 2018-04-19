@@ -1,0 +1,4 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"../activity.ts"
+}

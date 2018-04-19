@@ -1,0 +1,177 @@
+.bg_1 {
+    background-image: url(./images/bg_1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.long {
+    background-image: url(./images/long.png);
+    background-repeat: no-repeat;
+    width: 462px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -231px;
+    top: 0px;
+}
+.closed {
+    background-image: url(./images/closed.png);
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px;
+    margin-top: -32px;
+}
+.opened {
+    background-image: url(./images/opened.png);
+    background-repeat: no-repeat;
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -23px;
+    margin-top: -23px;
+}
+.selected {
+    background-image: url(./images/selected.png);
+    background-repeat: no-repeat;
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -34px;
+    margin-top: -34px;    
+}
+.element_1 {
+    left: 120px;
+    top: 406px;
+}
+.element_2 {
+    left: 266px;
+    top: 364px;
+}
+.element_3 {
+    left: 120px;
+    top: 313px;
+}
+.element_4 {
+    left: 267px;
+    top: 290px;
+}
+.element_5 {
+    left: 138px;
+    top: 216px;
+}
+.element_6 {
+    left: 96px;
+    top: 100px;
+}
+.element_7 {
+    left: 227px;
+    top: 57px;
+}
+.element_8 {
+    left: 374px;
+    top: 205px;
+}
+.element_9 {
+    left: 265px;
+    top: 173px;
+}
+/**线条**/
+.line_open {
+    background-image: url(./images/line_open.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 13px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+.line_close {
+    background-image: url(./images/line_close.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 13px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+.line_1 {
+    width: 140px;
+    transform: rotate(-16deg);
+}
+.line_2 {
+    width: 145px;
+    transform: rotate(-162deg);
+}
+.line_3 {
+    width: 145px;
+    transform: rotate(-9deg);
+}
+.line_4 {
+    width: 145px;
+    transform: rotate(-150deg);
+}
+.line_5 {
+    width: 120px;
+    transform: rotate(-110deg);
+}
+.line_6 {
+    width: 140px;
+    transform: rotate(-20deg);
+}
+.line_7 {
+    width: 200px;
+    transform: rotate(43deg);
+}
+.line_8 {
+    width: 115px;
+    transform: rotate(-164deg);
+}
+.bg_2 {
+    background-image: url(./images/bg_2.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 319px;
+    position: absolute;
+    background-size: 100% 100%;
+    top: 570px;
+}
+/**元素**/
+.soul_bg {
+    background-image: url(./images/soul_bg.png);
+    background-repeat: no-repeat;
+    width: 98px;
+    height: 98px;
+    position: absolute;
+}
+.soul_selected {
+    background-image: url(./images/soul_selected.png);
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    margin-left: -60px;
+    top: 50%;
+    margin-top: -60px;
+}
+.soul_0 {
+    left: 16px;
+    top: -40px;
+}
+.soul_1 {
+    left: 152px;
+    top: -15px;
+}
+.soul_2 {
+    right: 152px;
+    top: -15px;
+}
+.soul_3 {
+    right: 16px;
+    top: -40px;
+}

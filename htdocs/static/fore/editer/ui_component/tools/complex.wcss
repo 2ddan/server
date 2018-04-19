@@ -1,0 +1,32 @@
+
+.outbox{
+    width: 130px;
+    height: 24px;
+    position: absolute;
+    background-color: #212125;
+    overflow: hidden;
+    z-index: 2;
+}
+.input{
+    color: #868686;
+    background-color: #212125;
+    width: 101px;
+    height: 100%;
+    padding-left: 3px;
+    text-overflow: ellipsis;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    outline: none;
+}
+.icon{
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    position: absolute;
+    left: 106px;
+    top: 0;
+    text-align: center;
+}

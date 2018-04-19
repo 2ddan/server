@@ -1,0 +1,6 @@
+{
+    "tpl": "./main.tpl",
+    "js": "./main.ts",
+    "cfg": "./main.cfg",
+    "forelet": "./main.ts"
+}

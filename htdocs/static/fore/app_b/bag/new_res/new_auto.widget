@@ -1,0 +1,7 @@
+{
+    "tpl":"./new_auto.tpl",
+    "css":"./new_auto.wcss",
+    "js":"../bag.ts",
+    "forelet":"../bag.ts",
+    "cfg":"./new_auto.cfg"
+}

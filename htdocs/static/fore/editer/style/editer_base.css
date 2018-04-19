@@ -1,0 +1,35 @@
+/* 编辑器拼的页面有的可能需要依赖的文件 */
+
+/* 滚动列表 */
+
+/* webkit */
+
+.scroll_box_h::-webkit-scrollbar,
+.scroll_box_v::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll_box_h {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* ie10 edge */
+    -ms-overflow-style: none;
+}
+
+.scroll_box_v {
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* ie10 edge */
+    -ms-overflow-style: none;
+}
+
+.scroll_box_h>div {
+    display: inline-block;
+}
+
+/* flex */
+.flex_box>div {
+    flex-shrink: 0;
+    display: inline-block;
+}

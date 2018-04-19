@@ -1,0 +1,6 @@
+{
+    "tpl":"./equip_gem.tpl",
+    "js":"../forge.ts",
+    "forelet":"../forge.ts",
+    "css":"../forge.wcss"
+}

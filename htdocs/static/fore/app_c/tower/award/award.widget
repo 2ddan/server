@@ -1,0 +1,6 @@
+{
+    "tpl":"./award.tpl",
+    "cfg":"./award.cfg",
+    "js":"../tower.ts",
+    "forelet":"../tower.ts"
+}

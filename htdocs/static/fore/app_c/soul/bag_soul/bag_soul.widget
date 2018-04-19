@@ -1,0 +1,7 @@
+{
+    "tpl": "./bag_soul.tpl",
+    "css": "../soul.wcss",
+    "js": "../soul.ts",
+    "forelet": "../soul.ts",
+    "cfg": "./bag_soul.cfg"
+}

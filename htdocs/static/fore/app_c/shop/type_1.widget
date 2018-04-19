@@ -1,0 +1,7 @@
+{
+    "tpl":"./type_1.tpl",
+    "js":"./shop.ts",
+    "cfg":"./type_1.cfg",
+    "forelet":"./shop.ts",
+    "css":"./type_1.wcss"
+} 

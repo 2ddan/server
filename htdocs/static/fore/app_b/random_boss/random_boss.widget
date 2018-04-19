@@ -1,0 +1,6 @@
+{
+    "tpl":"./random_boss.tpl",
+    "css":"app_b/wild/tips_boss/tips_boss.wcss",
+    "js":"./mysticBox.ts",
+    "forelet":"./mysticBox.ts"
+} 

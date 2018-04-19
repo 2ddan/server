@@ -1,0 +1,6 @@
+{
+    "tpl":"./bind_phone.tpl",
+    "js":"./bind_phone.ts",
+    "forelet":"./bind_phone.ts",
+    "css":"./bind_phone.wcss"
+}

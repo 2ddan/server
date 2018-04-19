@@ -1,0 +1,13 @@
+.opacityAnim {
+    opacity: 0;
+    animation: opacityAnim 2000ms linear;
+}
+@keyframes opacityAnim {
+    0% { opacity: 0; }
+    17% { opacity: 1; }
+    34% { opacity: 0; }
+    51% { opacity: 1; }
+    68% { opacity: 0; }
+    84% { opacity: 1; }
+    100% { opacity: 0; }
+}

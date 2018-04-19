@@ -1,0 +1,1 @@
+<div style="font-family:'icon';display:inline-block;cursor:pointer;" >{{it.icon}}</div>

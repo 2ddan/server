@@ -1,0 +1,6 @@
+{
+    "tpl":"./money_tree.tpl",
+    "forelet":"./money_tree.ts",
+    "js":"./money_tree.ts",
+    "css":"./money_tree.wcss"
+}

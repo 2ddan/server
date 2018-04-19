@@ -1,0 +1,7 @@
+{
+    "tpl":"./shop.tpl",
+    "cfg":"./shop.cfg",
+    "js":"./shop.ts",
+    "forelet":"../gang.ts",
+    "css":"./shop.wcss"
+}

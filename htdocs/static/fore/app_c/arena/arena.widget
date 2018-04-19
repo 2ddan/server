@@ -1,0 +1,7 @@
+{
+    "tpl":"./arena.tpl",
+    "js":"./arena.ts",
+    "forelet":"./arena.ts",
+    "cfg":"./arena.cfg",
+    "css":"./arena.wcss"
+}

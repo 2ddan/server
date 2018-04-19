@@ -1,0 +1,38 @@
+
+.equip_fast_bg{
+	width: 102px;
+	height: 148px;
+	background-image: url(./image/equip_fast_bg.png);
+	position: absolute;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.up_info{
+	width: 14px;
+	height: 23px;
+	background-image: url(./image/up_info.png);
+	position: absolute;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.model_bottom{
+	width: 540px;
+	height: 335px;
+	background-image: url(./image/model_bottom.png);
+	position: absolute;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.role_bottom{
+	width: 540px;
+	height: 39px;
+	background-image: url(./image/role_bottom.png);
+	position: absolute;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.shadowm{
+	text-shadow: 1px 1px 0px #5d3223, -1px -1px 0px #5d3223, -1px 1px 0px #5d3223, 1px -1px 0px #5d3223;
+}

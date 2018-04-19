@@ -1,0 +1,13 @@
+.box{
+    width:calc(100% - 10px);
+    height:100%;
+    background-color: rgb(20, 20, 31);
+    border:none;
+    font-size: 14px;
+    color: #C2C2C2;
+    outline: none;
+    resize: none;
+    font-family:'微软雅黑';
+    padding-left:7px;
+    padding-right: 3px;
+}

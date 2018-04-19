@@ -1,0 +1,6 @@
+{
+    "tpl":"./checkin.tpl",
+    "js":"./checkin.ts",
+    "forelet":"./checkin.ts",
+    "css":"./checkin.wcss"
+}

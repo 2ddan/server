@@ -1,0 +1,111 @@
+
+
+.exp_bg{
+	position:absolute;
+}
+.player_top{
+	background-image:url(./images/player_top.png);
+	background-size:auto 100%;
+}
+
+.vip_bg {
+    background-image: url(./images/vip_bg.png);
+    background-repeat: no-repeat;
+    width:108px;
+    height: 32px;
+    background-size: 100% 100%;
+    position:absolute;
+}
+.wild_power_bg{
+	background-image:url(./images/wild_power_bg.png);
+	width:174px;
+	height:21px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_head_bg{
+	background-image:url(./images/player_head_bg.png);
+	width:107px;
+	height:108px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_head_level{
+	background-image:url(./images/player_head_level.png);
+	width:31px;
+	height:31px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.fight_icon{
+	background-image:url(./images/fight_icon.png);
+	width:53px;
+	height:53px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.exp_fore{
+	background-image:url(./images/exp_fore.png);
+	width:27px;
+	height:8px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.player_top_left{
+	background-image:url(./images/player_top_left.png);
+	width:90px;
+	height:38px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_top_middle{
+	background-image:url(./images/player_top_middle.png);
+	height:38px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_top_right{
+	background-image:url(./images/player_top_right.png);
+	width:90px;
+	height:40px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_bottom_left{
+	background-image:url(./images/player_bottom_left.png);
+	width:272px;
+	height:67px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.head_bg{
+	background-image:url(./images/head_bg.png);
+	width:129px;
+	height:110px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.player_top_namebg{
+	background-image:url(./images/player_top_namebg.png);
+	width:199px;
+	height:37px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+.resource_light{
+	background-image:url(./images/resource_light.png);
+	width:100px;
+	height:7px;
+	position:absolute;
+	background-size: 100% 100%;
+}
+
+.wild_name_bg{
+	background-image:url(./images/wild_name_bg.png);
+	width:157px;
+	height:34px;
+	position:absolute;
+	background-size: 100% 100%;
+}

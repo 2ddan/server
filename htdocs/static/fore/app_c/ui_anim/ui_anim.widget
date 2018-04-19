@@ -1,0 +1,6 @@
+{
+    "tpl":"./ui_anim.tpl",
+    "cfg":"./ui_anim.cfg",
+    "js":"./ui_anim.ts",
+    "forelet":"./ui_anim.ts"
+}

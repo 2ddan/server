@@ -1,0 +1,1 @@
+<pi-ui-navtab$$$$$$>{"cur":0, "btn":"pi-ui-btn", "arr":[{"tab":"pi-ui-selectnumber", "btn":{"text":"Abc1"}, "cfg":{} },{"tab":"pi-ui-btn", "btn":{"text":"Abc2"}, "cfg":{"cfg":{"clazz":"", "text":"1"} } }], "old":{}, "type":2 }</pi-ui-navtab$$$$$$>

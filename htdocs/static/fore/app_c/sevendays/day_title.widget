@@ -1,0 +1,6 @@
+{
+    "tpl":"./day_title.tpl",
+    "js":"./sevendays.ts",
+    "forelet":"./sevendays.ts",
+    "css":"./sevendays.wcss"
+}

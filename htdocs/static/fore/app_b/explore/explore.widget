@@ -1,0 +1,7 @@
+{
+    "tpl":"./explore.tpl",
+    "js":"./explore.ts",
+    "forelet":"./explore.ts",
+    "cfg":"./explore.cfg",
+    "css":"./explore.wcss"
+}

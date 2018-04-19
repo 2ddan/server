@@ -1,0 +1,1509 @@
+rule_in_sheet{
+    content: "this is a token, don not delete this,and other rules MUST behind this!"
+}
+.add_btn {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    background-image: url(./image_1/add_btn.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.level_bg {
+    position: absolute;
+    width: 54px;
+    height: 19px;
+    left: 50%;
+    margin-left: -27px;
+    bottom: 1px;
+    background-image: url(./image_1/level_bg.png);
+    background-repeat: no-repeat;
+}
+.exit {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-image: url(./image_1/exit.png);
+    background-repeat: no-repeat;
+}
+.guide::before{
+	content: '';
+	width: 100%; 
+	height:100%;
+    border: 1000px solid #000;
+    position: absolute;
+	left: -1000px; 
+	top: -1000px;
+    opacity:0.5;
+}
+.my_rank_bg {
+    position: absolute;
+    width: 370px;
+    height: 100px;
+    background-image: url(./image_1/my_rank_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.prop_name_bg{
+    width: 102px;
+    height:24px;
+    background-image: url(./image_1/prop_name_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.fight_power_bg{
+    background-image: url(./image_1/fight_power_bg.png);
+    width: 296px;
+    height: 113px;
+    position:absolute;
+    left: 50%;
+    margin-left: -148px;
+}
+/*获取物品提示*/
+.goods_tip{
+    width:223px;
+    height: 33px;
+    max-width:300px;
+    background-image:url(./image_1/goods_bg.png);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    height:0px;
+    margin:0 auto;
+    line-height:36px;
+    padding:0 5px;
+    margin:0 auto;
+    margin-bottom:3px;
+    animation:goodsTip 2s forwards;
+}
+/*错误提示*/
+.err_tip{
+    background-image:url(./image_1/err_bg.png);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    height:24px;
+    line-height:24px;
+    margin:0 auto;
+    margin-bottom: 3px;
+    padding:0 30px;
+    display:inline-block;
+    animation:errTip 2s forwards;
+    opacity: 0;
+}
+/* 七日活动装备流光 */
+.sevenday_equip {
+    width: 51px;
+    height: 51px;
+    background-image: url(app_b/style/image_1/sevenday.png);
+    animation-name: sevenday_anim;
+    -webkit-animation-name: sevenday_anim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes sevenday_anim{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes sevenday_anim{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+
+/*战斗力变换动画*/
+.powerNumAnim {
+    animation-name: powerNumAnim;/* 动画名称 */
+    animation-duration: 0.2s;/* 动画运行的时间 */    
+    animation-iteration-count: 1;/* 动画播放次数 */
+    animation-timing-function: steps(7);
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes powerNumAnim {
+    0% {
+        -webkit-transform: translate3d(0px,0px,0px) scale(3,3);
+        -o-transform: translate3d(0px,0px,0px) scale(3,3);
+        -moz-transform: translate3d(0px,0px,0px) scale(3,3);
+        transform: translate3d(0px,0px,0px) scale(3,3);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate3d(0px,0px,0px) scale(1,1);
+        -o-transform: translate3d(0px,0px,0px) scale(1,1);
+        -moz-transform: translate3d(0px,0px,0px) scale(1,1);
+        transform: translate3d(0px,0px,0px) scale(1,1);
+        opacity: 1;
+    }
+}
+@keyframes powerNumAnim {
+    0% {
+        -webkit-transform: translate3d(0px,0px,0px) scale(3,3);
+        -o-transform: translate3d(0px,0px,0px) scale(3,3);
+        -moz-transform: translate3d(0px,0px,0px) scale(3,3);
+        transform: translate3d(0px,0px,0px) scale(3,3);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translate3d(0px,0px,0px) scale(1,1);
+        -o-transform: translate3d(0px,0px,0px) scale(1,1);
+        -moz-transform: translate3d(0px,0px,0px) scale(1,1);
+        transform: translate3d(0px,0px,0px) scale(1,1);
+        opacity: 1;
+    }
+}
+/*装备星级流光特效*/
+.equipStarLightlingAnim {
+    width: 100px;
+    height: 100px;
+	background-image: url(./image_1/equipStarLightlingAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: equipStarLightlingAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 750ms;/* 动画运行的时间 */
+
+    animation-name: equipStarLightlingAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 750ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes equipStarLightlingAnim {
+	0% {background-position: 0px 0px;}
+    6.25% {background-position: -100px 0px;}
+    12.50% {background-position: -200px 0px;}
+    18.75% {background-position: -300px 0px;}
+
+    25.00% {background-position: -400px 0px;}
+    31.25% {background-position: -500px 0px;}
+    37.50% {background-position: -600px 0px;}
+    43.75% {background-position: -700px 0px;}
+
+    50.00% {background-position: -800px 0px;}
+    56.25% {background-position: -900px 0px;}
+    62.50% {background-position: -1000px 0px;}
+    68.75% {background-position: -1100px 0px;}
+
+    75.00% {background-position: -1200px 0px;}
+    81.25% {background-position: -1300px 0px;}
+    93.75% {background-position: -1400px 0px;}
+    100% {background-position: -1500px 0px;}
+}
+/* 装备描边流光动画 */
+.equipBorderAnim {
+    width: 128px;
+    height: 128px;
+    background-image: url(app_b/style/image_1/equipBorderAnim.png);
+    animation-name: frames_equipBorderAnim;
+    -webkit-animation-name: frames_equipBorderAnim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_equipBorderAnim{
+    0.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 0);}
+    6.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 0);}
+    13.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 0);}
+    20.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 0);}
+    26.67% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 1);}
+    33.33% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 1);}
+    40.00% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 1);}
+    46.67% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 1);}
+    53.33% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 2);}
+    60.00% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 2);}
+    66.67% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 2);}
+    73.33% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 2);}
+    80.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 3);}
+    86.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 3);}
+    93.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 3);}
+    100.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 3);}
+}
+@-webkit-keyframes frames_equipBorderAnim{
+    0.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 0);}
+    6.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 0);}
+    13.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 0);}
+    20.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 0);}
+    26.67% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 1);}
+    33.33% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 1);}
+    40.00% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 1);}
+    46.67% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 1);}
+    53.33% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 2);}
+    60.00% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 2);}
+    66.67% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 2);}
+    73.33% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 2);}
+    80.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 3);}
+    86.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 3);}
+    93.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 3);}
+    100.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 3);}
+}
+/*装备宝石流光特效*/
+.equipBgAnim {
+    width: 128px;
+    height: 128px;
+    background-image: url(app_b/style/image_1/equipBgAnim.png);
+    animation-name: equipBgAnim;
+    -webkit-animation-name: equipBgAnim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes equipBgAnim{
+    0.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 0);}
+    6.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 0);}
+    13.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 0);}
+    20.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 0);}
+    26.67% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 1);}
+    33.33% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 1);}
+    40.00% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 1);}
+    46.67% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 1);}
+    53.33% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 2);}
+    60.00% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 2);}
+    66.67% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 2);}
+    73.33% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 2);}
+    80.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 3);}
+    86.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 3);}
+    93.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 3);}
+    100.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 3);}
+}
+@-webkit-keyframes equipBgAnim{
+    0.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 0);}
+    6.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 0);}
+    13.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 0);}
+    20.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 0);}
+    26.67% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 1);}
+    33.33% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 1);}
+    40.00% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 1);}
+    46.67% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 1);}
+    53.33% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 2);}
+    60.00% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 2);}
+    66.67% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 2);}
+    73.33% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 2);}
+    80.00% {background-position: calc(100% / 3 * 0) calc(100% / 3 * 3);}
+    86.67% {background-position: calc(100% / 3 * 1) calc(100% / 3 * 3);}
+    93.33% {background-position: calc(100% / 3 * 2) calc(100% / 3 * 3);}
+    100.00% {background-position: calc(100% / 3 * 3) calc(100% / 3 * 3);}
+}
+/*星星流光特效*/
+.starLightlingAnim {
+    width: 76px;
+    height: 82px;
+	background-image: url(./image_1/starLightlingAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: starLightlingAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1000ms;/* 动画运行的时间 */
+
+    animation-name: starLightlingAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 2100ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes starLightlingAnim {
+	0% {opacity:1;background-position: 0px 0px;}
+    2.85% {opacity:1;background-position: -76px 0px;}
+    5.7% {opacity:1;background-position: -152px 0px;}
+    8.55% {opacity:1;background-position: -228px 0px;}
+
+    11.4% {opacity:1;background-position: -304px 0px;}
+    14.25% {opacity:1;background-position: -380px 0px;}
+    17.1% {opacity:1;background-position: -456px 0px;}
+    19.95% {opacity:1;background-position: -532px 0px;}
+    21% {opacity:0;}
+    100% {opacity:0;}
+}
+
+/*关卡战斗状态特效*/
+.fightStateAnim {
+    width: 106px;
+    height: 112px;
+	background-image: url(./image_1/fightStateAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: fightStateAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1000ms;/* 动画运行的时间 */
+
+    animation-name: fightStateAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 540ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes fightStateAnim {
+    /* 0% {background-position: 0px 0px;}
+    12.5% {background-position: -106px 0px;}
+    25% {background-position: -212px 0px;}
+    37.5% {background-position: -318px 0px;}
+
+    50% {background-position: -424px 0px;}
+    62.5% {background-position: -530px 0px;}
+    75% {background-position: -636px 0px;}
+    87.5% {background-position: -742px 0px;}
+
+    100% {background-position: -808px 0px;} */
+
+	0% {background-position: 0px 0px;}
+    10% {background-position: -106px 0px;}
+    20% {background-position: -212px 0px;}
+    30% {background-position: -318px 0px;}
+
+    40% {background-position: -424px 0px;}
+    50% {background-position: -530px 0px;}
+    60% {background-position: -636px 0px;}
+    70% {background-position: -742px 0px;}
+
+    80% {background-position: -848px 0px;}
+    90% {background-position: -954px 0px;}
+    100% {background-position: -1060px 0px;}
+}
+
+/*装备强化成功特效*/
+.successAnim {
+    width: 128px;
+    height: 128px;
+    background-image: url(app_b/style/image_1/successAnim.png);
+    animation-name: frames_successAnim;
+    -webkit-animation-name: frames_successAnim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_successAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_successAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/*宝石强化成功特效*/
+.gemUpAnim {
+    width: 108px;
+    height: 120px;
+	background-image: url(./image_1/gemUpAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: gemUpAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: 1;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1000ms;/* 动画运行的时间 */
+
+    animation-name: gemUpAnim;/* 动画名称 */
+    animation-iteration-count: 1;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 350ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes gemUpAnim {
+
+	0% {background-position: 0px 0px;}
+    14.3% {background-position: -108px 0px;}
+    28.6% {background-position: -216px 0px;}
+    42.9% {background-position: -324px 0px;}
+
+    57.3% {background-position: -432px 0px;}
+    71.5% {background-position: -540px 0px;}
+    85.8% {background-position: -648px 0px;}
+    100% {background-position: -756px 0px;}
+}
+
+/* 宝箱可领取特效 */
+.boxGetAnim {
+    width: 117px;
+    height: 119px;
+	background-image: url(./image_1/boxGetAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: boxGetAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1000ms;/* 动画运行的时间 */
+
+    animation-name: boxGetAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 750ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes boxGetAnim {
+	0% {background-position: 0px 0px;}
+    7.7% {background-position: -117px 0px;}
+    15.4% {background-position: -234px 0px;}
+    23.1% {background-position: -351px 0px;}
+
+    30.8% {background-position: -468px 0px;}
+    38.5% {background-position: -585px 0px;}
+    46.2% {background-position: -702px 0px;}
+    53.9% {background-position: -819px 0px;}
+
+    61.6% {background-position: -936px 0px;}
+    69.3% {background-position: -1053px 0px;}
+    77.0% {background-position: -1170px 0px;}
+    84.7% {background-position: -1287px 0px;}
+    92.4% {background-position: -1404px 0px;}
+    /* 100% {background-position: -1521px 0px;} */
+}
+
+/* 提示字 */
+.tipsTextAnim{
+    opacity: 0;
+    transform: scale(0);
+    animation: tipsTextAnim 1s ease;
+}
+
+@-webkit-keyframes tipsTextAnim{
+    0% {opacity: 0;transform: scale(0)}
+
+    20% {opacity: 1;transform: scale(1)}
+    80% {opacity: 1;transform: scale(1)}
+
+    100% {opacity: 0;transform: scale(1)}
+}
+
+.towerNowPosAnim{
+
+}
+/* 天庭秘境当前位置动画 */
+.towerNowPosAnim {
+    width: 127px;
+    height: 127px;
+	background-image: url(./image_1/towerNowPosAnim.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+	
+    -webkit-animation-name: towerNowPosAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1000ms;/* 动画运行的时间 */
+
+    animation-name: towerNowPosAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-start;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 1000ms;/* 动画运行的时间 */
+}
+@-webkit-keyframes towerNowPosAnim {
+	0% {background-position: 0px 0px;}
+    7.2% {background-position: -127px 0px;}
+    14.4% {background-position: -254px 0px;}
+    21.6% {background-position: -381px 0px;}
+
+    28.8% {background-position: -508px 0px;}
+    36% {background-position: -635px 0px;}
+    43.2% {background-position: -762px 0px;}
+    50.4% {background-position: -889px 0px;}
+
+    57.6% {background-position: -1016px 0px;}
+    64.8% {background-position: -1143px 0px;}
+    72% {background-position: -1270px 0px;}
+    79.2% {background-position: -1397px 0px;}
+
+    86.4% {background-position: -1524px 0px;}
+    93.6% {background-position: -1651px 0px;}
+    /* 100% {background-position: -1778px 0px;} */
+}
+
+.breatheAnim{
+    width: 92px;
+    height: 92px;
+	background-image: url(./image_1/select_halo.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+    transform: scale(1);
+    
+    -webkit-animation-name: breatheAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-end;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1050ms;/* 动画运行的时间 */
+
+    animation-name: breatheAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-end;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 1050ms;/* 动画运行的时间 */
+}
+
+@-webkit-keyframes breatheAnim {
+    0% {transform: scale(0)}
+    /* 5% {transform: scale(0.9)}
+    10% {transform: scale(0.8)}
+    15% {transform: scale(0.7)}
+    20% {transform: scale(0.6)}
+    25% {transform: scale(0.5)}
+    30% {transform: scale(0.4)}
+    35% {transform: scale(0.3)}
+    40% {transform: scale(0.2)}
+    45% {transform: scale(0.1)}
+    46% {transform: scale(0)}
+    54% {transform: scale(0)} */
+    10% {transform: scale(0.1)}
+    20% {transform: scale(0.2)}
+    30% {transform: scale(0.3)}
+    40% {transform: scale(0.4)}
+    50% {transform: scale(0.5)}
+    60% {transform: scale(0.6)}
+    70% {transform: scale(0.7)}
+    80% {transform: scale(0.8)}
+    90% {transform: scale(0.9)}
+    100% {transform: scale(1)}
+}
+
+.chanllengeBossAnim{
+    width: 100px;
+    height: 100px;
+	background-image: url(./image_1/challenge_boss.png);
+	background-position:0  0;
+	background-repeat: no-repeat;
+	opacity: 1;
+    transform: scale(1);
+    
+    -webkit-animation-name: chanllengeBossAnim;/* 动画名称 */
+    -webkit-animation-iteration-count: infinite;/* 动画无限播放 */
+    -webkit-animation-timing-function: step-end;/* 马上跳到动画每一结束桢的状态 */
+    -webkit-animation-fill-mode:forwards;
+    -webkit-animation-duration: 1500ms;/* 动画运行的时间 */
+
+    animation-name: chanllengeBossAnim;/* 动画名称 */
+    animation-iteration-count: infinite;/* 动画无限播放 */
+    animation-timing-function: step-end;/* 马上跳到动画每一结束桢的状态 */
+    animation-fill-mode:forwards;
+    animation-duration: 1500ms;/* 动画运行的时间 */
+}
+
+@-webkit-keyframes chanllengeBossAnim {
+    0% {transform: scale(1);opacity: 1;}
+    2.22% {transform: scale(1.1);opacity: 0.98;}
+    4.44% {transform: scale(1.2);opacity: 0.91;}
+    6.66% {transform: scale(1.3);opacity: 0.84;}
+    8.88% {transform: scale(1.4);opacity: 0.77;}
+    11.1% {transform: scale(1.5);opacity: 0.7;}
+    13.32% {transform: scale(1.6);opacity: 0.63;}
+    15.54% {transform: scale(1.7);opacity: 0.56;}
+    17.76% {transform: scale(1.8);opacity: 0.49;}
+    19.98% {transform: scale(1.9);opacity: 0.42;}
+    22.2% {transform: scale(2.0);opacity: 0.35;}
+    24.42% {transform: scale(2.1);opacity: 0.28;}
+    26.64% {transform: scale(2.2);opacity: 0.21;}
+    28.86% {transform: scale(2.3);opacity: 0.14;}
+    31.08% {transform: scale(2.4);opacity: 0.07;}
+    33.3% {transform: scale(2.5);opacity: 0;}
+
+    33.4% {transform: scale(2);opacity: 0;}
+    100% {transform: scale(2);opacity: 0;}
+}
+/*野外BOSS刚出现时一个急速缩小的效果*/
+@-webkit-keyframes chanllengeBossAnim_1 {
+    0% {
+        opacity: 0.5;
+        transform: scale(7);
+    }
+    30% {
+        opacity:1;
+        transform: scale(6);
+    }
+    100% {
+        opacity:1;
+        transform: scale(1);
+    }
+}
+
+
+/* 神兵技能释放时提示图片由上至下显示 */
+.topToBottomShow {
+    height: 0px;
+    opacity: 0.2;
+    animation: topToBottomShow 220ms ease-in-out;
+}
+@keyframes topToBottomShow {
+    0% { height: 0px; opacity: 0.2}
+    10% { height: 37.4px; opacity: 0.4}
+    20% { height: 74.8px; opacity: 0.6}
+    30% { height: 112.2px; opacity: 0.8}
+    40% { height: 149.6px; opacity: 0.9}
+    50% { height: 187px; opacity: 1}
+    60% { height: 224.4px; }
+    70% { height: 261.8px; }
+    80% { height: 299.2px; }
+    90% { height: 336.6px; } 
+    100% { height: 374px; }
+}
+
+/* 神兵技能释放时背景图显示到一半时显示字 */
+.scaleLargeToM {
+    transform: scale(3);
+    opacity: 0.2;
+    animation: scaleLargeToM 80ms ease-in-out;
+}
+@keyframes scaleLargeToM {
+    0% { transform: scale(3); opacity: 0.2}
+    10% { transform: scale(2.8); opacity: 0.4}
+    20% { transform: scale(2.6); opacity: 0.6}
+    30% { transform: scale(2.4); opacity: 0.8}
+    40% { transform: scale(2.2); opacity: 0.9}
+    50% { transform: scale(2); opacity: 1}
+    60% { transform: scale(1.8); }
+    70% { transform: scale(1.6); }
+    80% { transform: scale(1.4); }
+    90% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.opacityAnim3 {
+    opacity: 1;
+    animation: opacityAnim3 1000ms ease-in-out;
+}
+
+@keyframes opacityAnim3 {
+    0% { opacity: 1; }
+    10% { opacity: 0.9; }
+    20% { opacity: 0.8; }
+    30% { opacity: 0.7; }
+    40% { opacity: 0.6; }
+    50% { opacity: 0.5;}
+    60% { opacity: 0.4;}
+    70% { opacity: 0.3;}
+    80% { opacity: 0.2;}
+    90% { opacity: 0.1;}
+    100% { opacity: 0; }
+}
+
+/* 月卡动画 */
+.card_month_anima {
+    width: 188px;
+    height: 186px;
+    background-image: url(app_b/style/image_1/card_anim.png);
+    animation-name: card_month;
+    -webkit-animation-name: card_month;
+    animation-duration: 1500ms;
+    -webkit-animation-duration: 1500ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes card_month{
+    0.00% {background-position: calc(100% / 5 * 0) calc(100% / 1 * 0);}
+    9.09% {background-position: calc(100% / 5 * 1) calc(100% / 1 * 0);}
+    18.18% {background-position: calc(100% / 5 * 2) calc(100% / 1 * 0);}
+    27.27% {background-position: calc(100% / 5 * 3) calc(100% / 1 * 0);}
+    36.36% {background-position: calc(100% / 5 * 4) calc(100% / 1 * 0);}
+    45.45% {background-position: calc(100% / 5 * 5) calc(100% / 1 * 0);}
+    54.55% {background-position: calc(100% / 5 * 0) calc(100% / 1 * 1);}
+    63.64% {background-position: calc(100% / 5 * 1) calc(100% / 1 * 1);}
+    72.73% {background-position: calc(100% / 5 * 2) calc(100% / 1 * 1);}
+    81.82% {background-position: calc(100% / 5 * 3) calc(100% / 1 * 1);}
+    90.91% {background-position: calc(100% / 5 * 4) calc(100% / 1 * 1);}
+    100.00% {background-position: calc(100% / 5 * 5) calc(100% / 1 * 1);}
+}
+@-webkit-keyframes card_month{
+    0.00% {background-position: calc(100% / 5 * 0) calc(100% / 1 * 0);}
+    9.09% {background-position: calc(100% / 5 * 1) calc(100% / 1 * 0);}
+    18.18% {background-position: calc(100% / 5 * 2) calc(100% / 1 * 0);}
+    27.27% {background-position: calc(100% / 5 * 3) calc(100% / 1 * 0);}
+    36.36% {background-position: calc(100% / 5 * 4) calc(100% / 1 * 0);}
+    45.45% {background-position: calc(100% / 5 * 5) calc(100% / 1 * 0);}
+    54.55% {background-position: calc(100% / 5 * 0) calc(100% / 1 * 1);}
+    63.64% {background-position: calc(100% / 5 * 1) calc(100% / 1 * 1);}
+    72.73% {background-position: calc(100% / 5 * 2) calc(100% / 1 * 1);}
+    81.82% {background-position: calc(100% / 5 * 3) calc(100% / 1 * 1);}
+    90.91% {background-position: calc(100% / 5 * 4) calc(100% / 1 * 1);}
+    100.00% {background-position: calc(100% / 5 * 5) calc(100% / 1 * 1);}
+}
+
+/* 野外任务完成动画 */
+.wildSissionCss {
+    width: 219px;
+    height: 85px;
+    background-image: url(app_b/style/image_1/wildSissionCss.png);
+    animation-name: frames_wildSissionCss;
+    -webkit-animation-name: frames_wildSissionCss;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: alternate-both;
+    -webkit-animation-fill-mode: alternate-both;
+}
+@keyframes frames_wildSissionCss{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_wildSissionCss{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/*新手引导*/
+@keyframes guide_hand{
+    0% {
+        margin-left:30px;
+        margin-top:30px;
+    }
+    35% {
+        margin-left:10px;
+        margin-top:10px;
+    }
+    40% {
+        margin-left:0;
+        margin-top:0;
+    }
+    100% {
+        margin-left:30px;
+        margin-top:30px; 
+    }
+}
+
+@keyframes guide_halo{
+    0% {
+        width:0;
+        opacity: 0;
+    }
+    39% {
+        width:0;
+        opacity: 1;
+    }
+    40% {
+        width:64px;
+        opacity: 1;
+    }
+    70% {
+        width:96px;
+        opacity: 1;
+    }
+    80% {
+        width:128px;
+        opacity: 0.4;
+    }
+    100% {
+        width:128px;
+        opacity: 0;
+    }
+}
+
+/* 在线礼包 */
+.anim_bag{
+    width: 170px;
+    height: 170px;
+    background-image: url(app_b/style/image_1/ling_bag.png);
+    animation-name: frames_anim_ling;
+    -webkit-animation-name: frames_anim_ling;
+    animation-duration: 1500ms;
+    -webkit-animation-duration: 1500ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%,-54%);
+}
+@keyframes frames_anim_ling{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_anim_ling{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 首冲菱形光效 */
+.anim_ling {
+    width: 170px;
+    height: 170px;
+    background-image: url(app_b/style/image_1/ling_first_recharge.png);
+    animation-name: frames_anim_bag;
+    -webkit-animation-name: frames_anim_bag;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-51.5%,-49.5%) scale(0.7);
+}
+@keyframes frames_anim_bag{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_anim_bag{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 神兵释放水球满了 */
+.treasure_full {
+    width: 170px;
+    height: 170px;
+    background-image: url(app_b/style/image_1/treasure_full.png);
+    animation-name: anim_treasure_full;
+    -webkit-animation-name: anim_treasure_full;
+    animation-duration: 800ms;
+    -webkit-animation-duration: 800ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes anim_treasure_full{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes anim_treasure_full{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 宠物突破按钮提示 */
+.petBtnAnim {
+    width: 170px;
+    height: 170px;
+    background-image: url(app_b/style/image_1/btnAnim.png);
+    animation-name: frames_petBtnAnim;
+    -webkit-animation-name: frames_petBtnAnim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_petBtnAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_petBtnAnim{
+    0% {background-position: calc(0%) calc(0%);}
+    12.50% {background-position: calc(50%) calc(0%);}
+    25% {background-position: calc(100%) calc(0%);}
+    37.50% {background-position: calc(0%) calc(50%);}
+    50% {background-position: calc(50%) calc(50%);}
+    62.50% {background-position: calc(100%) calc(50%);}
+    75% {background-position: calc(0%) calc(100%);}
+    87.50% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 随机boss title动画 */
+@keyframes random_boss_title{
+    0% {opacity:1}
+    70% {opacity:1}
+    100% {opacity:0};
+}
+/* 警告红光 */
+@keyframes opacityAnim {
+    0% { opacity: 0; }
+    17% { opacity: 1; }
+    34% { opacity: 0; }
+    51% { opacity: 1; }
+    68% { opacity: 0; }
+    84% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 菱形背景的边框动画 */
+.menu_seven_avtive {
+    width: 126px;
+    height: 126px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-51%,-51%) scale(0.9);
+    background-image: url(app_b/style/image_1/menu_effect.png);
+    animation-name: frames_menu_seven;
+    -webkit-animation-name: frames_menu_seven;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_menu_seven{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_menu_seven{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/*wild task任务完成边框 */
+.wild_task_complete {
+    width: 232px;
+    height: 183px;
+    background-image: url(app_b/style/image_1/task_complete.png);
+    animation-name: frames_task_complete;
+    -webkit-animation-name: frames_task_complete;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_task_complete{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_task_complete{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* wild task任务刷新 */
+.task_refresh {
+    width: 343px;
+    height: 58px;
+    pointer-events: none;
+    background-image: url(app_b/style/image_1/task_refresh.png);
+    animation-name: frames_task_refresh;
+    -webkit-animation-name: frames_task_refresh;
+    animation-duration: 600ms;
+    -webkit-animation-duration: 600ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_task_refresh{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_task_refresh{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* playermission 完成感叹号 */
+.playermission_left {
+    width: 59px;
+    height: 154px;
+    background-image: url(app_b/style/image_1/playermission_left.png);
+    animation-name: frames_playermission_left;
+    -webkit-animation-name: frames_playermission_left;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_playermission_left{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_playermission_left{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* playermission 完成边框 */
+.playermission_border {
+    width: 220px;
+    height: 86px;
+    background-image: url(app_b/style/image_1/playermission.png);
+    animation-name: frames_playermission;
+    -webkit-animation-name: frames_playermission;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_playermission{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_playermission{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 在线礼包摇晃 */
+.online_award {
+    width: 107px;
+    height: 109px;
+    background-image: url(app_b/style/image_1/online_award.png);
+    animation-name: frames_online_award;
+    -webkit-animation-name: frames_online_award;
+    animation-duration: 1200ms;
+    -webkit-animation-duration: 1200ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_online_award{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_online_award{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 铸魂进度条满动画 */
+.bar_end {
+    width: 422px;
+    height: 49px;
+    background-image: url(app_b/style/image_1/treasure_bar_end.png);
+    animation-name: frames_bar_end;
+    -webkit-animation-name: frames_bar_end;
+    animation-duration: 800ms;
+    -webkit-animation-duration: 800ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_bar_end{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_bar_end{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 铸魂进度条不满时动画 */
+.bar_ing {
+    width: 404px;
+    height: 36px;
+    background-image: url(app_b/style/image_1/treasure_bar_ing.png);
+    animation-name: frames_bar_ing;
+    -webkit-animation-name: frames_bar_ing;
+    animation-duration: 800ms;
+    -webkit-animation-duration: 800ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_bar_ing{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_bar_ing{
+    0% {background-position: calc(0%) calc(100%);}
+    11.11% {background-position: calc(11.11%) calc(100%);}
+    22.22% {background-position: calc(22.22%) calc(100%);}
+    33.33% {background-position: calc(33.33%) calc(100%);}
+    44.44% {background-position: calc(44.44%) calc(100%);}
+    55.56% {background-position: calc(55.56%) calc(100%);}
+    66.67% {background-position: calc(66.67%) calc(100%);}
+    77.78% {background-position: calc(77.78%) calc(100%);}
+    88.89% {background-position: calc(88.89%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 星星动画 */
+.star_anim {
+    width: 82px;
+    height: 80px;
+    background-image: url(app_b/style/image_1/pet_star.png);
+    animation-name: frames_star_anim;
+    -webkit-animation-name: frames_star_anim;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_star_anim{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_star_anim{
+    0% {background-position: calc(0%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 新功能技能开放动画 */
+@keyframes skill_anim{
+    0% {
+        transform: scale(0);
+        opacity:0.4;
+    }
+    30% {
+        opacity:1;
+        transform: scale(3);
+    }
+    80% {
+        opacity:1;
+        transform: scale(3);
+    }
+    100% {
+        opacity:0;
+        transform: scale(8);
+    }
+}

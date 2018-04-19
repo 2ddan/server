@@ -1,0 +1,6 @@
+{
+    "tpl":"./investment.tpl",
+    "js":"./investment.ts",
+    "css":"./investment.wcss",
+    "forelet":"./investment.ts"
+}

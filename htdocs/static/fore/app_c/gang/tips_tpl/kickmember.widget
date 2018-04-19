@@ -1,0 +1,7 @@
+{
+    "tpl":"./kickmember.tpl",
+    "cfg":"./kickmember.cfg",
+    "js":"../gang.ts",
+    "forelet":"../gang.ts",
+    "css":"./kickmember.wcss"
+}

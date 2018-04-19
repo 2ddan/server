@@ -1,0 +1,6 @@
+{
+    "tpl":"./exchange.tpl",
+    "js":"../gest.ts",
+    "forelet":"../gest.ts",
+    "cfg":"./exchange.cfg"
+}

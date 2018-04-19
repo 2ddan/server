@@ -1,0 +1,4 @@
+{
+    "tpl":"./tab_change.tpl",
+    "js":"pi/ui/btn.ts"
+}

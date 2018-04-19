@@ -1,0 +1,7 @@
+{
+    "tpl":"./card.tpl",
+    "cfg":"./card.cfg",
+    "js":"./card.ts",
+    "css":"./card.wcss",
+    "forelet":"./card.ts"
+}

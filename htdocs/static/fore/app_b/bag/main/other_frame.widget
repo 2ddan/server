@@ -1,0 +1,5 @@
+{
+    "tpl":"./other_frame.tpl",
+    "js":"../bag.ts",
+    "forelet":"../bag.ts"
+}

@@ -1,0 +1,7 @@
+{
+    "tpl":"./entry.tpl",
+    "css":"../rebel_army.wcss",
+    "cfg":"./entry.cfg",
+    "forelet":"../rebel_army.ts",
+    "js":"../rebel_army.ts"
+}

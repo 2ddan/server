@@ -1,0 +1,6 @@
+{
+    "tpl":"./buy.tpl",
+    "js":"./sevendays.ts",
+    "forelet":"./sevendays.ts",
+    "css":"./sevendays.wcss"
+}

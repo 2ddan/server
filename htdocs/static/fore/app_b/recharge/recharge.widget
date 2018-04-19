@@ -1,0 +1,7 @@
+{
+    "tpl":"./recharge.tpl",
+    "cfg":"./recharge.cfg",
+    "js":"./recharge.ts",
+    "forelet":"./recharge.ts",
+    "css": "./recharge.wcss"
+}
