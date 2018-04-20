@@ -21,7 +21,8 @@ export enum EType{
  */
 export const eventsKeys = {
     insert  : ["type","fighter"],
-    addGroup: ["type","mapId","groupId"]
+    addGroup: ["type","mapId","groupId"],
+    spreadSkill: ["type","mapId","target","skill_id"]
 }
 /**
  * @description 混合后台事件，转换为{key,value}

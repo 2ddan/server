@@ -2,8 +2,12 @@
  * 战斗决策
  */
  // ================================ 导入
+//pi
+import { Vector3 } from "pi/math/vector3";
+import { NavMesh } from "pi/ecs/navmesh";
+//fight
 import { Fight_formula } from "./common/fight_formula";
-import { Result, Skill, Fighter } from "./class"
+import { Result, Skill, Fighter, Pos } from "./class"
 import { Scene } from "./fight";
 
  // ================================ 导出
@@ -40,7 +44,7 @@ export class Util{
         let at = s.actionTime;
         if(s.combo){
             for(let j = 0, leng = s.backSkill.length;j<leng;j++){
-                at += Util.getFighterSkill(f,s.backSkill[j]).actionTime;
+                at += this.getFighterSkill(f,s.backSkill[j]).actionTime;
             }
         }
         return at;
@@ -48,17 +52,18 @@ export class Util{
     /**
      * @description 选择可释放技能
      */
-    static selectSkill(f: Fighter, s: Scene) {
+    static selectSkill(f: Fighter, s: Scene): Skill {
         var r,
+            c = f.curSkill,
             func = (ss)=>{
                 if(ss.priority == 0)
                     return
                 if (f.actionTime > s.now ||  ss.cdNextTime > s.now || (f.publicCDNextTime  > s.now && !ss.hand) || ss.energyCost > f.energy){
                     return;
                 }
-                if (f.curSkill && f.curSkill.priority >= ss.priority)
+                if (c && c.priority >= ss.priority)
                     return;
-                f.curSkill = ss;
+                    c = ss;
             };
         
         for (var i = 0, len = f.skill.length; i < len; i++) {
@@ -67,21 +72,388 @@ export class Util{
             if (!ss.hand)
                 func(ss);
         }
-        return f.curSkill;
+        return c;
     }
     /**
      * @description 判断是否相同坐标点
      */
-    static samePos(src,target){
-        return src.x === target.x && src.y === target.y && src.z === target.z
+    static samePos(src: Fighter,target: Fighter): boolean{
+        return src && target && src.x === target.x && src.y === target.y;
     }
+    /**
+     * @description 获取移动路径
+     * @param nm 寻路实例
+     * @param start 起点
+     * @param end 起点
+     * @param box 包围盒半径
+     */
+    static getMovePath(nm: NavMesh,start: Vector3,end: Vector3,box: number): Array<Vector3>{
+        if(!nm)
+            return [{x:start.x,y:0,z:start.y},{x:end.x,y:0,z:end.y}];
+        start = new Vector3(start.x,0,start.y);
+        end = new Vector3(end.x,0,end.y);
+        box = box || 0;
+        return nm.findPath(start,end,box);
+    };
+    /**
+     * @description 选择最小数
+     */
+    static getMinNumber(a:number,b:number):number{
+        if(a && b){
+            return Math.min(a,b);
+        }
+        return a || b;
+    };
+    /**
+     * @description 获得敌人的阵营
+     * @param camp 自己的阵营
+     */
+    static enemy(camp: number): number{
+        return camp === 1 ? 2 : 1;
+    };
+    /**
+     * @description 选择战斗者
+     * @param arr fighter列表
+     * @param conds 需要满足的条件列表
+     */
+    static select(arr: Map<number,Fighter>, conds: any[]): Array<Fighter>{
+        var i, result = [];
+        arr.forEach((v,k)=>{
+            if (this.condsCheck(v, conds))
+                result.push(v);
+        })
+        return result;
+    };
+    /**
+     * @description 技能选择目标
+     * @param f 
+     * @param s 
+     * @param scene 
+     */
+    static selectTarget(f: Fighter, s: Skill, scene: Scene): number{
+        var r, camp = f.camp, con = f.targetConds || [], round = this.getMinNumber(f.round,s.targetLength) || Number.MAX_SAFE_INTEGER, t;
+        // 1自己
+        if (s.targetType <= 1)
+            return f.mapId;
+        // 己方或敌方
+        if (s.targetType > 10) {
+            camp = Util.enemy(camp);
+        }
+        r = this.select(scene.fighters, con.concat([['camp', camp], ['hp', '>', 0]]));
+        this.round(r, f, round, true);
+        return this.getCurTarget(r, f);
+    };
+    static skillTarget(f, s, scene: Scene) {
+        var r, t = s.targetType, camp = f.camp;
+        // 1自己
+        if (s.targetType <= 1)
+            return [f];
+        if (t > 10) {
+            t -= 10;
+            camp = this.enemy(camp);
+        }
+        // 2全体己方或敌人
+        if (t === 2) {
+            return this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+        }
+        // 3血最少的x个己方或敌人
+        if (t === 3) {
+            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+            this.round(r, f, s.distance > 0 ? s.distance : Number.MAX_SAFE_INTEGER, false);
+            //true 从大到小排列 false相反
+            this.limit(r, s.targetAIParam, 'hp', false);
+            return r;
+        }
+        // 4最近的x个队友或敌人
+        if (t === 4) {
+            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+            if (s.distance > 0) {
+                //最近的应该要排序 
+                this.round(r, f, s.distance, true);
+            }
 
-
+            if (r.length > s.targetAIParam)
+                r.length = s.targetAIParam;
+            return r;
+        }
+        // 5技能施放距离内随机的x个己方或敌人（参数为0表示全部）
+        if (t === 5) {
+            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+            if (s.distance > 0) {
+                this.round(r, f, s.distance, false);
+            }
+            if (s.targetAIParam)
+                scene.seed = this.limit(r, s.targetAIParam, undefined, scene.seed);
+            return r;
+        }
+        //技能 1 11 对于仇恨最高的敌人释放
+        r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+        
+        //这里要排序 应该从近到远
+        this.round(r, f, s.distance > 0 ? s.distance : Number.MAX_SAFE_INTEGER, true);
+        //
+        this.limit(r, 1, 'taunt', true,f.curTarget);
+        return r;
+    };
+    /**
+     * @description 根据技能的作用范围，扩大选择目标
+     * @param targets 目标列表
+     * @param targetType 目标类型
+     * @param distance 技能释放距离
+     * @param camp 自己阵营
+     * @param scene 
+     */
+    static rangeTargets(targets: Array<Fighter>, targetType: number, distance: number, camp: number,scene: Scene):Array<Fighter> {
+        var arr, n, i, j, e, f, dd = distance * distance, len = targets.length - 1, camp = targetType > 10 ? this.enemy(camp) : camp, dist;
+        arr = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+        n = arr.length - 1;
+        for (i = n; i >= 0; i--) {
+            e = arr[i];
+            for (j = len; j >= 0; j--) {
+                f = targets[j];
+                if (e === targets[j])
+                    break;
+                dist = (f.x - e.x) * (f.x - e.x) + (f.y - e.y) * (f.y - e.y);
+                if (dist < dd)
+                    break;
+            }
+            if (j < 0)
+                arr[i] = arr[n--];
+        }
+        arr.length = n + 1;
+        return arr;
+    };
+    /**
+     * @description 矩形技能范围
+     */
+    static polygonTargets(targets: Array<Fighter>,targetType: number, rang: Array<number>,camp: number, f: Fighter, scene: Scene):Array<Fighter>{
+        var _x = rang[0]/2,_y = rang[1]/2,rp = [[-_x,_y],[_x,_y],[_x,-_y],[-_x,-_y]],
+            _newRp = this.polygonTransform(rp,f,scene.fighters.get(f.curTarget),_y),
+            len = targets.length - 1,
+            i, j, e,
+            arr,
+            n;
+            camp = targetType > 10 ? this.enemy(camp) : camp;
+            arr = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+            n = arr.length - 1;
+        for (i = n; i >= 0; i--) {
+            e = arr[i];
+            for (j = len; j >= 0; j--) {
+                if (e === targets[j])
+                    break;
+                if (!this.isOutPolygon(e,_newRp))
+                    break;
+            }
+            if (j < 0)
+                arr[i] = arr[n--];
+        }
+        arr.length = n + 1;
+        return arr;
+    };
+    /**
+     * @description 获取当前主目标，可额外绑定选择条件
+     * @param r 
+     * @param f 
+     */
+    static getCurTarget(r, f){
+        var t;
+        for(var i =0,len = r.length;i<len;i++){
+            if(r[i].mapId == f.curTarget) return f.curTarget;
+        }
+        return (r.length > 0) ? r[0].mapId:null;
+    };
+    /**
+     * @description 选择周围的人，如果排序则按距离近远  without 选不选自己
+     * @param arr 目标
+     * @param f 自己
+     * @param distance 距离自己的范围
+     * @param sort 按距离近远排序
+     * @param without 选不选自己
+     */
+    static round(arr: Array<Fighter>, f: Fighter, distance: number, sort: boolean, without?: boolean): void{
+        var dd = distance * distance * 10000, n = arr.length - 1, i, e, dist;
+        for (i = n; i >= 0; i--) {
+            e = arr[i];
+            if (e === f) {
+                if (without)
+                    arr[i] = arr[n--];
+                else
+                    f.rand = 0;
+                continue;
+            }
+            dist = ((f.x - e.x) * (f.x - e.x) * 10000 + (f.y - e.y) * (f.y - e.y) * 10000) | 0;
+    
+            if (dist > dd) {
+                arr[i] = arr[n--];
+                continue;
+            }
+            e.rand = dist / 10000;
+        }
+        arr.length = n + 1;
+        if (sort){
+            arr.sort(function (a, b) {
+                return a['rand'] - b['rand'];
+            });
+        }
+    };
+    /**
+     * @description 条件变量
+     */
+    static condValue(f: Fighter, cond:any): Fighter{
+        var i, n;
+        if (typeof cond === typeof "") {
+            return f[cond];
+        }
+        for (i = 0, n = cond.length; i < n; i++) {
+            f = f[cond];
+            if (f === undefined)
+                return;
+        }
+        return f;
+    };
+    // 条件判断表
+    static condMap = {
+        '>': function (a, b) {
+            return a > b;
+        },
+        '>=': function (a, b) {
+            return a >= b;
+        },
+        '<': function (a, b) {
+            return a < b;
+        },
+        '=<': function (a, b) {
+            return a <= b;
+        },
+        '!=': function (a, b) {
+            return a !== b
+        }
+    };
+    /**
+     * @description 判断f是否满足条件conds
+     * @param f 需要判断的fighter
+     * @param conds 条件列表
+     */
+    static condsCheck (f: Fighter, conds:Array<any>): boolean{
+        var i, c;
+        for (i = conds.length - 1; i >= 0; i--) {
+            c = conds[i];
+            if (c.length == 2) {
+                if (this.condValue(f, c[0]) !== c[1])
+                    return false;
+            } else if (!this.condMap[c[1]](this.condValue(f, c[0]), c[2])) {
+                return false;
+            }
+        }
+        return true;
+    };
+    /**
+     * @description 倍增同余算法
+     * @param seed 
+     */
+    static randNumber(seed:number):number {
+        var MAX_POSITIVE_INT32 = 2147483647;
+        var RAND_A = 16807;
+        var RAND_Q = 127773;
+        var RAND_MASK = 123459876;
+        // 防止种子为0
+        var r = seed ^ RAND_MASK;
+        // C语言的写法，可防止溢出
+        seed = RAND_A * r - ((r / RAND_Q) | 0) * MAX_POSITIVE_INT32;
+        return seed < 0 ? seed + MAX_POSITIVE_INT32 : seed;
+    };
+    /**
+     * @description 获取两点之间的距离
+     */
+    static getPPDistance(p1, p2):any {
+        var xx = p1.x - p2.x, yy = p1.y - p2.y;
+        var _d1 = (xx * xx + yy * yy)*1000000;
+        var _d = Math.sqrt(_d1/1000000);
+        return { xx: xx, yy: yy, d: _d };
+    };
+    /**
+     * @description 计算以t为中心的九宫格坐标中离f最近的点
+     * @param dimension 坐标维度（以目标点为中心）____ 【一维】
+     *                                         |_|_|
+     *                                         |_|_|    
+     */                                        
+    static getNearPos(dimension: number,f: Fighter,t: Fighter): any{
+        let c = dimension,
+            r = {p:{x:0,y:0},d:99999},
+            cacl = (x,y) => {
+                x += t.x;
+                y += t.y
+                let dd = this.getPPDistance(f,{x:x,y:y});
+                if(dd.d <= r.d){
+                    r.p.x = x;
+                    r.p.y = y;
+                }
+            },
+            func = (n) => {
+                for(var j=0;j<n*2+1;j++){
+                    var a = n,
+                        b = n-j,
+                        c = -n+j;
+                        cacl(-a,c);
+                    if(-a != c){
+                        cacl(c,-a);
+                    }
+                    if(a!==c && b !== -a)cacl(a,b);
+                    if(a != b && b !== -a && a !== c){
+                        cacl(b,a);
+                    }
+                }
+            };
+        while (c > 0){
+            func(c--);
+        }
+        return {x:r.p.x,y:r.p.y};
+    }
+    
+    /**
+     * @description 计算多边形旋转、平移后新的坐标点
+     * @param {Array}polygon [[1,2],[2,9],...]多边形位置坐标点
+     * @param {Json}f 人物 {x:?,y:?}
+     * @param {Json}look 人物朝向 {x:?,y:?}
+     * @param {Number}r 多边形中心点到fighter之间的距离
+     * @return {Array} 新的polygon坐标点
+     */
+    static polygonTransform(polygon: Array<any>, f:Fighter, look: Fighter, r: number): Array<any> {
+        //计算新的坐标原点
+        var //f={x:45,y:5},look={x:-98,y:99},
+            //r,
+            _pl=[],
+            fl_d_x = look.x-f.x,
+            fl_d_y = look.y-f.y,
+            fl = this.getPPDistance(f,look).d,
+            //新原点坐标
+            // dx = (r/fl)*fl_d_x+f.x,
+            // dy = (r/fl)*fl_d_y+f.y,
+            dx = fl_d_x*(fl+r)/fl+f.x,
+            dy = fl_d_y*(fl+r)/fl+f.y,
+            //斜率
+            k = fl_d_y/fl_d_x,
+            //通过斜率得到自身与朝向两点直线与x轴之间的夹角
+            //该夹角则为多边形旋转的角度
+            a = Math.PI/2-Math.abs(Math.atan(k));
+        //顺时针旋转为正
+        a = -(k/Math.abs(k))*a;
+        for(var i=0,leng = polygon.length;i<leng;i++){
+            var __p = polygon[i],
+                _r = [];
+            //通过极坐标运算得到新的旋转坐标
+            //以及多边形平移的坐标，最终得到多边形各顶点新的坐标
+            _r[0] = __p[0]*Math.cos(a)-__p[1]*Math.sin(a)+dx;
+            _r[1] = __p[1]*Math.cos(a)+__p[0]*Math.sin(a)+dy;
+            _pl[i] = _r;
+        }
+        return _pl;
+    };
     /**
      * @description 判断某点pt是否在任意多边形points内部
-     * @return {Boolean}
+     * @return {Boolean} true: 边外或边上; false: 内部
      */
-    static isOutPolygon(pt, points) {
+    static isOutPolygon(pt: Pos, points: Array<Pos>):boolean {
         //判断是否在最大四边形外
         var maxY = points[0][1], maxX = points[0][0], minY = maxY, minX = maxX;
         for (var i = 0, len = points.length; i < len; i++) {
@@ -155,62 +527,60 @@ export class Util{
         }
     };
     /**
-     * @description 计算多边形旋转、平移后新的坐标点
-     * @param {Array}polygon [[1,2],[2,9],...]多边形位置坐标点
-     * @param {Json}f 人物 {x:?,y:?}
-     * @param {Json}look 人物朝向 {x:?,y:?}
-     * @param {Number}r 多边形中心点到fighter之间的距离
-     * @return {Array} 新的polygon坐标点
+     * @description 目标继承
+     * @param f 
+     * @param s 
+     * @param scene 
      */
-    static polygonTransform(polygon, f, look, r) {
-        //计算新的坐标原点
-        var //f={x:45,y:5},look={x:-98,y:99},
-            //r,
-            _pl=[],
-            fl_d_x = look.x-f.x,
-            fl_d_y = look.y-f.y,
-            fl = this.getPPDistance(f,look).d,
-            //新原点坐标
-            // dx = (r/fl)*fl_d_x+f.x,
-            // dy = (r/fl)*fl_d_y+f.y,
-            dx = fl_d_x*(fl+r)/fl+f.x,
-            dy = fl_d_y*(fl+r)/fl+f.y,
-            //斜率
-            k = fl_d_y/fl_d_x,
-            //通过斜率得到自身与朝向两点直线与x轴之间的夹角
-            //该夹角则为多边形旋转的角度
-            a = Math.PI/2-Math.abs(Math.atan(k));
-        //顺时针旋转为正
-        a = -(k/Math.abs(k))*a;
-        for(var i=0,leng = polygon.length;i<leng;i++){
-            var __p = polygon[i],
-                _r = [];
-            //通过极坐标运算得到新的旋转坐标
-            //以及多边形平移的坐标，最终得到多边形各顶点新的坐标
-            _r[0] = __p[0]*Math.cos(a)-__p[1]*Math.sin(a)+dx;
-            _r[1] = __p[1]*Math.cos(a)+__p[0]*Math.sin(a)+dy;
-            _pl[i] = _r;
+    static inheritTargets(f: Fighter,s: Skill,scene: Scene): Array<Fighter>{
+        var type = s.hand == 2?"godPrevTargets":"prevTargets",
+            t = [];
+        if(s.FollowTarget && f[type]){
+            t = this.mapFighters(f[type],scene);
         }
-        return _pl;
-    };
-    //获取两点之间的距离
-    static getPPDistance(p1, p2) {
-        var xx = p1.x - p2.x, yy = p1.y - p2.y;
-        var _d1 = (xx * xx + yy * yy)*1000000;
-        var _d = Math.sqrt(_d1/1000000);
-        return { xx: xx, yy: yy, d: _d };
-    };
-    // 选择战斗者
-    static select(arr, conds, result){
-        var i, result = result || [];
-        for (i = arr.length - 1; i >= 0; i--) {
-            if (this.condsCheck(arr[i], conds))
-                result.push(arr[i]);
+        if(s.backSkill){
+            f[type] = this.getMapId(t,scene);
+        }else{
+            f[type] = null;
         }
-        return result;
-    };
-    // 选择战斗者, 如果sortKey为undefined, ascending为随机种子, oldTarget上一次选定的目标
-    static limit(arr, n, sortKey, ascending,oldTarget){
+        return t;
+    }
+    /**
+     * @description 通过mapId查找fighter
+     * @param mapIds 
+     * @param scene 
+     */
+    static mapFighters(mapIds: Array<number>, scene: Scene){
+        var arr = [];
+        for (var i = 0; i < mapIds.length; i++) {
+            let f = scene.fighters.get(mapIds[i]);
+            if (f && f.hp > 0) {
+                arr.push(f);
+            }
+        }
+        return arr
+    }
+    /**
+     * @description 取得fighters的mapId
+     */
+    static getMapId(fighters: Array<Fighter>, scene: Scene): Array<number> {
+        var arr = [];
+        for (var i = 0; i < fighters.length; i++) {
+            if (scene.fighters.get(fighters[i].mapId)) {
+                arr.push(fighters[i].mapId);
+            }
+        }
+        return arr
+    }
+    /**
+     * @description 选择战斗者, 如果sortKey为undefined, ascending为随机种子, oldTarget上一次选定的目标
+     * @param arr 
+     * @param n 
+     * @param sortKey 
+     * @param ascending 
+     * @param oldTarget 
+     */
+    static limit(arr, n, sortKey, ascending, oldTarget?){
         var i,len;
         if (arr.length <= n)
             return arr;
@@ -222,10 +592,8 @@ export class Util{
             sortKey = 'rand';
         }
         arr.sort(ascending ? function (a, b) {
-            //  return a[sortKey] < b[sortKey];
             return b[sortKey] - a[sortKey];
         } : function (a, b) {
-            //  return a[sortKey] > b[sortKey];
             return a[sortKey] - b[sortKey];
         });
         //把自己换到第一个位置
@@ -244,33 +612,11 @@ export class Util{
         arr.length = n;
         return ascending;
     };
-    // 选择周围的人，如果排序则按距离近远  without 选不选自己
-    static round(arr, f, distance, sort, without){
-        var dd = distance * distance * 10000, n = arr.length - 1, i, e, dist;
-        for (i = n; i >= 0; i--) {
-            e = arr[i];
-            if (e === f) {
-                if (without)
-                    arr[i] = arr[n--];
-                else
-                    f.rand = 0;
-                continue;
-            }
-            dist = ((f.x - e.x) * (f.x - e.x) * 10000 + (f.y - e.y) * (f.y - e.y) * 10000) | 0;
+
+
+
+
     
-            if (dist > dd) {
-                arr[i] = arr[n--];
-                continue;
-            }
-            e.rand = dist / 10000;
-        }
-        arr.length = n + 1;
-        if (sort){
-            arr.sort(function (a, b) {
-                return a['rand'] - b['rand'];
-            });
-        }
-    };
     // 复制
     static copy(o){
         var deepClone = (obj) => {
@@ -285,10 +631,6 @@ export class Util{
             return newObj;
         }
         return deepClone(o);
-    }
-    // 获得敌人的阵营
-    static enemy(camp){
-        return camp === 1 ? 2 : 1;
     }
     // 从后往前遍历数组， 返回true表示移除该元素， 返回false表示停止遍历
     static traversal(arr, func){
@@ -387,50 +729,6 @@ export class Util{
             return r;
         return Fight_formula.effectCalc(s, F, T, buff);
     };
-    //根据队伍索引取得队伍成员
-    static selectGroup(scene, f, targetType) {
-        var curTarget = scene.mapList[f.curTarget],
-            enemyList = [];
-        //打敌人
-        if (targetType > 10) {
-            //如果是针对敌方，没有目标 返回空数组
-            if (!curTarget) return [];
-            //如果是针对仇恨最高的敌方， 返回目标
-            if (targetType == 11) {
-                if ((f.groupId != curTarget.groupId) && curTarget.groupId >= 0) {
-                    return [curTarget];
-                } else {
-                    return [];
-                }
-            };
-            //如果是有条件筛选的技能，返回所有敌人列表
-            enemyList = this.groupFighters(f, scene);
-            //返回成fighters
-            return this.mapFighter(enemyList, scene);
-        }
-        //己方
-        return this.mapFighter(scene.group[f.groupId], scene);
-    }
-    //根据mapID取得fighter
-    static mapFighter(mapIds, scene) {
-        var arr = [];
-        for (var i = 0; i < mapIds.length; i++) {
-            if (scene.mapList[mapIds[i]] && scene.mapList[mapIds[i]].hp > 0) {
-                arr.push(scene.mapList[mapIds[i]]);
-            }
-        }
-        return arr
-    }
-    //取得fighters的mapId
-    static getMapId(fighters, scene) {
-        var arr = [];
-        for (var i = 0; i < fighters.length; i++) {
-            if (scene.mapList[fighters[i].mapId]) {
-                arr.push(fighters[i].mapId);
-            }
-        }
-        return arr
-    }
     // 随机圆内坐标
     static randomCirclePos(r, a, b) {
         while (true) {
@@ -455,63 +753,7 @@ export class Util{
         return arr;
     }
 
-    //条件变量
-    static condValue(f, cond) {
-        var i, n;
-        if (typeof cond === typeof "") {
-            return f[cond];
-        }
-        for (i = 0, n = cond.length; i < n; i++) {
-            f = f[cond];
-            if (f === undefined)
-                return undefined;
-        }
-        return f;
-    };
-    // 条件判断表
-    static condMap = {
-        '>': function (a, b) {
-            return a > b;
-        },
-        '>=': function (a, b) {
-            return a >= b;
-        },
-        '<': function (a, b) {
-            return a < b;
-        },
-        '=<': function (a, b) {
-            return a <= b;
-        },
-        '!=': function (a, b) {
-            return a !== b
-        }
-    };
-    // 条件判断
-    static condsCheck (f, conds) {
-        var i, c;
-        for (i = conds.length - 1; i >= 0; i--) {
-            c = conds[i];
-            if (c.length == 2) {
-                if (this.condValue(f, c[0]) !== c[1])
-                    return false;
-            } else if (!this.condMap[c[1]](this.condValue(f, c[0]), c[2])) {
-                return false;
-            }
-        }
-        return true;
-    };
-    // 倍增同余算法
-    static randNumber(seed) {
-        var MAX_POSITIVE_INT32 = 2147483647;
-        var RAND_A = 16807;
-        var RAND_Q = 127773;
-        var RAND_MASK = 123459876;
-        // 防止种子为0
-        var r = seed ^ RAND_MASK;
-        // C语言的写法，可防止溢出
-        seed = RAND_A * r - ((r / RAND_Q) | 0) * MAX_POSITIVE_INT32;
-        return seed < 0 ? seed + MAX_POSITIVE_INT32 : seed;
-    };
+    
 }
 
  // ================================ 本地

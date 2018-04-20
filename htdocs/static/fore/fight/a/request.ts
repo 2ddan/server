@@ -1,5 +1,6 @@
 /**
  * 战斗外部请求
+ * 如果需要同步后台，则必须设置server通讯接口
  */
  // ================================ 导入
 import { Scene } from "./fight";
@@ -27,6 +28,7 @@ export class Request{
      * @description 加入组
      * @param {Json}param {mapId:fighter.mapId,gid:队伍id}
      * @param {Scene}scene fighter所在场景 
+     * @return 错误信息，""为成功
      **/  
     static addGroup(param: any, scene: Scene): string{
         let fighter = scene.fighters.get(param.mapId),
@@ -49,6 +51,7 @@ export class Request{
     /**
      * @description 退出组队
      * @param {Json}param {mapId:fighter.mapId}
+     * @return 错误信息，""为成功
      **/  
     static removeGroup(param: any, scene: Scene):string{
         let fighter = scene.fighters.get(param.mapId),
@@ -70,6 +73,7 @@ export class Request{
      * @description 使用技能
      * @param {Json}param {mapId:fighter.mapId,skill_id:技能id,curtarget:mapId,pos:[]}
      * @return {string} !"" 则不成功，返回值就是错误信息，否则成功
+     * @return 错误信息，""为成功
      **/  
     static useSkill(param: any, scene: Scene):string{
         
@@ -99,12 +103,16 @@ export class Request{
     }
     /**
      * @description 移动
-     * @param param {mapId:fighter.mapId,pos:Pos}
+     * @param param {mapId:fighter.mapId,pos:Pos,old:Pos} pos可选
      * @param scene 
+     * @return 错误信息，""为成功
      */
     static move(param: any, scene: Scene):string{
         let f = scene.fighters.get(param.mapId);
-
+        f.x = param.old.x;
+        f.y = param.old.y;
+        if(param.pos)
+            f.moveto = param.pos;
         return "";
     }
 }

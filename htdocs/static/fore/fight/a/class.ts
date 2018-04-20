@@ -84,26 +84,25 @@
      shield = { length: 0 }
 
      // buff
-     buff = []
+     buff: Buff[] = []
      // 正在释放的技能
-     spreadSkill = undefined
+     spreadSkill: Skill = undefined
      // 正在释放的技能目标
-     spreadTargets = undefined
+     spreadTargets: number[] = undefined
      // 正在释放的技能等待时间
-     spreadNextTime = 0
+     spreadNextTime: number = 0
      // 正在释放的技能等待时间
      useSkillTime = 0
      // 正在释放的技能次数
      spreadCount = 0
      // 移动的目的地
-     moveto = undefined
-     //移动速度
-     speed = 0
+     moveto: Pos = undefined
+     //移动速度,m/50sm
+     speed: number = 0
      // 当前选择的技能
-     curSkill = undefined
-     // 当前选择的目标
-     curTarget = null
-     ss = 0
+     curSkill: Skill = undefined
+     // 当前选择的目标 mapId
+     curTarget: number = null
      // 记录fighter承受伤害对象，伤害
      damageList: any = {}
      //队伍id
@@ -116,7 +115,7 @@
      passive: boolean = false
      //是否显示
      hidden: boolean = false
-     // 记录选择目标是，目标到自身的距离平方
+     // 临时记录用：随机数 || 记录选择目标是，目标到自身的距离平方
      rand: number = 0
      //是否需要移除
      remove: boolean = false
@@ -124,6 +123,10 @@
      ai: boolean = false
      //移动路径Array<Pos>
      path: Pos[] = undefined
+     //主动寻怪范围
+     round: number = Infinity
+     //额外选择目标的条件
+     targetConds: any[] = undefined
 }
 
 export class Skill {
@@ -150,12 +153,14 @@ export class Skill {
     targetType = 11
     // 目标类型AI参数
     targetAIParam = 0
+    // 是否继承目标
+    FollowTarget = false
     // 技能施放距离
     distance = 0
     // 是否范围技能
     isRangeSkill = 0
     // 技能范围 半径
-    range = 0
+    range:any = 0
     // 引导次数
     guideCount = 0
     // 引导间隔
@@ -210,6 +215,8 @@ export class Skill {
     buff = undefined
     // 冷却到期时间
     cdNextTime = 0
+    //目标选择距离
+    targetLength = 999
 }
 
 export class Buff {

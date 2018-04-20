@@ -16,16 +16,23 @@
  * 显示层：演播技能特效、动作、伤害，模拟移动
  * 
  * 
+ * //保障流畅度
+ * 1.释放技能，由客户端发起，不论成功与否，前端都播放技能，cd照样更新；
+ *   服务端接收到消息后按照正常技能逻辑走，反馈前端是否释放成功
+ *   成功之后更新技能cd，防止后台技能cd没好之前，又请求释放
  * 
- * 释放技能，由客户端发起；服务端验证技能是否符合释放条件
- * 
- * 4.组队：
+ * 2.移动前端按照正常移动走，同时通知后台移动，不等后台回调
+ *   每次发起新的移动，会把前端当前位置同时推给后台，保证前后台位置同步
+ *
  * 
  */
 
  // ================================ 导入
- import { Fighter , Skill, Buff } from "./class"
- import { EType } from "./analyze"
+//pi
+import { NavMesh } from "pi/ecs/navmesh";
+//fight
+import { Fighter , Skill, Buff } from "./class";
+import { EType } from "./analyze";
 import { Policy } from "./policy";
 
  // ================================ 导出
@@ -81,6 +88,8 @@ export class Scene {
     mapCount = 1
     // 队伍信息，{队伍id:[队伍成员mapId,..]}
     group = {}
+    // 寻路
+    navMesh: NavMesh
 
     /**
      * @description 开始战斗
@@ -147,6 +156,12 @@ export class Scene {
      **/  
     public addEvents(evs: any[]): void{
         this.listener && this.listenEvent.push(evs);
+    }
+    /**
+     * @description 设置寻路处理器
+     */
+    public setNavMesh(n: NavMesh){
+        this.navMesh = n;
     }
 }
 
