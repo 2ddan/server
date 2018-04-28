@@ -171,11 +171,11 @@ export class handScene {
 
 	static remove = function (e, now) {
 		let func = function () {
-			task(objCall, [mgr, "remove", [mapList[e.fighter]],mgr_data.name], 60000, 1);
-			pet[e.fighter] && task(objCall, [mgr, "remove", [pet[e.fighter]],mgr_data.name], 60000, 1);
+			task(objCall, [mgr, "remove", [mapList[e.mapId]],mgr_data.name], 60000, 1);
+			pet[e.mapId] && task(objCall, [mgr, "remove", [pet[e.mapId]],mgr_data.name], 60000, 1);
 			//mgr.remove(mapList[e.mapId]);
-			delete mapList[e.fighter];
-			delete pet[e.fighter];
+			delete mapList[e.mapId];
+			delete pet[e.mapId];
 		};
 		cuurUI.push({"param": {func:func,time:now},"fun": UiFunTable.remove});
 	};
@@ -183,7 +183,7 @@ export class handScene {
 	static move = function (e) {
 		//e = Move.getPos(e[1]);
 		
-		let fighter = mapList[e.fighter];
+		let fighter = mapList[e.fighter.mapId];
 		if(!fighter || fighter.hp<=0)return;
 
 		//setChangeData(fighter, e.fighter,now);
@@ -206,43 +206,29 @@ export class handScene {
 		// 	}
 		// }
 
-		if(e.moveto){
-			fighter.lookat = {
-				"value": [e.moveto.x, e.moveto.z, 0],
-				sign: Date.now()
-			};
+		if(e.fighter.path && e.fighter.path.length){
+            if (fighter.lookat.value[0] != e.fighter.path[0].x || fighter.lookat.value[1] != e.fighter.path[0].z) {
+                fighter.lookat = {
+                    "value": [e.fighter.path[0].x, e.fighter.path[0].z, 0],
+                    sign: Date.now()
+                };
+			}
 			// if(e.moveing == 0 || fighter.path[0].x == e.fighter.x && fighter.path[0].y == e.fighter.y){
 			// 	fighter.path.shift();
 			// }
         //看向点击操作的方向
         }
-		// fighter.x = e.fighter.x;
-		// fighter.y = e.fighter.y;
-		// mgr_data.camera[mgr_data.name]._pos.x = e.fighter.x;
-		// mgr_data.camera[mgr_data.name]._pos.y = e.fighter.y;
+		fighter.x = e.fighter.x;
+		fighter.y = e.fighter.y;
+		mgr_data.camera[mgr_data.name]._pos.x = e.fighter.x;
+		mgr_data.camera[mgr_data.name]._pos.y = e.fighter.y;
 		//if(limitModify(fighter) || e.moving === 0)
-			mgr.setPos(fighter, [fighter.x, fighter.y, 0], fighter.lookat, cfg[fighter.type][fighter.module][fighter.state]);
-		// if (fighter.sid == id){
+			mgr.setPos(fighter, [e.fighter.x, e.fighter.y, 0], fighter.lookat, cfg[fighter.type][fighter.module][fighter.state]);
+		if (fighter.sid == id){
 			// mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [e.fighter.x, e.fighter.y,0]);
 			//moveToSever(e.fighter);
 			//refreshRand(mapList);
-		// }
-
-		if(!__self || mgr_data.name == "loginscene" || mgr_data.name == "uiscene")
-            return;
-        let c = mgr_data.camera[mgr_data.name],
-            cp = c._show.old.transform.position,
-            fp = __self._show.old.transform.position,
-            r;
-        if(__self){
-            let fighterPosition = [fp[0],fp[1],fp[2]];
-            globalSend("fighter_position",fighterPosition);
-        }
-        // globalSend("runShowFun",msg);
-        if(!c.hand && (cp[0] != fp[0] || cp[2] != fp[2])){
-            r = setCamera(cp,fp,__self.speed,1);
-            r && mgr.setOnlyPos(c, r);
-        }
+		}
 	};
 
 	static spreadSkill = function (e, now) {
@@ -288,15 +274,39 @@ export class handScene {
 			targets.push(mapList[e.target[i].mapId]);
 		}
 		
+		if(fighter.skill[index].hand !== 2){
+			_play = UiFunTable.updateUseSkill(fighter, getSkillAction(e));
+		}
+
+		if (id == fighter.sid) {
+			//更新技能
+			fighter.skill[index].cdNextTime = now + ss.cdTime;
+		}
 
 		e.fighter = fighter;
 		e.target = targets;
 		e.curTarget = curTarget;
-				
+		if (fighter.skill[index].hand !== 2 && curTarget && (fighter.lookat.value[0] != curTarget.x || fighter.lookat.value[1] != curTarget.y)) {
+			fighter.lookat = { "value": [curTarget.x, curTarget.y, curTarget.z], sign: Date.now() };
+		}		
 		// if(_play)task(objCall, [mgr, "setAnimationOnce", [fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]], 60000, 1);
-		
-		
-		
+		if(_play)objCall(mgr,"setAnimationOnce",[fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]);
+		// TODO 根据e.skill 来确定技能特效
+		for(let j = 0,len = fighter.skill[index].skillEffect.length;j<len;j++){
+			cuurUI.push({ "param": { fighter:fighter,skill:ss,index:j,time:e.time }, "fun": UiFunTable.skillEffect });
+		}
+		//震屏
+		if(fighter.type == "monster" || id == fighter.sid){
+			if(fighter.skill[index].shake){
+				e.time = Date.now() + fighter.skill[index].shakeTime;
+				e.index = index;
+				cuurShow.push({"param": e,"fun": UiFunTable.shakeEffect});
+				
+			}
+			if(fighter.skill[index].skillSound){
+				cuurUI.push({ "fun": UiFunTable.sound, "param": {name:fighter.skill[index].skillSound,time:now+fighter.skill[index].skillSoundDelay} });
+			}
+		}
 		if(fighter.curTarget && (mgr_data.name == "public_boss" || Fight.count > 0)){
 			if(mapList[fighter.curTarget] && mapList[fighter.curTarget].type == "monster" && mapList[fighter.curTarget].show_type == 1){			
 				if(cuurShow.length == 0){
@@ -328,18 +338,21 @@ export class handScene {
 	};
 
 	static damage = function (e, now) {
-		let fighter = mapList[e.fighter];
-		let curTarget = mapList[e.target];
+		let fighter = mapList[e.fighter.mapId];
+		let curTarget = mapList[e.target.mapId];
 		e = Common.shallowClone(e);
 		if(!fighter){
 			console.warn("Don't find the fighter who is ",e.fighter);
 			return;
 		}
 		if(!curTarget)return;
+
+		setChangeData(fighter, e.fighter,now);
+		setChangeData(curTarget, e.target,now);
 		
 		curTarget.self = (curTarget.mapId == __self.mapId);
 		fighter.self = (fighter.mapId == __self.mapId);
-		e.curTarget = e.curTarget;
+		e.curTarget = e.fighter.curTarget;
 		e.target = curTarget;
 		e.fighter = fighter;
 		//e.time = e.time - now;
@@ -393,64 +406,37 @@ export class handScene {
 
 	//释放技能
 	static useSkill = function (e, now) {
-		let _play,
-			fighter = mapList[e.fighter],
-			curTarget = mapList[e.curTarget],
-			index = getSkillIndex(fighter.skill,e.skill),
-			ss = fighter.skill[index];
-		if(fighter.skill[index].hand !== 2){
-			_play = UiFunTable.updateUseSkill(fighter, getSkillAction(e));
-		}
-
-		if (fighter.skill[index].hand !== 2 && curTarget && (fighter.lookat.value[0] != curTarget.x || fighter.lookat.value[1] != curTarget.y)) {
-			fighter.lookat = { "value": [curTarget.x, curTarget.y, curTarget.z], sign: Date.now() };
-		}
-		// if(_play)objCall(mgr,"setAnimationOnce",[fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]);
-		// TODO 根据e.skill 来确定技能特效
-		for(let j = 0,len = fighter.skill[index].skillEffect.length;j<len;j++){
-			cuurUI.push({ "param": { fighter:fighter,skill:ss,index:j,time:e.time }, "fun": UiFunTable.skillEffect });
-		}
-		//震屏
-		if(fighter.type == "monster" || id == fighter.sid){
-			if(fighter.skill[index].shake){
-				cuurShow.push({"param": {fighter:fighter,skill:ss,index:index,time:Date.now() + fighter.skill[index].shakeTime},"fun": UiFunTable.shakeEffect});
-				
-			}
-			if(fighter.skill[index].skillSound){
-				cuurUI.push({ "fun": UiFunTable.sound, "param": {name:fighter.skill[index].skillSound,time:now+fighter.skill[index].skillSoundDelay} });
-			}
-		}
 		
 	};
 	//更新技能
 	static refreshSkill = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		updateSkill(f,e.skill,now);
 	};
 	//更新技能
 	static refreshAttr = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		updateAttr(f,e,now);
 	};
 	//更新技能
 	static refreshWeapon = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		f.weaponId = e.weaponId;
 		updateSelfModule(f);
 	};
 	//更新宠物
 	static refreshPet = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		updatePet(e.pet,f);
 	};
 	//更新时装
 	static refreshClothes = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		if(f.clothes == e.clothes)
 			return;
 		f.clothes = e.clothes;
@@ -459,7 +445,7 @@ export class handScene {
 	};
 	//更新附灵特效
 	static refreshEnsoulClass = (e,now) => {
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		if(f.ensoulClass == e.ensoulClass)
 			return;
 		f.ensoulClass = e.ensoulClass;
@@ -467,7 +453,7 @@ export class handScene {
 	}
 	//更新星宿成就特效
 	static refreshEquipStar = (e,now) => {
-		let f = mapList[e.fighter];
+		let f = mapList[e.mapId];
 		if(f.equipStar == e.equipStar)
 			return;
 		f.equipStar = e.equipStar;
@@ -672,29 +658,6 @@ export const updateSelfModule = (_fighter) => {
 	}
 };
 /**
- * @description 更新技能
- */
-export const updateSkill = (f, skills, now) => {
-	let skillList = [];
-	//创建技能 {id,index,level}
-	for (let i = 0; i < skills.length; i++) {
-		let s = skills[i],
-			old = f.skill[getSkillIndex(skillList,s.id)] || {};
-		let ss = createSkill(s[0], s[1], role_base[f.career_id]);
-		ss.cdNextTime = old.cdNextTime || (ss.initialCDTime + now);
-		skillList.push(ss);
-		if(!old.id){
-			if (ss.combo && ss.backSkill) {
-                for (let j = 0; j < ss.backSkill.length; j++) {
-                    let _s = createSkill(ss.backSkill[j], s[1]);
-                    skillList.push(_s);
-                }
-            }
-		}
-	}
-	f.skill = skillList;
-};
-/**
  * @description 向后台发送战斗指令
  * @param {Json}param {result:{type:"terrain",data:[0,0,0]}} => 移动
  * 					  {skill_id:10002} => 手动释放技能
@@ -832,7 +795,29 @@ const updateStarEffect = ( f ) => {
 		f.body_eff = body_eff;
 	}
 }
-
+/**
+ * @description 更新技能
+ */
+const updateSkill = (f, skills, now) => {
+	let skillList = [];
+	//创建技能 {id,index,level}
+	for (let i = 0; i < skills.length; i++) {
+		let s = skills[i],
+			old = f.skill[getSkillIndex(skillList,s.id)] || {};
+		let ss = createSkill(s[0], s[1], role_base[f.career_id]);
+		ss.cdNextTime = old.cdNextTime || (ss.initialCDTime + now);
+		skillList.push(ss);
+		if(!old.id){
+			if (ss.combo && ss.backSkill) {
+                for (let j = 0; j < ss.backSkill.length; j++) {
+                    let _s = createSkill(ss.backSkill[j], s[1]);
+                    skillList.push(_s);
+                }
+            }
+		}
+	}
+	f.skill = skillList;
+};
 const updateAttr = (f,attr,now?) => {
 	for(let k in attr){
 		if(k == "mapId" || k == "type")
@@ -887,14 +872,14 @@ const getSkillIndex = function(skillList,id){
  */
 const getSkillAction = (e) => {
 	let __cfg = pi_cfg.robot,
-		f = mapList[e.fighter],
+		f = mapList[e.fighter.mapId],
 		_during,
 		skill_action;
 	//获取配置信息
 	__cfg = __cfg?__cfg.robot_base:{};
 	__cfg = __cfg[f.career_id] || role_base[f.career_id] || monster_base[f.career_id];
 	_during = __cfg.normal_during;
-	skill_action = __cfg.skill_action[e.skill];
+	skill_action = __cfg.skill_action[e.skill.id];
 	if(!skill_action)
 		return null;
 	else//技能动作
@@ -978,20 +963,6 @@ const updateEffectPos = () => {
 	}
 	
 }
-const cDd = (t,p) => {
-    return Math.sqrt((p.x - t.x) * (p.x - t.x) + (p.y - t.y) * (p.y - t.y))
-};
-/**
- * @description 设置摄像机位置
- * @param c 
- * @param f 
- * @param s 
- * @param n 
- */
-const setCamera = (c,f,s,n) => {
-    let d = cDd({x:c[0],y:c[2]},{x:f[0],y:f[2]}),r;
-    return [f[0],f[2],0];
-};
 /**
  * @description 场景modify
  */
@@ -1014,12 +985,12 @@ class MCrontal {
 	}	
 }
 // ================================= 立即执行
-setShow(handScene);
-setList(mapList);
-setShieldBack("fighter",refreshRand);
-(renderHandlerList as any).add((msg)=>{
-    if(msg.type !== "before"){
-        return;
-	}
-	handScene.emptyFrame(msg.delta*1000);
-});
+// setShow(handScene);
+// setList(mapList);
+// setShieldBack("fighter",refreshRand);
+// (renderHandlerList as any).add((msg)=>{
+//     if(msg.type !== "before"){
+//         return;
+// 	}
+// 	handScene.emptyFrame(msg.delta*1000);
+// });

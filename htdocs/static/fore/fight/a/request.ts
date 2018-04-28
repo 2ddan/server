@@ -3,11 +3,12 @@
  * 如果需要同步后台，则必须设置server通讯接口
  */
  // ================================ 导入
-import { Scene } from "./fight";
+import { Scene, FMgr } from "./fight";
 import { Fighter, Pos, Skill, Result } from "./class";
 import { Policy } from "./policy";
 import { Util } from "./util";
 import { EType } from "./analyze";
+import { Fight_formula } from "./common/fight_formula";
 
  // ================================ 导出
 export class Request{
@@ -16,10 +17,33 @@ export class Request{
      * @param {Fighter}fighter
      **/  
     static insert(fighter : Fighter, scene: Scene):boolean{
+        if(scene.level < 2){
+            scene.fighters.set(fighter.mapId,fighter);
+            return;
+        }
+
+        if (fighter.A)
+            Fight_formula.count(fighter);
+        if (fighter.hp === 0)
+            fighter.hp = fighter.max_hpCount;
+        fighter.show_hp = fighter.hp;
+        fighter.mapId = scene.mapCount;
+        // 计算技能的伤害
+        for (var i = 0, len = fighter.skill.length; i < len; i++) {
+            var s = fighter.skill[i];
+            s.damage = Util.getEffectValue(s.damage, fighter, s);
+            s.damagePer = Util.getEffectValue(s.damagePer, fighter, s);
+            s.cdNextTime = s.initialCDTime + scene.now;
+        }
+        scene.fighters.set(scene.mapCount,fighter);
+
+        // 释放被动技能
+        Policy.autoSpread(fighter, 3, scene);
         //默认队伍
         if(fighter.groupId){
             Request.addGroup({"mapId":fighter.mapId,"gid":fighter.groupId},scene);
         }
+
         scene.addEvents([EType.insert,fighter]);
         scene.mapCount += 1;
         return true;
@@ -43,7 +67,7 @@ export class Request{
             g.push(fighter.mapId);
             scene.addEvents([EType.addGroup,fighter.mapId,gid]);
             //通知后台
-            netRequest(EType.addGroup,param);
+            FMgr.netRequest(EType.addGroup,param);
             return "";
         }
         return "The fighter has been in the group!!";
@@ -64,14 +88,14 @@ export class Request{
             if(g.length === 0)
                 delete scene.group[gid];
             //通知后台
-            netRequest(EType.removeGroup,param);
+            FMgr.netRequest(EType.removeGroup,param);
             return "";
         }
         return "The fighter isn't in the group!";
     }
     /**
      * @description 使用技能
-     * @param {Json}param {mapId:fighter.mapId,skill_id:技能id,curtarget:mapId,pos:[]}
+     * @param {Json}param {type:"useSkill",mapId:fighter.mapId,skill_id:技能id,curtarget:mapId,pos:[]}
      * @return {string} !"" 则不成功，返回值就是错误信息，否则成功
      * @return 错误信息，""为成功
      **/  
@@ -81,6 +105,16 @@ export class Request{
             curTarget = scene.fighters.get(param.curTarget),
             s = Util.getFighterSkill(f,param.skill_id),
             r = Util.checkFighterActive(f,scene);
+        
+        if(s.hand == 2){
+            f.godSkill = s;
+            FMgr.netRequest(EType.useSkill,param);
+            return "";
+        }
+        if(param.pos){
+            f.x = param.pos[0];
+            f.y = param.pos[1];
+        }
         //判断玩家当前是否可活动状态
         if(r)
             return r;
@@ -95,10 +129,11 @@ export class Request{
         //临时代码
         f.actionTime = scene.now + Util.actionTime(f,s);
 
-        scene.addEvents([EType.useSkill,param.mapId,param.skill_id]);
+        scene.addEvents([EType.useSkill,param.mapId,param.skill_id,param.curTarget,param.pos]);
         //通知后台
-        netRequest(EType.useSkill,param);
-
+        FMgr.netRequest(EType.useSkill,param);
+        // if(f.sid == 10000)
+        //     console.log("useSkill",f.x,f.y);
         return "";
     }
     /**
@@ -111,33 +146,30 @@ export class Request{
         let f = scene.fighters.get(param.mapId);
         f.x = param.old.x;
         f.y = param.old.y;
-        if(param.pos)
+        if(!param.pos){
+            return;
+        }
+        if(f.x != param.pos.x || f.y != param.pos.z){
             f.moveto = param.pos;
+        }
+        scene.addEvents([EType.moveto,param.mapId,Util.copy(param.pos)]);
+        //通知后台
+        FMgr.netRequest(EType.moveto,param);
+        return "";
+    }
+    /**
+     * @description 移除
+     * @param param {mapId:fighter.mapId}
+     * @param scene 
+     * @return 错误信息，""为成功
+     */
+    static remove(param: any, scene: Scene):string{
+        scene.fighters.delete(param.mapId);
         return "";
     }
 }
-/**
- * @description 设置后台通讯接口
- * @param nr 接口列表
- */
-export const setNetRequest = (nr: any) => {
-    server = nr;
-}
+
  // ================================ 本地
-/**
- * @description 后台通讯接口列表
- */
- let server;
-/**
- * @description 向后台同步战斗事件
- * @param type 事件类型，同EType
- * @param param 事件接收参数，前后台一致
- * @param callback 事件通讯回调，部分事件需要后台返回成功，再执行，就必须在回调里面调用
- */
- const netRequest = (type: string, param: any, callback?: Function) => {
-    if(server && server[type]){
-        server[type](param,callback);
-    }
- }
+
 
  

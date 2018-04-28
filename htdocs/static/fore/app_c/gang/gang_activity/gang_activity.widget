@@ -1,0 +1,7 @@
+{
+    "tpl":"./gang_activity.tpl",
+    "cfg":"./gang_activity.cfg",
+    "js":"./gang_activity.ts",
+    "forelet":"../gang.ts",
+    "css":"./gang_activity.wcss"
+}

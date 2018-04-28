@@ -400,7 +400,7 @@ export class UiFunTable {
     static hitEffect(arg, index, now) {
         let f = arg.fighter,
             skill = arg.skill,
-            ss = getSkill(f.skill,skill),
+            ss = getSkill(f.skill,skill.id),
             target = arg.target,
             //如果是自己则不飘字
             _damageFunc = () => {
@@ -424,7 +424,6 @@ export class UiFunTable {
                     }
                     value = arg.r.damage;
                     target.show_hp -= arg.r.damage;
-                    target.hp = target.show_hp;
                     if (arg.r.critical) { //暴击
                         text_type += "_critical";
                         if(arg.target.camp == 1){

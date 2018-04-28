@@ -1,19 +1,22 @@
-_$define("v8/wild", function (require, exports, module) {
-    var wildMission = require("fight/b/common/wild_mission_cfg"),
-        wildMap = require("fight/b/common/wild_map_cfg"),
-        WildBoss = require("fight/b/common/wild_boss_cfg"),
-        fight_scene = require("./fight_scene"),
-        nameWare = require("fight/b/common/name_ware_house").nameWare,
-        wildBase = require("fight/b/common/wild_base").wildBase,
-        roleBase = require("fight/b/common/role_base").role_base,
-        init_fighter = require("fight/a/common/init_fighter"),
-        main = require("./main"),
-        PETSKIN = [2222221, 2222222, 2222223, 2222224],
-        INTERVAL = 1000;
+// ================================ 导入
+//fight
+import {nameWare} from "fight/b/common/name_ware_house";
+import { wildBase } from "fight/b/common/wild_base";
+import { role_base as roleBase } from "fight/b/common/role_base";
+import * as init_fighter from "fight/a/common/init_fighter";
+import * as wildMission from "fight/b/common/wild_mission_cfg";
+import * as wildMap from "fight/b/common/wild_map_cfg";
+import * as WildBoss from "fight/b/common/wild_boss_cfg";
+import { Request } from "fight/a/request";
+
+import * as fight_scene from "./fight_scene";
+import * as main from "./main";
+    
 
 
+// ========================================== 导出
     //执行战斗
-    exports.loop = function (fightScene) {
+    export const loop = function (fightScene) {
         fightScene.loop();
         //监控玩家任务完成情况
         monitorTask(fightScene);
@@ -23,7 +26,7 @@ _$define("v8/wild", function (require, exports, module) {
         refreshEnemy(fightScene);
 
         removeHelpFight(fightScene);
-        if (!(fightScene.now % INTERVAL) && Object.keys(fightScene.erlangDeals).length) {
+        if (!(fightScene.fightTime % INTERVAL) && Object.keys(fightScene.erlangDeals).length) {
             var erlangDeals = fightScene.erlangDeals;
             fightScene.erlangDeals = {};
             return JSON.stringify(erlangDeals);
@@ -31,16 +34,97 @@ _$define("v8/wild", function (require, exports, module) {
         return "{}";
     };
 
+    //创建场景
+    export const createScene = function (data) {
+        var fightScene:any = fight_scene.createScene(data),
+            guard = data.extra.guard,
+            missionInfo = wildMission.wild_mission[guard],
+            map = wildMap.wild_map[missionInfo.map_id];
+        fightScene.guard = guard;
+        fightScene.erlangDeals = {};
+        fightScene.pushEvent1 = [];
+        fightScene.setNavMesh(main.sceneNaves[map.res]);
+        //创建玩家
+        var f = createFightOne(data, fightScene);
+        //刷怪
+        refreshMonster(fightScene);
+        Request.insert(f,fightScene);
+        copyPlayer(data.extra.person_num - 1, f, fightScene);
+        if (data.extra.is_boss)
+        insertBossOne(fightScene, data.extra.exsit_time, data.extra.add_robot_num);
+
+        return fightScene;
+    };
+
+    //创建fighter
+    export const createFight = function (data, scene) {
+        var newf = createFightOne(data, scene);
+        for(var e of scene.fighters){
+            let f = e[1];
+            if (f.isMirror && !f.exsitTime) {
+                f.remove = true;
+                break;
+            }
+        }
+        return newf;
+    };
+
+    //插入boss
+    export const insertBoss = function (roomID, exsitTime, addRobotNum) {
+        var scene = main.scenes[roomID];
+        if (!scene) return;
+        insertBossOne(scene, exsitTime, addRobotNum);
+    }
+
+    //退出战斗的处理
+    export const exitFight = function (scene) {
+        if (!scene) return;
+        var f = getRandomFighter(scene);
+        copyPlayer(1, f, scene);
+    };
+
+    //刷新任务
+    export const refreshTask = function (roomID, mapId) {
+        var scene = main.scenes[roomID];
+        if (!scene) return;
+        var f = scene.fighters.get(mapId);
+        if (!f) return;
+        refreshTaskOne(scene.guard, f);
+        return JSON.stringify(f.taskInfo);
+    }
+
+
+    //判断是否可以领奖
+    export const isAward = function (roomID, mapId) {
+        var scene = main.scenes[roomID];
+        if (!scene) return;
+        var f = scene.fighters.get(mapId);
+        if (!f) return;
+        if (f.taskInfo.killNum >= f.taskInfo.needKillNum && !f.taskInfo.isAward) {
+            main.addBuff(f, 9999991, scene);
+            var guard = scene.guard,
+                index = f.taskInfo.award_index + 1;
+            f.taskInfo.isAward = true;
+            return JSON.stringify({ "guard": guard, "index": index });
+        }
+        return false;
+    }
+
+// ========================================== 本地
+var  PETSKIN = [2222221, 2222222, 2222223, 2222224],
+        INTERVAL = 1000;
+    
     //移除助战boss
     function removeHelpFight(scene) {
         var helpFight = [],
             bossDead = false;
-        for (var i = 0; i < scene.fighters.length; i++) {
-            var f = scene.fighters[i];
+        for(var e of scene.fighters){
+            var f = e[1];
             if (f.show_type == 1) {
                 for (var sid in f.damageList) {
-                    if (isNaN(sid)) continue;
-                    if (sid < 0) continue;
+                    let s = parseInt(sid);
+                    if (isNaN(s)) continue;
+                    if (s < 0) continue;
 
                     //记录参与打boss的人员
                     fight_scene.addDeals("fight_boss", scene.erlangDeals, sid, f.damageList[sid]);
@@ -67,44 +151,11 @@ _$define("v8/wild", function (require, exports, module) {
         }
     }
 
-    //创建场景
-    exports.createScene = function (data) {
-        var fightScene = fight_scene.createScene(data),
-            guard = data.extra.guard,
-            missionInfo = wildMission.wild_mission[guard],
-            map = wildMap.wild_map[missionInfo.map_id];
-        fightScene.guard = guard;
-        fightScene.erlangDeals = {};
-        fightScene.pushEvent1 = [];
-        fightScene.setNavMesh(main.sceneNaves[map.res]);
-        //创建玩家
-        var f = createFight(data, fightScene);
-        //刷怪
-        refreshMonster(fightScene);
-        fightScene.insert(f);
-        copyPlayer(data.extra.person_num - 1, f, fightScene);
-        if (data.extra.is_boss)
-            insertBoss(fightScene, data.extra.exsit_time, data.extra.add_robot_num);
+    
 
-        return fightScene;
-    };
-
-    //创建fighter
-    exports.createFight = function (data, scene) {
-        var newf = createFight(data, scene);
-        for (var i = 0; i < scene.fighters.length; i++) {
-            var f = scene.fighters[i];
-            if (f.isMirror && !f.exsitTime) {
-                f.remove = true;
-                break;
-            }
-        }
-        return newf;
-    };
-
-    function createFight(data, scene) {
+    function createFightOne(data, scene) {
         var f = fight_scene.createFight(data.own)[0];
-        // refreshTask(data.extra.guard, f);
+        // refreshTaskOne(data.extra.guard, f);
         // if (!f.isMirror) {
         //     scene.pushEvent1.push({ type: "taskInfo", sid: f.sid, taskInfo: f.taskInfo });
         // }
@@ -122,13 +173,8 @@ _$define("v8/wild", function (require, exports, module) {
         return f;
     };
 
-    //插入boss
-    exports.insertBoss = function (roomID, exsitTime, addRobotNum) {
-        var scene = main.scenes[roomID];
-        if (!scene) return;
-        insertBoss(scene, exsitTime, addRobotNum);
-    }
-    function insertBoss(scene, exsitTime, addRobotNum) {
+    
+    function insertBossOne(scene, exsitTime, addRobotNum) {
         var missionInfo = wildMission.wild_mission[scene.guard],
             map = wildMap.wild_map[missionInfo.map_id],
             randomBossId = missionInfo.random_boss_id,
@@ -140,7 +186,7 @@ _$define("v8/wild", function (require, exports, module) {
         var boss = createMonster(scene, [bossID, 1], missionInfo.random_boss_level, randomBossSite[index]);
         boss.walkRange = undefined;
         boss.exsitTime = scene.now + exsitTime * 1000;
-        scene.insert(boss);
+        Request.insert(boss,scene);
         // insertHelpFight(scene, addRobotNum, exsitTime, boss);
         autoFightBoss(scene, boss);
     };
@@ -150,13 +196,13 @@ _$define("v8/wild", function (require, exports, module) {
             var f = copyFighter(getRandomFighter(scene), scene);
             f.exsitTime = scene.now + exsitTime * 1000;
             // f.ownTarget = boss.mapId;
-            scene.insert(f);
+            Request.insert(f,scene);
         }
     }
     //让镜像自动打boss
     function autoFightBoss(scene, boss) {
-        for (var i = 0; i < scene.fighters.length; i++) {
-            var f = scene.fighters[i];
+        for(var e of scene.fighters){
+            var f = e[1];
             if (f.isMirror) {
                 f.status = 1;
                 f.curTarget = boss.mapId;
@@ -164,17 +210,12 @@ _$define("v8/wild", function (require, exports, module) {
         }
     }
 
-    //退出战斗的处理
-    exports.exitFight = function (scene) {
-        if (!scene) return;
-        var f = getRandomFighter(scene);
-        copyPlayer(1, f, scene);
-    };
+    
     //得到随机玩家
     function getRandomFighter(scene) {
         var fighters = [];
-        for (var i = 0; i < scene.fighters.length; i++) {
-            var f = scene.fighters[i];
+        for(var e of scene.fighters){
+            var f = e[1];
             if (!f.isMirror && f.type == "fighter")
                 fighters.push(f);
         }
@@ -184,7 +225,7 @@ _$define("v8/wild", function (require, exports, module) {
 
     function copyFighter(f, scene) {
         var newF = f.clone(),
-            roleBaseKeys = Object.keys(roleBase),
+            roleBaseKeys: any = Object.keys(roleBase),
             index = randomIndex(roleBaseKeys);
         var sample = roleBase[roleBaseKeys[index]],
             skillList = getSkillList(sample.skill, f.skillList);
@@ -207,6 +248,7 @@ _$define("v8/wild", function (require, exports, module) {
         newF.ensoulClass = 0;
         newF.equipStar = 0;
         newF.weaponId = 0;
+        newF.ai = true;
         return newF;
     }
 
@@ -222,16 +264,17 @@ _$define("v8/wild", function (require, exports, module) {
     function copyPlayer(personNum, f, scene) {
         for (var i = 0; i < personNum; i++) {
             var newF = copyFighter(f, scene);
-            refreshTask(scene.guard, newF);
-            scene.insert(newF);
+            refreshTaskOne(scene.guard, newF);
+            Request.insert(newF,scene);
         }
     };
 
     function getUnquieName(scene) {
         var nameList = [];
-        for (var i = 0; i < scene.fighters.length; i++) {
-            if (scene.fighters[i].type == "fighter") {
-                nameList.push(scene.fighters[i].name + "");
+        for(var e of scene.fighters){
+            var f = e[1];
+            if (f.type == "fighter") {
+                nameList.push(f.name + "");
             }
         };
         var name = getRandomName();
@@ -249,18 +292,10 @@ _$define("v8/wild", function (require, exports, module) {
         }
         return name;
     }
-    //刷新任务
-    exports.refreshTask = function (roomID, mapId) {
-        var scene = main.scenes[roomID];
-        if (!scene) return;
-        var f = scene.mapList[mapId];
-        if (!f) return;
-        refreshTask(scene.guard, f);
-        return JSON.stringify(f.taskInfo);
-    }
+    
 
     //刷新任务
-    function refreshTask(guard, f) {
+    function refreshTaskOne(guard, f) {
         var missionInfo = wildMission.wild_mission[guard],
             map = wildMap.wild_map[missionInfo.map_id],
             task = missionInfo.task1.clone(),
@@ -287,21 +322,7 @@ _$define("v8/wild", function (require, exports, module) {
         return f;
     }
 
-    //判断是否可以领奖
-    exports.isAward = function (roomID, mapId) {
-        var scene = main.scenes[roomID];
-        if (!scene) return;
-        var f = scene.mapList[mapId];
-        if (!f) return;
-        if (f.taskInfo.killNum >= f.taskInfo.needKillNum && !f.taskInfo.isAward) {
-            main.addBuff(f, 9999991, scene);
-            var guard = scene.guard,
-                index = f.taskInfo.award_index + 1;
-            f.taskInfo.isAward = true;
-            return JSON.stringify({ "guard": guard, "index": index });
-        }
-        return false;
-    }
+    
 
     //刷怪
     function refreshMonster(scene) {
@@ -325,7 +346,7 @@ _$define("v8/wild", function (require, exports, module) {
                     var f = createMonster(scene, monsterInfo, level, site);
                     f.zoomIndex = i;
                     f.monsterId = refreshMonsterInfo[0];
-                    scene.insert(f);
+                    Request.insert(f,scene);
                 }
             }
         }
@@ -377,22 +398,22 @@ _$define("v8/wild", function (require, exports, module) {
                 newf.monsterId = f.monsterId;
                 scene.refreshList.splice(i, 1);
                 i--;
-                scene.insert(newf);
+                Request.insert(newf,scene);
             }
         }
     }
 
     //机器人任务是否完成
     function monitorTask(scene) {
-        for (var i = 0; i < scene.fighters.length; i++) {
-            var f = scene.fighters[i];
+        for(var e of scene.fighters){
+            var f = e[1];
             if (f.type == "fighter" && f.isMirror && f.taskInfo) {
                 if (f.taskInfo.killNum >= f.taskInfo.needKillNum) {
-                    refreshTask(scene.guard, f);
+                    refreshTaskOne(scene.guard, f);
                     main.addBuff(f, 9999991, scene);
                 }
                 //判断是否需要返回任务挂机点
-                //gobackTaskPos(f, scene.mapList);
+                //gobackTaskPos(f, scene.fighters);
             }
         }
     }
@@ -407,7 +428,7 @@ _$define("v8/wild", function (require, exports, module) {
     function gobackTaskPos(f, mapList) {
         //目标判断，没有目标 || 目标血量为0
         var b = function () {
-            return !f.curTarget || f.curTarget && mapList[f.curTarget] && mapList[f.curTarget].hp <= 0;
+            return !f.curTarget || f.curTarget && mapList.get(f.curTarget) && mapList.get(f.curTarget).hp <= 0;
         };
         if (b() && !f.handMove && calcPosDis(f, { x: f.taskInfo.site[0], y: f.taskInfo.site[1] }).d > 10) {
             var site = f.taskInfo.site;
@@ -423,5 +444,3 @@ _$define("v8/wild", function (require, exports, module) {
         var index = fight_scene.random(0, arr.length - 1);
         return index;
     }
-
-});

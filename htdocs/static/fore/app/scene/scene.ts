@@ -363,7 +363,7 @@ export class mgr {
             obj = this.parseRtpl(obj)
             addHash(obj);
         } catch (e) {
-            console.log(data._show.tpl(data));
+            console.log(data._show.tpl(undefined, data));
         }
 
         if (data._show.old.ref){

@@ -1,55 +1,59 @@
-_$define("v8/rebel", function (require, exports, module) {
-    var killBase = require("fight/b/common/kill_base").KillMonsterBase,
-        killMonsterPosition = require("fight/b/common/kill_monster_position").killMonsterPosition1,
-        fight_scene = require("./fight_scene"),
-        HOUR_TO_MIN_TO_SEC = 60,
+// ======================================== 导入
+import { Request } from "fight/a/request";
+import { KillMonsterBase as killBase} from "fight/b/common/kill_base";
+import { killMonsterPosition1 as  killMonsterPosition} from "fight/b/common/kill_monster_position";
+
+import * as fight_scene from "./fight_scene";
+    
+
+// ======================================= 导出
+//执行战斗
+export const loop = function (fightScene) {
+    fightScene.loop();
+    //刷怪
+    isRefreshMonster(fightScene);
+    //监控怪物 记录伤害和移除
+    fight_scene.monitorMonster(fightScene, killBase.refresh_cd, [3, 5], true);
+    //刷怪
+    refreshEnemy(fightScene);
+    if (!(fightScene.now % INTERVAL) && Object.keys(fightScene.erlangDeals).length) {
+        var erlangDeals = fightScene.erlangDeals;
+        fightScene.erlangDeals = {};
+        return JSON.stringify(erlangDeals);
+    }
+    return "{}";
+};
+
+//创建场景
+export const createScene = function (data) {
+    var fightScene:any = fight_scene.createScene(data),
+        monsterLevel = data.extra.monster_level;
+    fightScene.monsterLevel = monsterLevel;
+    fightScene.erlangDeals = {};
+    fightScene.pushEvent1 = [];
+    //创建玩家
+    var f = createFight(data)
+    //刷怪
+    isRefreshMonster(fightScene);
+
+    Request.insert(f,fightScene);
+
+    return fightScene;
+};
+
+//创建fighter
+export const createFight = function (data) {
+    var f = fight_scene.createFight(data.own)[0],
+        birth = killBase.borth_site;
+    f.x = birth[0];
+    f.y = birth[1];
+    return f;
+}
+
+// ========================================== 本地
+var HOUR_TO_MIN_TO_SEC = 60,
         INTERVAL = 1000,
         MAXINTERVAL = 5000;
-
-
-    //执行战斗
-    exports.loop = function (fightScene) {
-        fightScene.loop();
-        //刷怪
-        isRefreshMonster(fightScene);
-        //监控怪物 记录伤害和移除
-        fight_scene.monitorMonster(fightScene, killBase.refresh_cd, [3, 5], true);
-        //刷怪
-        refreshEnemy(fightScene);
-        if (!(fightScene.now % INTERVAL) && Object.keys(fightScene.erlangDeals).length) {
-            var erlangDeals = fightScene.erlangDeals;
-            fightScene.erlangDeals = {};
-            return JSON.stringify(erlangDeals);
-        }
-        return "{}";
-    };
-
-    //创建场景
-    exports.createScene = function (data) {
-        var fightScene = fight_scene.createScene(data),
-            monsterLevel = data.extra.monster_level;
-        fightScene.monsterLevel = monsterLevel;
-        fightScene.erlangDeals = {};
-        fightScene.pushEvent1 = [];
-        //创建玩家
-        var f = exports.createFight(data)
-        //刷怪
-        isRefreshMonster(fightScene);
-
-        fightScene.insert(f);
-
-        return fightScene;
-    };
-
-    //创建fighter
-    exports.createFight = function (data) {
-        var f = fight_scene.createFight(data.own)[0],
-            birth = killBase.borth_site;
-        f.x = birth[0];
-        f.y = birth[1];
-        return f;
-    }
-
     //刷怪
     function isRefreshMonster(fightScene) {
         var isOpen = isOpenTime();
@@ -88,7 +92,7 @@ _$define("v8/rebel", function (require, exports, module) {
                 var site = getRandomSite(positObj.refresh_range),
                     index = fight_scene.random(0, monsterId.length - 1),
                     f = createMonster(scene, monsterId[index], scene.monsterLevel, site, i);
-                scene.insert(f);
+                Request.insert(f,scene);
                 monsterNum--;
             }
         }
@@ -129,9 +133,7 @@ _$define("v8/rebel", function (require, exports, module) {
                     sid = monsterId[fight_scene.random(0, monsterId.length - 1)];
                 scene.refreshList.splice(i, 1);
                 i--;
-                scene.insert(createMonster(scene, sid, scene.monsterLevel, site, index));
+                Request.insert(createMonster(scene, sid, scene.monsterLevel, site, index),scene);
             }
         }
     }
-
-});

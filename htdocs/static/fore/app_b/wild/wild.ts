@@ -24,6 +24,7 @@ import { openUiEffect, destoryUiEffect, effectcallback } from "app/scene/anim/sc
 import { net_request, net_send, net_message } from "app_a/connect/main";
 import { loadSlow, loadNow, openLoad } from "app_a/download/download";
 import { mapList, pet, initMapList, handScene, updateSelfModule, change_status, setChangeData, olFightOrder } from "app_b/fight_ol/handscene";
+import { SMgr } from "app_b/fight_ol/same";
 import { initFrame, stopWeaken } from "app_b/fight_ol/frame";
 import { Init_Fighter } from "fight/a/common/init_fighter";
 import * as Fight from "fight/a/common/fight";
@@ -36,14 +37,16 @@ import { monster_base } from "fight/b/common/monsterBase";
 import { scene_music } from "cfg/b/scene_music";
 import { module_cfg } from "app/scene/plan_cfg/module_config";
 import { showAccount } from "app_b/fight/fight";
-import { function_open } from "cfg/b/function_open";
+import { process_num } from "app_c/gang/hall_gang_build/collect/collect";
 //fight
 import { role_base } from "fight/b/common/role_base";
+import { Request } from "fight/a/request";
 //掉落效果
 import { node_fun, drop_outFun } from "app_b/widget/drop_out";
 import { Music } from "app/mod/music";
 import { guide_cfg } from "cfg/b/guide_cfg";
 import { vipcard } from "cfg/c/recharge_buy_robolet";
+import { function_open } from "cfg/b/function_open";
 
 // ================================ 导出
 export const forelet = new Forelet();
@@ -71,15 +74,20 @@ export class wild extends Widget {
     propInfoShow = (sid) => {
         globalSend("showOtherInfo", sid+",task");
     }
-    //打开选择挂机地图
-    selectMap = () => {
-        open("app_b-wild-select_map-select_map");
-    }
+    
     goback = () => {
         let w = forelet.getWidget("app_b-wild-select_map-select_map");
         if (w) {
             destory(w);
         }
+    }
+    //打开选择挂机地图
+    gotoCard = () => {
+        globalSend("gotoCard");
+    }
+    //打开选择挂机地图
+    selectMap = () => {
+        open("app_b-wild-select_map-select_map");
     }
     //选择1-10
     selectMission = (index)=>{
@@ -113,6 +121,11 @@ export class wild extends Widget {
         globalSend("gotoPublicBoss");
         publicboss_obj = null;
         forelet.paint(getData());
+    }
+
+    //关闭荒野BOSS复活TIP
+    clothBossReviveTip = () => {
+        globalSend("closeBossReviveTip");
     }
 }
 /** 
@@ -216,7 +229,7 @@ export const globalReceive: any = {
     },
     releaseMagic: (msg) => {
         if (inwild)//通知后台释放技能
-            olFightOrder({ skill_id: msg.skill_id }, msg.callback);
+            SMgr.useSkill(msg.skill_id);
         else Common_m.treasureSkill(fightScene, msg);
 
     },
@@ -239,9 +252,11 @@ export const globalReceive: any = {
     },
     //手动挑战地图上任意一个fighter
     fightRandomBoss: (mapid,cb?) => {
-        
+        if(!mapid){
+            posTimer = Date.now();
+        }
         let func = () => {
-            olFightOrder({ "type": "wild", "result": `{"id":${mapid}}` },cb);
+            SMgr.fight(mapid);
         }
         if(curTarget && curTarget != mapid){
             func();
@@ -386,16 +401,10 @@ const startWildFight = function (arg?,callback?) {
             let _data: any = Common.changeArrToJson(data.ok);
             let events: any = analyseFighter(_data);
             updata("wild.wild_task_num", _data.wild_task_num);
-            dealFightEvents(events);
+            SMgr.start("wild",events,dealFightEvents);
             refreshTask();
             // clearFlag = false;
             callback && callback();
-             //当前挑战boss任务
-            //  let wild = get("wild");
-            //  let cur_task = wild_boss[wild.wild_boss_order];
-            //  if (cur_task && wild.wild_task_num >= cur_task.task_num && wild.guide_num >= cur_task.guide_num) {
-            //      fightBossFlag = 1;
-            //  }
             //人物开始移动
             startTimer = setTimeout(() => {
                 change_status(0);
@@ -411,6 +420,7 @@ const startWildFight = function (arg?,callback?) {
 const leaveWildFight = function (callback,forcibly?) {
     //停止同屏帧率同步
     stopWeaken();
+    SMgr.leave();
     //TODO
     let msg = { "param": {}, "type": "app/pve/wild@exit" };
     net_request(msg, function (data) {
@@ -456,66 +466,85 @@ const getData = function () {
     data.publicboss_obj = publicboss_obj;
     return data;
 }
+/**
+ * @description 每个同屏功能单独处理战斗事件
+ */
+const handlers:any = {};
+//插入
+handlers.insert = (e) => {
+    if(mapList[e.fighter] || e.fighter.sid !== db.player.role_id)
+        return;
+    // node_fun();
+    // open("app_b-wild-tips_boss-tips_boss");
+    open("app_b-wild-change_map-change_map");
+    setTimeout(()=>{
+        let set = setInterval(()=>{
+            change_map_length += 0.1;
+            if(change_map_length <= 0.5){
+                change_map_width += 0.2;
+            }
+            if(change_map_length == 1){change_map_width = 1;}
 
-const tArr = [];
+            forelet.paint(getData());
+
+            if(change_map_length >= 2){
+                clearInterval(set);
+                change_map_length = 0;
+                change_map_width = 0;
+                forelet.paint(getData());
+                set = undefined;
+                let w = forelet.getWidget("app_b-wild-change_map-change_map");
+                if (w) {
+                    destory(w);
+                }
+            }
+            
+        },50);
+    },1500)
+    
+    setTimeout(()=>{
+        globalSend("translate", {
+            "fighter": e.fighter,
+            "type": "eff_rwcstx02",
+            "time": 3100
+        })
+    },0);
+}
+handlers.update_state= 0;
+//更新任务
+handlers.task = (e) => {
+    if(e.fighter !== SMgr.getSelfMapid())
+        return;
+    if(e.killNum){
+        updata("wild.task.killNum",e.killNum);
+    }
+    if(db.wild.task && db.wild.task.killNum >= db.wild.task.needKillNum){
+        if(!handlers.update_state){
+            handlers.update_state = 1;
+            setTimeout(()=>{
+                submitTask();
+                handlers.update_state = 0;
+            },1200)
+        }
+    }
+}
 //处理接收到的战斗事件
 const dealFightEvents = function (events) {
     // if(clearFlag) events.event = [];
     //设置移动渲染
-    Move.setRender(true);
-    if(Move.pause)
-        Move.pause = false;
     if (events.event.length > 0) {
         let curEvent: any = events.event;
         for (let i = 0; i < curEvent.length; i++) {
             let e = curEvent[i],
                 type;
             type = e.type || e[0];
-            Move.filter(type,e);
-            let r = handScene[type] && handScene[type](e, events.now);
-            // if(type === "refreshSkill")console.log("refreshSkill");
+            handlers[type] && handlers[type](e);
             //额外战斗事件处理
-            if (r && type == "insert" && e.fighter.sid === db.player.role_id) {
-                // node_fun();
-                // open("app_b-wild-tips_boss-tips_boss");
-                open("app_b-wild-change_map-change_map");
-                setTimeout(()=>{
-                    let set = setInterval(()=>{
-                        change_map_length += 0.1;
-                        if(change_map_length <= 0.5){
-                            change_map_width += 0.2;
-                        }
-                        if(change_map_length == 1){change_map_width = 1;}
-    
-                        forelet.paint(getData());
-    
-                        if(change_map_length >= 2){
-                            clearInterval(set);
-                            change_map_length = 0;
-                            change_map_width = 0;
-                            forelet.paint(getData());
-                            set = undefined;
-                            let w = forelet.getWidget("app_b-wild-change_map-change_map");
-                            if (w) {
-                                destory(w);
-                            }
-                        }
-                        
-                    },50);
-                },1500)
-                
-
-                globalSend("translate", {
-                    "fighter": e.fighter,
-                    "type": "eff_rwcstx02",
-                    "time": 3100
-                })
-            }
+            
             globalSend("judgeRandomBoss", e);
             damageFun(e,events.now);
         }
     }
-    UiFunTable.runCuurUi(events);
     return true;
 }
 //缓存战斗事件，回到主城时一次性更新
@@ -584,7 +613,7 @@ const checkSid = (e,sid) => {
 
 //处理战斗伤害事件
 let curTarget;
-export let posTimer;
+let posTimer;
 const damageFun = function (e,now) {
     if(e.type.indexOf("refresh") === 0)
         return;
@@ -607,8 +636,10 @@ const damageFun = function (e,now) {
     }
     //TODO
     let role_id = db.user.rid;
-    let target = mapList[e.target.mapId] || fight_cache[e.target.mapId].fighter;
-    let _fighter = mapList[e.fighter.mapId] || fight_cache[e.fighter.mapId].fighter;
+    let target = mapList[e.target.mapId] || fight_cache && fight_cache[e.target.mapId].fighter;
+    let _fighter = mapList[e.fighter.mapId] || fight_cache && fight_cache[e.fighter.mapId].fighter;
+    if(!target)
+        return;
     getPosition(target,_fighter);
     //背包满了打精英怪给引导
     if(target.sid !== role_id && target.show_type == 3){
@@ -648,22 +679,16 @@ const getPosition = (target,_fighter) => {
  * @description 更新任务数据
  * @param 
  */
-let update_state= 0;
+
 const updateTaskDb = (taskInfo) => {
     // if(!taskInfo){return;}
     if(guide_task() || !taskInfo){return;}
     taskInfo.bossName = monster_base[taskInfo.task].name;
+    //设置怪物目标
+    SMgr.setCondistion([["sid",taskInfo.task]]);
     //当前的小任务
     updata("wild.task", taskInfo);
-    if(db.wild.task && db.wild.task.killNum >= db.wild.task.needKillNum){
-        if(!update_state){
-            update_state = 1;
-            setTimeout(()=>{
-                submitTask();
-                update_state = 0;
-            },1200)
-        }
-    }
+    
 };
 /**
  * @description 筛选目标
@@ -881,27 +906,29 @@ const clickScene = (result) => {
         }
         fm = Fight_common.createDest(x || result.data[0], y || result.data[2], false, getEffectId());
         // console.log(fm.id);
-        olFightOrder({ "type": "wild", "result": JSON.stringify(result) });
+        // olFightOrder({ "type": "wild", "result": JSON.stringify(result) });
+        SMgr.move({x:result.data[0],y:result.data[2]})
         //清除手动打怪
-        if(curTarget){
-            change_status(0);
-            handScene.updateModule(curTarget,{iscurr:false});
-            curTarget = null;
-        }
+        // if(curTarget){
+        //     change_status(0);
+        //     handScene.updateModule(curTarget,{iscurr:false});
+        //     curTarget = null;
+        // }
         return;
     }else if(result.id){
         let f = mapList[result.id];
         if(f && f.camp !== handScene.getSelf().camp){
-            globalReceive.fightRandomBoss(result.id,(data) => {
-                if(data.ok[0][1] !== "undefined"){
-                    let r = JSON.parse(data.ok[0][1]);
-                    handScene.updateModule(result.id,{iscurr:true});
-                    console.log("",r);
-                }else{
-                    change_status(0);
-                    curTarget = null;
-                }
-            });
+            SMgr.fight(result.id);
+            // globalReceive.fightRandomBoss(result.id,(data) => {
+            //     if(data.ok[0][1] !== "undefined"){
+            //         let r = JSON.parse(data.ok[0][1]);
+            //         handScene.updateModule(result.id,{iscurr:true});
+            //         console.log("",r);
+            //     }else{
+            //         change_status(0);
+            //         curTarget = null;
+            //     }
+            // });
         }
     } 
     // alert(Move.delta.splice(Move.delta.length -50,50));
@@ -914,9 +941,7 @@ const clickBossFight = function (result) {
     if (result.type === "terrain") {
         return
     } else {
-        if (fightScene.mapList[result.id] && fightScene.mapList[result.id].hp > 0 && fightScene.mapList[result.id].camp != 1) {
-            fightScene.ownTarget = result.id;
-        }
+        fightScene.fighters.get(1).curTarget = result.id;
     }
 }
 
@@ -1358,12 +1383,16 @@ insert("wild", {});
  */
 let flag = false;
 listen("wild.task.killNum,wild.flagHitBoss", () => { 
-    if (flagHitBoss && autoFight.autoFightBoss) {
+    if (flagHitBoss && autoFight.autoFightBoss && !process_num) {
         if (lock || !inwild) {
             return;
         }
         let t = setTimeout(() => {
             if(Fight.count > 0){
+                return;
+            }
+            if(process_num){
+                lock = false;
                 return;
             }
             openFlagHitBoss.icon = 0;
@@ -1435,23 +1464,23 @@ net_message("wild_award", (msg) => {
 
 });
 //接收后台推送战斗指令
-net_message("order", (msg) => {
-    if (story_scene) return;
-    let events: any = analyseData(msg);
-    // if(clearFlag) events = undefined;
-    if (!events) return;
-    recOrder(events);
-    // queue.add(recOrder,events);
-});
+// net_message("order", (msg) => {
+//     if (story_scene) return;
+//     let events: any = analyseData(msg);
+//     // if(clearFlag) events = undefined;
+//     if (!events) return;
+//     recOrder(events);
+//     // queue.add(recOrder,events);
+// });
 
 
-listen("player.annual_card_due_time,player.month_card_due_time,chat.show",()=>{
+listen("player.annual_card_due_time,player.month_card_due_time,chat.show,player.allAttr.un_defence,player.diamond",()=>{
     forelet.paint(getData());
 });
 
-listen("player.allAttr.un_defence", () => {
-    forelet.paint(getData());
-})
+// listen("player.allAttr.un_defence", () => {
+//     forelet.paint(getData());
+// })
 
 // listen("guide.list",()=>{
 //     let task = get("wild.task.guide");

@@ -12,10 +12,15 @@ import { Scene } from "./fight";
 
  // ================================ 导出
 export class Util{
+    
     /**
      * @description 判断fighter当前是否可活动状态
      */
     static checkFighterActive(f: Fighter,s: Scene): string{
+        //死亡
+        if (f.hp <= 0 && f.max_hpCount > 0) {
+            return "The fighter was died!!";
+        }
         //晕眩
         if (!f || f.stun) {
             return "The fighter was stunned!!";
@@ -89,12 +94,14 @@ export class Util{
      */
     static getMovePath(nm: NavMesh,start: Vector3,end: Vector3,box: number): Array<Vector3>{
         if(!nm)
-            return [{x:start.x,y:0,z:start.y},{x:end.x,y:0,z:end.y}];
+            return [{x:end.x,y:0,z:end.y}];
         start = new Vector3(start.x,0,start.y);
         end = new Vector3(end.x,0,end.y);
         box = box || 0;
-        return nm.findPath(start,end,box);
-    };
+        let r = nm.findPath(start,end,box);
+        r.shift();
+        return r;
+    }
     /**
      * @description 选择最小数
      */
@@ -103,14 +110,14 @@ export class Util{
             return Math.min(a,b);
         }
         return a || b;
-    };
+    }
     /**
      * @description 获得敌人的阵营
      * @param camp 自己的阵营
      */
     static enemy(camp: number): number{
         return camp === 1 ? 2 : 1;
-    };
+    }
     /**
      * @description 选择战斗者
      * @param arr fighter列表
@@ -123,7 +130,7 @@ export class Util{
                 result.push(v);
         })
         return result;
-    };
+    }
     /**
      * @description 技能选择目标
      * @param f 
@@ -142,59 +149,58 @@ export class Util{
         r = this.select(scene.fighters, con.concat([['camp', camp], ['hp', '>', 0]]));
         this.round(r, f, round, true);
         return this.getCurTarget(r, f);
-    };
+    }
     static skillTarget(f, s, scene: Scene) {
-        var r, t = s.targetType, camp = f.camp;
+        var r, t = s.targetType, camp = f.camp, without = false;
         // 1自己
         if (s.targetType <= 1)
             return [f];
         if (t > 10) {
             t -= 10;
             camp = this.enemy(camp);
+            without = true;
+        }
+
+        r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+         //最近的应该要排序 
+        if(s.distance>0){
+            this.round(r, f, s.distance, without);
         }
         // 2全体己方或敌人
         if (t === 2) {
-            return this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
+            return r;
         }
         // 3血最少的x个己方或敌人
         if (t === 3) {
-            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
-            this.round(r, f, s.distance > 0 ? s.distance : Number.MAX_SAFE_INTEGER, false);
             //true 从大到小排列 false相反
             this.limit(r, s.targetAIParam, 'hp', false);
             return r;
         }
         // 4最近的x个队友或敌人
         if (t === 4) {
-            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
-            if (s.distance > 0) {
-                //最近的应该要排序 
-                this.round(r, f, s.distance, true);
-            }
-
             if (r.length > s.targetAIParam)
                 r.length = s.targetAIParam;
             return r;
         }
-        // 5技能施放距离内随机的x个己方或敌人（参数为0表示全部）
+        // 5技能施放距离内随机的x个己方（参数为0表示全部）
         if (t === 5) {
-            r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
-            if (s.distance > 0) {
-                this.round(r, f, s.distance, false);
-            }
             if (s.targetAIParam)
                 scene.seed = this.limit(r, s.targetAIParam, undefined, scene.seed);
             return r;
         }
-        //技能 1 11 对于仇恨最高的敌人释放
-        r = this.select(scene.fighters, [['camp', camp], ['hp', '>', 0]]);
-        
         //这里要排序 应该从近到远
         this.round(r, f, s.distance > 0 ? s.distance : Number.MAX_SAFE_INTEGER, true);
-        //
-        this.limit(r, 1, 'taunt', true,f.curTarget);
+        //11 对于仇恨最高的敌人释放
+        if(t == 11){
+            scene.seed = this.limit(r, 1, 'taunt', scene.seed, f.curTarget);
+        }
+        // 15以自己为圆心，周围的x个敌人（x个的参数配置0时，代表全部的）
+        if(t == 15){
+            if (s.targetAIParam)
+                scene.seed = this.limit(r, s.targetAIParam, undefined, scene.seed, f.curTarget);
+        }
         return r;
-    };
+    }
     /**
      * @description 根据技能的作用范围，扩大选择目标
      * @param targets 目标列表
@@ -222,7 +228,7 @@ export class Util{
         }
         arr.length = n + 1;
         return arr;
-    };
+    }
     /**
      * @description 矩形技能范围
      */
@@ -249,7 +255,7 @@ export class Util{
         }
         arr.length = n + 1;
         return arr;
-    };
+    }
     /**
      * @description 获取当前主目标，可额外绑定选择条件
      * @param r 
@@ -261,6 +267,13 @@ export class Util{
             if(r[i].mapId == f.curTarget) return f.curTarget;
         }
         return (r.length > 0) ? r[0].mapId:null;
+    }
+    // 获得效果的值，可能是直接的数字，也可能是公式计算的值
+    static getEffectValue(s, fighter, buff){
+        var r = this.parseNumber(s);
+        if (r !== false)
+            return r;
+        return Fight_formula.effectCalc(s, fighter, fighter, buff);
     };
     /**
      * @description 选择周围的人，如果排序则按距离近远  without 选不选自己
@@ -295,7 +308,7 @@ export class Util{
                 return a['rand'] - b['rand'];
             });
         }
-    };
+    }
     /**
      * @description 条件变量
      */
@@ -310,7 +323,7 @@ export class Util{
                 return;
         }
         return f;
-    };
+    }
     // 条件判断表
     static condMap = {
         '>': function (a, b) {
@@ -328,7 +341,7 @@ export class Util{
         '!=': function (a, b) {
             return a !== b
         }
-    };
+    }
     /**
      * @description 判断f是否满足条件conds
      * @param f 需要判断的fighter
@@ -346,7 +359,7 @@ export class Util{
             }
         }
         return true;
-    };
+    }
     /**
      * @description 倍增同余算法
      * @param seed 
@@ -361,7 +374,7 @@ export class Util{
         // C语言的写法，可防止溢出
         seed = RAND_A * r - ((r / RAND_Q) | 0) * MAX_POSITIVE_INT32;
         return seed < 0 ? seed + MAX_POSITIVE_INT32 : seed;
-    };
+    }
     /**
      * @description 获取两点之间的距离
      */
@@ -370,27 +383,34 @@ export class Util{
         var _d1 = (xx * xx + yy * yy)*1000000;
         var _d = Math.sqrt(_d1/1000000);
         return { xx: xx, yy: yy, d: _d };
-    };
+    }
     /**
      * @description 计算以t为中心的九宫格坐标中离f最近的点
      * @param dimension 坐标维度（以目标点为中心）____ 【一维】
      *                                         |_|_|
      *                                         |_|_|    
+     * @param rang 距离范围
      */                                        
-    static getNearPos(dimension: number,f: Fighter,t: Fighter): any{
+    static getNearPos(dimension: number,rang: number,f: Fighter,t: Fighter): any{
         let c = dimension,
-            r = {p:{x:0,y:0},d:99999},
+            r = {p:{x:t.x,y:t.y},d:99999},
             cacl = (x,y) => {
+                let d1 = this.getPPDistance({x:0,y:0},{x:x,y:y}),
+                    d2;
+                if(d1.d>rang){
+                    return;
+                }
                 x += t.x;
                 y += t.y
-                let dd = this.getPPDistance(f,{x:x,y:y});
-                if(dd.d <= r.d){
+                d2 = this.getPPDistance(f,{x:x,y:y});
+                if(d2.d <= r.d){
                     r.p.x = x;
                     r.p.y = y;
+                    r.d = d2.d;
                 }
             },
             func = (n) => {
-                for(var j=0;j<n*2+1;j++){
+                for(var j=0;j<n*2+.5;j++){
                     var a = n,
                         b = n-j,
                         c = -n+j;
@@ -409,7 +429,6 @@ export class Util{
         }
         return {x:r.p.x,y:r.p.y};
     }
-    
     /**
      * @description 计算多边形旋转、平移后新的坐标点
      * @param {Array}polygon [[1,2],[2,9],...]多边形位置坐标点
@@ -448,7 +467,7 @@ export class Util{
             _pl[i] = _r;
         }
         return _pl;
-    };
+    }
     /**
      * @description 判断某点pt是否在任意多边形points内部
      * @return {Boolean} true: 边外或边上; false: 内部
@@ -525,16 +544,15 @@ export class Util{
         else {
             return true; //否则在多边形外 或 边上
         }
-    };
+    }
     /**
      * @description 目标继承
      * @param f 
      * @param s 
      * @param scene 
      */
-    static inheritTargets(f: Fighter,s: Skill,scene: Scene): Array<Fighter>{
-        var type = s.hand == 2?"godPrevTargets":"prevTargets",
-            t = [];
+    static inheritTargets(f: Fighter,t: Array<Fighter>,s: Skill,scene: Scene): Array<Fighter>{
+        var type = s.hand == 2?"godPrevTargets":"prevTargets";
         if(s.FollowTarget && f[type]){
             t = this.mapFighters(f[type],scene);
         }
@@ -611,12 +629,23 @@ export class Util{
         }
         arr.length = n;
         return ascending;
-    };
-
-
-
-
-    
+    }
+// 检查概率是否通过
+    static checkProbability = function (probability: number,s: Scene) {
+        if (probability < 1) {
+            var r = s.seed;
+            s.seed = this.randNumber(r);
+            if (probability < r / 2147483647)
+                return false;
+        }
+        return true;
+    }
+    // 查找指定键值对应元素的位置
+    static indexByAttr(arr, key, value) {
+        var i;
+        for (i = arr.length - 1; i >= 0 && arr[i][key] !== value; i--);
+        return i;
+    }
     // 复制
     static copy(o){
         var deepClone = (obj) => {
@@ -666,6 +695,11 @@ export class Util{
             arr.length = delIndex;
         }
     }
+    // 移除用对象方式模拟的数组中的指定位置的元素
+    static removeOArray(oarr, i) {
+        delete oarr[i];
+        oarr.length--;
+    }
     // 使用盾，返回剩下的伤害
     static useShield(shield, damage){
         var i, e;
@@ -688,72 +722,11 @@ export class Util{
             }
         }
         return damage;
-    };
-    // 移除用对象方式模拟的数组中的指定位置的元素
-    static removeOArray(oarr, i) {
-        delete oarr[i];
-        oarr.length--;
-    };
-    // 乱序
-    static shuffle(arr, rand) {
-        var len = arr.length, i, idx, temp;
-        for (i = len - 1; i > 0; i--) {
-            idx = rand.randomInt(0, i); // 闭区间
-            temp = arr[idx];
-            arr[idx] = arr[i];
-            arr[i] = temp;
-        }
-        return arr;
-    };
-    // 查找指定键值对应元素的位置
-    static indexByAttr(arr, key, value) {
-        var i;
-        for (i = arr.length - 1; i >= 0 && arr[i][key] !== value; i--);
-        return i;
-    };
+    }
     // 分析字符串是否为数字
     static parseNumber(s) {
         return /^[+-]?([0-9]*\.?[0-9]+|[0-9]+\.?[0-9]*)([eE][+-]?[0-9]+)?$/.test(s) ? parseFloat(s) : false;
-    };
-    // 获得效果的值，可能是直接的数字，也可能是公式计算的值
-    static getEffectValue(s, fighter, buff) {
-        var r = this.parseNumber(s);
-        if (r !== false)
-            return r;
-        return Fight_formula.effectCalc(s, fighter, fighter, buff);
-    };
-    // 获得buff效果的值，buff的计算会使用到技能释放者以及技能释放目标对象
-    static getBuffEffectValue(s, F, T, buff, scene) {
-        var r = this.parseNumber(s), F = scene.mapList[F], T = scene.mapList[T];
-        if (r !== false)
-            return r;
-        return Fight_formula.effectCalc(s, F, T, buff);
-    };
-    // 随机圆内坐标
-    static randomCirclePos(r, a, b) {
-        while (true) {
-            var x = Math.random() * 2 * r + (a - r),
-                y = Math.random() * 2 * r + (b - r);
-            if ((x - a) * (x - a) + (y - b) * (y - b) <= r * r) {
-                return [x, y]
-            }
-        }
     }
-    
-    //选择某个玩家的队员
-    static groupFighters(f, scene) {
-        var i = f.groupId;
-        var arr = [];
-        for (var e in scene.group) {
-            if (parseInt(e) >= 0 && e != i) {
-                arr = arr.concat(scene.group[e]);
-            }
-        }
-        //mapId
-        return arr;
-    }
-
-    
 }
 
  // ================================ 本地
