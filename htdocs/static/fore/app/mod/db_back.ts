@@ -72,7 +72,13 @@ const handleData = (data) => {
 	for(let k in handleTable){
 		if(backDB[k]){
 			for(let t in handleTable[k]){
-				handleTable[k][t] && handleTable[k][t](backDB[k]);
+				if(handleTable[k][t]){
+					try{
+						handleTable[k][t](backDB[k]);
+					}catch(e){
+						console.log(e);
+					}
+				}
 			}
 		}
 	}

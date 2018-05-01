@@ -266,6 +266,7 @@ const openDownload = () => {
  * }
  */
 const creatLoad = (type,list) => {
+	console.log(type,list);
 	let pro = (window as any).pi_modules.commonjs.exports.getProcess();
 	pro.type = type;
 	pro.loaded = 0;
@@ -316,23 +317,44 @@ const findFilesList = (list) => {
  */
 const getSlowList = (_list) => {
 	//console.log(_list);
-	let _arr = [],
-		_size = 0,
-		_max = 1024*1024,
+	let arr = [],
 		add = (dir) => {
-			if(!dir)return;
-			if(Pi.fileMap[dir.path]){
-				_list.shift();
-				add(_list[0]);
+			if(dir.loaded && _list.length)
+				add(_list.shift());
+			else if(!dir.loaded){
+				arr.push(dir.path+"/");
+				dir.loaded = 1;
 			}
-			let _path = dir.path.indexOf(".")>0?dir.path:(dir.path+"/");
-			_size += dir.size;
-			_arr.push(_path);
-			_list.shift();
-			if(_size < _max)add(_list[0]);
 		};
-	add(_list[0]);
-	return _arr;
+	add(_list.shift());
+	return arr;
+};
+
+/**
+ * @description 本次慢任务下载列表
+ * @param wait.slow.list 慢任务等待表
+ */
+const getNowList = (_list) => {
+	//console.log(_list);
+	let arr = [],
+		add = (dir) => {
+			let f = depend.get(dir);
+			if(!f.loaded){
+				arr.push(dir);
+				f.loaded = 1;
+				//测试代码
+				for(let k in wait.slow.list){
+					let item = wait.slow.list[k];
+					if(item.path+"/" == dir){
+						console.log(item);
+					}
+				}
+			}
+			if(_list.length)
+				add(_list.shift());
+		};
+	add(_list.shift());
+	return arr;
 };
 
 /**
@@ -380,7 +402,8 @@ const loadNext = () => {
 	}
 	//创建立即下载任务
 	if(wait.now.list.length){
-		process = creatLoad("now",wait.now.list);
+		let _arr = getNowList(wait.now.list);
+		process = creatLoad("now",_arr);
 		if(!cango){
 			_pro.parent = process;
 			process.prev = _pro;

@@ -23,6 +23,8 @@
  * 
  * 2.移动前端按照正常移动走，同时通知后台移动，不等后台回调
  *   每次发起新的移动，会把前端当前位置同时推给后台，保证前后台位置同步
+ * 
+ * 3.自身伤害进入显示队列，正常情况下伤害都会后于技能释放，不会造成不流畅
  *
  * 
  */
@@ -32,8 +34,9 @@
 import { NavMesh } from "pi/ecs/navmesh";
 //fight
 import { Fighter , Skill, Buff } from "./class";
-import { EType } from "./analyze";
+import { EType, blend } from "./analyze";
 import { Policy } from "./policy";
+import { Util } from "./util";
 
  // ================================ 导出
 
@@ -44,24 +47,20 @@ export class Scene {
     /**
      * 
      * @param name 场景名字
-     * @param listener 战斗事件监听器
-     * @param overCallback 战斗结束回调
      * @param level 场景级别
      */
     constructor(
-      readonly id:any, 
-      readonly listener:Function, 
-      readonly overCallback:Function, 
+      readonly type:any, 
       level?
     ){
         this.level = level || 10;
         this.now = Date.now();
-        Mgr.scenes.set(this.id,this);
     }
+    id = 0
     /**
-     * @description 场景级别,决定当前场景事件处理哪些事件，>=1 处理移动, >=2 剩下的
+     * @description 场景级别,决定当前场景事件处理哪些事件，=1 处理移动, >=2 剩下的
      */
-    readonly level = 10
+    level = 10
     // 随机种子
     seed = 0
     // 默认的公共CD配置
@@ -92,31 +91,53 @@ export class Scene {
     navMesh: NavMesh
 
     /**
+     * @description 事件监听函数
+     * @param evs 战斗事件列表
+     */
+    public listener(evs: any):void{}
+    /**
+     * @description 战斗结束回调
+     * @param r 战斗结果 0表示继续，1表示左边胜利，2表示右边胜利 , 3表示超时
+     */
+    public overCallback(r:number,s: Scene):void{}
+    /**
+     * @description 战斗有结果时回调，但不一定战斗结束，可能只是一波战斗结束，新的怪还没进入场景
+     * @param r 战斗结果 0表示继续，1表示左边胜利，2表示右边胜利 , 3表示超时
+     * @return {boolean} true为最后一波，false战斗还没真正结束
+     */
+    public over(r:number):boolean{
+        return true
+    }
+    /**
      * @description 开始战斗
      **/  
     public start():boolean{
         this.startTime = this.now;
+        this.setPause(false);
         return true;
     }
     /**
      * @description 停止场景
      **/  
     public stop(){
+        this.setPause(true);
         this.overCallback && this.overCallback(-1, this);
     }
     /**
      * @description 主循环
      **/  
     public loop():any{
+        let t = this.now;
         this.now = Date.now();
         if(this.pause)
             return false;
-        //TODO...遍历战斗池，生成最终事件
+        // this.fightTime += (this.now - t);
+        this.fightTime += 50;
         //移动，当前技能释放 
         Policy.run(this);
         let evs = this.listenEvent;
         this.listenEvent = [];
-        return {now:this.now,events:evs};
+        this.listener && this.listener({now:this.now,events:evs});
     }
     /**
      * @description 暂停
@@ -125,17 +146,12 @@ export class Scene {
         if(this.pause === b){
             return;
         }
-        if(this.pause){
-            this.fightTime += (this.now - this.startTime);
-        }
         this.pause = b;
     }
     /**
      * @description 销毁战斗场景
      **/  
     public destroy():boolean{
-        Mgr.scenes.delete(this.id);
-
         this.setPause(true);
         this.fighters.clear();
         this.listenEvent = [];
@@ -168,19 +184,52 @@ export class Scene {
 /**
  * @description 场景管理
  **/  
-export class Mgr{
+export class FMgr{
+    /**
+     * @description 场景的数量
+     */
+    static scenesId = 1
+    /**
+     * @description 帧率,frameMgr帧率是16ms,所以控制在最多3帧跑一次战斗计算
+     */
+    static frame = 48
+    /**
+     * @description 后台通讯接口列表
+     */
+    static server:any
     /**
      * @description 场景表
      */
-    static scenes = new Map<string,Scene>()
+    static scenes = new Map<number,Scene>()
+    /**
+     * @description 创建场景
+     */
+    static create(type:any,level?:number,server?:any){
+        let s: Scene = new Scene(type,level);
+        s.id = this.scenesId++;
+        this.server = server;
+        this.scenes.set(s.id,s);
+        return s;
+    }
+    /**
+     * @description 销毁场景
+     */
+    static destroy(s:Scene){
+        this.scenes.delete(s.id);
+        s.destroy();
+    }
     /**
      * @description 推动所有场景
      * @param now 当前时间戳
      */
     static loop(){
-        Mgr.scenes.forEach((v: Scene,k: any)=>{
-            let evs = v.loop();
-            v.listener && v.listener(evs);
+        this.scenes.forEach((v: Scene,k: any)=>{
+            let evs = v.loop(),
+                r = Policy.check(v);
+            if(r>0 && v.over && v.over(r)){
+                v.overCallback && v.overCallback(r,v);
+                v.over = null;
+            }
         })
     }
     /**
@@ -190,18 +239,32 @@ export class Mgr{
         let t = Date.now();
         frameMgr.setPermanent(()=>{
             let tt = Date.now();
-            if(tt-t>=frame){
-                Mgr.loop();
+            if(tt-t>=this.frame){
+                this.loop();
                 t = tt;
             }
         })
     }
+    /**
+     * @description 设置后台通讯接口
+     * @param nr 接口列表
+     */
+    static setNetRequest(nr: any){
+        this.server = nr;
+    }
+    /**
+     * @description 向后台同步战斗事件
+     * @param type 事件类型，同EType
+     * @param param 事件接收参数，前后台一致
+     * @param callback 事件通讯回调，部分事件需要后台返回成功，再执行，就必须在回调里面调用
+     */
+    static netRequest(type: string, param: any, callback?: Function){
+        if(this.server && this.server[type]){
+            this.server[type](param,callback);
+        }
+    }
 }
  // ================================ 本地
- /**
-  * @description 帧率,frameMgr帧率是16ms,所以控制在最多3帧跑一次战斗计算
-  */
- const frame = 48;
 
 
 

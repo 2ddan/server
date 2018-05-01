@@ -58,7 +58,7 @@
      // 仇恨
      taunt = 0
      // 可释放的技能
-     skill = []
+     skill: Array<Skill> = []
      //技能索引
      skill_index = {}
      //动作时间
@@ -66,8 +66,9 @@
      // 公共CD
      publicCDNextTime = 0
      // 位置
-     x = 0
-     y = 0
+     x: number = 0
+     y: number = 0
+     z: number = 0
      // 移动状态
      moving = false
      // 无敌状态
@@ -82,6 +83,8 @@
      magicShield = { length: 0 }
      // 物理魔法盾
      shield = { length: 0 }
+     //系统属性
+     A: any = undefined
 
      // buff
      buff: Buff[] = []
@@ -95,6 +98,8 @@
      useSkillTime = 0
      // 正在释放的技能次数
      spreadCount = 0
+     // 正在释放的神兵类技能
+     godSkill: Skill = undefined
      // 移动的目的地
      moveto: Pos = undefined
      //移动速度,m/50sm
@@ -120,13 +125,64 @@
      //是否需要移除
      remove: boolean = false
      //是否ai,true: 自动选怪，自动移动，false：计算伤害等最后决策
-     ai: boolean = false
+     ai: boolean = true
      //移动路径Array<Pos>
      path: Pos[] = undefined
      //主动寻怪范围
      round: number = Infinity
-     //额外选择目标的条件
-     targetConds: any[] = undefined
+     //额外选择目标的条件like： [['hp', '>', 0]] => Fighter.hp > 0  ||  [['hp', 0]] => Fighter.hp == 0
+     targetConds: Array<any[]> = undefined
+     //fighter的约定id,玩家为role_id,怪物为配置表对应id(可重复),镜像玩家为小于零的整数
+     sid : number = 0
+     //单次伤害计算清空
+     damage: number = 0
+     //类型 "fighter" || "monster"
+     type: string
+     //角色id（职业id）
+     career_id: number
+     //name
+     name: string
+     //模型id
+     module: number
+     //手动移动
+     /**
+      * {x:number,y:number 初始字段
+      * 下面是在生命期临时添加
+      * time:number 可以恢复到正常逻辑的时间
+      * init:boolean 是否已经处理过
+      * }
+      */
+     handMove: any
+
+     //国家id
+     area: number
+     //宠物id
+     pet: number
+     //时装id
+     clothes: number
+     //技能列表
+     skillList: Skill[]
+     //赋灵阶段
+     ensoulClass: number
+     //装备总星级
+     equipStar: number
+     //装备武器id
+     weaponId: number
+
+     //回怪距离
+     maximum: number
+     //模型缩放比例
+     scale: number
+     //等级
+     level: number
+     //掉落金币
+     money: number
+     //掉落经验值
+     exp: number
+     //掉落id
+     drop_id: number
+     //掉落type
+     drop_type: string
 }
 
 export class Skill {
@@ -207,8 +263,6 @@ export class Skill {
     backSkill = []
     // 击中音效
     hitSound = ""
-    //
-    delaySpreadSkillTime  = 0
     // 等级
     level = 0
     // 携带buff
@@ -217,6 +271,10 @@ export class Skill {
     cdNextTime = 0
     //目标选择距离
     targetLength = 999
+    //伤害延迟
+    bloodDelayTime:number = 0
+    //初始CD
+    initialCDTime: number = 0
 }
 
 export class Buff {
@@ -293,6 +351,9 @@ export class Pet {
     speed = 0
     //缩放
     scale = 1
+    //朝向
+    lookat = {}
+    parent: Fighter
 }
 
  /**
@@ -302,6 +363,7 @@ export class Pos{
    x:number
    y:number
    z:number
+   status:number
 }
 
 /**

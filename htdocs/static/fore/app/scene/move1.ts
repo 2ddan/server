@@ -48,36 +48,45 @@ export class Move {
         if(type == "move" || type.indexOf("refresh") === 0)
             return ;
         if(type === "moveto"){
-            mid = e.fighter;
+            mid = e.fighter>0?e.fighter:e.fighter.mapId;
             f = getFighter(mid);
             if(!f){
                 return console.error(cacheList,mapList);
             }
-            if(f.sid == 10000){
-                console.log("moveto");
+            mt = e.fighter.path && e.fighter.path[e.fighter.path.length-1] || e.fighter.moveto;
+            //如果目标点离对象当前位置非常接近，则不再模拟
+            if(near(mt,f,f.speed)){
+                return;
             }
             let n = Common.shallowClone(e);
-            n.fighter = getFighterAttr(f);
+            n.fighter = getFighterAttr(e.fighter);
+            n.fighter.speed = f.speed;
             delete n.fighter._show;
             Move.table[mid] = JSON.parse(JSON.stringify(n));
+            if(e.tid !== -1)
+                initTargets(e,mid);
             initFighter(Move.table[mid].fighter,f,t);
         }else if(type === "remove"){
-            delete Move.table[e.fighter];
-        }else if(type == "useSkill"){
-            delete Move.table[e.fighter];
+            if(Move.table[e.mapId] && Move.table[e.mapId].tid != -1){
+                Move.deleteTarget(Move.table[e.mapId],e.mapId);
+            }
+            if(Move.targets[e.mapId]){
+                Move.deleteAllTarget(e.mapId);
+                delete Move.targets[e.mapId];
+            }
+            delete Move.table[e.mapId];
+        }else if(Move.table[e.fighter.mapId]){
+            console.log(type);
+            //如果神兵类技能(不会打断玩家动作)，则退出
+            if(e.skill && checkIsGod(e.skill,e.fighter.mapId)
+            // || checkObjSame(e.fighter.moveto,Move.table[e.fighter.mapId].fighter.moveto)
+            )
+                return;
+            if(Move.table[e.fighter.mapId] && Move.table[e.fighter.mapId].tid != -1){
+                Move.deleteTarget(Move.table[e.fighter.mapId],e.fighter.mapId);
+            }
+            delete Move.table[e.fighter.mapId];
         }
-        // else if(Move.table[e.fighter.mapId]){
-        //     console.log(type);
-        //     //如果神兵类技能(不会打断玩家动作)，则退出
-        //     if(e.skill && checkIsGod(e.skill,e.fighter.mapId)
-        //     // || checkObjSame(e.fighter.moveto,Move.table[e.fighter.mapId].fighter.moveto)
-        //     )
-        //         return;
-        //     if(Move.table[e.fighter.mapId] && Move.table[e.fighter.mapId].tid != -1){
-        //         Move.deleteTarget(Move.table[e.fighter.mapId],e.fighter.mapId);
-        //     }
-        //     delete Move.table[e.fighter.mapId];
-        // }
         //Move.start();
     }
     /**
@@ -92,7 +101,7 @@ export class Move {
         if(!Move.pause){
             //移动帧
             for(let k in Move.table){
-                e = fighterMove(Move.table[k],delta);
+                e = fighterMove(Move.table[k].fighter,delta);
                 _show(e,k);
             }
         }
@@ -108,7 +117,7 @@ export class Move {
      * @param {number}mapId
      */
     static getPos(mapId){
-        return Move.table[mapId] && fighterMove(Move.table[mapId],Date.now());
+        return Move.table[mapId] && fighterMove(Move.table[mapId].fighter,Date.now());
     }
     /**
      * @description 从targets列表中清除单个目标
@@ -267,27 +276,31 @@ const initFighter = (fighter,f,t) => {
 };
 /**
  * @description 移动按步距拆分
- * @param {Json}e 战斗事件
+ * @param {Json}f 战斗对象
  */
-const _move = (e,during) => {
-    let x,y,f=e.fighter;
-    if(!e.moveto)
+const _move = (f,during) => {
+    let x,y;
+    if(!f.path)
         return { type: "move", fighter: f, moving: 0 };
     //到达目标点检测，是否是最终点
     var checkLastPos = function(){
-        if(!e.moveto.status){
+        if(f.path && f.path.length > 1){
+            f.path.shift();
+            f.moveto.x = f.path[0].x;
+            f.moveto.z = f.path[0].z;
             return false;
         }
         f.moving = false;
-        if(f.sid == 10000){
-            console.log("end");
-        }
         return { type: "move", fighter: f, moving: 0 };
     };
     //重置目标点
-    x = e.moveto.x;
-    y = e.moveto.z;
+    x = f.moveto.x;
+    y = f.moveto.z;
     var dist = Math.sqrt((f.x - x) * (f.x - x) + (f.y - y) * (f.y - y)), speed = f.speed*during;
+    //靠近目标范围
+    if (dist <= f.moveto.near) {
+        return checkLastPos();
+    }
     //距离目标点不足一步
     dist = speed / dist;
     if (dist >= 1) {
@@ -299,16 +312,15 @@ const _move = (e,during) => {
     f.x += (x - f.x) * dist;
     f.y += (y - f.y) * dist;
     f.moving = true;
-    return { type: "move", fighter: f, moving: f.moving ? 1 : 2,moveto:e.moveto};
+    return { type: "move", fighter: f, moving: f.moving ? 1 : 2 };
 };
 /**
  * @description 移动
- * @param {Json}e 战斗事件
+ * @param {Json}f 战斗对象
  */
-const fighterMove = function (e,delta) {
-    // let d = delta / frame[frame.type];
-    let d = delta / 48;
-    return _move(e,d || 1);
+const fighterMove = function (f,delta) {
+    let d = delta / frame[frame.type];
+    return _move(f,d || 1);
 };
 /**
  * @description 渲染
@@ -396,32 +408,32 @@ const getFighterAttr = (f) => {
 }
 // =========================================== 立即执行
 (renderHandlerList as any).add((msg)=>{
-    // if(msg.type !== "before"){
-    //     return;
-    // }
-    // let delta = msg.delta;
-    // Move.loop();
-    // // globalSend("drop_fun");
-    // let __self;
-    // if(sceneShow){
-    //     __self = sceneShow.getSelf();
+    if(msg.type !== "before"){
+        return;
+    }
+    let delta = msg.delta;
+    Move.loop();
+    // globalSend("drop_fun");
+    let __self;
+    if(sceneShow){
+        __self = sceneShow.getSelf();
         
-    //     if(!__self || mgr_data.name == "loginscene" || mgr_data.name == "uiscene")
-    //         return;
-    //     let c = mgr_data.camera[mgr_data.name],
-    //         cp = c._show.old.transform.position,
-    //         fp = __self._show.old.transform.position,
-    //         r;
-    //     if(__self){
-    //         let fighterPosition = [fp[0],fp[1],fp[2]];
-    //         globalSend("fighter_position",fighterPosition);
-    //     }
-    //     // globalSend("runShowFun",msg);
-    //     if(!c.hand && (cp[0] != fp[0] || cp[2] != fp[2])){
-    //         r = setCamera(cp,fp,__self.speed,1);
-    //         r && mgr.setOnlyPos(c, r);
-    //     }
-    // }
+        if(!__self || mgr_data.name == "loginscene" || mgr_data.name == "uiscene")
+            return;
+        let c = mgr_data.camera[mgr_data.name],
+            cp = c._show.old.transform.position,
+            fp = __self._show.old.transform.position,
+            r;
+        if(__self){
+            let fighterPosition = [fp[0],fp[1],fp[2]];
+            globalSend("fighter_position",fighterPosition);
+        }
+        // globalSend("runShowFun",msg);
+        if(!c.hand && (cp[0] != fp[0] || cp[2] != fp[2])){
+            r = setCamera(cp,fp,__self.speed,1);
+            r && mgr.setOnlyPos(c, r);
+        }
+    }
 });
 // =========================================== 测试
 let $time = 0;

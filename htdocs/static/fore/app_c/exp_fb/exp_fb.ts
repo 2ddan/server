@@ -114,19 +114,19 @@ export class exp_fb extends Widget {
         //     globalSend("screenTipFun", {"words": `正在挑战野外BOSS，请稍后再试！`}) 
         //     return;
         // }
-        let level = getDB("player.level");
-        let id = 1;
-        for(let key in exp_fb_mission){
-            if(level >= exp_fb_mission[key].level && level < (exp_fb_mission[parseInt(key)+1] && exp_fb_mission[parseInt(key)+1].level)){
-                id = parseInt(key);
-                break;
-            }else if(level >= exp_fb_mission[key].level && !exp_fb_mission[parseInt(key)+1] ){
-                id = parseInt(key);
-                break;
-            }
-        }
-        curr_id = id;    
-        fb.challenge(id,arg);      
+        // let level = getDB("player.level");
+        // let id = 1;
+        // for(let key in exp_fb_mission){
+        //     if(level >= exp_fb_mission[key].level && level < (exp_fb_mission[parseInt(key)+1] && exp_fb_mission[parseInt(key)+1].level)){
+        //         id = parseInt(key);
+        //         break;
+        //     }else if(level >= exp_fb_mission[key].level && !exp_fb_mission[parseInt(key)+1] ){
+        //         id = parseInt(key);
+        //         break;
+        //     }
+        // }
+        // curr_id = id;    
+        fb.challenge(curr_id,arg);      
     }
 }
 //逻辑处理
@@ -429,7 +429,22 @@ listenBack("app/pve/exp_instance@read", function (data) {
     logic.count();
     updata("exp_fb.total_count",fb_data.count);
 });
-
+let oldLevel = 0;
+listen("player.level", () => {
+    let level = getDB("player.level");
+    if(level > oldLevel){
+        oldLevel = level;
+        for(let key in exp_fb_mission){
+            if(level >= exp_fb_mission[key].level && level < (exp_fb_mission[parseInt(key)+1] && exp_fb_mission[parseInt(key)+1].level)){
+                curr_id = parseInt(key);
+                break;
+            }else if(level >= exp_fb_mission[key].level && !exp_fb_mission[parseInt(key)+1] ){
+                curr_id = parseInt(key);
+                break;
+            }
+        }
+    }
+});
 /**
  * 监听任务完成情况刷新页面
  */

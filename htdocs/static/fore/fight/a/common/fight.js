@@ -1912,8 +1912,8 @@ _$define("fight/a/common/fight",function (require, exports, exportsule) {
 
 			//直线水平,与水平向右射线重合
 			if (pt.y == p1[1] && pt.y == p2[1] && pt.x < Math.min(p1[0], p2[0])) {
-				var pf = (i == 0) ? p[len - 1] : p[i - 1];//pi-1
-				var pn = ((len - i - 1) < 2) ? p[1 - (len - i - 1)] : p[i + 2];//pi+2
+				var pf = (i == 0) ? points[len - 1] : points[i - 1];//pi-1
+				var pn = ((len - i - 1) < 2) ? points[1 - (len - i - 1)] : points[i + 2];//pi+2
 				if ((pf[1] > pt.y) == (pn[1] > pt.y)) {
 					continue;
 				} else {
@@ -1924,8 +1924,8 @@ _$define("fight/a/common/fight",function (require, exports, exportsule) {
 
 			//水平向右射线与顶点相交
 			if (pt.y == p1[1] || pt.y == p2[1]) {
-				var pf = (i == 0) ? p[len - 1] : p[i - 1];//pi-1
-				var pn = ((len - 1 - i) < 1) ? p[0] : p[i + 1];//pi+1
+				var pf = (i == 0) ? points[len - 1] : points[i - 1];//pi-1
+				var pn = ((len - 1 - i) < 1) ? points[0] : points[i + 1];//pi+1
 				if ((pf[1] > pt.y) == (pn[1] > pt.y)) {
 					continue;
 				} else {

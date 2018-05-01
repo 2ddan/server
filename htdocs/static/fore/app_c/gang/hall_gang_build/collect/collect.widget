@@ -1,0 +1,6 @@
+{
+    "tpl":"./collect.tpl",
+    "css":"./collect.wcss",
+    "js":"./collect.ts",
+    "forelet":"./collect.ts"
+} 

@@ -2,27 +2,13 @@ import { monster_attribute } from "fight/b/common/monster_attribute";
 import { monster_base } from "fight/b/common/monsterBase";
 import { role_base } from "fight/b/common/role_base";
 import { skill as fight_skill } from "fight/b/common/skill";
-import * as Fight from "fight/a/common/fight";
 import { buff } from "fight/b/common/buff";
-import { Pet } from "fight/a/class";
-
-let conter = function(obj: Object){return JSON.parse(JSON.stringify(obj))};
-let yszzFight = {
-    fighter: conter,
-    effect: conter,
-    otherEffect: conter,
-    skillImage: conter,
-    mesh: conter,
-    scene: conter,
-    damage: conter,
-    camera: conter
-}
-
+import { Pet, Fighter } from "fight/a/class";
 
 export class Init_Fighter {
     //创建monster
     static createMonster(_item, base_cfg) {
-        let monster = Fight.initFighter(yszzFight.fighter),
+        let monster = new Fighter(),
             //boss_id
             boss_id = _item[0],
             //属性id
@@ -99,7 +85,7 @@ export class Init_Fighter {
     //创建fighter
     static createfighter(_item) {
         //创建fighter模板
-        let fighter = Fight.initFighter(yszzFight.fighter);
+        let fighter = new Fighter();
         //转换player数据
         let player: any = changeArrToJson(_item);
         player.attr = changeArrToJson(player.attr);
@@ -181,7 +167,7 @@ export class Init_Fighter {
 
     //创建宠物
     static initPet(o,n,f){
-        let r : any = new Pet(n),
+        let r : Pet = new Pet(n),
             setxyz = (x,y) => {
                 r.x = x;
                 r.y = y;

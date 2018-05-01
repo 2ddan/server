@@ -9,7 +9,6 @@ import { Forelet } from "pi/widget/forelet";
 import { getRealNode } from "pi/widget/painter";
 import { listenerList,open as pi_open, remove, add, destory,closeBack } from "pi/ui/root";
 import { findNodeByAttr } from "pi/widget/virtual_node";
-import { getGlobal } from "pi/widget/frame_mgr";
 //mod
 import { Common } from "app/mod/common";
 import { Music } from "app/mod/music";
@@ -23,15 +22,12 @@ import { mgr, mgr_data } from "app/scene/scene";
 import { Move, setFrame } from "app/scene/move";
 import { setClickCallback, initAnimFinishCB } from "app/scene/base/scene";
 import { cuurUI, UiFunTable, initValue } from "app/scene/ui_fun";
-//fight
-import { Scene as FightScene, FMgr } from "fight/a/fight";
-import { Request } from "fight/a/request";
-import { blend } from "fight/a/analyze";
-
 //app
 import { Fight_common } from "fight/a/fore/fight_common";
+import * as Fight from "fight/a/common/fight";
 import { Init_Fighter } from "fight/a/common/init_fighter";
 import { handScene, updateSelfModule, initMapList } from "app_b/fight_ol/handscene";
+import { fightShow } from "fight/a/fore/fight_show";
 import { net_request, net_send, net_message } from "app_a/connect/main";
 import { loadNow } from "app_a/download/download";
 import { drop_outFun } from "app_b/widget/drop_out";
@@ -99,17 +95,17 @@ export class Fightm extends Widget {
         closeBack();
     }
     closeLoseAccount (){
-        let w:any = forelet.getWidget("app_b-fight-wild_lose_account");
+        let w = forelet.getWidget("app_b-fight-wild_lose_account");
         w && w.cancel && w.cancel();
         if (accountBack) accountBack();
     }
     changeFight() {
-        if (fightScene.level >=2) {
-            fightScene.level = 1;
+        if (fightScene.autoFight) {
+            fightScene.autoFight = false;
         } else {
-            fightScene.level = 2;
+            fightScene.autoFight = true;
         }
-        getData.scene = { "autoFight": fightScene.level, "fightData": fightData }
+        getData.scene = { "autoFight": fightScene.autoFight, "fightData": fightData }
         forelet.paint(getData);
     }
     //战斗失败，前往
@@ -159,7 +155,7 @@ export class Fightm extends Widget {
 export const loadSceneOk = (fightData) => {
     if (!fightData) return
     let time = 0,
-        // fightMove = 0, // move_fun[fightData.type] ? 1 : 0,
+        fightMove = 0, // move_fun[fightData.type] ? 1 : 0,
         // startAni = function_open[fightData.type] ? function_open[fightData.type].fightStartAni : 0;   VS动画 
         startAni = 0;
 
@@ -262,8 +258,7 @@ export const goback = (arg: string, isfale?: boolean) => {
 
     //暫停渲染
     mgr.pause(true);
-    FMgr.destroy(fightScene);
-    clear();
+    fightScene.destroyScene(clear);
     //先暫停渲染在關閉頁面
     if (w) {
         close_w(arg, w);
@@ -279,6 +274,7 @@ export const goback = (arg: string, isfale?: boolean) => {
         accountBack = null;
         //手动关闭战斗场景,则强制结束战斗
     } else if (arg == "app_b-fight-fight") {
+        fightScene.setPause(true);
         //fighting && escapeBack && escapeBack();
         escapeBack && escapeBack();
     }
@@ -359,8 +355,17 @@ export const findRes = (msg) => {
  * @example
  */
 export const fight = (msg, callback, escapeback?) => {
+    // if (Fight.count > 0 && (!fightData || msg.type !== fightData.type)) {
+    //     globalSend("screenTipFun", {
+    //         words: `正在挑战野外boss，请稍后再挑战。`
+    //     })
+    //     return;
+    // }
     fightCount += 1;
     escapeBack = escapeback;
+    // loadNow(findRes(msg),()=>{},()=>{
+    //     _fight(msg,callback);
+    // });
     exitWild(() => {
         _fight(msg, callback);
     });
@@ -383,13 +388,13 @@ export const getSelf = () => {
  * @description  获取是否本地战斗进行中
  */
 export const checkFighting = () => {
-    return FMgr.scenes.size;
+    return Fight.count;
 }
 
 //========================================本地
 let getData: any = {};
 let countHp = 0,
-    fightScene: FightScene,
+    fightScene,
     //是否开始战斗
     fighting = false,
     //缓存战斗数据
@@ -420,14 +425,14 @@ const beginShow = (startAni?, time?) => {
             close(forelet.getWidget("app_b-fight-fight_move"));
             //放入敌方战斗人员,开始战斗
             fightStart(fightData);
-            // fightScene.fightMove = true;
+            fightScene.fightMove = true;
             fighting = true;
             //Fight_common.initFighterImage(fightSkills, fightScene);
         }, time);
     } else {
         //放入敌方战斗人员,开始战斗
         fightStart(fightData);
-        // fightScene.fightMove = true;
+        fightScene.fightMove = true;
         fighting = true;
         //Fight_common.initFighterImage(fightSkills, fightScene);
     }
@@ -438,6 +443,7 @@ const beginShow = (startAni?, time?) => {
 const clear = () => {
     initMapList();
     UiFunTable.clearTO();
+    Move.clear();
     initValue();
 };
 //处理敌人波数
@@ -460,13 +466,13 @@ const _fight = (msg, callback) => {
         // UiFunTable.clearTO();
         initValue();
         // fightScene.now = 0;
-        // fightScene.campTarget = undefined;
+        fightScene.campTarget = undefined;
         fightScene.limitTime = msg.limitTime * 1000;
     }
     //设置怪物波数
     _enemy(msg);
     fightData = msg;
-    getData.scene = { "autoFight": fightScene.level, "fightData": fightData };
+    getData.scene = { "autoFight": fightScene.autoFight, "fightData": fightData };
     forelet.paint(getData);
     //app.mod.fight_common.findRenderPic(msg);
     //处理战斗渲染资源,返回模型贴图路径表
@@ -508,90 +514,27 @@ const _fight = (msg, callback) => {
 
 const clickScene = (result) => {
     if (!result) return;
-    let __self = fightScene.fighters.get(1), isSkill = null;
+    let __self = fightScene.mapList[1], isSkill = null;
     if (result.type === "terrain") {
-        __self.handMove = { x: result.data[0], y: result.data[2]};
+        __self.handMove = { x: result.data[0], y: result.data[2], click: true };
     } else {
-    }
-}
-//战斗事件监听
-const fightListener = (r) => {
-    if (mgr_data.name != "fight") return;
-    r.events = blend(r.events);
-    //return;
-    if (r.events.length > 0) {
-        for (let i = 0, leng = r.events.length; i < leng; i++) {
-            let e = r.events[i];
-            Move.filter(e.type, e);
-            try {
-                if(e.type == "damage" && e.target.hp <= 0){
-                    let award = e.target.award,
-                        fighter = e.fighter,
-                        target = e.target,
-                        award_list = [];
-                    let fighter_pos = [fighter.x ,fighter.y ,fighter.z];
-                    let target_pos = [target.x ,target.y ,target.z];
-                    if(award){
-                        for(let i = 0;i < award.length;i++){
-                            if(award[i][0] != "money" && award[i][0] != "exp"){
-                                award_list.push(award[i]);
-                            }
-                        }
-                        if(award_list.length != 0){
-                            let timer = setTimeout(()=>{
-                                drop_outFun(award_list,target_pos,fighter_pos);
-                                clearTimeout(timer);                                    
-                            },1500)
-                        }
-                    }
-                }
-                //console.log("app.mod.scene.fightShow : ",e);
-                if (e.type == "insert")
-                    e = JSON.parse(JSON.stringify(e));
-                //战斗事件处理
-                handScene[e.type] && handScene[e.type](e, r.now);
-            } catch (ex) {
-                if (console) {
-                    console.log(e, ex);
-                }
-            }
+
+        for (let k in __self.skill) {
+            if (result.id == __self.skill[k].id)
+                isSkill = __self.skill[k];
+        }
+        if (isSkill) {
+            handSkill(isSkill, __self.mapId);
+        } else if (fightScene.mapList[result.id] && fightScene.mapList[result.id].hp > 0 && fightScene.mapList[result.id].camp != 1) {
+            fightScene.campTarget = result.id;
         }
     }
-    //if(ft>10)app.mod.scene.log("事件处理时间："+ft);
-    //return;
-    //执行特效
-    setTimeout(()=>{
-        UiFunTable.runCuurUi(r);
-    },0)
-    //if(ft>5)app.mod.scene.log("特效计算时间："+ft);
-    return true;
-};
-//战斗结束
-const overBack = (r, scene) => {
-    if (fighting && overCallback) {
-        //延迟执行战斗结束回调
-        setTimeout(() => {
-            overCallback({
-                r: r,
-                time: fightScene.fightTime,
-                fighters: Fight_common.getLeftHp(fightScene)
-            }, scene);
-            //Music.stopBgSound("fight_only");//停止战斗音乐
-            overCallback = null;
-        }, 1500);
-    }
-};
-//战斗每波结束时附加判断，没到最后一波怪，不会真正结束
-const over = (r): boolean => {
-    if (r == 1 && fightData.batch < fightData.enemy.length - 1) {
-        fightData.batch += 1;
-        fightData.enemy_fight = fightData.enemy[fightData.batch];
-        //Fight_common.insertEnemy(fightData, fightScene);
-        fightStart(fightData);
-        return false;
-    }
-    return true;
-};
+}
+
+const handSkill = (skill, mapId) => {
+    fightScene.handSkill(mapId, skill);
+    globalSend("guideSkill");
+}
 
 //初始化战斗场景
 const initFightScene = (msg) => {
@@ -606,21 +549,98 @@ const initFightScene = (msg) => {
     })
     //设置移动渲染
     Move.setRender(true);
+    //设置为本地帧率
+    setFrame(false);
     if (fightScene) {
         fightScene.startTime = Date.now();
         return;
     };
-    
-    fightScene = FMgr.create("fight");
-    //Fight.createScene(1024, 1024, 1, "fight", mgr.yszzFight.scene, null, mgr.getSceneBuffer(msg.cfg.scene, ".nav"));
+    fightScene = Fight.createScene(1024, 1024, 1, "fight", mgr.yszzFight.scene, null, mgr.getSceneBuffer(msg.cfg.scene, ".nav"));
+    fightScene.name = "fight";
     mgr_data.sceneTab["fight"] = fightScene;
-    //设置战斗事件监听函数
-    fightScene.listener = fightListener;
+    //战斗事件监听
+    fightScene.listener = (r) => {
+        if (mgr_data.name != "fight") return;
+
+        //return;
+        if (r.events.length > 0) {
+            for (let i = 0, leng = r.events.length; i < leng; i++) {
+                let e = r.events[i];
+
+                Move.filter(e.type, e);
+                try {
+                    if(e.type == "damage" && e.target.hp <= 0){
+                        let award = e.target.award,
+                            fighter = e.fighter,
+                            target = e.target,
+                            award_list = [];
+                        let fighter_pos = [fighter.x ,fighter.y ,fighter.z];
+                        let target_pos = [target.x ,target.y ,target.z];
+                        if(award){
+                            for(let i = 0;i < award.length;i++){
+                                if(award[i][0] != "money" && award[i][0] != "exp"){
+                                    award_list.push(award[i]);
+                                }
+                            }
+                            if(award_list.length != 0){
+                                let timer = setTimeout(()=>{
+                                    drop_outFun(award_list,target_pos,fighter_pos);
+                                    clearTimeout(timer);                                    
+                                },1500)
+                            }
+                        }
+                    }
+                    //console.log("app.mod.scene.fightShow : ",e);
+                    if (e.type == "insert")
+                        e = JSON.parse(JSON.stringify(e));
+                    //战斗事件处理
+                    handScene[e.type] && handScene[e.type](e, r.now);
+                } catch (ex) {
+                    if (console) {
+                        console.log(e, ex);
+                    }
+                }
+            }
+        }
+        //Move.loop();
+        //if(ft>10)app.mod.scene.log("事件处理时间："+ft);
+        //return;
+        //执行特效
+        setTimeout(()=>{
+            UiFunTable.runCuurUi(r);
+        },0)
+        //if(ft>5)app.mod.scene.log("特效计算时间："+ft);
+        return true;
+    };
+
+    fightScene.setPause(true);
 
     //战斗结束回调
-    fightScene.overCallback = overBack;
+    fightScene.overCallback = (r, scene) => {
+        if (fighting && overCallback) {
+            //延迟执行战斗结束回调
+            setTimeout(() => {
+                overCallback({
+                    r: r,
+                    time: fightScene.isEndFight,
+                    fighters: Fight_common.getLeftHp(fightScene)
+                }, scene);
+                //Music.stopBgSound("fight_only");//停止战斗音乐
+                overCallback = null;
+            }, 1500);
+        }
+    };
     //战斗每波结束时附加判断，没到最后一波怪，不会真正结束
-    fightScene.over = over;
+    fightScene.over = (r): boolean => {
+        if (r == 1 && fightData.batch < fightData.enemy.length - 1) {
+            fightData.batch += 1;
+            fightData.enemy_fight = fightData.enemy[fightData.batch];
+            //Fight_common.insertEnemy(fightData, fightScene);
+            fightStart(fightData);
+            return false;
+        }
+        return true;
+    };
     //战斗开始
     fightScene.start();
 }
@@ -643,7 +663,7 @@ const fightStart = (msg) => {
         if (msg.show_award) {
             f.award = msg.show_award.shift();
         }
-        Request.insert(f,fightScene)
+        fightScene.insert(f);
     }
 }
 
@@ -655,14 +675,17 @@ const initOwn = (msg) => {
         pos = msg.cfg.role_pos;
     //连续多次挑战，加血特效
     if (fightCount > 1) {
-        let me = fightScene.fighters.get(1);
-        // initMapList();
+        let me = fightScene.mapList[1];
+        initMapList();
         for (let i in _list[0]) {
             if (i !== "x" && i !== "y" && i !== "name") me[i] = _list[0][i];
         }
-        me.show_hp = me.hp;
-        // delete me._show;
-        // fightScene.insert(me);
+        me.show_hp = me.max_hpCount;
+        fightScene.mapList = {};
+        fightScene.fighters = [];
+        fightScene.mapCount = 1;
+        delete me._show;
+        fightScene.insert(me);
         //第一次挑战
     } else {
         for (let i in _list) {
@@ -670,7 +693,6 @@ const initOwn = (msg) => {
             f.name = Common.fromCharCode(f.name);
             f.x = pos[0];
             f.y = pos[1];
-            
             //设置为被动
             //f.passive = true;   
             //人物跑到怪面前
@@ -678,7 +700,7 @@ const initOwn = (msg) => {
             //f.handMove = { "x": p[0], "y": p[1] };
             if (f.sid === db.player.role_id)
                 updateSelfModule(f);
-            Request.insert(_list[i],fightScene);
+            fightScene.insert(_list[i]);
         }
     }
 }
@@ -716,6 +738,9 @@ const timeStr = (second) =>{
     return h+m+s;
 }
 
+listen("chat.show",()=>{
+    forelet.paint(getData);
+});
 
 /**
  * 关闭界面
@@ -737,12 +762,3 @@ const getPage = () => {
 		return widgetsMap[widgetsMap.length-1];
 	}
 };
-
-// ================================== 立即执行
-
-//设置数据监听
-listen("chat.show",()=>{
-    forelet.paint(getData);
-});
-//设置战斗循环
-FMgr.setFrame(getGlobal());

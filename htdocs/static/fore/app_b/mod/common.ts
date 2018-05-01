@@ -273,7 +273,7 @@ export class Common_m {
     static treasureSkill (fightScene,msg) {
         let m = {ok:[["result","undefined"]]};
         if(fightScene && !fightScene.pause){
-            if(!fightScene.handSkill(fightScene.fighters[0].mapId,Common.getObjHasOneValue(fightScene.fighters[0].skill,"id",msg.skill_id)))
+            if(!fightScene.handSkill(fightScene.fighters[0].mapId,Common.getObjHasOneValue(fightScene.fighters.get(1).skill,"id",msg.skill_id)))
                 m.ok[0][1] = "no target";
             setTimeout(function() {
                 msg.callback && msg.callback(m); 

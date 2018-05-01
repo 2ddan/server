@@ -26,12 +26,12 @@ exports.init = (url,callback) => {
         console.log("Connected correctly to server.");
         var adminDb = db.admin();
         // List all the available databases
-        // adminDb.listDatabases(function(err, dbs) {
-        //     assert.equal(null, err);
-        //     assert.ok(dbs.databases.length > 0);
-        //     console.log(dbs);
+        adminDb.listDatabases(function(err, dbs) {
+            // assert.equal(null, err);
+            // assert.ok(dbs.databases.length > 0);
+            console.log(dbs);
         //     db.close();
-        // });
+        });
 
         // Create a collection we want to drop later
         var col = db.collection('createIndexExample1'),
