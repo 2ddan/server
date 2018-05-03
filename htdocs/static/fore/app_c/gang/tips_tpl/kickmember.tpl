@@ -51,9 +51,9 @@
 
         </div>
         
-        <div  w-class="19" w-sid="19">是否将该玩家请离公会?</div>
+        <div  w-class="19" w-sid="19">是否将该玩家请离门派?</div>
         <widget on-tap="KickMember" w-class="20" w-tag="app_a-widget-btn-rect" w-sid="20">
-            {"class":"default","fontsize":18,"color":"","text":"请离公会","width":84,"height":32} 
+            {"class":"default","fontsize":18,"color":"","text":"请离门派","width":84,"height":32} 
         </widget>	
         <widget w-class="15" w-tag="app_a-widget-pic_other-pic_other" w-sid="15">{"icon":"tips_bottom"} 
         </widget>

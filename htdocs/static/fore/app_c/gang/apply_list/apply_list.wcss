@@ -53,10 +53,8 @@
     position: relative;
     width: 450px;
     height: 138px;
-    margin-top: 10px;
-    margin-right: 20px;
     margin-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 4px;
 }
 .82 {
     position: absolute;
@@ -91,10 +89,6 @@
     font-family: mnjsh;
     font-size: 18px;
 }
-.88 {
-    vertical-align:middle;
-    margin-top:-3px;
-}
 
 .91 {
     position: absolute;
@@ -118,4 +112,57 @@
     position: absolute;
     left: 0;
     bottom: 0;
+}
+
+.4 {
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    width: 464px;
+    height: 540px;
+    opacity: 0.95;
+}
+.5 {
+    position: absolute;
+    left: -39px;
+    top: -27px;
+}
+.6 {
+    position: absolute;
+    left: -38px;
+    bottom: -15px;
+}
+.7 {
+    position: absolute;
+    left: -14px;
+    top: 0px;
+}
+.8 {
+    position: absolute;
+    left: 421px;
+    top: -35px;
+}
+
+.10 {
+    position: absolute;
+    left: 132px;
+    top: -32px;
+}
+
+.3 {
+    position: absolute;
+    width: 452px;
+    height: 540px;
+    left: 50%;
+    top: 50%;
+    margin-left: -225px;
+    margin-top: -270px;
+}
+
+.13 {
+    position: absolute;
+    width: 464px;
+    height: 640px;
+    left: 50px;
+    top: 15px;
 }

@@ -200,6 +200,9 @@ export class Common_m {
             }else if(k === "diamond"){
                 updata("player.diamond", _player.diamond + award[k]);
                 if(award[k]>0)r.player.diamond = award[k];
+            }else if(k === "gang_contribute"){
+                updata("player.gang_contribute", _player.gang_contribute + award[k]);
+                if(award[k]>0)r.player.gang_contribute = award[k];
             }else if(k === "prop"){
                 let prop = award[k];
                 for(let i = 0,len = prop.length;i < len;i ++){

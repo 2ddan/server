@@ -74,7 +74,8 @@ const initDrama = function (msg) {
             startDrama(msg)
         }, 50)
     }
-    Move.setStopBack(fun);
+    // Move.setStopBack(fun);
+    handScene.setStopMoveBack(fun);
 }
 
 /**

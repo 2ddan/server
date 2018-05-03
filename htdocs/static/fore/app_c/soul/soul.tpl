@@ -15,11 +15,15 @@
                     {{end}}
                 </div>
                 {{if (it1.player_level < v.open_level)}}
-                <div w-class="closed"></div>
+                <app_a-widget-pic_other-pic_other  w-class="closed">
+                    {"icon":"closed"}
+                </app_a-widget-pic_other-pic_other>
                 {{end}}
     
                 {{if it1.acupoint == v.id}}
-                <div w-class="selected"></div>
+                <app_a-widget-select-select w-class="selected">
+                    {"select":"double_circle"} 
+                </app_a-widget-select-select>
                 {{end}}
                 <app-widget-tip-tip style="top:5px;right:3px;">
                     {"tip_keys":[{{'role.soul.' + v.id}}] }
@@ -95,6 +99,8 @@
                     {"width":70,"height":70,"prop":{{prop}} ,"url":{{url}},"name":{{prop.name}},"count":"none","bg":1} 
                 </widget>
                 <div style="position:absolute;width:100px;left:-15px;height:20px;text-align:center;line-height:20px;font-size:18px;font-family:mnjsh;color:white;z-index:2;top:50px;top:51px;">{{it1.my_prop.count + '/'+ cost[0][1]}}</div>
+                {{let color = it1.my_prop.count >= cost[0][1] ? "" : "#ff0000"}}
+                <div style="position:absolute;width:100px;left:-15px;height:20px;text-align:center;line-height:20px;font-size:18px;font-family:mnjsh;color:white;z-index:2;top:50px;top:51px;"><span style="color:{{color}}">{{it1.my_prop.count}}</span> / <span>{{cost[0][1]}}</span></div>
             </div>
             {{let now_attr = soul_obj[level].attr}}
             {{let next_attr = soul_obj[level - 0 + 1].attr}}

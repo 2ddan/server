@@ -59,7 +59,7 @@
                     <widget w-class="13" w-tag="app_a-widget-text-text">
                         {"text":{{"VIP"+(it1.vip_level-0+1)}},"fontSize":20,"textCfg":"activity"} 
                     </widget>
-                    <app_a-widget-btn-help on-tap='goback' class="shadow4" style="position: relative;display: inline-block;margin-bottom: -15px;margin-left: 10px;">
+                    <app_a-widget-btn-help on-tap='gotoRecharge' class="shadow4" style="position: relative;display: inline-block;margin-bottom: -15px;margin-left: 10px;">
                         {"text":"充点小钱","width":130,"height":44,"fontSize":22}
                     </app_a-widget-btn-help>
                     

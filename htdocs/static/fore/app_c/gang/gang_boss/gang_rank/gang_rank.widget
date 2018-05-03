@@ -1,0 +1,7 @@
+{
+    "tpl": "./gang_rank.tpl",
+    "cfg": "./gang_rank.cfg",
+    "js": "../gang_boss.ts",
+    "forelet": "../gang_boss.ts",
+    "css": "./gang_rank.wcss"
+}

@@ -1,0 +1,18 @@
+
+.box_item{
+    display: inline-block;
+    position: relative;
+    width: 138px;
+    height: 186px;
+    margin: 18px 0 0 18px;
+}
+.title_coin_count{
+	color:#e3d8bb;
+	height:26px;
+	position:absolute;
+    width:74px;
+    top:3px;
+	text-align: center;
+	left: 30px;
+	white-space: nowrap;
+}

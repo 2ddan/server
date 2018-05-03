@@ -68,7 +68,7 @@
             </div>
             {{elseif it1.gestNumInBag[soul_id]['needRed']}}
             <div class="shadow" style="height:40px;line-height:40px;position:relative;font-size:20px;text-align: center;">
-                <div style="font-family:mnjsh;color:#eb875b">缺少主要心法</div>
+                <div style="font-family:mnjsh;color:#eb875b">缺少红色心法</div>
 
             </div>
 

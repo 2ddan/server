@@ -31,7 +31,7 @@ let table = {
     "skill3":{
         "key": "skill3",
         "name": "技能开启",
-        "level_limit": 10,
+        "level_limit": 15,
         "stage_id": null,
         "id": 4
     },
@@ -84,123 +84,123 @@ let table = {
         "stage_id": 9,
         "id": 11
     },
-    "soul":{
-        "key": "soul",
-        "name": "龙魂",
-        "level_limit": null,
-        "stage_id": 10,
-        "id": 12
-    },
     "gang":{
         "key": "gang",
         "name": "门派",
         "level_limit": null,
-        "stage_id": 12,
-        "id": 13
+        "stage_id": 10,
+        "id": 12
     },
     "daily_fb":{
         "key": "daily_fb",
         "name": "材料副本",
         "level_limit": null,
-        "stage_id": 14,
-        "id": 14
+        "stage_id": 12,
+        "id": 13
     },
-    "instance_fb":{
-        "key": "instance_fb",
-        "name": "九幽幻境",
+    "random_boss":{
+        "key": "random_boss",
+        "name": "神秘宝物",
         "level_limit": null,
         "stage_id": 16,
-        "id": 15
-    },
-    "off_line":{
-        "key": "off_line",
-        "name": "离线收益",
-        "level_limit": null,
-        "stage_id": 18,
-        "id": 16
+        "id": 14
     },
     "skill4":{
         "key": "skill4",
         "name": "技能开启",
-        "level_limit": 30,
+        "level_limit": 40,
         "stage_id": null,
-        "id": 17
+        "id": 15
     },
     "public_boss":{
         "key": "public_boss",
         "name": "荒野降魔",
         "level_limit": null,
-        "stage_id": 19,
-        "id": 18
+        "stage_id": 18,
+        "id": 16
     },
     "equip_fb":{
         "key": "equip_fb",
         "name": "装备副本",
         "level_limit": null,
         "stage_id": 20,
-        "id": 19
+        "id": 17
     },
     "arena":{
         "key": "arena",
         "name": "竞技场",
         "level_limit": null,
         "stage_id": 22,
-        "id": 20
+        "id": 18
     },
     "investment":{
         "key": "investment",
         "name": "成长基金",
         "level_limit": null,
         "stage_id": 22,
-        "id": 21
-    },
-    "random_boss":{
-        "key": "random_boss",
-        "name": "神秘宝物",
-        "level_limit": null,
-        "stage_id": 25,
-        "id": 22
+        "id": 19
     },
     "equip_star":{
         "key": "equip_star",
         "name": "装备升星",
         "level_limit": null,
-        "stage_id": 25,
-        "id": 23
+        "stage_id": 24,
+        "id": 20
+    },
+    "soul":{
+        "key": "soul",
+        "name": "龙魂",
+        "level_limit": null,
+        "stage_id": 26,
+        "id": 21
+    },
+    "instance_fb":{
+        "key": "instance_fb",
+        "name": "九幽幻境",
+        "level_limit": null,
+        "stage_id": 30,
+        "id": 22
     },
     "equip_red_forge":{
         "key": "equip_red_forge",
         "name": "神装锻造",
-        "level_limit": null,
-        "stage_id": 30,
-        "id": 24
+        "level_limit": 80,
+        "stage_id": null,
+        "id": 23
     },
     "equip_red_wash":{
         "key": "equip_red_wash",
         "name": "神装洗练",
-        "level_limit": null,
-        "stage_id": 35,
-        "id": 25
+        "level_limit": 82,
+        "stage_id": null,
+        "id": 24
     },
     "gest":{
         "key": "gest",
         "name": "阵法",
-        "level_limit": null,
-        "stage_id": 40,
-        "id": 26
+        "level_limit": 90,
+        "stage_id": null,
+        "id": 25
     },
     "gest_fb":{
         "key": "gest_fb",
         "name": "心法奇遇",
-        "level_limit": null,
-        "stage_id": 40,
-        "id": 27
+        "level_limit": 90,
+        "stage_id": null,
+        "id": 26
     },
     "weapon_soul":{
         "key": "weapon_soul",
         "name": "赋灵",
-        "level_limit": null,
-        "stage_id": 42,
+        "level_limit": 95,
+        "stage_id": null,
+        "id": 27
+    },
+    "off_line":{
+        "key": "off_line",
+        "name": "离线收益",
+        "level_limit": 200,
+        "stage_id": null,
         "id": 28
     }
 

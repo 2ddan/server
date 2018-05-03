@@ -325,7 +325,7 @@ listenBack("app/activity/task@read", (_data) => {
 	if (playermission[currTask]) {
 		listenFun();
 		let player = getDB("player");
-		if(!is_frame && player.level<20){
+		if(!is_frame){
 			frame_mgr.setPermanent(setPlayermissionGuide);
 			is_frame = 1;
 		}
@@ -334,12 +334,13 @@ listenBack("app/activity/task@read", (_data) => {
 })
 
 const setPlayermissionGuide = function(){
-	let player = getDB("player");
-	if(player.level >= 20){
-		frame_mgr.clearPermanent(setPlayermissionGuide);
-		timeOut = null;
-	}
-	if(Util.serverTime() - guideTimer > timeOut){
+	// let player = getDB("player");
+	// if(player.level >= 20){
+	// 	frame_mgr.clearPermanent(setPlayermissionGuide);
+	// 	timeOut = null;
+	// }
+	let guide = getDB("playermission.guide");
+	if(Util.serverTime() - guideTimer > timeOut && !guide){
 		updata("playermission.guide",1);
 	}
 }

@@ -1,0 +1,7 @@
+{
+    "tpl":"./see_award.tpl",
+    "js":"../lottery.ts",
+    "forelet":"../lottery.ts",
+    "css":"./see_award.wcss",
+    "cfg": "./see_award.cfg"
+}

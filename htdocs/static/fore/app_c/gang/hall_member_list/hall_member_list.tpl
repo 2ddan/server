@@ -39,7 +39,8 @@
 					<span w-class="87" w-sid="87"> {{Common.fromCharCode(v.name)|| v.role_id}}</span>
 					<div w-class="89" w-sid="89">
 						<img style="vertical-align: middle;margin-top: -6px;margin-right: 8px;" src="../images/mem_{{v.post || 3}}.png"/>
-						<widget w-class="88" w-tag="app_a-widget-text-text" w-sid="88">{"text":{{"VIP"+v.vip}},"show":"","space":0,"fontSize":14,"lineHeight":20,"color":"","textCfg":"gangVip"} 
+						<widget class="shadow7" style="position:absolute;left:64px;font-size:14px;color:#fff;top:0px;" w-tag="app_a-widget-pic_text-pic_text">
+							{"icon":{{"vip_lv_" + (it1.vip_advantage[v.vip].lv_frame || 1)}},"width":52,"height":25,"align":"center","marginLeft":3,"text":{{"VIP" + v.vip}},"top":0,"left":0} 
 						</widget>
 					</div>
 					<widget w-class="91" w-tag="app_a-widget-power-power" w-sid="91">
@@ -51,9 +52,15 @@
 				<div w-class="93" w-sid="93">
 					<div w-class="32" w-sid="32">
 						<widget w-class="62" w-tag="app_a-widget-pic_text-pic_text" w-sid="62">
-							{"icon":"little_tips_bg","width":126,"height":27,"align":"center","marginLeft":0,"text":"门派贡献","textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+							{"icon":"little_tips_bg","width":126,"height":27,"align":"center","marginLeft":0,"text":"历史贡献","textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
 						</widget>
-						<span w-class="34" w-sid="34">1000</span>
+						<span w-class="34" w-sid="34">{{v.gang_total_contribute}}</span>
+					</div>
+					<div w-class="32" w-sid="32">
+						<widget w-class="62" w-tag="app_a-widget-pic_text-pic_text" w-sid="62">
+							{"icon":"little_tips_bg","width":126,"height":27,"align":"center","marginLeft":0,"text":"今日贡献","textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+						</widget>
+						<span w-class="34" w-sid="34">{{v.gang_today_contribute}}</span>
 					</div>
 				</div>
 			</div>
@@ -62,15 +69,18 @@
 		</div>
 	</div>
 	{{if it1.gangData.post == 1}}
-	<widget on-tap="DisbandClick"  w-tag="app_a-widget-btn-rect" style="position:absolute;top:672px;left:45px;">
-		{"class":"default","fontsize":24,"color":"#fdedd7","text":"解散公会","width":116,"height":45} 
+	<widget on-tap="DisbandClick" w-tag="app_a-widget-btn-rect" style="position:absolute;top:672px;left:45px;">
+		{"class":"default","fontsize":24,"color":"#fdedd7","text":"解散门派","width":116,"height":45} 
 	</widget>
 	{{else}}
-	<widget on-tap='exitClick'  w-tag="app_a-widget-btn-rect" style="position:absolute;top:672px;left:45px;">
-		{"class":"default","fontsize":24,"color":"#fdedd7","text":"退出公会","width":116,"height":45} 
+	<widget on-tap='exitClick' w-tag="app_a-widget-btn-rect" style="position:absolute;top:672px;left:45px;">
+		{"class":"default","fontsize":24,"color":"#fdedd7","text":"退出门派","width":116,"height":45} 
 	</widget>
 	{{end}}
-	<div style="position:absolute;top:678px;left:376px;font-size:20px;color:#fde7ca;font-family:mnjsh;">
+	<widget on-tap="openApplyList" w-tag="app_a-widget-btn-rect" style="position:absolute;top:672px;left:180px;">
+		{"class":"default","fontsize":24,"color":"#fdedd7","text":"申请列表","width":116,"height":45, "tip_keys":["gang.member.apply"] } 
+	</widget>
+	<div style="position: absolute;top: 672px;left: 324px;font-size: 20px;color: rgb(253, 231, 202);font-family: mnjsh;width: 130px;height: 45px;line-height: 45px;">
 		成员:{{it1.gangData.gang_count+"/"+it1.guild_upgrade[gang.gang_level].max_person}}
 	</div>
 </div>

@@ -47,6 +47,10 @@ export const globalReceive = {
                 })
             }, 150);
         }
+    },
+    soulchange: () => {
+        forelet.paint(getData());
+        open("app_c-soul-prop_change-prop_change");
     }
 }
 
@@ -128,6 +132,7 @@ export class Instance extends Widget {
         let w = forelet.getWidget("app_c-soul-bag_soul-bag_soul");
         w && close(w);
         change_num = 1;
+        targetSoul = null; //可能先通过获取途径进入
         forelet.paint(getData());
         open("app_c-soul-prop_change-prop_change");
     }
@@ -238,6 +243,8 @@ const getData = function () {
     let player = getDB("player");
     soul_data.player_level = player.level;
     soul_data.player_money = player.money;
+
+    soul_data.getSoulMinLv = logic.getSoulMinLv;
     return soul_data;
 }
 
@@ -306,11 +313,12 @@ export let logic = {
         let arr = [];
         soul.forEach((v, i) => {
             if (player_level >= soul_seat[i].open_level) {
-                let level = [];
-                v.forEach((n) => {
-                    level.push(n[1]);
-                });
-                arr.push(Math.min.apply(null,level));
+                // let level = [];
+                // v.forEach((n) => {
+                //     level.push(n[1]);
+                // });
+                // arr.push(Math.min.apply(null,level));
+                arr.push(logic.getSoulMinLv(v));
             } else {
                 arr.push(-1);
             }
@@ -409,19 +417,15 @@ export let logic = {
     isCanUp: function () {
         let money = getDB("player.money");
         if (money < up_cost[1][1]) {
-            // globalSend("screenTipFun", {
-            //     words: `银元不足`
-            // });
             globalSend("gotoBuyMoney", null);
             return false;
         }
         if (status === 0) {
             //此处应该是一个弹出询问框(暂无)
             if (my_prop.count < up_cost[0][1]) {
-                // globalSend("screenTipFun", {
-                //     words: `材料不足`
-                // });
                 globalSend("gotoGetWay",my_prop.sid);
+                let obj = getDB(`bag*sid=${my_prop.sid}`).pop();
+                targetSoul = [my_prop.sid, obj ? obj.count : 0];
                 return false;
             }
         } else if (status === 1) {
@@ -477,6 +481,17 @@ export let logic = {
             }
         }
         resetcanvas(data);
+    },
+    /**
+     * 计算单个孔位的最低精元等级
+     * 参数[孔位的精元信息]  二维数组
+     */
+    getSoulMinLv: function (soul_info) {
+        let arr = [];
+        soul_info.forEach((v) => {
+            arr.push(v[1]);
+        });
+        return Math.min.apply(null, arr);
     }
 }
 
@@ -515,7 +530,16 @@ const soulUp = function (index, soul_index, status) {
     soulNet(arg)
         .then((data: any) => {
             let prop: any = Common.changeArrToJson(data.ok);
-            Common_m.deductfrom(prop);
+            Common_m.deductfrom(prop);    
+            //计算前后最低等级
+            let pre_min = logic.getSoulMinLv(getDB(`soul.soul_info.${index - 1}`));
+            let now_min = logic.getSoulMinLv(prop.index_soul_info);
+            if (now_min > pre_min) {
+                globalSend("attrTip", {
+                    words: `激活${now_min}阶共鸣`
+                });
+            }
+
             updata(`soul.soul_info.${index - 1}`, prop.index_soul_info);
             Music.skillSound("other_two");
 
@@ -576,7 +600,7 @@ const soulUp = function (index, soul_index, status) {
         .catch((data) => {
             console.log(data);
         })
-}
+};
 
 /**
  * 精元转换

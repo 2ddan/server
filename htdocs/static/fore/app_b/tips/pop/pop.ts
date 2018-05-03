@@ -5,6 +5,7 @@ import { Widget } from "pi/widget/widget";
 import { open, close } from "app/mod/root";
 //app
 import { net_request, net_send, net_message } from "app_a/connect/main";
+import { Pi, globalSend } from "app/mod/pi";
 
 //===============================================导出
 /**
@@ -32,6 +33,10 @@ export class Pop extends Widget {
         popData.status();
         this.setProps(popData);
         this.paint();
+    }
+    limit_coin(coin){
+        let text = coin=="diamond"?"元宝":coin=="money"?"银两":Pi.sample[coin].name;
+        globalSend("screenTipFun",{words:`您的${text}不足！`})            
     }
 }
 

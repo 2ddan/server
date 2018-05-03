@@ -62,13 +62,13 @@
                 <span style="position: relative;display: inline-block;font-size: 16px;">{{Common.numberCarry(exp_info_min,10000)+"/"}}</span>
                 <span style="font-size: 19px;position: relative;display: inline-block;">分钟</span>
             </div>
-            <div class="shadow" style="position: absolute;width: 100%;text-align: left;top: 66px;font-size:18px;color:#fff;font-family: mnjsh;">
-                {{let month = player.month_card_due_time}}
-                {{let week = player.annual_card_due_time}}
-                {{let now = Util.serverTime(true)}}
-                <div>月卡:<span style="color:{{month > now ? '#57ff3b':'#aaa'}}">{{month > now ? '收益+'+(it1.vipcard[0].exp_add*100+"%") :'未生效'}}</span></div>
-                <div>周卡:<span style="color:{{week > now ? '#57ff3b':'#aaa'}}">{{week > now ? '收益+'+(it1.vipcard[1].exp_add*100+"%") :'未生效'}}</span></div>
-            </div>
+        </div>
+        <div data-desc="月卡" class="shadow" on-tap="gotoCard" style="position: absolute;width: 155px;right:50%;text-align: left;top: 111px;font-size:18px;color:#fff;font-family: mnjsh;margin-right:-{{root.getWidth() / 2 - 3}}px">
+            {{let month = player.month_card_due_time}}
+            {{let week = player.annual_card_due_time}}
+            {{let now = Util.serverTime(true)}}
+            <div>月卡:<span style="color:{{month > now ? '#57ff3b':'#aaa'}}">{{month > now ? '收益+'+(it1.vipcard[0].exp_add*100+"%") :'未生效'}}</span></div>
+            <div>周卡:<span style="color:{{week > now ? '#57ff3b':'#aaa'}}">{{week > now ? '收益+'+(it1.vipcard[1].exp_add*100+"%") :'未生效'}}</span></div>
         </div>
 
         {{let prop_id = it1.bossMisson ? it1.wild_boss[curMission.skip_boss].show_award :  wild.task.guide ? curMission.guide_drop_id : curMission.drop_id[wild.task.award_index]}}
@@ -128,17 +128,19 @@
             {{if (it1.bossMisson ? it1.bossNum : bol)}}
             <div class="wild_task_complete" style="position: absolute;left: -18px;top: -25px;z-index: 1;"></div>
             {{end}}
-            {{let percent = complete / total * 100}}
-            {{let add = wild.task.killNum >= wild.task.needKillNum ? 1:0}}
-            <widget class="shadow" w-tag="app_a-widget-bar-bar4" style="width:148px;height:16px;position:absolute;bottom: 8px;left:8px;font-family:mnjsh;">
-                {"progress":{{percent}},"text":{{complete>=total ?"首领出现" : "任务进度"+complete+"/"+total}},"color":"#fde7ca","lineHeight":16,"fontSize":16,"width":148,"height":16} 
-            </widget>
-            {{if complete>=total}}
-            <img style="position:absolute;left:150px;top:101px;" src="./image/boss_hot.png" />
-            {{else}}
-            <app_a-widget-text-text style="position:absolute;left:156px;top:105px;">
-                {"text":"BOSS","textCfg":"menu_main","space":-4,"fontSize":16}
-            </app_a-widget-text-text>
+            {{if wild.wild_history == wild.wild_max_mission}}
+                {{let percent = complete / total * 100}}
+                {{let add = wild.task.killNum >= wild.task.needKillNum ? 1:0}}
+                <widget class="shadow" w-tag="app_a-widget-bar-bar4" style="width:148px;height:16px;position:absolute;bottom: 8px;left:8px;font-family:mnjsh;">
+                    {"progress":{{percent}},"text":{{complete>=total ?"首领出现" : "任务进度"+complete+"/"+total}},"color":"#fde7ca","lineHeight":16,"fontSize":16,"width":148,"height":16} 
+                </widget>
+                {{if complete>=total}}
+                <img style="position:absolute;left:150px;top:101px;" src="./image/boss_hot.png" />
+                {{else}}
+                <app_a-widget-text-text style="position:absolute;left:156px;top:105px;">
+                    {"text":"BOSS","textCfg":"menu_main","space":-4,"fontSize":16}
+                </app_a-widget-text-text>
+                {{end}}
             {{end}}
         </div>
     </div>
@@ -162,6 +164,7 @@
 
     <app_b-menu-parent style="bottom:5px;width:{{root.getWidth()}}px;z-index:2"></app_b-menu-parent>
     <app_b-random_boss-random_boss></app_b-random_boss-random_boss>
+    <app_c-gang-hall_gang_build-collect-collect></app_c-gang-hall_gang_build-collect-collect>
     <app_b-player-exp style="left:0;bottom:0;width:{{root.getWidth()}}px;"></app_b-player-exp>
 
     <app_b-magic-skill style="position:absolute;right:0;bottom:280px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-magic-skill>
@@ -180,7 +183,7 @@
 
         <img src="./image/boss_tip_icon.png" style="position: absolute;left: -8px;top: -20px;width: 103px;height: 120px;"/>
         
-        <app_a-widget-btn-rect style="position:absolute;left: 100px;bottom: 30px;" on-tap="gotoPublicboss">
+        <app_a-widget-btn-rect style="position:absolute;left: 100px;bottom: 30px;" on-tap='gotoPublicboss("{{[it1.publicboss_obj.boss_id,it1.publicboss_obj.index,it1.publicboss_obj.index]}}")'>
             {"class":"hl","fontsize":18,"color":"#fdedd7;","text":"前往挑战","width":83,"height":31,"marginLeft":0}
         </app_a-widget-btn-rect>
 
@@ -188,7 +191,7 @@
             {"text":{{it1.publicboss_obj.name}},"textCfg":"dist_award","space":-4,"fontSize":24}
         </app_a-widget-text-text>
 
-        <app_a-widget-btn_pic-btn_pic style="position: absolute;right: -5px;top: -18px;">
+        <app_a-widget-btn_pic-btn_pic on-tap="closeBossReviveTip" style="position: absolute;right: -5px;top: -18px;">
             {"icon":"close","width":40}
         </app_a-widget-btn_pic-btn_pic>
 
@@ -196,19 +199,17 @@
     </div>
     {{elseif it1.publicboss_obj && it1.publicboss_obj.type == "line_up"}}
         <div style="width: 227px;height: 107px;position: absolute;left: 50%;bottom: 250px;margin-left: -125px;">
-            <img src="./image/boss_tip_bg.png" style="position: absolute;left: 10px;height:69px;width: 227px;"/>
-
-            <img src="./image/boss_tip_icon.png" style="position: absolute;left: 10px;top: -20px;"/>
-
-            <app_a-widget-text-text style="position:absolute;left: 105px;top: 10px;">
+            <app_a-widget-text-text style="position: absolute;left: 100px;top: 2px">
                 {"text":{{it1.publicboss_obj.name}},"textCfg":"dist_award","space":-4,"fontSize":24}
             </app_a-widget-text-text>
 
-            <app_a-widget-btn_pic-btn_pic style="position: absolute;right: -10px;top: -18px;">
-                {"icon":"close","width":40}
-            </app_a-widget-btn_pic-btn_pic>
+            <div on-tap="closeBossReviveTip" style="position: absolute;right: -7px;top: -20px;width: 35px;height: 35px;"></div>
 
-            <span style="color: rgb(81, 230, 80);position: absolute;font-size: 18px;font-family: mnjsh;left: 110px;top: 42px;">00:23<span style="color:#ffd8a6">后进入</span></span>
-        </div>
+            <span style="color: #ffd8a6;position: absolute;font-size: 18px;font-family: mnjsh;left: 105px;top: 30px;">已等待:</span>
+            <span style="color: #40ea40;position: absolute;font-size: 18px;font-family: mnjsh;left: 105px;top: 49px;">预计:{{it1.publicboss_obj.line_up_time + "s"}}</span>
+        </div> 
     {{end}}
+
+    
+
 </div>

@@ -1,0 +1,7 @@
+{
+    "tpl":"./state_attr.tpl",
+    "js":"../rune.ts",
+    "forelet":"../rune.ts",
+    "cfg":"../books/detail/detail.cfg",
+    "css":"../books/detail/detail.wcss"
+}

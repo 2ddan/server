@@ -9,7 +9,7 @@ import { Forelet } from "pi/widget/forelet";
 import { getRealNode } from "pi/widget/painter";
 import { listenerList,open as pi_open, remove, add, destory,closeBack } from "pi/ui/root";
 import { findNodeByAttr } from "pi/widget/virtual_node";
-import { getGlobal } from "pi/widget/frame_mgr";
+
 //mod
 import { Common } from "app/mod/common";
 import { Music } from "app/mod/music";
@@ -20,7 +20,6 @@ import { Util } from "app/mod/util";
 
 //scene
 import { mgr, mgr_data } from "app/scene/scene";
-import { Move, setFrame } from "app/scene/move";
 import { setClickCallback, initAnimFinishCB } from "app/scene/base/scene";
 import { cuurUI, UiFunTable, initValue } from "app/scene/ui_fun";
 //fight
@@ -93,7 +92,7 @@ export class Fightm extends Widget {
 
         fightScene.setPause(false);
     }
-    //倒计时结束自动退出界面
+    //倒计时节水自动退出界面
     timeEnd1(){
         goback("app_b-fight-account");
         closeBack();
@@ -257,6 +256,7 @@ export const goback = (arg: string, isfale?: boolean) => {
         accountBack = null;
         return;
     }
+    globalSend("exitFB");
 
     //Music.startBgSound("normal_only");//播放场景音乐
 
@@ -379,12 +379,7 @@ export const globalReceive: any = {
 export const getSelf = () => {
     return fightScene && !fightScene.pause && fightScene.fighters[0];
 }
-/**
- * @description  获取是否本地战斗进行中
- */
-export const checkFighting = () => {
-    return FMgr.scenes.size;
-}
+
 
 //========================================本地
 let getData: any = {};
@@ -522,7 +517,6 @@ const fightListener = (r) => {
     if (r.events.length > 0) {
         for (let i = 0, leng = r.events.length; i < leng; i++) {
             let e = r.events[i];
-            Move.filter(e.type, e);
             try {
                 if(e.type == "damage" && e.target.hp <= 0){
                     let award = e.target.award,
@@ -545,9 +539,6 @@ const fightListener = (r) => {
                         }
                     }
                 }
-                //console.log("app.mod.scene.fightShow : ",e);
-                if (e.type == "insert")
-                    e = JSON.parse(JSON.stringify(e));
                 //战斗事件处理
                 handScene[e.type] && handScene[e.type](e, r.now);
             } catch (ex) {
@@ -604,8 +595,6 @@ const initFightScene = (msg) => {
     initAnimFinishCB((id) => {
         return UiFunTable.aniBack(id);
     })
-    //设置移动渲染
-    Move.setRender(true);
     if (fightScene) {
         fightScene.startTime = Date.now();
         return;
@@ -614,13 +603,84 @@ const initFightScene = (msg) => {
     fightScene = FMgr.create("fight");
     //Fight.createScene(1024, 1024, 1, "fight", mgr.yszzFight.scene, null, mgr.getSceneBuffer(msg.cfg.scene, ".nav"));
     mgr_data.sceneTab["fight"] = fightScene;
-    //设置战斗事件监听函数
-    fightScene.listener = fightListener;
+    //战斗事件监听
+    fightScene.listener = (r) => {
+        if (mgr_data.name != "fight") return;
+
+        //return;
+        if (r.events.length > 0) {
+            for (let i = 0, leng = r.events.length; i < leng; i++) {
+                let e = r.events[i];
+                try {
+                    if(e.type == "damage" && e.target.hp <= 0){
+                        let award = e.target.award,
+                            fighter = e.fighter,
+                            target = e.target,
+                            award_list = [];
+                        let fighter_pos = [fighter.x ,fighter.y ,fighter.z];
+                        let target_pos = [target.x ,target.y ,target.z];
+                        if(award){
+                            for(let i = 0;i < award.length;i++){
+                                if(award[i][0] != "money" && award[i][0] != "exp"){
+                                    award_list.push(award[i]);
+                                }
+                            }
+                            if(award_list.length != 0){
+                                let timer = setTimeout(()=>{
+                                    drop_outFun(award_list,target_pos,fighter_pos);
+                                    clearTimeout(timer);                                    
+                                },1500)
+                            }
+                        }
+                    }
+                    //战斗事件处理
+                    handScene[e.type] && handScene[e.type](e, r.now);
+                } catch (ex) {
+                    if (console) {
+                        console.log(e, ex);
+                    }
+                }
+            }
+        }
+        //Move.loop();
+        //if(ft>10)app.mod.scene.log("事件处理时间："+ft);
+        //return;
+        //执行特效
+        setTimeout(()=>{
+            UiFunTable.runCuurUi(r);
+        },0)
+        //if(ft>5)app.mod.scene.log("特效计算时间："+ft);
+        return true;
+    };
+
+    fightScene.setPause(true);
 
     //战斗结束回调
-    fightScene.overCallback = overBack;
+    fightScene.overCallback = (r, scene) => {
+        if (fighting && overCallback) {
+            //延迟执行战斗结束回调
+            setTimeout(() => {
+                overCallback({
+                    r: r,
+                    time: fightScene.fightTime,
+                    fighters: Fight_common.getLeftHp(fightScene)
+                }, scene);
+                //Music.stopBgSound("fight_only");//停止战斗音乐
+                overCallback = null;
+            }, 1500);
+        }
+    };
     //战斗每波结束时附加判断，没到最后一波怪，不会真正结束
-    fightScene.over = over;
+    fightScene.over = (r): boolean => {
+        if (r == 1 && fightData.batch < fightData.enemy.length - 1) {
+            fightData.batch += 1;
+            fightData.enemy_fight = fightData.enemy[fightData.batch];
+            //Fight_common.insertEnemy(fightData, fightScene);
+            fightStart(fightData);
+            return false;
+        }
+        return true;
+    };
     //战斗开始
     fightScene.start();
 }
@@ -716,6 +776,9 @@ const timeStr = (second) =>{
     return h+m+s;
 }
 
+listen("chat.show",()=>{
+    forelet.paint(getData);
+});
 
 /**
  * 关闭界面
@@ -738,11 +801,4 @@ const getPage = () => {
 	}
 };
 
-// ================================== 立即执行
-
-//设置数据监听
-listen("chat.show",()=>{
-    forelet.paint(getData);
-});
-//设置战斗循环
-FMgr.setFrame(getGlobal());
+// ============================== 立即执行

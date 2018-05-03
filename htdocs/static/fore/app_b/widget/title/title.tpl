@@ -23,9 +23,9 @@
         <div class="resource_light" style="bottom: -7px;left: 13px;"></div>
     </div>
     {{if it.type}}
-    <div class="resource_bar" style="left:398px;top:5px;font-size:16px;line-height:24px;z-index:2;width:80px">
-        <div class={{it.type}} style="left: 5px;top: 2px;"></div>
-        <div w-class="title_coin_count" style="left:5px">{{common.numberCarry(parseInt(it.r[2][1] || 0),10000)}}</div>
+    <div on-tap="gotoGetWay({{it.r[2][0]}})" class="resource_bar" style="left:398px;top:5px;font-size:16px;line-height:24px;z-index:4;width:80px">
+        <div class={{it.type}} style="left: -2px;top: 2px;"></div>
+        <div w-class="title_coin_count" style="left:6px">{{common.numberCarry(parseInt(it.r[2][1] || 0),10000)}}</div>
         <div class="add_btn" style="right: -13px;top: 0px;"></div>
     </div>
     {{end}}

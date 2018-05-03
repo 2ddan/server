@@ -27,7 +27,7 @@
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明1秒"
 	};
 	
 	s.effect[0] = {
@@ -64,7 +64,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明2秒"
 	};
 	
 	s.effect[0] = {
@@ -101,7 +101,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明3秒"
 	};
 	
 	s.effect[0] = {
@@ -138,7 +138,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明4秒"
 	};
 	
 	s.effect[0] = {
@@ -175,7 +175,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明5秒"
 	};
 	
 	s.effect[0] = {
@@ -212,7 +212,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明6秒"
 	};
 	
 	s.effect[0] = {
@@ -249,7 +249,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明7秒"
 	};
 	
 	s.effect[0] = {
@@ -286,7 +286,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明8秒"
 	};
 	
 	s.effect[0] = {
@@ -323,7 +323,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明9秒"
 	};
 	
 	s.effect[0] = {
@@ -360,7 +360,7 @@ table[s.id] = s;
 		startTime: 0,
 		eventCount: 0,
 		cdNextTime: 0,
-		describe : ""
+		describe : "1%几率使目标失明10秒"
 	};
 	
 	s.effect[0] = {

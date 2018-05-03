@@ -1,0 +1,7 @@
+{
+    "tpl":"./detail.tpl",
+    "css":"./detail.wcss",
+    "js":"../../rune.ts",
+    "forelet":"../../rune.ts",
+    "cfg":"./detail.cfg"
+}

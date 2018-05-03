@@ -59,7 +59,8 @@ let equip: any = {}, //所有装备
 
     level_up_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],//保存升级成功了的装备
     //gem_up_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0], //保存宝石升级成功的装备
-    levelFlog = true,//防止连续点击升级
+    // levelFlog = true,//防止连续点击升级
+    level_ok = true,//强化成功标识
 
     gemFlog = true,//防止连续点击宝石升级
 
@@ -138,6 +139,7 @@ const getData = () => {
     data.levelarr1 = levelarr1; //宝石开放的等级限制
     data.levelarr = levelarr; //宝石本身等级
     data.gem_up_ok = gem_up_ok; //宝石强化成功标识
+    data.level_ok = level_ok; //宝石强化成功标识
     data.level_up_arr = level_up_arr; //保存等级变化的装备的标识
     // if (!clickequipindex) {
     //     let equip = getDB("friend_battle.equip_set");
@@ -152,10 +154,10 @@ const getData = () => {
     data.once_strong_cost = once_strong_cost;
     data.function_open = function_open;
     data.equip_wash = equip_wash;
-    data.equip_lv = equip_evolution[red_id][Object.keys(equip_evolution[red_id])[0]].level || 50;
+    data.equip_lv = equip_evolution[red_id][Object.keys(equip_evolution[red_id])[0]].level || 80;
 
     data.redEquipPos = redEquipPos;
-    data.levelFlog = levelFlog;
+    // data.levelFlog = levelFlog;
     data.red_id = red_id;//当前红装
     data.redId = redId;//所有红装
     data.forge_cost = forge_cost;
@@ -400,22 +402,25 @@ const countOnceCost = (index) => {
 
 //单次强化
 const onceStrong = (index) => {
-    if (!levelFlog) {
-        return;
-    }
+    // if (!levelFlog) {
+    //     return;
+    // }
+    level_ok = false;
+    forelet.paint(getData());
     let msg = {
         "param": {
             "index": index - 0 + 1
         },
         "type": "app/prop/equip@level_up"
     };
-    levelFlog = false;
+    // levelFlog = false;
     net_request(msg, function (data) {
         if (data.error) {
             globalSend("screenTipFun", {
                 words: `${data.why},强化失败`
             });
         } else {
+            level_ok = true;
             forelet.paint(getData());
             let prop = Common.changeArrToJson(data.ok);
             //扣除花费
@@ -440,7 +445,7 @@ const onceStrong = (index) => {
             });
             setTimeout(function () {
                 level_up_arr[index] = 0;
-                levelFlog = true;
+                // levelFlog = true;
                 forelet.paint(getData());
             }, 600);
         }
@@ -449,10 +454,10 @@ const onceStrong = (index) => {
 
 //一键强化
 const getOnekeyup = () => {
-    if (!levelFlog) {
-        return;
-    }
-    levelFlog = false;
+    // if (!levelFlog) {
+    //     return;
+    // }
+    // levelFlog = false;
     let msg = { "param": {}, "type": "app/prop/equip@one_key_level_up" };
     net_request(msg, function (data) {
         if (data.error) {
@@ -494,7 +499,7 @@ const getOnekeyup = () => {
             setTimeout(function () {
                 attrObj = null;
                 level_up_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                levelFlog = true;
+                // levelFlog = true;
                 forelet.paint(getData());
             }, 600);
         }
@@ -653,9 +658,9 @@ const getRedEquip = () => {
 
 //锻造红装
 const forgeRed = () => {
-    if (!levelFlog) {
-        return;
-    }
+    // if (!levelFlog) {
+    //     return;
+    // }
     //判断是否满足要求
     if (forge_cost.total < forge_cost.cost[1]) {
         // globalSend("screenTipFun", {
@@ -677,12 +682,12 @@ const forgeRed = () => {
         })
         return;
     }
-    levelFlog = false;
+    // levelFlog = false;
     let msg = { "param": { "equip_id": red_id - 0 }, "type": "app/prop/equip@forge" };
     net_request(msg, function (data) {
         if (data.error) {
             console.log(data.error);
-            levelFlog = true;
+            // levelFlog = true;
         } else {
             let prop: any = Common.changeArrToJson(data.ok);
             Music.skillSound("other_one");
@@ -698,10 +703,10 @@ const forgeRed = () => {
             forelet.paint(getData());
             setTimeout(function () {
                 level_up_arr[index] = 0;
-                levelFlog = true;
+                // levelFlog = true;
                 forelet.paint(getData());
             }, 600);
-        }
+        }``
     })
 }
 //红装进阶升级
@@ -719,7 +724,8 @@ const gradeUpRed = function () {
         globalSend("gotoGetWay",forge_cost.cost[0]);
         return;
     }
-    if (getDB("player.level") < p.prop.level + 10) {
+    let next_level = equip_evolution[red_id][p.prop.level].next_level;
+    if (getDB("player.level") < next_level) {
         globalSend("screenTipFun", {
             words: `人物等级不能低于装备等级`
         })
@@ -831,7 +837,9 @@ const selectRedEquip = function (id) {
     let eq = redEquipPos[red_id],
         cost;
     if (eq) {
-        let arr = equip_evolution[red_id][eq.prop.level - 0 + 10];
+        //let arr = equip_evolution[red_id][eq.prop.level - 0 + 10];
+        let next_level = equip_evolution[red_id][eq.prop.level].next_level;
+        let arr = equip_evolution[red_id][next_level];
         cost = (arr && arr.cost) || [];
     } else {
         cost = equip_evolution[red_id][equip_level_limit[1].red_open_level].cost;

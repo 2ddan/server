@@ -2,6 +2,7 @@
 
 {{let Common = _get("app/mod/common").exports.Common }}
 {{let filter = (it.prop.quality&&it.prop.quality[1]) || it.prop.quality || it.quality || "gray" }}
+{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 
 <div style="width:{{it.width||80}}px;height:{{it.height||80}}px;">
     <div style="width:100%;height:100%;position:absolute;z-index:2">
@@ -17,11 +18,12 @@
         {{end}}
 
         <img src={{it.url}} style="position:absolute;left:9%;top:5%;width:83%;height:83%;"/>
-        
-        
+        {{if it.lock}}
+        <img src="./images/lock.png" alt="" style="position:absolute;top:0;left:0;width:100%;;height:100%;" />
+        {{end}}
         {{let top = (it.top || 25) + "px"}}
         <div style="position:absolute;width:100%;line-height:12px;text-align:right;top:calc(100% - {{top}});right:{{it.right || 10}}px;">
-            {{it.count==="none"?"":Common.numberCarry(parseInt(it.count||it.prop.count),10000)}}
+            {{it.count==="none" ? "" : ((it.count+"").indexOf("Lv") > -1 ? (it.count) : Common.numberCarry(parseInt(it.count||it.prop.count),10000))}}
         </div>
         {{if !it.hidden_name}}
         <div style="color: rgb(255, 255, 255);position: absolute;bottom: -{{it.bottom || 16}}px;width: 120%;line-height: 19px;text-align: center;font-family: mnjsh;z-index: 4;left:50%;transform:translate(-50%);">
@@ -31,7 +33,11 @@
         {{if it.bg}}
         <img src="./images/equip_level_bg.png" style="bottom: -{{it.bottom || 16}}px; position:absolute;width:{{it.nWidth||73}}px;height:{{it.nHeight||22}}px;z-index:3;left:0;right:0;margin:0 auto" />
         {{end}}
+        {{if it.prop && it.prop.best_equip}}
+            <img src="./images/best_equip.png" style="position:absolute;width: 40%;height: 54%;right: 4px;top: 0px;"/>
+        {{end}}
     </div>
+
     {{if it.tip_keys && it.tip_keys.length}}
     <app-widget-tip-tip style="right:0;top:0;">
         {"tip_keys":{{it.tip_keys}} }

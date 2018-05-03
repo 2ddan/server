@@ -14,8 +14,6 @@
     top: 0px;
 }
 .closed {
-    background-image: url(./images/closed.png);
-    background-repeat: no-repeat;
     width: 64px;
     height: 64px;
     position: absolute;
@@ -36,8 +34,6 @@
     margin-top: -23px;
 }
 .selected {
-    background-image: url(./images/selected.png);
-    background-repeat: no-repeat;
     width: 68px;
     height: 68px;
     position: absolute;

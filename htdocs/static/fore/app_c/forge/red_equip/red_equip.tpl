@@ -46,14 +46,18 @@
 
         {{let obj = it1.redEquipPos[it1.red_id]}}
         {{let prop_1 = obj?obj.prop:Pi.sample[it1.red_id]}}
+        {{let lev = obj ? prop_1.level : prop_1.level[1]}}
         {{let icon_1 = prop_1.module[prop_1.career_id.indexOf(career_id)][0]}}
         {{let img_1 = Pi.pictures[icon_1]}}
-        {{let level1 = obj ? (prop_1.level+10) : it1.equip_lv}}
+
+        {{let next_level = equip_evolution[prop_1.id][lev].next_level}}
+        
+        {{let level1 = obj ? next_level : it1.equip_lv}}
         <app_a-widget-prop-equip style="margin:10px auto;position:relative;top: 101px;left: 129px;">
             {"prop":{{ prop_1 }},"url":{{img_1}},"solt":{{ prop_1.slot}},"type":"equip","width":88,"height":88,"type":"equip","bottom":22,"level":{{level1}},"bg":1}
         </app_a-widget-prop-equip>
 
-       {{:prop_next = equip_evolution[prop_1.id][prop_1.level+10]}}
+       {{:prop_next = equip_evolution[prop_1.id][next_level]}}
        {{if !!prop_next}}    
         <divs class="little_tips_bg" style="position:absolute;top:670px;left:15px;right:0px;margin:0 auto;font-size:18px;color:{{player.level >= level1 ? '#51e650' : '#ff0f0f'}};font-family:mnjsh;width: 145px;line-height: 24px;padding-left: 25px;">
             <div class="remind" style="position:absolute;top:2px;left:0px;"></div>

@@ -1,0 +1,50 @@
+.4 {
+    position: absolute;
+    left: -10px;
+    top: 0px;
+    width: 464px;
+    height: 510px;
+    opacity: 0.95;
+}
+.5 {
+    position: absolute;
+    left: -39px;
+    top: -27px;
+}
+.6 {
+    position: absolute;
+    left: -38px;
+    bottom: -15px;
+}
+.7 {
+    position: absolute;
+    left: -14px;
+    top: 0px;
+}
+.8 {
+    position: absolute;
+    left: 421px;
+    top: -35px;
+}
+
+.10 {
+    position: absolute;
+    left: 132px;
+    top: -32px;
+}
+
+.3 {
+    position: absolute;
+    width: 452px;
+    height: 510px;
+    left: 50%;
+    top: 50%;
+    margin-left: -225px;
+    margin-top: -255px;
+}
+
+.13 {
+    position: absolute;
+    width: 464px;
+    height: 640px;
+}

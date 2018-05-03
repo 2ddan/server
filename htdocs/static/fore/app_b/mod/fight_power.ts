@@ -31,11 +31,13 @@ import { soul_seat } from "cfg/c/soul_seat";
 //赋灵
 import { weapon_soul_base } from "cfg/c/weapon_soul_base";
 import { weapon_soul_grade } from "cfg/c/weapon_soul_grade";
+import { guild_upgrade } from "cfg/c/guild_upgrade";
+import { guild_skill } from "cfg/c/guild_skill";
 
 
 
 insert("attr", {});
-let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I","J"];
+let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I","J", "K"];
 //阵法属性
 let gest_attr = {};
 //九幽幻境星图属性
@@ -102,7 +104,15 @@ let weapon_soul_attr = {
     "grade_attr": [], //赋灵突破属性
     "all_attr": {}  //赋灵系统总属性
 };
-
+//门派属性
+let gang_attr = {
+    //旗帜属性
+    "flag_attr": [],
+    //技能属性
+    "skill_attr": [],
+    //门派总属性
+    "all_attr": {}
+}
 /**
  * 装备模块属性  A
  */
@@ -525,6 +535,47 @@ export const weapon_soul = {
         updata("attr.J", weapon_soul_attr.all_attr);
         attr_obj = null;
         arr = null;
+    }
+}
+
+/**
+ * 门派属性 [旗帜 + 门派技能]
+ */
+export const gang = {
+    //旗帜属性
+    flagAttr: function () {
+        let arr = [];
+        let level = get("gang.data.gang_level") || 0;
+        if (level > 0) {
+            arr.push(guild_upgrade[level].attr);
+        }
+        gang_attr["flag_attr"] = arr;
+        arr = null;
+    },
+    //门派技能
+    gangSkill: function () {
+        let arr = [];
+        let all_skill = get("gang.data.role_gang_skill") || [];
+        if (all_skill.length > 0) {
+            all_skill.forEach((lv, i) => {
+                arr.push(guild_skill[i + 1][lv].attr);
+            })
+        }
+        gang_attr["skill_attr"] = arr;
+        arr = null;
+    },
+    //门派总属性
+    allAttr: function () {
+        let attr_obj = {};
+        let arr = [...gang_attr["flag_attr"], ...gang_attr["skill_attr"]];
+        if (arr.length > 0) {
+            arr.forEach((v) => {
+                attr_obj[v[0]] = attr_obj[v[0]] ? (attr_obj[v[0]] + v[1]) : v[1];
+            })
+        }
+        gang_attr["all_attr"] = attr_obj;
+        updata("attr.K", gang_attr["all_attr"]);
+        attr_obj = null
     }
 }
 

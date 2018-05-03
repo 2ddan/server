@@ -4,8 +4,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值6元，宝石爆仓"],
 		"award":[
 			[100007,10],[100008,10],[100009,10],[100010,10],
@@ -18,8 +18,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值6元，宝石爆仓"],
 		"award":[
 			[100007,10],[100008,10],[100009,10],[100010,10],
@@ -32,8 +32,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值30元，宝石爆仓"],
 		"award":[
 			[100007,20],[100008,20],[100009,20],[100010,20],
@@ -46,8 +46,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值30元，宝石爆仓"],
 		"award":[
 			[100007,20],[100008,20],[100009,20],[100010,20],
@@ -60,8 +60,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值50元，宝石爆仓"],
 		"award":[
 			[100007,30],[100008,30],[100009,30],[100010,30],
@@ -74,8 +74,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值50元，宝石爆仓"],
 		"award":[
 			[100007,30],[100008,30],[100009,30],[100010,30],
@@ -88,8 +88,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值98元，宝石爆仓"],
 		"award":[
 			[100007,60],[100008,60],[100009,60],[100010,60],
@@ -102,8 +102,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值98元，宝石爆仓"],
 		"award":[
 			[100007,60],[100008,60],[100009,60],[100010,60],
@@ -116,8 +116,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"20",
-		"limit_time":600,
+		"appear_condition":"40",
+		"limit_time":1200,
 		"desc":["充值288元，宝石爆仓"],
 		"award":[
 			[100007,180],[100008,180],[100009,180],[100010,180],
@@ -130,8 +130,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值6元，疯狂试炼场"],
 		"award":[
 			[100056,2],
@@ -144,8 +144,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值6元，疯狂试炼场"],
 		"award":[
 			[100056,2],
@@ -158,8 +158,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值30元，疯狂试炼场"],
 		"award":[
 			[100056,10],
@@ -172,8 +172,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值30元，疯狂试炼场"],
 		"award":[
 			[100056,10],
@@ -186,8 +186,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值50元，疯狂试炼场"],
 		"award":[
 			[100056,15],
@@ -200,8 +200,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值50元，疯狂试炼场"],
 		"award":[
 			[100056,15],
@@ -214,8 +214,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值98元，疯狂试炼场"],
 		"award":[
 			[100056,30],
@@ -228,8 +228,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值98元，疯狂试炼场"],
 		"award":[
 			[100056,30],
@@ -242,8 +242,8 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"25",
-		"limit_time":600,
+		"appear_condition":"50",
+		"limit_time":1200,
 		"desc":["充值288元，疯狂试炼场"],
 		"award":[
 			[100056,88],
@@ -256,7 +256,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值6元，龙魂爆仓"],
 		"award":[
@@ -270,7 +270,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值6元，龙魂爆仓"],
 		"award":[
@@ -284,7 +284,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值30元，龙魂爆仓"],
 		"award":[
@@ -298,7 +298,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值30元，龙魂爆仓"],
 		"award":[
@@ -312,7 +312,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值50元，龙魂爆仓"],
 		"award":[
@@ -326,7 +326,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值50元，龙魂爆仓"],
 		"award":[
@@ -340,7 +340,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值98元，龙魂爆仓"],
 		"award":[
@@ -354,7 +354,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值98元，龙魂爆仓"],
 		"award":[
@@ -368,7 +368,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值288元，龙魂爆仓"],
 		"award":[
@@ -382,7 +382,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值288元，龙魂爆仓"],
 		"award":[
@@ -396,7 +396,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"30",
+		"appear_condition":"60",
 		"limit_time":1200,
 		"desc":["充值648元，龙魂爆仓"],
 		"award":[
@@ -410,7 +410,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值6元，龙魂爆仓"],
 		"award":[
@@ -424,7 +424,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值6元，龙魂爆仓"],
 		"award":[
@@ -438,7 +438,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值30元，龙魂爆仓"],
 		"award":[
@@ -452,7 +452,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值30元，龙魂爆仓"],
 		"award":[
@@ -466,7 +466,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值50元，龙魂爆仓"],
 		"award":[
@@ -480,7 +480,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值50元，龙魂爆仓"],
 		"award":[
@@ -494,7 +494,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值98元，龙魂爆仓"],
 		"award":[
@@ -508,7 +508,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值98元，龙魂爆仓"],
 		"award":[
@@ -522,7 +522,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值288元，龙魂爆仓"],
 		"award":[
@@ -536,7 +536,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值288元，龙魂爆仓"],
 		"award":[
@@ -550,7 +550,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"35",
+		"appear_condition":"70",
 		"limit_time":1200,
 		"desc":["充值648元，龙魂爆仓"],
 		"award":[
@@ -564,7 +564,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -578,7 +578,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -592,7 +592,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -606,7 +606,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -620,7 +620,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -634,7 +634,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -648,7 +648,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -662,7 +662,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -676,7 +676,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -690,7 +690,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -704,7 +704,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -718,7 +718,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -732,7 +732,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
+		"appear_condition":"80",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -746,7 +746,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -760,7 +760,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -774,7 +774,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -788,7 +788,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -802,7 +802,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -816,7 +816,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -830,7 +830,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -844,7 +844,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -858,7 +858,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -872,7 +872,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -886,7 +886,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -900,7 +900,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -914,7 +914,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"49",
+		"appear_condition":"99",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -928,7 +928,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -942,7 +942,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -956,7 +956,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -970,7 +970,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -984,7 +984,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -998,7 +998,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1012,7 +1012,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1026,7 +1026,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1040,7 +1040,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1054,7 +1054,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1068,7 +1068,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1082,7 +1082,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1096,7 +1096,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
+		"appear_condition":"100",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1110,7 +1110,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1124,7 +1124,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1138,7 +1138,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1152,7 +1152,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1166,7 +1166,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1180,7 +1180,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1194,7 +1194,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1208,7 +1208,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1222,7 +1222,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1236,7 +1236,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1250,7 +1250,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1264,7 +1264,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1278,7 +1278,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1292,7 +1292,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1306,7 +1306,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1320,7 +1320,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"59",
+		"appear_condition":"119",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1334,7 +1334,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1348,7 +1348,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1362,7 +1362,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1376,7 +1376,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1390,7 +1390,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1404,7 +1404,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1418,7 +1418,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1432,7 +1432,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1446,7 +1446,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1460,7 +1460,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1474,7 +1474,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1488,7 +1488,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1502,7 +1502,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1516,7 +1516,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1530,7 +1530,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1544,7 +1544,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
+		"appear_condition":"120",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1558,7 +1558,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1572,7 +1572,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1586,7 +1586,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1600,7 +1600,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1614,7 +1614,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -1628,7 +1628,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1642,7 +1642,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1656,7 +1656,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1670,7 +1670,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1684,7 +1684,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1698,7 +1698,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1712,7 +1712,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1726,7 +1726,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1740,7 +1740,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1754,7 +1754,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1768,7 +1768,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"69",
+		"appear_condition":"139",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1782,7 +1782,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1796,7 +1796,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1810,7 +1810,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1824,7 +1824,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1838,7 +1838,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -1852,7 +1852,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1866,7 +1866,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1880,7 +1880,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -1894,7 +1894,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1908,7 +1908,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1922,7 +1922,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1936,7 +1936,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1950,7 +1950,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1964,7 +1964,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1978,7 +1978,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -1992,7 +1992,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
+		"appear_condition":"140",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2006,7 +2006,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2020,7 +2020,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2034,7 +2034,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2048,7 +2048,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2062,7 +2062,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2076,7 +2076,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2090,7 +2090,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2104,7 +2104,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2118,7 +2118,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2132,7 +2132,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2146,7 +2146,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2160,7 +2160,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2174,7 +2174,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2188,7 +2188,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2202,7 +2202,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2216,7 +2216,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"79",
+		"appear_condition":"159",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2230,7 +2230,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2244,7 +2244,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2258,7 +2258,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2272,7 +2272,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2286,7 +2286,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2300,7 +2300,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2314,7 +2314,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2328,7 +2328,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2342,7 +2342,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2356,7 +2356,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2370,7 +2370,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2384,7 +2384,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2398,7 +2398,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2412,7 +2412,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2426,7 +2426,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2440,7 +2440,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"160",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2454,7 +2454,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2468,7 +2468,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2482,7 +2482,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2496,7 +2496,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2510,7 +2510,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值50元，红装相送"],
 		"award":[
@@ -2524,7 +2524,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2538,7 +2538,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2552,7 +2552,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2566,7 +2566,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2580,7 +2580,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2594,7 +2594,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2608,7 +2608,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2622,7 +2622,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2636,7 +2636,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2650,7 +2650,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2664,7 +2664,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"89",
+		"appear_condition":"179",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2678,7 +2678,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2692,7 +2692,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2706,7 +2706,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2720,7 +2720,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2734,7 +2734,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
@@ -2748,7 +2748,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2762,7 +2762,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2776,7 +2776,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
@@ -2790,7 +2790,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2804,7 +2804,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2818,7 +2818,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2832,7 +2832,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2846,7 +2846,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2860,7 +2860,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2874,7 +2874,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
@@ -2888,7 +2888,7 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"90",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[

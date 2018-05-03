@@ -1,0 +1,30 @@
+.3 {
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    height: 664px;
+    width: 494px;
+}
+
+.4 {
+    position: absolute;
+    left: 430px;
+    top: 7px;
+    z-index: 2;
+}
+.12 {
+    position: absolute;
+    left:45px;
+	top: 203px;
+    width:450px;
+    text-align:center;
+}
+
+.13 {
+    position: relative;
+    width: 116px;
+    height: 45px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 53px;
+}

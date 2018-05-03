@@ -35,7 +35,7 @@ export class GangActivity extends Widget {
 const taskSort = function () {
     let a = [], b = [], c = [];
     let liveness_info = getDB("gang.gangExpandData.liveness_info");
-    let do_task = Common.changeArrToJson(getDB("gang.gangExpandData.liveness_event_info"));
+    let do_task = getDB("gang.gangExpandData.liveness_event_info");
     guild_activity.forEach((v, i) => {
         if (liveness_info[i]) {
             c.push([v, 3]); //已领取
@@ -61,28 +61,35 @@ export const getAward = function (id) {
     gangNet(arg)
         .then((data:any) => {
             let _data: any = Common.changeArrToJson(data.ok);
-            let award = Common.changeArrToJson(_data.award);
+            let result = Common_m.mixAward(_data);
             //扣除花费
             Common_m.deductfrom(_data);
-            //添加奖励 [公会资金, 贡献]
+            //添加奖励 [门派资金, 贡献]
             let gangExpandData = getDB("gang.gangExpandData");
             //可用贡献
-            gangExpandData.own_contribute = gangExpandData.own_contribute - 0 + award["gang_contribute"];
+            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 + result.player["gang_contribute"];
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + award["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + result.player["gang_contribute"];
             //今日贡献
-            //gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + award["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + result.player["gang_contribute"];
             
             gangExpandData.liveness_info = _data.liveness_info;
             //门派总总资金 [后台推消息统一处理]
             updata("gang.gangExpandData", gangExpandData);
             forelet.paint(getData());
+            result.auto = 1;
+            globalSend("showNewRes", {
+                result, function(result) {
+                    result.open();
+                }
+            })
         })
         .catch((data) => {
             console.log(data);
             globalSend("screenTipFun", {
-                words: `门派活动领奖失败`
+                words: `${data.why}`
             });
+            return;
         })
 };
 
@@ -91,7 +98,11 @@ export const getAward = function (id) {
  * 日常任务[资金]
  */
 net_message("gang_liveness", (msg) => {
+    let gang_money = getDB("gang.gangExpandData.gang_money");
     updata("gang.gangExpandData.gang_money", msg.gang_money);
+    globalSend("attrTip", {
+        words: `门派资金增加:${msg.gang_money - gang_money}`
+    })
     forelet.paint(getData());
 });
 
@@ -99,5 +110,11 @@ net_message("gang_liveness", (msg) => {
  * 
  */
 net_message("gang_liveness_event", (msg) => {
-    updata("gang.gangExpandData.liveness_event_info", msg.liveness_event_info);
+    let liveness_event_info = Common.changeArrToJson(msg.liveness_event_info);
+    updata("gang.gangExpandData.liveness_event_info", liveness_event_info);
+    forelet.paint(getData());
 });
+
+// gang_liveness //日常活动
+
+// gang_liveness_event //活跃度事件推送

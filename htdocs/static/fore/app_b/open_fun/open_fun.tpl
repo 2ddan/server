@@ -6,7 +6,9 @@
         <div w-class="bg_1"></div>
         <div w-class="bg_2"></div>
         {{if it1.funIsFinish(it1.next_fun.key)}}
-        <div w-class="bg_3"></div>
+        <app_a-widget-pic_other-pic_other style="position: absolute;width: 135px;height: 131px;transform: translate(-50%,-50%);left: 50%;top: 50%;">
+            {"icon":"bg_light"}
+        </app_a-widget-pic_other-pic_other>
         {{end}}
 
         {{let icon=it1.next_fun.icon}}
@@ -54,11 +56,14 @@
             {{:right = (root.getWidth() - 480) / 2 + (5 - it1.fly_fun.target_point[1]) * 80 - 15}}
             {{:top = root.getHeight() - 275}}
         {{elseif it1.fly_fun.target_point[0] == 1}}
-            {{:right = (root.getWidth() - 360 + (3 - it1.fly_fun.target_point[1]) * 73 - 15)}}
-            {{:top = -80}}
+            {{:right = (root.getWidth() - 335 + (3 - it1.fly_fun.target_point[1]) * 63)}}
+            {{:top = -88}}
         {{elseif it1.fly_fun.target_point[0] == 2}}
-            {{:right = root.getWidth() - (it1.fly_fun.target_point[1] + 1) * 73 - 35}}
-            {{:top = -10}}
+            {{:right = root.getWidth() - (it1.fly_fun.target_point[1] + 1) * 66 - 23}}
+            {{:top = -25}}
+        {{elseif it1.fly_fun.target_point[0] == 3}}
+            {{:right = root.getWidth() - (it1.fly_fun.target_point[1] + 1) * 66 - 23}}
+            {{:top = 36}}
         {{end}}
 
         {{let key = it1.fly_fun.key.slice(0,5)}}

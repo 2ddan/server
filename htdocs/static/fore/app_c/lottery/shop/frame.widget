@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"../lottery.ts",
+    "forelet":"../lottery.ts"
+}

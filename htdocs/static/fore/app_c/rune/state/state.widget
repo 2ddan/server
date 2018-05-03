@@ -1,0 +1,6 @@
+{
+    "tpl":"./state.tpl",
+    "js":"../rune.ts",
+    "forelet":"../rune.ts",
+    "css":"./state.wcss"
+}

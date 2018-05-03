@@ -1,14 +1,12 @@
-import { gangNet } from "../gang";
-import { guild_upgrade } from "cfg/c/guild_upgrade"; //公会等级相关
-import { guild_shop } from "cfg/c/guild_shop"; //公会商店
 import { updata, get as getDB } from "app/mod/db";
 import { globalSend } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { forelet, getData } from "../gang";
 import { Widget } from "pi/widget/widget";
 import { open, close } from "app/mod/root";
 
+import { gangNet, forelet, getData } from "../gang";
+import { guild_upgrade } from "cfg/c/guild_upgrade"; //门派等级相关
 
 export let globalReceive = {
     "openDailySalary": () => {
@@ -40,24 +38,30 @@ const getDailySalary = function () {
     gangNet(arg)
         .then((data:any) => {
             let _data:any = Common.changeArrToJson(data.ok);
-            let award = Common.changeArrToJson(_data.award);
-            updata("player.diamond", getDB("player.diamond") - 0 + award["diamond"]);
+            let result = Common_m.mixAward(_data);
             let gangExpandData = getDB("gang.gangExpandData");
             //可用贡献
-            gangExpandData.own_contribute = gangExpandData.own_contribute - 0 +  award["gang_contribute"];
+            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 +  result.player["gang_contribute"];
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 +  award["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 +  result.player["gang_contribute"];
             //今日贡献
-            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 +  award["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 +  result.player["gang_contribute"];
             //今日已领取
             gangExpandData.gang_salary = 1;
             updata("gang.gangExpandData", gangExpandData);
             forelet.paint(getData());
+            result.auto = 1;
+            globalSend("showNewRes", {
+                result, function(result) {
+                    result.open();
+                }
+            })
         })
         .catch((data) => {
             console.log(data);
-            globalSend("attrTip", {
-                words: `领取每日俸禄失败`
+            globalSend("screenTipFun", {
+                words: `${data.why}`
             });
+            return;
         })
 };

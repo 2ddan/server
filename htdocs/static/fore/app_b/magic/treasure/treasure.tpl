@@ -121,23 +121,18 @@
 	{{if !bol&&it1.treasure_break[it1.break_info[0]+1] || bol&&it1.treasure_up[it1.levelSite][it1.break_info[0]]}}
 		{{if bol}}
 			<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="hexagramLevelUp(0)" style="left:200px">
-				{"guide":{{!it1.treasure_flag ? "treasure_up" : ""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":"铸  魂","width":116,"height":45,"tip_keys":["role.magic_activate.bg.hexagram"]} 
+				{"guide":{{it1.treasure_ok ? "treasure_up": ""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":"铸  魂","width":116,"height":45,"tip_keys":["role.magic_activate.bg.hexagram"]} 
 			</widget>
 			<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="hexagramLevelUp(1)" style="left:345px">
 				{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{it1.level_type ? "铸魂中" : "自动铸魂"}},"width":116,"height":45,"tip_keys":["role.magic_activate.bg.hexagram"]} 
 			</widget>
 		{{else}}
 		{{let info = it1.treasure_break[it1.break_info[0]]}}
-		{{let text = it1.treasure_type ? '淬炼中' : '自动淬炼'}}
-		
-		<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="canBreak(0)" style="left:200px">
-			{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{it1.break_info[1] >= info.need_exp ? '突  破' : "淬  炼"}},"width":116,"height":45,"tip_keys":["role.magic_activate.bg.break"]} 
-		</widget>
-		{{if info.need_exp > it1.break_info[1] }}
-		<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="canBreak(1)" style="left:345px">
+		{{let text = it1.break_info[1] >= info.need_exp ? "突  破" : it1.treasure_type ? '淬炼中' : '自动淬炼'}}
+
+		<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="canBreak(1)" style="left:200px">
 			{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{text}},"width":116,"height":45,"tip_keys":["role.magic_activate.bg.break"]} 
 		</widget>
-		{{end}}
 		{{let sid = info.prop}}
 		{{let propInfo = Common.getBagPropById(sid)}}
 		{{let need_prop = info.need_exp / info.per_exp}}

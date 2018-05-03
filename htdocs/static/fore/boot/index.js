@@ -33,9 +33,9 @@ if(winit.wifi){
     winit.path = "/dst/";//"/pi/0.1/";
 	winit.loadJS(winit.domains, "/dst/pi/polyfill/babel_polyfill.js", "utf8", winit.initFail, "load babel_polyfill error");
 	
-    winit.loadJS(winit.domains, "/dst/pi/boot/init.js?569", "utf8", winit.initFail, "load init error");
+    winit.loadJS(winit.domains, "/dst/pi/boot/init.js?571", "utf8", winit.initFail, "load init error");
 
-    winit.loadJS(winit.domains, "/dst/boot/next.js?569", "utf8", winit.initFail, "load next error");
+    winit.loadJS(winit.domains, "/dst/boot/next.js?571", "utf8", winit.initFail, "load next error");
 
     winit.loadJS(winit.domains, winit.path + ".depend?" + Math.random(), "utf8", winit.initFail, "load list error");
 }

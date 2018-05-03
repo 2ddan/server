@@ -4,28 +4,37 @@ let tab = [];
     tab.push({
         "name": "小有钱财",
         "award": {
-            "gain_contribute": 100,
-            "gain_money": 500
+            "gain_contribute": 20,
+            "gain_money": 20
         },
-        "cost": [["100001", 5000], ["100002", undefined]],
+        "cost": {
+            "money": 10000,
+            "diamond": 0
+        },
         "limit": 5
     })
     tab.push({
         "name": "慷慨解囊",
         "award": {
-            "gain_contribute": 200,
-            "gain_money": 1000
+            "gain_contribute": 50,
+            "gain_money": 50
         },
-        "cost": [["100001", 0], ["100002", 100]],
-        "limit": -1
+        "cost": {
+            "money": 0,
+            "diamond": 50
+        },
+        "limit": 2
     })
     tab.push({
         "name": "乾坤一掷",
         "award": {
-            "gain_contribute": 500,
-            "gain_money": 3000
+            "gain_contribute": 200,
+            "gain_money": 200
         },
-        "cost": [["100001", 0], ["100002", 200]],
+        "cost": {
+            "money": 0,
+            "diamond": 200
+        },
         "limit": -1
     })
 

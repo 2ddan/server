@@ -133,7 +133,7 @@ export class Request{
         //通知后台
         FMgr.netRequest(EType.useSkill,param);
         // if(f.sid == 10000)
-        //     console.log("useSkill",f.x,f.y);
+        //     console.log("useSkill: ",s.id);
         return "";
     }
     /**

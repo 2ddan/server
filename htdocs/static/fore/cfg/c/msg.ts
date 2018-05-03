@@ -26,6 +26,26 @@ table["280008"] = {content:"你被#踢出了门派，请不要灰心，努力提
 
 table["280009"] = {content:"您的门派#已解散，请加入其它门派吧",css:"undefined"};
 
+table["280010"] = {content:"{{name}}通过{{pray_name}}，门派资金增加了{{count}}。",css:"undefined"};
+
+table["280011"] = {content:"{{name}}通过捐赠{{prop_name}}*{{count1}}，门派资金增加了{{count2}}",css:"undefined"};
+
+table["280012"] = {content:"{{name}}由于长时间未打理门派，72小时后将会转让其门主身份",css:"undefined"};
+
+table["280013"] = {content:"通过全体侠士的齐心协力，门派升到了{{level}}级，全体成员可以获得更强的增益属性！",css:"undefined"};
+
+table["280014"] = {content:"通过全体侠士的齐心协力，[藏经阁]升到了{{level}}级，可以习得更强的武心法！",css:"undefined"};
+
+table["280015"] = {content:"通过全体侠士的齐心协力，[藏宝阁]升到了{{level}}级，可以购买不外传的稀世珍宝！",css:"undefined"};
+
+table["280016"] = {content:"经过各位侠士的齐心协力，成功击败了{{boss_name}}，获得了丰厚的奖励！",css:"undefined"};
+
+table["280017"] = {content:"本日{{name}}为门派建设做出来卓越的贡献！让我们共同为门派繁荣而奋斗！",css:"undefined"};
+
+table["280018"] = {content:"门主:{{name}}由于长期不活跃，现已自动辞去门主职位",css:"undefined"};
+
+table["280019"] = {content:"大侠:{{name}}众望所归，继任门主职位",css:"undefined"};
+
 table["201001"] = {content:"undefined",css:"undefined"};
 
 table["202001"] = {content:"undefined",css:"undefined"};
@@ -72,39 +92,39 @@ table["204014"] = {content:"每日心法副本挑战次数：#",css:"undefined"}
 
 table["204016"] = {content:"开启天庭秘境免费快速扫荡",css:"undefined"};
 
-table["205001"] = {content:"少侠在荒野除魔20级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205001"] = {content:"少侠在荒野除魔40级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205002"] = {content:"少侠在荒野除魔30级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205002"] = {content:"少侠在荒野除魔60级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205003"] = {content:"少侠在荒野除魔40级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205003"] = {content:"少侠在荒野除魔80级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205004"] = {content:"少侠在荒野除魔40级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205004"] = {content:"少侠在荒野除魔80级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205005"] = {content:"少侠在荒野除魔50级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205005"] = {content:"少侠在荒野除魔100级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205006"] = {content:"少侠在荒野除魔60级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205006"] = {content:"少侠在荒野除魔120级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205007"] = {content:"少侠在荒野除魔70级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205007"] = {content:"少侠在荒野除魔140级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205008"] = {content:"少侠在荒野除魔80级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205008"] = {content:"少侠在荒野除魔160级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205009"] = {content:"少侠在荒野除魔80级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205009"] = {content:"少侠在荒野除魔160级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205010"] = {content:"少侠在荒野除魔90级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205010"] = {content:"少侠在荒野除魔180级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205011"] = {content:"少侠在荒野除魔100级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205011"] = {content:"少侠在荒野除魔200级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205012"] = {content:"少侠在荒野除魔100级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205012"] = {content:"少侠在荒野除魔200级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205013"] = {content:"少侠在荒野除魔110级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205013"] = {content:"少侠在荒野除魔220级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205014"] = {content:"少侠在荒野除魔120级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205014"] = {content:"少侠在荒野除魔240级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205015"] = {content:"少侠在荒野除魔120级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205015"] = {content:"少侠在荒野除魔240级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205016"] = {content:"少侠在荒野除魔130级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205016"] = {content:"少侠在荒野除魔260级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
-table["205017"] = {content:"少侠在荒野除魔140级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+table["205017"] = {content:"少侠在荒野除魔280级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
 table["205101"] = {content:"#把荒野除魔中获得的极品装备分配给少侠，请查收",css:"undefined"};
 

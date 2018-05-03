@@ -400,7 +400,7 @@ export class UiFunTable {
     static hitEffect(arg, index, now) {
         let f = arg.fighter,
             skill = arg.skill,
-            ss = getSkill(f.skill,skill),
+            ss = arg.skill,
             target = arg.target,
             //如果是自己则不飘字
             _damageFunc = () => {

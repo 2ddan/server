@@ -260,10 +260,11 @@ const equipRed = function () {
 
                         //如果有红装(升级)
                         if (equip) {
-                            if (equip.level + 10 > playerLevel) {
+                            let next_level = equip_evolution[redId[i]][equip.level].next_level;
+                            if (next_level > playerLevel) {
                                 return 0;
                             }
-                            cost = equip_evolution[redId[i]][equip.level + 10].cost;
+                            cost = equip_evolution[redId[i]][next_level].cost;
                         } else {
                             //如果没有红装(锻造)
                             level = equip_level_limit[i + 1].red_open_level;

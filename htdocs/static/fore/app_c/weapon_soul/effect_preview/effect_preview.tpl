@@ -42,7 +42,7 @@
                     {"padding":10,"type":9,"width":124,"text":"效果预览","textCfg":"singleTitle","fontSize":20,"space":-2,"color":"","wear":0} 
                 </widget>
 
-                <app_a-widget-bg_frame-bg style="position: absolute;left: 2px;top: 90px;width: 492px;height: 65px;">
+                <app_a-widget-bg_frame-bg style="position: absolute;left: 2px;top: 114px;width: 492px;height: 65px;">
                     {"bgName":"bg_frame30"} 
                 </app_a-widget-bg_frame-bg>
 
@@ -54,9 +54,16 @@
                         {"icon":"little_tips_bg","textCfg":"","width":300,"height":24,"fontSize":20,"text":{{"注灵至"+it1.weapon_soul_base[it1.eff_index].name+"阶段可使武器获得此效果"}},"marginLeft":8}
                     </app_a-widget-pic_text-pic_text>
                 </div>
+                <div style="position:absolute;height:24px;width:330px;left:80px;top:70px;">
+                    <app_a-widget-pic_other-pic_other style="position:absolute;left:-13px;">
+                        {"icon":"remind"}
+                    </app_a-widget-pic_other-pic_other>
+                    <app_a-widget-pic_text-pic_text style="font-family:mnjsh;font-size:16px;font-family:mnjsh;line-height:24px;">
+                        {"icon":"little_tips_bg","textCfg":"","width":330,"height":24,"fontSize":20,"text":"当前阶段中所有赋灵星升满即可进入下一阶段","marginLeft":8}
+                    </app_a-widget-pic_text-pic_text>
+                </div>
 
-
-                <div style="position:absolute;z-index:3;width:440px;top:80px;height:80px;overflow:hidden;left:26px;">
+                <div style="position:absolute;z-index:3;width:440px;top:104px;height:80px;overflow:hidden;left:26px;">
                     <div style="position:absolute;top:0px;width:100%;height:124%;overflow-y:hidden;overflow-x:auto;white-space:nowrap;z-index:3;top:0px" scroller="1">
                         {{for k, v of it1.weapon_soul_base}}
                         {{if v.class > 0}}

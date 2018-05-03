@@ -78,7 +78,7 @@
                         </widget>
                     {{else}}
                         <widget w-tag="app_a-widget-btn-rect" w-class="s8" on-tap ='getAward({{JSON.stringify(v)}})'>
-                            {"guide":{{v.act_id==1 ? "seven_btn" : 0}},"class":"hl","fontsize":24,"text":"领 取","width":116,"height":45,"show_anim":1} 
+                            {"guide":{{v.act_id<=7 ? "seven_btn" : 0}},"class":"hl","fontsize":24,"text":"领 取","width":116,"height":45,"show_anim":1} 
                         </widget>
                     {{end}}
                 </div>

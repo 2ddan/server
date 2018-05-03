@@ -62,7 +62,7 @@ tab.push({
 
 tab.push({
     "id": 4,
-    "level_limit": 10,
+    "level_limit": 15,
     "stage_id": null,
     "name": "技能开启",
     "key": "skill3",
@@ -184,21 +184,6 @@ tab.push({
     "id": 12,
     "level_limit": null,
     "stage_id": 10,
-    "name": "龙魂",
-    "key": "soul",
-    "desc": "修炼龙魂，明净清志，可大幅提升战力",
-    "award": [[100019,5],[100020,5], ["100001", 10000], ["100002", 0]],
-    "icon": "menu_dargon_icon",
-    "target_point": [0,0],
-    "music": "music-soul",
-    "guide_text": "修炼龙魂可以大幅度提高战斗力哟！",
-    "func_tips": "role-soul"
-})
-
-tab.push({
-    "id": 13,
-    "level_limit": null,
-    "stage_id": 12,
     "name": "门派",
     "key": "gang",
     "desc": "创建门派，广收门徒，成为大家宗师！",
@@ -211,9 +196,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 14,
+    "id": 13,
     "level_limit": null,
-    "stage_id": 14,
+    "stage_id": 12,
     "name": "材料副本",
     "key": "daily_fb",
     "desc": "各种材料快速获取，每日必去之地",
@@ -226,38 +211,23 @@ tab.push({
 })
 
 tab.push({
-    "id": 15,
+    "id": 14,
     "level_limit": null,
     "stage_id": 16,
-    "name": "九幽幻境",
-    "key": "instance_fb",
-    "desc": "可获得大量的元宝和升星石，每日必去之地！",
-    "award": [[100019,5], ["100001", 0], ["100002", 0]],
-    "icon": "menu_instance_icon",
+    "name": "神秘宝物",
+    "key": "random_boss",
+    "desc": "开启神秘宝箱，获得红色赋灵材料和宝石",
+    "award": [[100018,1], ["100001", 0], ["100002", 0]],
+    "icon": "random_boss",
     "target_point": [0,4],
-    "music": "music-instance_fb",
-    "guide_text": "首次挑战九幽幻境可以获得大量元宝，快来领取福利吧！",
-    "func_tips": "explore-instance"
+    "music": "music-random_boss",
+    "guide_text": "消灭守卫可以在神秘宝箱里开启神秘宝物哦！",
+    "func_tips": "explore-randomBox"
 })
 
 tab.push({
-    "id": 16,
-    "level_limit": null,
-    "stage_id": 18,
-    "name": "离线收益",
-    "key": "off_line",
-    "desc": "离线也能领福利，快来吧！",
-    "award": [0,0, ["100001", 5000], ["100002", 0]],
-    "icon": "menu_offLine_icon",
-    "target_point": [1,3],
-    "music": "music-off_line",
-    "guide_text": "离线也可以嗖嗖升级，快来看看离线奖励吧！",
-    "func_tips": "daily_act-off_line"
-})
-
-tab.push({
-    "id": 17,
-    "level_limit": 30,
+    "id": 15,
+    "level_limit": 40,
     "stage_id": null,
     "name": "技能开启",
     "key": "skill4",
@@ -271,22 +241,22 @@ tab.push({
 })
 
 tab.push({
-    "id": 18,
+    "id": 16,
     "level_limit": null,
-    "stage_id": 19,
+    "stage_id": 18,
     "name": "荒野降魔",
     "key": "public_boss",
-    "desc": "各种BOSS集中之地",
-    "award": [0,0, ["100001", 5000], ["100002", 0]],
-    "icon": "menu_equipFb_icon",
+    "desc": "各凭本事，虐夺大量红色稀有材料！",
+    "award": [0,0, ["100001", 20000], ["100002", 0]],
+    "icon": "menu_arena_icon",
     "target_point": [0,5],
     "music": "undefined",
-    "guide_text": "undefined",
-    "func_tips": "undefined"
+    "guide_text": "组队击杀boss，获得各种红色材料和特级稀有橙色装备！",
+    "func_tips": "new_fun-public_boss"
 })
 
 tab.push({
-    "id": 19,
+    "id": 17,
     "level_limit": null,
     "stage_id": 20,
     "name": "装备副本",
@@ -301,7 +271,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 20,
+    "id": 18,
     "level_limit": null,
     "stage_id": 22,
     "name": "竞技场",
@@ -316,7 +286,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 21,
+    "id": 19,
     "level_limit": null,
     "stage_id": 22,
     "name": "成长基金",
@@ -331,24 +301,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 22,
+    "id": 20,
     "level_limit": null,
-    "stage_id": 25,
-    "name": "神秘宝物",
-    "key": "random_boss",
-    "desc": "开启神秘宝箱，获得红色赋灵材料和宝石",
-    "award": [[100018,1], ["100001", 0], ["100002", 0]],
-    "icon": "random_boss",
-    "target_point": [0,4],
-    "music": "music-random_boss",
-    "guide_text": "消灭守卫可以在神秘宝箱里开启神秘宝物哦！",
-    "func_tips": "explore-randomBox"
-})
-
-tab.push({
-    "id": 23,
-    "level_limit": null,
-    "stage_id": 25,
+    "stage_id": 24,
     "name": "装备升星",
     "key": "equip_star",
     "desc": "装备升星，激发超强潜力，提高战斗力",
@@ -361,9 +316,39 @@ tab.push({
 })
 
 tab.push({
-    "id": 24,
+    "id": 21,
+    "level_limit": null,
+    "stage_id": 26,
+    "name": "龙魂",
+    "key": "soul",
+    "desc": "修炼龙魂，明净清志，可大幅提升战力",
+    "award": [[100019,5],[100020,5], ["100001", 10000], ["100002", 0]],
+    "icon": "menu_dargon_icon",
+    "target_point": [0,0],
+    "music": "music-soul",
+    "guide_text": "修炼龙魂可以大幅度提高战斗力哟！",
+    "func_tips": "role-soul"
+})
+
+tab.push({
+    "id": 22,
     "level_limit": null,
     "stage_id": 30,
+    "name": "九幽幻境",
+    "key": "instance_fb",
+    "desc": "可获得大量的元宝和龙魂材料，每日必去之地！",
+    "award": [[100020,10], ["100001", 0], ["100002", 0]],
+    "icon": "menu_instance_icon",
+    "target_point": [0,4],
+    "music": "music-instance_fb",
+    "guide_text": "首次挑战九幽幻境可以获得大量元宝，快来领取福利吧！",
+    "func_tips": "explore-instance"
+})
+
+tab.push({
+    "id": 23,
+    "level_limit": 80,
+    "stage_id": null,
     "name": "神装锻造",
     "key": "equip_red_forge",
     "desc": "绝世神装，谁主沉浮，大幅提升战斗力",
@@ -376,9 +361,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 25,
-    "level_limit": null,
-    "stage_id": 35,
+    "id": 24,
+    "level_limit": 82,
+    "stage_id": null,
     "name": "神装洗练",
     "key": "equip_red_wash",
     "desc": "可改变神装的附加属性，大幅提升战斗力",
@@ -391,9 +376,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 26,
-    "level_limit": null,
-    "stage_id": 40,
+    "id": 25,
+    "level_limit": 90,
+    "stage_id": null,
     "name": "阵法",
     "key": "gest",
     "desc": "心法绝学，潜心修习，可获得大量战力",
@@ -406,9 +391,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 27,
-    "level_limit": null,
-    "stage_id": 40,
+    "id": 26,
+    "level_limit": 90,
+    "stage_id": null,
     "name": "心法奇遇",
     "key": "gest_fb",
     "desc": "心法奇遇，挑战可获得大量心法哦",
@@ -421,9 +406,9 @@ tab.push({
 })
 
 tab.push({
-    "id": 28,
-    "level_limit": null,
-    "stage_id": 42,
+    "id": 27,
+    "level_limit": 95,
+    "stage_id": null,
     "name": "赋灵",
     "key": "weapon_soul",
     "desc": " 武器赋灵，提升超强战力，获取华丽特效",
@@ -433,6 +418,21 @@ tab.push({
     "music": "music-weapon_soul",
     "guide_text": "给武器赋灵不仅可以提供强力属性，还可以激活炫酷武器外观！",
     "func_tips": "role-weapon_soul"
+})
+
+tab.push({
+    "id": 28,
+    "level_limit": 200,
+    "stage_id": null,
+    "name": "离线收益",
+    "key": "off_line",
+    "desc": "离线也能领福利，快来吧！",
+    "award": [0,0, ["100001", 5000], ["100002", 0]],
+    "icon": "menu_offLine_icon",
+    "target_point": [1,3],
+    "music": "music-off_line",
+    "guide_text": "离线也可以嗖嗖升级，快来看看离线奖励吧！",
+    "func_tips": "daily_act-off_line"
 })
 
 

@@ -18,7 +18,10 @@
                 {"icon":"fun_name_bg","width":57,"height":120,"text":""}
             </widget>
             <div class="center_h" style="font-size:18px;width:15px;top:60px;transform:translateY(-50%);color:#583730">{{v.name}}</div>
-                   
+            <app-widget-tip-tip style="right:2px;top:2px;">
+                {"tip_keys":{{v.tips}}}
+            </app-widget-tip-tip>
+            <app_a-widget-btn_sound-btn_sound></app_a-widget-btn_sound-btn_sound>
         </div>
         {{end}}
     </div>

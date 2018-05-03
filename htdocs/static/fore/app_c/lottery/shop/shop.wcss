@@ -1,0 +1,15 @@
+.3 {
+    position: absolute;
+    left: 22px;
+    top: 0px;
+    height: 664px;
+    width: 494px;
+}
+
+.4 {
+    position: absolute;
+    left: 430px;
+    top: 7px;
+    z-index: 2;
+}
+

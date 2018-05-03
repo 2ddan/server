@@ -12,20 +12,18 @@
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height: 666px;left:50%;margin-left:-246px;top:49px;">
             {"bgName":"bg_frame21"} 
         </widget>
-    
         <widget w-tag="app_a-widget-line-line" style="position:absolute;top:34px;left:0px;">
             {"line":"line_7"} 
         </widget>
-        {{:console.log(1111111,it1)}}
         <app-widget-tab-navtab data-desc="tab内容">
-            {"cur":0,
+            {"cur":{{it1.cur ? it1.cur : 0}},
             "btn_box":"btnBag",            
             "margin":4,
             "left":22,
             "top":0,
             "arr":[
                 {"tab":"app_c-publicboss-boss-info","btn":{"text":"首领列表","type":"border","type_m":"info"}},
-                {"tab":"app_c-publicboss-award-award","btn":{"text":"归属奖励","type":"border","type_m":"award"}}
+                {"tab":"app_c-publicboss-award-award","btn":{"text":"归属奖励","type":"border","type_m":"award"},"tip_keys":["new_fun.public_boss.award"]}
             ],
             "type":0 }
         </app-widget-tab-navtab>

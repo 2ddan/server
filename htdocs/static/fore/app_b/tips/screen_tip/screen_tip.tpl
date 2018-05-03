@@ -1,5 +1,5 @@
 
-<div class="tips_auto" id="tips_auto" group="pop_tip" style="position:absolute;top:0;left:0;width:100%;height:100%;max-height:900px;pointer-events:none;">
+<div class="tips_auto" id="tips_auto" group="text_tip" style="position:absolute;top:0;left:0;width:100%;height:100%;max-height:900px;pointer-events:none;">
     <div w-class="pop_tips_animate">
         <div w-class="pop_tips_list" id="propTipsList">
         </div>

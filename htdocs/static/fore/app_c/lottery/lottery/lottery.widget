@@ -1,0 +1,6 @@
+{
+    "tpl":"./lottery.tpl",
+    "js":"../lottery.ts",
+    "forelet":"../lottery.ts",
+    "css":"./lottery.wcss"
+}

@@ -1,11 +1,12 @@
 {{let b = (it == "gest_bag") ? true : false}}
 <div style="position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;">
+    {{let t = b?"心法背包":"心法兑换"}}
     <app_b-widget-title-title style="z-index:2;top:0;left:0">
-        {{let t = b?"心法背包":"心法兑换"}} {"text":{{t}},"coin":["money","diamond",150002],"top":"7","left":"19","type":"gest" }
+         {"text":{{t}},"coin":["money","diamond",150002],"top":"7","left":"19","type":"gest" }
     </app_b-widget-title-title>
     <div style="width:100%;position:absolute;height:720px;left:50%;top:100px;margin-left:-273px;overflow:hidden;z-index:2">
         <div style="position:absolute;top:3px;left:30px;z-index:3">
-            {{let arr = ["紫色","橙色","红色"]}} 
+            {{let arr = ["紫色","橙色"]}} 
             {{for i,v of arr}} 
                 {{let quality = i-0+4}}
                 <app-widget-tab-tab_btn style="display:inline-block;width:96px;height:41px;margin-left:2px" on-tap='tabChange({{quality}})'>
@@ -17,7 +18,6 @@
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:655px;top:48px;left:27px">
             {"bgName":"bg_frame21"} 
         </widget>
-
         <div scroller="1" style="box-sizing:border-box;width:105%;height:635px;overflow-y: auto; overflow-x: hidden;margin-top: 50px;margin-left:30px;padding-top:15px">
             {{let q = it1.gestQuality}}
             {{let list = b ? it1.myGest : it1.gest_shop}}

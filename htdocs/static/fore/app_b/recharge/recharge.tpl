@@ -88,7 +88,10 @@
                     {{end}}
 
                     <div data-desc="物品" w-class="18">
-                        <img src="./images/item_{{i-0+1}}.png"/>
+                        <app_a-widget-pic_other-pic_other style="position: absolute;width: 114px;height: 117px;left: 0px;top:0px;">
+                            {"icon":"bg_light"}
+                        </app_a-widget-pic_other-pic_other>
+                        <img src="./images/item_{{i-0+1}}.png" style="position: absolute;z-index: 3;" />
                         
                     </div>
                     <div data-desc="XX元宝" w-class="16">

@@ -40,7 +40,8 @@
 				<div w-class="89" w-sid="89">
 					
 					<img style="vertical-align: middle;margin-top: -6px;margin-right: 8px;" src="../images/mem_{{v.post || 3}}.png"/>
-					<widget w-class="88" w-tag="app_a-widget-text-text" w-sid="88">{"text":{{"VIP"+v.vip}},"show":"","space":0,"fontSize":14,"lineHeight":20,"color":"","textCfg":"gangVip"} 
+					<widget class="shadow7" style="position:relative;display:inline-block;margin-right: 6px;top: 6px;font-size:14px;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+						{"icon":{{"vip_lv_" + (it1.vip_advantage[v.vip].lv_frame || 1)}},"width":52,"height":25,"align":"center","marginLeft":3,"text":{{"VIP" + v.vip}},"top":0,"left":0} 
 					</widget>
 				</div>
 				<widget w-class="91" w-tag="app_a-widget-power-power" w-sid="91">
@@ -50,31 +51,31 @@
 
 		</div>
 		
-		<div w-class="12" w-sid="12">
+		<div w-class="12" w-sid="12" style="width: 400px;left: 50%;margin-left: -200px;height: 40px;">
 			{{if gang.post == 1}}
-			<widget on-tap='gotoPostClick' w-class="19" w-tag="app_a-widget-btn-rect" w-sid="20">
-				{"class":"default","fontsize":18,"color":"","text":"管理职位","width":84,"height":32} 
+			<widget on-tap='gotoPostClick' w-class="19" w-tag="app_a-widget-btn-rect" w-sid="20" style="left: 50%;margin-left: -55px;">
+				{"class":"default","fontsize":18,"color":"","text":"管理职位","width":110,"height":39} 
 			</widget>
 			<widget on-tap='kickMember("{{v.role_id}}")' w-class="20" w-tag="app_a-widget-btn-rect" w-sid="21">
-				{"class":"default","fontsize":18,"color":"","text":"请离公会","width":84,"height":32} 
+				{"class":"default","fontsize":18,"color":"","text":"请离门派","width":110,"height":39} 
 			</widget>
-			<widget on-tap='lineupClick' w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})">
-				{"class":"default","fontsize":18,"color":"","text":"查看装备","width":84,"height":32} 
+			<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})">
+				{"class":"default","fontsize":18,"color":"","text":"查看装备","width":110,"height":39} 
 			</widget>
 
 			{{elseif gang.post == 2}}
 				{{if it1.gang_member[it1.role_index].post == 3}}
 				<widget on-tap='kickMember("{{v.role_id}}")' w-class="20" w-tag="app_a-widget-btn-rect" w-sid="21" style="right:0;">
-					{"class":"default","fontsize":18,"color":"","text":"请离公会","width":84,"height":32} 
+					{"class":"default","fontsize":18,"color":"","text":"请离门派","width":110,"height":39} 
 				</widget>
 				{{end}}
-				<widget on-tap='lineupClick' w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})" style="left:{{it1.gang_member[it1.role_index].post == 3 ? 0 : 104}}px">
-					{"class":"default","fontsize":18,"color":"","text":"查看装备","width":84,"height":32} 
+				<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})" style="left:{{it1.gang_member[it1.role_index].post == 3 ? 0 : 104}}px">
+					{"class":"default","fontsize":18,"color":"","text":"查看装备","width":110,"height":39} 
 				</widget>
 			{{else}}
 
-			<widget on-tap='lineupClick' w-class="19" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})">
-				{"class":"default","fontsize":18,"color":"","text":"查看装备","width":84,"height":32} 
+			<widget w-class="19" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})">
+				{"class":"default","fontsize":18,"color":"","text":"查看装备","width":110,"height":39} 
 			</widget>
 			{{end}}
 			

@@ -6,7 +6,7 @@
 	{{let root = _get("pi/ui/root").exports}}
     
     <widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
-        {"text":"公 会","coin":["money","diamond"],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
+        {"text":"门 派","coin":["money","diamond",150005],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"contribute","width":{{root.getWidth()}} } 
     </widget>
     <div class="line_6" style="position: absolute; top: 96px; left:50%;margin-left:-270px;width:540px;z-index: 2;"></div>
     <div style="width:540px;position:absolute;left:50%;top:110px;bottom:83px;margin-left:-270px;">
@@ -37,29 +37,24 @@
                             <widget w-class="18" w-tag="app_a-widget-pic_other-pic_other" w-sid="18"></widget>
                             <span w-class="21" w-sid="21">{{Common.fromCharCode(v.gang_name)}}</span>
                         </div>
-                        <div w-class="27" w-sid="27">
-                            <span w-class="28" w-sid="28">会 长</span>
-                            <span w-class="29" w-sid="29">{{Common.fromCharCode(v.leader_info.name)}}</span>
-                            <widget w-class="31" w-tag="app_a-widget-text-text" w-sid="31">
-                                {"text":{{"VIP"+v.leader_info.vip}},"show":"","space":0,"fontSize":14,"lineHeight":20,"color":"","textCfg":"gangVip"} 
+                        <div w-class="27" w-sid="27" style="height: 30px;display: flex;justify-content: start;margin-top: 15px;">
+                            <span w-class="28" w-sid="28" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">会 长</span>
+                            <span w-class="29" w-sid="29" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">{{Common.fromCharCode(v.leader_info.name)}}</span>
+
+                            <widget class="shadow7" style="position:relative;display:inline-block;margin-right: 6px;font-size:16px;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+                                {"icon":{{"vip_lv_" + (it1.vip_advantage[v.leader_info.vip].lv_frame || 1)}},"width":52,"height":25,"align":"center","marginLeft":3,"text":{{"VIP" + v.leader_info.vip}},"top":0,"left":0} 
                             </widget>
                         </div>
-                        <div w-class="52" w-sid="52">
-                            <span w-class="53" w-sid="53">成员数</span>
-                            <span w-class="54" w-sid="54">{{v.gang_count+"/"+it1.guild_upgrade[v.gang_level].max_person}}</span>
-                        </div>
-                        <div w-class="56" w-sid="56">
-                            <span w-class="57" w-sid="57">宣 言</span>
-                            <div w-class="58" w-sid="58">
-                                {{Common.fromCharCode(v.gang_bulletin)}} 
-                            </div>
+                        <div w-class="52" w-sid="52" style="height: 30px;display: flex;justify-content: start;">
+                            <span w-class="53" w-sid="53" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">成员数</span>
+                            <span w-class="54" w-sid="54" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">{{v.gang_count+"/"+it1.guild_upgrade[v.gang_level].max_person}}</span>
                         </div>
                         {{if !v.is_apply}}
-                        <widget on-tap='applyGangClick("{{v.gang_id+","+v.index}}")' w-class="60" w-tag="app_a-widget-btn-rect" w-sid="60">
+                        <widget on-tap='applyGangClick("{{v.gang_id+","+v.index}}")' w-class="60" w-tag="app_a-widget-btn-rect" w-sid="60" style="top: 69px;">
                             {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"申 请","width":116,"height":45} 
                         </widget>
                         {{elseif v.gang_count - 0 == it1.guild_upgrade[v.gang_level].max_person-0}}
-                        <widget w-class="60" w-tag="app_a-widget-btn-rect" w-sid="60">
+                        <widget w-class="60" w-tag="app_a-widget-btn-rect" w-sid="60" style="top: 69px;">
                             {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"满 员","width":116,"height":45} 
                         </widget>
                         {{else}}
@@ -76,10 +71,10 @@
 
         <div style="position:absolute;top:720px;left:25px;width:490px;">
             <widget on-tap='gotoFindClick' w-class="61" w-tag="app_a-widget-btn-rect" w-sid="61">
-                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"搜索公会","width":116,"height":45} 
+                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"搜索门派","width":116,"height":45} 
             </widget>
             <widget on-tap='gotoCreateClick' w-class="62" w-tag="app_a-widget-btn-rect" w-sid="62">
-                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"创建公会","width":116,"height":45} 
+                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"创建门派","width":116,"height":45} 
             </widget>
         </div>
 	</div>

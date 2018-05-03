@@ -85,8 +85,14 @@ export let mapList = {};
 export let pet = {};
 
 export class handScene {
-
-	static getSelf = function () {
+	/**
+	 * @description 一次性移动停止回调
+	 */
+	static stopMoveBack: Function
+	static setStopMoveBack(back: Function){
+		this.stopMoveBack = back;
+	}
+	static getSelf() {
 		return __self;
 	}
 
@@ -187,9 +193,17 @@ export class handScene {
 		if(!fighter || fighter.hp<=0)return;
 
 		//setChangeData(fighter, e.fighter,now);
-		if (e.moving === 0) {
+		if (e.moveto.status && e.moving === 0) {
 			fighter.state = "standby";
-			fighter.moving = 0
+			fighter.moving = 0;
+			//处理第一个fighter移动停止的回调
+			this.stopMoveBack && ((back,ev)=>{
+				setTimeout(() => {
+					back(ev);
+				}, 0)
+				return true;
+			}
+			)(this.stopMoveBack,e) && this.setStopMoveBack(null);
 		} else {
 			fighter.state = "run";
 			fighter.moving = Date.now();
@@ -207,6 +221,9 @@ export class handScene {
 		// }
 
 		if(e.moveto){
+			// if(fighter.sid == 10000){
+			// 	console.log("move: ",e);
+			// }
 			fighter.lookat = {
 				"value": [e.moveto.x, e.moveto.z, 0],
 				sign: Date.now()
@@ -342,7 +359,8 @@ export class handScene {
 		e.curTarget = e.curTarget;
 		e.target = curTarget;
 		e.fighter = fighter;
-		//e.time = e.time - now;
+		e.skill = fighter.skill[getSkillIndex(fighter.skill,e.skill)];
+		e.time = now + e.skill.bloodDelayTime;
 		MCrontal.add(curTarget);	
 		cuurUI.push({ "param": e, "fun": UiFunTable.hitEffect });
 		let dieMoster = [];
@@ -351,7 +369,7 @@ export class handScene {
 			for(let key in mapList){
 				let me = mapList[key];
 				if(me.type == "monster" && exp_monster.indexOf(me.mapId) == -1 && me.hp <= 0){
-					curr_die_monster.push(me.sid);
+					curr_die_monster.push(me.sid+"-"+me.level);
 					exp_monster.push(me.mapId);
 				}
 			}
@@ -398,12 +416,13 @@ export class handScene {
 			curTarget = mapList[e.curTarget],
 			index = getSkillIndex(fighter.skill,e.skill),
 			ss = fighter.skill[index];
-		if(fighter.skill[index].hand !== 2){
-			_play = UiFunTable.updateUseSkill(fighter, getSkillAction(e));
-		}
-
+		//先改变朝向
 		if (fighter.skill[index].hand !== 2 && curTarget && (fighter.lookat.value[0] != curTarget.x || fighter.lookat.value[1] != curTarget.y)) {
 			fighter.lookat = { "value": [curTarget.x, curTarget.y, curTarget.z], sign: Date.now() };
+		}
+		//更新技能动作
+		if(fighter.skill[index].hand !== 2){
+			_play = UiFunTable.updateUseSkill(fighter, getSkillAction(e));
 		}
 		// if(_play)objCall(mgr,"setAnimationOnce",[fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]);
 		// TODO 根据e.skill 来确定技能特效
@@ -680,6 +699,8 @@ export const updateSkill = (f, skills, now) => {
 	for (let i = 0; i < skills.length; i++) {
 		let s = skills[i],
 			old = f.skill[getSkillIndex(skillList,s.id)] || {};
+		if(s[1]==0)
+			continue;
 		let ss = createSkill(s[0], s[1], role_base[f.career_id]);
 		ss.cdNextTime = old.cdNextTime || (ss.initialCDTime + now);
 		skillList.push(ss);

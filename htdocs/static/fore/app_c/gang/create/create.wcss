@@ -125,68 +125,6 @@
     color: #875840;
     background-color: #231712;    
 }
-.25 {
-    position: absolute;
-    width: 100%;
-    height: 37px;
-    top: 92px;
-    color: #875840;
-}
-.27 {
-    position: absolute;
-    left: 35px;
-    top: 7px;
-    width: 11px;
-    height: 10px;
-}
-.28 {
-    position: absolute;
-    color: #FFD7A8;
-    left: 54px;
-    width: 100px;
-    height: 30px;
-    font-size: 20px;
-    font-family: mnjsh;
-    top: 2px;
-    text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
-    -webkit-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
-    -moz-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
-}
-.29 {
-    position: absolute;
-    width: 247px;
-    height: 103px;
-    left: 149px;
-    top: 1px;
-    background-color: #231712;        
-}
-.30 {
-    position: absolute;
-    left: 148px;
-    top: 0px;
-    width: 226px;
-    height: 84px;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: #493129;
-    border-right-color: #493129;
-    border-bottom-color: #493129;
-    border-left-color: #493129;
-    font-size: 15px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    box-shadow: 0 0 20px #1a110d inset;
-    overflow: hidden;
-    resize:none;
-}
 .31 {
     position: absolute;
     left: 50%;

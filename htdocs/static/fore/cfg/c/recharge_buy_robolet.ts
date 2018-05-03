@@ -6,11 +6,11 @@ export const vipcard = [
 		"desc":"undefined",
 		"price":25,
 		"diamond_count":250,
-		"vaild_time":30,
+		"vaild_time":100000,
 		"per_diamond":100,
 		"vip_exp":250,
-		"exp_add":0.25,
-		"money_add":0.5
+		"exp_add":0.15,
+		"money_add":0.3
 	},
 	{
 		"prop_id":661001,
@@ -18,11 +18,11 @@ export const vipcard = [
 		"desc":"undefined",
 		"price":9,
 		"diamond_count":90,
-		"vaild_time":7,
+		"vaild_time":100000,
 		"per_diamond":100,
 		"vip_exp":90,
-		"exp_add":0.25,
-		"money_add":0.5
+		"exp_add":0.15,
+		"money_add":0.3
 	}
 ];
 

@@ -4,12 +4,12 @@ let s:any = {};
 
     s = {};
     guide_cfg["1"] = guide_cfg["1"] || [];
-    s.widget = "app_b-wild-wild";guide_cfg["1"].music = "music-playermission";guide_cfg["1"].count = 10;guide_cfg["1"].trigger = `playermission.guide&&player.level<20&&chat.guide&&!wild.flagHitBoss`;guide_cfg["1"].widget = "app_b-wild-wild";guide_cfg["1"].guide_text = "去完成新手任务";
+    s.widget = "app_b-wild-wild";guide_cfg["1"].music = "music-playermission";guide_cfg["1"].count = 10;guide_cfg["1"].trigger = `playermission.guide&&player.level<50&&chat.guide&&!wild.flagHitBoss`;guide_cfg["1"].widget = "app_b-wild-wild";guide_cfg["1"].guide_text = "去完成新手任务";
     s = {};
     guide_cfg["1"] = guide_cfg["1"] || [];
     s.type = "force";s.name = "playermission";
     s.purpose = (db) => {
-        return db.player.level>20;
+        return db.player.level>50;
     };
     
     guide_cfg["1"].push(s);
@@ -292,7 +292,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["22"] = guide_cfg["22"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["22"].count = 1;guide_cfg["22"].trigger = `open_fun.id==${function_open.gest.id-1}`;guide_cfg["22"].widget = "app_b-wild-wild";guide_cfg["22"].guide_text = "开放阵法";guide_cfg["22"].fun_key = "gest";guide_cfg["22"].need = "1";guide_cfg["22"].need_map = "1";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["22"].count = 1;guide_cfg["22"].trigger = `open_fun.id==${function_open.gest.id-1}`;guide_cfg["22"].widget = "app_b-wild-wild";guide_cfg["22"].guide_text = "开放阵法";guide_cfg["22"].fun_key = "gest";guide_cfg["22"].need = "1";
     s = {};
     guide_cfg["22"] = guide_cfg["22"] || [];
     s.type = "force";s.name = "fun_open";
@@ -309,7 +309,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["23"] = guide_cfg["23"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["23"].count = 1;guide_cfg["23"].trigger = `open_fun.id==${function_open.gest_fb.id-1}`;guide_cfg["23"].widget = "app_b-wild-wild";guide_cfg["23"].guide_text = "开放心法奇遇";guide_cfg["23"].fun_key = "gest_fb";guide_cfg["23"].need = "1";guide_cfg["23"].need_map = "1";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["23"].count = 1;guide_cfg["23"].trigger = `open_fun.id==${function_open.gest_fb.id-1}`;guide_cfg["23"].widget = "app_b-wild-wild";guide_cfg["23"].guide_text = "开放心法奇遇";guide_cfg["23"].fun_key = "gest_fb";guide_cfg["23"].need = "1";
     s = {};
     guide_cfg["23"] = guide_cfg["23"] || [];
     s.type = "force";s.name = "fun_open";
@@ -326,7 +326,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["24"] = guide_cfg["24"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["24"].count = 1;guide_cfg["24"].trigger = `open_fun.id==${function_open.equip_red_forge.id-1}`;guide_cfg["24"].widget = "app_b-wild-wild";guide_cfg["24"].guide_text = "开放神装锻造";guide_cfg["24"].fun_key = "equip_red_forge";guide_cfg["24"].need = "1";guide_cfg["24"].need_map = "1";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["24"].count = 1;guide_cfg["24"].trigger = `open_fun.id==${function_open.equip_red_forge.id-1}`;guide_cfg["24"].widget = "app_b-wild-wild";guide_cfg["24"].guide_text = "开放神装锻造";guide_cfg["24"].fun_key = "equip_red_forge";guide_cfg["24"].need = "1";
     s = {};
     guide_cfg["24"] = guide_cfg["24"] || [];
     s.type = "force";s.name = "fun_open";
@@ -343,7 +343,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["25"] = guide_cfg["25"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["25"].count = 1;guide_cfg["25"].trigger = `open_fun.id==${function_open.equip_red_wash.id-1}`;guide_cfg["25"].widget = "app_b-wild-wild";guide_cfg["25"].guide_text = "开放神装洗练";guide_cfg["25"].fun_key = "equip_red_wash";guide_cfg["25"].need = "1";guide_cfg["25"].need_map = "1";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["25"].count = 1;guide_cfg["25"].trigger = `open_fun.id==${function_open.equip_red_wash.id-1}`;guide_cfg["25"].widget = "app_b-wild-wild";guide_cfg["25"].guide_text = "开放神装洗练";guide_cfg["25"].fun_key = "equip_red_wash";guide_cfg["25"].need = "1";
     s = {};
     guide_cfg["25"] = guide_cfg["25"] || [];
     s.type = "force";s.name = "fun_open";
@@ -377,7 +377,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["28"] = guide_cfg["28"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["28"].count = 1;guide_cfg["28"].trigger = `open_fun.id==${function_open.weapon_soul.id-1}`;guide_cfg["28"].widget = "app_b-wild-wild";guide_cfg["28"].guide_text = "开放赋灵";guide_cfg["28"].fun_key = "weapon_soul";guide_cfg["28"].need = "1";guide_cfg["28"].need_map = "1";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["28"].count = 1;guide_cfg["28"].trigger = `open_fun.id==${function_open.weapon_soul.id-1}`;guide_cfg["28"].widget = "app_b-wild-wild";guide_cfg["28"].guide_text = "开放赋灵";guide_cfg["28"].fun_key = "weapon_soul";guide_cfg["28"].need = "1";
     s = {};
     guide_cfg["28"] = guide_cfg["28"] || [];
     s.type = "force";s.name = "fun_open";
@@ -541,22 +541,22 @@ let s:any = {};
     
     s = {};
     guide_cfg["36"] = guide_cfg["36"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["36"].push(s);
     
     s = {};
     guide_cfg["36"] = guide_cfg["36"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["36"].push(s);
     
     s = {};
     guide_cfg["36"] = guide_cfg["36"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["36"].push(s);
     
     s = {};
     guide_cfg["36"] = guide_cfg["36"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["36"].push(s);
     
     s = {};
@@ -607,22 +607,22 @@ let s:any = {};
     
     s = {};
     guide_cfg["38"] = guide_cfg["38"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["38"].push(s);
     
     s = {};
     guide_cfg["38"] = guide_cfg["38"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["38"].push(s);
     
     s = {};
     guide_cfg["38"] = guide_cfg["38"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["38"].push(s);
     
     s = {};
     guide_cfg["38"] = guide_cfg["38"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["38"].push(s);
     
     s = {};
@@ -637,7 +637,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["39"] = guide_cfg["39"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["39"].music = "music-first_recharge";guide_cfg["39"].count = 1;guide_cfg["39"].trigger = `player.level>=10&&recharge.first_pay_gift_state.length==0&&!wild.flagHitBoss`;guide_cfg["39"].widget = "app_b-wild-wild";guide_cfg["39"].guide_text = "点击首充";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["39"].music = "music-first_recharge";guide_cfg["39"].count = 1;guide_cfg["39"].trigger = `player.level>=20&&recharge.first_pay_gift_state.length==0&&!wild.flagHitBoss`;guide_cfg["39"].widget = "app_b-wild-wild";guide_cfg["39"].guide_text = "点击首充";
     s = {};
     guide_cfg["39"] = guide_cfg["39"] || [];
     s.type = "force";s.name = "gotoFirstGift";
@@ -681,12 +681,12 @@ let s:any = {};
     
     s = {};
     guide_cfg["41"] = guide_cfg["41"] || [];
-    s.type = "force";s.name = "treasure_up";s.net_ok = "app/prop/treasure@hexagram_level_up";s.ignore = true;
+    s.type = "force";s.name = "treasure_up";s.ignore = true;
     guide_cfg["41"].push(s);
     
     s = {};
     guide_cfg["41"] = guide_cfg["41"] || [];
-    s.type = "force";s.name = "treasure_up";s.net_ok = "app/prop/treasure@hexagram_level_up";s.ignore = true;
+    s.type = "force";s.name = "treasure_up";s.ignore = true;
     guide_cfg["41"].push(s);
     
     s = {};
@@ -709,7 +709,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["42"] = guide_cfg["42"] || [];
-    s.type = "force";s.name = "level_up";s.net_ok = "app/prop/equip@level_up";s.ignore = true;
+    s.type = "force";s.name = "level_up";s.ignore = true;
     guide_cfg["42"].push(s);
     
     s = {};
@@ -737,7 +737,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["43"] = guide_cfg["43"] || [];
-    s.type = "force";s.name = "reclaim_1";s.net_ok = "app/prop/melt@melt";s.ignore = true;
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
     guide_cfg["43"].push(s);
     
     s = {};
@@ -793,7 +793,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["45"] = guide_cfg["45"] || [];
-    s.type = "force";s.name = "pet_up";s.net_ok = "app/prop/pet@star_up";s.ignore = true;
+    s.type = "force";s.name = "pet_up";s.ignore = true;
     guide_cfg["45"].push(s);
     
     s = {};
@@ -926,7 +926,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["52"] = guide_cfg["52"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["52"].count = 1;guide_cfg["52"].trigger = `open_fun.id>=${function_open.sevendays.id}&&sevendays&&!sevendays.record["1"]&&!wild.flagHitBoss`;guide_cfg["52"].widget = "app_b-wild-wild";guide_cfg["52"].guide_text = "七日活动";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["52"].count = 1;guide_cfg["52"].trigger = `open_fun.id>=${function_open.sevendays.id}&&sevendays&&!sevendays.record[db.sevendays.loginDay]&&!wild.flagHitBoss`;guide_cfg["52"].widget = "app_b-wild-wild";guide_cfg["52"].guide_text = "七日活动";
     s = {};
     guide_cfg["52"] = guide_cfg["52"] || [];
     s.type = "force";s.name = "gotoSevendaysAct";

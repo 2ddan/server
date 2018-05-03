@@ -848,30 +848,7 @@ let list = [
         ],
         tipKey: "mail",
         tipDetail: { "sid": 60013 }
-    },
-    /**
-     * 门派申请
-     */
-    {
-        depend: ["gang.data.apply_list", "gang.data.post"],
-        fun: [
-            [
-                ["==", function () {
-                    let post = db.get("gang.data.post") || 3;
-                    if (!post || post === 3) {
-                        return 0;
-                    }
-                    let apply_list = db.get("gang.data.apply_list");
-                    if (apply_list && apply_list.length > 0) {
-                        return 1;
-                    }
-                    return 0;
-                }, 1]
-            ]
-        ],
-        tipKey: `gang.apply`,
-        tipDetail: { "sid": 60040 }
-    },
+    }
     /**
      * 排行榜
      */

@@ -131,8 +131,6 @@
     width: 117px;;
     left:13px;
     top:20px;
-    background-image:url(./images/item_bg.png);
-    background-size:100% 100%;
 }
 .19{
     position: absolute;

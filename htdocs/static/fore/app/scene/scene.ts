@@ -98,7 +98,19 @@ export const set_cfg = (filesMap) => {
  * @description 设置canvas缩放
  * @param {number}c
  */
-export const setScale = (c) => {
+export const setScale = (c,flags) => {
+    let v,bv = 1.2;
+    if(flags.os.name != "android"){
+        scale = mgr_data.scale = bv+(c/1000-4)/10;
+        return;
+    }
+    v = parseInt(flags.os.version);
+    if(v){
+        scale = mgr_data.scale = bv+(v-7)/10;
+        return;
+    }
+
+    //基本无用
     if(c<100){
         scale = mgr_data.scale = .5;
         return;
@@ -106,8 +118,7 @@ export const setScale = (c) => {
     let m = c>350?1800:350,
         r = (1/m)*c;
     r = r>1?1:r;
-    scale = mgr_data.scale = 1+r/2;
-    //alert(c+","+scale);
+    scale = mgr_data.scale = 0.7+r/2;
 };
 
 /**
@@ -171,7 +182,7 @@ export class mgr {
             // console.log(FPS,rangFrame[2]);
             FPS = 0;
         }
-        if (now - lastTime < 1000 / rangFrame[2]) {
+        if (now - lastTime < 1000 / 20) {
             return;
         }
         lastTime = now;
@@ -251,7 +262,7 @@ export class mgr {
         width[name] = w * scale;
         height[name] = h * scale;
         resTab[name] = sceneData.resTab;
-        renderer.setSize(width[name], height[name]);
+        renderer.setSize(w, h);
         let scene1 = renderer.createScene(sceneData);
         scene[name] = scene1;
         //创建2D摄像机

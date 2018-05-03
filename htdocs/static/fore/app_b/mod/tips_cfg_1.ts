@@ -19,6 +19,11 @@ import { weekact_type_fore as weekact_type } from "cfg/c/weekact_type";
 //七日活动
 import { tips_7days } from "cfg/c/tips_7days";
 import { act_progress } from "app_b/mod/act_progress";
+//公会相关
+import { guild_activity } from "cfg/c/guild_activity";
+import { guild_upgrade } from "cfg/c/guild_upgrade";
+import { guild_build } from "cfg/c/guild_build";
+import { guild_skill } from "cfg/c/guild_skill";
 
 
 let list = [
@@ -146,6 +151,160 @@ let list = [
         ],
         tipKey: `role.pet.upgrade`,
         tipDetail: { "sid": 60040 }
+    },
+    /**
+     * 门派申请
+     */
+    {
+        depend: ["gang.data.apply_list", "gang.data.post"],
+        fun: [
+            [
+                ["==", function () {
+                    let post = db.get("gang.data.post") || 3;
+                    if (post === 3) {
+                        return 0;
+                    }
+                    let apply_list = db.get("gang.data.apply_list");
+                    if (apply_list && apply_list.length > 0) {
+                        return 1;
+                    }
+                    return 0;
+                }, 1]
+            ]
+        ],
+        tipKey: `gang.member.apply`,
+        tipDetail: { "sid": 60040 }
+    },
+    /**
+     * 领取每日俸禄
+     */
+    {
+        depend: ["gang.gangExpandData.gang_salary", "gang.data.gang_id"],
+        fun: [
+            [
+                [">=", function () {
+                    return db.get("gang.data.gang_id") || 0;
+                }, 1],
+                ["==", { dkey: "gang.gangExpandData.gang_salary" }, 0]
+            ]
+        ],
+        tipKey: `gang.info.salary`,
+        tipDetail: { "sid": 60040 }        
+    },
+    /**
+     * 门派日常任务领奖
+     */
+    {
+        depend: ["gang.gangExpandData.liveness_event_info", "gang.data.gang_id", "gang.gangExpandData.liveness_info"],
+        fun: [
+            [
+                [">=", function () {
+                    return db.get("gang.data.gang_id") || 0;
+                }, 1],
+                ["==", function () {
+                    let liveness_info = db.get("gang.gangExpandData.liveness_info");
+                    if (!liveness_info) {
+                        return 0;
+                    }
+                    let do_task = db.get("gang.gangExpandData.liveness_event_info");
+                    for (let i = 0, len = liveness_info.length; i < len; i++) {
+                        if (liveness_info[i] == 0) {
+                            if (do_task[guild_activity[i].type] >= guild_activity[i].param) {
+                                return 1;
+                            }
+                        }
+                    }
+                    return 0;
+                }, 1]
+            ]
+        ],
+        tipKey: `gang.info.activity`,
+        tipDetail: { "sid": 60040 }        
+    },
+    /**
+     * 建筑升级
+     */
+    {
+        depend: ["gang.gangExpandData.gang_money", "gang.data.gang_id", "gang.data.post"],
+        fun: [
+            [
+                [">=", function () {
+                    return db.get("gang.data.gang_id") || 0;
+                }, 1],
+                ["==", { dkey: "gang.data.post" }, 1],
+                ["==", function () {
+                    let gang_level = db.get("gang.data.gang_level") || 0;
+                    let gang_money = db.get("gang.gangExpandData.gang_money") || 0;
+                    if (gang_level == 0) {
+                        return 0;
+                    }
+                    //判断旗帜能否升级
+                    if (guild_upgrade[gang_level + 1] && gang_money >= guild_upgrade[gang_level].guild_money) {
+                        return 1;
+                    }
+                    let build;
+                    let build_level_info = db.get("gang.gangExpandData.build_level_info");
+                    //判断 藏经阁 能否升级
+                    build = guild_build[1][build_level_info[0]];
+                    if (gang_level >= build.flag_level && gang_money >= build.guild_money) {
+                        return 1;
+                    }
+                    //判断 藏宝阁 能否升级
+                    build = guild_build[2][build_level_info[1]];
+                    if (gang_level >= build.flag_level && gang_money >= build.guild_money) {
+                        return 1;
+                    }
+                    return 0;
+                }, 1]
+            ]
+        ],
+        tipKey: `gang.build.building`,
+        tipDetail: { "sid": 60040 }        
+    },
+    /**
+     * 公会绝学
+     */
+    {
+        depend: ["player.money", "gang.gangExpandData.own_contribute", "gang.data.gang_id"],
+        fun: [
+            [
+                [">=", function () {
+                    return db.get("gang.data.gang_id") || 0;
+                }, 1],
+                ["==", function () {
+                    let money = db.get("player.money");
+                    let own_contribute = db.get("gang.gangExpandData.own_contribute");
+                    let build = db.get("gang.gangExpandData.build_level_info");
+                    let role_gang_skill = db.get("gang.data.role_gang_skill");
+
+                    for (let i = 0, len = role_gang_skill.length; i < len; i++) {
+                        let skill = guild_skill[i + 1][role_gang_skill[i]];
+                        if (build[0] >= skill.limit.guild_level && money >= skill.cost.cost_money && own_contribute >= skill.cost.cost_contribute) {
+                            return 1
+                        }
+                    }
+                    return 0;
+                }, 1]
+            ]
+        ],
+        tipKey: `gang.info.skill`,
+        tipDetail: { "sid": 60040 }  
+    },
+    /**
+     * 荒野降魔 [奖励分配]
+     */
+    {
+        depend: ["publicboss.award_tip", "player.role_id"],
+        fun: [
+            [
+                [">=", function () {
+                    let id = db.get("player.role_id");
+                    return (db.get(`publicboss.award_tip.${id}`) || 0);
+                }, 1]
+            ]
+        ],
+        tipKey: `new_fun.public_boss.award`,
+        tipDetail: { "sid": 60040 }  
     }
 ];
 

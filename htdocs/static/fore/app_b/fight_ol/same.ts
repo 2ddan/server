@@ -1,4 +1,6 @@
 // ========================================= 导入
+//pi
+import { create, setInterval as setFrameInterval } from "pi/widget/frame_mgr";
 //mod
 import { data as db } from "app/mod/db";
 //fight
@@ -29,8 +31,9 @@ export class SMgr{
      * @param events 第一次初始化战斗事件，insert
      * @param func 战斗事件处理函数，根据每个同屏功能自己决定
      */
-    static start(type: string,events: Array<any>, func: Function){
+    static start(type: string,events: Array<any>, func: Function, navMesh?){
         fightScene = FMgr.create(type,1,Net);
+        fightScene.setNavMesh(navMesh);
         fightScene.listener = dealLocEvents;
         handlerList.set(type,func);
         dealFightEvents(events);
@@ -145,7 +148,7 @@ const dealLocEvents = (list) => {
         let e = blendOne(list.events[i]);
         if(e._type == EType.move || checkSelf(e)){
             // Move.filter(e.type,e);
-            handScene[e.type] && handScene[e.type](e, list.now);
+            handScene[e.type] && handScene[e.type](e, fightScene.now);
         }
     }
 }
@@ -191,7 +194,7 @@ class Handlers{
      * @param e 
      */
     static remove(e){
-        console.log("remove"+e.fighter)
+        // console.log("remove"+e.fighter)
         Request.remove({mapId:e.fighter},fightScene);
     }
     /**
@@ -247,3 +250,12 @@ net_message("order", (msg) => {
     h && h(events);
     dealFightEvents(events);
 });
+/**
+ * @description 设置帧管理
+ */
+(()=>{
+    let frame = create();
+    setFrameInterval(frame);
+    FMgr.startFrame(frame);
+})();
+

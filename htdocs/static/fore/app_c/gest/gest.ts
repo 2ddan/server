@@ -53,6 +53,14 @@ export const globalReceive = {
             globalSend("openNewFun", "gest_fb");
         }
     },
+    //心法兑换
+    gotoGestExchange: () => {
+        if (funIsOpen("gest_fb")) {
+            gestQuality = 4;
+            forelet.paint(getData());
+            open("app_c-gest-exchange-exchange", "gest_exchange");
+        }
+    },
     //退出战斗界面刷新canvas
     refreshGestFb : (type) => {
         let w = forelet.getWidget("app_c-gest-gest_fb-fb-fb");
@@ -72,12 +80,6 @@ export const globalReceive = {
 
 //前台操作
 export class Instance extends Widget {
-    // attach(): void {
-    //     let w : any = forelet.getWidget("app_c-gest-gest_fb-fb-fb");
-    //     if(w){
-            
-    //     }
-	// };
     goback = function (arg) {
         close(arg.widget);
     };
@@ -103,7 +105,7 @@ export class Instance extends Widget {
     refreshBoss() {
         logic.refresh()
     }
-    //红色阵法获取途径
+    //阵法获取途径
     gotoGetWay(id) {
         globalSend("gotoGetWay", id);
     }
@@ -200,7 +202,7 @@ let gest_data: any = {
     changeGest, //兑换的阵法
     gestAttr: any = {}, //阵法属性加成
     changeCost, //快速兑换消耗
-    diamondCost, //兑换消耗元宝
+    diamondCost; //兑换消耗元宝
     //gest_tip: any = {}; //阵法激活(升星)
 
 

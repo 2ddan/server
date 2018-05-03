@@ -138,7 +138,7 @@ const createTipsFun = function () {
         let divRoot = document.getElementById("bar");
         if (!divRoot) return;
         var divNode = document.createElement("div");
-        let style = `width:100%;font-size:20px;z-index:2;animation:barTip 1s forwards;position:relative;top:${msg.top||0}px;left:${msg.left||0}px;`;
+        let style = `width:100%;font-size:20px;z-index:2;animation:barTip 0.7s forwards;position:absolute;top:${msg.top||0}px;left:${msg.left||0}px;`;
         let t = time;
 
         divNode.setAttribute("style", style);

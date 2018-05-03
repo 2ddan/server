@@ -433,11 +433,12 @@ export class ShowFunTable {
         if (!headMesh) {
             if (fighter && fighter._show && fighter._show.old.ref && target && target._show && target._show.old && target._show.old.ref && target.show_type == 1) {
                 headMesh = {};
-                let width = root.getWidth() * mgr_data.scale,
-                    height = root.getHeight() * mgr_data.scale;
-                headMesh.x = (-width / 2 - 8) / 100;
-                headMesh.y = (height / 2) / 100;
+                let width = mgr_data["div"][mgr_data.name]["width"],
+                    height = mgr_data["div"][mgr_data.name]["height"];
+                headMesh.x = mgr_data.name == "wild" ? width * 0.2 - 40.5 :  width * 0.2 - 70.5;
+                headMesh.y = mgr_data.name == "wild" ? 10 : height * ((0 - 1) * 193/247) + 93.8866;
                 headMesh.z = 0;
+                headMesh.scale = mgr_data.name == "wild" ? (mgr_data.scale * (2/3)) : (mgr_data.scale * (2/2.7) + 0.11);
                 headMesh.level = target.level;
                 headMesh.name = target.name;
                 headMesh.hp = target.hp > 0 ? parseInt(target.hp) : 0;

@@ -1,6 +1,5 @@
 let tab = [];
 
-
     tab.push({
         "id": 1,
         "type": "guild_talk",
@@ -9,56 +8,56 @@ let tab = [];
         "desc": "门派发言2次",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 5,
+            "gain_guild_money": 5
         }
     })
     tab.push({
         "id": 2,
         "type": "today_con",
         "type_desc": "本日增加贡献值",
-        "param": 500,
-        "desc": "获得500贡献值",
+        "param": 1500,
+        "desc": "本日获得1500贡献值",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 20,
+            "gain_guild_money": 20
         }
     })
     tab.push({
         "id": 3,
         "type": "guild_fund",
         "type_desc": "本日个人产生的门派资金",
-        "param": 1000,
-        "desc": "产生1000门派资金",
+        "param": 500,
+        "desc": "本日贡献500门派资金",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 50,
+            "gain_guild_money": 50
         }
     })
     tab.push({
         "id": 4,
         "type": "guild_charge",
-        "type_desc": "进行祭天",
-        "param": 5,
-        "desc": "祭天5次",
+        "type_desc": "进行祈福",
+        "param": 2,
+        "desc": "祈福2次",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 10,
+            "gain_guild_money": 10
         }
     })
     tab.push({
         "id": 5,
         "type": "guild_charge2",
-        "type_desc": "进行元宝祭天",
-        "param": 3,
-        "desc": "【慷慨解囊】与【乾坤一掷】合计3次",
+        "type_desc": "进行元宝祈福",
+        "param": 5,
+        "desc": "使用元宝祈福合计5次",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 50,
+            "gain_guild_money": 50
         }
     })
     tab.push({
@@ -69,8 +68,8 @@ let tab = [];
         "desc": "领取本日门派俸禄",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 5,
+            "gain_guild_money": 5
         }
     })
     tab.push({
@@ -81,8 +80,8 @@ let tab = [];
         "desc": "升级门派技能1次",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 20,
+            "gain_guild_money": 20
         }
     })
     tab.push({
@@ -93,20 +92,20 @@ let tab = [];
         "desc": "门派商店购买1次",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 5,
+            "gain_guild_money": 5
         }
     })
     tab.push({
         "id": 9,
         "type": "guild_challenge",
         "type_desc": "门派BOSS挑战次数",
-        "param": 3,
-        "desc": "本日挑战过3次门派BOSS",
+        "param": 2,
+        "desc": "本日挑战过2次门派BOSS",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 20,
+            "gain_guild_money": 20
         }
     })
     tab.push({
@@ -117,8 +116,8 @@ let tab = [];
         "desc": "参与过本日的捐献",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 10,
+            "gain_guild_money": 10
         }
     })
     tab.push({
@@ -129,8 +128,8 @@ let tab = [];
         "desc": "完成1轮门派捐献",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 20,
+            "gain_guild_money": 20
         }
     })
     tab.push({
@@ -141,8 +140,8 @@ let tab = [];
         "desc": "完成8个门派活动",
         "icon": "",
         "award": {
-            "gain_contribute": 500,
-            "gain_guild_money": 500
+            "gain_contribute": 25,
+            "gain_guild_money": 25
         }
     })
 

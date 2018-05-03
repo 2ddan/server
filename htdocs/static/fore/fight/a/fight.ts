@@ -32,6 +32,7 @@
  // ================================ 导入
 //pi
 import { NavMesh } from "pi/ecs/navmesh";
+
 //fight
 import { Fighter , Skill, Buff } from "./class";
 import { EType, blend } from "./analyze";
@@ -190,9 +191,13 @@ export class FMgr{
      */
     static scenesId = 1
     /**
-     * @description 帧率,frameMgr帧率是16ms,所以控制在最多3帧跑一次战斗计算
+     * @description 帧率20,50sm/f
      */
-    static frame = 48
+    static FPS = 20
+    /**
+     * @description 帧管理器
+     */
+    static frame
     /**
      * @description 后台通讯接口列表
      */
@@ -235,14 +240,11 @@ export class FMgr{
     /**
      * @description 设置战斗主循环到帧管理器，每16ms进一次
      */
-    static setFrame(frameMgr: any):void{
-        let t = Date.now();
-        frameMgr.setPermanent(()=>{
-            let tt = Date.now();
-            if(tt-t>=this.frame){
-                this.loop();
-                t = tt;
-            }
+    static startFrame(frame):void{
+        this.frame = frame;
+        this.frame.setInterval(1000/this.FPS);
+        this.frame.setPermanent(()=>{
+            this.loop();
         })
     }
     /**
@@ -263,8 +265,22 @@ export class FMgr{
             this.server[type](param,callback);
         }
     }
+    /**
+     * @description 创建寻路对象
+     * @param 
+     */
+     static createNavMesh(d){
+        const navMesh = new NavMesh();
+        //加载场景寻路配置   
+        navMesh.load(d);
+        return navMesh;
+     }
 }
  // ================================ 本地
 
-
+ // ================================ 立即执行
+ /**
+  * @description 开始循环
+  */
+//  FMgr.startFrame();
 

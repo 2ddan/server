@@ -20,14 +20,14 @@
 					{{let name11 = checkTypeof(cnt.name,"Array") ? cnt.name[cnt.career_id.indexOf(career_id)] : cnt.name}}
 					<div style="position: relative;display: inline-block;width: 82px;height: 82px;margin:0 10px 25px;text-align: center;">
 						{{let img = Pi.pictures[icon]}}
-						<widget  w-tag="app_a-widget-prop-base" >
+						<widget w-tag="app_a-widget-prop-base" >
 							{"prop":{{cnt}},"url":{{img}},"color":"#ffeee2","count":{{cnt.count?cnt.count:1}},"width":80,"height":80,"name":{{name11}} }
 						</widget>
 					</div>
 					{{end}}
 					{{end}}
 
-					{{let special = {"money":100001,"diamond":100002,"add_exp":100003,"rmb":100002,"exp":100003,"spirit":100004,"gest_coin":100019,"treasure_coin":100016,"partner_coin":100013,"weapon_coin":100009,"soul_coin":100008,"equip_coin":100005, "diamond_gest_coin":100020,"gang_contribute_coin":100027,"vip_exp":100255,"own_contribute":100027} }}
+					{{let special = {"money":100001,"diamond":100002,"add_exp":100003,"rmb":100002,"exp":100003,"spirit":100004,"gest_coin":100019,"treasure_coin":100016,"partner_coin":100013,"weapon_coin":100009,"soul_coin":100008,"equip_coin":100005, "diamond_gest_coin":100020,"vip_exp":100255,"gang_contribute":150005} }}
 					
 					{{if it.player}}
 					{{for i in it.player}}

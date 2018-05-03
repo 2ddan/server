@@ -1,13 +1,13 @@
 import { Pi } from "app/mod/pi";
 var s, table,arr = [], min = 99999999, max = 0,
-key=["id","addition_attr","base_attr","grade","level","lock","type","slot","name","career_id","module","drop_module","quality","wash","describe","base_num","base_float","addition_num","addition_float","grade_rate","folder_pos"];
+key=["id","addition_attr","base_attr","grade","level","lock","type","slot","name","career_id","module","drop_module","quality","wash","describe","base_num","base_float","addition_num","addition_float","grade_rate","folder_pos","best_equip"];
 if(!Pi.sample) {
 Pi.sample = {};
 };
+
 table = Pi.sample;
 
-arr.push([
-420001,
+arr.push([420001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -27,11 +27,10 @@ arr.push([
     [["critical",4]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420002,
+arr.push([420002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -51,11 +50,10 @@ arr.push([
     [["dodge",4]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420003,
+arr.push([420003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -75,11 +73,10 @@ arr.push([
     [["attack",23]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420004,
+arr.push([420004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -99,11 +96,10 @@ arr.push([
     [["max_hp",745]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420005,
+arr.push([420005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -123,11 +119,10 @@ arr.push([
     [["attack",23]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420006,
+arr.push([420006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -147,11 +142,10 @@ arr.push([
     [["un_defence",17]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420007,
+arr.push([420007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -171,11 +165,10 @@ arr.push([
     [["un_critical",4]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420008,
+arr.push([420008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -195,11 +188,10 @@ arr.push([
     [["defence",17]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420009,
+arr.push([420009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -219,11 +211,10 @@ arr.push([
     [["un_dodge",4]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420010,
+arr.push([420010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -243,15 +234,14 @@ arr.push([
     [["max_hp",745]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420101,
+arr.push([420101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -267,15 +257,14 @@ arr.push([
     [["critical",14]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420102,
+arr.push([420102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -291,15 +280,14 @@ arr.push([
     [["dodge",14]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420103,
+arr.push([420103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -315,15 +303,14 @@ arr.push([
     [["attack",82]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420104,
+arr.push([420104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -339,15 +326,14 @@ arr.push([
     [["max_hp",2141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420105,
+arr.push([420105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -363,15 +349,14 @@ arr.push([
     [["attack",82]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420106,
+arr.push([420106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -387,15 +372,14 @@ arr.push([
     [["un_defence",46]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420107,
+arr.push([420107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -411,15 +395,14 @@ arr.push([
     [["un_critical",14]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420108,
+arr.push([420108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -435,15 +418,14 @@ arr.push([
     [["defence",46]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420109,
+arr.push([420109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -459,15 +441,14 @@ arr.push([
     [["un_dodge",14]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420110,
+arr.push([420110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -483,15 +464,14 @@ arr.push([
     [["max_hp",2141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420201,
+arr.push([420201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -507,15 +487,14 @@ arr.push([
     [["critical",27]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420202,
+arr.push([420202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -531,15 +510,14 @@ arr.push([
     [["dodge",27]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420203,
+arr.push([420203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -555,15 +533,14 @@ arr.push([
     [["attack",160]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420204,
+arr.push([420204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -579,15 +556,14 @@ arr.push([
     [["max_hp",6471]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420205,
+arr.push([420205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -603,15 +579,14 @@ arr.push([
     [["attack",160]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420206,
+arr.push([420206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -627,15 +602,14 @@ arr.push([
     [["un_defence",85]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420207,
+arr.push([420207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -651,15 +625,14 @@ arr.push([
     [["un_critical",27]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420208,
+arr.push([420208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -675,15 +648,14 @@ arr.push([
     [["defence",85]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420209,
+arr.push([420209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -699,15 +671,14 @@ arr.push([
     [["un_dodge",27]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420210,
+arr.push([420210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -723,15 +694,14 @@ arr.push([
     [["max_hp",6471]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420301,
+arr.push([420301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -747,15 +717,14 @@ arr.push([
     [["critical",42]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420302,
+arr.push([420302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -771,15 +740,14 @@ arr.push([
     [["dodge",42]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420303,
+arr.push([420303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -795,15 +763,14 @@ arr.push([
     [["attack",252]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420304,
+arr.push([420304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -819,15 +786,14 @@ arr.push([
     [["max_hp",10281]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420305,
+arr.push([420305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -843,15 +809,14 @@ arr.push([
     [["attack",252]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420306,
+arr.push([420306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -867,15 +832,14 @@ arr.push([
     [["un_defence",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420307,
+arr.push([420307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -891,15 +855,14 @@ arr.push([
     [["un_critical",42]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420308,
+arr.push([420308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -915,15 +878,14 @@ arr.push([
     [["defence",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420309,
+arr.push([420309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -939,15 +901,14 @@ arr.push([
     [["un_dodge",42]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420310,
+arr.push([420310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -963,15 +924,14 @@ arr.push([
     [["max_hp",10281]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420401,
+arr.push([420401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -987,15 +947,14 @@ arr.push([
     [["critical",59]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420402,
+arr.push([420402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -1011,15 +970,14 @@ arr.push([
     [["dodge",59]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420403,
+arr.push([420403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -1035,15 +993,14 @@ arr.push([
     [["attack",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420404,
+arr.push([420404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -1059,15 +1016,14 @@ arr.push([
     [["max_hp",14555]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420405,
+arr.push([420405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -1083,15 +1039,14 @@ arr.push([
     [["attack",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420406,
+arr.push([420406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -1107,15 +1062,14 @@ arr.push([
     [["un_defence",182]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420407,
+arr.push([420407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -1131,15 +1085,14 @@ arr.push([
     [["un_critical",59]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420408,
+arr.push([420408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -1155,15 +1108,14 @@ arr.push([
     [["defence",182]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420409,
+arr.push([420409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -1179,15 +1131,14 @@ arr.push([
     [["un_dodge",59]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420410,
+arr.push([420410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -1203,15 +1154,14 @@ arr.push([
     [["max_hp",14555]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420501,
+arr.push([420501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -1227,15 +1177,14 @@ arr.push([
     [["critical",78]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420502,
+arr.push([420502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -1251,15 +1200,14 @@ arr.push([
     [["dodge",78]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420503,
+arr.push([420503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -1275,15 +1223,14 @@ arr.push([
     [["attack",466]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420504,
+arr.push([420504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -1299,15 +1246,14 @@ arr.push([
     [["max_hp",19228]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420505,
+arr.push([420505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -1323,15 +1269,14 @@ arr.push([
     [["attack",466]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420506,
+arr.push([420506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -1347,15 +1292,14 @@ arr.push([
     [["un_defence",238]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420507,
+arr.push([420507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -1371,15 +1315,14 @@ arr.push([
     [["un_critical",78]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420508,
+arr.push([420508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -1395,15 +1338,14 @@ arr.push([
     [["defence",238]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420509,
+arr.push([420509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -1419,15 +1361,14 @@ arr.push([
     [["un_dodge",78]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420510,
+arr.push([420510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -1443,15 +1384,14 @@ arr.push([
     [["max_hp",19228]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420601,
+arr.push([420601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -1467,15 +1407,14 @@ arr.push([
     [["critical",98]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420602,
+arr.push([420602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -1491,15 +1430,14 @@ arr.push([
     [["dodge",98]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420603,
+arr.push([420603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -1515,15 +1453,14 @@ arr.push([
     [["attack",587]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420604,
+arr.push([420604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -1539,15 +1476,14 @@ arr.push([
     [["max_hp",24255]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420605,
+arr.push([420605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -1563,15 +1499,14 @@ arr.push([
     [["attack",587]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420606,
+arr.push([420606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -1587,15 +1522,14 @@ arr.push([
     [["un_defence",298]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420607,
+arr.push([420607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -1611,15 +1545,14 @@ arr.push([
     [["un_critical",98]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420608,
+arr.push([420608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -1635,15 +1568,14 @@ arr.push([
     [["defence",298]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420609,
+arr.push([420609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -1659,15 +1591,14 @@ arr.push([
     [["un_dodge",98]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420610,
+arr.push([420610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -1683,15 +1614,14 @@ arr.push([
     [["max_hp",24255]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420701,
+arr.push([420701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -1707,15 +1637,14 @@ arr.push([
     [["critical",119]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420702,
+arr.push([420702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -1731,15 +1660,14 @@ arr.push([
     [["dodge",119]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420703,
+arr.push([420703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -1755,15 +1683,14 @@ arr.push([
     [["attack",715]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420704,
+arr.push([420704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -1779,15 +1706,14 @@ arr.push([
     [["max_hp",29602]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420705,
+arr.push([420705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -1803,15 +1729,14 @@ arr.push([
     [["attack",715]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420706,
+arr.push([420706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -1827,15 +1752,14 @@ arr.push([
     [["un_defence",362]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420707,
+arr.push([420707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -1851,15 +1775,14 @@ arr.push([
     [["un_critical",119]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420708,
+arr.push([420708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -1875,15 +1798,14 @@ arr.push([
     [["defence",362]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420709,
+arr.push([420709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -1899,15 +1821,14 @@ arr.push([
     [["un_dodge",119]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420710,
+arr.push([420710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -1923,15 +1844,14 @@ arr.push([
     [["max_hp",29602]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420801,
+arr.push([420801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -1947,15 +1867,14 @@ arr.push([
     [["critical",141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420802,
+arr.push([420802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -1971,15 +1890,14 @@ arr.push([
     [["dodge",141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420803,
+arr.push([420803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -1995,15 +1913,14 @@ arr.push([
     [["attack",851]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420804,
+arr.push([420804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -2019,15 +1936,14 @@ arr.push([
     [["max_hp",35241]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420805,
+arr.push([420805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -2043,15 +1959,14 @@ arr.push([
     [["attack",851]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420806,
+arr.push([420806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -2067,15 +1982,14 @@ arr.push([
     [["un_defence",430]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420807,
+arr.push([420807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -2091,15 +2005,14 @@ arr.push([
     [["un_critical",141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420808,
+arr.push([420808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -2115,15 +2028,14 @@ arr.push([
     [["defence",430]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420809,
+arr.push([420809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -2139,15 +2051,14 @@ arr.push([
     [["un_dodge",141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420810,
+arr.push([420810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -2163,15 +2074,14 @@ arr.push([
     [["max_hp",35241]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420901,
+arr.push([420901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -2187,15 +2097,14 @@ arr.push([
     [["critical",165]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420902,
+arr.push([420902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -2211,15 +2120,14 @@ arr.push([
     [["dodge",165]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420903,
+arr.push([420903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -2235,15 +2143,14 @@ arr.push([
     [["attack",992]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420904,
+arr.push([420904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -2259,15 +2166,14 @@ arr.push([
     [["max_hp",41153]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420905,
+arr.push([420905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -2283,15 +2189,14 @@ arr.push([
     [["attack",992]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420906,
+arr.push([420906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -2307,15 +2212,14 @@ arr.push([
     [["un_defence",501]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420907,
+arr.push([420907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -2331,15 +2235,14 @@ arr.push([
     [["un_critical",165]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420908,
+arr.push([420908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -2355,15 +2258,14 @@ arr.push([
     [["defence",501]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420909,
+arr.push([420909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -2379,15 +2281,14 @@ arr.push([
     [["un_dodge",165]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-420910,
+arr.push([420910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -2403,15 +2304,14 @@ arr.push([
     [["max_hp",41153]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421001,
+arr.push([421001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -2427,15 +2327,14 @@ arr.push([
     [["critical",190]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421002,
+arr.push([421002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -2451,15 +2350,14 @@ arr.push([
     [["dodge",190]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421003,
+arr.push([421003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -2475,15 +2373,14 @@ arr.push([
     [["attack",1140]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421004,
+arr.push([421004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -2499,15 +2396,14 @@ arr.push([
     [["max_hp",47320]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421005,
+arr.push([421005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -2523,15 +2419,14 @@ arr.push([
     [["attack",1140]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421006,
+arr.push([421006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -2547,15 +2442,14 @@ arr.push([
     [["un_defence",575]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421007,
+arr.push([421007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -2571,15 +2465,14 @@ arr.push([
     [["un_critical",190]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421008,
+arr.push([421008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -2595,15 +2488,14 @@ arr.push([
     [["defence",575]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421009,
+arr.push([421009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -2619,15 +2511,14 @@ arr.push([
     [["un_dodge",190]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421010,
+arr.push([421010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -2643,15 +2534,14 @@ arr.push([
     [["max_hp",47320]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421101,
+arr.push([421101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -2667,15 +2557,14 @@ arr.push([
     [["critical",215]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421102,
+arr.push([421102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -2691,15 +2580,14 @@ arr.push([
     [["dodge",215]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421103,
+arr.push([421103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -2715,15 +2603,14 @@ arr.push([
     [["attack",1294]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421104,
+arr.push([421104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -2739,15 +2626,14 @@ arr.push([
     [["max_hp",53726]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421105,
+arr.push([421105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -2763,15 +2649,14 @@ arr.push([
     [["attack",1294]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421106,
+arr.push([421106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -2787,15 +2672,14 @@ arr.push([
     [["un_defence",652]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421107,
+arr.push([421107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -2811,15 +2695,14 @@ arr.push([
     [["un_critical",215]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421108,
+arr.push([421108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -2835,15 +2718,14 @@ arr.push([
     [["defence",652]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421109,
+arr.push([421109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -2859,15 +2741,14 @@ arr.push([
     [["un_dodge",215]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421110,
+arr.push([421110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -2883,15 +2764,14 @@ arr.push([
     [["max_hp",53726]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421201,
+arr.push([421201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -2907,15 +2787,14 @@ arr.push([
     [["critical",242]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421202,
+arr.push([421202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -2931,15 +2810,14 @@ arr.push([
     [["dodge",242]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421203,
+arr.push([421203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -2955,15 +2833,14 @@ arr.push([
     [["attack",1453]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421204,
+arr.push([421204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -2979,15 +2856,14 @@ arr.push([
     [["max_hp",60358]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421205,
+arr.push([421205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -3003,15 +2879,14 @@ arr.push([
     [["attack",1453]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421206,
+arr.push([421206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -3027,15 +2902,14 @@ arr.push([
     [["un_defence",731]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421207,
+arr.push([421207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -3051,15 +2925,14 @@ arr.push([
     [["un_critical",242]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421208,
+arr.push([421208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -3075,15 +2948,14 @@ arr.push([
     [["defence",731]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421209,
+arr.push([421209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -3099,15 +2971,14 @@ arr.push([
     [["un_dodge",242]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421210,
+arr.push([421210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -3123,15 +2994,14 @@ arr.push([
     [["max_hp",60358]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421301,
+arr.push([421301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -3147,15 +3017,14 @@ arr.push([
     [["critical",269]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421302,
+arr.push([421302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -3171,15 +3040,14 @@ arr.push([
     [["dodge",269]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421303,
+arr.push([421303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -3195,15 +3063,14 @@ arr.push([
     [["attack",1618]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421304,
+arr.push([421304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -3219,15 +3086,14 @@ arr.push([
     [["max_hp",67207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421305,
+arr.push([421305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -3243,15 +3109,14 @@ arr.push([
     [["attack",1618]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421306,
+arr.push([421306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -3267,15 +3132,14 @@ arr.push([
     [["un_defence",813]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421307,
+arr.push([421307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -3291,15 +3155,14 @@ arr.push([
     [["un_critical",269]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421308,
+arr.push([421308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -3315,15 +3178,14 @@ arr.push([
     [["defence",813]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421309,
+arr.push([421309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -3339,15 +3201,14 @@ arr.push([
     [["un_dodge",269]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421310,
+arr.push([421310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -3363,15 +3224,14 @@ arr.push([
     [["max_hp",67207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421401,
+arr.push([421401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -3387,15 +3247,14 @@ arr.push([
     [["critical",297]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421402,
+arr.push([421402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -3411,15 +3270,14 @@ arr.push([
     [["dodge",297]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421403,
+arr.push([421403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -3435,15 +3293,14 @@ arr.push([
     [["attack",1787]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421404,
+arr.push([421404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -3459,15 +3316,14 @@ arr.push([
     [["max_hp",74262]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421405,
+arr.push([421405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -3483,15 +3339,14 @@ arr.push([
     [["attack",1787]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421406,
+arr.push([421406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -3507,15 +3362,14 @@ arr.push([
     [["un_defence",898]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421407,
+arr.push([421407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -3531,15 +3385,14 @@ arr.push([
     [["un_critical",297]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421408,
+arr.push([421408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -3555,15 +3408,14 @@ arr.push([
     [["defence",898]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421409,
+arr.push([421409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -3579,15 +3431,14 @@ arr.push([
     [["un_dodge",297]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421410,
+arr.push([421410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -3603,15 +3454,14 @@ arr.push([
     [["max_hp",74262]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421501,
+arr.push([421501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -3627,15 +3477,14 @@ arr.push([
     [["critical",326]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421502,
+arr.push([421502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -3651,15 +3500,14 @@ arr.push([
     [["dodge",326]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421503,
+arr.push([421503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -3675,15 +3523,14 @@ arr.push([
     [["attack",1961]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421504,
+arr.push([421504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -3699,15 +3546,14 @@ arr.push([
     [["max_hp",81514]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421505,
+arr.push([421505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -3723,15 +3569,14 @@ arr.push([
     [["attack",1961]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421506,
+arr.push([421506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -3747,15 +3592,14 @@ arr.push([
     [["un_defence",985]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421507,
+arr.push([421507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -3771,15 +3615,14 @@ arr.push([
     [["un_critical",326]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421508,
+arr.push([421508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -3795,15 +3638,14 @@ arr.push([
     [["defence",985]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421509,
+arr.push([421509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -3819,15 +3661,14 @@ arr.push([
     [["un_dodge",326]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-421510,
+arr.push([421510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -3843,11 +3684,10 @@ arr.push([
     [["max_hp",81514]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430001,
+arr.push([430001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3867,11 +3707,10 @@ arr.push([
     [["critical",7],["un_defence",24]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430002,
+arr.push([430002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3891,11 +3730,10 @@ arr.push([
     [["dodge",7],["max_hp",1002]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430003,
+arr.push([430003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3915,11 +3753,10 @@ arr.push([
     [["attack",28],["dodge",7]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430004,
+arr.push([430004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3939,11 +3776,10 @@ arr.push([
     [["max_hp",1002],["un_critical",7]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430005,
+arr.push([430005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3963,11 +3799,10 @@ arr.push([
     [["attack",28],["un_dodge",7]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430006,
+arr.push([430006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -3987,11 +3822,10 @@ arr.push([
     [["un_defence",24],["attack",28]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430007,
+arr.push([430007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -4011,11 +3845,10 @@ arr.push([
     [["un_critical",7],["defence",24]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430008,
+arr.push([430008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -4035,11 +3868,10 @@ arr.push([
     [["defence",24],["critical",7]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430009,
+arr.push([430009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -4059,11 +3891,10 @@ arr.push([
     [["defence",24],["un_dodge",7]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430010,
+arr.push([430010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -4083,15 +3914,14 @@ arr.push([
     [["max_hp",1002],["un_defence",24]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430101,
+arr.push([430101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -4107,15 +3937,14 @@ arr.push([
     [["critical",18],["un_defence",55]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430102,
+arr.push([430102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -4131,15 +3960,14 @@ arr.push([
     [["dodge",14],["max_hp",3646]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430103,
+arr.push([430103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -4155,15 +3983,14 @@ arr.push([
     [["attack",92],["dodge",14]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430104,
+arr.push([430104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -4179,15 +4006,14 @@ arr.push([
     [["max_hp",3646],["un_critical",18]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430105,
+arr.push([430105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -4203,15 +4029,14 @@ arr.push([
     [["attack",92],["un_dodge",18]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430106,
+arr.push([430106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -4227,15 +4052,14 @@ arr.push([
     [["un_defence",55],["attack",92]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430107,
+arr.push([430107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -4251,15 +4075,14 @@ arr.push([
     [["un_critical",18],["defence",55]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430108,
+arr.push([430108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -4275,15 +4098,14 @@ arr.push([
     [["defence",55],["critical",18]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430109,
+arr.push([430109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -4299,15 +4121,14 @@ arr.push([
     [["defence",55],["un_dodge",18]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430110,
+arr.push([430110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -4323,15 +4144,14 @@ arr.push([
     [["max_hp",3646],["un_defence",55]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430201,
+arr.push([430201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -4347,15 +4167,14 @@ arr.push([
     [["critical",32],["un_defence",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430202,
+arr.push([430202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -4371,15 +4190,14 @@ arr.push([
     [["dodge",27],["max_hp",7135]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430203,
+arr.push([430203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -4395,15 +4213,14 @@ arr.push([
     [["attack",175],["dodge",27]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430204,
+arr.push([430204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -4419,15 +4236,14 @@ arr.push([
     [["max_hp",7135],["un_critical",32]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430205,
+arr.push([430205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -4443,15 +4259,14 @@ arr.push([
     [["attack",175],["un_dodge",32]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430206,
+arr.push([430206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -4467,15 +4282,14 @@ arr.push([
     [["un_defence",97],["attack",175]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430207,
+arr.push([430207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -4491,15 +4305,14 @@ arr.push([
     [["un_critical",32],["defence",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430208,
+arr.push([430208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -4515,15 +4328,14 @@ arr.push([
     [["defence",97],["critical",32]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430209,
+arr.push([430209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -4539,15 +4351,14 @@ arr.push([
     [["defence",97],["un_dodge",32]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430210,
+arr.push([430210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -4563,15 +4374,14 @@ arr.push([
     [["max_hp",7135],["un_defence",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430301,
+arr.push([430301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -4587,15 +4397,14 @@ arr.push([
     [["critical",48],["un_defence",146]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430302,
+arr.push([430302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -4611,15 +4420,14 @@ arr.push([
     [["dodge",42],["max_hp",11237]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430303,
+arr.push([430303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -4635,15 +4443,14 @@ arr.push([
     [["attack",274],["dodge",42]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430304,
+arr.push([430304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -4659,15 +4466,14 @@ arr.push([
     [["max_hp",11237],["un_critical",48]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430305,
+arr.push([430305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -4683,15 +4489,14 @@ arr.push([
     [["attack",274],["un_dodge",48]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430306,
+arr.push([430306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -4707,15 +4512,14 @@ arr.push([
     [["un_defence",146],["attack",274]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430307,
+arr.push([430307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -4731,15 +4535,14 @@ arr.push([
     [["un_critical",48],["defence",146]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430308,
+arr.push([430308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -4755,15 +4558,14 @@ arr.push([
     [["defence",146],["critical",48]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430309,
+arr.push([430309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -4779,15 +4581,14 @@ arr.push([
     [["defence",146],["un_dodge",48]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430310,
+arr.push([430310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -4803,15 +4604,14 @@ arr.push([
     [["max_hp",11237],["un_defence",146]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430401,
+arr.push([430401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -4827,15 +4627,14 @@ arr.push([
     [["critical",66],["un_defence",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430402,
+arr.push([430402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -4851,15 +4650,14 @@ arr.push([
     [["dodge",59],["max_hp",15840]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430403,
+arr.push([430403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -4875,15 +4673,14 @@ arr.push([
     [["attack",384],["dodge",59]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430404,
+arr.push([430404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -4899,15 +4696,14 @@ arr.push([
     [["max_hp",15840],["un_critical",66]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430405,
+arr.push([430405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -4923,15 +4719,14 @@ arr.push([
     [["attack",384],["un_dodge",66]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430406,
+arr.push([430406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -4947,15 +4742,14 @@ arr.push([
     [["un_defence",202],["attack",384]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430407,
+arr.push([430407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -4971,15 +4765,14 @@ arr.push([
     [["un_critical",66],["defence",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430408,
+arr.push([430408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -4995,15 +4788,14 @@ arr.push([
     [["defence",202],["critical",66]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430409,
+arr.push([430409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -5019,15 +4811,14 @@ arr.push([
     [["defence",202],["un_dodge",66]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430410,
+arr.push([430410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -5043,15 +4834,14 @@ arr.push([
     [["max_hp",15840],["un_defence",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430501,
+arr.push([430501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -5067,15 +4857,14 @@ arr.push([
     [["critical",86],["un_defence",262]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430502,
+arr.push([430502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -5091,15 +4880,14 @@ arr.push([
     [["dodge",78],["max_hp",20873]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430503,
+arr.push([430503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -5115,15 +4903,14 @@ arr.push([
     [["attack",505],["dodge",78]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430504,
+arr.push([430504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -5139,15 +4926,14 @@ arr.push([
     [["max_hp",20873],["un_critical",86]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430505,
+arr.push([430505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -5163,15 +4949,14 @@ arr.push([
     [["attack",505],["un_dodge",86]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430506,
+arr.push([430506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -5187,15 +4972,14 @@ arr.push([
     [["un_defence",262],["attack",505]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430507,
+arr.push([430507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -5211,15 +4995,14 @@ arr.push([
     [["un_critical",86],["defence",262]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430508,
+arr.push([430508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -5235,15 +5018,14 @@ arr.push([
     [["defence",262],["critical",86]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430509,
+arr.push([430509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -5259,15 +5041,14 @@ arr.push([
     [["defence",262],["un_dodge",86]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430510,
+arr.push([430510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -5283,15 +5064,14 @@ arr.push([
     [["max_hp",20873],["un_defence",262]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430601,
+arr.push([430601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -5307,15 +5087,14 @@ arr.push([
     [["critical",108],["un_defence",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430602,
+arr.push([430602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -5331,15 +5110,14 @@ arr.push([
     [["dodge",98],["max_hp",26286]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430603,
+arr.push([430603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -5355,15 +5133,14 @@ arr.push([
     [["attack",635],["dodge",98]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430604,
+arr.push([430604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -5379,15 +5156,14 @@ arr.push([
     [["max_hp",26286],["un_critical",108]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430605,
+arr.push([430605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -5403,15 +5179,14 @@ arr.push([
     [["attack",635],["un_dodge",108]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430606,
+arr.push([430606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -5427,15 +5202,14 @@ arr.push([
     [["un_defence",327],["attack",635]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430607,
+arr.push([430607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -5451,15 +5225,14 @@ arr.push([
     [["un_critical",108],["defence",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430608,
+arr.push([430608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -5475,15 +5248,14 @@ arr.push([
     [["defence",327],["critical",108]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430609,
+arr.push([430609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -5499,15 +5271,14 @@ arr.push([
     [["defence",327],["un_dodge",108]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430610,
+arr.push([430610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -5523,15 +5294,14 @@ arr.push([
     [["max_hp",26286],["un_defence",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430701,
+arr.push([430701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -5547,15 +5317,14 @@ arr.push([
     [["critical",131],["un_defence",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430702,
+arr.push([430702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -5571,15 +5340,14 @@ arr.push([
     [["dodge",119],["max_hp",32044]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430703,
+arr.push([430703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -5595,15 +5363,14 @@ arr.push([
     [["attack",773],["dodge",119]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430704,
+arr.push([430704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -5619,15 +5386,14 @@ arr.push([
     [["max_hp",32044],["un_critical",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430705,
+arr.push([430705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -5643,15 +5409,14 @@ arr.push([
     [["attack",773],["un_dodge",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430706,
+arr.push([430706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -5667,15 +5432,14 @@ arr.push([
     [["un_defence",396],["attack",773]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430707,
+arr.push([430707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -5691,15 +5455,14 @@ arr.push([
     [["un_critical",131],["defence",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430708,
+arr.push([430708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -5715,15 +5478,14 @@ arr.push([
     [["defence",396],["critical",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430709,
+arr.push([430709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -5739,15 +5501,14 @@ arr.push([
     [["defence",396],["un_dodge",131]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430710,
+arr.push([430710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -5763,15 +5524,14 @@ arr.push([
     [["max_hp",32044],["un_defence",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430801,
+arr.push([430801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -5787,15 +5547,14 @@ arr.push([
     [["critical",155],["un_defence",469]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430802,
+arr.push([430802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -5811,15 +5570,14 @@ arr.push([
     [["dodge",141],["max_hp",38117]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430803,
+arr.push([430803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -5835,15 +5593,14 @@ arr.push([
     [["attack",919],["dodge",141]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430804,
+arr.push([430804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -5859,15 +5616,14 @@ arr.push([
     [["max_hp",38117],["un_critical",155]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430805,
+arr.push([430805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -5883,15 +5639,14 @@ arr.push([
     [["attack",919],["un_dodge",155]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430806,
+arr.push([430806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -5907,15 +5662,14 @@ arr.push([
     [["un_defence",469],["attack",919]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430807,
+arr.push([430807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -5931,15 +5685,14 @@ arr.push([
     [["un_critical",155],["defence",469]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430808,
+arr.push([430808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -5955,15 +5708,14 @@ arr.push([
     [["defence",469],["critical",155]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430809,
+arr.push([430809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -5979,15 +5731,14 @@ arr.push([
     [["defence",469],["un_dodge",155]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430810,
+arr.push([430810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -6003,15 +5754,14 @@ arr.push([
     [["max_hp",38117],["un_defence",469]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430901,
+arr.push([430901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -6027,15 +5777,14 @@ arr.push([
     [["critical",181],["un_defence",545]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430902,
+arr.push([430902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -6051,15 +5800,14 @@ arr.push([
     [["dodge",165],["max_hp",44484]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430903,
+arr.push([430903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -6075,15 +5823,14 @@ arr.push([
     [["attack",1071],["dodge",165]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430904,
+arr.push([430904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -6099,15 +5846,14 @@ arr.push([
     [["max_hp",44484],["un_critical",181]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430905,
+arr.push([430905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -6123,15 +5869,14 @@ arr.push([
     [["attack",1071],["un_dodge",181]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430906,
+arr.push([430906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -6147,15 +5892,14 @@ arr.push([
     [["un_defence",545],["attack",1071]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430907,
+arr.push([430907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -6171,15 +5915,14 @@ arr.push([
     [["un_critical",181],["defence",545]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430908,
+arr.push([430908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -6195,15 +5938,14 @@ arr.push([
     [["defence",545],["critical",181]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430909,
+arr.push([430909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -6219,15 +5961,14 @@ arr.push([
     [["defence",545],["un_dodge",181]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-430910,
+arr.push([430910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -6243,15 +5984,14 @@ arr.push([
     [["max_hp",44484],["un_defence",545]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431001,
+arr.push([431001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -6267,15 +6007,14 @@ arr.push([
     [["critical",207],["un_defence",625]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431002,
+arr.push([431002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -6291,15 +6030,14 @@ arr.push([
     [["dodge",190],["max_hp",51125]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431003,
+arr.push([431003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -6315,15 +6053,14 @@ arr.push([
     [["attack",1231],["dodge",190]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431004,
+arr.push([431004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -6339,15 +6076,14 @@ arr.push([
     [["max_hp",51125],["un_critical",207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431005,
+arr.push([431005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -6363,15 +6099,14 @@ arr.push([
     [["attack",1231],["un_dodge",207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431006,
+arr.push([431006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -6387,15 +6122,14 @@ arr.push([
     [["un_defence",625],["attack",1231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431007,
+arr.push([431007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -6411,15 +6145,14 @@ arr.push([
     [["un_critical",207],["defence",625]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431008,
+arr.push([431008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -6435,15 +6168,14 @@ arr.push([
     [["defence",625],["critical",207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431009,
+arr.push([431009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -6459,15 +6191,14 @@ arr.push([
     [["defence",625],["un_dodge",207]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431010,
+arr.push([431010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -6483,15 +6214,14 @@ arr.push([
     [["max_hp",51125],["un_defence",625]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431101,
+arr.push([431101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -6507,15 +6237,14 @@ arr.push([
     [["critical",235],["un_defence",707]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431102,
+arr.push([431102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -6531,15 +6260,14 @@ arr.push([
     [["dodge",215],["max_hp",58023]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431103,
+arr.push([431103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -6555,15 +6283,14 @@ arr.push([
     [["attack",1396],["dodge",215]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431104,
+arr.push([431104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -6579,15 +6306,14 @@ arr.push([
     [["max_hp",58023],["un_critical",235]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431105,
+arr.push([431105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -6603,15 +6329,14 @@ arr.push([
     [["attack",1396],["un_dodge",235]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431106,
+arr.push([431106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -6627,15 +6352,14 @@ arr.push([
     [["un_defence",707],["attack",1396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431107,
+arr.push([431107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -6651,15 +6375,14 @@ arr.push([
     [["un_critical",235],["defence",707]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431108,
+arr.push([431108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -6675,15 +6398,14 @@ arr.push([
     [["defence",707],["critical",235]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431109,
+arr.push([431109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -6699,15 +6421,14 @@ arr.push([
     [["defence",707],["un_dodge",235]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431110,
+arr.push([431110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -6723,15 +6444,14 @@ arr.push([
     [["max_hp",58023],["un_defence",707]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431201,
+arr.push([431201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -6747,15 +6467,14 @@ arr.push([
     [["critical",263],["un_defence",793]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431202,
+arr.push([431202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -6771,15 +6490,14 @@ arr.push([
     [["dodge",242],["max_hp",65166]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431203,
+arr.push([431203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -6795,15 +6513,14 @@ arr.push([
     [["attack",1567],["dodge",242]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431204,
+arr.push([431204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -6819,15 +6536,14 @@ arr.push([
     [["max_hp",65166],["un_critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431205,
+arr.push([431205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -6843,15 +6559,14 @@ arr.push([
     [["attack",1567],["un_dodge",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431206,
+arr.push([431206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -6867,15 +6582,14 @@ arr.push([
     [["un_defence",793],["attack",1567]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431207,
+arr.push([431207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -6891,15 +6605,14 @@ arr.push([
     [["un_critical",263],["defence",793]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431208,
+arr.push([431208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -6915,15 +6628,14 @@ arr.push([
     [["defence",793],["critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431209,
+arr.push([431209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -6939,15 +6651,14 @@ arr.push([
     [["defence",793],["un_dodge",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431210,
+arr.push([431210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -6963,15 +6674,14 @@ arr.push([
     [["max_hp",65166],["un_defence",793]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431301,
+arr.push([431301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -6987,15 +6697,14 @@ arr.push([
     [["critical",293],["un_defence",881]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431302,
+arr.push([431302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -7011,15 +6720,14 @@ arr.push([
     [["dodge",269],["max_hp",72542]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431303,
+arr.push([431303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -7035,15 +6743,14 @@ arr.push([
     [["attack",1744],["dodge",269]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431304,
+arr.push([431304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -7059,15 +6766,14 @@ arr.push([
     [["max_hp",72542],["un_critical",293]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431305,
+arr.push([431305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -7083,15 +6789,14 @@ arr.push([
     [["attack",1744],["un_dodge",293]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431306,
+arr.push([431306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -7107,15 +6812,14 @@ arr.push([
     [["un_defence",881],["attack",1744]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431307,
+arr.push([431307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -7131,15 +6835,14 @@ arr.push([
     [["un_critical",293],["defence",881]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431308,
+arr.push([431308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -7155,15 +6858,14 @@ arr.push([
     [["defence",881],["critical",293]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431309,
+arr.push([431309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -7179,15 +6881,14 @@ arr.push([
     [["defence",881],["un_dodge",293]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431310,
+arr.push([431310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -7203,15 +6904,14 @@ arr.push([
     [["max_hp",72542],["un_defence",881]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431401,
+arr.push([431401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -7227,15 +6927,14 @@ arr.push([
     [["critical",323],["un_defence",972]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431402,
+arr.push([431402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -7251,15 +6950,14 @@ arr.push([
     [["dodge",297],["max_hp",80139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431403,
+arr.push([431403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -7275,15 +6973,14 @@ arr.push([
     [["attack",1927],["dodge",297]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431404,
+arr.push([431404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -7299,15 +6996,14 @@ arr.push([
     [["max_hp",80139],["un_critical",323]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431405,
+arr.push([431405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -7323,15 +7019,14 @@ arr.push([
     [["attack",1927],["un_dodge",323]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431406,
+arr.push([431406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -7347,15 +7042,14 @@ arr.push([
     [["un_defence",972],["attack",1927]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431407,
+arr.push([431407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -7371,15 +7065,14 @@ arr.push([
     [["un_critical",323],["defence",972]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431408,
+arr.push([431408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -7395,15 +7088,14 @@ arr.push([
     [["defence",972],["critical",323]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431409,
+arr.push([431409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -7419,15 +7111,14 @@ arr.push([
     [["defence",972],["un_dodge",323]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431410,
+arr.push([431410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -7443,15 +7134,14 @@ arr.push([
     [["max_hp",80139],["un_defence",972]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431501,
+arr.push([431501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -7467,15 +7157,14 @@ arr.push([
     [["critical",354],["un_defence",1066]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431502,
+arr.push([431502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -7491,15 +7180,14 @@ arr.push([
     [["dodge",326],["max_hp",87949]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431503,
+arr.push([431503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -7515,15 +7203,14 @@ arr.push([
     [["attack",2114],["dodge",326]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431504,
+arr.push([431504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -7539,15 +7226,14 @@ arr.push([
     [["max_hp",87949],["un_critical",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431505,
+arr.push([431505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -7563,15 +7249,14 @@ arr.push([
     [["attack",2114],["un_dodge",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431506,
+arr.push([431506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -7587,15 +7272,14 @@ arr.push([
     [["un_defence",1066],["attack",2114]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431507,
+arr.push([431507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -7611,15 +7295,14 @@ arr.push([
     [["un_critical",354],["defence",1066]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431508,
+arr.push([431508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -7635,15 +7318,14 @@ arr.push([
     [["defence",1066],["critical",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431509,
+arr.push([431509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -7659,15 +7341,14 @@ arr.push([
     [["defence",326],["un_dodge",354]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-431510,
+arr.push([431510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -7683,11 +7364,10 @@ arr.push([
     [["max_hp",87949],["un_defence",1066]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440001,
+arr.push([440001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7707,11 +7387,10 @@ arr.push([
     [["un_defence",9],["un_dodge",9],["critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440002,
+arr.push([440002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7731,11 +7410,10 @@ arr.push([
     [["max_hp",1306],["defence",32],["dodge",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440003,
+arr.push([440003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7755,11 +7433,10 @@ arr.push([
     [["attack",40],["dodge",9],["critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440004,
+arr.push([440004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7779,11 +7456,10 @@ arr.push([
     [["max_hp",1306],["un_defence",9],["un_critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440005,
+arr.push([440005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7803,11 +7479,10 @@ arr.push([
     [["attack",40],["un_dodge",9],["critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440006,
+arr.push([440006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7827,11 +7502,10 @@ arr.push([
     [["attack",40],["un_defence",9],["dodge",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440007,
+arr.push([440007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7851,11 +7525,10 @@ arr.push([
     [["max_hp",1306],["defence",32],["un_critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440008,
+arr.push([440008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7875,11 +7548,10 @@ arr.push([
     [["defence",32],["critical",9],["un_critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440009,
+arr.push([440009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7899,11 +7571,10 @@ arr.push([
     [["defence",32],["un_dodge",9],["un_critical",9]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440010,
+arr.push([440010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -7923,15 +7594,14 @@ arr.push([
     [["max_hp",1306],["attack",40],["un_defence",32]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440101,
+arr.push([440101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -7947,15 +7617,14 @@ arr.push([
     [["un_defence",20],["un_dodge",20],["critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440102,
+arr.push([440102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -7971,15 +7640,14 @@ arr.push([
     [["max_hp",4252],["defence",67],["dodge",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440103,
+arr.push([440103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -7995,15 +7663,14 @@ arr.push([
     [["attack",111],["dodge",20],["critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440104,
+arr.push([440104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -8019,15 +7686,14 @@ arr.push([
     [["max_hp",4252],["un_defence",20],["un_critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440105,
+arr.push([440105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -8043,15 +7709,14 @@ arr.push([
     [["attack",111],["un_dodge",20],["critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440106,
+arr.push([440106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -8067,15 +7732,14 @@ arr.push([
     [["attack",111],["un_defence",20],["dodge",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440107,
+arr.push([440107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -8091,15 +7755,14 @@ arr.push([
     [["max_hp",4252],["defence",67],["un_critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440108,
+arr.push([440108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -8115,15 +7778,14 @@ arr.push([
     [["defence",67],["critical",20],["un_critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440109,
+arr.push([440109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -8139,15 +7801,14 @@ arr.push([
     [["defence",67],["un_dodge",20],["un_critical",20]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440110,
+arr.push([440110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -8163,15 +7824,14 @@ arr.push([
     [["max_hp",4252],["attack",111],["un_defence",67]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440201,
+arr.push([440201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -8187,15 +7847,14 @@ arr.push([
     [["un_defence",36],["un_dodge",36],["critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440202,
+arr.push([440202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -8211,15 +7870,14 @@ arr.push([
     [["max_hp",8139],["defence",114],["dodge",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440203,
+arr.push([440203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -8235,15 +7893,14 @@ arr.push([
     [["attack",204],["dodge",36],["critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440204,
+arr.push([440204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -8259,15 +7916,14 @@ arr.push([
     [["max_hp",8139],["un_defence",36],["un_critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440205,
+arr.push([440205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -8283,15 +7939,14 @@ arr.push([
     [["attack",204],["un_dodge",36],["critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440206,
+arr.push([440206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -8307,15 +7962,14 @@ arr.push([
     [["attack",204],["un_defence",36],["dodge",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440207,
+arr.push([440207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -8331,15 +7985,14 @@ arr.push([
     [["max_hp",8139],["defence",114],["un_critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440208,
+arr.push([440208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -8355,15 +8008,14 @@ arr.push([
     [["defence",114],["critical",36],["un_critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440209,
+arr.push([440209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -8379,15 +8031,14 @@ arr.push([
     [["defence",114],["un_dodge",36],["un_critical",36]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440210,
+arr.push([440210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -8403,15 +8054,14 @@ arr.push([
     [["max_hp",8139],["attack",204],["un_defence",114]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440301,
+arr.push([440301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -8427,15 +8077,14 @@ arr.push([
     [["un_defence",54],["un_dodge",54],["critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440302,
+arr.push([440302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -8451,15 +8100,14 @@ arr.push([
     [["max_hp",12710],["defence",169],["dodge",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440303,
+arr.push([440303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -8475,15 +8123,14 @@ arr.push([
     [["attack",314],["dodge",54],["critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440304,
+arr.push([440304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -8499,15 +8146,14 @@ arr.push([
     [["max_hp",12710],["un_defence",54],["un_critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440305,
+arr.push([440305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -8523,15 +8169,14 @@ arr.push([
     [["attack",314],["un_dodge",54],["critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440306,
+arr.push([440306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -8547,15 +8192,14 @@ arr.push([
     [["attack",314],["un_defence",54],["dodge",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440307,
+arr.push([440307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -8571,15 +8215,14 @@ arr.push([
     [["max_hp",12710],["defence",169],["un_critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440308,
+arr.push([440308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -8595,15 +8238,14 @@ arr.push([
     [["defence",169],["critical",54],["un_critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440309,
+arr.push([440309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -8619,15 +8261,14 @@ arr.push([
     [["defence",169],["un_dodge",54],["un_critical",54]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440310,
+arr.push([440310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -8643,15 +8284,14 @@ arr.push([
     [["max_hp",12710],["attack",314],["un_defence",169]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440401,
+arr.push([440401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -8667,15 +8307,14 @@ arr.push([
     [["un_defence",75],["un_dodge",75],["critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440402,
+arr.push([440402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -8691,15 +8330,14 @@ arr.push([
     [["max_hp",17839],["defence",230],["dodge",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440403,
+arr.push([440403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -8715,15 +8353,14 @@ arr.push([
     [["attack",437],["dodge",75],["critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440404,
+arr.push([440404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -8739,15 +8376,14 @@ arr.push([
     [["max_hp",17839],["un_defence",75],["un_critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440405,
+arr.push([440405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -8763,15 +8399,14 @@ arr.push([
     [["attack",437],["un_dodge",75],["critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440406,
+arr.push([440406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -8787,15 +8422,14 @@ arr.push([
     [["attack",437],["un_defence",75],["dodge",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440407,
+arr.push([440407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -8811,15 +8445,14 @@ arr.push([
     [["max_hp",17839],["defence",230],["un_critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440408,
+arr.push([440408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -8835,15 +8468,14 @@ arr.push([
     [["defence",230],["critical",75],["un_critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440409,
+arr.push([440409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -8859,15 +8491,14 @@ arr.push([
     [["defence",230],["un_dodge",75],["un_critical",75]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440410,
+arr.push([440410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -8883,15 +8514,14 @@ arr.push([
     [["max_hp",17839],["attack",437],["un_defence",230]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440501,
+arr.push([440501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -8907,15 +8537,14 @@ arr.push([
     [["un_defence",97],["un_dodge",97],["critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440502,
+arr.push([440502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -8931,15 +8560,14 @@ arr.push([
     [["max_hp",23447],["defence",298],["dodge",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440503,
+arr.push([440503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -8955,15 +8583,14 @@ arr.push([
     [["attack",571],["dodge",97],["critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440504,
+arr.push([440504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -8979,15 +8606,14 @@ arr.push([
     [["max_hp",23447],["un_defence",97],["un_critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440505,
+arr.push([440505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -9003,15 +8629,14 @@ arr.push([
     [["attack",571],["un_dodge",97],["critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440506,
+arr.push([440506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -9027,15 +8652,14 @@ arr.push([
     [["attack",571],["un_defence",97],["dodge",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440507,
+arr.push([440507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -9051,15 +8675,14 @@ arr.push([
     [["max_hp",23447],["defence",298],["un_critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440508,
+arr.push([440508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -9075,15 +8698,14 @@ arr.push([
     [["defence",298],["critical",97],["un_critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440509,
+arr.push([440509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -9099,15 +8721,14 @@ arr.push([
     [["defence",298],["un_dodge",97],["un_critical",97]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440510,
+arr.push([440510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -9123,15 +8744,14 @@ arr.push([
     [["max_hp",23447],["attack",571],["un_defence",298]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440601,
+arr.push([440601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -9147,15 +8767,14 @@ arr.push([
     [["un_defence",121],["un_dodge",121],["critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440602,
+arr.push([440602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -9171,15 +8790,14 @@ arr.push([
     [["max_hp",29479],["defence",370],["dodge",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440603,
+arr.push([440603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -9195,15 +8813,14 @@ arr.push([
     [["attack",716],["dodge",121],["critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440604,
+arr.push([440604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -9219,15 +8836,14 @@ arr.push([
     [["max_hp",29479],["un_defence",121],["un_critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440605,
+arr.push([440605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -9243,15 +8859,14 @@ arr.push([
     [["attack",716],["un_dodge",121],["critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440606,
+arr.push([440606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -9267,15 +8882,14 @@ arr.push([
     [["attack",716],["un_defence",121],["dodge",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440607,
+arr.push([440607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -9291,15 +8905,14 @@ arr.push([
     [["max_hp",29479],["defence",370],["un_critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440608,
+arr.push([440608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -9315,15 +8928,14 @@ arr.push([
     [["defence",370],["critical",121],["un_critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440609,
+arr.push([440609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -9339,15 +8951,14 @@ arr.push([
     [["defence",370],["un_dodge",121],["un_critical",121]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440610,
+arr.push([440610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -9363,15 +8974,14 @@ arr.push([
     [["max_hp",29479],["attack",716],["un_defence",370]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440701,
+arr.push([440701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -9387,15 +8997,14 @@ arr.push([
     [["un_defence",147],["un_dodge",147],["critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440702,
+arr.push([440702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -9411,15 +9020,14 @@ arr.push([
     [["max_hp",35895],["defence",447],["dodge",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440703,
+arr.push([440703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -9435,15 +9043,14 @@ arr.push([
     [["attack",870],["dodge",147],["critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440704,
+arr.push([440704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -9459,15 +9066,14 @@ arr.push([
     [["max_hp",35895],["un_defence",147],["un_critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440705,
+arr.push([440705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -9483,15 +9089,14 @@ arr.push([
     [["attack",870],["un_dodge",147],["critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440706,
+arr.push([440706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -9507,15 +9112,14 @@ arr.push([
     [["attack",870],["un_defence",147],["dodge",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440707,
+arr.push([440707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -9531,15 +9135,14 @@ arr.push([
     [["max_hp",35895],["defence",447],["un_critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440708,
+arr.push([440708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -9555,15 +9158,14 @@ arr.push([
     [["defence",447],["critical",147],["un_critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440709,
+arr.push([440709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -9579,15 +9181,14 @@ arr.push([
     [["defence",447],["un_dodge",147],["un_critical",147]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440710,
+arr.push([440710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -9603,15 +9204,14 @@ arr.push([
     [["max_hp",35895],["attack",870],["un_defence",447]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440801,
+arr.push([440801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -9627,15 +9227,14 @@ arr.push([
     [["un_defence",174],["un_dodge",174],["critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440802,
+arr.push([440802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -9651,15 +9250,14 @@ arr.push([
     [["max_hp",42662],["defence",528],["dodge",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440803,
+arr.push([440803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -9675,15 +9273,14 @@ arr.push([
     [["attack",1033],["dodge",174],["critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440804,
+arr.push([440804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -9699,15 +9296,14 @@ arr.push([
     [["max_hp",42662],["un_defence",174],["un_critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440805,
+arr.push([440805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -9723,15 +9319,14 @@ arr.push([
     [["attack",1033],["un_dodge",174],["critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440806,
+arr.push([440806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -9747,15 +9342,14 @@ arr.push([
     [["attack",1033],["un_defence",174],["dodge",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440807,
+arr.push([440807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -9771,15 +9365,14 @@ arr.push([
     [["max_hp",42662],["defence",528],["un_critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440808,
+arr.push([440808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -9795,15 +9388,14 @@ arr.push([
     [["defence",528],["critical",174],["un_critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440809,
+arr.push([440809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -9819,15 +9411,14 @@ arr.push([
     [["defence",528],["un_dodge",174],["un_critical",174]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440810,
+arr.push([440810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -9843,15 +9434,14 @@ arr.push([
     [["max_hp",42662],["attack",1033],["un_defence",528]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440901,
+arr.push([440901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -9867,15 +9457,14 @@ arr.push([
     [["un_defence",202],["un_dodge",202],["critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440902,
+arr.push([440902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -9891,15 +9480,14 @@ arr.push([
     [["max_hp",49757],["defence",613],["dodge",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440903,
+arr.push([440903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -9915,15 +9503,14 @@ arr.push([
     [["attack",1203],["dodge",202],["critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440904,
+arr.push([440904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -9939,15 +9526,14 @@ arr.push([
     [["max_hp",49757],["un_defence",202],["un_critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440905,
+arr.push([440905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -9963,15 +9549,14 @@ arr.push([
     [["attack",1203],["un_dodge",202],["critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440906,
+arr.push([440906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -9987,15 +9572,14 @@ arr.push([
     [["attack",1203],["un_defence",202],["dodge",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440907,
+arr.push([440907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -10011,15 +9595,14 @@ arr.push([
     [["max_hp",49757],["defence",613],["un_critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440908,
+arr.push([440908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -10035,15 +9618,14 @@ arr.push([
     [["defence",613],["critical",202],["un_critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440909,
+arr.push([440909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -10059,15 +9641,14 @@ arr.push([
     [["defence",613],["un_dodge",202],["un_critical",202]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-440910,
+arr.push([440910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -10083,15 +9664,14 @@ arr.push([
     [["max_hp",49757],["attack",1203],["un_defence",613]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441001,
+arr.push([441001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -10107,15 +9687,14 @@ arr.push([
     [["un_defence",232],["un_dodge",232],["critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441002,
+arr.push([441002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -10131,15 +9710,14 @@ arr.push([
     [["max_hp",57156],["defence",702],["dodge",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441003,
+arr.push([441003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -10155,15 +9733,14 @@ arr.push([
     [["attack",1380],["dodge",232],["critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441004,
+arr.push([441004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -10179,15 +9756,14 @@ arr.push([
     [["max_hp",57156],["un_defence",232],["un_critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441005,
+arr.push([441005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -10203,15 +9779,14 @@ arr.push([
     [["attack",1380],["un_dodge",232],["critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441006,
+arr.push([441006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -10227,15 +9802,14 @@ arr.push([
     [["attack",1380],["un_defence",232],["dodge",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441007,
+arr.push([441007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -10251,15 +9825,14 @@ arr.push([
     [["max_hp",57156],["defence",702],["un_critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441008,
+arr.push([441008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -10275,15 +9848,14 @@ arr.push([
     [["defence",702],["critical",232],["un_critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441009,
+arr.push([441009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -10299,15 +9871,14 @@ arr.push([
     [["defence",702],["un_dodge",232],["un_critical",232]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441010,
+arr.push([441010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -10323,15 +9894,14 @@ arr.push([
     [["max_hp",57156],["attack",1380],["un_defence",702]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441101,
+arr.push([441101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -10347,15 +9917,14 @@ arr.push([
     [["un_defence",263],["un_dodge",263],["critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441102,
+arr.push([441102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -10371,15 +9940,14 @@ arr.push([
     [["max_hp",64843],["defence",794],["dodge",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441103,
+arr.push([441103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -10395,15 +9963,14 @@ arr.push([
     [["attack",1565],["dodge",263],["critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441104,
+arr.push([441104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -10419,15 +9986,14 @@ arr.push([
     [["max_hp",64843],["un_defence",263],["un_critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441105,
+arr.push([441105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -10443,15 +10009,14 @@ arr.push([
     [["attack",1565],["un_dodge",263],["critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441106,
+arr.push([441106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -10467,15 +10032,14 @@ arr.push([
     [["attack",1565],["un_defence",263],["dodge",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441107,
+arr.push([441107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -10491,15 +10055,14 @@ arr.push([
     [["max_hp",64843],["defence",794],["un_critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441108,
+arr.push([441108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -10515,15 +10078,14 @@ arr.push([
     [["defence",794],["critical",263],["un_critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441109,
+arr.push([441109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -10539,15 +10101,14 @@ arr.push([
     [["defence",794],["un_dodge",263],["un_critical",263]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441110,
+arr.push([441110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -10563,15 +10124,14 @@ arr.push([
     [["max_hp",64843],["attack",1565],["un_defence",794]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441201,
+arr.push([441201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -10587,15 +10147,14 @@ arr.push([
     [["un_defence",295],["un_dodge",295],["critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441202,
+arr.push([441202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -10611,15 +10170,14 @@ arr.push([
     [["max_hp",72803],["defence",890],["dodge",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441203,
+arr.push([441203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -10635,15 +10193,14 @@ arr.push([
     [["attack",1756],["dodge",295],["critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441204,
+arr.push([441204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -10659,15 +10216,14 @@ arr.push([
     [["max_hp",72803],["un_defence",295],["un_critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441205,
+arr.push([441205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -10683,15 +10239,14 @@ arr.push([
     [["attack",1756],["un_dodge",295],["critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441206,
+arr.push([441206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -10707,15 +10262,14 @@ arr.push([
     [["attack",1756],["un_defence",295],["dodge",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441207,
+arr.push([441207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -10731,15 +10285,14 @@ arr.push([
     [["max_hp",72803],["defence",890],["un_critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441208,
+arr.push([441208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -10755,15 +10308,14 @@ arr.push([
     [["defence",890],["critical",295],["un_critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441209,
+arr.push([441209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -10779,15 +10331,14 @@ arr.push([
     [["defence",890],["un_dodge",295],["un_critical",295]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441210,
+arr.push([441210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -10803,15 +10354,14 @@ arr.push([
     [["max_hp",72803],["attack",1756],["un_defence",890]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441301,
+arr.push([441301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -10827,15 +10377,14 @@ arr.push([
     [["un_defence",327],["un_dodge",327],["critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441302,
+arr.push([441302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -10851,15 +10400,14 @@ arr.push([
     [["max_hp",81021],["defence",988],["dodge",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441303,
+arr.push([441303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -10875,15 +10423,14 @@ arr.push([
     [["attack",1953],["dodge",327],["critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441304,
+arr.push([441304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -10899,15 +10446,14 @@ arr.push([
     [["max_hp",81021],["un_defence",327],["un_critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441305,
+arr.push([441305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -10923,15 +10469,14 @@ arr.push([
     [["attack",1953],["un_dodge",327],["critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441306,
+arr.push([441306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -10947,15 +10492,14 @@ arr.push([
     [["attack",1953],["un_defence",327],["dodge",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441307,
+arr.push([441307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -10971,15 +10515,14 @@ arr.push([
     [["max_hp",81021],["defence",988],["un_critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441308,
+arr.push([441308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -10995,15 +10538,14 @@ arr.push([
     [["defence",988],["critical",327],["un_critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441309,
+arr.push([441309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -11019,15 +10561,14 @@ arr.push([
     [["defence",988],["un_dodge",327],["un_critical",327]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441310,
+arr.push([441310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -11043,15 +10584,14 @@ arr.push([
     [["max_hp",81021],["attack",1953],["un_defence",988]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441401,
+arr.push([441401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -11067,15 +10607,14 @@ arr.push([
     [["un_defence",361],["un_dodge",361],["critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441402,
+arr.push([441402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -11091,15 +10630,14 @@ arr.push([
     [["max_hp",89487],["defence",1090],["dodge",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441403,
+arr.push([441403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -11115,15 +10653,14 @@ arr.push([
     [["attack",2156],["dodge",361],["critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441404,
+arr.push([441404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -11139,15 +10676,14 @@ arr.push([
     [["max_hp",89487],["un_defence",361],["un_critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441405,
+arr.push([441405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -11163,15 +10699,14 @@ arr.push([
     [["attack",2156],["un_dodge",361],["critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441406,
+arr.push([441406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -11187,15 +10722,14 @@ arr.push([
     [["attack",2156],["un_defence",361],["dodge",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441407,
+arr.push([441407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -11211,15 +10745,14 @@ arr.push([
     [["max_hp",89487],["defence",1090],["un_critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441408,
+arr.push([441408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -11235,15 +10768,14 @@ arr.push([
     [["defence",1090],["critical",361],["un_critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441409,
+arr.push([441409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -11259,15 +10791,14 @@ arr.push([
     [["defence",1090],["un_dodge",361],["un_critical",361]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441410,
+arr.push([441410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -11283,15 +10814,14 @@ arr.push([
     [["max_hp",89487],["attack",2156],["un_defence",1090]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441501,
+arr.push([441501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -11307,15 +10837,14 @@ arr.push([
     [["un_defence",396],["un_dodge",396],["critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441502,
+arr.push([441502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -11331,15 +10860,14 @@ arr.push([
     [["max_hp",98189],["defence",1194],["dodge",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441503,
+arr.push([441503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -11355,15 +10883,14 @@ arr.push([
     [["attack",2365],["dodge",396],["critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441504,
+arr.push([441504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -11379,15 +10906,14 @@ arr.push([
     [["max_hp",98189],["un_defence",396],["un_critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441505,
+arr.push([441505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -11403,15 +10929,14 @@ arr.push([
     [["attack",2365],["un_dodge",396],["critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441506,
+arr.push([441506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -11427,15 +10952,14 @@ arr.push([
     [["attack",2365],["un_defence",396],["dodge",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441507,
+arr.push([441507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -11451,15 +10975,14 @@ arr.push([
     [["max_hp",98189],["defence",1194],["un_critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441508,
+arr.push([441508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -11475,15 +10998,14 @@ arr.push([
     [["defence",1194],["critical",396],["un_critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441509,
+arr.push([441509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -11499,15 +11021,14 @@ arr.push([
     [["defence",1194],["un_dodge",396],["un_critical",396]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-441510,
+arr.push([441510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -11523,11 +11044,10 @@ arr.push([
     [["max_hp",98189],["attack",2365],["un_defence",1194]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450001,
+arr.push([450001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11547,11 +11067,10 @@ arr.push([
     [["attack",53],["un_defence",36],["un_dodge",12],["critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450002,
+arr.push([450002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11571,11 +11090,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["dodge",12],["critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450003,
+arr.push([450003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11595,11 +11113,10 @@ arr.push([
     [["attack",53],["un_defence",36],["dodge",12],["critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450004,
+arr.push([450004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11619,11 +11136,10 @@ arr.push([
     [["max_hp",1583],["un_defence",36],["un_dodge",12],["un_critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450005,
+arr.push([450005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11643,11 +11159,10 @@ arr.push([
     [["max_hp",1583],["attack",53],["un_dodge",12],["critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450006,
+arr.push([450006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11667,11 +11182,10 @@ arr.push([
     [["attack",53],["defence",36],["un_defence",36],["dodge",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450007,
+arr.push([450007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11691,11 +11205,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["un_dodge",12],["un_critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450008,
+arr.push([450008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11715,11 +11228,10 @@ arr.push([
     [["defence",36],["dodge",12],["critical",12],["un_critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450009,
+arr.push([450009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11739,11 +11251,10 @@ arr.push([
     [["defence",36],["un_dodge",12],["dodge",12],["un_critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450010,
+arr.push([450010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -11763,15 +11274,14 @@ arr.push([
     [["max_hp",1583],["attack",53],["un_defence",36],["un_critical",12]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450101,
+arr.push([450101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -11787,15 +11297,14 @@ arr.push([
     [["attack",133],["un_defence",76],["un_dodge",26],["critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450102,
+arr.push([450102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -11811,15 +11320,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["dodge",26],["critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450103,
+arr.push([450103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -11835,15 +11343,14 @@ arr.push([
     [["attack",133],["un_defence",76],["dodge",26],["critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450104,
+arr.push([450104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -11859,15 +11366,14 @@ arr.push([
     [["max_hp",4907],["un_defence",76],["un_dodge",26],["un_critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450105,
+arr.push([450105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -11883,15 +11389,14 @@ arr.push([
     [["max_hp",4907],["attack",133],["un_dodge",26],["critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450106,
+arr.push([450106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -11907,15 +11412,14 @@ arr.push([
     [["attack",133],["defence",76],["un_defence",76],["dodge",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450107,
+arr.push([450107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -11931,15 +11435,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["un_dodge",26],["un_critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450108,
+arr.push([450108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -11955,15 +11458,14 @@ arr.push([
     [["defence",76],["dodge",26],["critical",26],["un_critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450109,
+arr.push([450109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -11979,15 +11481,14 @@ arr.push([
     [["defence",76],["un_dodge",26],["dodge",26],["un_critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450110,
+arr.push([450110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -12003,15 +11504,14 @@ arr.push([
     [["max_hp",4907],["attack",133],["un_defence",76],["un_critical",26]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450201,
+arr.push([450201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -12027,15 +11527,14 @@ arr.push([
     [["attack",238],["un_defence",128],["un_dodge",43],["critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450202,
+arr.push([450202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -12051,15 +11550,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["dodge",43],["critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450203,
+arr.push([450203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -12075,15 +11573,14 @@ arr.push([
     [["attack",238],["un_defence",128],["dodge",43],["critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450204,
+arr.push([450204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -12099,15 +11596,14 @@ arr.push([
     [["max_hp",9292],["un_defence",128],["un_dodge",43],["un_critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450205,
+arr.push([450205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -12123,15 +11619,14 @@ arr.push([
     [["max_hp",9292],["attack",238],["un_dodge",43],["critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450206,
+arr.push([450206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -12147,15 +11642,14 @@ arr.push([
     [["attack",238],["defence",128],["un_defence",128],["dodge",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450207,
+arr.push([450207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -12171,15 +11665,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["un_dodge",43],["un_critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450208,
+arr.push([450208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -12195,15 +11688,14 @@ arr.push([
     [["defence",128],["dodge",43],["critical",43],["un_critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450209,
+arr.push([450209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -12219,15 +11711,14 @@ arr.push([
     [["defence",128],["un_dodge",43],["dodge",43],["un_critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450210,
+arr.push([450210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -12243,15 +11734,14 @@ arr.push([
     [["max_hp",9292],["attack",238],["un_defence",128],["un_critical",43]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450301,
+arr.push([450301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -12267,15 +11757,14 @@ arr.push([
     [["attack",362],["un_defence",190],["un_dodge",64],["critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450302,
+arr.push([450302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -12291,15 +11780,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["dodge",64],["critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450303,
+arr.push([450303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -12315,15 +11803,14 @@ arr.push([
     [["attack",362],["un_defence",190],["dodge",64],["critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450304,
+arr.push([450304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -12339,15 +11826,14 @@ arr.push([
     [["max_hp",14450],["un_defence",190],["un_dodge",64],["un_critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450305,
+arr.push([450305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -12363,15 +11849,14 @@ arr.push([
     [["max_hp",14450],["attack",362],["un_dodge",64],["critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450306,
+arr.push([450306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -12387,15 +11872,14 @@ arr.push([
     [["attack",362],["defence",190],["un_defence",190],["dodge",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450307,
+arr.push([450307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -12411,15 +11895,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["un_dodge",64],["un_critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450308,
+arr.push([450308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -12435,15 +11918,14 @@ arr.push([
     [["defence",190],["dodge",64],["critical",64],["un_critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450309,
+arr.push([450309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -12459,15 +11941,14 @@ arr.push([
     [["defence",190],["un_dodge",64],["dodge",64],["un_critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450310,
+arr.push([450310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -12483,15 +11964,14 @@ arr.push([
     [["max_hp",14450],["attack",362],["un_defence",190],["un_critical",64]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450401,
+arr.push([450401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -12507,15 +11987,14 @@ arr.push([
     [["attack",500],["un_defence",260],["un_dodge",87],["critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450402,
+arr.push([450402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -12531,15 +12010,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["dodge",87],["critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450403,
+arr.push([450403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -12555,15 +12033,14 @@ arr.push([
     [["attack",500],["un_defence",260],["dodge",87],["critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450404,
+arr.push([450404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -12579,15 +12056,14 @@ arr.push([
     [["max_hp",20236],["un_defence",260],["un_dodge",87],["un_critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450405,
+arr.push([450405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -12603,15 +12079,14 @@ arr.push([
     [["max_hp",20236],["attack",500],["un_dodge",87],["critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450406,
+arr.push([450406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -12627,15 +12102,14 @@ arr.push([
     [["attack",500],["defence",260],["un_defence",260],["dodge",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450407,
+arr.push([450407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -12651,15 +12125,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["un_dodge",87],["un_critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450408,
+arr.push([450408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -12675,15 +12148,14 @@ arr.push([
     [["defence",260],["dodge",87],["critical",87],["un_critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450409,
+arr.push([450409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -12699,15 +12171,14 @@ arr.push([
     [["defence",260],["un_dodge",87],["dodge",87],["un_critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450410,
+arr.push([450410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -12723,15 +12194,14 @@ arr.push([
     [["max_hp",20236],["attack",500],["un_defence",260],["un_critical",87]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450501,
+arr.push([450501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -12747,15 +12217,14 @@ arr.push([
     [["attack",652],["un_defence",336],["un_dodge",112],["critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450502,
+arr.push([450502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -12771,15 +12240,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["dodge",112],["critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450503,
+arr.push([450503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -12795,15 +12263,14 @@ arr.push([
     [["attack",652],["un_defence",336],["dodge",112],["critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450504,
+arr.push([450504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -12819,15 +12286,14 @@ arr.push([
     [["max_hp",26563],["un_defence",336],["un_dodge",112],["un_critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450505,
+arr.push([450505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -12843,15 +12309,14 @@ arr.push([
     [["max_hp",26563],["attack",652],["un_dodge",112],["critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450506,
+arr.push([450506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -12867,15 +12332,14 @@ arr.push([
     [["attack",652],["defence",336],["un_defence",336],["dodge",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450507,
+arr.push([450507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -12891,15 +12355,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["un_dodge",112],["un_critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450508,
+arr.push([450508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -12915,15 +12378,14 @@ arr.push([
     [["defence",336],["dodge",112],["critical",112],["un_critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450509,
+arr.push([450509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -12939,15 +12401,14 @@ arr.push([
     [["defence",336],["un_dodge",112],["dodge",112],["un_critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450510,
+arr.push([450510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -12963,15 +12424,14 @@ arr.push([
     [["max_hp",26563],["attack",652],["un_defence",336],["un_critical",112]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450601,
+arr.push([450601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -12987,15 +12447,14 @@ arr.push([
     [["attack",816],["un_defence",417],["un_dodge",139],["critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450602,
+arr.push([450602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -13011,15 +12470,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["dodge",139],["critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450603,
+arr.push([450603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -13035,15 +12493,14 @@ arr.push([
     [["attack",816],["un_defence",417],["dodge",139],["critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450604,
+arr.push([450604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -13059,15 +12516,14 @@ arr.push([
     [["max_hp",33368],["un_defence",417],["un_dodge",139],["un_critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450605,
+arr.push([450605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -13083,15 +12539,14 @@ arr.push([
     [["max_hp",33368],["attack",816],["un_dodge",139],["critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450606,
+arr.push([450606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -13107,15 +12562,14 @@ arr.push([
     [["attack",816],["defence",417],["un_defence",417],["dodge",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450607,
+arr.push([450607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -13131,15 +12585,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["un_dodge",139],["un_critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450608,
+arr.push([450608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -13155,15 +12608,14 @@ arr.push([
     [["defence",417],["dodge",139],["critical",139],["un_critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450609,
+arr.push([450609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -13179,15 +12631,14 @@ arr.push([
     [["defence",417],["un_dodge",139],["dodge",139],["un_critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450610,
+arr.push([450610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -13203,15 +12654,14 @@ arr.push([
     [["max_hp",33368],["attack",816],["un_defence",417],["un_critical",139]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450701,
+arr.push([450701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -13227,15 +12677,14 @@ arr.push([
     [["attack",989],["un_defence",504],["un_dodge",168],["critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450702,
+arr.push([450702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -13251,15 +12700,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["dodge",168],["critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450703,
+arr.push([450703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -13275,15 +12723,14 @@ arr.push([
     [["attack",989],["un_defence",504],["dodge",168],["critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450704,
+arr.push([450704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -13299,15 +12746,14 @@ arr.push([
     [["max_hp",40607],["un_defence",504],["un_dodge",168],["un_critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450705,
+arr.push([450705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -13323,15 +12769,14 @@ arr.push([
     [["max_hp",40607],["attack",989],["un_dodge",168],["critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450706,
+arr.push([450706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -13347,15 +12792,14 @@ arr.push([
     [["attack",989],["defence",504],["un_defence",504],["dodge",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450707,
+arr.push([450707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -13371,15 +12815,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["un_dodge",168],["un_critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450708,
+arr.push([450708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -13395,15 +12838,14 @@ arr.push([
     [["defence",504],["dodge",168],["critical",168],["un_critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450709,
+arr.push([450709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -13419,15 +12861,14 @@ arr.push([
     [["defence",504],["un_dodge",168],["dodge",168],["un_critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450710,
+arr.push([450710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -13443,15 +12884,14 @@ arr.push([
     [["max_hp",40607],["attack",989],["un_defence",504],["un_critical",168]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450801,
+arr.push([450801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -13467,15 +12907,14 @@ arr.push([
     [["attack",1173],["un_defence",596],["un_dodge",199],["critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450802,
+arr.push([450802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -13491,15 +12930,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["dodge",199],["critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450803,
+arr.push([450803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -13515,15 +12953,14 @@ arr.push([
     [["attack",1173],["un_defence",596],["dodge",199],["critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450804,
+arr.push([450804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -13539,15 +12976,14 @@ arr.push([
     [["max_hp",48242],["un_defence",596],["un_dodge",199],["un_critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450805,
+arr.push([450805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -13563,15 +12999,14 @@ arr.push([
     [["max_hp",48242],["attack",1173],["un_dodge",199],["critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450806,
+arr.push([450806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -13587,15 +13022,14 @@ arr.push([
     [["attack",1173],["defence",596],["un_defence",596],["dodge",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450807,
+arr.push([450807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -13611,15 +13045,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["un_dodge",199],["un_critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450808,
+arr.push([450808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -13635,15 +13068,14 @@ arr.push([
     [["defence",596],["dodge",199],["critical",199],["un_critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450809,
+arr.push([450809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -13659,15 +13091,14 @@ arr.push([
     [["defence",596],["un_dodge",199],["dodge",199],["un_critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450810,
+arr.push([450810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -13683,15 +13114,14 @@ arr.push([
     [["max_hp",48242],["attack",1173],["un_defence",596],["un_critical",199]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450901,
+arr.push([450901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -13707,15 +13137,14 @@ arr.push([
     [["attack",1365],["un_defence",692],["un_dodge",231],["critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450902,
+arr.push([450902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -13731,15 +13160,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["dodge",231],["critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450903,
+arr.push([450903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -13755,15 +13183,14 @@ arr.push([
     [["attack",1365],["un_defence",692],["dodge",231],["critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450904,
+arr.push([450904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -13779,15 +13206,14 @@ arr.push([
     [["max_hp",56246],["un_defence",692],["un_dodge",231],["un_critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450905,
+arr.push([450905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -13803,15 +13229,14 @@ arr.push([
     [["max_hp",56246],["attack",1365],["un_dodge",231],["critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450906,
+arr.push([450906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -13827,15 +13252,14 @@ arr.push([
     [["attack",1365],["defence",692],["un_defence",692],["dodge",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450907,
+arr.push([450907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -13851,15 +13275,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["un_dodge",231],["un_critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450908,
+arr.push([450908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -13875,15 +13298,14 @@ arr.push([
     [["defence",692],["dodge",231],["critical",231],["un_critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450909,
+arr.push([450909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -13899,15 +13321,14 @@ arr.push([
     [["defence",692],["un_dodge",231],["dodge",231],["un_critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-450910,
+arr.push([450910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -13923,15 +13344,14 @@ arr.push([
     [["max_hp",56246],["attack",1365],["un_defence",692],["un_critical",231]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451001,
+arr.push([451001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -13947,15 +13367,14 @@ arr.push([
     [["attack",1565],["un_defence",792],["un_dodge",264],["critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451002,
+arr.push([451002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -13971,15 +13390,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["dodge",264],["critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451003,
+arr.push([451003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -13995,15 +13413,14 @@ arr.push([
     [["attack",1565],["un_defence",792],["dodge",264],["critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451004,
+arr.push([451004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -14019,15 +13436,14 @@ arr.push([
     [["max_hp",64594],["un_defence",792],["un_dodge",264],["un_critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451005,
+arr.push([451005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -14043,15 +13459,14 @@ arr.push([
     [["max_hp",64594],["attack",1565],["un_dodge",264],["critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451006,
+arr.push([451006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -14067,15 +13482,14 @@ arr.push([
     [["attack",1565],["defence",792],["un_defence",792],["dodge",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451007,
+arr.push([451007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -14091,15 +13505,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["un_dodge",264],["un_critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451008,
+arr.push([451008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -14115,15 +13528,14 @@ arr.push([
     [["defence",792],["dodge",264],["critical",264],["un_critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451009,
+arr.push([451009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -14139,15 +13551,14 @@ arr.push([
     [["defence",792],["un_dodge",264],["dodge",264],["un_critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451010,
+arr.push([451010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -14163,15 +13574,14 @@ arr.push([
     [["max_hp",64594],["attack",1565],["un_defence",792],["un_critical",264]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451101,
+arr.push([451101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -14187,15 +13597,14 @@ arr.push([
     [["attack",1773],["un_defence",896],["un_dodge",299],["critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451102,
+arr.push([451102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -14211,15 +13620,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["dodge",299],["critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451103,
+arr.push([451103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -14235,15 +13643,14 @@ arr.push([
     [["attack",1773],["un_defence",896],["dodge",299],["critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451104,
+arr.push([451104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -14259,15 +13666,14 @@ arr.push([
     [["max_hp",73267],["un_defence",896],["un_dodge",299],["un_critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451105,
+arr.push([451105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -14283,15 +13689,14 @@ arr.push([
     [["max_hp",73267],["attack",1773],["un_dodge",299],["critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451106,
+arr.push([451106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -14307,15 +13712,14 @@ arr.push([
     [["attack",1773],["defence",896],["un_defence",896],["dodge",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451107,
+arr.push([451107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -14331,15 +13735,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["un_dodge",299],["un_critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451108,
+arr.push([451108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -14355,15 +13758,14 @@ arr.push([
     [["defence",896],["dodge",299],["critical",299],["un_critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451109,
+arr.push([451109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -14379,15 +13781,14 @@ arr.push([
     [["defence",896],["un_dodge",299],["dodge",299],["un_critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451110,
+arr.push([451110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -14403,15 +13804,14 @@ arr.push([
     [["max_hp",73267],["attack",1773],["un_defence",896],["un_critical",299]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451201,
+arr.push([451201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -14427,15 +13827,14 @@ arr.push([
     [["attack",1989],["un_defence",1003],["un_dodge",335],["critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451202,
+arr.push([451202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -14451,15 +13850,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["dodge",335],["critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451203,
+arr.push([451203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -14475,15 +13873,14 @@ arr.push([
     [["attack",1989],["un_defence",1003],["dodge",335],["critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451204,
+arr.push([451204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -14499,15 +13896,14 @@ arr.push([
     [["max_hp",82247],["un_defence",1003],["un_dodge",335],["un_critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451205,
+arr.push([451205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -14523,15 +13919,14 @@ arr.push([
     [["max_hp",82247],["attack",1989],["un_dodge",335],["critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451206,
+arr.push([451206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -14547,15 +13942,14 @@ arr.push([
     [["attack",1989],["defence",1003],["un_defence",1003],["dodge",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451207,
+arr.push([451207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -14571,15 +13965,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["un_dodge",335],["un_critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451208,
+arr.push([451208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -14595,15 +13988,14 @@ arr.push([
     [["defence",1003],["dodge",335],["critical",335],["un_critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451209,
+arr.push([451209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -14619,15 +14011,14 @@ arr.push([
     [["defence",1003],["un_dodge",335],["dodge",335],["un_critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451210,
+arr.push([451210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -14643,15 +14034,14 @@ arr.push([
     [["max_hp",82247],["attack",1989],["un_defence",1003],["un_critical",335]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451301,
+arr.push([451301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -14667,15 +14057,14 @@ arr.push([
     [["attack",2211],["un_defence",1115],["un_dodge",372],["critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451302,
+arr.push([451302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -14691,15 +14080,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["dodge",372],["critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451303,
+arr.push([451303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -14715,15 +14103,14 @@ arr.push([
     [["attack",2211],["un_defence",1115],["dodge",372],["critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451304,
+arr.push([451304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -14739,15 +14126,14 @@ arr.push([
     [["max_hp",91519],["un_defence",1115],["un_dodge",372],["un_critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451305,
+arr.push([451305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -14763,15 +14149,14 @@ arr.push([
     [["max_hp",91519],["attack",2211],["un_dodge",372],["critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451306,
+arr.push([451306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -14787,15 +14172,14 @@ arr.push([
     [["attack",2211],["defence",1115],["un_defence",1115],["dodge",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451307,
+arr.push([451307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -14811,15 +14195,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["un_dodge",372],["un_critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451308,
+arr.push([451308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -14835,15 +14218,14 @@ arr.push([
     [["defence",1115],["dodge",372],["critical",372],["un_critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451309,
+arr.push([451309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -14859,15 +14241,14 @@ arr.push([
     [["defence",1115],["un_dodge",372],["dodge",372],["un_critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451310,
+arr.push([451310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -14883,15 +14264,14 @@ arr.push([
     [["max_hp",91519],["attack",2211],["un_defence",1115],["un_critical",372]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451401,
+arr.push([451401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -14907,15 +14287,14 @@ arr.push([
     [["attack",2440],["un_defence",1229],["un_dodge",410],["critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451402,
+arr.push([451402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -14931,15 +14310,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["dodge",410],["critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451403,
+arr.push([451403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -14955,15 +14333,14 @@ arr.push([
     [["attack",2440],["un_defence",1229],["dodge",410],["critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451404,
+arr.push([451404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -14979,15 +14356,14 @@ arr.push([
     [["max_hp",101070],["un_defence",1229],["un_dodge",410],["un_critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451405,
+arr.push([451405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -15003,15 +14379,14 @@ arr.push([
     [["max_hp",101070],["attack",2440],["un_dodge",410],["critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451406,
+arr.push([451406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -15027,15 +14402,14 @@ arr.push([
     [["attack",2440],["defence",1229],["un_defence",1229],["dodge",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451407,
+arr.push([451407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -15051,15 +14425,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["un_dodge",410],["un_critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451408,
+arr.push([451408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -15075,15 +14448,14 @@ arr.push([
     [["defence",1229],["dodge",410],["critical",410],["un_critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451409,
+arr.push([451409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -15099,15 +14471,14 @@ arr.push([
     [["defence",1229],["un_dodge",410],["dodge",410],["un_critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451410,
+arr.push([451410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -15123,15 +14494,14 @@ arr.push([
     [["max_hp",101070],["attack",2440],["un_defence",1229],["un_critical",410]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451501,
+arr.push([451501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -15147,15 +14517,14 @@ arr.push([
     [["attack",2676],["un_defence",1347],["un_dodge",449],["critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451502,
+arr.push([451502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -15171,15 +14540,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["dodge",449],["critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451503,
+arr.push([451503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -15195,15 +14563,14 @@ arr.push([
     [["attack",2676],["un_defence",1347],["dodge",449],["critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451504,
+arr.push([451504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -15219,15 +14586,14 @@ arr.push([
     [["max_hp",110888],["un_defence",1347],["un_dodge",449],["un_critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451505,
+arr.push([451505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -15243,15 +14609,14 @@ arr.push([
     [["max_hp",110888],["attack",2676],["un_dodge",449],["critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451506,
+arr.push([451506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -15267,15 +14632,14 @@ arr.push([
     [["attack",2676],["defence",1347],["un_defence",1347],["dodge",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451507,
+arr.push([451507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -15291,15 +14655,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["un_dodge",449],["un_critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451508,
+arr.push([451508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -15315,15 +14678,14 @@ arr.push([
     [["defence",1347],["dodge",449],["critical",449],["un_critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451509,
+arr.push([451509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -15339,15 +14701,14 @@ arr.push([
     [["defence",1347],["un_dodge",449],["dodge",449],["un_critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-451510,
+arr.push([451510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -15363,15 +14724,14 @@ arr.push([
     [["max_hp",110888],["attack",2676],["un_defence",1347],["un_critical",449]],
     [1.35,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460501,
+arr.push([460501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -15387,15 +14747,14 @@ arr.push([
     [["un_dodge",101],["max_hp",23150],["critical",101],["attack",573],["un_defence",297]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460502,
+arr.push([460502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -15411,15 +14770,14 @@ arr.push([
     [["dodge",101],["max_hp",23150],["critical",101],["attack",573],["defence",297]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460503,
+arr.push([460503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -15435,15 +14793,14 @@ arr.push([
     [["critical",101],["un_critical",101],["attack",573],["un_defence",297],["dodge",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460504,
+arr.push([460504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -15459,15 +14816,14 @@ arr.push([
     [["defence",297],["un_defence",297],["un_dodge",101],["un_critical",101],["max_hp",23150]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460505,
+arr.push([460505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -15483,15 +14839,14 @@ arr.push([
     [["max_hp",23150],["un_defence",297],["un_dodge",101],["critical",101],["attack",573]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460506,
+arr.push([460506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -15507,15 +14862,14 @@ arr.push([
     [["un_defence",297],["attack",573],["defence",297],["dodge",101],["critical",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460507,
+arr.push([460507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -15531,15 +14885,14 @@ arr.push([
     [["dodge",101],["max_hp",23150],["defence",297],["un_dodge",101],["un_critical",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460508,
+arr.push([460508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -15555,15 +14908,14 @@ arr.push([
     [["dodge",101],["critical",101],["max_hp",23150],["defence",297],["un_critical",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460509,
+arr.push([460509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -15579,15 +14931,14 @@ arr.push([
     [["attack",573],["defence",297],["un_dodge",101],["dodge",101],["un_critical",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-460510,
+arr.push([460510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -15603,11 +14954,10 @@ arr.push([
     [["max_hp",23150],["attack",573],["un_defence",297],["un_dodge",101],["un_critical",101]],
     [1.3,1.8],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-480000,
+arr.push([480000,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15627,11 +14977,10 @@ arr.push([
     [["attack",652],["un_defence",336],["un_dodge",112],["critical",112]],
     [1.5,1.65],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-480001,
+arr.push([480001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15651,11 +15000,10 @@ arr.push([
     [["attack",238],["un_defence",128],["dodge",43],["critical",43]],
     [1.5,1.7],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550001,
+arr.push([550001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15675,11 +15023,10 @@ arr.push([
     [["attack",53],["attack",53],["un_defence",36],["critical",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550002,
+arr.push([550002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15699,11 +15046,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["defence",36],["dodge",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550003,
+arr.push([550003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15723,11 +15069,10 @@ arr.push([
     [["attack",53],["attack",53],["un_defence",36],["critical",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550004,
+arr.push([550004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15747,11 +15092,10 @@ arr.push([
     [["max_hp",1583],["un_defence",36],["un_defence",36],["un_dodge",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550005,
+arr.push([550005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15771,11 +15115,10 @@ arr.push([
     [["max_hp",1583],["attack",53],["attack",53],["critical",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550006,
+arr.push([550006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15795,11 +15138,10 @@ arr.push([
     [["attack",53],["defence",36],["un_defence",36],["un_defence",36]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550007,
+arr.push([550007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15819,11 +15161,10 @@ arr.push([
     [["max_hp",1583],["max_hp",1583],["defence",36],["un_dodge",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550008,
+arr.push([550008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15843,11 +15184,10 @@ arr.push([
     [["defence",36],["defence",36],["dodge",12],["un_critical",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550009,
+arr.push([550009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15867,11 +15207,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["dodge",12],["un_critical",12]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550010,
+arr.push([550010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -15891,15 +15230,14 @@ arr.push([
     [["max_hp",1583],["max_hp",1583],["attack",53],["un_defence",36]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550101,
+arr.push([550101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -15915,15 +15253,14 @@ arr.push([
     [["attack",133],["attack",133],["un_defence",76],["critical",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550102,
+arr.push([550102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -15939,15 +15276,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["defence",76],["dodge",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550103,
+arr.push([550103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -15963,15 +15299,14 @@ arr.push([
     [["attack",133],["attack",133],["un_defence",76],["critical",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550104,
+arr.push([550104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -15987,15 +15322,14 @@ arr.push([
     [["max_hp",4907],["un_defence",76],["un_defence",76],["un_dodge",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550105,
+arr.push([550105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -16011,15 +15345,14 @@ arr.push([
     [["max_hp",4907],["attack",133],["attack",133],["critical",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550106,
+arr.push([550106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -16035,15 +15368,14 @@ arr.push([
     [["attack",133],["defence",76],["un_defence",76],["un_defence",76]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550107,
+arr.push([550107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -16059,15 +15391,14 @@ arr.push([
     [["max_hp",4907],["max_hp",4907],["defence",76],["un_dodge",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550108,
+arr.push([550108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -16083,15 +15414,14 @@ arr.push([
     [["defence",76],["defence",76],["dodge",26],["un_critical",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550109,
+arr.push([550109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -16107,15 +15437,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["dodge",26],["un_critical",26]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550110,
+arr.push([550110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -16131,15 +15460,14 @@ arr.push([
     [["max_hp",4907],["max_hp",4907],["attack",133],["un_defence",76]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550201,
+arr.push([550201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -16155,15 +15483,14 @@ arr.push([
     [["attack",238],["attack",238],["un_defence",128],["critical",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550202,
+arr.push([550202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -16179,15 +15506,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["defence",128],["dodge",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550203,
+arr.push([550203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -16203,15 +15529,14 @@ arr.push([
     [["attack",238],["attack",238],["un_defence",128],["critical",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550204,
+arr.push([550204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -16227,15 +15552,14 @@ arr.push([
     [["max_hp",9292],["un_defence",128],["un_defence",128],["un_dodge",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550205,
+arr.push([550205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -16251,15 +15575,14 @@ arr.push([
     [["max_hp",9292],["attack",238],["attack",238],["critical",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550206,
+arr.push([550206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -16275,15 +15598,14 @@ arr.push([
     [["attack",238],["defence",128],["un_defence",128],["un_defence",128]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550207,
+arr.push([550207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -16299,15 +15621,14 @@ arr.push([
     [["max_hp",9292],["max_hp",9292],["defence",128],["un_dodge",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550208,
+arr.push([550208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -16323,15 +15644,14 @@ arr.push([
     [["defence",128],["defence",128],["dodge",43],["un_critical",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550209,
+arr.push([550209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -16347,15 +15667,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["dodge",43],["un_critical",43]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550210,
+arr.push([550210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -16371,15 +15690,14 @@ arr.push([
     [["max_hp",9292],["max_hp",9292],["attack",238],["un_defence",128]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550301,
+arr.push([550301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -16395,15 +15713,14 @@ arr.push([
     [["attack",362],["attack",362],["un_defence",190],["critical",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550302,
+arr.push([550302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -16419,15 +15736,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["defence",190],["dodge",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550303,
+arr.push([550303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -16443,15 +15759,14 @@ arr.push([
     [["attack",362],["attack",362],["un_defence",190],["critical",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550304,
+arr.push([550304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -16467,15 +15782,14 @@ arr.push([
     [["max_hp",14450],["un_defence",190],["un_defence",190],["un_dodge",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550305,
+arr.push([550305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -16491,15 +15805,14 @@ arr.push([
     [["max_hp",14450],["attack",362],["attack",362],["critical",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550306,
+arr.push([550306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -16515,15 +15828,14 @@ arr.push([
     [["attack",362],["defence",190],["un_defence",190],["un_defence",190]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550307,
+arr.push([550307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -16539,15 +15851,14 @@ arr.push([
     [["max_hp",14450],["max_hp",14450],["defence",190],["un_dodge",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550308,
+arr.push([550308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -16563,15 +15874,14 @@ arr.push([
     [["defence",190],["defence",190],["dodge",64],["un_critical",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550309,
+arr.push([550309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -16587,15 +15897,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["dodge",64],["un_critical",64]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550310,
+arr.push([550310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -16611,15 +15920,14 @@ arr.push([
     [["max_hp",14450],["max_hp",14450],["attack",362],["un_defence",190]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550401,
+arr.push([550401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -16635,15 +15943,14 @@ arr.push([
     [["attack",500],["attack",500],["un_defence",260],["critical",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550402,
+arr.push([550402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -16659,15 +15966,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["defence",260],["dodge",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550403,
+arr.push([550403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -16683,15 +15989,14 @@ arr.push([
     [["attack",500],["attack",500],["un_defence",260],["critical",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550404,
+arr.push([550404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -16707,15 +16012,14 @@ arr.push([
     [["max_hp",20236],["un_defence",260],["un_defence",260],["un_dodge",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550405,
+arr.push([550405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -16731,15 +16035,14 @@ arr.push([
     [["max_hp",20236],["attack",500],["attack",500],["critical",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550406,
+arr.push([550406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -16755,15 +16058,14 @@ arr.push([
     [["attack",500],["defence",260],["un_defence",260],["un_defence",260]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550407,
+arr.push([550407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -16779,15 +16081,14 @@ arr.push([
     [["max_hp",20236],["max_hp",20236],["defence",260],["un_dodge",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550408,
+arr.push([550408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -16803,15 +16104,14 @@ arr.push([
     [["defence",260],["defence",260],["dodge",87],["un_critical",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550409,
+arr.push([550409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -16827,15 +16127,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["dodge",87],["un_critical",87]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550410,
+arr.push([550410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -16851,15 +16150,14 @@ arr.push([
     [["max_hp",20236],["max_hp",20236],["attack",500],["un_defence",260]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550501,
+arr.push([550501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -16875,15 +16173,14 @@ arr.push([
     [["attack",652],["attack",652],["un_defence",336],["critical",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550502,
+arr.push([550502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -16899,15 +16196,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["defence",336],["dodge",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550503,
+arr.push([550503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -16923,15 +16219,14 @@ arr.push([
     [["attack",652],["attack",652],["un_defence",336],["critical",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550504,
+arr.push([550504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -16947,15 +16242,14 @@ arr.push([
     [["max_hp",26563],["un_defence",336],["un_defence",336],["un_dodge",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550505,
+arr.push([550505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -16971,15 +16265,14 @@ arr.push([
     [["max_hp",26563],["attack",652],["attack",652],["critical",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550506,
+arr.push([550506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -16995,15 +16288,14 @@ arr.push([
     [["attack",652],["defence",336],["un_defence",336],["un_defence",336]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550507,
+arr.push([550507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -17019,15 +16311,14 @@ arr.push([
     [["max_hp",26563],["max_hp",26563],["defence",336],["un_dodge",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550508,
+arr.push([550508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -17043,15 +16334,14 @@ arr.push([
     [["defence",336],["defence",336],["dodge",112],["un_critical",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550509,
+arr.push([550509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -17067,15 +16357,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["dodge",112],["un_critical",112]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550510,
+arr.push([550510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -17091,15 +16380,14 @@ arr.push([
     [["max_hp",26563],["max_hp",26563],["attack",652],["un_defence",336]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550601,
+arr.push([550601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -17115,15 +16403,14 @@ arr.push([
     [["attack",816],["attack",816],["un_defence",417],["critical",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550602,
+arr.push([550602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -17139,15 +16426,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["defence",417],["dodge",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550603,
+arr.push([550603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -17163,15 +16449,14 @@ arr.push([
     [["attack",816],["attack",816],["un_defence",417],["critical",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550604,
+arr.push([550604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -17187,15 +16472,14 @@ arr.push([
     [["max_hp",33368],["un_defence",417],["un_defence",417],["un_dodge",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550605,
+arr.push([550605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -17211,15 +16495,14 @@ arr.push([
     [["max_hp",33368],["attack",816],["attack",816],["critical",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550606,
+arr.push([550606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -17235,15 +16518,14 @@ arr.push([
     [["attack",816],["defence",417],["un_defence",417],["un_defence",417]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550607,
+arr.push([550607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -17259,15 +16541,14 @@ arr.push([
     [["max_hp",33368],["max_hp",33368],["defence",417],["un_dodge",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550608,
+arr.push([550608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -17283,15 +16564,14 @@ arr.push([
     [["defence",417],["defence",417],["dodge",139],["un_critical",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550609,
+arr.push([550609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -17307,15 +16587,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["dodge",139],["un_critical",139]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550610,
+arr.push([550610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -17331,15 +16610,14 @@ arr.push([
     [["max_hp",33368],["max_hp",33368],["attack",816],["un_defence",417]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550701,
+arr.push([550701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -17355,15 +16633,14 @@ arr.push([
     [["attack",989],["attack",989],["un_defence",504],["critical",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550702,
+arr.push([550702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -17379,15 +16656,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["defence",504],["dodge",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550703,
+arr.push([550703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -17403,15 +16679,14 @@ arr.push([
     [["attack",989],["attack",989],["un_defence",504],["critical",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550704,
+arr.push([550704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -17427,15 +16702,14 @@ arr.push([
     [["max_hp",40607],["un_defence",504],["un_defence",504],["un_dodge",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550705,
+arr.push([550705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -17451,15 +16725,14 @@ arr.push([
     [["max_hp",40607],["attack",989],["attack",989],["critical",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550706,
+arr.push([550706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -17475,15 +16748,14 @@ arr.push([
     [["attack",989],["defence",504],["un_defence",504],["un_defence",504]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550707,
+arr.push([550707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -17499,15 +16771,14 @@ arr.push([
     [["max_hp",40607],["max_hp",40607],["defence",504],["un_dodge",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550708,
+arr.push([550708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -17523,15 +16794,14 @@ arr.push([
     [["defence",504],["defence",504],["dodge",168],["un_critical",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550709,
+arr.push([550709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -17547,15 +16817,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["dodge",168],["un_critical",168]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550710,
+arr.push([550710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -17571,15 +16840,14 @@ arr.push([
     [["max_hp",40607],["max_hp",40607],["attack",989],["un_defence",504]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550801,
+arr.push([550801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -17595,15 +16863,14 @@ arr.push([
     [["attack",1173],["attack",1173],["un_defence",596],["critical",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550802,
+arr.push([550802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -17619,15 +16886,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["defence",596],["dodge",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550803,
+arr.push([550803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -17643,15 +16909,14 @@ arr.push([
     [["attack",1173],["attack",1173],["un_defence",596],["critical",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550804,
+arr.push([550804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -17667,15 +16932,14 @@ arr.push([
     [["max_hp",48242],["un_defence",596],["un_defence",596],["un_dodge",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550805,
+arr.push([550805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -17691,15 +16955,14 @@ arr.push([
     [["max_hp",48242],["attack",1173],["attack",1173],["critical",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550806,
+arr.push([550806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -17715,15 +16978,14 @@ arr.push([
     [["attack",1173],["defence",596],["un_defence",596],["un_defence",596]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550807,
+arr.push([550807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -17739,15 +17001,14 @@ arr.push([
     [["max_hp",48242],["max_hp",48242],["defence",596],["un_dodge",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550808,
+arr.push([550808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -17763,15 +17024,14 @@ arr.push([
     [["defence",596],["defence",596],["dodge",199],["un_critical",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550809,
+arr.push([550809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -17787,15 +17047,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["dodge",199],["un_critical",199]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550810,
+arr.push([550810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -17811,15 +17070,14 @@ arr.push([
     [["max_hp",48242],["max_hp",48242],["attack",1173],["un_defence",596]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550901,
+arr.push([550901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -17835,15 +17093,14 @@ arr.push([
     [["attack",1365],["attack",1365],["un_defence",692],["critical",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550902,
+arr.push([550902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -17859,15 +17116,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["defence",692],["dodge",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550903,
+arr.push([550903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -17883,15 +17139,14 @@ arr.push([
     [["attack",1365],["attack",1365],["un_defence",692],["critical",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550904,
+arr.push([550904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -17907,15 +17162,14 @@ arr.push([
     [["max_hp",56246],["un_defence",692],["un_defence",692],["un_dodge",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550905,
+arr.push([550905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -17931,15 +17185,14 @@ arr.push([
     [["max_hp",56246],["attack",1365],["attack",1365],["critical",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550906,
+arr.push([550906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -17955,15 +17208,14 @@ arr.push([
     [["attack",1365],["defence",692],["un_defence",692],["un_defence",692]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550907,
+arr.push([550907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -17979,15 +17231,14 @@ arr.push([
     [["max_hp",56246],["max_hp",56246],["defence",692],["un_dodge",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550908,
+arr.push([550908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -18003,15 +17254,14 @@ arr.push([
     [["defence",692],["defence",692],["dodge",231],["un_critical",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550909,
+arr.push([550909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -18027,15 +17277,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["dodge",231],["un_critical",231]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-550910,
+arr.push([550910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -18051,15 +17300,14 @@ arr.push([
     [["max_hp",56246],["max_hp",56246],["attack",1365],["un_defence",692]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551001,
+arr.push([551001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -18075,15 +17323,14 @@ arr.push([
     [["attack",1565],["attack",1565],["un_defence",792],["critical",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551002,
+arr.push([551002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -18099,15 +17346,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["defence",792],["dodge",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551003,
+arr.push([551003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -18123,15 +17369,14 @@ arr.push([
     [["attack",1565],["attack",1565],["un_defence",792],["critical",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551004,
+arr.push([551004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -18147,15 +17392,14 @@ arr.push([
     [["max_hp",64594],["un_defence",792],["un_defence",792],["un_dodge",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551005,
+arr.push([551005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -18171,15 +17415,14 @@ arr.push([
     [["max_hp",64594],["attack",1565],["attack",1565],["critical",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551006,
+arr.push([551006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -18195,15 +17438,14 @@ arr.push([
     [["attack",1565],["defence",792],["un_defence",792],["un_defence",792]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551007,
+arr.push([551007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -18219,15 +17461,14 @@ arr.push([
     [["max_hp",64594],["max_hp",64594],["defence",792],["un_dodge",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551008,
+arr.push([551008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -18243,15 +17484,14 @@ arr.push([
     [["defence",792],["defence",792],["dodge",264],["un_critical",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551009,
+arr.push([551009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -18267,15 +17507,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["dodge",264],["un_critical",264]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551010,
+arr.push([551010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -18291,15 +17530,14 @@ arr.push([
     [["max_hp",64594],["max_hp",64594],["attack",1565],["un_defence",792]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551101,
+arr.push([551101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -18315,15 +17553,14 @@ arr.push([
     [["attack",1773],["attack",1773],["un_defence",896],["critical",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551102,
+arr.push([551102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -18339,15 +17576,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["defence",896],["dodge",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551103,
+arr.push([551103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -18363,15 +17599,14 @@ arr.push([
     [["attack",1773],["attack",1773],["un_defence",896],["critical",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551104,
+arr.push([551104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -18387,15 +17622,14 @@ arr.push([
     [["max_hp",73267],["un_defence",896],["un_defence",896],["un_dodge",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551105,
+arr.push([551105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -18411,15 +17645,14 @@ arr.push([
     [["max_hp",73267],["attack",1773],["attack",1773],["critical",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551106,
+arr.push([551106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -18435,15 +17668,14 @@ arr.push([
     [["attack",1773],["defence",896],["un_defence",896],["un_defence",896]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551107,
+arr.push([551107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -18459,15 +17691,14 @@ arr.push([
     [["max_hp",73267],["max_hp",73267],["defence",896],["un_dodge",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551108,
+arr.push([551108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -18483,15 +17714,14 @@ arr.push([
     [["defence",896],["defence",896],["dodge",299],["un_critical",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551109,
+arr.push([551109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -18507,15 +17737,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["dodge",299],["un_critical",299]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551110,
+arr.push([551110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -18531,15 +17760,14 @@ arr.push([
     [["max_hp",73267],["max_hp",73267],["attack",1773],["un_defence",896]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551201,
+arr.push([551201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -18555,15 +17783,14 @@ arr.push([
     [["attack",1989],["attack",1989],["un_defence",1003],["critical",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551202,
+arr.push([551202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -18579,15 +17806,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["defence",1003],["dodge",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551203,
+arr.push([551203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -18603,15 +17829,14 @@ arr.push([
     [["attack",1989],["attack",1989],["un_defence",1003],["critical",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551204,
+arr.push([551204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -18627,15 +17852,14 @@ arr.push([
     [["max_hp",82247],["un_defence",1003],["un_defence",1003],["un_dodge",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551205,
+arr.push([551205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -18651,15 +17875,14 @@ arr.push([
     [["max_hp",82247],["attack",1989],["attack",1989],["critical",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551206,
+arr.push([551206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -18675,15 +17898,14 @@ arr.push([
     [["attack",1989],["defence",1003],["un_defence",1003],["un_defence",1003]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551207,
+arr.push([551207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -18699,15 +17921,14 @@ arr.push([
     [["max_hp",82247],["max_hp",82247],["defence",1003],["un_dodge",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551208,
+arr.push([551208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -18723,15 +17944,14 @@ arr.push([
     [["defence",1003],["defence",1003],["dodge",335],["un_critical",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551209,
+arr.push([551209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -18747,15 +17967,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["dodge",335],["un_critical",335]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551210,
+arr.push([551210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -18771,15 +17990,14 @@ arr.push([
     [["max_hp",82247],["max_hp",82247],["attack",1989],["un_defence",1003]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551301,
+arr.push([551301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -18795,15 +18013,14 @@ arr.push([
     [["attack",2211],["attack",2211],["un_defence",1115],["critical",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551302,
+arr.push([551302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -18819,15 +18036,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["defence",1115],["dodge",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551303,
+arr.push([551303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -18843,15 +18059,14 @@ arr.push([
     [["attack",2211],["attack",2211],["un_defence",1115],["critical",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551304,
+arr.push([551304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -18867,15 +18082,14 @@ arr.push([
     [["max_hp",91519],["un_defence",1115],["un_defence",1115],["un_dodge",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551305,
+arr.push([551305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -18891,15 +18105,14 @@ arr.push([
     [["max_hp",91519],["attack",2211],["attack",2211],["critical",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551306,
+arr.push([551306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -18915,15 +18128,14 @@ arr.push([
     [["attack",2211],["defence",1115],["un_defence",1115],["un_defence",1115]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551307,
+arr.push([551307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -18939,15 +18151,14 @@ arr.push([
     [["max_hp",91519],["max_hp",91519],["defence",1115],["un_dodge",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551308,
+arr.push([551308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -18963,15 +18174,14 @@ arr.push([
     [["defence",1115],["defence",1115],["dodge",372],["un_critical",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551309,
+arr.push([551309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -18987,15 +18197,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["dodge",372],["un_critical",372]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551310,
+arr.push([551310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -19011,15 +18220,14 @@ arr.push([
     [["max_hp",91519],["max_hp",91519],["attack",2211],["un_defence",1115]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551401,
+arr.push([551401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -19035,15 +18243,14 @@ arr.push([
     [["attack",2440],["attack",2440],["un_defence",1229],["critical",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551402,
+arr.push([551402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -19059,15 +18266,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["defence",1229],["dodge",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551403,
+arr.push([551403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -19083,15 +18289,14 @@ arr.push([
     [["attack",2440],["attack",2440],["un_defence",1229],["critical",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551404,
+arr.push([551404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -19107,15 +18312,14 @@ arr.push([
     [["max_hp",101070],["un_defence",1229],["un_defence",1229],["un_dodge",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551405,
+arr.push([551405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -19131,15 +18335,14 @@ arr.push([
     [["max_hp",101070],["attack",2440],["attack",2440],["critical",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551406,
+arr.push([551406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -19155,15 +18358,14 @@ arr.push([
     [["attack",2440],["defence",1229],["un_defence",1229],["un_defence",1229]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551407,
+arr.push([551407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -19179,15 +18381,14 @@ arr.push([
     [["max_hp",101070],["max_hp",101070],["defence",1229],["un_dodge",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551408,
+arr.push([551408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -19203,15 +18404,14 @@ arr.push([
     [["defence",1229],["defence",1229],["dodge",410],["un_critical",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551409,
+arr.push([551409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -19227,15 +18427,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["dodge",410],["un_critical",410]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551410,
+arr.push([551410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -19251,15 +18450,14 @@ arr.push([
     [["max_hp",101070],["max_hp",101070],["attack",2440],["un_defence",1229]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551501,
+arr.push([551501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -19275,15 +18473,14 @@ arr.push([
     [["attack",2676],["attack",2676],["un_defence",1347],["critical",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551502,
+arr.push([551502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -19299,15 +18496,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["defence",1347],["dodge",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551503,
+arr.push([551503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -19323,15 +18519,14 @@ arr.push([
     [["attack",2676],["attack",2676],["un_defence",1347],["critical",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551504,
+arr.push([551504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -19347,15 +18542,14 @@ arr.push([
     [["max_hp",110888],["un_defence",1347],["un_defence",1347],["un_dodge",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551505,
+arr.push([551505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -19371,15 +18565,14 @@ arr.push([
     [["max_hp",110888],["attack",2676],["attack",2676],["critical",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551506,
+arr.push([551506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -19395,15 +18588,14 @@ arr.push([
     [["attack",2676],["defence",1347],["un_defence",1347],["un_defence",1347]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551507,
+arr.push([551507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -19419,15 +18611,14 @@ arr.push([
     [["max_hp",110888],["max_hp",110888],["defence",1347],["un_dodge",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551508,
+arr.push([551508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -19443,15 +18634,14 @@ arr.push([
     [["defence",1347],["defence",1347],["dodge",449],["un_critical",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551509,
+arr.push([551509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -19467,15 +18657,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["dodge",449],["un_critical",449]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-551510,
+arr.push([551510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -19491,11 +18680,10 @@ arr.push([
     [["max_hp",110888],["max_hp",110888],["attack",2676],["un_defence",1347]],
     [1.55,1.75],
     0.6,
-    "Equip"
+    "Equip",
+    0
     ]);
-    
-arr.push([
-650001,
+arr.push([650001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19515,11 +18703,10 @@ arr.push([
     [["attack",53],["attack",53],["un_defence",36],["critical",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650002,
+arr.push([650002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19539,11 +18726,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["defence",36],["dodge",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650003,
+arr.push([650003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19563,11 +18749,10 @@ arr.push([
     [["attack",53],["attack",53],["un_defence",36],["critical",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650004,
+arr.push([650004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19587,11 +18772,10 @@ arr.push([
     [["max_hp",1583],["un_defence",36],["un_defence",36],["un_dodge",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650005,
+arr.push([650005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19611,11 +18795,10 @@ arr.push([
     [["max_hp",1583],["attack",53],["attack",53],["critical",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650006,
+arr.push([650006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19635,11 +18818,10 @@ arr.push([
     [["attack",53],["defence",36],["un_defence",36],["un_defence",36]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650007,
+arr.push([650007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19659,11 +18841,10 @@ arr.push([
     [["max_hp",1583],["max_hp",1583],["defence",36],["un_dodge",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650008,
+arr.push([650008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19683,11 +18864,10 @@ arr.push([
     [["defence",36],["defence",36],["dodge",12],["un_critical",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650009,
+arr.push([650009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19707,11 +18887,10 @@ arr.push([
     [["max_hp",1583],["defence",36],["dodge",12],["un_critical",12]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650010,
+arr.push([650010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
@@ -19731,15 +18910,14 @@ arr.push([
     [["max_hp",1583],["max_hp",1583],["attack",53],["un_defence",36]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650101,
+arr.push([650101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     1,
@@ -19755,15 +18933,14 @@ arr.push([
     [["attack",133],["attack",133],["un_defence",76],["critical",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650102,
+arr.push([650102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     2,
@@ -19779,15 +18956,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["defence",76],["dodge",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650103,
+arr.push([650103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     5,
@@ -19803,15 +18979,14 @@ arr.push([
     [["attack",133],["attack",133],["un_defence",76],["critical",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650104,
+arr.push([650104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     4,
@@ -19827,15 +19002,14 @@ arr.push([
     [["max_hp",4907],["un_defence",76],["un_defence",76],["un_dodge",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650105,
+arr.push([650105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     3,
@@ -19851,15 +19025,14 @@ arr.push([
     [["max_hp",4907],["attack",133],["attack",133],["critical",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650106,
+arr.push([650106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     10,
@@ -19875,15 +19048,14 @@ arr.push([
     [["attack",133],["defence",76],["un_defence",76],["un_defence",76]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650107,
+arr.push([650107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     9,
@@ -19899,15 +19071,14 @@ arr.push([
     [["max_hp",4907],["max_hp",4907],["defence",76],["un_dodge",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650108,
+arr.push([650108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     8,
@@ -19923,15 +19094,14 @@ arr.push([
     [["defence",76],["defence",76],["dodge",26],["un_critical",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650109,
+arr.push([650109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     7,
@@ -19947,15 +19117,14 @@ arr.push([
     [["max_hp",4907],["defence",76],["dodge",26],["un_critical",26]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650110,
+arr.push([650110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",10],
+    ["$var",20],
     ["$var",[]],
     "equip",
     6,
@@ -19971,15 +19140,14 @@ arr.push([
     [["max_hp",4907],["max_hp",4907],["attack",133],["un_defence",76]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650201,
+arr.push([650201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     1,
@@ -19995,15 +19163,14 @@ arr.push([
     [["attack",238],["attack",238],["un_defence",128],["critical",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650202,
+arr.push([650202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     2,
@@ -20019,15 +19186,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["defence",128],["dodge",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650203,
+arr.push([650203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     5,
@@ -20043,15 +19209,14 @@ arr.push([
     [["attack",238],["attack",238],["un_defence",128],["critical",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650204,
+arr.push([650204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     4,
@@ -20067,15 +19232,14 @@ arr.push([
     [["max_hp",9292],["un_defence",128],["un_defence",128],["un_dodge",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650205,
+arr.push([650205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     3,
@@ -20091,15 +19255,14 @@ arr.push([
     [["max_hp",9292],["attack",238],["attack",238],["critical",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650206,
+arr.push([650206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     10,
@@ -20115,15 +19278,14 @@ arr.push([
     [["attack",238],["defence",128],["un_defence",128],["un_defence",128]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650207,
+arr.push([650207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     9,
@@ -20139,15 +19301,14 @@ arr.push([
     [["max_hp",9292],["max_hp",9292],["defence",128],["un_dodge",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650208,
+arr.push([650208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     8,
@@ -20163,15 +19324,14 @@ arr.push([
     [["defence",128],["defence",128],["dodge",43],["un_critical",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650209,
+arr.push([650209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     7,
@@ -20187,15 +19347,14 @@ arr.push([
     [["max_hp",9292],["defence",128],["dodge",43],["un_critical",43]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650210,
+arr.push([650210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",20],
+    ["$var",40],
     ["$var",[]],
     "equip",
     6,
@@ -20211,15 +19370,14 @@ arr.push([
     [["max_hp",9292],["max_hp",9292],["attack",238],["un_defence",128]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650301,
+arr.push([650301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     1,
@@ -20235,15 +19393,14 @@ arr.push([
     [["attack",362],["attack",362],["un_defence",190],["critical",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650302,
+arr.push([650302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     2,
@@ -20259,15 +19416,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["defence",190],["dodge",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650303,
+arr.push([650303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     5,
@@ -20283,15 +19439,14 @@ arr.push([
     [["attack",362],["attack",362],["un_defence",190],["critical",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650304,
+arr.push([650304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     4,
@@ -20307,15 +19462,14 @@ arr.push([
     [["max_hp",14450],["un_defence",190],["un_defence",190],["un_dodge",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650305,
+arr.push([650305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     3,
@@ -20331,15 +19485,14 @@ arr.push([
     [["max_hp",14450],["attack",362],["attack",362],["critical",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650306,
+arr.push([650306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     10,
@@ -20355,15 +19508,14 @@ arr.push([
     [["attack",362],["defence",190],["un_defence",190],["un_defence",190]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650307,
+arr.push([650307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     9,
@@ -20379,15 +19531,14 @@ arr.push([
     [["max_hp",14450],["max_hp",14450],["defence",190],["un_dodge",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650308,
+arr.push([650308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     8,
@@ -20403,15 +19554,14 @@ arr.push([
     [["defence",190],["defence",190],["dodge",64],["un_critical",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650309,
+arr.push([650309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     7,
@@ -20427,15 +19577,14 @@ arr.push([
     [["max_hp",14450],["defence",190],["dodge",64],["un_critical",64]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650310,
+arr.push([650310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",30],
+    ["$var",60],
     ["$var",[]],
     "equip",
     6,
@@ -20451,15 +19600,14 @@ arr.push([
     [["max_hp",14450],["max_hp",14450],["attack",362],["un_defence",190]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650401,
+arr.push([650401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     1,
@@ -20475,15 +19623,14 @@ arr.push([
     [["attack",500],["attack",500],["un_defence",260],["critical",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650402,
+arr.push([650402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     2,
@@ -20499,15 +19646,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["defence",260],["dodge",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650403,
+arr.push([650403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     5,
@@ -20523,15 +19669,14 @@ arr.push([
     [["attack",500],["attack",500],["un_defence",260],["critical",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650404,
+arr.push([650404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     4,
@@ -20547,15 +19692,14 @@ arr.push([
     [["max_hp",20236],["un_defence",260],["un_defence",260],["un_dodge",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650405,
+arr.push([650405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     3,
@@ -20571,15 +19715,14 @@ arr.push([
     [["max_hp",20236],["attack",500],["attack",500],["critical",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650406,
+arr.push([650406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     10,
@@ -20595,15 +19738,14 @@ arr.push([
     [["attack",500],["defence",260],["un_defence",260],["un_defence",260]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650407,
+arr.push([650407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     9,
@@ -20619,15 +19761,14 @@ arr.push([
     [["max_hp",20236],["max_hp",20236],["defence",260],["un_dodge",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650408,
+arr.push([650408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     8,
@@ -20643,15 +19784,14 @@ arr.push([
     [["defence",260],["defence",260],["dodge",87],["un_critical",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650409,
+arr.push([650409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     7,
@@ -20667,15 +19807,14 @@ arr.push([
     [["max_hp",20236],["defence",260],["dodge",87],["un_critical",87]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650410,
+arr.push([650410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",40],
+    ["$var",80],
     ["$var",[]],
     "equip",
     6,
@@ -20691,15 +19830,14 @@ arr.push([
     [["max_hp",20236],["max_hp",20236],["attack",500],["un_defence",260]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650501,
+arr.push([650501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     1,
@@ -20715,15 +19853,14 @@ arr.push([
     [["attack",652],["attack",652],["un_defence",336],["critical",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650502,
+arr.push([650502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     2,
@@ -20739,15 +19876,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["defence",336],["dodge",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650503,
+arr.push([650503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     5,
@@ -20763,15 +19899,14 @@ arr.push([
     [["attack",652],["attack",652],["un_defence",336],["critical",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650504,
+arr.push([650504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     4,
@@ -20787,15 +19922,14 @@ arr.push([
     [["max_hp",26563],["un_defence",336],["un_defence",336],["un_dodge",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650505,
+arr.push([650505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     3,
@@ -20811,15 +19945,14 @@ arr.push([
     [["max_hp",26563],["attack",652],["attack",652],["critical",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650506,
+arr.push([650506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     10,
@@ -20835,15 +19968,14 @@ arr.push([
     [["attack",652],["defence",336],["un_defence",336],["un_defence",336]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650507,
+arr.push([650507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     9,
@@ -20859,15 +19991,14 @@ arr.push([
     [["max_hp",26563],["max_hp",26563],["defence",336],["un_dodge",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650508,
+arr.push([650508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     8,
@@ -20883,15 +20014,14 @@ arr.push([
     [["defence",336],["defence",336],["dodge",112],["un_critical",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650509,
+arr.push([650509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     7,
@@ -20907,15 +20037,14 @@ arr.push([
     [["max_hp",26563],["defence",336],["dodge",112],["un_critical",112]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650510,
+arr.push([650510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",50],
+    ["$var",100],
     ["$var",[]],
     "equip",
     6,
@@ -20931,15 +20060,14 @@ arr.push([
     [["max_hp",26563],["max_hp",26563],["attack",652],["un_defence",336]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650601,
+arr.push([650601,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     1,
@@ -20955,15 +20083,14 @@ arr.push([
     [["attack",816],["attack",816],["un_defence",417],["critical",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650602,
+arr.push([650602,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     2,
@@ -20979,15 +20106,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["defence",417],["dodge",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650603,
+arr.push([650603,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     5,
@@ -21003,15 +20129,14 @@ arr.push([
     [["attack",816],["attack",816],["un_defence",417],["critical",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650604,
+arr.push([650604,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     4,
@@ -21027,15 +20152,14 @@ arr.push([
     [["max_hp",33368],["un_defence",417],["un_defence",417],["un_dodge",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650605,
+arr.push([650605,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     3,
@@ -21051,15 +20175,14 @@ arr.push([
     [["max_hp",33368],["attack",816],["attack",816],["critical",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650606,
+arr.push([650606,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     10,
@@ -21075,15 +20198,14 @@ arr.push([
     [["attack",816],["defence",417],["un_defence",417],["un_defence",417]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650607,
+arr.push([650607,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     9,
@@ -21099,15 +20221,14 @@ arr.push([
     [["max_hp",33368],["max_hp",33368],["defence",417],["un_dodge",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650608,
+arr.push([650608,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     8,
@@ -21123,15 +20244,14 @@ arr.push([
     [["defence",417],["defence",417],["dodge",139],["un_critical",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650609,
+arr.push([650609,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     7,
@@ -21147,15 +20267,14 @@ arr.push([
     [["max_hp",33368],["defence",417],["dodge",139],["un_critical",139]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650610,
+arr.push([650610,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",60],
+    ["$var",120],
     ["$var",[]],
     "equip",
     6,
@@ -21171,15 +20290,14 @@ arr.push([
     [["max_hp",33368],["max_hp",33368],["attack",816],["un_defence",417]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650701,
+arr.push([650701,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     1,
@@ -21195,15 +20313,14 @@ arr.push([
     [["attack",989],["attack",989],["un_defence",504],["critical",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650702,
+arr.push([650702,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     2,
@@ -21219,15 +20336,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["defence",504],["dodge",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650703,
+arr.push([650703,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     5,
@@ -21243,15 +20359,14 @@ arr.push([
     [["attack",989],["attack",989],["un_defence",504],["critical",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650704,
+arr.push([650704,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     4,
@@ -21267,15 +20382,14 @@ arr.push([
     [["max_hp",40607],["un_defence",504],["un_defence",504],["un_dodge",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650705,
+arr.push([650705,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     3,
@@ -21291,15 +20405,14 @@ arr.push([
     [["max_hp",40607],["attack",989],["attack",989],["critical",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650706,
+arr.push([650706,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     10,
@@ -21315,15 +20428,14 @@ arr.push([
     [["attack",989],["defence",504],["un_defence",504],["un_defence",504]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650707,
+arr.push([650707,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     9,
@@ -21339,15 +20451,14 @@ arr.push([
     [["max_hp",40607],["max_hp",40607],["defence",504],["un_dodge",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650708,
+arr.push([650708,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     8,
@@ -21363,15 +20474,14 @@ arr.push([
     [["defence",504],["defence",504],["dodge",168],["un_critical",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650709,
+arr.push([650709,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     7,
@@ -21387,15 +20497,14 @@ arr.push([
     [["max_hp",40607],["defence",504],["dodge",168],["un_critical",168]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650710,
+arr.push([650710,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",70],
+    ["$var",140],
     ["$var",[]],
     "equip",
     6,
@@ -21411,15 +20520,14 @@ arr.push([
     [["max_hp",40607],["max_hp",40607],["attack",989],["un_defence",504]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650801,
+arr.push([650801,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     1,
@@ -21435,15 +20543,14 @@ arr.push([
     [["attack",1173],["attack",1173],["un_defence",596],["critical",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650802,
+arr.push([650802,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     2,
@@ -21459,15 +20566,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["defence",596],["dodge",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650803,
+arr.push([650803,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     5,
@@ -21483,15 +20589,14 @@ arr.push([
     [["attack",1173],["attack",1173],["un_defence",596],["critical",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650804,
+arr.push([650804,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     4,
@@ -21507,15 +20612,14 @@ arr.push([
     [["max_hp",48242],["un_defence",596],["un_defence",596],["un_dodge",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650805,
+arr.push([650805,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     3,
@@ -21531,15 +20635,14 @@ arr.push([
     [["max_hp",48242],["attack",1173],["attack",1173],["critical",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650806,
+arr.push([650806,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     10,
@@ -21555,15 +20658,14 @@ arr.push([
     [["attack",1173],["defence",596],["un_defence",596],["un_defence",596]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650807,
+arr.push([650807,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     9,
@@ -21579,15 +20681,14 @@ arr.push([
     [["max_hp",48242],["max_hp",48242],["defence",596],["un_dodge",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650808,
+arr.push([650808,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     8,
@@ -21603,15 +20704,14 @@ arr.push([
     [["defence",596],["defence",596],["dodge",199],["un_critical",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650809,
+arr.push([650809,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     7,
@@ -21627,15 +20727,14 @@ arr.push([
     [["max_hp",48242],["defence",596],["dodge",199],["un_critical",199]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650810,
+arr.push([650810,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",80],
+    ["$var",160],
     ["$var",[]],
     "equip",
     6,
@@ -21651,15 +20750,14 @@ arr.push([
     [["max_hp",48242],["max_hp",48242],["attack",1173],["un_defence",596]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650901,
+arr.push([650901,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     1,
@@ -21675,15 +20773,14 @@ arr.push([
     [["attack",1365],["attack",1365],["un_defence",692],["critical",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650902,
+arr.push([650902,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     2,
@@ -21699,15 +20796,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["defence",692],["dodge",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650903,
+arr.push([650903,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     5,
@@ -21723,15 +20819,14 @@ arr.push([
     [["attack",1365],["attack",1365],["un_defence",692],["critical",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650904,
+arr.push([650904,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     4,
@@ -21747,15 +20842,14 @@ arr.push([
     [["max_hp",56246],["un_defence",692],["un_defence",692],["un_dodge",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650905,
+arr.push([650905,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     3,
@@ -21771,15 +20865,14 @@ arr.push([
     [["max_hp",56246],["attack",1365],["attack",1365],["critical",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650906,
+arr.push([650906,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     10,
@@ -21795,15 +20888,14 @@ arr.push([
     [["attack",1365],["defence",692],["un_defence",692],["un_defence",692]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650907,
+arr.push([650907,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     9,
@@ -21819,15 +20911,14 @@ arr.push([
     [["max_hp",56246],["max_hp",56246],["defence",692],["un_dodge",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650908,
+arr.push([650908,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     8,
@@ -21843,15 +20934,14 @@ arr.push([
     [["defence",692],["defence",692],["dodge",231],["un_critical",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650909,
+arr.push([650909,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     7,
@@ -21867,15 +20957,14 @@ arr.push([
     [["max_hp",56246],["defence",692],["dodge",231],["un_critical",231]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-650910,
+arr.push([650910,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",90],
+    ["$var",180],
     ["$var",[]],
     "equip",
     6,
@@ -21891,15 +20980,14 @@ arr.push([
     [["max_hp",56246],["max_hp",56246],["attack",1365],["un_defence",692]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651001,
+arr.push([651001,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     1,
@@ -21915,15 +21003,14 @@ arr.push([
     [["attack",1565],["attack",1565],["un_defence",792],["critical",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651002,
+arr.push([651002,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     2,
@@ -21939,15 +21026,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["defence",792],["dodge",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651003,
+arr.push([651003,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     5,
@@ -21963,15 +21049,14 @@ arr.push([
     [["attack",1565],["attack",1565],["un_defence",792],["critical",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651004,
+arr.push([651004,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     4,
@@ -21987,15 +21072,14 @@ arr.push([
     [["max_hp",64594],["un_defence",792],["un_defence",792],["un_dodge",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651005,
+arr.push([651005,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     3,
@@ -22011,15 +21095,14 @@ arr.push([
     [["max_hp",64594],["attack",1565],["attack",1565],["critical",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651006,
+arr.push([651006,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     10,
@@ -22035,15 +21118,14 @@ arr.push([
     [["attack",1565],["defence",792],["un_defence",792],["un_defence",792]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651007,
+arr.push([651007,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     9,
@@ -22059,15 +21141,14 @@ arr.push([
     [["max_hp",64594],["max_hp",64594],["defence",792],["un_dodge",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651008,
+arr.push([651008,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     8,
@@ -22083,15 +21164,14 @@ arr.push([
     [["defence",792],["defence",792],["dodge",264],["un_critical",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651009,
+arr.push([651009,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     7,
@@ -22107,15 +21187,14 @@ arr.push([
     [["max_hp",64594],["defence",792],["dodge",264],["un_critical",264]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651010,
+arr.push([651010,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",100],
+    ["$var",200],
     ["$var",[]],
     "equip",
     6,
@@ -22131,15 +21210,14 @@ arr.push([
     [["max_hp",64594],["max_hp",64594],["attack",1565],["un_defence",792]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651101,
+arr.push([651101,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     1,
@@ -22155,15 +21233,14 @@ arr.push([
     [["attack",1773],["attack",1773],["un_defence",896],["critical",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651102,
+arr.push([651102,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     2,
@@ -22179,15 +21256,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["defence",896],["dodge",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651103,
+arr.push([651103,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     5,
@@ -22203,15 +21279,14 @@ arr.push([
     [["attack",1773],["attack",1773],["un_defence",896],["critical",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651104,
+arr.push([651104,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     4,
@@ -22227,15 +21302,14 @@ arr.push([
     [["max_hp",73267],["un_defence",896],["un_defence",896],["un_dodge",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651105,
+arr.push([651105,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     3,
@@ -22251,15 +21325,14 @@ arr.push([
     [["max_hp",73267],["attack",1773],["attack",1773],["critical",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651106,
+arr.push([651106,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     10,
@@ -22275,15 +21348,14 @@ arr.push([
     [["attack",1773],["defence",896],["un_defence",896],["un_defence",896]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651107,
+arr.push([651107,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     9,
@@ -22299,15 +21371,14 @@ arr.push([
     [["max_hp",73267],["max_hp",73267],["defence",896],["un_dodge",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651108,
+arr.push([651108,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     8,
@@ -22323,15 +21394,14 @@ arr.push([
     [["defence",896],["defence",896],["dodge",299],["un_critical",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651109,
+arr.push([651109,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     7,
@@ -22347,15 +21417,14 @@ arr.push([
     [["max_hp",73267],["defence",896],["dodge",299],["un_critical",299]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651110,
+arr.push([651110,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",110],
+    ["$var",220],
     ["$var",[]],
     "equip",
     6,
@@ -22371,15 +21440,14 @@ arr.push([
     [["max_hp",73267],["max_hp",73267],["attack",1773],["un_defence",896]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651201,
+arr.push([651201,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     1,
@@ -22395,15 +21463,14 @@ arr.push([
     [["attack",1989],["attack",1989],["un_defence",1003],["critical",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651202,
+arr.push([651202,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     2,
@@ -22419,15 +21486,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["defence",1003],["dodge",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651203,
+arr.push([651203,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     5,
@@ -22443,15 +21509,14 @@ arr.push([
     [["attack",1989],["attack",1989],["un_defence",1003],["critical",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651204,
+arr.push([651204,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     4,
@@ -22467,15 +21532,14 @@ arr.push([
     [["max_hp",82247],["un_defence",1003],["un_defence",1003],["un_dodge",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651205,
+arr.push([651205,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     3,
@@ -22491,15 +21555,14 @@ arr.push([
     [["max_hp",82247],["attack",1989],["attack",1989],["critical",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651206,
+arr.push([651206,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     10,
@@ -22515,15 +21578,14 @@ arr.push([
     [["attack",1989],["defence",1003],["un_defence",1003],["un_defence",1003]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651207,
+arr.push([651207,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     9,
@@ -22539,15 +21601,14 @@ arr.push([
     [["max_hp",82247],["max_hp",82247],["defence",1003],["un_dodge",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651208,
+arr.push([651208,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     8,
@@ -22563,15 +21624,14 @@ arr.push([
     [["defence",1003],["defence",1003],["dodge",335],["un_critical",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651209,
+arr.push([651209,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     7,
@@ -22587,15 +21647,14 @@ arr.push([
     [["max_hp",82247],["defence",1003],["dodge",335],["un_critical",335]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651210,
+arr.push([651210,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",120],
+    ["$var",240],
     ["$var",[]],
     "equip",
     6,
@@ -22611,15 +21670,14 @@ arr.push([
     [["max_hp",82247],["max_hp",82247],["attack",1989],["un_defence",1003]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651301,
+arr.push([651301,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     1,
@@ -22635,15 +21693,14 @@ arr.push([
     [["attack",2211],["attack",2211],["un_defence",1115],["critical",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651302,
+arr.push([651302,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     2,
@@ -22659,15 +21716,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["defence",1115],["dodge",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651303,
+arr.push([651303,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     5,
@@ -22683,15 +21739,14 @@ arr.push([
     [["attack",2211],["attack",2211],["un_defence",1115],["critical",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651304,
+arr.push([651304,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     4,
@@ -22707,15 +21762,14 @@ arr.push([
     [["max_hp",91519],["un_defence",1115],["un_defence",1115],["un_dodge",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651305,
+arr.push([651305,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     3,
@@ -22731,15 +21785,14 @@ arr.push([
     [["max_hp",91519],["attack",2211],["attack",2211],["critical",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651306,
+arr.push([651306,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     10,
@@ -22755,15 +21808,14 @@ arr.push([
     [["attack",2211],["defence",1115],["un_defence",1115],["un_defence",1115]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651307,
+arr.push([651307,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     9,
@@ -22779,15 +21831,14 @@ arr.push([
     [["max_hp",91519],["max_hp",91519],["defence",1115],["un_dodge",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651308,
+arr.push([651308,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     8,
@@ -22803,15 +21854,14 @@ arr.push([
     [["defence",1115],["defence",1115],["dodge",372],["un_critical",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651309,
+arr.push([651309,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     7,
@@ -22827,15 +21877,14 @@ arr.push([
     [["max_hp",91519],["defence",1115],["dodge",372],["un_critical",372]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651310,
+arr.push([651310,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",130],
+    ["$var",250],
     ["$var",[]],
     "equip",
     6,
@@ -22851,15 +21900,14 @@ arr.push([
     [["max_hp",91519],["max_hp",91519],["attack",2211],["un_defence",1115]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651401,
+arr.push([651401,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     1,
@@ -22875,15 +21923,14 @@ arr.push([
     [["attack",2440],["attack",2440],["un_defence",1229],["critical",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651402,
+arr.push([651402,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     2,
@@ -22899,15 +21946,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["defence",1229],["dodge",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651403,
+arr.push([651403,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     5,
@@ -22923,15 +21969,14 @@ arr.push([
     [["attack",2440],["attack",2440],["un_defence",1229],["critical",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651404,
+arr.push([651404,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     4,
@@ -22947,15 +21992,14 @@ arr.push([
     [["max_hp",101070],["un_defence",1229],["un_defence",1229],["un_dodge",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651405,
+arr.push([651405,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     3,
@@ -22971,15 +22015,14 @@ arr.push([
     [["max_hp",101070],["attack",2440],["attack",2440],["critical",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651406,
+arr.push([651406,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     10,
@@ -22995,15 +22038,14 @@ arr.push([
     [["attack",2440],["defence",1229],["un_defence",1229],["un_defence",1229]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651407,
+arr.push([651407,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     9,
@@ -23019,15 +22061,14 @@ arr.push([
     [["max_hp",101070],["max_hp",101070],["defence",1229],["un_dodge",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651408,
+arr.push([651408,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     8,
@@ -23043,15 +22084,14 @@ arr.push([
     [["defence",1229],["defence",1229],["dodge",410],["un_critical",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651409,
+arr.push([651409,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     7,
@@ -23067,15 +22107,14 @@ arr.push([
     [["max_hp",101070],["defence",1229],["dodge",410],["un_critical",410]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651410,
+arr.push([651410,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",140],
+    ["$var",260],
     ["$var",[]],
     "equip",
     6,
@@ -23091,15 +22130,14 @@ arr.push([
     [["max_hp",101070],["max_hp",101070],["attack",2440],["un_defence",1229]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651501,
+arr.push([651501,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     1,
@@ -23115,15 +22153,14 @@ arr.push([
     [["attack",2676],["attack",2676],["un_defence",1347],["critical",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651502,
+arr.push([651502,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     2,
@@ -23139,15 +22176,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["defence",1347],["dodge",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651503,
+arr.push([651503,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     5,
@@ -23163,15 +22199,14 @@ arr.push([
     [["attack",2676],["attack",2676],["un_defence",1347],["critical",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651504,
+arr.push([651504,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     4,
@@ -23187,15 +22222,14 @@ arr.push([
     [["max_hp",110888],["un_defence",1347],["un_defence",1347],["un_dodge",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651505,
+arr.push([651505,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     3,
@@ -23211,15 +22245,14 @@ arr.push([
     [["max_hp",110888],["attack",2676],["attack",2676],["critical",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651506,
+arr.push([651506,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     10,
@@ -23235,15 +22268,14 @@ arr.push([
     [["attack",2676],["defence",1347],["un_defence",1347],["un_defence",1347]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651507,
+arr.push([651507,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     9,
@@ -23259,15 +22291,14 @@ arr.push([
     [["max_hp",110888],["max_hp",110888],["defence",1347],["un_dodge",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651508,
+arr.push([651508,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     8,
@@ -23283,15 +22314,14 @@ arr.push([
     [["defence",1347],["defence",1347],["dodge",449],["un_critical",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651509,
+arr.push([651509,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     7,
@@ -23307,15 +22337,14 @@ arr.push([
     [["max_hp",110888],["defence",1347],["dodge",449],["un_critical",449]],
     [1.95,2.25],
     0.6,
-    "Equip"
+    "Equip",
+    1
     ]);
-    
-arr.push([
-651510,
+arr.push([651510,
     ["$var",1],
     ["$var",1],
     ["$var",1],
-    ["$var",150],
+    ["$var",270],
     ["$var",[]],
     "equip",
     6,
@@ -23331,9 +22360,9 @@ arr.push([
     [["max_hp",110888],["max_hp",110888],["attack",2676],["un_defence",1347]],
     [1.95,2.25],
     0.6,
-    "Equip"
-    ]);
-    
+    "Equip",
+    1
+    ]);
 for(var i=0,len = arr.length;i<len;i++){
 s = {};
 for(var k = 0,leng = key.length;k<leng;k++){

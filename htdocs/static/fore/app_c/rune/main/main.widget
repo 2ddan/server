@@ -1,0 +1,6 @@
+{
+    "tpl":"./main.tpl",
+    "cfg":"./main.cfg",
+    "js":"../rune.ts",
+    "forelet":"../rune.ts"
+}

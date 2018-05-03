@@ -1,0 +1,6 @@
+{
+    "tpl":"./practice.tpl",
+    "js":"../rune.ts",
+    "forelet":"../rune.ts",
+    "css":"./practice.wcss"
+}

@@ -88,7 +88,7 @@
             <img src={{url}} style="position: absolute;z-index: 2;width: 23px;left: 5px;top: 1px;"/>
                 
             <div w-class="title_coin_count">{{common.numberCarry(parseInt(it1.money || 0),10000)}}</div>
-            <div class="add_btn" style="right: -13px;top: 0px;"></div>
+            <div on-tap="gotoGetWay" class="add_btn" style="right: -13px;top: 0px;"></div>
         </div>
         {{if it1.opening}}
         <app_b-random_boss-open_box></app_b-random_boss-open_box>

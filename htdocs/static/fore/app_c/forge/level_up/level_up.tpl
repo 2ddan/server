@@ -135,7 +135,7 @@
 
         {{let cla = (bag_count >= it1.once_strong_cost[0][1] && player.money >= it1.once_strong_cost[1][1]) ? "hl" : "disabled"}}
         <app_a-widget-btn-rect on-tap='onceStrong({{bag_count + "," + player.money}})' style="position: absolute;top: 682px;left:120px;">
-            {"guide":{{it1.levelFlog ? "level_up" : ""}},"text":"强 化","class":{{cla}},"fontSize":24,"width":113,"height":46,"tip_keys":[{{"equip.level." + it1.clickequipindex}}]}
+            {"guide":{{it1.level_ok ? "level_up" : ""}},"text":"强 化","class":{{cla}},"fontSize":24,"width":113,"height":46,"tip_keys":[{{"equip.level." + it1.clickequipindex}}]}
         </app_a-widget-btn-rect>
 
 

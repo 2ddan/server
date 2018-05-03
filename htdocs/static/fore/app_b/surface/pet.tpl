@@ -84,6 +84,7 @@
 						</div>
 					</div>
 
+					{{if it1.pet_upgrade[n2] && it1.pet_upgrade[n2][n1]}}
 					<app_a-widget-pic_other-pic_other w-class="21" w-sid="21">
 						{"icon":"attr_arrow"} 
 					</app_a-widget-pic_other-pic_other>
@@ -91,21 +92,19 @@
 					<div w-class="20" w-sid="20">
 						<img w-class="23" src="app_b/magic/images/att_bg2.png" w-sid="23"/>
 						<img w-class="27" src="app_b/magic/images/att_bg1.png" w-sid="27"/>
+						{{let text = it1.pet.pet_star_info[1]+1 == 11 ? "下一阶" : it1.pet.pet_star_info[1]+1 + "星"}}
 						<app_a-widget-title-single w-class="30" class="shadow" w-sid="30"  style="top:-2px;line-height: 32px;">
-							{"padding":4,"type":13,"width":11,"text":{{(it1.pet.pet_star_info[1] + 1)+"星"}},"textCfg":"","fontSize":20,"space":-4,"color":"#b27d5c","wear":0,"class":0} 
+							{"padding":4,"type":13,"width":11,"text":{{text}},"textCfg":"","fontSize":20,"space":-4,"color":"#b27d5c","wear":0,"class":0} 
 						</app_a-widget-title-single>
 						<div w-class="39" w-sid="39">
 							<div w-class="40" class="scroll_box_v" layout="scroll" w-sid="40">
-								{{if it1.pet_upgrade[n2][n1]}}
-									{{for o,p of it1.pet_upgrade[n2][n1].attr}}
-									<span w-class="41" w-sid="41">{{it1.attribute_config[p[0]]+"+"+(p[1]<1?Math.floor(p[1]*100)+"%":p[1])}}</span>
-								{{end}}
-									{{else}}
-									已满级
+								{{for o,p of it1.pet_upgrade[n2][n1].attr}}
+								<span w-class="41" w-sid="41">{{it1.attribute_config[p[0]]+"+"+(p[1]<1?Math.floor(p[1]*100)+"%":p[1])}}</span>
 								{{end}}
 							</div>
 						</div>
 					</div>
+					{{end}}
 				</div>
 				<app_a-widget-line-line w-class="45" w-sid="45">
 					{"line":"line_1"} 
@@ -118,14 +117,15 @@
 					{{:percent = 100}}
 				{{end}}
 				{{let text = now+"/"+need}}
+				{{let exar = percent>=100 ? 1 : 0}}
 				<app_a-widget-star-star style="pointer-events: none;white-space: nowrap;text-align: center;position: absolute;left: 0px;top: 165px;z-index: 1;right: 0;margin: 0 auto;">
-					{"star_light":{{it1.pet.pet_star_info[1]}},"star_dark":{{10-it1.pet.pet_star_info[1]}},"width":26,"height":23,"new_star":{{it1.new_star}}}
+					{"star_light":{{it1.pet.pet_star_info[1]+exar}},"star_dark":{{10-it1.pet.pet_star_info[1]-exar}},"width":26,"height":23,"new_star":{{it1.new_star}}}
 				</app_a-widget-star-star>
 				<div style="position: absolute;left: 35px;top: 174px;width: 419px;height: 40px;">
 					{{if it1.s_exp}}
 					<div style="height:20px;position: absolute;color:#3cff00;width: 100%;text-align:center;top: 10px;z-index:3;{{if it1.move}}transition:top 0.6s;top:-40px;{{end}}">+{{it1.s_exp}}</div>
 					{{end}}
-					<app_a-widget-bar-bar2 style="position: absolute;width: 419px;height: 18px;left: 0px;top:22px;">
+					<app_a-widget-bar-bar2 style="position: absolute;width: 400px;height: 18px;left: 10px;top:22px;">
 						{"anima":{{it1.bar_anim}},"progress":{{percent}},"text":{{text}},"lineHeight":18,"fontSize":14,"split":[]} 
 					</app_a-widget-bar-bar2>
 
@@ -151,7 +151,7 @@
 				
 				{{let b = it1.player.money < num * obj.money[1]}}
 				<app_a-widget-btn-rect on-tap="petStarUp('money',{{num}})" w-class="55" w-sid="55" style="left:50px">
-					{"guide":{{it1.pet_flag ? "" : "pet_up"}},"class":{{b ? "disabled" : "hl"}},"fontsize":24,"color":"#fdedd7;","text":{{it1.uping == "money" ? "停止升星" : "金币升星"}},"width":116,"height":45,"marginLeft":0} 
+					{"guide":{{it1.pet_ok ? "pet_up" : ""}},"class":{{b ? "disabled" : "hl"}},"fontsize":24,"color":"#fdedd7;","text":{{it1.uping == "money" ? "停止升星" : "金币升星"}},"width":116,"height":45,"marginLeft":0} 
 				</app_a-widget-btn-rect>
 				<app_a-widget-coin-coin w-class="56" w-sid="56" style="color:{{ b ?'#f00':'#fff'}};left:30px">
 					{"icon":"money","width":25,"height":21,"left":5,"text":[{{num * obj.money[1] }}],"color":"#FFFFFF"} 
@@ -159,7 +159,7 @@
 
 				{{if it1.prop_count >=  num * obj.prop[1]}}
 				<app_a-widget-btn-rect on-tap="petStarUp('prop',{{num}})" w-class="55" w-sid="55" style="left:315px;">
-					{"guide":{{it1.pet_flag ? "" : "pet_up"}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{it1.uping == "prop" ? "停止升星" : "内丹升星"}},"width":116,"height":45,"marginLeft":0,"tip_keys":["role.pet.upgrade"]} 
+					{"guide":{{it1.pet_ok ? "pet_up" : ""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{it1.uping == "prop" ? "停止升星" : "内丹升星"}},"width":116,"height":45,"marginLeft":0,"tip_keys":["role.pet.upgrade"]} 
 				</app_a-widget-btn-rect>
 				<app_a-widget-coin-coin w-class="56" w-sid="56" style="left:290px;">
 					{"icon":{{obj.prop[0]}},"width":25,"height":21,"left":5,"text":[{{it1.prop_count}}],"color":"#FFFFFF"} 
@@ -174,8 +174,10 @@
 				</app_a-widget-coin-coin>
 				{{end}}
 			{{else}}
-				{{if !it1.pet_upgrade[n2][n1] }}
-				已满级
+				{{if !it1.pet_upgrade[n2]  }}
+				<widget w-class="55" w-tag="app_a-widget-pic_text-pic_text" >
+					{"icon":"max_level","width":94,"height":60}
+				</widget>
 				{{else}}
 				<app_a-widget-btn-rect on-tap="petBreak" w-class="55" w-sid="55">
 					{"class":"hl","fontsize":24,"color":"#fdedd7;","text":"突    破","width":116,"height":45,"marginLeft":0,"show_anim":1} 

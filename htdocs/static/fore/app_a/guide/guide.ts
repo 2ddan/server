@@ -1,82 +1,4 @@
-/*
- * 引导
- * 场景暂停: 暂未开发
- * 通讯完成: 通讯成功之后再进入下一步引导
- * 写步数: 关键步骤完成之后写入后台（如果接下来的步骤是忽略步骤，直接在本次记录时就算进去，直到关键步骤为止），如果是忽略步骤直接进入下一步引导（不做写入操作）
- * 前置判断: 跟数据库关联，是否需要进入引导（like: "db.wing.level>=3"）
- * 
- */
 
-/**
- * 
- * force cfg => {
- * 	"equip":[
- * 		{
- * 			name:"fb101",//按钮名字
- * 			stop_scene:true,//找到按钮后暂停场景、点击后恢复渲染
- * 		},
- * 		{name:"npc0"}
- * 	],
- * 	"go_equip_1_0":[
- * 		{name:"npc0"},
- * 		{name:"hero1"},
- * 		{name:"equip0"}
- * 	]
- * }
- * 
- * plot cfg => {
- * 	"time_travel":[
- * 		{side:"left",head:"playerhead700012",name:"江芷薇",chat:"我自用手中之剑争一番天命。"},
- * 		{},
- * 		...
- * 	]
- * }
- * 
- * guide cfg => {
- * 	newcomer: [
- * 		{
- * 			type:"plot",
- * 			name:"time_travel",
- * 			purpose:"db.wing.level>=3", //本次引导需要达到的目的,如果这个目的达到，则不再进行引导
- * 			fix: "go_equip_1_0", //引导在此断掉之后，重新进入的修正路径，执行完修正路径后，再继续本次引导
- * 			net_ok:"app/equip@wear"
- * 		},
- * 		{
- * 			type:"plot",
- * 			name:"time_travel",
- * 			purpose:"db.wing.level>=3", //本次引导需要达到的目的,如果这个目的达到，则不再进行引导
- * 			fix: "go_equip_1_0", //引导在此断掉之后，重新进入的修正路径，执行完修正路径后，再继续本次引导
- * 			net_ok:"app/equip@wear"
- * 		},
- * 		{
- * 			type:"force",
- * 			name:"equip",
- * 			purpose:"db.wing.level>=3", //本次引导需要达到的目的,如果这个目的达到，则不再进行引导
- * 			fix: "go_equip_1_0", //引导在此断掉之后，重新进入的修正路径，执行完修正路径后，再继续本次引导
- * 			net_ok:"app/equip@wear"
- * 		}
- * 		trigger:"player.level==1&&mission.chapter==2", //数据库触发条件
- * 		widget :"widget-name" //功能进入触发,非主城配置打开的widgetName,主城内配置"city"&&"wild"
- * 		//如果以上两个条件同时存在，必须都满足
- * 	],
- * 	...	
- * 	}
- * 
- * 
- * 判断条件：数据库数据，进入功能(打开widget判断)
- * 
- * //list 为引导历史纪录, curr 当前引导, start(递增) 为最后一次引导的开始位置
- * 后台记录：'{"list":"newcomer-wear","curr":"wing","start":0}'
- * 
- * 监听索引表的建立
- * {
- * 	"player.level":{},
- * 	"mission.chapter":{},
- * 	"widget-name":{}
- * }
- * 
- * 
- */
 // ============================== 导入
 //pi
 import { Widget } from "pi/widget/widget";
@@ -95,17 +17,15 @@ import { Pi, globalSend, setLog } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { data as localDB, updata, get as getDB, insert, listen,checkTypeof } from "app/mod/db";
 import { Music } from "app/mod/music";
-import { checkFighting } from "app_b/fight/fight";
 
 //app
 
 import { listenerList as plotListen, initCfg as initPlot, start as start_plot, setPlotWidgetName } from "./plot";
-import { story_cfg } from "./story_cfg";
 import { force_cfg } from "cfg/b/force_cfg";
 import { guide_cfg } from "cfg/b/guide_cfg";
 import { function_guid } from "cfg/b/function_guid";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
-import { function_open } from "../../cfg/b/function_open";
+import { function_open } from "cfg/b/function_open";
 
 
 // ============================== 导出
@@ -124,7 +44,6 @@ insert("clientData",{});
  * @description  初始化引导配置
  */
 export const init = () => {
-	initPlot(story_cfg);
 	initGuide(force_cfg);
 	initCfg();
 };
@@ -593,12 +512,12 @@ const go_next = (_curr?) => {
 	guideState = 1;
 	tempState = undefined;
 	if(_curr.type == "plot"){
-		let _plot = story_cfg[_curr.name];
-		if(!_plot[0].name)
-			setPlotWidgetName("app_a-guide-plot2");
-		else
-			setPlotWidgetName("app_a-guide-plot");
-		start_plot(_curr.name);
+		// let _plot = story_cfg[_curr.name];
+		// if(!_plot[0].name)
+		// 	setPlotWidgetName("app_a-guide-plot2");
+		// else
+		// 	setPlotWidgetName("app_a-guide-plot");
+		// start_plot(_curr.name);
 	}else if(_curr.type == "force"){
 		setGuideForceWidgetName("app_a-guide-force");
 		start_force(_curr.name);
@@ -609,7 +528,10 @@ const go_next = (_curr?) => {
 		let mus = guide_cfg[record.curr].music;
 		if(music && (_curr.name == "fun_open" || mus)){
 			let id = getDB("open_fun.id")-0+1;
-			Music.roleSound(mus || function_guid[id]["music"]);		    			
+			let curr_music = mus || function_guid[id]["music"];
+			if(curr_music && curr_music!="undefined"){
+				Music.roleSound(curr_music);		    			
+			}
 		}
 	}
 };
@@ -691,7 +613,7 @@ listenBack("app/client@read",(data)=>{
 					end();
 					return;
 				}
-				let btn_name = guideFind(true);
+				let btn_name:any = guideFind(true);
 				if(!btn_name){return;}
 				let w = force_cfg[btn_name.name] && force_cfg[btn_name.name].btn_page;
 				if(guideState && w && getPage(true)!== w){

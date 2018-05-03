@@ -17,8 +17,8 @@
             </widget>
         </div>
         <div w-class="16">
-            解散公会，公会成员将无家可归?
-            <div>是否解散公会</div>
+            解散门派，门派成员将无家可归?
+            <div>是否解散门派</div>
         </div>
         
         <div w-class="12" w-sid="12">

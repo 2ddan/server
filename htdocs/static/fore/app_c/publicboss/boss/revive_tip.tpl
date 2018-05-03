@@ -1,4 +1,4 @@
-<div maxId="20" test="test" style="position: absolute;width: 100%;height: 100%" w-sid="2">
+<div maxId="20" test="test" style="position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.6);" w-sid="2">
         {{let Pi = _get("app/mod/pi").exports.Pi}}
         {{let Common = _get("app/mod/common").exports.Common}}
         {{let player = _get("app/mod/db").exports.data}}
@@ -40,16 +40,17 @@
                         <div style="width:100%;height:50px;position:relative;">
                             {{let name = it1.boss_base[i].name}}
                             {{let level = v[1]}}
-                            {{let index = player.publicboss.tip_arr[v[0]] ? player.publicboss.tip_arr[v[0]] : 0}}
 
                             <span style="width:30%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;position: relative;display: inline-block;vertical-align: top;">{{name}}</span>
 
                             <span style="width:34%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;vertical-align: top;">{{level}}</span>
 
                             {{if it1.player.level >= level}}
+                            {{let local = JSON.parse(Pi.localStorage["publicBoss"])}}
+                            {{let num = JSON.parse(local[v[0]] || 0) - 0}}
                             <span style="width:35%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;">
                                 <widget on-tap="setTips({{v[0]}})" w-tag="app_a-widget-chosen-chosen" style="position:absolute;width:32px;height:32px;top:10px">
-                                    {"index":1,"index1":{{index}}}
+                                    {"index":1,"index1":{{num}}}
                                 </widget>
                                 复活时提醒
                             </span>

@@ -174,7 +174,7 @@ wild_boss["13"] = {
 wild_boss["14"] = {
     "index":14,
     "task_num":3,
-    "guide_num":1,
+    "guide_num":0,
     "boss_level":14,
     "boss_id":[610104],
     "boss_site": undefined,
@@ -199,7 +199,7 @@ wild_boss["15"] = {
 
 wild_boss["16"] = {
     "index":16,
-    "task_num":3,
+    "task_num":4,
     "guide_num":1,
     "boss_level":16,
     "boss_id":[610101],
@@ -225,8 +225,8 @@ wild_boss["17"] = {
 
 wild_boss["18"] = {
     "index":18,
-    "task_num":3,
-    "guide_num":0,
+    "task_num":4,
+    "guide_num":1,
     "boss_level":18,
     "boss_id":[610103],
     "boss_site": undefined,
@@ -239,7 +239,7 @@ wild_boss["18"] = {
 wild_boss["19"] = {
     "index":19,
     "task_num":4,
-    "guide_num":1,
+    "guide_num":0,
     "boss_level":19,
     "boss_id":[610104],
     "boss_site": undefined,
@@ -251,7 +251,7 @@ wild_boss["19"] = {
 
 wild_boss["20"] = {
     "index":20,
-    "task_num":3,
+    "task_num":4,
     "guide_num":1,
     "boss_level":20,
     "boss_id":[610105],
@@ -277,7 +277,7 @@ wild_boss["21"] = {
 
 wild_boss["22"] = {
     "index":22,
-    "task_num":4,
+    "task_num":5,
     "guide_num":1,
     "boss_level":22,
     "boss_id":[610102],
@@ -304,7 +304,7 @@ wild_boss["23"] = {
 wild_boss["24"] = {
     "index":24,
     "task_num":5,
-    "guide_num":0,
+    "guide_num":1,
     "boss_level":24,
     "boss_id":[610104],
     "boss_site": undefined,
@@ -316,8 +316,8 @@ wild_boss["24"] = {
 
 wild_boss["25"] = {
     "index":25,
-    "task_num":4,
-    "guide_num":2,
+    "task_num":5,
+    "guide_num":0,
     "boss_level":25,
     "boss_id":[610105],
     "boss_site": undefined,
@@ -330,7 +330,7 @@ wild_boss["25"] = {
 wild_boss["26"] = {
     "index":26,
     "task_num":6,
-    "guide_num":0,
+    "guide_num":1,
     "boss_level":26,
     "boss_id":[610101],
     "boss_site": undefined,
@@ -447,7 +447,7 @@ wild_boss["34"] = {
 wild_boss["35"] = {
     "index":35,
     "task_num":7,
-    "guide_num":1,
+    "guide_num":0,
     "boss_level":35,
     "boss_id":[610105],
     "boss_site": undefined,
@@ -512,7 +512,7 @@ wild_boss["39"] = {
 wild_boss["40"] = {
     "index":40,
     "task_num":7,
-    "guide_num":2,
+    "guide_num":0,
     "boss_level":40,
     "boss_id":[610105],
     "boss_site": undefined,
@@ -538,7 +538,7 @@ wild_boss["41"] = {
 wild_boss["42"] = {
     "index":42,
     "task_num":8,
-    "guide_num":1,
+    "guide_num":0,
     "boss_level":42,
     "boss_id":[610102],
     "boss_site": undefined,

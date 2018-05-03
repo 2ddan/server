@@ -1,0 +1,6 @@
+{
+    "tpl": "./flag_attr.tpl",
+    "cfg": "./flag_attr.cfg",
+    "js": "../hall_gang_build.ts",
+    "forelet": "../../gang.ts"
+}

@@ -1,15 +1,16 @@
 {{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
 {{let Common = _get("app/mod/common").exports.Common}}
-{{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
+{{let mgr_data = _get("app/scene/scene").exports.mgr_data}}
+{{let root = _get("pi/ui/root").exports}}
 
-{{let _position = [130,10,0]}}
-{{let _scale = [1,1,1]}}
+{{let _position = [160,30,0]}}
+{{let _scale = [0.8,0.8,0.8]}}
 {
     "type":"node",
     "attachment": "2D",
     "transform":{ 
-        "position":{{scenename == "wild" ? _position : [100,-820,0]}},
-        "scale":{{scenename == "wild" ? _scale : [1.15,1.15,1.15]}},
+        "position":{{[it.x,it.y,it.z]}},
+        "scale":{{[it.scale,it.scale,it.scale]}},
         "rotate":[0,0,0]
     },
     "children":[

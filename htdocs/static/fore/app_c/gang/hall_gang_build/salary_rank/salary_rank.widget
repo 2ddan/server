@@ -1,0 +1,7 @@
+{
+    "tpl":"./salary_rank.tpl",
+    "cfg":"./salary_rank.cfg",
+    "js":"../hall_gang_build.ts",
+    "forelet":"../../gang.ts",
+    "css":"./salary_rank.wcss"
+}

@@ -13,6 +13,8 @@ import { net_request } from "app_a/connect/main";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { globalSend, Pi } from "app/mod/pi";
+import { guild_collect } from "cfg/c/guild_collect";
+
 
 /**
  * 创建 forelet 并导出
@@ -28,8 +30,8 @@ export const globalReceive: any = {
     }
 }
 
-let getData = function(){
-    let data:any = {};
+let getData = function () {
+    let data: any = {};
     data.process = process_num;
     return data;
 }
@@ -42,34 +44,34 @@ let getData = function(){
 //     return a * b;
 // }
 
- //创建采集物
- let createCollect = function(){
-    if(node_list["collect"]){
-         mgr.remove(node_list["collect"]);
-     }
-     if(getPage()!=="app_b-wild-wild"){
-         return;
-     }
-     node_list["collect"] = {
-         "effect": "model_dl_baoxiang",
-         "x":fighterPosition[0],
-         "y":fighterPosition[1],
-         "z":fighterPosition[2],
-         "scale":1,
-         "isOnce":true
-     };
-     mgr.create(node_list["collect"],"effect");
- }
+//创建采集物
+let createCollect = function () {
+    if (node_list["collect"]) {
+        mgr.remove(node_list["collect"]);
+    }
+    if (getPage() !== "app_b-wild-wild") {
+        return;
+    }
+    node_list["collect"] = {
+        "effect": "model_dl_baoxiang",
+        "x": fighterPosition[0],
+        "y": fighterPosition[1],
+        "z": fighterPosition[2],
+        "scale": 1,
+        "isOnce": true
+    };
+    mgr.create(node_list["collect"], "effect");
+}
 
 //清除场景采集物
-let clearCollect = function(){
-    if(!node_list["collect"]){return;}
+let clearCollect = function () {
+    if (!node_list["collect"]) { return; }
     mgr.remove(node_list["collect"]);
     delete node_list["collect"];
 }
 
 //采集物进度条
-let collectBar = function(callBack){
+let collectBar = function (callBack) {
     let timer = setInterval(function () {
         process_num += 1;
         forelet.paint(getData());
@@ -82,7 +84,7 @@ let collectBar = function(callBack){
 }
 
 //采集领奖
-let collect = function(){
+let collect = function () {
     let arg = {
         "param": {},
         "type": "app/gang/expand@collect_award"
@@ -99,38 +101,51 @@ let collect = function(){
                     result1.open();
                 }
             });
+            //更新采集次数和等级
+            let collect_info = getDB("gang.gangExpandData.collect_info");
+            let level = collect_info[0];
+            let count = collect_info[1]
+            if ((count + 1) >= guild_collect[level]) {
+                level++;
+                count = 0;
+            } else {
+                count++;
+            }
+            updata("gang.gangExpandData.collect_info", [level, count]);
         }
         clearCollect();
         process_num = 0;
         forelet.paint(getData());
-        let timer = setTimeout(()=>{
+        let timer = setTimeout(() => {
             change_status(0);
             clearTimeout(timer);
             timer = null;
-        },2000)
+        }, 2000)
     })
-    
+
 }
 
-//后台捐献【野外采集】
+/**
+ * 后台捐献【野外采集】
+ **/
 let fighterPosition = [];//角色当前位置，随机后为采集物出现的位置
-let node_list:any = {};//采集物
+let node_list: any = {};//采集物
 net_message("gang_collect", (msg) => {
-    if(getPage()!=="app_b-wild-wild"){
+    if (getPage() !== "app_b-wild-wild") {
         collect();
         return;
     }
     let role_id = getDB("player.role_id");
-    for(let i in mapList){
-        if(mapList[i].sid == role_id){
-            fighterPosition = [mapList[i].x,mapList[i].y,mapList[i].z];
+    for (let i in mapList) {
+        if (mapList[i].sid == role_id) {
+            fighterPosition = [mapList[i].x, mapList[i].y, mapList[i].z];
             break;
         }
     }
     // fighterPosition[0] += randomPosition(5);
     // fighterPosition[1] += randomPosition(5);
     createCollect();
-    change_status(1,()=>{
+    change_status(1, () => {
         //采集
         collectBar(collect);
     });

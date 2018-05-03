@@ -1,0 +1,5 @@
+{
+    "tpl": "./fun_info.tpl",
+    "js": "./fun_info.ts",
+    "cfg": "./fun_info.cfg"
+}

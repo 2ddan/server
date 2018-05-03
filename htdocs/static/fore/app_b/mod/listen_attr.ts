@@ -2,7 +2,7 @@
  * 此模块用于监听和战斗力相关模块属性的变化
  */
 import { listen, get } from "app/mod/db"
-import { gestAttr, instanceAttr, skillAttr, treasure, equip, soul, countFightPower, roleLevel, pet, cloth, weapon_soul } from "./fight_power"
+import { gestAttr, instanceAttr, skillAttr, treasure, equip, soul, countFightPower, roleLevel, pet, cloth, weapon_soul, gang } from "./fight_power"
 import { formula } from "fight/b/common/formula";
 
  /**
@@ -258,6 +258,18 @@ listen("weapon_soul.class", () => {
 });
 
 /**
+ * 监听门派属性
+ */
+listen("gang.data.role_gang_skill", () => {
+    gang.gangSkill();
+    gang.allAttr();
+});
+listen("gang.data.gang_level", () => {
+    gang.flagAttr();
+    gang.allAttr();
+})
+
+/**
  * 监听模块属性, 计算战斗力
  */
 listen("attr.A", () => {
@@ -300,3 +312,7 @@ listen("attr.J", () => {
     let attr = get("attr");
     countFightPower.singleAttrTotal(attr, formula);
 });
+listen("attr.K", () => {
+    let attr = get("attr");
+    countFightPower.singleAttrTotal(attr, formula); 
+})

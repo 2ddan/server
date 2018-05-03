@@ -90,8 +90,12 @@ const single = (f: Fighter,s: Scene): void => {
         }
         return;
     }
-    if(s.level < 2)
+    if(s.level < 2){
+        //只处理释放状态，不释放技能，由后台推送
+        checkReleaseSkill(f,s);
         return;
+    }
+        
     //释放技能
     //TODO....
     //释放光环技能        
@@ -103,12 +107,7 @@ const single = (f: Fighter,s: Scene): void => {
         releaseSkill(f,"god", s);
     }
     //延迟一帧真正释放技能，与使用技能错开
-    if (f.spreadSkill) {
-        if(f.curSkill)
-            f.curSkill = undefined;
-        else
-            releaseSkill(f,"spread", s);
-    }
+    checkReleaseSkill(f,s,releaseSkill);
 }
 /**
  * @description 清除移动状态
@@ -149,7 +148,7 @@ const isAi = (f: Fighter, s: Scene) => {
     //目标还在,继续移动
     if(!target || target.hp <= 0){
         f.curTarget = undefined;
-        stopMove(f,s);
+        // stopMove(f,s);
     }
     if(f.moveto || f.passive === true || (f.spreadSkill && s.level >= 2))
         return;
@@ -190,14 +189,20 @@ const stopMove = (f: Fighter,s: Scene) => {
  * @returns true: 接近目标; false: 寻找新的路径
  */
 const caclPath = (f: Fighter, t: Fighter, s: Scene, d?: number): boolean => {
-    let lastest = {x:t.x,y:t.y};
+    let lastest:any = {x:t.x,y:t.y},dis = Util.getPPDistance(f,t);
     d = d || 0;
-    if(Util.getPPDistance(f,t).d <= d)
+    if(dis.d <= d)
         return true;
     // stopMove(f,s);
     //计算最终目标点，在目标周围以九宫格算法找到最合适的点
-    lastest = Util.getNearPos(d/.5,d,f,t);
+    // lastest = Util.getNearPos(d/.5,d,f,t);
     f.path = Util.getMovePath(s.navMesh,f,lastest,2);
+    lastest = f.path[f.path.length-1];
+    if(d>0 && lastest.x == t.x && lastest.z == t.y)
+        Util.getFinalPos(f,d);
+    if(f.sid == 17002){
+        console.log("path :: ",f.path.length,dis.d);
+    }
     linkMovePath(f,s);
     return false;
 }
@@ -227,6 +232,9 @@ const handMove = (f: Fighter,s :Scene) => {
 const linkMovePath = (f: Fighter,s: Scene): void => {
     if(!f.moveto && f.path){
         f.moveto = f.path.shift();
+        if(f.sid == 17002){
+            console.log("moveto :: ",f.moveto);
+        }
         if(f.path.length == 0){
             f.path = undefined;
             f.moveto.status = 1;
@@ -316,6 +324,19 @@ const releaseSkill = (f,type, scene: Scene) => {
     f[s] = f[targets] = undefined;
     return;
 };
+/**
+ * @description 延迟一帧真正释放技能，与使用技能错开
+ * @param func 释放技能处理函数
+ */
+const checkReleaseSkill = (f: Fighter,s: Scene,func?: Function) => {
+    //延迟一帧真正释放技能，与使用技能错开
+    if (f.spreadSkill) {
+        if(f.curSkill)
+            f.curSkill = undefined;
+        else
+            func && func(f,"spread", s);
+    }
+}
 /**
  * @description 释放技能
  * @param f 释放者

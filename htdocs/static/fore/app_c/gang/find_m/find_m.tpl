@@ -11,7 +11,7 @@
 			<widget w-class="4" w-tag="app_a-widget-pic_other-pic_other" w-sid="4">{"icon":"pendant"} 
 			</widget>
 			<widget w-class="1" w-tag="app_a-widget-pic_text-pic_text" w-sid="1">
-				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"搜索公会","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
+				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"搜索门派","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>
 		</div>
 		<div w-class="8" w-sid="8">
@@ -24,7 +24,7 @@
 			<div w-class="13" w-sid="13">
 				<div w-class="16" w-sid="16"></div>
 				<widget w-class="14" w-tag="app_a-widget-input-input" w-sid="14" ev-input-text="getFocusInput" ev-input-blur="upDataInputValue" >
-					{"type":"text","placeholder":"请输入公会ID或名字_","length":65,"text":"","length":12,"text":"","id":"gangname"} 
+					{"type":"text","placeholder":"请输入门派ID或名字_","length":65,"text":"","length":12,"text":"","id":"gangname"} 
 				</widget>
 				<widget on-tap="findClick" w-class="15" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="15">{"icon":"search"} 
 				</widget>

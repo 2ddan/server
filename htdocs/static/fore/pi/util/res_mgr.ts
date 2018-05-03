@@ -1,4 +1,4 @@
-// 模块描述
+﻿// 模块描述
 /*
  * 负责创建、销毁BlobURL，负责维护资源的缓存和引用计数
  * 异步加载二进制数据，同步创建BlobURL，异步加载资源（图像、字体……）
@@ -90,7 +90,7 @@ export class ResTab {
 	// 本地表，为空表示资源表已经被释放
 	tab: Map<string, Res> = new Map();
 	// 超时时间
-	timeout: number = 0;
+	timeout: number = 30000;
 
 	/**
 	 * @description 获取当前资源的数量

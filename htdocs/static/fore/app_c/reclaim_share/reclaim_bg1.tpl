@@ -16,7 +16,7 @@
             {"guide":"returnTo","icon":"close"} 
         </widget>
         <widget w-class="9" on-tap='propResolved' w-tag="app_a-widget-btn-rect" w-sid="9" style="left:265px">
-            {"guide":{{!it1.reclaim_flag ? "reclaim_1" : ""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":"熔  炼","width":112,"height":40} 
+            {"guide":{{!it1.reclaim_ok?"reclaim_1":""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":"熔  炼","width":112,"height":40} 
         </widget>
         <widget w-class="9" on-tap='propResolveds' w-tag="app_a-widget-btn-rect" w-sid="9" style="left:80px">
             {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"一键熔炼","width":112,"height":40} 
@@ -42,7 +42,7 @@
                     {{else}}
                     <img on-tap="getChoose({{i}})" src="app_c/reclaim_share/images/no_equip.png" w-sid="15" style="position: absolute;"/>
                     {{end}}
-                    {{if it1.selectList[i] && it1.reclaim_ok}}
+                    {{if  it1.reclaim_anima}}
                     <div class="successAnim" style="position: absolute;z-index: 2;transform: scale(0.8);left: -24px;top: -27px;pointer-events: none;"></div>
                     {{end}}
                 </div>

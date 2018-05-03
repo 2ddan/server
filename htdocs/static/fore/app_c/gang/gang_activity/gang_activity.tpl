@@ -17,7 +17,7 @@
             {"icon":"close"} 
         </widget>
 
-        <widget w-class="10" w-tag="app_a-widget-pic_text-pic_text" w-sid="10" style="top: -29px;">{"icon":"cover_title","width":187,"height":33,"align":"center","marginLeft":3,"text":"公会任务","textCfg":"gangCoverTitle","space":0,"fontSize":22,"top":4,"left":0} 
+        <widget w-class="10" w-tag="app_a-widget-pic_text-pic_text" w-sid="10" style="top: -29px;">{"icon":"cover_title","width":187,"height":33,"align":"center","marginLeft":3,"text":"门派任务","textCfg":"gangCoverTitle","space":0,"fontSize":22,"top":4,"left":0} 
         </widget>
    
         <div w-class="13" class="scroll_box_v" layout="scroll" w-sid="13" style="position: absolute;width: 461px;height: 386px;left: -8px;top: 22px;color: rgb(255, 255, 255);">
@@ -26,17 +26,21 @@
                     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;top:5px;width:464px;height:112px">
                         {"bgName":"bg_frame23"}
                     </widget>
+                    <app_a-widget-pic_other-pic_other style="position: absolute;bottom: -4px;left: 0px;right: 0px;margin: auto;">
+                        {"icon":"light_bottom"}
+                    </app_a-widget-pic_other-pic_other>
+
                     <app_a-widget-text-text style="position:absolute;top: 27px;left: 106px;">
-                        {"text":{{v[0].type_desc}},"textCfg":"heroEquip","fontSize":26}
+                        {"text":{{v[0].desc}},"textCfg":"heroEquip","fontSize":22}
                     </app_a-widget-text-text>
                     <img src="../images/gang_task_icon.png" alt="" srcset="" style="position: absolute;left: 20px;top:20px;"/>
-                    <div style="position: absolute;width: 230px;height:30px;top:60px;display:flex;justify-content:space-between;font-size:18px;left: 102px;">
-                        <div style="line-height: 30px;width:50px;text-align: center;">奖励:</div>
+                    <div class="shadow" style="position: absolute;width: 200px;height:30px;top:60px;display:flex;justify-content:space-between;font-size:16px;left: 102px;">
+                        <div style="line-height: 30px;width:50px;text-align: center;color: #ffd8a6;">奖励:</div>
                         <app_a-widget-coin-coin style="width: 90px;text-align: left;color:#51e650;">
-                            {"icon":"contribute","text":{{[v[0].award.gain_contribute]}},"height":30,"width":30}
+                            {"icon":"contribute","text":{{[v[0].award.gain_contribute]}},"height":24,"width":24}
                         </app_a-widget-coin-coin>
                         <app_a-widget-coin-coin style="width: 90px;text-align: left;color:#51e650;">
-                            {"icon":"gang_money","text":{{[v[0].award.gain_guild_money]}},"height":30,"width":30}
+                            {"icon":"gang_money","text":{{[v[0].award.gain_guild_money]}},"height":24,"width":24}
                         </app_a-widget-coin-coin>
                     </div>
 

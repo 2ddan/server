@@ -167,7 +167,6 @@
     width: 126px;
     height: 50px;
     text-align: center;
-    left: -3px;
 }
 .34 {
     color: #fff;
@@ -176,8 +175,7 @@
     font-family:mnjsh;  
     top: 30px;
     width: 97px;
-    text-align: left;
-    padding-left: 13px;
+    text-align: center;
     text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
     -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
     -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;  

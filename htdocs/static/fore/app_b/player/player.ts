@@ -116,7 +116,8 @@ let _db = {
 	wx_bind: 0,
 	wx_share: 0,
 	wx_share_award: 0,
-	function_record: -1
+	function_record: -1,
+	gang_contribute: 0 //门派可用贡献
 };
 let funArr = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss"];
 /**

@@ -8,16 +8,26 @@ import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { insert, updata, get as getDB, checkTypeof } from "app/mod/db";
 import { funIsOpen } from "app_b/open_fun/open_fun";
-import { globalSend } from "app/mod/pi";
+import { globalSend, Pi } from "app/mod/pi";
 import { Util } from "app/mod/util";
 import { open, close } from "app/mod/root";
+
 /**
  * 配置表
  */
 import { msg as msgCfg } from "cfg/c/msg";
 import { guild_base } from "cfg/c/guild_base"; //基础数据
-import { guild_upgrade } from "cfg/c/guild_upgrade"; //公会等级相关
-import { guild_shop } from "cfg/c/guild_shop"; //公会商店
+import { guild_upgrade } from "cfg/c/guild_upgrade"; //门派等级相关
+import { guild_shop } from "cfg/c/guild_shop"; //门派商店
+import { guild_skill } from "cfg/c/guild_skill";
+import { attribute_config } from "cfg/c/attribute_config";
+import { vip_advantage } from "cfg/c/vip_advantage";
+import { guild_activity } from "cfg/c/guild_activity";
+import { guild_contribution } from "cfg/c/guild_contribution";
+import { guild_collect } from "cfg/c/guild_collect";
+import { guild_charge } from "cfg/c/guild_charge";
+import { guild_build } from "cfg/c/guild_build";
+
 
 /**
  * 创建 forelet 并导出
@@ -29,36 +39,29 @@ export const forelet = new Forelet();
  */
 insert("gang", {
     //原基础数据
-    "data": {
-        //"gangBoxAwardDetil": [],
-        //"gang_name": null, //公会名称
-        //"apply_list": [], //申请列表
-        //"gangSkillAttr": {}
-    },
-    // "instance": {
-    // //     "opened": 0,
-    // // },
-    // "leave_time": 0
+    "data": {},
     //扩展基础数据
-    "gangExpandData": {
-
-    },
+    "gangExpandData": {},
     //其它数据
     "other": {
-        "skill_tab": 0 //选择技能
-    }
+        "skill_id": 1 //选择技能
+    },
+    //门派boss数据
+    "gangBoss": {},
+    //所有门派
+    "gang_list": []
 });
 
 /**
  * 定义变量
  */
-let gangData = null, //用于存储从后台读取的公会数据
-    gangExpandData = null, //公会扩展功能数据
+let gangData = null, //用于存储从后台读取的门派数据
+    gangExpandData = null, //门派扩展功能数据
     gang_list = [], //用于储存工会列表
     gang_tab = "info",  //用于工会信息界面的tab切换
     apply_list = [], //申请列表
     minor_num = 0, //副门主数量
-    gang_member = [], //公会成员
+    gang_member = [], //门派成员
     find_list = [], //搜索门派列表
     role_index;  //门派成员标记
 
@@ -71,19 +74,32 @@ let input_text = {
 
 export const getData = function () {
     let data: any = {};
+    data.Pi = Pi;
     //配置表
     data.guild_base = guild_base;
     data.guild_upgrade = guild_upgrade;
+    data.guild_skill = guild_skill;
+    data.attribute_config = attribute_config;
+    data.vip_advantage = vip_advantage;
+    data.guild_shop = guild_shop;
+    data.guild_activity = guild_activity;
+    data.guild_contribution = guild_contribution;
+    data.checkTypeof = checkTypeof;
+    data.Common = Common;
+    data.guild_collect = guild_collect;
+    data.guild_charge = guild_charge;
+    data.guild_build = guild_build;
 
-    data.gangData = getDB("gang.data"); //公会数据
-    data.gangExpandData = getDB("gang.gangExpandData"); //公会扩展功能数据
-    data.gang_tab = gang_tab; //公会tab切换
-    data.gang_list = gang_list; //公会列表
-    data.gang_member = gang_member; //公会成员
+    data.gangData = getDB("gang.data"); //门派数据
+    data.gangExpandData = getDB("gang.gangExpandData"); //门派扩展功能数据
+    data.gang_tab = gang_tab; //门派tab切换
+    data.gang_list = gang_list; //门派列表
+    data.gang_member = gang_member; //门派成员
     data.minor_num = minor_num; //副门主数量
     data.apply_list = apply_list; //申请列表
-    data.find_list = find_list; //查找公会列表
-    data.role_index = role_index; //公会成员index
+    data.find_list = find_list; //查找门派列表
+    data.role_index = role_index; //门派成员index
+    data.player = getDB("player");
 
     data.other = getDB("gang.other");
     return data;
@@ -107,12 +123,15 @@ const goIntoGang = function () {
     //tab 页
     gang_tab = "info";
     forelet.paint(getData());
-    //玩家是否已经在公会了
+    //玩家是否已经在门派了
     if (gangData) {
         open("app_c-gang-hall-hall_m");
     } else {
-        //如果没有则打开申请门派页面
-        open("app_c-gang-main-main");
+        readGangList(() => {
+            forelet.paint(getData());
+            //如果没有则打开申请门派页面
+            open("app_c-gang-main-main");
+        })
     }
 };
 
@@ -120,6 +139,16 @@ const goIntoGang = function () {
  * 前台操作 [widget]
  */
 export class Gang extends Widget {
+    //查看其它玩家
+    seeOther(roleId) {
+        globalSend("gotoSeeOther", roleId);
+        let w: any = forelet.getWidget("app_c-gang-role-role_m");
+        w && w.cancel && w.cancel();
+    }
+    //打开申请列表
+    openApplyList() {
+        open("app_c-gang-apply_list-apply_list");
+    }
     //门派排名
     gotoRankClick() {
         readGangList(() => {
@@ -131,12 +160,20 @@ export class Gang extends Widget {
     changeColumns(msg) {
         if (gang_tab == msg.type_m) return;
         gang_tab = msg.type_m;
-        forelet.paint(getData())
+        if (gang_tab == "member_list") {
+            //读取门派成员
+            readMemberList(() => {
+                forelet.paint(getData())
+            })
+        } else {
+            forelet.paint(getData())
+        }
     }
     goback(arg) {
-        let w: any = forelet.getWidget("app_c-gang-hall-hall_m");
-        close(w);
-        w = undefined;
+        // let w: any = forelet.getWidget("app_c-gang-hall-hall_m");
+        // close(w);
+        // w = undefined;
+        close(arg.widget);
     }
     //关闭浮窗
     closeCover(arg) {
@@ -146,7 +183,7 @@ export class Gang extends Widget {
     getHelp(arg) {
         globalSend("showHelp", arg);
     };
-    //打开创建公会界面
+    //打开创建门派界面
     gotoCreateClick() {
         open("app_c-gang-create-create");
     }
@@ -184,10 +221,10 @@ export class Gang extends Widget {
             return;
         }
         let name = input_text.gang_name;//5
-        let text = input_text.gang_enounce;//16
-        if (!name || !text) {
+        //let text = input_text.gang_enounce;//16
+        if (!name) {
             globalSend("screenTipFun", {
-                words: "门派名字和宣言不能为空"
+                words: "门派名字不能为空"
             });
             return;
         }
@@ -197,13 +234,13 @@ export class Gang extends Widget {
             });
             return;
         }
-        if (gangFun.bytesNum(text) > 32) {
-            globalSend("screenTipFun", {
-                words: "门派宣言不能超过16个字"
-            });
-            return;
-        }
-        createGang(name, text);
+        // if (gangFun.bytesNum(text) > 32) {
+        //     globalSend("screenTipFun", {
+        //         words: "门派宣言不能超过16个字"
+        //     });
+        //     return;
+        // }
+        createGang(name);
     }
     //打开搜索界面
     gotoFindClick() {
@@ -249,6 +286,11 @@ export class Gang extends Widget {
         }
         gangFun.changeGangName();
     }
+    roleInfoClick(i) {
+        role_index = i;
+        forelet.paint(getData());
+        open("app_c-gang-role-role_m");
+    }
     //打开任职界面
     gotoPostClick() {
         open("app_c-gang-post-post");
@@ -274,7 +316,7 @@ export class Gang extends Widget {
     sureMsgClick() {
         gangFun.sureMsgClick();
     }
-    //退出公会
+    //退出门派
     exitClick() {
         globalSend("popTip", {
             btn_name: ["确定", "取消"],
@@ -284,7 +326,7 @@ export class Gang extends Widget {
             }, ""]
         });
     }
-    //解散公会
+    //解散门派
     DisbandClick() {
         open("app_c-gang-tips_tpl-disband");
     }
@@ -292,7 +334,7 @@ export class Gang extends Widget {
     DismissGang() {
         dismissGang();
     }
-    //将成员踢出公会
+    //将成员踢出门派
     kickMember() {
         open("app_c-gang-tips_tpl-kickmember");
     }
@@ -308,13 +350,21 @@ export class Gang extends Widget {
     openDailySalary() {
         globalSend("openDailySalary");
     }
-    //打开公会商店
+    //打开门派商店
     openGangShop() {
         globalSend("openGangShop");
     }
     //打开学习技能
     openGangSkill() {
         globalSend("openGangSkill");
+    }
+    //打开日常
+    openGangActivity() {
+        globalSend("openGangActivity");
+    }
+    //打开门派boss
+    openGangBoss() {
+        globalSend("openGangBoss");
     }
 }
 
@@ -389,7 +439,7 @@ const gangFun = {
             }, ""]
         });
     },
-    //修改公会名称
+    //修改门派名称
     changeGangName: function () {
         let name = input_text.gang_name;
         if (!name) {
@@ -459,6 +509,8 @@ const gangFun = {
         _data.post = _data.post == 1 ? "门主" : (_data.post == 2 ? "副门主" : "成员");
         _data.name = _data.name ? (checkTypeof(_data.name, "Array") ? Common.fromCharCode(_data.name) : _data.name) : _data.id;
         _data.name1 = _data.name1 ? (checkTypeof(_data.name1, "Array") ? Common.fromCharCode(_data.name1) : _data.name1) : _data.id1;
+        _data.pray_name = _data.pray_name ? (checkTypeof(_data.pray_name, "Array") ? Common.fromCharCode(_data.pray_name) : _data.pray_name) : undefined;
+        _data.prop_name = _data.prop_name ? (checkTypeof(_data.prop_name, "Array") ? Common.fromCharCode(_data.prop_name) : _data.prop_name) : undefined;
         _data.gang_name = checkTypeof(_data.gang_name, "Array") ? Common.fromCharCode(_data.gang_name) : _data.gang_name;
         _data.desc = checkTypeof(_data.desc, "Array") ? Common.fromCharCode(_data.desc) : _data.desc;
         _data.notice = checkTypeof(_data.notice, "Array") ? Common.fromCharCode(_data.notice) : _data.notice;
@@ -492,14 +544,13 @@ const gangFun = {
         gangFun.closeW("app_c-gang-role-role_m");
         gangFun.closeW("app_c-gang-gang_list-gang_list");
     },
-    //门主或者副门主处理申请后, 后台推送消息, 重新读取公会成员
+    //门主或者副门主处理申请后, 后台推送消息, 重新读取门派成员
     disposeMember: function (sid) {
         //删除改天申请
         apply_list = apply_list.filter(function (x) { return sid != x.role_id });
         //新加入的玩家
         if (sid == getDB("player").role_id) {
-            //读取公会基本数据
-            read(() => {
+            readAllData(() => {
                 if (Common.isExist(forelet, "app_c-gang-main-main")) {
                     gangFun.closeW("app_c-gang-main-main");
                     forelet.paint(getData());
@@ -510,7 +561,7 @@ const gangFun = {
                 });
             })
         } else {
-            //老成员 [更新公会成员数量]
+            //老成员 [更新门派成员数量]
             gangData.gang_count++;
             updata("gang.data.gang_count", gangData.gang_count);
             readMemberList(() => {
@@ -518,7 +569,7 @@ const gangFun = {
             })
         }
     },
-    //退出公会
+    //退出门派
     disposeKick: function (data) {
         let player = getDB("player");
         gangData.gang_count--;
@@ -569,7 +620,7 @@ export const gangNet = function (param) {
     })
 };
 /**
- * 读取公会基础数据
+ * 读取门派基础数据
  */
 const read = function (callback?) {
     let arg = {
@@ -578,19 +629,21 @@ const read = function (callback?) {
     };
     gangNet(arg)
         .then((data: any) => {
-            let _data:any = Common.changeArrToJson(data.ok);
+            let _data: any = Common.changeArrToJson(data.ok);
             if (_data.gang_id == 0) {
                 readGangList();
-                updata("gang.data.apply_list", _data.apply_list);
+                updata("gang.data", _data);
                 return;
             }
-            readExpand();
-            //读取公会成员列表
-            readMemberList();
-            //读取申请列表
-            readApply();
+            // //读取扩展功能数据
+            // readExpand();
+            // //读取boss数据
+            // readBoss();
+            // //读取门派成员列表
+            // readMemberList();
+
             /**
-             * 解析公会数据
+             * 解析门派数据
              */
             gangData = Common.changeArrToJson(data.ok);
             //门派名字
@@ -618,16 +671,15 @@ const read = function (callback?) {
             callback && callback();
         })
         .catch((data) => {
-            globalSend('screenTip', {
-                words: '公会数据读取失败'
-            })
-            return;
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
         })
 };
 /**
  * 读取扩展基础数据
  */
-const readExpand = function () {
+const readExpand = function (callback?) {
     let arg = {
         "param": {},
         "type": "app/gang/expand@read"
@@ -636,20 +688,42 @@ const readExpand = function () {
         .then((data: any) => {
             gangExpandData = Common.changeArrToJson(data.ok);
             //存入前台数据库
+            gangExpandData.liveness_event_info = Common.changeArrToJson(gangExpandData.liveness_event_info);
             updata("gang.gangExpandData", gangExpandData);
+            updata("player.gang_contribute", gangExpandData.gang_contribute);
             console.log(gangExpandData);
+            callback && callback();
         })
         .catch((data) => {
-            console.log(data);
-            globalSend("screenTip", {
-                words: `读取公会扩展数据失败`
-            })
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
         })
 };
 /**
- * 读取公会列表
+ * 读取门派boss数据
  */
-const readGangList = function (callback?) {
+const readBoss = function (callback?) {
+    let arg = {
+        "param": {},
+        "type": "app/gang/expand@read_boss"
+    };
+    gangNet(arg)
+        .then((data: any) => {
+            let _data = Common.changeArrToJson(data.ok);
+            updata("gang.gangBoss", _data);
+            callback && callback();
+        })
+        .catch((data) => {
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
+        })
+}
+/**
+ * 读取门派列表
+ */
+export const readGangList = function (callback?) {
     let arg = {
         "param": {},
         "type": "app/gang@read_gang_list"
@@ -666,19 +740,20 @@ const readGangList = function (callback?) {
                 gang_list[i].index = i;
                 gang_list[i].leader_info = Common.changeArrToJson(gang_list[i].leader_info);
             }
+            updata("gang.gang_list", gang_list);
             callback && callback();
         })
         .catch((data) => {
-            globalSend('screenTip', {
-                words: '读取公会列表失败'
-            })
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
 /**
- * 读取玩家所在公会成员
+ * 读取玩家所在门派成员
  */
-const readMemberList = function (callback?) {
+export const readMemberList = function (callback?) {
     let arg = {
         "param": {},
         "type": "app/gang@read_member_list"
@@ -697,23 +772,19 @@ const readMemberList = function (callback?) {
                 obj.gang_name = Common.fromCharCode(obj.gang_name);
                 obj.role_id = id;
                 gang_member.push(obj);
-                //let id = _data.gang_member[i][0];
-                //gang_member[i] = Common.changeArrToJson(_data.gang_member[i][1]);
-                // gang_member[i].gang_name = checkTypeof(gang_member[i].gang_name, "Array") ? Common.fromCharCode(gang_member[i].gang_name) : gang_member[i].gang_name;
-                // gang_member[i].name = checkTypeof(gang_member[i].name, "Array") ? Common.fromCharCode(gang_member[i].name) : gang_member[i].name;
-                // gang_member[i].role_id = id;
             }
+            updata("gang.data.gang_member", gang_member);
             callback && callback();
         })
         .catch((data) => {
-            globalSend('screenTip', {
-                words: '读取玩家所在公会成员失败'
-            })
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
 /**
- * 申请加入公会
+ * 申请加入门派
  */
 const applyGang = function (msg) {
     msg = msg.split(",");
@@ -735,7 +806,7 @@ const applyGang = function (msg) {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                words: "离开门派一小时后才能申请加入"
+                words: `${data.why}`
             });
             return;
         })
@@ -760,11 +831,12 @@ const readApply = function (callback?) {
                 apply_list[i].role_id = id;
             };
             updata("gang.data.apply_list", apply_list);
+            callback && callback();
         })
         .catch((data) => {
-            globalSend('screenTip', {
-                words: '读取申请列表失败'
-            })
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
@@ -793,21 +865,20 @@ const disposeApply = function (msg) {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                words: "处理申请失败"
+                words: `${data.why}`
             });
             return;
         })
 };
 /**
- * 创建公会
- * @param name [公会名字]
- * @param txt [公会宣言]
+ * 创建门派
+ * @param name [门派名字]
+ * @param txt [门派宣言]
  */
-const createGang = function (name, txt) {
+const createGang = function (name) {
     let arg = {
         "param": {
-            "name": name,
-            "desc": txt
+            "name": name
         },
         "type": "app/gang@create"
     };
@@ -819,27 +890,20 @@ const createGang = function (name, txt) {
             //关闭界面
             gangFun.closeW("app_c-gang-create-create");
             gangFun.closeW("app_c-gang-main-main");
-            //读取公会数据
-            read(() => {
+            readAllData(() => {
                 forelet.paint(getData());
                 open("app_c-gang-hall-hall_m");
             });
         })
         .catch((data) => {
-            if (data.why == "forbid substr") {
-                globalSend("screenTipFun", {
-                    words: "含有非法字符或敏感字符"
-                });
-            } else {
-                globalSend("screenTipFun", {
-                    words: "离开门派一小时后才能创建门派"
-                });
-            }
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
 /**
- * 更改公会名称
+ * 更改门派名称
  */
 const changeGangName = function (name) {
     let arg = {
@@ -857,17 +921,14 @@ const changeGangName = function (name) {
             updata("gang.data.gang_name", gangData.gang_name);
             gangFun.closeW("app_c-gang-change_name-change_name");
             forelet.paint(getData());
+            globalSend("attrTip", {
+                words: `门派名字修改成功`
+            })
         })
         .catch((data: any) => {
-            if (data.why == "forbid substr") {
-                globalSend("screenTipFun", {
-                    words: "含有非法字符或敏感字符"
-                });
-            } else {
-                globalSend("screenTipFun", {
-                    words: "更改公会名称失败"
-                });
-            }
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
@@ -888,8 +949,8 @@ const appoint = function (msg) {
             gangFun.closeW("app_c-gang-role-role_m");
         })
         .catch((data) => {
-            globalSend("screenTip", {
-                words: `任命失败`
+            globalSend("screenTipFun", {
+                words: `${data.why}`
             });
             return;
         })
@@ -916,15 +977,9 @@ const sureNoticeClick = function (txt) {
             });
         })
         .catch((data: any) => {
-            if (data.why == "forbid substr") {
-                globalSend("screenTipFun", {
-                    words: "含有非法字符或者敏感字符"
-                });
-            } else {
-                globalSend("screenTipFun", {
-                    words: "修改公告失败"
-                });
-            }
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
@@ -951,25 +1006,19 @@ const sureMsgClick = function (txt) {
             });
         })
         .catch((data: any) => {
-            if (data.why == "forbid substr") {
-                globalSend("screenTipFun", {
-                    words: "含有非法字符或敏感字符"
-                });
-            } else {
-                globalSend("screenTipFun", {
-                    words: "修改宣言失败"
-                });
-            }
+            globalSend("screenTipFun", {
+                words: `${data.why}`
+            });
             return;
         })
 };
 /**
- * 退出公会
+ * 退出门派
  */
 const exitGnag = function () {
     let arg = {
         "param": {},
-        "type": "app/gang@dismiss_gang"
+        "type": "app/gang@exit"
     };
     gangNet(arg)
         .then((data) => {
@@ -979,14 +1028,13 @@ const exitGnag = function () {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                words: "退出公会失败"
+                words: `${data.why}`
             });
-            console.log(data);
             return;
         })
 };
 /**
- * 解散公会
+ * 解散门派
  */
 const dismissGang = function () {
     let arg = {
@@ -1002,15 +1050,14 @@ const dismissGang = function () {
             });
         })
         .catch((data) => {
-            console.log(data);
-            globalSend("attrTip", {
-                words: `公会解散失败`
+            globalSend("screenTipFun", {
+                words: `${data.why}`
             });
             return;
         })
 };
 /**
- * 踢出公会
+ * 踢出门派
  */
 const sureKickMember = function () {
     let id = gang_member[role_index].role_id;
@@ -1023,25 +1070,15 @@ const sureKickMember = function () {
     gangNet(arg)
         .then((data) => {
             globalSend("attrTip", {
-                words: `该玩家已踢出公会`
+                words: `该玩家已踢出门派`
             });
         })
         .catch((data) => {
-            console.log(data);
-            globalSend("attrTip", {
-                words: `踢出公会失败`
+            globalSend("screenTipFun", {
+                words: `${data.why}`
             });
         })
 }
-
-
-
-/**
- * 学习技能
- */
-
-
-
 
 /**
  * 后台推送消息
@@ -1083,10 +1120,12 @@ net_message("modify_dismiss", (msg) => {
 });
 //门派申请通知
 net_message("gang_apply", (msg) => {
-    readApply();
+    readApply(() => {
+        forelet.paint(getData());
+    });
     note(msg);
 });
-//新增公会成员
+//新增门派成员
 net_message("gang_add", (msg) => {
     gangFun.disposeMember(msg.id);
     note(msg);
@@ -1152,45 +1191,60 @@ net_message("gang_skill", (msg) => {
     updata("gang.data.gang_skill." + msg.skill_type, msg.skill_level);
     note(msg);
 });
-
-
-
-
+//门派事件
+net_message("gang_event_add", (msg) => {
+    note(msg);
+})
 
 //后台推送消息, 门派内部发生的事件
 const note = function (msg) {
     //因为新成员进来后, 与后台的通讯获取 gangData 还没有完成, 此时为 undefined 
     if (gangData == undefined) return;
-    if (msg.text_id) {
-        gangData.gang_event_record.unshift(gangFun.disposeEvent(msg));
-        forelet.paint(getData());
-    }
+    gangData.gang_event_record.unshift(gangFun.disposeEvent(msg));
+    updata("gang.data.gang_event_record", gangData.gang_event_record);
+    forelet.paint(getData());
 };
 
+// /**
+//  * 读取数据 立即执行
+//  */
+// read();
+// readExpand();
+
 /**
- * 读取数据 立即执行
+ * 统一读取数据
  */
-read();
-readExpand();
+const readAllData = function (callback?) {
+    //读取门派数据
+    let count = 0;
+    let fun = function () {
+        count++;
+        if (count == 5) {
+            count = null;
+            fun = null;
+            callback && callback();
+        }
+    }
 
+    read(() => {
+        fun();
+    });
+    //读取扩展功能数据
+    readExpand(() => {
+        fun();
+    });
+    //读取boss数据
+    readBoss(() => {
+        fun();
+    });
+    //读取门派成员列表
+    readMemberList(() => {
+        fun();
+    });
+    //读取申请列表
+    readApply(() => {
+        fun();
+    });
+};
 
-
-// gang_build //门派升级
-
-// gang_pray //祭天
-
-// gang_donate //门派捐献
-
-// gang_liveness //日常活动
-
-// gang_person_num_refresh //门派boss成员人数更新
-
-// gang_boss_award //打boss开箱子
-
-// liveness_event_info //活跃度事件推送
-
-// gang_collect //采集
-
-// gang_boss_refresh //boss刷新 [每周]
-
-// gang_event_add //公会事件
+readAllData();

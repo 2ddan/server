@@ -18,9 +18,10 @@ export const forelet = new Forelet();
 
 let tab_switch = "friend_f",
 	curr_prop_list,//装备列表
-	reclaim_flag = false,//单次分解间隔
+	// reclaim_flag = false,//单次分解间隔
 	choose_return: any = {},
 	reclaim_ok = false,//熔炼成功标识
+	reclaim_anima = false,//熔炼成功标识
 	selectList = [];//分解框选择列表
 let onOff: any = {},
 	curr_award: any = {};
@@ -55,7 +56,8 @@ const getdata = function () {
 	data.curr_award = curr_award;
 	data.onOff = onOff;
 	data.reclaim_ok = reclaim_ok;
-	data.reclaim_flag = reclaim_flag;
+	data.reclaim_anima = reclaim_anima;
+	// data.reclaim_flag = reclaim_flag;
 	return data;
 }
 
@@ -168,23 +170,23 @@ export class detail_main extends Widget {
 	}
 	//分解
 	propResolved = function () {
-		if(reclaim_flag){
-			globalSend("screenTipFun", {
-				words: `熔炼炉冷却中，请稍后`
-			});
-			return;
-		}
-		// one_choose();
+		// if(reclaim_flag){
+		// 	globalSend("screenTipFun", {
+		// 		words: `熔炼炉冷却中，请稍后`
+		// 	});
+		// 	return;
+		// }
+		one_choose();
 		propResolve();
 	}
 	//一键分解
 	propResolveds = function () {
-		if(reclaim_flag){
-			globalSend("screenTipFun", {
-				words: `熔炼炉冷却中，请稍后`
-			});
-			return;
-		}
+		// if(reclaim_flag){
+		// 	globalSend("screenTipFun", {
+		// 		words: `熔炼炉冷却中，请稍后`
+		// 	});
+		// 	return;
+		// }
 		let month_card = getDB("player.month_card_due_time");
         let player_level = getDB("player.level");
         
@@ -215,9 +217,10 @@ const propResolve = function () {
 
 //分解
 const propResolved = function () {
-	reclaim_flag = true;
-	updatahtml();
+	// reclaim_flag = true;
+	// updatahtml();
 	reclaim_ok = true;
+	updatahtml();
 	let str = "",
 		len = selectList.length;
 	for (let i = 0; i < len; i++) {
@@ -247,14 +250,16 @@ const propResolved = function () {
 				});
 			}
 		}
-
+		reclaim_anima = true;
+		reclaim_ok = false;
 		choose_return = {};
 		one_choose();
 		updatahtml();
 		
 		let timer = setTimeout(function () {
 			reclaim_ok = false;
-			reclaim_flag = false;
+			// reclaim_flag = false;
+			reclaim_anima = false;
 			updatahtml();
 			clearTimeout(timer);
 			timer = null;

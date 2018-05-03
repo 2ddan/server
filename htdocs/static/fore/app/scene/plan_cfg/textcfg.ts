@@ -490,5 +490,15 @@ export const textcfg = {
         "strokeWidth": 1,
         "strokeColor": "rgb(0,0,0)",
         "isPowerOfTwo":true
+    },
+    //荒野降魔排队时间
+    "publicbossLineTime":{
+        "font": "normal 400 20px mnjsh",
+        "color": "#51e650",
+        "textAlign": "center",
+        "hfactor":1.8,
+        "strokeWidth": 1,
+        "strokeColor": "rgb(0,0,0)",
+        "isPowerOfTwo":true
     }
 };

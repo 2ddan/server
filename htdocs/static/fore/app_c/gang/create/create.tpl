@@ -9,7 +9,7 @@
 			<widget w-class="13" w-tag="app_a-widget-pic_other-pic_other" w-sid="13">{"icon":"pendant"} 
 			</widget>
 			<widget w-class="33" w-tag="app_a-widget-pic_text-pic_text" w-sid="33">
-				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"创建公会","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
+				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"创建门派","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>
 		</div>
 		<div w-class="10" w-sid="10">
@@ -23,22 +23,15 @@
 			</div>
 			
 			
-			<div w-class="20" w-sid="20">
+			<div w-class="20" w-sid="20" style="top: 134px;">
 				<widget w-class="8" w-tag="app_a-widget-pic_other-pic_other" w-sid="8"></widget>
-				<span w-class="22" w-sid="22">公会名称</span>
+				<span w-class="22" w-sid="22">门派名称</span>
 				<div w-class="24" w-sid="24"></div>
 				<widget id="gangname" w-class="21" w-tag="app_a-widget-input-input" w-sid="21" length="10"  ev-input-text="getFocusInput" ev-input-blur="upDataInputValue">
-					{"type":"text","placeholder":"请输入公会名_","length":10,"text":"","id":"gangname"} 
+					{"type":"text","placeholder":"请输入门派名_","length":10,"text":"","id":"gangname"} 
 				</widget>
 			</div>
-			<div w-class="25" w-sid="25">
-				<widget w-class="27" w-tag="app_a-widget-pic_other-pic_other" w-sid="27"></widget>
-				<span w-class="28" w-sid="28">公会宣言</span>
-				<div w-class="29" w-sid="29"></div>
-				<widget w-class="30" w-tag="app_a-widget-input-textarea" w-sid="30" length="32" ev-input-text="getFocusInput" ev-input-blur="upDataInputValue">
-					{"type":"text","length":32,"placeholder":"请输入公会宣言_","text":"","id":"gangenounce","color":"#875840"} 
-				</widget>
-			</div>
+
 			{{let b =  it1.guild_base.create_spend > player.diamond ? 1 : 0}}
 			<widget on-tap="createClick({{b}})" w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31">
 				{"class": {{ b ? "disabled" : "hl" }},"fontsize":18,"color":"#fdedd7;","text":"创 建","width":110,"height":40} 

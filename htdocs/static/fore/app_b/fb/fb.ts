@@ -38,10 +38,11 @@ export const globalReceive: any = {
     gotoFb: () => {
         let open_fun_id = getDB('open_fun.id');
         if (!fun_open_min) {
-            let menu = menu_discover.slice(0).sort(function(a,b){
-                return function_open[a.fun_key]["stage_id"] - function_open[b.fun_key]["stage_id"];
-            })
-            fun_open_min = function_open[menu[0].fun_key]
+            // let menu = menu_discover.slice(0).sort(function(a,b){
+            //     return function_open[a.fun_key]["stage_id"] - function_open[b.fun_key]["stage_id"];
+            // })
+            // fun_open_min = function_open[menu[0].fun_key]
+            fun_open_min = function_open["exp_fb"]
         }
         if (fun_open_min.id > open_fun_id) {
             let guard_name = wild_mission[fun_open_min.stage_id].guard_name.split(",");

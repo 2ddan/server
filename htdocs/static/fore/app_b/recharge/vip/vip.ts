@@ -97,6 +97,12 @@ listen("player.vip_exp", () => {
 
 
 export class vip extends Widget {
+    gotoRecharge = ()=>{
+        let w = forelet.getWidget("app_b-recharge-vip-vip");
+        close(w);
+        w = undefined;
+        globalSend("gotoRecharge");
+    }
     goback = () => {
         let w = forelet.getWidget("app_b-recharge-vip-vip");
         close(w);

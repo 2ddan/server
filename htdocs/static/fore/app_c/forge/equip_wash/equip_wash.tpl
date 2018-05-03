@@ -65,7 +65,7 @@
 
         {{if obj}}
         <app_a-widget-prop-equip style="margin:10px auto;position:relative;top: 101px;left: 129px;">
-            {"prop":{{ thisProp }},"url":{{img_1}},"solt":{{thisProp.slot}},"type":"equip","width":88,"height":88,"type":"equip","level":{{it1.equip_lv + 10}}}
+            {"prop":{{ thisProp }},"url":{{img_1}},"solt":{{thisProp.slot}},"type":"equip","width":88,"height":88,"type":"equip","level":{{evolution.next_level}}}
         </app_a-widget-prop-equip>
 
         

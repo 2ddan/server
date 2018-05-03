@@ -57,6 +57,16 @@ export let item_getWay = {
         "name": "装备熔炼",
         "activity": null
     },
+    "111": {
+        "fun": "soulchange",
+        "name": "龙魂转换",
+        "activity": null
+    },
+    "112": {
+        "fun": "gotoGestExchange",
+        "name": "心法兑换",
+        "activity": null
+    },
     "200": {
         "fun": "gotoFestivalActivity",
         "name": "节日活动",

@@ -12,7 +12,7 @@
 				{"icon":"pendant"} 
 			</widget>
 			<widget w-class="33" w-tag="app_a-widget-pic_text-pic_text" w-sid="33">
-				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"修改公会名","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
+				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"修改门派名","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>
 		</div>
 		<div w-class="10" w-sid="10">
@@ -24,10 +24,10 @@
 			</widget>
 			<div w-class="20" w-sid="20">
 				<widget w-class="8" w-tag="app_a-widget-pic_other-pic_other" w-sid="8"></widget>
-				<span w-class="22" w-sid="22">公会名称</span>
+				<span w-class="22" w-sid="22">门派名称</span>
 				<div w-class="24" w-sid="24"></div>
 				<widget w-class="21" w-tag="app_a-widget-input-input" w-sid="21"  ev-input-text="getFocusInput" ev-input-blur="upDataInputValue" length="10">
-					{"type":"text","placeholder":"请输入公会名_","length":10,"text":"","id":"gangname"} 
+					{"type":"text","placeholder":"请输入门派名_","length":10,"text":"","id":"gangname"} 
 				</widget>
 			</div>
 			{{let b = it1.guild_base.rename > player.diamond ? 1: 0}}

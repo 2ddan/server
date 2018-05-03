@@ -1,0 +1,6 @@
+{
+    "tpl":"./books.tpl",
+    "js":"../rune.ts",
+    "forelet":"../rune.ts",
+    "css":"./books.wcss"
+}

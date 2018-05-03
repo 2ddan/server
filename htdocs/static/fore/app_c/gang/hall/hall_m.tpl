@@ -2,7 +2,7 @@
 <div style="position:absolute;left:0;top:0;width:100%;z-index:2;bottom:0px;">
 	{{let root = _get("pi/ui/root").exports}}
 	<widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
-		{"text":"公 会","coin":["money","diamond"],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
+		{"text":"门 派","coin":["money","diamond",150005],"left":33,"top":16,"width":540,"type":"contribute","width":{{root.getWidth()}} } 
 	</widget>
 	<div style="position:absolute;width:540px;height:868px;left:50%;margin-left:-270px">
 		{{let appCfg = _get("app/mod/db").exports.data}}
@@ -24,9 +24,9 @@
 			"top":"-1",
 			"margin":2,
 			"arr":[
-				{"tab":"app_c-gang-hall_info-hall_info","btn":{"text":"门派信息","type":"border","type_m":"info","fontSize":24}},
-				{"tab":"app_c-gang-hall_member_list-hall_member_list","btn":{"text":"门派成员","type":"border","type_m":"member_list","fontSize":24} },
-				{"tab":"app_c-gang-hall_gang_build-hall_gang_build","btn":{"text":"门派建设","type":"border","type_m":"build","fontSize":24} },
+				{"tab":"app_c-gang-hall_info-hall_info","btn":{"text":"门派信息","type":"border","type_m":"info","fontSize":24},"tip_keys":["gang.info"]},
+				{"tab":"app_c-gang-hall_member_list-hall_member_list","btn":{"text":"门派成员","type":"border","type_m":"member_list","fontSize":24},"tip_keys":["gang.member"]},
+				{"tab":"app_c-gang-hall_gang_build-hall_gang_build","btn":{"text":"门派建设","type":"border","type_m":"build","fontSize":24}, "tip_keys":["gang.build"]},
 				{"tab":"app_c-gang-hall_event-hall_event","btn":{"text":"门派事件","type":"border","type_m":"event","fontSize":24} }
 			],
 			"type":0}

@@ -1,53 +1,207 @@
 export const publicboss_base = {
-    610101:{
-        "map_id":"scene_map07",
-        "player_site":[[0,0]],
-        "monster_site":[[-4.77,12.34]],
-        "level":20,
-        "refresh_time":-1,
-        "revive_time":5,
-        "map_player":7,
-        "challenge_time":90,
-        "bubble":1
-    },610102:{
-        "map_id":"scene_map07",
-        "player_site":[[0,0]],
-        "monster_site":[[-4.77,12.34]],
-        "level":30,
-        "refresh_time":-1,
-        "revive_time":20,
-        "map_player":7,
-        "challenge_time":90,
-        "bubble":1
-    },610103:{
-        "map_id":"scene_map07",
-        "player_site":[[0,0]],
-        "monster_site":[[-4.77,12.34]],
+    618001:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
         "level":40,
         "refresh_time":-1,
-        "revive_time":40,
-        "map_player":7,
-        "challenge_time":90,
-        "bubble":1
-    },610104:{
-        "map_id":"scene_map07",
-        "player_site":[[0,0]],
-        "monster_site":[[-4.77,12.34]],
-        "level":50,
-        "refresh_time":-1,
-        "revive_time":60,
-        "map_player":7,
-        "challenge_time":90,
-        "bubble":1
-    },610105:{
-        "map_id":"scene_map07",
-        "player_site":[[0,0]],
-        "monster_site":[[-4.77,12.34]],
+        "revive_time":5,
+        "map_player":1,
+        "challenge_time":120,
+        "bubble":1,
+        "best_boss":0,
+        "boss_head":1
+    },618002:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
         "level":60,
         "refresh_time":-1,
-        "revive_time":360,
-        "map_player":7,
-        "challenge_time":90,
-        "bubble":1
+        "revive_time":6,
+        "map_player":2,
+        "challenge_time":120,
+        "bubble":2,
+        "best_boss":0,
+        "boss_head":2
+    },618003:{
+        "map_id":"scene_map11",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":80,
+        "refresh_time":-1,
+        "revive_time":7,
+        "map_player":2,
+        "challenge_time":120,
+        "bubble":3,
+        "best_boss":0,
+        "boss_head":3
+    },618004:{
+        "map_id":"scene_fb02",
+        "player_site":[[0.86,-0.48]],
+        "monster_site":[[-1.8,-5.6]],
+        "level":80,
+        "refresh_time":-1,
+        "revive_time":8,
+        "map_player":2,
+        "challenge_time":120,
+        "bubble":4,
+        "best_boss":1,
+        "boss_head":3
+    },618005:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":100,
+        "refresh_time":-1,
+        "revive_time":9,
+        "map_player":2,
+        "challenge_time":120,
+        "bubble":5,
+        "best_boss":0,
+        "boss_head":1
+    },618006:{
+        "map_id":"scene_map11",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":120,
+        "refresh_time":-1,
+        "revive_time":10,
+        "map_player":2,
+        "challenge_time":120,
+        "bubble":6,
+        "best_boss":0,
+        "boss_head":2
+    },618007:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":140,
+        "refresh_time":-1,
+        "revive_time":11,
+        "map_player":3,
+        "challenge_time":120,
+        "bubble":7,
+        "best_boss":0,
+        "boss_head":3
+    },618008:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":160,
+        "refresh_time":-1,
+        "revive_time":12,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":8,
+        "best_boss":0,
+        "boss_head":1
+    },618009:{
+        "map_id":"scene_fb01",
+        "player_site":[[0.86,-0.48]],
+        "monster_site":[[-1.8,-5.6]],
+        "level":160,
+        "refresh_time":-1,
+        "revive_time":13,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":9,
+        "best_boss":1,
+        "boss_head":4
+    },618010:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":180,
+        "refresh_time":-1,
+        "revive_time":14,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":10,
+        "best_boss":0,
+        "boss_head":2
+    },618011:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":200,
+        "refresh_time":-1,
+        "revive_time":15,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":11,
+        "best_boss":0,
+        "boss_head":3
+    },618012:{
+        "map_id":"scene_fb02",
+        "player_site":[[0.86,-0.48]],
+        "monster_site":[[-1.8,-5.6]],
+        "level":200,
+        "refresh_time":-1,
+        "revive_time":16,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":12,
+        "best_boss":1,
+        "boss_head":3
+    },618013:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":220,
+        "refresh_time":-1,
+        "revive_time":17,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":13,
+        "best_boss":0,
+        "boss_head":1
+    },618014:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":240,
+        "refresh_time":-1,
+        "revive_time":18,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":14,
+        "best_boss":0,
+        "boss_head":2
+    },618015:{
+        "map_id":"scene_fb01",
+        "player_site":[[0.86,-0.48]],
+        "monster_site":[[-1.8,-5.6]],
+        "level":240,
+        "refresh_time":-1,
+        "revive_time":19,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":15,
+        "best_boss":1,
+        "boss_head":4
+    },618016:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":260,
+        "refresh_time":-1,
+        "revive_time":20,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":16,
+        "best_boss":0,
+        "boss_head":3
+    },618017:{
+        "map_id":"scene_map10",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":280,
+        "refresh_time":-1,
+        "revive_time":21,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":17,
+        "best_boss":0,
+        "boss_head":1
     }
 }

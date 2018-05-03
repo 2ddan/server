@@ -17,12 +17,14 @@ import { setClickCallback, initAnimFinishCB } from "app/scene/base/scene";
 import { map_cfg } from "app/scene/plan_cfg/map";
 import { Move, setCache, setFrame, frame } from "app/scene/move";
 
-import { mapList, initMapList, handScene, change_status} from "app_b/fight_ol/handscene";
+import { mapList, initMapList, handScene, change_status,olFightOrder} from "app_b/fight_ol/handscene";
 
 import { analyseFighter, analyseData } from "fight/a/fore/node_fight";
 import { Fight_common } from "fight/a/fore/fight_common";
 
 import { exitWild,intoWild } from "app_b/wild/wild"
+
+import { showNewRes } from "app_b/bag/bag";
 
 // 通讯
 import { net_request, net_send, net_message } from "app_a/connect/main";
@@ -57,13 +59,19 @@ let next_fight_id = 0; // 用于判断是否与排队中所挑战的BOSSID相同
 let un_line_flag = 0; //取消排队标识位
 let create_node_flag = 1; //是否需要创建伤害节点标识
 let dead_time : any = {}; //保存BOSS的死亡时间
-let tip_arr : any = {}; //保存每个BOSS的提醒状态
-let rank_bang : any = null;
-let rank_type = "big";
+let rank_bang : any = null; //排行榜详细信息
+let rank_type = "big"; //排行榜收起展开状态
+let line_time1 = 0; //排队时间
+let linTime = undefined; //排队时间定时器
+let open_type = "kill_info"; //打开页面的标识
+let cur = 0; //页面的页卡控制
+let award_tip : any = {}; //页面红点提示
+
 // 接收消息
 export const globalReceive : any = {
     // 打开荒野降魔主界面
     "gotoPublicBoss" : () => {
+        cur = 0;
         forelet.paint(getData());
         open("app_c-publicboss-main");
     },
@@ -86,6 +94,34 @@ export const globalReceive : any = {
                 ]
             });
         }
+    },
+    "closeBossReviveTip":()=>{
+        if(line_time1){
+            line_time1 = 0;
+            clearInterval(linTime);
+            linTime = undefined;
+            updata("publicboss.lineFlag",0);        
+        }
+        forelet.paint(getData());
+    },
+    "releaseMagic": (msg) => {
+        if (mgr_data.name == "public_boss")//通知后台释放技能
+            olFightOrder({ skill_id: msg.skill_id }, msg.callback);
+
+    },
+    // 入口在野外的boss复活提示
+    "goFightPublicBoss" : (msg) => {
+        let w = forelet.getWidget("app_c-publicboss-main");
+        if(!w){
+            cur = 0;
+            forelet.paint(getData());
+            open("app_c-publicboss-main");        
+        }
+        let time = setTimeout(()=>{
+            chanllengeBoss(msg);        
+            clearTimeout(time);
+            time = undefined;
+        },50)
     }
 }
 
@@ -107,8 +143,10 @@ const getData = () => {
     data.award_index = award_index;
     data.un_line_flag = un_line_flag;
     data.dead_time = dead_time;
-    data.tip_arr = tip_arr;
     data.rank_bang = rank_bang;
+    data.line_time1 = line_time1;
+    data.open_type = open_type;
+    data.cur = cur;
     return data;
 }
 
@@ -134,20 +172,6 @@ export class publicboss extends Widget {
      * 倒计时回调 重置对应BOSS的死亡时间
     */
     refershBoss (arg) {
-        // let boss_name = null;
-        // let _index = 0;
-        // for(let i=0;i<initData.boss_info;i++){
-        //     if(initData.boss_info[0] == arg - 0){
-        //         _index = initData.boss_info[4];
-        //     }
-        // }
-        // boss_name = boss_base[_index].name;
-        let arr = getDB("publicboss.tip_arr");
-        if(arr[arg]){
-            // globalSend("bossRevive",{"boss_id":boss_name,"type":"revive"});
-            updata("publicboss.tip_arr."+arg,0);
-            // alert(arg+"这个BOSS活了！！！！");
-        }
         dead_time[arg] = 0;
         forelet.paint(getData);
     }
@@ -166,10 +190,14 @@ export class publicboss extends Widget {
 
     // 设置提醒状态
     setTips (arg) {
-        let tips_arr = getDB("publicboss.tip_arr");
-        tips_arr = tips_arr == undefined ? {} : tips_arr;
-        tips_arr[arg] = tips_arr[arg] ? 0 : 1;
-        updata("publicboss.tip_arr."+arg,tips_arr[arg]);
+        let localStorage = JSON.parse(Pi.localStorage["publicBoss"]);
+        if (!localStorage[arg]) {
+            localStorage[arg] = 1;
+            Pi.localStorage.setItem("publicBoss", JSON.stringify(localStorage));
+        } else {
+            localStorage[arg] = 0;
+            Pi.localStorage.setItem("publicBoss", JSON.stringify(localStorage));
+        }
         forelet.paint(getData());
     }
 
@@ -233,6 +261,7 @@ export class publicboss extends Widget {
 
     //击杀记录界面
     killInfo = (arg) => {
+        open_type = "kill_info";
         kill_info_index = arg - 0;
         forelet.paint(getData()); 
         open("app_c-publicboss-boss-kill_info");
@@ -262,10 +291,16 @@ export class publicboss extends Widget {
 
     //在次挑战
     againFight = () => {
-        if(initData.fight_info[boss_index] >= publicboss_base[fight_boss_id].map_player){
+        if(initData.fight_info[kill_info_index] >= publicboss_base[fight_boss_id].map_player){
             read(()=>{
                 closeSceneAndAward();
-                forelet.paint(getData());
+                let timer = setTimeout(()=>{
+                    openLineUp(kill_info_index);
+                    lineUpBoss = fight_boss_id;
+                    lineUp(lineUpBoss);
+                    clearTimeout(timer);
+                    timer = undefined;
+                },30)
             }); 
         }else{
             read(()=>{
@@ -296,16 +331,15 @@ export class publicboss extends Widget {
         let arr = arg.split(",");
         sendAward(arr);
     }
+    
+    //一键分配奖励
+    oneKeyAward = () => {
+        oneKeyAward();
+    }
 
     //打开排队界面
     lineUp = (arg) => {
-        if(total_count <= 0){
-            globalSend("screenTipFun",{ words: "挑战次数不足！" });
-            return;
-        }
-        kill_info_index = arg - 0;
-        forelet.paint(getData());
-        open("app_c-publicboss-boss-line_up");
+        openLineUp(arg);
     }
 
     //排队
@@ -320,6 +354,7 @@ export class publicboss extends Widget {
         }
         lineUpBoss = arg[0] - 0;
         lineUp(arg[0] - 0);
+        
     }
 
     // 取消排队询问
@@ -352,10 +387,12 @@ export class publicboss extends Widget {
 
     //查看排行榜
     lookRank = () => {
+        open_type = "rank_info";        
         let w = forelet.getWidget("app_c-publicboss-fight-fight_award");
         if(w){
             close(w);
         }
+        forelet.paint(getData());
         open("app_c-publicboss-boss-kill_info");
     }
 
@@ -370,10 +407,10 @@ export class publicboss extends Widget {
 
     //从战斗结算界面前往索要
     gotoAward = () => {
-        // tab_type = "award";
+        cur = 1;
         closeSceneAndAward();
         forelet.paint(getData());
-        open("app_c-publicboss-award-award");
+        open("app_c-publicboss-main");
     }
 
     //战斗场景中的排行排收起和展开状态控制
@@ -384,6 +421,22 @@ export class publicboss extends Widget {
         node_list["rank_num"].imgHeight = rank_type == "big" ? 650 : 163;
         mgr.modify(node_list["rank_num"]);
     }
+
+    //物品详情
+    showPropInfo = (id) => {
+        globalSend("showOtherInfo", id);
+    } 
+}
+
+//打开排队界面
+const openLineUp = (arg) => {
+    if(total_count <= 0){
+        globalSend("screenTipFun",{ words: "挑战次数不足！" });
+        return;
+    }
+    kill_info_index = arg - 0;
+    forelet.paint(getData());
+    open("app_c-publicboss-boss-line_up");
 }
 
 //关闭战斗场景和战斗奖励界面
@@ -410,7 +463,7 @@ const chanllengeBoss = (arg?) => {
     if(arg){
         arr = arg.split(",");
     }else{
-        arr = [fight_boss_id,boss_index];
+        arr = [fight_boss_id,boss_index,kill_info_index];
     }
     let lineFlag = getDB("publicboss.lineFlag");
     next_fight_id = arr[0] - 0;
@@ -426,6 +479,7 @@ const chanllengeBoss = (arg?) => {
     //获取boss房间的地图
     map = publicboss_base[arr[0] - 0].map_id;
     boss_index = arr[1] - 0;
+    kill_info_index = arr[4] ? arr[4] - 0 : arr[2] - 0;
     fight_boss_id = arr[0] - 0;
     fight_time = publicboss_base[fight_boss_id].challenge_time * 1000 + Util.serverTime();
     //打开场景
@@ -434,6 +488,7 @@ const chanllengeBoss = (arg?) => {
     globalSend("exitWild",()=>{
         startFight(fight_boss_id);
     });
+    
 }
 
 // 处理场景上的2D节点
@@ -456,7 +511,7 @@ const nub_node = () => {
     //左侧战斗信息节点
 	node_list["rank_num"] = {};
 	//节点位置
-	node_list["rank_num"].x = -120;
+	node_list["rank_num"].x = 370;
 	node_list["rank_num"].y = 600;
     node_list["rank_num"].z = 5;
     node_list["rank_num"].attachment = "2D",
@@ -470,7 +525,7 @@ const nub_node = () => {
     
     node_list["my_rank"] = {} ;
     node_list["my_rank"].type = "team_damage";
-    node_list["my_rank"].text = 0;
+    node_list["my_rank"].text = 0 + "";
     node_list["my_rank"].x = 100;
     node_list["my_rank"].y = -395;
     node_list["my_rank"].z = 6;
@@ -485,8 +540,8 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
     let _index = arg-0+1;
     node_list[_index] = {};
     node_list[_index].type = "team_damage";
-    node_list[_index].text = text || 0;
-    node_list[_index].x = -255;
+    node_list[_index].text = text || 0 + "";
+    node_list[_index].x = 125;
     node_list[_index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
     node_list[_index].z = 6;
     node_list[_index].visible = true;
@@ -498,8 +553,8 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
     let __index = arg-0+11;
     node_list[__index] = {};
     node_list[__index].type = "team_damage";
-    node_list[__index].text = name || 0;
-    node_list[__index].x = -190;
+    node_list[__index].text = name || 0 + "";
+    node_list[__index].x = 190;
     node_list[__index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
     node_list[__index].z = 6;
     node_list[__index].visible = true;
@@ -511,8 +566,8 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
     let ___index = arg-0+111;
     node_list[___index] = {};
     node_list[___index].type = "team_damage";
-    node_list[___index].text = num || 0;
-    node_list[___index].x = -125;
+    node_list[___index].text = num || 0 + "";
+    node_list[___index].x = 255;
     node_list[___index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
     node_list[___index].z = 6;
     node_list[___index].visible = true;
@@ -550,6 +605,10 @@ const unlineUp = (msg ?) =>{
         let _data:any = Common.changeArrToJson(data.ok);
         let w = forelet.getWidget("app_c-publicboss-boss-line_up");
         updata("publicboss.lineFlag",0);
+        line_time1 = 0;
+        clearInterval(linTime);
+        linTime = undefined;
+        forelet.paint(getData());
         if(w){
             close(w);
         }
@@ -574,16 +633,21 @@ const lineUp = (msg) =>{
         }
         let line_up = initData.line_up_info[kill_info_index];
         let boss_name = boss_base[kill_info_index].name;
-        let line_time = (publicboss_base[msg].challenge_time - 0 / 5) + (line_up.length+1) / 2 + 10;
+        let line_time = (publicboss_base[msg].challenge_time - 0) / 5 + (line_up.length) / 2 + 10;
         globalSend("bossLineUp",{"name":boss_name,"type":"line_up","line_up_time":line_time});
         // let _data:any = Common.changeArrToJson(data.ok);
         updata("publicboss.nextLineFlag",0);
         updata("publicboss.lineFlag",msg);
+        linTime = setInterval(()=>{
+            line_time1 = line_time1 + 1;
+            forelet.paint(getData());
+        },1000);
         forelet.paint(getData());
         let w = forelet.getWidget("app_c-publicboss-boss-line_up");
         if(!w){
             open("app_c-publicboss-boss-line_up");
         }
+        
     });
 }
 // 战斗相关
@@ -599,7 +663,7 @@ const startFight = (msg) =>{
         if(data.error){
             globalSend("screenTipFun", { words: data.why });
             console.log(data.why);
-            // return;
+            return;
         }
         piOpen("app_c-publicboss-fight-fight");
         //初始化场景
@@ -611,10 +675,19 @@ const startFight = (msg) =>{
         let events:any = analyseFighter(_data);
         fight_r.fightEvents = events.event;
         fight_r.now = events.now;
+        updata("publicboss.lineFlag",0);
         updata("publicboss.time",_data.time);
         //处理伤害事件
         dealFightEvents(fight_r);
         nub_node();
+        line_time1 = 0;
+        clearInterval(linTime);
+        linTime = undefined;
+        forelet.paint(getData());
+        let w = forelet.getWidget("app_c-publicboss-boss-line_up");
+        if(w){
+            close("app_c-publicboss-boss-line_up");
+        }
     })    
 }
 
@@ -780,7 +853,15 @@ const sendAward = (arg) => {
             console.log(data.why);
             return;
         }
-        let result = Common.changeArrToJson(data.ok);
+        let prop : any = Common.changeArrToJson(data.ok);
+        let result = Common_m.mixAward(prop);
+        if(arg[1] - 0 == 1){
+            result.auto = 1;
+            showNewRes(result, function (result) {
+                result.open();
+            });
+        }
+
         let w = forelet.getWidget("app_c-publicboss-send-list");
         if(w){
             close(w);
@@ -788,24 +869,78 @@ const sendAward = (arg) => {
     })
 }
 
-const read = ( callback? ) => {
+//一键分配
+const oneKeyAward = () => {
+    let _data : any = {
+        "param":{},
+        "type":"app/pve/wilderness_boss@one_key_distribute"
+    };
+
+    net_request(_data,(data)=>{
+        if (data.error) {
+            globalSend("screenTipFun", { words: data.why });
+            console.log(data.why);
+            return;
+        }
+        let prop : any = Common.changeArrToJson(data.ok);
+        let result = Common_m.mixAward(prop);
+        
+        result.auto = 1;
+        showNewRes(result, function (result) {
+            result.open();
+        });
+        
+
+        let w = forelet.getWidget("app_c-publicboss-send-list");
+        if(w){
+            close(w);
+        }
+    })
+}
+
+const read = ( callback?,type? ) => {
     net_request({"param":{},"type":"app/pve/wilderness_boss@read"}, (data) => {
         if (data.error) {
             globalSend("screenTipFun", { words: data.why });
             console.log(data.why);
             return;
         }
+        let a = [], b = [], c= [],d = [];
         initData = Common.changeArrToJson(data.ok);
         // 在bossinfo中加入一个标志位 因为排序会导致原来位置发生错乱，对应关系也会出错
         for(let i=0;i<initData.boss_info.length;i++){
             initData.boss_info[i].push(i);
+            if (getDB("player.level") >= initData.boss_info[i][1] && initData.boss_info[i][2] != 0){
+                a.push(initData.boss_info[i]);
+            }else if (getDB("player.level") >= initData.boss_info[i][1] && initData.boss_info[i][2]==0){
+                d.push(initData.boss_info[i])
+            }else if (initData.boss_info[i][2]==0) {
+                c.push(initData.boss_info[i]);
+            }else{
+                b.push(initData.boss_info[i]);
+            }
+            
         }
-        initData.boss_info = initData.boss_info.sort(sortBoss);
+        //initData.boss_info = initData.boss_info.sort(sortBoss);
+        initData.boss_info = [...a, ...d, ...b, ...c];
         let role_list = initData.role_info_list;
+        let _role_list : any = {};
         // 格式化玩家列表数据
         for(let i=0;i<role_list.length;i++){
-            initData.role_info_list[i][1] = Common.changeArrToJson(role_list[i][1]);
+            _role_list[initData.role_info_list[i][0]] = Common.changeArrToJson(role_list[i][1]);
         }
+        if(type){
+            let data = initData.distribute_award_info;
+            let flag = 0
+            for(let i=0;i<data.length;i++){
+                flag = data[i][3];
+                if(!data[i][6]){
+                    award_tip[flag] = award_tip[flag] ? award_tip[flag]+1 : 1;
+                }
+            }
+            updata("publicboss.award_tip",award_tip);        
+        }
+        initData.role_info_list = _role_list;
         // 格式化分配奖励列表中的物品数据
         distributeAward();
         dealBoss();
@@ -824,6 +959,7 @@ const read = ( callback? ) => {
  */
 const distributeAward = (msg ?) => {
     let data = msg || initData.distribute_award_info;
+    let flag = 0;
     for(let i=0;i<data.length;i++){
         let prop = Pi.sample[data[i][2][0]];
         if(prop.type == "equip"){
@@ -892,11 +1028,11 @@ const awardInfo = (arg) => {
     // 归属奖励 (第一名奖励)
     award_info[1] = [award.attribute_award,"归属奖励"];
     // 第一档奖励
-    award_info[2] = [award.first_award,"第一档奖励"+(award.first_num[0]+"-"+award.first_num[1])];
+    award_info[2] = [award.first_award,"第一档奖励",award.first_num[0]+"-"+award.first_num[1]];
     // 第二档奖励
-    award_info[3] = [award.second_award,"第二档奖励"+(award.second_num[0]+"-"+award.second_num[1])];
+    award_info[3] = [award.second_award,"第二档奖励",award.second_num[0]+"-"+award.second_num[1]];
     // 第三档奖励
-    award_info[4] = [award.third_award,"第三档奖励"+(award.third_num[0]+"-"+award.third_num[1])];
+    award_info[4] = [award.third_award,"第三档奖励",award.third_num[0]+"-"+award.third_num[1]];
     return award_info;
 }
 
@@ -904,16 +1040,19 @@ const awardInfo = (arg) => {
 const sortBoss = (a,b) => {
     let player = getDB("player.level");
     // let time = new Date().getTime();
+    let level_ = a[1] - b[1]; 
     let levelA = player - a[1];
     let levelB = player - b[1];
     let hpA = a[2] <= 0 ? 1 : 0;
     let hpB = b[2] <= 0 ? 1 : 0;
     let time = a[3] - b[3];
     
-    if(hpA < hpB) return 0;
-    else if(hpA > hpB) return 1;
+    if(level_ > 0) return 1;
+    else if(level_ < 0) return 0;
     else if(levelA < levelB) return 1;
     else if(levelA > levelB) return 0;
+    else if(hpA < hpB) return 0;
+    else if(hpA > hpB) return 1;
     else if(time > 0) return 1;
     else if(time < 0) return 0;
 }
@@ -994,33 +1133,33 @@ net_message("publicboss_rank_info", (msg) => {
         return;
     }
     let player = getDB("player");
-    let own_damage = 0;
+    let own_damage : any = 0;
     let fight_rank_clone = JSON.parse(JSON.stringify(fight_rank));//fight_rank;
     fight_rank[msg.index - 1] = initRankData(msg.rank_info[1]);
     let rank = fight_rank[msg.index - 1];
 
-    node_list["my_rank"].text ="归属: " + rank[0].name + Common.numberCarry(rank[0].damage || 0,100000);
+    node_list["my_rank"].text ="归属: " + rank[0].name + Common.numberCarry(rank[0].damage || 0,10000);
     mgr.modify(node_list["my_rank"]);
 
     for(let m = 0;m<msg.room_rank_info.length;m++){
         if(msg.room_rank_info[m][0] == player.role_id){
             own_rank = msg.room_rank_info[m][1][1]; 
-            own_damage = Common.numberCarry(msg.room_rank_info[m][1][0],100000);
+            own_damage = Common.numberCarry(msg.room_rank_info[m][1][0],10000) + "";
             break;
         }
     }
 
     if(!fight_rank_clone[msg.index - 1] || create_node_flag){
         for(let i=0;i<rank.length;i++){
-            create_rank_node(i,Common.numberCarry(rank[i].damage,100000),rank[i].name,i+1);
+            create_rank_node(i,Common.numberCarry(rank[i].damage,10000) + "",rank[i].name,i+1);
             create_node_flag = 0;
             break;
         }
     }
     
     for(let i=0;i<rank.length;i++){
-        if(!fight_rank_clone[msg.index - 1][i] || create_node_flag){
-            create_rank_node(i,Common.numberCarry(rank[i].damage,100000),rank[i].name,i+1);
+        if(!fight_rank_clone[msg.index - 1][i] || create_node_flag || !node_list[i - 0 + 1]){
+            create_rank_node(i,Common.numberCarry(rank[i].damage,10000) + "",rank[i].name,i+1);
             create_node_flag = 0;
         }else{
             let _index = i - 0 + 1;
@@ -1034,7 +1173,7 @@ net_message("publicboss_rank_info", (msg) => {
                 node_list[_index].visible = true;
                 node_list[__index].visible = true;
                 node_list[___index].visible = true;
-                node_list[_index].text = Common.numberCarry(rank[i].damage,100000);
+                node_list[_index].text = Common.numberCarry(rank[i].damage,10000) + "";
                 node_list[__index].text = rank[i].name;
                 node_list[___index].text = i + 1 ;
             }
@@ -1045,10 +1184,10 @@ net_message("publicboss_rank_info", (msg) => {
     }
 
     if(!node_list[6]){
-        create_rank_node(5,own_damage,player.name,own_rank,(rank_type == "small" ? 1 : 0))
+        create_rank_node(5,own_damage + "",player.name,own_rank,(rank_type == "small" ? 1 : 0))
     }else{
         node_list[6].y = rank_type == "small" ? 380 : 190;
-        node_list[6].text = own_damage;        
+        node_list[6].text = own_damage + "";        
         mgr.modify(node_list[6]);
         
         node_list[16].y = rank_type == "small" ? 380 : 190;
@@ -1064,8 +1203,10 @@ net_message("publicboss_rank_info", (msg) => {
 // publicboss_role_info 玩家信息
 net_message("publicboss_role_info",(msg)=>{
     // console.log("publicboss_role_info",msg);
-    let data = Common.changeArrToJson(msg.role_info[1]);
-    initData.role_info_list.push([msg.role_info[0],data]);
+    for(let i = 0;i<msg.role_info.length;i++){
+        initData.role_info_list[msg.role_info[i][0]] = Common.changeArrToJson(msg.role_info[i][1]);
+    }
+
     forelet.paint(getData());
 });
 
@@ -1075,15 +1216,28 @@ net_message("publicboss_exit",(msg)=>{
     let boss_id = 0;    
     for(let i=0;i<initData.boss_info.length;i++){
         if(initData.boss_info[i][4] == msg.index-1){
-            boss_id = initData.boss_info[i]
+            boss_id = initData.boss_info[i];
+            kill_info_index = initData.boss_info[i][4];
+            break;
         }
     }
     if(total_count <= 0){
         globalSend("screenTipFun",{ words: "挑战次数不足！" });
         return;
     }
-    let arr = boss_id + "," + msg.index;
-    chanllengeBoss(arr);
+    let arr = boss_id + "," + kill_info_index;
+    forelet.paint(getData());
+    let w = forelet.getWidget("app_c-publicboss-main");
+    if(!w){
+        cur = 0;
+        forelet.paint(getData());
+        open("app_c-publicboss-main");        
+    }
+    let time = setTimeout(()=>{
+        chanllengeBoss(arr);        
+        clearTimeout(time);
+        time = undefined;
+    },50)
 });
 
 // publicboss_refresh boss列表的boss状态更新
@@ -1101,17 +1255,28 @@ net_message("publicboss_refresh",(msg)=>{
             }
         }
     }
-    let dead_arr = getDB("publicboss.tip_arr");
+    let dead_arr = JSON.parse(Pi.localStorage["publicBoss"]);
     let boss_name = boss_base[index].name;        
     if(mgr_data.name == "wild" && dead_arr[boss_id]){
-        globalSend("bossRevive",{"name":boss_name,"type":"revive"});        
+        globalSend("bossRevive",{"name":boss_name,"type":"revive","boss_id":boss_id,"index":index});        
     }
-
+    let a = [],b = [],c = [],d = [];
     for(let i=0;i<msg.boss_info.length;i++){
         msg.boss_info[i].push(i);
+        if (getDB("player.level") >= msg.boss_info[i][1] && msg.boss_info[i][2] != 0){
+            a.push(msg.boss_info[i]);
+        }else if (getDB("player.level") >= msg.boss_info[i][1] && msg.boss_info[i][2]==0){
+            d.push(msg.boss_info[i])
+        }else if (msg.boss_info[i][2]==0) {
+            c.push(msg.boss_info[i]);
+        }else{
+            b.push(msg.boss_info[i]);
+        }
+        
     }
     dead_time[boss_id] = 0;
-    initData.boss_info = msg.boss_info.sort(sortBoss);
+    initData.boss_info = [...a, ...d, ...b, ...c];
+    // initData.boss_info = msg.boss_info.sort(sortBoss);
     dealBoss();
     forelet.paint(getData());
 });
@@ -1121,17 +1286,25 @@ net_message("publicboss_refresh",(msg)=>{
 net_message("publicboss_person_num_refresh",(msg)=>{
     // console.log("publicboss_person_num_refresh",msg);
     let fighter_info_index = initData.boss_info[msg.index - 1][4];
-    initData.fight_info[fighter_info_index] = msg.role_length;
+    for(let i=0;i<initData.boss_info.length;i++){
+        if(initData.boss_info[i][4] == msg.index - 1){
+            fighter_info_index = initData.boss_info[i][4];
+        }
+    }
+    initData.fight_info[fighter_info_index] = msg.role_length;    
     forelet.paint(getData());
 });
 
 // publicboss_distribute_award 分配装备
 net_message("publicboss_distribute_award",(msg)=>{
     // console.log("publicboss_distribute_award",msg);
+    let _award_tip = getDB("publicboss.award_tip");
     for(let i=0;i<msg.distribute_info.length;i++){
         let data = distributeAward([msg.distribute_info[i]]);
         initData.distribute_award_info.unshift(data[i]);
+        _award_tip[msg.distribute_info[i][3]] = _award_tip[msg.distribute_info[i][3]] ? _award_tip[msg.distribute_info[i][3]]+1 : 1;
     }
+    updata("publicboss.award_tip",_award_tip);
     forelet.paint(getData());
 });
 
@@ -1139,10 +1312,42 @@ net_message("publicboss_distribute_award",(msg)=>{
 net_message("publicboss_apply_refresh",(msg)=>{
     // console.log("publicboss_apply_refresh",msg);
     oneDistributeAward(msg);
+    let award = msg.distribute_info,
+        prop = award[2],
+        id = award[6],
+        attribution_id = award[3],
+        name = "",
+        attribution_name = "",
+        role : any;
+    let _award_tip = getDB("publicboss.award_tip");
+    _award_tip[attribution_id] = _award_tip[attribution_id] - 1;
+    for(let i in initData.role_info_list){
+        if(i == attribution_id){
+            attribution_name = initData.role_info_list[i].name;
+        }
+        if(i == id){
+            role = initData.role_info_list[i];
+        }
+    }
+
+    prop = Pi.sample[prop[0]];
+    name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(role.career_id)] : prop.name;
+    attribution_name = checkTypeof(attribution_name,"Array") ? Common.fromCharCode(attribution_name) : attribution_name;
+    let player_Id = getDB("player.role_id");
+    let _name = player_Id == role.role_id ? "你" : (checkTypeof(role.name,"Array") ? Common.fromCharCode(role.name) : role.name);
+    globalSend("screenTipFun", { 
+        words: (player_Id == role.role_id ? attribution_name : "") + "已将" + name + "分配给" + _name
+    });
+    updata("publicboss.award_tip",_award_tip);
 });
 
 // publicboss_distribute_refresh 分配奖励更新
 net_message("publicboss_distribute_refresh",(msg)=>{
+    for(let i=0;i<msg.all_distribute_info.length;i++){
+        let data = distributeAward([msg.all_distribute_info[i]]);
+        initData.distribute_award_info[i] = data;
+    }
+    forelet.paint(getData());
     console.log("publicboss_distribute_refresh",msg);
 });
 
@@ -1151,20 +1356,74 @@ net_message("public_boss_line_up",(msg)=>{
     // console.log("public_boss_line_up",msg);
     let boss = initData.boss_info;
     let _index = 0;
+    let boss_id = 0;
     for(let i = 0;i<boss.length;i++){
         if(boss[i][0] == lineUpBoss){
             _index = boss[i][4];
+            boss_id = boss[i][0];
         }
     }
     initData.line_up_info[_index] = msg.line_up;
+
+    if(line_time1){
+        line_time1 = 0;
+        clearInterval(linTime);
+        linTime = undefined;
+        updata("publicboss.lineFlag",0);        
+    }
+    forelet.paint(getData());
+    let w = forelet.getWidget("app_c-publicboss-boss-line_up");
+    if(w){
+        close(w);
+    }
     
 });
+
+// boss死亡刷新
+net_message("publicboss_dead",(msg)=>{
+    // console.log(1111111111,msg);
+    let index = 0;
+    for(let i=0;i<initData.boss_info.length;i++){
+        if(initData.boss_info[i][4] == msg.index - 1){
+            index = initData.boss_info[i][4];
+            break;
+        }
+    }
+    let player = getDB("player.role_id")
+    for(let v=0;v<initData.line_up_info[index].length;v++){
+        if(initData.line_up_info[index][v][0] == player){
+            globalSend("popTip",{
+                title:boss_base[index].name+"已死亡<div>"+"S后关闭界面!</div>",
+                btn_name:["确定"],
+                to_time:10 * 1000,
+                cb:[
+                    //确认
+                    ()=>{
+                    }
+                ]
+            });
+            break;
+        }
+    }
+    read();
+    unlineUp();
+    if(line_time1){
+        line_time1 = 0;
+        clearInterval(linTime);
+        linTime = undefined;
+        updata("publicboss.lineFlag",0);        
+    }
+    forelet.paint(getData());
+    
+})
 
 /**
  * @description 初始化数据库荒野降魔字段
  */
-insert("publicboss",{
-    "tip_arr":{}
+insert("publicboss",{});
+
+listen("chat.show",()=>{
+    forelet.paint(getData());
 });
 
-read();
+read(null,1);

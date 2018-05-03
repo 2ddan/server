@@ -20,6 +20,7 @@ import { skill_describe } from "cfg/b/skill_describe";
 import { guide_cfg } from "cfg/b/guide_cfg";
 import { wild_boss } from "fight/b/common/wild_boss_cfg";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
+import { publicboss_base } from "cfg/c/publicboss_base";
 
 export const globalReceive = {
     "openNewFun": (fun_key) => {
@@ -38,7 +39,7 @@ insert("open_fun", {
 export const forelet = new Forelet();
 
 let id = 0, //应开放功能id
-    next_fun: any = {}, //待开发功能
+    next_fun = null, //待开发功能
     fly_fun: any = {}, //飞行功能
     move = true, //动画控制
     skill_anima = false,
@@ -222,6 +223,16 @@ const award = function () {
             if (function_guid[prop.function_record].key == "pet") {
                 globalSend("activatePet");
             }
+            if (function_guid[prop.function_record].key == "public_boss"){
+                let level = getDB("player.level");
+                let publicBoss : any = {}
+                for(let i in publicboss_base){
+                    if(level >= publicboss_base[i].level){
+                        publicBoss[i] = 1;
+                    }
+                }
+                Pi.localStorage.setItem("publicBoss", JSON.stringify(publicBoss));
+            }
         }
     })
 };
@@ -231,35 +242,41 @@ const award = function () {
  * @param fun_key [功能key]
  */
 export const funIsOpen = function (fun_key) {
-    let id = getDB("open_fun.id");
-    let wild = getDB("wild");
-    let limit_guide = function_open[fun_key].stage_id;
-    if (limit_guide > wild.wild_max_mission || (wild.wild_max_mission == limit_guide && wild.wild_task_num < condition[1] && id < function_open[fun_key].id)) {
-        let guard_name = wild_mission[limit_guide].guard_name.split(",");
-        globalSend("screenTipFun", {
-            words: `通过${guard_name[1]} ${guard_name[0]}开放`
-        });
-        return false;
+    
+    if(function_open[fun_key].stage_id){
+        let id = getDB("open_fun.id");
+        let wild = getDB("wild");
+        let limit_guide = function_open[fun_key].stage_id;
+        if (limit_guide > wild.wild_max_mission || (wild.wild_max_mission == limit_guide && wild.wild_task_num < condition[1] && id < function_open[fun_key].id)) {
+            let guard_name = wild_mission[limit_guide].guard_name.split(",");
+            globalSend("screenTipFun", {
+                words: `通过${guard_name[1]} ${guard_name[0]}开放`
+            });
+            return false;
+        }
+    }else if(function_open[fun_key].level_limit){
+       let level = getDB("player.level");
+        if (level < function_open[fun_key].level_limit) {
+            globalSend("screenTipFun", {
+                words: `${function_open[fun_key].level_limit}级开放`
+            });
+            return false;
+        }
     }
+    // let limit_guide = function_open[fun_key].stage_id;
+    // if (limit_guide > wild.wild_max_mission || (wild.wild_max_mission == limit_guide && wild.wild_task_num < condition[1] && id < function_open[fun_key].id)) {
+    //     let guard_name = wild_mission[limit_guide].guard_name.split(",");
+    //     globalSend("screenTipFun", {
+    //         words: `通过${guard_name[1]} ${guard_name[0]}开放`
+    //     });
+    //     return false;
+    // }
     if (id < function_open[fun_key].id) {
         globalSend("screenTipFun", {
             words: `功能未激活`
         });
         return false;
     }
-    // let level = getDB("player.level");
-    // if (level < function_open[fun_key].level_limit) {
-    //     globalSend("screenTipFun", {
-    //         words: `${function_open[fun_key].level_limit}级开放`
-    //     });
-    //     return false;
-    // }
-    // if (id < function_open[fun_key].id) {
-    //     globalSend("screenTipFun", {
-    //         words: `功能未激活`
-    //     });
-    //     return false;
-    // }
     return true;
 }
 /**
@@ -313,6 +330,7 @@ listen("player.function_record", (data) => {
             tips[function_guid[i].func_tips] = 0;
         }
         //新功能开放红点监听
+        updata("open_fun.tips", tips);
         updata("open_fun.tips", tips);
         next_fun = function_guid[id];
         fly_fun = function_guid[id];

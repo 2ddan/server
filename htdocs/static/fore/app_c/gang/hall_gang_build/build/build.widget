@@ -1,0 +1,7 @@
+{
+    "tpl":"./build.tpl",
+    "cfg":"./build.cfg",
+    "js":"../hall_gang_build.ts",
+    "forelet":"../../gang.ts",
+    "css":"./build.wcss"
+}

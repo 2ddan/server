@@ -1,0 +1,7 @@
+{
+    "tpl": "./award_box.tpl",
+    "cfg": "./award_box.cfg",
+    "js": "../gang_boss.ts",
+    "forelet": "../gang_boss.ts",
+    "css": "./award_box.wcss"
+}

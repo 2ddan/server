@@ -17,7 +17,6 @@ import { change_status,olFightOrder } from "app_b/fight_ol/handscene";
 import { node_fun, drop_outFun } from "app_b/widget/drop_out";
 import { getFighter, Move} from "app/scene/move";
 import { getGlobal } from "pi/widget/frame_mgr";
-import { posTimer } from "app_b/wild/wild";
 import { getPage } from "app_b/playermission/playermission";
 
 //======================================本地
@@ -130,6 +129,8 @@ export const globalReceive: any = {
                         fight_state = 1;
                         //挖宝
                         let open_timer = setTimeout(()=>{
+                            clearTimeout(open_timer);
+                            open_timer = null;
                             if(!new_box_id){  
                                 wildOpenBox = 0;                          
                                 change_status(0);
@@ -137,8 +138,6 @@ export const globalReceive: any = {
                                 return;
                             }
                             logic.openBox(new_box_id,true);
-                            clearTimeout(open_timer);
-                            open_timer = null;
                         },1500)
                     });
                 }
@@ -187,6 +186,10 @@ export class Arena extends Widget {
     openBox = (id) => {
         if(!logic.canOpenBox()){return;}
         logic.openBox(id);
+    }
+    //获取方式
+    gotoGetWay() {
+        globalSend("gotoGetWay",coinId);
     }
 }
 var baseData: any = {
@@ -301,7 +304,7 @@ let logic: any = {
         opening = 1;
         process_num = 0;
         if(isWild){
-            posTimer = Date.now();
+            globalSend("fightRandomBoss");
             // console.log(posTimer,fight_state)
         }
         let timer = setInterval(function () {

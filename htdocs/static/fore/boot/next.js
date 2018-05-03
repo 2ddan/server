@@ -193,7 +193,7 @@ winit.initNext = function() {
                 //初始化场景
                 var scene = pi_modules["app/scene/scene"].exports;
                 if(gcStorage.cpu){
-                    scene.setScale(gcStorage.cpu);
+                    scene.setScale(gcStorage.cpu,flags);
                 }else{
                     winit.setSceneScale = scene.setScale;
                 }

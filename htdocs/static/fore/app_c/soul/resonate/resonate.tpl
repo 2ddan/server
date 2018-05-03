@@ -14,11 +14,15 @@
                 {{end}}
             </div>
             {{if (it1.player_level < v.open_level)}}
-            <div w-class="closed"></div>
+            <app_a-widget-pic_other-pic_other  w-class="closed">
+                {"icon":"closed"}
+            </app_a-widget-pic_other-pic_other>
             {{end}}
 
             {{if it1.acupoint == v.id}}
-            <div w-class="selected"></div>
+            <app_a-widget-select-select w-class="selected">
+                {"select":"double_circle"} 
+            </app_a-widget-select-select>
             {{end}}
 
             <app_a-widget-pic_text-pic_text style="color:#ffd8a6;position:absolute;left:50%;margin-left:-43px;top:{{i%2==0?-40:40}}px;font-family:mnjsh;">
@@ -71,11 +75,7 @@
             {{end}}
         </div>
         {{let arr = it1.soul_info[it1.acupoint - 1]}}
-        {{let level_arr = []}}
-        {{for m, n of arr}}
-            {{:level_arr.push(n[1])}}
-        {{end}}
-        {{let min_level = Math.min.apply(null,level_arr)}}
+        {{let min_level = it1.getSoulMinLv(arr)}}
         {{let all_attr = it1.soul_resonance[it1.acupoint]}}
         <div style="position:absolute;width:230px;height:180px;left:20px;top:260px;font-size:18px;font-family:mnjsh;">
             <app_a-widget-bg_frame-bg style="position: absolute;width:230px;height:180px;">

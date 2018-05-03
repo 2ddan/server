@@ -53,8 +53,9 @@ let energy = 0,//能量
     isAutoRelease = 0,//自动释放标识位
     autoTimer, //自动释放不成功，重新调用定时器
     reAutoTime = 5, //自动释放不成功，重新调用时间间隔(s)
-    break_flag, //防止八卦在突破时，用户连续点击
-    treasure_flag = 0,//铸魂进度条状态-1铸魂中，0铸魂结束
+    // break_flag, //防止八卦在突破时，用户连续点击
+    // treasure_flag = 0,//铸魂进度条状态-1铸魂中，0铸魂结束
+    treasure_ok = true,//铸魂成功标识
     img_length = 0,//神兵技能释放时的提示
     //img_width = 0,//神兵技能释放时的图片的大小
     release_signal = false, //神兵释放的标志
@@ -206,8 +207,8 @@ export class RoleWidget extends Widget {
             magicFl(data);
 
         } else {
-            treasure_flag = 0;
-            break_flag = 0;
+            // treasure_flag = 0;
+            // break_flag = 0;
             move_position = [];
             data = setResetCanvas("app_b-magic-treasure-treasure");               
             let tim = setTimeout(()=>{
@@ -292,31 +293,31 @@ export class RoleWidget extends Widget {
      */
     hexagramLevelUp(_index) {
         if(!_index && !level_type){//单次铸魂
-            if(!treasure_flag){
+            // if(!treasure_flag){
                 canLevelUp(levelSite, break_info[0] - 1,_index);
-            }else{
-                globalSend("screenTipFun", {
-                    words: "正在铸魂，请稍后！"
-                }); 
-            }
+            // }else{
+            //     globalSend("screenTipFun", {
+            //         words: "正在铸魂，请稍后！"
+            //     }); 
+            // }
             return;
         }
         level_type = !level_type;  
         if(level_type){
-            if(treasure_flag ){
-                globalSend("screenTipFun", {
-                    words: "正在铸魂，请稍后！"
-                });
-                level_type = !level_type;  
-                return;
-            };//进度条中按钮禁用
+            // if(treasure_flag ){
+            //     globalSend("screenTipFun", {
+            //         words: "正在铸魂，请稍后！"
+            //     });
+                // level_type = !level_type;  
+                // return;
+            // };//进度条中按钮禁用
             canLevelUp(levelSite, break_info[0] - 1,_index);
         }else{
             // clearTimeout(level_eff_timer);
             clearTimeout(level_timer);
             // level_eff_timer = undefined;
             level_timer = undefined; 
-            treasure_flag = 0;
+            // treasure_flag = 0;
             eff_loop(0);            
             forelet.paint(getMagicHtmlData());
         }
@@ -347,26 +348,26 @@ export class RoleWidget extends Widget {
 
     //八卦突破
     canBreak = (_type) => {
-        if(!_type && !treasure_type){//单次淬炼
-            if(!break_flag){
-                canBreak(_type);
-            }else{
-                globalSend("screenTipFun", {
-                    words: "正在淬炼，请稍后！"
-                }); 
-            }
-            return;
-        }
+        // if(!_type && !treasure_type){//单次淬炼
+        //     // if(!break_flag){
+        //         canBreak(_type);
+        //     // }else{
+        //     //     globalSend("screenTipFun", {
+        //     //         words: "正在淬炼，请稍后！"
+        //     //     }); 
+        //     // }
+        //     return;
+        // }
         
         treasure_type = !treasure_type;
         if(treasure_type){
-            if (break_flag) {
-                treasure_type = !treasure_type;
-                globalSend("screenTipFun", {
-                    words: "正在淬炼，请稍后！"
-                });
-                return;
-            }
+            // if (break_flag) {
+                // treasure_type = !treasure_type;
+                // globalSend("screenTipFun", {
+                //     words: "正在淬炼，请稍后！"
+                // });
+            //     return;
+            // }
             canBreak(_type);
         }else{
             clearTimeout(treasure_eff_timer);
@@ -374,7 +375,7 @@ export class RoleWidget extends Widget {
             treasure_eff_timer = undefined;
             treasure_timer = undefined;
             eff_absorb(0);         
-            break_flag = 0;
+            // break_flag = 0;
             forelet.paint(getMagicHtmlData());
         }
     }
@@ -648,7 +649,8 @@ const getMagicHtmlData = () => {
     data.roleCfg = role_base;
     data.TreasureBase = TreasureBase;
     data.level_type = level_type;//铸魂进度条状态-1铸魂中，0铸魂结束
-    data.treasure_flag = treasure_flag;
+    // data.treasure_flag = treasure_flag;
+    data.treasure_ok = treasure_ok;
     data.treasure_type = treasure_type;
     data.img_length = img_length;
     return data;
@@ -788,10 +790,13 @@ const costCount = function () {
  * @param type {0--普通升级, 1--一键升级}
  */
 const hexagramLevelUp = function (site, type, vip?,_index?) {
-    if(!type){//升级进度条时石头动画
-        treasure_flag = 1;
-        forelet.paint(getMagicHtmlData());
-    }
+    // if(!type){//升级进度条时石头动画
+    //     treasure_flag = 1;
+    //     forelet.paint(getMagicHtmlData());
+    // }
+    treasure_ok = false;
+    forelet.paint(getMagicHtmlData());
+
     let arg = {
         "param": {
             "index": site,
@@ -800,9 +805,10 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
         "type": "app/prop/treasure@hexagram_level_up"
     };
     net_request(arg, (data) => {
+        treasure_ok = true;
         if (data.error) {
             console.log(data);
-            treasure_flag = 0;
+            // treasure_flag = 0;
             removeOneStone("eff_loop"+(levelSite-2)) ;                       
             return;
         }
@@ -849,7 +855,7 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
                 if (treasure_up[levelSite + 1]) {
                     levelSite++;
                 }
-                treasure_flag = 0;
+                // treasure_flag = 0;
                 level_type = false;
                 forelet.paint(getMagicHtmlData());
                 clearTimeout(tim);
@@ -862,27 +868,27 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
                 let w = forelet.getWidget("app_b-magic-treasure-treasure")
                 if(!w || w.parentNode.attrs.style.indexOf("hidden") > -1){
                     eff_loop(0);
-                    treasure_flag = 0;
+                    // treasure_flag = 0;
                     return;
                 }
                 if(_index == 1){
                     level_timer = setTimeout(() => {
-                        treasure_flag = 0;
+                        // treasure_flag = 0;
                         hexagramLevelUp(site, 0, vip,1);
                         clearTimeout(level_timer);
                         level_timer = null;
                     }, 500);
                 }else{
-                    let timer = setTimeout(()=>{
-                        clearTimeout(timer);
-                        timer = null;
-                        treasure_flag = 0;
-                        forelet.paint(getMagicHtmlData());
-                    },600);
+                    // let timer = setTimeout(()=>{
+                    //     clearTimeout(timer);
+                    //     timer = null;
+                    //     treasure_flag = 0;
+                    //     forelet.paint(getMagicHtmlData());
+                    // },600);
                 }
             } else {
                 eff_loop(0);
-                treasure_flag = 0;
+                // treasure_flag = 0;
             }
             
         }
@@ -897,7 +903,7 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
 const canBreak = function (_type) {
     let sid = treasure_break[break_info[0]].prop;
     let arr = getDB(`bag*sid=${sid}`),
-        month_card = getDB("player.month_card_due_time"),
+        // month_card = getDB("player.month_card_due_time"),
         prop = arr[arr.length - 1],
         num = getDB("magic.break_info");
     
@@ -911,7 +917,7 @@ const canBreak = function (_type) {
                  
          //玩家vip超过一定限制
         let vip = getDB("player.vip");
-        if(_type != 0){
+        // if(_type != 0){
             if (vip >= TreasureBase[career_id].one_key_break_vip) {
                 eff_absorb(1);
                 hexagramBreak(1,_type);
@@ -919,18 +925,18 @@ const canBreak = function (_type) {
                 return;
             }
         
-            if(month_card){
+            // if(month_card){
                 eff_absorb(1);
                 hexagramBreak(2,_type);
-            }else{
-                treasure_type = !treasure_type;
-                globalSend("gotoMonthCardWay", "treasure_up");
-                return;
-            }
-        }else{
-            eff_absorb(2);
-            hexagramBreak(2,_type);
-        }
+            // }else{
+            //     treasure_type = !treasure_type;
+            //     globalSend("gotoMonthCardWay", "treasure_up");
+            //     return;
+            // }
+        // }else{
+        //     eff_absorb(2);
+        //     hexagramBreak(2,_type);
+        // }
     } else {
         // globalSend("screenTipFun", { words: `没有突破材料` });
         gotoGetWay(sid);
@@ -944,7 +950,7 @@ const canBreak = function (_type) {
  * @param index: 当type为2时此项有意义，表示type为1时返回的经验列表中已经演播到的位置                 
  */
 const hexagramBreak = function (type,_type) {
-    break_flag = true;
+    // break_flag = true;
     let arg = {
         "param": {
             "type": type
@@ -953,7 +959,7 @@ const hexagramBreak = function (type,_type) {
     };
     net_request(arg, (data) => {
         if (data.error) {
-            break_flag = false;
+            // break_flag = false;
             eff_absorb(0); 
             console.log(data);
             return;
@@ -986,12 +992,12 @@ const hexagramBreak = function (type,_type) {
             Music.skillSound("other_two");         
             let w = forelet.getWidget("app_b-magic-treasure-treasure")
             if(!w || w.parentNode.attrs.style.indexOf("hidden") > -1){
-                break_flag = 0;
+                // break_flag = 0;
                 eff_absorb(0);
                 return;
             }
             if(prop.break_info[1] >= treasure_break[prop.break_info[0]].need_exp){
-                break_flag = false;     
+                // break_flag = false;     
                 treasure_type = false;           
                 treasure_timer = setTimeout(function(){
                     eff_absorb(0); 
@@ -1008,11 +1014,11 @@ const hexagramBreak = function (type,_type) {
                         treasure_timer = null;
                     },500);
                 }else{
-                    let timer = setTimeout(()=>{
-                        clearTimeout(timer);
-                        timer = null;
-                        break_flag = 0;
-                    },600);
+                    // let timer = setTimeout(()=>{
+                    //     clearTimeout(timer);
+                    //     timer = null;
+                    //     break_flag = 0;
+                    // },600);
                 }
                 
             }
@@ -1032,7 +1038,7 @@ const hexagramBreak = function (type,_type) {
             }     
             updata("magic.break_info", prop.break_info);
             Music.skillSound("other_two");
-            break_flag = false;
+            // break_flag = false;
             forelet.paint(getMagicHtmlData());            
             let timer = setTimeout(function(){
                 eff_absorb(0); 
@@ -1062,7 +1068,7 @@ const hexagramBreak = function (type,_type) {
                         words: str
                     })
                 }
-                break_flag = false;
+                // break_flag = false;
                 levelSite = 1;
                 forelet.paint(getMagicHtmlData());
                 
@@ -1155,10 +1161,11 @@ const eff_loop = function(arg?){//铸魂循环0,1,2
         return;
     }
     if(arg == 2){//单次铸魂
-        let index = "eff_loop_once"+Util.serverTime();
+        let index = "eff_loop_once"+Math.ceil(Util.serverTime());
         createStone(index,"eff_ui_zhuhun_yici",levelSite-1);
+        let id = index+(levelSite-1);
         let timer = setTimeout(()=>{
-            removeOneStone(index+(levelSite-1)) ; 
+            removeOneStone(id) ; 
             clearTimeout(timer);
             timer = null;
         },1000)

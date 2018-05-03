@@ -39,7 +39,7 @@
             {{end}}
             {{let flag = nextLineFlag && lineFlag && nextLineFlag != lineFlag}}
 
-            {{let line_up = JSON.parse(JSON.stringify(it1.initData.line_up_info[it1.kill_info_index]))}}
+            {{let line_up = it1.initData.line_up_info[it1.kill_info_index] }}
             {{let time = (publicboss_base[boss_id].challenge_time - 0) / 5 + (line_up.length+1) / 2 + 10}}
             <span style="width:300px;height:55px;position:absolute;left:0;right:0px;margin: 0 auto;text-align:center;color:#ffd8a6;font-family:mnjsh;font-size:20px;top: 60px;">
                 {{if nextLineFlag && lineFlag && nextLineFlag != lineFlag}}
@@ -52,16 +52,17 @@
                     <span style="width:100%;position:relative;line-height:55px">是否取消挑战<span style="color:red">{{it1.boss_base[_index].name}}</span></span>
                 {{end}}
             </span>
-            
+            {{let _time = 0}}
             {{if nextLineFlag && lineFlag && nextLineFlag != lineFlag}}
                 {{let _line_up = JSON.parse(JSON.stringify(it1.initData.line_up_info[__index])) }}
-                {{let _time = (publicboss_base[nextLineFlag].challenge_time - 0) / 5 + (_line_up.length+1) / 2 + 10}}
+                {{: _time = (publicboss_base[nextLineFlag].challenge_time - 0) / 5 + (_line_up.length+1) / 2 + 10}}
                 <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 175px;font-size: 18px;">【目标BOSS】排队信息</span>
                 <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 200px;font-size: 18px;">排队人数:<span style="color:#78f300"> {{" " + (_line_up.length <= 1 ? 1 : _line_up.length + 1)}}</span></span>
                 <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 225px;font-size: 18px;">预计等待时间:<span style="color:#78f300"> {{" " + parseInt(_time)+"秒"}}</span></span>
             {{else}}
-                <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 175px;font-size: 18px;">排队人数:<span style="color:#78f300"> {{" " +(line_up.length <= 1 ? 1 : line_up.length + 1)}}</span></span>
-                <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 200px;font-size: 18px;">预计等待时间:<span style="color:#78f300"> {{" "+parseInt(time)+"秒"}}</span></span>
+                <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 160px;font-size: 18px;">排队人数:<span style="color:#78f300"> {{" " +(line_up.length <= 1 ? 1 : line_up.length + 1)}}</span></span>
+                <span style="position: absolute;width: 100%;height: 20px;color: #ffd8a6;text-align: center;top: 185px;font-size: 18px;">预计等待时间:<span style="color:#78f300"> {{" "+parseInt(time)+"秒"}}</span></span>
+                
             {{end}}
 
             {{if nextLineFlag && lineFlag && nextLineFlag != lineFlag}}
@@ -78,6 +79,12 @@
             {{if time*1000 + Util.serverTime() >= Util.serverTime() && it1.line_flag}}
             <app-widget-cdtime ev-countdownend="exitFight" style="position: absolute;top:35px;font-size: 16px;width: 100%;left: 0px;text-align:center;color:#78f300;">{cd_time:{{time*1000 + Util.serverTime()}},"now_time":{{Util.serverTime()}} }</app-widget-cdtime>
             {{end}}
+
+            {{if it1.line_time1}}
+            <div style="width:100%;height:30px;line-height:30px;color:#78f300;position:absolute;top: 210px;text-align:center">
+                {{"已等待时间:"+it1.line_time1+"秒"}}
+            </div>
+            {{end}}
     
             {{if !lineFlag}}
             <app_a-widget-btn-rect style="position:absolute;right:100px;bottom:50px;" on-tap="line([{{boss_id}},{{_index}}])">
@@ -92,6 +99,7 @@
                     <app_a-widget-btn-rect style="position:absolute;right:100px;bottom:50px;">
                         {"class":"hl","fontsize":21,"color":"#fdedd7;","text":"排队中.","width":98,"height":40,"marginLeft":0} 
                     </app_a-widget-btn-rect>
+                    
                 {{else}}
                     <app_a-widget-btn-rect style="position:absolute;right:100px;bottom:50px;" on-tap="goOnLineUp">
                         {"class":"hl","fontsize":21,"color":"#fdedd7;","text":"继  续","width":98,"height":40,"marginLeft":0} 

@@ -2,6 +2,6 @@
     "tpl": "./sacrifice.tpl",
     "css": "./sacrifice.wcss",
     "cfg": "./sacrifice.cfg",
-    "js": "../gang_build.ts",
+    "js": "../hall_gang_build.ts",
     "forelet": "../../gang.ts"
 }

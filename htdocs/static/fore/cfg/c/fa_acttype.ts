@@ -5,7 +5,7 @@ export const fa_acttype = {
 "name":"打假活动",
 "type":"recharge",
 "time_type":"date",
-"open_date":1523462400000,"close_date":1523721599000,"delay_date":1524326399000,
+"open_date":1524585600000,"close_date":1524844799000,"delay_date":1525449599000,
 "act_index":1
 },
 "2":{
@@ -13,7 +13,7 @@ export const fa_acttype = {
 "name":"打假活动",
 "type":"recharge",
 "time_type":"date",
-"open_date":1523721600000,"close_date":1523980799000,"delay_date":1524326399000,
+"open_date":1524844800000,"close_date":1525103999000,"delay_date":1525449599000,
 "act_index":2
 },
 "3":{
@@ -21,7 +21,7 @@ export const fa_acttype = {
 "name":"打假活动",
 "type":"recharge",
 "time_type":"date",
-"open_date":1523980800000,"close_date":1524239999000,"delay_date":1524326399000,
+"open_date":1525104000000,"close_date":1525363199000,"delay_date":1525449599000,
 "act_index":3
 },
 "4":{
@@ -29,7 +29,7 @@ export const fa_acttype = {
 "name":"假打活动",
 "type":"task",
 "time_type":"date",
-"open_date":1523462400000,"close_date":1523721599000,"delay_date":1524326399000,
+"open_date":1524585600000,"close_date":1524844799000,"delay_date":1525449599000,
 "act_index":1
 },
 "5":{
@@ -37,7 +37,7 @@ export const fa_acttype = {
 "name":"假打活动",
 "type":"task",
 "time_type":"date",
-"open_date":1523721600000,"close_date":1523980799000,"delay_date":1524326399000,
+"open_date":1524844800000,"close_date":1525103999000,"delay_date":1525449599000,
 "act_index":2
 },
 "6":{
@@ -45,7 +45,7 @@ export const fa_acttype = {
 "name":"假打活动",
 "type":"task",
 "time_type":"date",
-"open_date":1523980800000,"close_date":1524239999000,"delay_date":1524326399000,
+"open_date":1525104000000,"close_date":1525363199000,"delay_date":1525449599000,
 "act_index":3
 },
 "7":{
@@ -53,7 +53,7 @@ export const fa_acttype = {
 "name":"超值售卖",
 "type":"sale",
 "time_type":"date",
-"open_date":1523462400000,"close_date":1523721599000,"delay_date":1524326399000,
+"open_date":1524585600000,"close_date":1524844799000,"delay_date":1525449599000,
 "act_index":1
 },
 "8":{
@@ -61,7 +61,7 @@ export const fa_acttype = {
 "name":"超值售卖",
 "type":"sale",
 "time_type":"date",
-"open_date":1523721600000,"close_date":1523980799000,"delay_date":1524326399000,
+"open_date":1524844800000,"close_date":1525103999000,"delay_date":1525449599000,
 "act_index":2
 },
 "9":{
@@ -69,7 +69,7 @@ export const fa_acttype = {
 "name":"超值售卖",
 "type":"sale",
 "time_type":"date",
-"open_date":1523980800000,"close_date":1524239999000,"delay_date":1524326399000,
+"open_date":1525104000000,"close_date":1525363199000,"delay_date":1525449599000,
 "act_index":3
 },
 "10":{
@@ -77,7 +77,7 @@ export const fa_acttype = {
 "name":"物品兑换",
 "type":"exchange",
 "time_type":"date",
-"open_date":1523462400000,"close_date":1524326399000,"delay_date":1524326399000,
+"open_date":1524585600000,"close_date":1525449599000,"delay_date":1525449599000,
 "act_index":1
 },
 "11":{
@@ -85,7 +85,7 @@ export const fa_acttype = {
 "name":"物品兑换",
 "type":"exchange",
 "time_type":"date",
-"open_date":1523721600000,"close_date":1524326399000,"delay_date":1524326399000,
+"open_date":1524844800000,"close_date":1525449599000,"delay_date":1525449599000,
 "act_index":2
 },
 "12":{
@@ -93,7 +93,7 @@ export const fa_acttype = {
 "name":"物品兑换",
 "type":"exchange",
 "time_type":"date",
-"open_date":1523980800000,"close_date":1524326399000,"delay_date":1524326399000,
+"open_date":1525104000000,"close_date":1525449599000,"delay_date":1525449599000,
 "act_index":3
 }
 };

@@ -21,7 +21,6 @@ import { exp_fb_mission } from "cfg/c/exp_fb_mission";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { TaskProgress } from "app_b/mod/task_progress";
 import { vipcard } from "cfg/c/recharge_buy_robolet";
-
 //掉落效果
 import { node_fun, drop_outFun } from "app_b/widget/drop_out";
 // 所有怪物配置
@@ -46,7 +45,13 @@ export let globalReceive = {
     },
     //怪物死亡记录ID
     monsterDied: (msg) => {
-        str += msg;
+        str = (str && str+",") + msg;
+    },
+    exitFB:()=>{
+        if(openExpFb){
+            openExpFb = false;
+            globalSend("openExpFb",false);
+        }            
     }
 }
 
@@ -181,10 +186,10 @@ let logic = {
         return task;
     },
     //每波战斗打完数据处理
-    setFight(fightData,id){
+    setFight(fightData,id,msg,monster_total){
         if (fightData.r === 1 && exp_fb_mission[id].monster.length > index) {
             let timer = setTimeout(()=>{
-                fb.nextFight(fightData,id);                                                                   
+                fb.nextFight(fightData,id,msg,monster_total);                                                                   
                 clearTimeout(timer);
                 timer = null;
             },exp_fb_base["refresh_cd"]*1000) ;
@@ -260,6 +265,7 @@ let fb = {
             } else {    
                 //进入战斗场景
                 let msg: any = Common.changeArrToJson(data.ok);
+                let monster_total = msg.enemy_fight;
                 Common_m.deductfrom(msg);                
                 updata("exp_fb.count", msg.count);
                 updata("exp_fb.time", msg.time);
@@ -267,12 +273,17 @@ let fb = {
                 msg.time = end_time;                
                 msg.limitTime = exp_fb_base["fight_time"];                
                 msg.type = "exp_mission";
+                msg.enemy_fight = [monster_total[index]];
                 //地图信息
                 let arr = exp_fb_mission[id].map_id;
                 map_id = arr[Math.floor(Math.random()*arr.length)];
-                let info  =  JSON.parse(JSON.stringify(exp_fb_map[map_id]));
-                info.enemy_pos = [info.enemy_pos[info.refresh_order[index]-1]];
-                msg.cfg = info; 
+                let info = exp_fb_map[map_id];
+                msg.cfg =  {
+                    "scene": info.scene,
+                    "role_pos": info.role_pos,
+                    "enemy_pos":[info.enemy_pos[info.refresh_order[index]-1]]
+                };
+
                 index++; 
                 msg.index = index;
                 str = "";
@@ -290,51 +301,38 @@ let fb = {
                 },300)
                 globalSend("openExpFb",openExpFb);     
                 fight(msg, function (fightData) {
-                    logic.setFight(fightData,id);
+                    logic.setFight(fightData,id,msg,monster_total);
                 })
                 forelet.paint(getData());                   
                 updata("exp_fb.total_count",fb_data.count);                
             }
         })
     },
-    //请求下一波
-    nextFight: function (result,id) {
-        let arg = {
-            "param": {},
-            "type": "app/pve/exp_instance@next_fight"
+    //放入下一波
+    nextFight: function (result,id,msg,monster_total) {
+        let hasTime = (end_time - Util.serverTime())/1000;
+        if(Util.serverTime() >= end_time){
+            fb.closeFight(hasTime,result);
+            return;
+        }
+        msg.enemy_fight = [monster_total[index]];
+        let info  = exp_fb_map[map_id];
+        msg.cfg =  {
+            "scene": info.scene,
+            "enemy_pos":[info.enemy_pos[info.refresh_order[index]-1]]
         };
-        net_request(arg, function (data) {
-            let hasTime = (end_time - Util.serverTime())/1000;
-            if (data.error) {
-                console.log(data.error);
-                fb.closeFight(hasTime,result);
-            } else {
-                if(Util.serverTime() >= end_time){
-                    fb.closeFight(hasTime,result);
-                    return;
-                }
-                let msg: any = Common.changeArrToJson(data.ok);               
-                msg.type = "exp_mission";
-                let info  = JSON.parse(JSON.stringify(exp_fb_map[map_id]));
-                info.enemy_pos = [info.enemy_pos[info.refresh_order[index]-1]];
-                msg.cfg = info; 
-                msg.time = end_time;    
-                msg.limitTime = hasTime;                                
-                index++;
-                msg.index = index;  
-                let ti = setTimeout(()=>{
-                    openExpFb =  3;                    
-                    globalSend("openExpFb",openExpFb); //重置怪物map_id记录   
-                    clearTimeout(ti);
-                    ti = null;
-                },1) ;
-                                        
-                fight(msg, function (fightData) {
-                    logic.setFight(fightData,id); 
-                })
-                forelet.paint(getData());   
-                updata("exp_fb.total_count",fb_data.count);                                
-            }
+        msg.limitTime = hasTime;                                
+        index++;
+        msg.index = index;  
+        let ti = setTimeout(()=>{
+            openExpFb =  3;                    
+            globalSend("openExpFb",openExpFb); //重置怪物map_id记录   
+            clearTimeout(ti);
+            ti = null;
+        },1) ;
+                                
+        fight(msg, function (fightData) {
+            logic.setFight(fightData,id,msg,monster_total); 
         })
     },
     //战斗结算
@@ -399,20 +397,21 @@ let fb = {
         })
     },
     //杀怪领取经验
-    getExp: function (str) {//str=>"怪物1 id,怪物2 id"
+    getExp: function (str) {//str=>"id-level,id-level"
+    console.log(str);
         let arg = {
             "param": {
-                "monster_id":str
+                "monster_info":str
             },
             "type": "app/pve/exp_instance@award_exp"
         };
         net_request(arg, function (data) {
+            console.log(data);
             if (data.error) {
                 console.log(data)
             } else {
                 let prop: any = Common.changeArrToJson(data.ok);
                 let award = Common_m.mixAward(prop);
-                // globalSend("screenTipFun", { words: `Exp + ${award.player.exp}` });
                 if(award.player && award.player.exp){
                     globalSend("goodsTip", {
                         words: [ 100003, award.player.exp ]

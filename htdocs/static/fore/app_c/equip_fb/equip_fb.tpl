@@ -102,9 +102,9 @@
     </div>
 
     <div w-class="s1" class="shadow7">
-        {{let total_count = vip_advantage[player.vip].equip_instance_times + it1.vip_buy_times  }}
-        {{let has_count = total_count - it1.use_times }}
-        <span style="font-family:mnjsh;">剩余次数：</span> <span style="color:{{!has_count ? '#f00' : ''}}">{{has_count}}</span>{{"/"+ total_count}} 
+        {{let initial_count = vip_advantage[player.vip].equip_instance_times   }}
+        {{let has_count = initial_count + it1.vip_buy_times - it1.use_times }}
+        <span style="font-family:mnjsh;">剩余次数：</span> <span style="color:{{!has_count ? '#f00' : ''}}">{{has_count}}</span>{{"/"+ initial_count}} 
         <widget w-class="s2" w-tag="app_a-widget-btn_pic-btn_pic"  on-tap="buyCount">
             {"icon":"add_btn"} 
         </widget> 

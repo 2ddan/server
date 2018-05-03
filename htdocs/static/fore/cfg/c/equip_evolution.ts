@@ -2,8 +2,9 @@
 let tab = {};
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["40"] = {
-        "level": 40,
+    tab[460501]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "attack": 4567
@@ -24,8 +25,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["50"] = {
-        "level": 50,
+    tab[460501]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "attack": 5958
@@ -46,8 +48,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["60"] = {
-        "level": 60,
+    tab[460501]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "attack": 7452
@@ -68,8 +71,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["70"] = {
-        "level": 70,
+    tab[460501]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "attack": 9042
@@ -90,8 +94,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["80"] = {
-        "level": 80,
+    tab[460501]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "attack": 10719
@@ -112,8 +117,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["90"] = {
-        "level": 90,
+    tab[460501]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "attack": 12478
@@ -134,8 +140,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["100"] = {
-        "level": 100,
+    tab[460501]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "attack": 14312
@@ -156,8 +163,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["110"] = {
-        "level": 110,
+    tab[460501]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "attack": 16215
@@ -178,8 +186,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["120"] = {
-        "level": 120,
+    tab[460501]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "attack": 18189
@@ -200,8 +209,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["130"] = {
-        "level": 130,
+    tab[460501]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "attack": 20225
@@ -222,8 +232,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["140"] = {
-        "level": 140,
+    tab[460501]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "attack": 22322
@@ -244,8 +255,9 @@ let tab = {};
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
-    tab[460501]["150"] = {
-        "level": 150,
+    tab[460501]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "attack": 24480
@@ -266,8 +278,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["40"] = {
-        "level": 40,
+    tab[460502]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "defence": 1368
@@ -288,8 +301,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["50"] = {
-        "level": 50,
+    tab[460502]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "defence": 1739
@@ -310,8 +324,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["60"] = {
-        "level": 60,
+    tab[460502]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "defence": 2137
@@ -332,8 +347,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["70"] = {
-        "level": 70,
+    tab[460502]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "defence": 2560
@@ -354,8 +370,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["80"] = {
-        "level": 80,
+    tab[460502]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "defence": 3008
@@ -376,8 +393,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["90"] = {
-        "level": 90,
+    tab[460502]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "defence": 3476
@@ -398,8 +416,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["100"] = {
-        "level": 100,
+    tab[460502]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "defence": 3966
@@ -420,8 +439,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["110"] = {
-        "level": 110,
+    tab[460502]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "defence": 4475
@@ -442,8 +462,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["120"] = {
-        "level": 120,
+    tab[460502]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "defence": 4999
@@ -464,8 +485,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["130"] = {
-        "level": 130,
+    tab[460502]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "defence": 5544
@@ -486,8 +508,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["140"] = {
-        "level": 140,
+    tab[460502]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "defence": 6102
@@ -508,8 +531,9 @@ let tab = {};
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
-    tab[460502]["150"] = {
-        "level": 150,
+    tab[460502]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "defence": 6678
@@ -530,8 +554,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["40"] = {
-        "level": 40,
+    tab[460503]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "attack": 1523
@@ -552,8 +577,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["50"] = {
-        "level": 50,
+    tab[460503]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "attack": 1986
@@ -574,8 +600,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["60"] = {
-        "level": 60,
+    tab[460503]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "attack": 2484
@@ -596,8 +623,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["70"] = {
-        "level": 70,
+    tab[460503]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "attack": 3015
@@ -618,8 +646,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["80"] = {
-        "level": 80,
+    tab[460503]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "attack": 3573
@@ -640,8 +669,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["90"] = {
-        "level": 90,
+    tab[460503]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "attack": 4160
@@ -662,8 +692,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["100"] = {
-        "level": 100,
+    tab[460503]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "attack": 4770
@@ -684,8 +715,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["110"] = {
-        "level": 110,
+    tab[460503]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "attack": 5404
@@ -706,8 +738,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["120"] = {
-        "level": 120,
+    tab[460503]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "attack": 6063
@@ -728,8 +761,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["130"] = {
-        "level": 130,
+    tab[460503]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "attack": 6741
@@ -750,8 +784,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["140"] = {
-        "level": 140,
+    tab[460503]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "attack": 7440
@@ -772,8 +807,9 @@ let tab = {};
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
-    tab[460503]["150"] = {
-        "level": 150,
+    tab[460503]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "attack": 8160
@@ -794,8 +830,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["40"] = {
-        "level": 40,
+    tab[460504]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "un_defence": 911
@@ -816,8 +853,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["50"] = {
-        "level": 50,
+    tab[460504]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "un_defence": 1158
@@ -838,8 +876,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["60"] = {
-        "level": 60,
+    tab[460504]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "un_defence": 1424
@@ -860,8 +899,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["70"] = {
-        "level": 70,
+    tab[460504]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "un_defence": 1707
@@ -882,8 +922,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["80"] = {
-        "level": 80,
+    tab[460504]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "un_defence": 2004
@@ -904,8 +945,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["90"] = {
-        "level": 90,
+    tab[460504]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "un_defence": 2317
@@ -926,8 +968,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["100"] = {
-        "level": 100,
+    tab[460504]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "un_defence": 2643
@@ -948,8 +991,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["110"] = {
-        "level": 110,
+    tab[460504]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "un_defence": 2983
@@ -970,8 +1014,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["120"] = {
-        "level": 120,
+    tab[460504]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "un_defence": 3332
@@ -992,8 +1037,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["130"] = {
-        "level": 130,
+    tab[460504]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "un_defence": 3696
@@ -1014,8 +1060,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["140"] = {
-        "level": 140,
+    tab[460504]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "un_defence": 4068
@@ -1036,8 +1083,9 @@ let tab = {};
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
-    tab[460504]["150"] = {
-        "level": 150,
+    tab[460504]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "un_defence": 4452
@@ -1058,8 +1106,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["40"] = {
-        "level": 40,
+    tab[460505]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "max_hp": 58504
@@ -1080,8 +1129,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["50"] = {
-        "level": 50,
+    tab[460505]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "max_hp": 81848
@@ -1102,8 +1152,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["60"] = {
-        "level": 60,
+    tab[460505]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "max_hp": 109086
@@ -1124,8 +1175,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["70"] = {
-        "level": 70,
+    tab[460505]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "max_hp": 140321
@@ -1146,8 +1198,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["80"] = {
-        "level": 80,
+    tab[460505]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "max_hp": 172145
@@ -1168,8 +1221,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["90"] = {
-        "level": 90,
+    tab[460505]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "max_hp": 204959
@@ -1190,8 +1244,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["100"] = {
-        "level": 100,
+    tab[460505]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "max_hp": 235523
@@ -1212,8 +1267,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["110"] = {
-        "level": 110,
+    tab[460505]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "max_hp": 267270
@@ -1234,8 +1290,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["120"] = {
-        "level": 120,
+    tab[460505]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "max_hp": 300147
@@ -1256,8 +1313,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["130"] = {
-        "level": 130,
+    tab[460505]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "max_hp": 334091
@@ -1278,8 +1336,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["140"] = {
-        "level": 140,
+    tab[460505]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "max_hp": 369056
@@ -1300,8 +1359,9 @@ let tab = {};
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
-    tab[460505]["150"] = {
-        "level": 150,
+    tab[460505]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "max_hp": 405000
@@ -1322,8 +1382,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["40"] = {
-        "level": 40,
+    tab[460506]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "un_defence": 1368
@@ -1344,8 +1405,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["50"] = {
-        "level": 50,
+    tab[460506]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "un_defence": 1739
@@ -1366,8 +1428,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["60"] = {
-        "level": 60,
+    tab[460506]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "un_defence": 2137
@@ -1388,8 +1451,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["70"] = {
-        "level": 70,
+    tab[460506]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "un_defence": 2560
@@ -1410,8 +1474,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["80"] = {
-        "level": 80,
+    tab[460506]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "un_defence": 3008
@@ -1432,8 +1497,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["90"] = {
-        "level": 90,
+    tab[460506]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "un_defence": 3476
@@ -1454,8 +1520,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["100"] = {
-        "level": 100,
+    tab[460506]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "un_defence": 3966
@@ -1476,8 +1543,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["110"] = {
-        "level": 110,
+    tab[460506]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "un_defence": 4475
@@ -1498,8 +1566,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["120"] = {
-        "level": 120,
+    tab[460506]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "un_defence": 4999
@@ -1520,8 +1589,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["130"] = {
-        "level": 130,
+    tab[460506]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "un_defence": 5544
@@ -1542,8 +1612,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["140"] = {
-        "level": 140,
+    tab[460506]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "un_defence": 6102
@@ -1564,8 +1635,9 @@ let tab = {};
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
-    tab[460506]["150"] = {
-        "level": 150,
+    tab[460506]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "un_defence": 6678
@@ -1586,8 +1658,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["40"] = {
-        "level": 40,
+    tab[460507]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "max_hp": 48753
@@ -1608,8 +1681,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["50"] = {
-        "level": 50,
+    tab[460507]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "max_hp": 68206
@@ -1630,8 +1704,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["60"] = {
-        "level": 60,
+    tab[460507]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "max_hp": 90906
@@ -1652,8 +1727,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["70"] = {
-        "level": 70,
+    tab[460507]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "max_hp": 116934
@@ -1674,8 +1750,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["80"] = {
-        "level": 80,
+    tab[460507]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "max_hp": 143455
@@ -1696,8 +1773,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["90"] = {
-        "level": 90,
+    tab[460507]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "max_hp": 170799
@@ -1718,8 +1796,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["100"] = {
-        "level": 100,
+    tab[460507]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "max_hp": 196269
@@ -1740,8 +1819,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["110"] = {
-        "level": 110,
+    tab[460507]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "max_hp": 222725
@@ -1762,8 +1842,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["120"] = {
-        "level": 120,
+    tab[460507]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "max_hp": 250123
@@ -1784,8 +1865,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["130"] = {
-        "level": 130,
+    tab[460507]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "max_hp": 278410
@@ -1806,8 +1888,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["140"] = {
-        "level": 140,
+    tab[460507]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "max_hp": 307548
@@ -1828,8 +1911,9 @@ let tab = {};
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
-    tab[460507]["150"] = {
-        "level": 150,
+    tab[460507]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "max_hp": 337500
@@ -1850,8 +1934,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["40"] = {
-        "level": 40,
+    tab[460508]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "defence": 911
@@ -1872,8 +1957,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["50"] = {
-        "level": 50,
+    tab[460508]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "defence": 1158
@@ -1894,8 +1980,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["60"] = {
-        "level": 60,
+    tab[460508]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "defence": 1424
@@ -1916,8 +2003,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["70"] = {
-        "level": 70,
+    tab[460508]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "defence": 1707
@@ -1938,8 +2026,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["80"] = {
-        "level": 80,
+    tab[460508]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "defence": 2004
@@ -1960,8 +2049,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["90"] = {
-        "level": 90,
+    tab[460508]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "defence": 2317
@@ -1982,8 +2072,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["100"] = {
-        "level": 100,
+    tab[460508]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "defence": 2643
@@ -2004,8 +2095,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["110"] = {
-        "level": 110,
+    tab[460508]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "defence": 2983
@@ -2026,8 +2118,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["120"] = {
-        "level": 120,
+    tab[460508]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "defence": 3332
@@ -2048,8 +2141,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["130"] = {
-        "level": 130,
+    tab[460508]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "defence": 3696
@@ -2070,8 +2164,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["140"] = {
-        "level": 140,
+    tab[460508]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "defence": 4068
@@ -2092,8 +2187,9 @@ let tab = {};
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
-    tab[460508]["150"] = {
-        "level": 150,
+    tab[460508]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "defence": 4452
@@ -2114,8 +2210,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["40"] = {
-        "level": 40,
+    tab[460509]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "max_hp": 97508
@@ -2136,8 +2233,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["50"] = {
-        "level": 50,
+    tab[460509]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "max_hp": 136415
@@ -2158,8 +2256,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["60"] = {
-        "level": 60,
+    tab[460509]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "max_hp": 181811
@@ -2180,8 +2279,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["70"] = {
-        "level": 70,
+    tab[460509]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "max_hp": 233867
@@ -2202,8 +2302,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["80"] = {
-        "level": 80,
+    tab[460509]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "max_hp": 286908
@@ -2224,8 +2325,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["90"] = {
-        "level": 90,
+    tab[460509]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "max_hp": 341599
@@ -2246,8 +2348,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["100"] = {
-        "level": 100,
+    tab[460509]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "max_hp": 392537
@@ -2268,8 +2371,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["110"] = {
-        "level": 110,
+    tab[460509]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "max_hp": 445452
@@ -2290,8 +2394,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["120"] = {
-        "level": 120,
+    tab[460509]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "max_hp": 500244
@@ -2312,8 +2417,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["130"] = {
-        "level": 130,
+    tab[460509]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "max_hp": 556818
@@ -2334,8 +2440,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["140"] = {
-        "level": 140,
+    tab[460509]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "max_hp": 615093
@@ -2356,8 +2463,9 @@ let tab = {};
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
-    tab[460509]["150"] = {
-        "level": 150,
+    tab[460509]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "max_hp": 675000
@@ -2378,8 +2486,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["40"] = {
-        "level": 40,
+    tab[460510]["80"] = {
+        "level": 80,
+        "next_level": 100,
         "quality": 6,
         "base_attr": {
             "max_hp": 58504
@@ -2400,8 +2509,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["50"] = {
-        "level": 50,
+    tab[460510]["100"] = {
+        "level": 100,
+        "next_level": 120,
         "quality": 6,
         "base_attr": {
             "max_hp": 81848
@@ -2422,8 +2532,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["60"] = {
-        "level": 60,
+    tab[460510]["120"] = {
+        "level": 120,
+        "next_level": 140,
         "quality": 6,
         "base_attr": {
             "max_hp": 109089
@@ -2444,8 +2555,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["70"] = {
-        "level": 70,
+    tab[460510]["140"] = {
+        "level": 140,
+        "next_level": 160,
         "quality": 6,
         "base_attr": {
             "max_hp": 140321
@@ -2466,8 +2578,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["80"] = {
-        "level": 80,
+    tab[460510]["160"] = {
+        "level": 160,
+        "next_level": 180,
         "quality": 6,
         "base_attr": {
             "max_hp": 172147
@@ -2488,8 +2601,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["90"] = {
-        "level": 90,
+    tab[460510]["180"] = {
+        "level": 180,
+        "next_level": 200,
         "quality": 6,
         "base_attr": {
             "max_hp": 204959
@@ -2510,8 +2624,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["100"] = {
-        "level": 100,
+    tab[460510]["200"] = {
+        "level": 200,
+        "next_level": 220,
         "quality": 6,
         "base_attr": {
             "max_hp": 235523
@@ -2532,8 +2647,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["110"] = {
-        "level": 110,
+    tab[460510]["220"] = {
+        "level": 220,
+        "next_level": 240,
         "quality": 6,
         "base_attr": {
             "max_hp": 267270
@@ -2554,8 +2670,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["120"] = {
-        "level": 120,
+    tab[460510]["240"] = {
+        "level": 240,
+        "next_level": 250,
         "quality": 6,
         "base_attr": {
             "max_hp": 300147
@@ -2576,8 +2693,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["130"] = {
-        "level": 130,
+    tab[460510]["250"] = {
+        "level": 250,
+        "next_level": 260,
         "quality": 6,
         "base_attr": {
             "max_hp": 334093
@@ -2598,8 +2716,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["140"] = {
-        "level": 140,
+    tab[460510]["260"] = {
+        "level": 260,
+        "next_level": 270,
         "quality": 6,
         "base_attr": {
             "max_hp": 369058
@@ -2620,8 +2739,9 @@ let tab = {};
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
-    tab[460510]["150"] = {
-        "level": 150,
+    tab[460510]["270"] = {
+        "level": 270,
+        "next_level": 0,
         "quality": 6,
         "base_attr": {
             "max_hp": 405000

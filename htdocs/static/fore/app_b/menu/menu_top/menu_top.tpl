@@ -1,5 +1,5 @@
 
-<div style="width:360px;bottom:0px;height:100px;">
+<div style="width:335px;bottom:0px;height:100px;">
 	{{if it1.show}}
 	{{let appCfg = _get("app/mod/db").exports.data}}
 	{{let sevendays = appCfg.sevendays}}
@@ -23,7 +23,7 @@
 						
 					</div>
 					{{end}}
-					{{if v.interface != "undefined" &&  v.name != "七日活动" &&  v.name != "节日活动" &&  v.name != "宝石迷阵" &&  v.name != "翻翻乐"}}
+					{{if v.interface != "undefined" &&  v.name != "七日活动" &&  v.name != "节日活动" &&  v.name != "宝石迷阵" &&  v.name != "翻翻乐" && (v.name != "抽奖")}}
 					{{let first_recharge = v.name == "首充"}}
 					<div style="margin:0 3px;display: inline-block">
 						{{let new_tip = 0}}

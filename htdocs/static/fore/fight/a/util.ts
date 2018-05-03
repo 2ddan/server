@@ -385,6 +385,25 @@ export class Util{
         return { xx: xx, yy: yy, d: _d };
     }
     /**
+     * @description 获取最终目标点
+     */
+    static getFinalPos(f: Fighter,d: number):void{
+        let path = f.path,
+            pop = path.pop(),
+            last = path[path.length-1] || {x:f.x,y:0,z:f.y},
+            pos:any = new Vector3(),
+            r = Math.random()*0.5+0.5,
+            dis = this.getPPDistance({x:last.x,y:last.z},{x:pop.x,y:pop.z});
+        if(dis.d<=d){
+            return;
+        }
+        r = r * d;
+        r = 1-r/dis.d;
+        pos.x = last.x+(pop.x-last.x)*r;
+        pos.z = last.z+(pop.z-last.z)*r;
+        path.push(pos);
+    }
+    /**
      * @description 计算以t为中心的九宫格坐标中离f最近的点
      * @param dimension 坐标维度（以目标点为中心）____ 【一维】
      *                                         |_|_|

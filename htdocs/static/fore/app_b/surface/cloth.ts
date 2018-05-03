@@ -46,12 +46,15 @@ let cloth_id = 10001,//人物时装id
     pose_show = "",
     pose_timer,
     pose_show_timer,
-    pet_flag = false,//宠物培养点击间隔
+    // pet_flag = false,//宠物培养点击间隔
     index = 0,//0时装，1灵宠
     new_star = -1, //当前升第几颗星
     one_key = '',  //是够开启一键升星
     uping = null, //是否正在升级
-    bar_anim = null; //进度条动画
+    bar_anim = null, //进度条动画
+    pet_ok = true, //升级成功
+    break_eff = false,
+    bar_anim_timer = null; //进度条动画定时器
 
 //接收消息
 export const globalReceive: any = {
@@ -70,7 +73,7 @@ export const globalReceive: any = {
         }
         index = arg - 0;
         if (funIsOpen("pet")) {
-            pet_flag = false;
+            // pet_flag = false;
             new_star = -1;
             uping = null;
             one_key = "";
@@ -286,6 +289,7 @@ const pet_up = (cost_type, count) => {
         let player = getDB("player");
         if (count * arr[1] > player[cost_type]) {
             uping = null;
+            bar_anim = null;
             // clearInterval(set);
             // set = undefined;
             // globalSend("screenTipFun", {
@@ -342,7 +346,8 @@ const getData = function () {
         data.pet = pet;
         let c = getDB('bag*sid=' + pet_upgrade[1][1]["prop"][0]).pop();//升星材料 
         data.prop_count = c && c.count || 0;
-        data.pet_flag = pet_flag;
+        data.pet_ok = pet_ok;
+        // data.pet_flag = pet_flag;
     }
     data.getCoinCount = getCoinCount;
 
@@ -369,17 +374,18 @@ const changeState = () => {
     let time = getMondule(0);
     let i = 0;
     pose_timer = setInterval(() => {
+        if(break_eff){return;}
         i++;
-        if (i / 10 == (time[0] * 5)) {
+        if (i / 100 == (time[0] * 5)) {
             pose = "pose";
             forelet.paint(getData());
         }
-        if (i / 10 == (time[0] * 5 + time[1])) {
+        if (i / 100 == (time[0] * 5 + time[1])) {
             pose = "";
             i = 0;
             forelet.paint(getData());
         }
-    }, 100);
+    }, 10);
 }
 
 //更新宠物动作
@@ -388,16 +394,16 @@ const petShowState = () => {
     let time = getMondule(1);
     pose_show_timer = setInterval(() => {
         i++;
-        if (i / 10 == (time[0] * 5)) {
+        if (i / 100 == (time[0] * 5)) {
             pose_show = "pose";
             forelet.paint(getData());
         }
-        if (i / 10 == (time[0] * 5 + time[1])) {
+        if (i / 100 == (time[0] * 5 + time[1])) {
             pose_show = "";
             i = 0;
             forelet.paint(getData());
         }
-    }, 100);
+    }, 10);
 }
 
 const getMondule = (type) => {
@@ -687,15 +693,15 @@ let logic: any = {
     },
     //宠物升星
     petStarUp(cost_type, count) {
-        if (pet_flag) {
-            if (!getDB("player.month_card_due_time")) {
-                globalSend("screenTipFun", {
-                    words: `宠物培养中，请稍后……`
-                });
-                return;
-            }
-        }
-        pet_flag = true;
+        // if (pet_flag) {
+        //     if (!getDB("player.month_card_due_time")) {
+        //         globalSend("screenTipFun", {
+        //             words: `宠物培养中，请稍后……`
+        //         });
+        //         return;
+        //     }
+        // }
+        pet_ok = false;
         forelet.paint(getData());
         let arg = {
             "param": {
@@ -706,9 +712,10 @@ let logic: any = {
             "type": "app/prop/pet@star_up"
         };
         net_request(arg, (data) => {
+            pet_ok = true;
             if (data.error) {
                 console.log(data);
-                pet_flag = false;
+                // pet_flag = false;
                 return;
             }
             let prop: any = Common.changeArrToJson(data.ok);
@@ -718,6 +725,16 @@ let logic: any = {
             Music.skillSound("other_two");
             updata("pet.total_train", prop.total_train);
             // pet_flag = false;
+            if(bar_anim_timer){
+                clearTimeout(bar_anim_timer);
+                bar_anim_timer = null;
+            }
+            bar_anim_timer = setTimeout(() => {
+                clearTimeout(bar_anim_timer);
+                bar_anim_timer = null;
+                bar_anim = null;
+                forelet.paint(getData());
+            }, 1000);
             bar_anim = true; //开始动画
             let pet_infos = getDB("pet.pet_star_info");
             let pet_star_exp = getDB("pet.pet_star_exp");
@@ -732,28 +749,37 @@ let logic: any = {
                         "top":720
                     }) 
                 }
-                updata("pet.pet_star_exp", prop.pet_star_exp);
-                updata("pet.pet_star_info", prop.pet_star_info);
 
+                updata("pet.pet_star_exp", pet_upgrade[pet_infos[0]][pet_infos[1]].exp);
                 new_star = prop.pet_star_info[1];
                 forelet.paint(getData());
+
+                // let timer = setTimeout(() => {
+                //     clearTimeout(timer);
+                //     timer = null;
+                //     updata("pet.pet_star_exp", prop.pet_star_exp);
+                //     updata("pet.pet_star_info", prop.pet_star_info);
+                //     forelet.paint(getData());
+                // }, 800);
 
                 //该突破了
                 if (prop.pet_star_info[1] == 10) {
                     let t = setTimeout(() => {
-                        pet_flag = false;
+                        // pet_flag = false;
+                        updata("pet.pet_star_info", prop.pet_star_info);
+                        updata("pet.pet_star_exp", prop.pet_star_exp);
                         clearTimeout(t);
                         t = null;
                         new_star = -1;
                         uping = null;
-                        bar_anim = null;
                         forelet.paint(getData());
-                    }, 1100);
+                    }, 1000);
                     return;
                 }
                 if (one_key == 'one_key' && uping) {
                     let t = setTimeout(() => {
-                        pet_flag = false;
+                        updata("pet.pet_star_info", prop.pet_star_info);
+                        updata("pet.pet_star_exp", prop.pet_star_exp);
                         clearTimeout(t);
                         t = null;
                         new_star = -1;
@@ -761,11 +787,11 @@ let logic: any = {
                     }, 1000);
                 } else {
                     let t = setTimeout(() => {
-                        pet_flag = false;
+                        updata("pet.pet_star_info", prop.pet_star_info);
+                        updata("pet.pet_star_exp", prop.pet_star_exp);
                         clearTimeout(t);
                         t = null;
                         new_star = -1;
-                        bar_anim = null;
                         forelet.paint(getData());
                     }, 1000);
                 }
@@ -784,18 +810,10 @@ let logic: any = {
                 forelet.paint(getData());
                 if (one_key == 'one_key' && uping) {
                     let t = setTimeout(() => {
-                        pet_flag = false;
+                        // pet_flag = false;
                         clearTimeout(t);
                         t = null;
                         return pet_up(cost_type, count);
-                    }, 600);
-                } else {
-                    let t = setTimeout(() => {
-                        pet_flag = false;
-                        clearTimeout(t);
-                        t = null;
-                        bar_anim = null;
-                        forelet.paint(getData());
                     }, 600);
                 }
             }
@@ -821,6 +839,7 @@ let logic: any = {
                 "scale": 0.8
             }
             //mgr.create(eff.treasure_break,"effect");
+            break_eff = true;
             let id = openUiEffect(eff, null);
             effectcallback(id, () => {
                 let prop: any = Common.changeArrToJson(data.ok);
@@ -828,9 +847,9 @@ let logic: any = {
                 globalSend("screenTipFun", {
                     words: `宠物突破成功`
                 });
+                break_eff = false;
                 forelet.paint(getData());
             });
-
         })
     }
 }

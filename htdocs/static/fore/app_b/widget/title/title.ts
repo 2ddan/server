@@ -19,15 +19,19 @@ import { data as localDB, listen, get } from "app/mod/db";
 export class title extends Widget {
 	id = wId++;
 	listens = [];
-	cancel_all=()=>{
-		closeBack();	
+	cancel_all = () => {
+		closeBack();
 	}
+	 //获取方式
+	 gotoGetWay(id) {
+        globalSend("gotoGetWay",id);
+    }
 	/**
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
 	 */
 	setProps(props: Json, oldProps?: Json): void {
-		props.r = getCount(props.coin,this);
+		props.r = getCount(props.coin, this);
 		this.props = props;
 		widgets[this.id] = this;
 	}
@@ -36,23 +40,23 @@ export class title extends Widget {
 	 * @example
 	 */
 	destroy() {
-		if(!super.destroy())
+		if (!super.destroy())
 			return false;
-		for(let i in this.listens){
+		for (let i in this.listens) {
 			let l = listenkey[this.listens[i]];
-			l.splice(l.indexOf(this.id),1);
+			l.splice(l.indexOf(this.id), 1);
 		}
 		delete widgets[this.id];
 		return true;
 	}
-	 //购买银两元宝
-	 gotoBug = (arg) => {
-        if(arg){
-            globalSend("gotoRecharge");
-            return;
-        }
-        globalSend("gotoBuyMoney");
-    }
+	//购买银两元宝
+	gotoBug = (arg) => {
+		if (arg) {
+			globalSend("gotoRecharge");
+			return;
+		}
+		globalSend("gotoBuyMoney");
+	}
 }
 
 // ============================== 本地
@@ -72,16 +76,16 @@ let listenkey = {};
  * @description 监听闭包
  */
 const listenBlock = (path) => {
-	listen(path,()=>{
+	listen(path, () => {
 		runUpDate(path);
 	})
 };
 /**
  * @description 设置监听 
  */
-const setListen = (path,id) => {
-	if(listenkey[path]){
-		if(listenkey[path].indexOf(id)<0){
+const setListen = (path, id) => {
+	if (listenkey[path]) {
+		if (listenkey[path].indexOf(id) < 0) {
 			listenkey[path].push(id);
 		}
 		return;
@@ -95,8 +99,8 @@ const setListen = (path,id) => {
  */
 const runUpDate = (path) => {
 	let list = listenkey[path];
-	for(let i in list){
-		widgets[list[i]].props.r = getCount(widgets[list[i]].props.coin,widgets[list[i]]);
+	for (let i in list) {
+		widgets[list[i]].props.r = getCount(widgets[list[i]].props.coin, widgets[list[i]]);
 		widgets[list[i]].paint();
 	}
 }

@@ -4,7 +4,8 @@
 {{let appCfg = _get("app/mod/db").exports.data}}
 {{let Pi = _get("app/mod/pi").exports.Pi}}
 {{let Util = _get("app/mod/util").exports.Util}}
-
+{{let cfg = _get("app/mod/pi").exports.cfg}}
+{{let publicboss_config = cfg.publicboss_config.publicboss_config}}
 <div style="position: absolute;width: 100%;height: 100%;z-index:2;left: 50%;margin-left: -270px;">
     {{let root = _get("pi/ui/root").exports}}
 
@@ -19,7 +20,7 @@
     
     <div w-class="13" class="scroll_box_v" layout="scroll" w-sid="13" style="position: absolute;width: 492px;height: 630px;left: 50%;top: 65px;color: #fff;margin-left: -247px;">
         {{for i,v of it1.initData.distribute_award_info}}
-            {{if !v[6]}}
+            {{if v && !v[6]}}
             <div style="width: 448px;height: 127px;position: relative;left: 0;right: 0;margin: 0 auto;margin-bottom: 10px;">
                 <widget w-tag="app_a-widget-img_stitch-stitch" style="position:absolute;width:448px;height:127px;left:0px;top:0px;">
                     {"type":2,"height":20,"width":30}
@@ -35,9 +36,10 @@
                 <span style="position: absolute;left: 125px;font-size: 18px;color: #fde7ca;top: 3px;">击杀时间:{{kill_time[3]}}:{{if (kill_time[4]+"").length == 1}}0{{kill_time[4]}}{{else}}{{kill_time[4]}}{{end}}({{dayFlag}})</span>
 
                 {{let killName = null}}
-                {{for m,n of it1.initData.role_info_list}}
-                    {{if v[3] == n[0]}}
-                    {{: killName = n[1].name}}
+                {{for n in it1.initData.role_info_list}}
+                    {{let _info = it1.initData.role_info_list[n]}}
+                    {{if v[3] == n}}
+                    {{: killName = _info.name}}
                     {{end}}
                     {{if v[3] == appCfg.player.role_id}}
                     {{: killName = "我"}}
@@ -68,8 +70,8 @@
                 {{let _icon = prop.icon ? prop.icon : prop.module[prop.career_id.indexOf(it1.player.career_id)][0]}}
                 {{let icon = Pi.pictures[_icon]}}
                 {{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(it1.player.career_id)] : prop.name}}
-                <app_a-widget-prop-base style="position:absolute;margin-right:10px;font-size: 18px;left: 125px;top: 30px;">
-                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":"none","name":{{name}},"bg":1}
+                <app_a-widget-prop-base on-tap="showPropInfo({{prop.sid ? prop.sid : prop.id}})" style="position:absolute;margin-right:10px;font-size: 18px;left: 125px;top: 30px;">
+                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":"none","name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(prop.sid ? prop.sid : prop.id) > -1 ? 1 : 0}} }
                 </app_a-widget-prop-base>
                 
                 {{let apply_flag = 0}}

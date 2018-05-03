@@ -12,7 +12,7 @@ export const menu_parent = [{
         name:"装备",
         interface:"gotoForge,0",
         stage_id:"2",
-        level_limit:4,tips:["equip"]
+        level_limit:0,tips:["equip"]
     },{
         key:"bag",
         icon:"menu_bag_icon",
@@ -25,21 +25,21 @@ export const menu_parent = [{
         icon:"pic_gang",
         name:"门派",
         interface:"gotoGang",
-        stage_id:"12",
-        level_limit:28,tips:["gang"]
+        stage_id:"10",
+        level_limit:0,tips:["gang"]
     },{
         key:"exp_fb",
         icon:"menu_fb_icon",
         name:"副本",
         interface:"gotoFb",
         stage_id:"5",
-        level_limit:10,tips:["fb"]
+        level_limit:0,tips:["explore"]
     },{
         key:"public_boss",
         icon:"menu_explore_icon",
         name:"探索",
         interface:"gotoExplore",
-        stage_id:"19",
-        level_limit:20,tips:["explore"]
+        stage_id:"18",
+        level_limit:0,tips:["new_fun"]
     }
 ]; 

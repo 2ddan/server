@@ -38,7 +38,7 @@ let s:any = {};
     "id" : "undefined",
     "name" : "周活动",
     "icon" : "menu_sevenday_icon",
-    "level_limit" : 30,
+    "level_limit" : 50,
     "desc" : null,
     "type" : "week_act",
     "path" : "app_c-week_act-week_act",
