@@ -429,10 +429,10 @@ for (let k of arr) {
 let str = arr_id.map((v) => `bag*sid=${v}`).toString();
 
 
-// 监听人物数据变化
-// listen("player.level", () =>{
-//     forelet.paint(getStarHtmlData());
-// });
+// 监听人物money变化
+listen("player.money", () =>{
+    forelet.paint(getStarHtmlData());
+});
 
 // 监听人物数据变化
 listen("friend_battle.soul", () =>{

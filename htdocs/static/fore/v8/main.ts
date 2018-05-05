@@ -327,7 +327,7 @@ export const loadSceneNav = function (name, str) {
     
     //处理点击事件
     function clickScene(result, fighter_own, fightScene) {
-        let t;
+        let t,r;
         if (result.type === "terrain") {
             fighter_own.handMove = { x: result.data[0], y: result.data[2], click: result.click };
             fighter_own.curTarget = undefined;
@@ -336,7 +336,9 @@ export const loadSceneNav = function (name, str) {
         }
         else {
             t = realType(result.type);
-            Request[t] && Request[t](result,fightScene);
+            r = Request[t] && Request[t](result,fightScene);
+            if(r)console.log(r);
+            return r;
         }
     };
 

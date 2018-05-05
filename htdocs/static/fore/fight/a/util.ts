@@ -15,8 +15,9 @@ export class Util{
     
     /**
      * @description 判断fighter当前是否可活动状态
+     * @param strict 是否严格判断，否则就放松50ms
      */
-    static checkFighterActive(f: Fighter,s: Scene): string{
+    static checkFighterActive(f: Fighter,s: Scene, strict?: boolean): string{
         //死亡
         if (f.hp <= 0 && f.max_hpCount > 0) {
             return "The fighter was died!!";
@@ -25,9 +26,15 @@ export class Util{
         if (!f || f.stun) {
             return "The fighter was stunned!!";
         }
+        let r:any = f.actionTime-s.now;
+        if(strict){
+            r = r>0;
+        }else{
+            r = r > 50;
+        }
         //动作播放中
-        if(f.actionTime && s.now < f.actionTime){
-            return "The fighter is playing action!!";
+        if(f.actionTime && r){
+            return (f.actionTime-s.now)+"The fighter is playing action!!";
         }
         return "";
     }

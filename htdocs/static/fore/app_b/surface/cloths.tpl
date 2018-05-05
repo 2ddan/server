@@ -14,18 +14,19 @@
     {{let currCloth = it1.Pi.sample[it1.cloth_id]}}
     {{let has = it1.cloth.own_clothes.indexOf(it1.cloth_id)<0 ? false : true }}
 
-    {{let _index = it1.clothes_module[id].career_id.indexOf(player.career_id)}}
-    {{let module = it1.clothes_module[id].module[_index]}}
+    {{let module  = null}}
     {{let weapon= null}}
     {{let weapon_m = null}}
     {{let w_eff = null}}
     {{let m = null}}
 
-   
-
-    {{if !it1.cloth_restore}}
+    {{if id ==1}}
         {{:module = it1.roleCfg[player.career_id].module}}
+    {{else}}
+        {{let _index = it1.clothes_module[id].career_id.indexOf(player.career_id)}}
+        {{:module = it1.clothes_module[id].module[_index]}}
     {{end}}
+    
 
     {{if weapon}}
         {{: weapon_m = m[1]}}
@@ -36,21 +37,21 @@
 
     {{let s_eff = null}}
     {{if appCfg.weapon_soul.class > 0}}
-          {{let _c = cfg.weapon_soul_base?cfg.weapon_soul_base.weapon_soul_base:null}}
-          {{if _c}}
+            {{let _c = cfg.weapon_soul_base?cfg.weapon_soul_base.weapon_soul_base:null}}
+            {{if _c}}
                 {{: _c = _c[appCfg.weapon_soul.class]}}
                 {{let idx = _c.career_id.indexOf(appCfg.player.career_id)}}
                 {{: s_eff = _c.effect[idx]}}
-          {{end}}
+            {{end}}
     {{end}}
     {{let body_eff = null}}
     {{if appCfg.friend_battle.soul_level}}
-          {{let _cc = cfg.equip_star_achieve?cfg.equip_star_achieve.equip_star_achieve:null}}
-          {{if _cc}}
+            {{let _cc = cfg.equip_star_achieve?cfg.equip_star_achieve.equip_star_achieve:null}}
+            {{if _cc}}
                 {{: _cc = _cc[appCfg.friend_battle.soul_level]}}
                 {{let idex = _cc.career_id.indexOf(appCfg.player.career_id)}}
                 {{: body_eff = _cc.effect[idex]}}
-          {{end}}
+            {{end}}
     {{end}}
     <div style="position:absolute;left: 0;top: 73px;width: 540px;height: 745px;z-index:1;right: 0;margin: 0 auto;overflow: hidden;">
         <app-scene-base-scene>
@@ -91,16 +92,33 @@
                 </div>
 
                 <app_a-widget-pic_text-pic_text w-class="13" class="shadow" w-sid="13" style="z-index: 1;">
-                    {"icon":"name_bg_2","width":184,"height":32,"align":"center","marginLeft":3,"text":{{it1.clothes_module[id].name[it1.clothes_module[id].career_id.indexOf(player.career_id)]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+                    {"icon":"name_bg_2","width":184,"height":32,"align":"center","marginLeft":3,"text":{{id==1?"默认外观" : it1.clothes_module[id].name[it1.clothes_module[id].career_id.indexOf(player.career_id)]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
                 </app_a-widget-pic_text-pic_text>
 
-                <span w-class="64" w-sid="64" class="scroll_box_h" layout="scroll" style="position: absolute;color: rgb(255, 250, 0);top: 395px;z-index: 2;width: 95%;text-align: left;font-size: 18px;white-space: inherit;left: 30px;">
-                    {{if currCloth.attr}}
-                        {{for j,k of currCloth.attr}}
-                        <span style="width:224px;height:20px;position:relative;display: inline-block;">
-                            {{it1.attribute_config[k[0]]+"+"+(k[1]<1?Math.floor(k[1]*100)+"%":k[1])}}
-                        </span>
+                <div style="width:40px;position: absolute;top:400px;left:70px; color: #FFD7A8; font-size: 18px;z-index:2">属性加成</div>
+                <span w-class="64" w-sid="64" class="scroll_box_h" layout="scroll" style="position: absolute;color: rgb(255, 250, 0);top: 400px;z-index: 2;width: 330px;text-align: left;font-size: 18px;white-space: inherit;left: 140px;">
+                    {{if currCloth}}
+                        {{if currCloth.attr}}
+                            {{for j,k of currCloth.attr}}
+                            {{if (j+1)%2}}
+                            <span style="width:50%;height:20px;position:relative;display: inline-block;">
+                                {{it1.attribute_config[k[0]]+"+"+(k[1]<1?Math.floor(k[1]*100)+"%":k[1])}}
+                            </span>
+                            {{end}}
+                            {{end}}
+                            {{for j,k of currCloth.attr}}
+                            {{if j%2}}
+                            <span style="width:50%;height:20px;position:relative;display: inline-block;">
+                                {{it1.attribute_config[k[0]]+"+"+(k[1]<1?Math.floor(k[1]*100)+"%":k[1])}}
+                            </span>
+                            {{end}}
+                            {{end}}
                         {{end}}
+                    {{else}}
+                    <span style="width:50%;height:20px;position:relative;display: inline-block;line-height: 50px;">
+                        无附加属性
+                    </span>
+                    
                     {{end}}
                 </span>
 
@@ -108,16 +126,24 @@
                     {"bgName":"bg_frame44"} 
                 </app_a-widget-bg_frame-bg>
 
-                <app_a-widget-btn_pic-btn_pic w-class="99" w-sid="99" style="z-index:1;top: 335px;" on-tap="restore({{!it1.cloth_restore}})">
-                    {"icon":"recover"} 
-                </app_a-widget-btn_pic-btn_pic>
-                <app_a-widget-text-text w-class="100" w-sid="100" style="z-index:1;top: 375px;" >
-                    {"text":{{it1.cloth_restore ? "还原" : "恢复"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"menu_main"} 
-                </app_a-widget-text-text>
             </div>
             
             <div w-class="15" w-sid="15" style="z-index:1;top:450px">
                 <div w-class="67" class="scroll_box_h" layout="scroll" w-sid="67">
+                    <div on-tap="clothChange(0,1)" w-class="75" w-sid="75">
+                        <app_a-widget-prop-base w-class="69" w-sid="69">
+                            {"width":80,"height":80,"prop":{"quality":1},"url":"app_b/widget/icons/menu_cloth_icon.png","count":"none","name":"默认外观","bg":1,"bottom":20,"top":25,"right":25}
+                        </app_a-widget-prop-base>
+                        {{if id  == 1}}
+                        <img w-class="85" src="app_c/forge/images/equip_select.png" w-sid="85"/>
+                        {{end}}
+                        
+                        {{if !cloth_info.wear_skin}}
+                        <app_a-widget-pic_text-pic_text w-class="84" w-sid="84">
+                            {"icon":"wear","width":80,"height":50,"align":"center","marginLeft":3,"text":" ","textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+                        </app_a-widget-pic_text-pic_text>
+                        {{end}}
+                    </div>
                     {{for m, n in it1.cloth_skin }}
                     {{let prop = it1.Pi.sample[n]}}
                     {{let index = it1.clothes_module[n].career_id.indexOf(player.career_id)}}
@@ -125,7 +151,7 @@
                     {{let name = it1.clothes_module[n].name[index]}}
                     
                     {{let url = "app_b/surface/image/"+icon+".png"}}
-                    <div w-class="75" w-sid="75">
+                    <div on-tap="clothChange(0,{{n}})" w-class="75" w-sid="75">
                         <app_a-widget-prop-base w-class="69" w-sid="69">
                             {"width":80,"height":80,"prop":{{prop}},"url":{{url}},"count":"none","name":{{name}},"bg":1,"quality":{{prop.quality}},"bottom":20,"top":25,"right":25,"tip_keys":[{{'role.cloth.'+n}}]}
                         </app_a-widget-prop-base>
@@ -142,32 +168,52 @@
 
                     </div>
                     {{end}}
+                    {{for k,v of [1,1,1] }}                    
+                    {{let url = "app_b/widget/icons/menu_cloth_icon.png"}}
+                    <div w-class="75" w-sid="75">
+                        <app_a-widget-prop-base w-class="69" w-sid="69" style="filter: grayscale(100%);">
+                            {"width":80,"height":80,"prop":{"quality":6},"url":{{url}},"count":"none","name":"未开放","bg":1,"quality":6,"bottom":20,"top":25,"right":25}
+                        </app_a-widget-prop-base>
+                    </div>
+                    {{end}}
                 </div>
-                {{if !has && currCloth.act_condition}}
-                {{let prop = it1.Pi.sample[currCloth.act_condition[0]]}}
-                {{let url = it1.Pi.pictures[prop.icon]}}
-                
-                <div w-class="102" w-sid="102" style="top: 140px;">
-                    <app_a-widget-prop-base w-class="103" w-sid="103" on-tap="showPropInfo({{currCloth.act_condition[0]}})">
-                            {"width":80,"height":80,"prop":{{prop}},"url":{{url}},"count":"none","name":"none","bg":"","quality":1,"bottom":20,"top":25,"right":25} 
-                    </app_a-widget-prop-base>
-                    <app_a-widget-pic_text-pic_text w-class="104" w-sid="104">
-                            {"icon":"equip_txt_bg","width":73,"height":22,"align":"center","marginLeft":3,"text":{{it1.getFragCount(id)+"/"+currCloth["act_condition"][1]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
-                    </app_a-widget-pic_text-pic_text>
-                </div>
-                <app_a-widget-btn-rect w-class="92" w-sid="92" on-tap="change({{id}})" style="top: 165px;">
-                    {"class":"default","fontsize":24,"color":"#fdedd7;","text":"兑    换","width":112,"height":41,"marginLeft":0}
-                </app_a-widget-btn-rect>
-                {{else}}
-                    {{let obj = it1.cloth}}
-        
-                    {{if obj.wear_skin - 0 !== id - 0}}
-                    <app_a-widget-btn-rect on-tap="wear" w-class="92" w-sid="92" style="left:195px;top: 165px;">
-                        {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"穿    戴","width":116,"height":45,"marginLeft":0} 
+                {{if id != 1}}
+                    {{if !has && currCloth.act_condition}}
+                    {{let prop = it1.Pi.sample[currCloth.act_condition[0]]}}
+                    {{let url = it1.Pi.pictures[prop.icon]}}
+                    
+                    <div w-class="102" w-sid="102" style="top: 140px;">
+                        <app_a-widget-prop-base w-class="103" w-sid="103" on-tap="showPropInfo({{currCloth.act_condition[0]}})">
+                                {"width":80,"height":80,"prop":{{prop}},"url":{{url}},"count":"none","name":"none","bg":"","quality":1,"bottom":20,"top":25,"right":25} 
+                        </app_a-widget-prop-base>
+                        <app_a-widget-pic_text-pic_text w-class="104" w-sid="104">
+                                {"icon":"equip_txt_bg","width":73,"height":22,"align":"center","marginLeft":3,"text":{{it1.getFragCount(id)+"/"+currCloth["act_condition"][1]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+                        </app_a-widget-pic_text-pic_text>
+                    </div>
+                    <app_a-widget-btn-rect w-class="92" w-sid="92" on-tap="change({{id}})" style="top: 165px;">
+                        {"class":"default","fontsize":24,"color":"#fdedd7;","text":"兑    换","width":112,"height":41,"marginLeft":0}
                     </app_a-widget-btn-rect>
                     {{else}}
-                    <app_a-widget-btn-rect on-tap="down" w-class="92" w-sid="92" style="left:195px;top: 165px;">
-                        {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"卸    下","width":116,"height":45,"marginLeft":0} 
+                        {{let obj = it1.cloth}}
+            
+                        {{if obj.wear_skin - 0 !== id - 0}}
+                        <app_a-widget-btn-rect on-tap="wear" w-class="92" w-sid="92" style="left:195px;top: 165px;">
+                            {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"穿    戴","width":116,"height":45,"marginLeft":0} 
+                        </app_a-widget-btn-rect>
+                        {{else}}
+                        <app_a-widget-btn-rect on-tap="wearTip" w-class="92" w-sid="92" style="left:195px;top: 165px;">
+                            {"class":"disabled","fontsize":24,"color":"#fdedd7;","text":"已穿戴","width":116,"height":45,"marginLeft":0} 
+                        </app_a-widget-btn-rect>
+                        {{end}}
+                    {{end}}
+                {{else}}
+                    {{if it1.cloth.wear_skin}}
+                        <app_a-widget-btn-rect on-tap="down" w-class="92" w-sid="92" style="left:195px;top: 165px;">
+                            {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"穿    戴","width":116,"height":45,"marginLeft":0} 
+                        </app_a-widget-btn-rect>
+                    {{else}}
+                    <app_a-widget-btn-rect on-tap="wearTip" w-class="92" w-sid="92" style="left:195px;top: 165px;">
+                        {"class":"disabled","fontsize":24,"color":"#fdedd7;","text":"已穿戴","width":116,"height":45,"marginLeft":0} 
                     </app_a-widget-btn-rect>
                     {{end}}
                 {{end}}

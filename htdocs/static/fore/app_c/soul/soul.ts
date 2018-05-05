@@ -3,7 +3,7 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { close, open } from "app/mod/root";
 import { Common } from "app/mod/common";
-import { updata, get as getDB, data as db } from "app/mod/db";
+import { updata, get as getDB, data as db, listen } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
@@ -642,7 +642,10 @@ const initData = function () {
     logic.selectAcupoint(1);
     logic.selectSoul(0);
 }
-
+// 监听人物money变化
+listen("player.money", () =>{
+    forelet.paint(getData());
+});
 //读取基本数据
 listenBack("app/prop/soul@read", (data) => {
     updata("soul", data);

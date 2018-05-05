@@ -117,7 +117,7 @@
 						</widget>
 					</div>
 				</div>
-				<div w-class="68" w-sid="68"> 
+				<div w-class="68" w-sid="68" style="word-break: break-all;"> 
 					{{it1.gangData.gang_notice}}
 				</div>
 			</div>

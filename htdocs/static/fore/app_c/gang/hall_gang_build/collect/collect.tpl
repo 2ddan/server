@@ -1,6 +1,7 @@
 
-<div style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:3;pointer-events: {{it1 && it1.process ?'all' : 'none'}}">
-	{{if it1 && it1.process}}
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;z-index:3;pointer-events: {{it1 && it1.forbid ?'all' : 'none'}}">
+	{{if it1}}
+	{{if it1.process}}
 	<div style="position:absolute;left:-13%;top:0;width:126%;z-index:3;bottom:0;overflow:hidden;background-color:rgba(0,0,0,.5);pointer-events:all;" w-sid="3">
 		<div style="position:absolute;width: 492px;height:195px;left:92px;z-index:4">
 			<widget w-class="6" w-tag="app_a-widget-bg_frame-bg" w-sid="6">{"bgName":"bg_frame31"} 
@@ -21,5 +22,8 @@
 			</app_a-widget-box-box>	
 		</div>
 	</div>
+	{{elseif it1.forbid}}
+	<div style="text-align:center;font-size:20px;position: absolute;top:50%;width:100%;color:#fff">采集寻路中……</div>
+	{{end}}
 	{{end}}
 </div>

@@ -8,13 +8,13 @@
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:700px;left:50%;margin-left:-246px;">
             {"bgName":"bg_frame21"}
         </widget>
-        <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-14px;left:0px;">
+        <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-14px;left:0px;right: 0px;margin: auto;">
             {"line":"line_7"} 
         </widget>
         {{let boss = it1.gangBoss.boss_info[it1.index]}}
         {{let monster = it1.monster_base[boss[0]]}}
-        <img src="../images/gang_boss_bg.png" alt="" srcset="" style="position: absolute;width: 488px;height: 450px;top: 2px;left: 30px;"/>
-        <div style="position:absolute;left: 28px;top: 0;width:485px;height:450px;font-family: mnjsh;font-size: 22px;">
+        <img src="../images/gang_boss_bg.png" alt="" srcset="" style="left: 50%;position: absolute;width: 488px;height: 450px;top: 2px;margin-left: -244px;"/>
+        <div style="position:absolute;margin-left: -242px;top: 0;width:485px;height:450px;font-family: mnjsh;font-size: 22px;left: 50%;">
             <app-scene-base-scene>
                 {
                     "name":"uiscene",
@@ -54,37 +54,35 @@
                 {"icon":"light_arraw","width":40}
             </app_a-widget-btn_pic-btn_pic>
 
-        </div>
-
-        <div class="shadow" style="position: absolute;width: 170px;height: 160px;right: 14px;top: 14px;">
-            <app_a-widget-img_stitch-stitch style="position: absolute;left: 0px;width: 100%;height: 100%;">
-                {"type":1,"height":15,"width":15}
-            </app_a-widget-img_stitch-stitch>
-            <div style="width: 170px;height: 40px;line-height: 40px;text-align: center;">
-                <app_a-widget-text-text style="position:absolute;top:8px;left:40px;">
-                    {"text":"进度排名","fontSize":22,"textCfg":"livenessList","space":-2}
-                </app_a-widget-text-text>
-            </div>
-            {{let rank_info = it1.gang_rank.rank_info[1]}}
-            {{let arr = [1, 2, 3]}}
-            {{for i, v of arr}}
-            {{let rank = rank_info[i]}}
-            {{if rank}}
-            <div style="width: 170px;height: 30px;line-height: 30px;text-align: center;position: relative;color: #fde7ca;">
-                <div style="width: 170px;height: 30px;line-height: 30px;text-align: center;display: flex;justify-content: space-between;text-align: center;">
-                    <div style="width: 40px;">{{v}}</div>
-                    <div style="width: 88px;">{{rank.gang_name}}</div>
-                    <div style="width: 40px;">{{rank.record[0]}}关</div>
+            <div class="shadow" style="position: absolute;width: 170px;height: 160px;right: 14px;top: 14px;">
+                <app_a-widget-img_stitch-stitch style="position: absolute;left: 0px;width: 100%;height: 100%;">
+                    {"type":1,"height":15,"width":15}
+                </app_a-widget-img_stitch-stitch>
+                <div style="width: 170px;height: 40px;line-height: 40px;text-align: center;">
+                    <app_a-widget-text-text style="position:absolute;top:8px;left:40px;">
+                        {"text":"进度排名","fontSize":22,"textCfg":"livenessList","space":-2}
+                    </app_a-widget-text-text>
                 </div>
-                <widget w-tag="app_a-widget-line-line" style="position: absolute;width: 100%;bottom: 0px;left: 0px;height: 2px;">
-                    {"line":"line_1"} 
-                </widget>
+                {{let rank_info = it1.gang_rank.rank_info[1]}}
+                {{let arr = [1, 2, 3]}}
+                {{for i, v of arr}}
+                {{let rank = rank_info[i]}}
+                {{if rank}}
+                <div style="width: 170px;height: 30px;line-height: 30px;text-align: center;position: relative;color: #fde7ca;">
+                    <div style="width: 170px;height: 30px;line-height: 30px;text-align: center;display: flex;justify-content: space-between;text-align: center;">
+                        <div style="width: 40px;">{{v}}</div>
+                        <div style="width: 88px;">{{rank.gang_name}}</div>
+                        <div style="width: 40px;">{{rank.record[0]}}关</div>
+                    </div>
+                    <widget w-tag="app_a-widget-line-line" style="position: absolute;width: 100%;bottom: 0px;left: 0px;height: 2px;">
+                        {"line":"line_1"} 
+                    </widget>
+                </div>
+                {{end}}
+                {{end}}
+                <div on-tap="lookRank" style="position: absolute;width: 170px;height: 30px;line-height: 30px;text-align: center;color: #51e650;bottom: 0px;">查看排名</div>
             </div>
-            {{end}}
-            {{end}}
-            <div on-tap="lookRank" style="position: absolute;width: 170px;height: 30px;line-height: 30px;text-align: center;color: #51e650;bottom: 0px;">查看排名</div>
         </div>
-
 
         <div style="width:492px;height:220px;position: absolute;top: 472px;left: 50%;margin-left: -246px;">
             <app_a-widget-title-single style="position: absolute;top: -10px;left: 0px;right: 0px;margin: auto;width: 84px;">

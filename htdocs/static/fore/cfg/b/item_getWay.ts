@@ -63,7 +63,12 @@ export let item_getWay = {
         "activity": null
     },
     "112": {
-        "fun": "gotoGestExchange",
+        "fun": "gotoGestExchange,4",
+        "name": "心法兑换",
+        "activity": null
+    },
+    "113": {
+        "fun": "gotoGestExchange,5",
         "name": "心法兑换",
         "activity": null
     },

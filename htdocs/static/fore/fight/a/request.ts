@@ -19,6 +19,7 @@ export class Request{
     static insert(fighter : Fighter, scene: Scene):boolean{
         if(scene.level < 2){
             scene.fighters.set(fighter.mapId,fighter);
+            console.log("insert",fighter.mapId,scene.fighters.keys());
             return;
         }
 
@@ -95,7 +96,7 @@ export class Request{
     }
     /**
      * @description 使用技能
-     * @param {Json}param {type:"useSkill",mapId:fighter.mapId,skill_id:技能id,curtarget:mapId,pos:[]}
+     * @param {Json}param {type:"useSkill",mapId:fighter.mapId,skill_id:技能id,curtarget:mapId,pos:[],net:true（是否前台通讯）}
      * @return {string} !"" 则不成功，返回值就是错误信息，否则成功
      * @return 错误信息，""为成功
      **/  
@@ -104,10 +105,11 @@ export class Request{
         let f = scene.fighters.get(param.mapId),
             curTarget = scene.fighters.get(param.curTarget),
             s = Util.getFighterSkill(f,param.skill_id),
-            r = Util.checkFighterActive(f,scene);
+            r = Util.checkFighterActive(f,scene,!param.net);
         
         if(s.hand == 2){
             f.godSkill = s;
+            scene.addEvents([EType.useSkill,param.mapId,param.skill_id,param.pos]);
             FMgr.netRequest(EType.useSkill,param);
             return "";
         }
@@ -124,16 +126,17 @@ export class Request{
         f.spreadSkill = s;//释放技能
         f.spreadCount = s.guideCount;//引导次数
         f.spreadNextTime = scene.now;
+        //神兵能量挂钩
         f.energy -= s.energyCost;
         f.publicCDNextTime = scene.now + scene.publicCD;//下次公共cd时间
         //临时代码
         f.actionTime = scene.now + Util.actionTime(f,s);
-
         scene.addEvents([EType.useSkill,param.mapId,param.skill_id,param.curTarget,param.pos]);
         //通知后台
+        param.net = true;
         FMgr.netRequest(EType.useSkill,param);
         // if(f.sid == 10000)
-        //     console.log("useSkill: ",s.id);
+        //     console.log("useSkill: ",s.id,param.curTarget,!!curTarget);
         return "";
     }
     /**
@@ -165,6 +168,7 @@ export class Request{
      */
     static remove(param: any, scene: Scene):string{
         scene.fighters.delete(param.mapId);
+        console.log("remove",param.mapId,scene.fighters.keys());
         return "";
     }
 }

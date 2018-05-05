@@ -123,7 +123,7 @@ const single = (f: Fighter,s: Scene): void => {
  *  true :技能选择；在目标存在的情况下，继续按照原定目标点移动，不存在则重新选择            
  */
 const ai = (f: Fighter, s: Scene):void => {
-    let r = Util.checkFighterActive(f,s);
+    let r = Util.checkFighterActive(f,s,true);
     if(r)
         return;
     if(f.ai)
@@ -200,9 +200,9 @@ const caclPath = (f: Fighter, t: Fighter, s: Scene, d?: number): boolean => {
     lastest = f.path[f.path.length-1];
     if(d>0 && lastest.x == t.x && lastest.z == t.y)
         Util.getFinalPos(f,d);
-    if(f.sid == 17002){
-        console.log("path :: ",f.path.length,dis.d);
-    }
+    // if(f.sid == 17002){
+    //     console.log("path :: ",f.path.length,dis.d);
+    // }
     linkMovePath(f,s);
     return false;
 }
@@ -232,9 +232,9 @@ const handMove = (f: Fighter,s :Scene) => {
 const linkMovePath = (f: Fighter,s: Scene): void => {
     if(!f.moveto && f.path){
         f.moveto = f.path.shift();
-        if(f.sid == 17002){
-            console.log("moveto :: ",f.moveto);
-        }
+        // if(f.sid == 17002){
+        //     console.log("moveto :: ",f.moveto);
+        // }
         if(f.path.length == 0){
             f.path = undefined;
             f.moveto.status = 1;
@@ -255,9 +255,9 @@ const move = (f: Fighter,s: Scene):boolean => {
                 f.handMove.time = s.now + 2000;
             f.moving = false;
         }
-        if(f.sid == 13000){
-            console.log("move end");
-        }
+        // if(f.sid == 13000){
+        //     console.log("move end");
+        // }
         s.addEvents([EType.move,f.mapId,f.moveto,0]);
         f.moveto = undefined;
     };
@@ -276,9 +276,9 @@ const move = (f: Fighter,s: Scene):boolean => {
     f.y += (y - f.y) * dist;
     s.addEvents([EType.move,f.mapId,f.moveto,1]);
     f.moving = true;
-    if(f.sid == 13000){
-        console.log("moving");
-    }
+    // if(f.sid == 13000){
+    //     console.log("moving");
+    // }
     return false;
 }
 /**
@@ -308,7 +308,7 @@ const releaseSkill = (f,type, scene: Scene) => {
     if (f[nextTime] > scene.now)
             return;
     f[s].delaySpreadSkillTime =  scene.now;
-    spreadSkill(f, Util.skillTarget(f,f[s], scene), f[s], scene);
+    spreadSkill(f, tl, f[s], scene);
     //连招技能
     if(f[s].backSkill){
         var bs = f[s].backSkill.slice(0) || [],
@@ -352,9 +352,9 @@ const spreadSkill = function (f: Fighter, t: Array<Fighter>, s: Skill, scene: Sc
     //继承目标
     t = Util.inheritTargets(f,t,s,scene);
     ts = Util.getMapId(t,scene);
-    // if(f.sid == 10000){
-    //     console.log(t);
-    // }
+    if(f.sid == 10000){
+        console.log(t);
+    }
     scene.addEvents([EType.spreadSkill,f.mapId,ts,s.id]);
     // 根据技能的作用范围和目标类型，修正目标数组
     //圆形范围

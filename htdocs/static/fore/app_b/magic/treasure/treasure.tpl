@@ -138,8 +138,8 @@
 		{{let need_prop = info.need_exp / info.per_exp}}
 	
 		{{let color = (propInfo ? propInfo[1].count : 0) < need_prop-it1.break_info[1] ? "#ff3232" : "#e2bf93"}}      
-		<widget w-class="40" w-tag="app_a-widget-coin-coin" w-sid="40" style="color:{{color}};z-index:2;">
-			{"icon":"weapon_coin","width":25,"height":21,"left":3,"text":[{{propInfo ? propInfo[1].count : 0}},{{need_prop}}],"color":"#e2bf93"} 
+		<widget w-class="40" w-tag="app_a-widget-coin-coin" w-sid="40" style="color:#e2bf93;z-index:2;margin-left:-46px">
+			{"icon":"weapon_coin","width":25,"height":21,"left":3,"text":[{{propInfo ? propInfo[1].count : 0}}],"color":"#e2bf93"} 
 		</widget>
 		{{end}}
 	{{else}}

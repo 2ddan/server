@@ -24,7 +24,7 @@
             {{let n = ''}}
             {{for i,v in list}}
             {{:n = b ? v : it1.Pi.sample[v.sid]}}
-            {{if n && n.quality === q}}
+            {{if n && n.quality == q}}
             <div style="height: 127px;position: relative;width:447px;margin-bottom:10px;left:20px">
                 <widget w-tag="app_a-widget-bg_frame-bg" style="width:447px;height:126px">
                     {"bgName":"bg_frame19"}

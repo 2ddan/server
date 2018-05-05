@@ -173,5 +173,8 @@ export default {
     "eff_ui_longhun_shengji":["eff_ui_longhun_shengji"],
     "eff_ui_longhun_zi":["eff_ui_longhun_zi"],
     "eff_ui_longhun_lan":["eff_ui_longhun_lan"],
-    "eff_ui_chongwu_jinjie":["eff_ui_chongwu_jinjie"]
+    "eff_ui_chongwu_jinjie":["eff_ui_chongwu_jinjie"],
+    "model_cjw01":["model_cjw01"],
+    "model_cjw02":["model_cjw02"],
+    "model_cjw03":["model_cjw03"]
 }

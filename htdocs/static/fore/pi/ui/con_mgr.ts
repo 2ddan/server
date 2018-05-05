@@ -74,7 +74,7 @@ export const open = (callback: Function, errorCallback: Function, timeout?: numb
 		} else if (msg.msg) {
 			con.activeTime = now();
 			if (msg.msg.type === "echo_time") {
-				localTime = con.getActiveTime();
+				localTime = now();
 				serverTime = msg.msg.param.stime;
 				pingpong = localTime - msg.msg.param.ctime;
 				// alert(`echo_time ${msg.msg.param.ctime}`);

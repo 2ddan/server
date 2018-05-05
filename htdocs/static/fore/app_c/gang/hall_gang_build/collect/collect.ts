@@ -14,14 +14,22 @@ import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { globalSend, Pi } from "app/mod/pi";
 import { guild_collect } from "cfg/c/guild_collect";
+import { wild_map } from "fight/b/common/wild_map_cfg";
+import { wild_mission } from "fight/b/common/wild_mission_cfg";
+import { getFighter, Move} from "app/scene/move";
+import { getGlobal } from "pi/widget/frame_mgr";
 
 
 /**
  * 创建 forelet 并导出
  */
 export let forelet = new Forelet();
-export let process_num = 0;//进度条数字
+let frame_mgr = getGlobal();
 
+export let process_num = 0;//进度条数字
+let target = [];//采集物坐标
+let map_id = null;//角色map_id
+let forbid = false;//是否禁止操作
 export const globalReceive: any = {
     leavewild: () => {
         if (process_num) {
@@ -33,6 +41,7 @@ export const globalReceive: any = {
 let getData = function () {
     let data: any = {};
     data.process = process_num;
+    data.forbid = forbid;
     return data;
 }
 //随机一个位置
@@ -52,11 +61,22 @@ let createCollect = function () {
     if (getPage() !== "app_b-wild-wild") {
         return;
     }
+    let guard = getDB("wild.wild_history");
+    if(!guard){return;}
+    let collect_info = getDB("gang.gangExpandData.collect_info");
+
+    //采集技能等级
+    let level = collect_info && collect_info[0] || 1;
+    let quality = guild_collect[level].collect_lv[Math.floor(Math.random()*guild_collect[level].collect_lv.length)];
+    //采集物坐标组
+    let arr = wild_map[wild_mission[guard].map_id].collect;
+    let index = Math.floor(Math.random()*arr.length);
+    target = arr[index];
     node_list["collect"] = {
-        "effect": "model_dl_baoxiang",
-        "x": fighterPosition[0],
-        "y": fighterPosition[1],
-        "z": fighterPosition[2],
+        "effect": "model_cjw0"+quality,
+        "x": target[0],
+        "y": target[1],
+        "z": 0,
         "scale": 1,
         "isOnce": true
     };
@@ -115,6 +135,7 @@ let collect = function () {
         }
         clearCollect();
         process_num = 0;
+        forbid = false;
         forelet.paint(getData());
         let timer = setTimeout(() => {
             change_status(0);
@@ -135,18 +156,43 @@ net_message("gang_collect", (msg) => {
         collect();
         return;
     }
+    createCollect();
     let role_id = getDB("player.role_id");
-    for (let i in mapList) {
-        if (mapList[i].sid == role_id) {
-            fighterPosition = [mapList[i].x, mapList[i].y, mapList[i].z];
+    for(let i in mapList){
+        if(mapList[i].sid == role_id){
+            map_id = mapList[i].mapId; 
             break;
         }
     }
-    // fighterPosition[0] += randomPosition(5);
-    // fighterPosition[1] += randomPosition(5);
-    createCollect();
-    change_status(1, () => {
-        //采集
-        collectBar(collect);
+
+    let result = {
+        data:[target[0],0,target[1]],
+        id:-1001,
+        type:"terrain",
+    };
+    //跑到采集点
+    change_status(1,()=>{
+        forbid = true;
+        forelet.paint(getData());
+        olFightOrder({ "type": "wild", "result": JSON.stringify(result) });
     });
+    frame_mgr.setPermanent(moveEnd);
+
 });
+//判断是否到达采集物
+let moveEnd = ()=>{
+    if(node_list["collect"] && !Move.isMove(map_id) && !process_num){
+        let f = getFighter(map_id);
+        if(Math.abs(f.x - target[0]) <= 0.5 && Math.abs(f.y - target[1]) <= 0.5 ){
+            //清除定时器
+            frame_mgr.clearPermanent(moveEnd);
+            //重置长时间不动会自动打怪的间隔时间
+            globalSend("fightRandomBoss");
+            //采集
+            change_status(1, () => {
+                collectBar(collect);
+            });
+            
+        }
+    }
+}

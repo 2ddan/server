@@ -9,6 +9,7 @@ import { FMgr, Scene } from "fight/a/fight";
 import { EType, blendOne } from "fight/a/analyze";
 import { Request } from "fight/a/request";
 import { Util } from "fight/a/util";
+import { Fighter } from "fight/a/class";
 //scene
 import { mgr_data, mgr } from "app/scene/scene";
 import { UiFunTable } from "app/scene/ui_fun";
@@ -18,13 +19,16 @@ import { net_message } from "app_a/connect/main";
 
 import { handScene, updateSkill } from "./handscene";
 import { Net } from "./net";
-import { Fighter } from "../../fight/a/class";
 
 // ========================================= 导出
 /**
  * @description 同屏管理
  */
 export class SMgr{
+    /**
+     * @description 是否停止向渲染层抛事件
+     */
+    static pause:boolean
     /**
      * @description 开始一场同屏战斗
      * @param type 同mgr_data.name
@@ -48,6 +52,7 @@ export class SMgr{
         handlerList.delete(fightScene.type);
         fightScene = null;
         wait.clear();
+        this.pause = false;
     }
     /**
      * @description 移动
@@ -84,8 +89,15 @@ export class SMgr{
      * @param mapId
      */
     static useSkill(skill_id){
-        const f = fightScene.fighters.get(mSelf);
-        Request.useSkill({type:EType.useSkill,mapId:mSelf,skill_id:skill_id,pos:[f.x,f.y]},fightScene);
+        let f;
+        FMgr.scenes.forEach(v => {
+            if(v.type == "fight"){
+                f = v.fighters.get(1);
+            }else{
+                f = v.fighters.get(mSelf);
+            }
+            Request.useSkill({type:EType.useSkill,mapId:f.mapId,skill_id:skill_id,pos:[f.x,f.y]},v);
+        });
     }
 
     /**
@@ -93,6 +105,18 @@ export class SMgr{
      */
     static getSelfMapid(){
         return mSelf;
+    }
+    /**
+     * @description 设置是否暂停渲染
+     */
+    static setPause(b:boolean):void{
+        this.pause = b;
+    }
+    /**
+     * @description 获取同屏场景
+     */
+    static getScene(): Scene{
+        return fightScene;
     }
 }
 
@@ -119,7 +143,6 @@ const handlerList = new Map<string,Function>();
  * @param list 
  */
 const dealFightEvents = (list) => {
-    Move.setRender(true);
     if(Move.pause)
         Move.pause = false;
     if (list.event.length > 0) {
@@ -133,7 +156,7 @@ const dealFightEvents = (list) => {
                 continue;        
             // Move.filter(type,e);
             Handlers[type] && Handlers[type](e);
-            handScene[e.type] && handScene[e.type](e, list.now);
+            !SMgr.pause && handScene[e.type] && handScene[e.type](e, list.now);
         }
     }
     UiFunTable.runCuurUi(list);
@@ -171,7 +194,7 @@ const runWait = () => {
     wait.clear();
 }
 /**
- * @description 同屏需要单独处理的事件
+ * @description 同屏需要同步处理的后台事件
  */
 class Handlers{
     /**
@@ -179,15 +202,20 @@ class Handlers{
      * @param e 
      */
     static insert(e){
-        if(e.fighter.sid == db.player.role_id){
-            mSelf = e.fighter.mapId;
-            e.fighter.ai = true;
+        const f = new Fighter();
+        for(let k in e.fighter){
+            f[k] = e.fighter[k];
+        }
+        if(f.sid == db.player.role_id){
+            mSelf = f.mapId;
+            f.ai = true;
             //自己
             setTimeout(runWait,0);
         }else{
-            e.fighter.ai = false;
+            f.ai = false;
         }
-        Request.insert(e.fighter,fightScene);
+        e.fighter = f;
+        Request.insert(f,fightScene);
     }
     /**
      * @description 移除fighter
@@ -202,7 +230,6 @@ class Handlers{
      * @param e 
      */
     static moveto(e){
-        
         let f = fightScene.fighters.get(e.fighter);
         if(f && e.moveto)
             f.moveto = e.moveto;
@@ -213,10 +240,13 @@ class Handlers{
      */
     static damage(e){
         let f = fightScene.fighters.get(e.target);
-        if(f)
+        if(f){
             f.hp += (e.r.hp+e.r.steal);
-        // if(e.moveto)
-        //     f.moveto = e.moveto;
+            //如果怪物死亡，则让它停止移动，否则会原地踏步
+            if(f.hp <= 0){
+                f.moveto = {x:f.x,y:f.z,z:f.y,status:1}; 
+            }
+        }  
     }
     /**
      * @description 使用技能

@@ -326,21 +326,44 @@ export const startFight = function () {
         .then((data: any) => {
             let ms = Util.serverTime();
             let prop: any = Common.shallowClone(tower_monster[tower_data.floor_point + 1]);
-            let msg: any = Common.changeArrToJson(data.ok);
+            let _data: any = Common.changeArrToJson(data.ok);
+
+            let msg: any = {};
+            msg.enemy_fight = [_data.enemy_fight[0]];
+            msg.own_fight = _data.own_fight;
+            msg.show_award = _data.show_award;
+
             prop.scene = map_cfg["tower"];
             msg.type = "tower";
             msg.cfg = prop;
             msg.floor_point = tower_data.floor_point + 1;
             msg.time = ms + tower_base.fight_time_limit * 1000;
             msg.limitTime = tower_base.fight_time_limit;
-            return msg;
+            return { msg, _data, prop };
         })
-        .then((msg) => {
-            fight(msg, (fightData) => {
+        .then((obj) => {
+            let count = 1;
+            fight(obj.msg, (fightData) => {
                 if (fightData.r === 1) {
-                    winFight(fightData);
+                    if (obj._data.enemy_fight[count]) {
+                        let m: any = {};
+                        //第几波怪
+                        m.enemy_fight = [obj._data.enemy_fight[count]];
+                        //怪物地点
+                        m.cfg = { "enemy_pos": [obj.prop.enemy_pos[count]] };
+                        // m.own_fight = msg.own_fight;
+                        count++;
+                        fight(m);
+                        return false;
+                    } else {
+                        count = 1;
+                        //判断还有没怪物
+                        return winFight(fightData);
+                    }
                 } else {
+                    //战斗失败
                     Common_m.openAccount(fightData, "tower");
+                    return true;
                 }
             }, () => {
                 //手动退出回调
@@ -406,14 +429,15 @@ const winFight = function (result) {
                         let map = forelet.getWidget("app_c-tower-next_tips");
                         map && close(map);
                         map = undefined;
-                        closeFight("app_b-fight-fight");
-                        startFight();
-                        forelet.paint(getData());
+                        //closeFight("app_b-fight-fight");
+                        return startFight();
+                        //forelet.paint(getData());
                     }
                 }, 1000)
             }
         }).catch((data) => {
             console.log(data);
+            return true;
         })
 };
 

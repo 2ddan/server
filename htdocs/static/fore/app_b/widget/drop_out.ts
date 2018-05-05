@@ -423,7 +423,7 @@ export class ShowFunTable {
             target = arg.mapList[arg.f.curTarget];
         }
         if(target && fighter){
-            if (target.show_type == 1 && (target.hp <= 0 || fighter.hp <= 0 || (Fight.count == 0 && mgr_data.name != "public_boss")) ) {
+            if (target.show_type == 1 && (target.hp <= 0 || fighter.hp <= 0)) {
                 mgr.remove(headMesh);
                 delete cuurShow[index];
                 return;

@@ -75,7 +75,7 @@ export class Fightm extends Widget {
         //开始渲染
         mgr.pause(false);
         //重置战斗场景
-        initFightScene(fightData);
+        // initFightScene(fightData);
         fightScene.limitTime = (fightData.limitTime ? (fightData.limitTime * 1000) : fightData.limitTime) || Infinity;
         //插入己方战士 
         initOwn(fightData);
@@ -354,11 +354,11 @@ export const findRes = (msg) => {
 /**
  * @description 开始战斗
  * @param {Json}msg 战斗数据{own_fight:[],enemy_fight:[],type:"arena(功能名字)",scene?:"场景文件名",cfg:{}(战斗配置，包括怪物及自己刷新初始位置)}
- * @param {Function}callback 战斗正常结束回调
- * @param {Function}escapeback 战斗中途退出回调
+ * @param callback 战斗正常结束回调
+ * @param escapeback 战斗中途退出回调
  * @example
  */
-export const fight = (msg, callback, escapeback?) => {
+export const fight = (msg: any, callback?: Function, escapeback?: Function) => {
     fightCount += 1;
     escapeBack = escapeback;
     exitWild(() => {
@@ -445,21 +445,35 @@ const _enemy = (msg) => {
     msg.batch = 0;
 };
 
-const _fight = (msg, callback) => {
+const _fight = (msg, callback?) => {
+    // overBack = overBack || over;
     //closeAccount(0);
     mgr_data.name = "fight";
+    //设置怪物波数
+    _enemy(msg);
     if (!fightScene) {
         initFightScene(msg);
     } else {
         // fightScene.destroyScene();
         // UiFunTable.clearTO();
-        initValue();
+        // initValue();
         // fightScene.now = 0;
         // fightScene.campTarget = undefined;
-        fightScene.limitTime = msg.limitTime * 1000;
+        // fightScene.limitTime = msg.limitTime * 1000;
+        if (msg.own_fight) {
+            // //表示新的一场战斗开始
+            fightScene.fightTime = 0;
+            fightScene.limitTime = msg.limitTime * 1000;
+            //重新设置战斗结束回调
+            fightScene.overCallback = overBack;
+            getData.scene = { "autoFight": fightScene.level, "fightData": msg };
+            forelet.paint(getData);
+            initOwn(msg);
+        }
+        fighting = true;
+        fightStart(msg);
+        return;
     }
-    //设置怪物波数
-    _enemy(msg);
     fightData = msg;
     getData.scene = { "autoFight": fightScene.level, "fightData": fightData };
     forelet.paint(getData);
@@ -476,15 +490,11 @@ const _fight = (msg, callback) => {
     if (src) {
         Music.playBgMusci(src);
     }
-
-
     //设置战斗结束回调
     overCallback = (r, scene) => {
         // fightScene.initmove();
         fighting = false;
-        callback(r, scene);
-        //野外boss战斗结束直接关闭战斗场景
-        if (fightData.type == "Wildboss") goback("app_b-fight-account");
+        return callback(r, scene);
     };
     //},"sceneload");
     if (fightCount > 1) {
@@ -559,28 +569,14 @@ const fightListener = (r) => {
 };
 //战斗结束
 const overBack = (r, scene) => {
-    if (fighting && overCallback) {
-        //延迟执行战斗结束回调
-        setTimeout(() => {
-            overCallback({
-                r: r,
-                time: fightScene.fightTime,
-                fighters: Fight_common.getLeftHp(fightScene)
-            }, scene);
-            //Music.stopBgSound("fight_only");//停止战斗音乐
-            overCallback = null;
-        }, 1500);
-    }
+    return fighting && overCallback && overCallback({
+        r: r,
+        time: fightScene.fightTime,
+        fighters: Fight_common.getLeftHp(fightScene)
+    }, scene);
 };
 //战斗每波结束时附加判断，没到最后一波怪，不会真正结束
 const over = (r): boolean => {
-    if (r == 1 && fightData.batch < fightData.enemy.length - 1) {
-        fightData.batch += 1;
-        fightData.enemy_fight = fightData.enemy[fightData.batch];
-        //Fight_common.insertEnemy(fightData, fightScene);
-        fightStart(fightData);
-        return false;
-    }
     return true;
 };
 
@@ -595,92 +591,17 @@ const initFightScene = (msg) => {
     initAnimFinishCB((id) => {
         return UiFunTable.aniBack(id);
     })
-    if (fightScene) {
-        fightScene.startTime = Date.now();
-        return;
-    };
     
     fightScene = FMgr.create("fight");
     //Fight.createScene(1024, 1024, 1, "fight", mgr.yszzFight.scene, null, mgr.getSceneBuffer(msg.cfg.scene, ".nav"));
     mgr_data.sceneTab["fight"] = fightScene;
     //战斗事件监听
-    fightScene.listener = (r) => {
-        if (mgr_data.name != "fight") return;
-
-        //return;
-        if (r.events.length > 0) {
-            for (let i = 0, leng = r.events.length; i < leng; i++) {
-                let e = r.events[i];
-                try {
-                    if(e.type == "damage" && e.target.hp <= 0){
-                        let award = e.target.award,
-                            fighter = e.fighter,
-                            target = e.target,
-                            award_list = [];
-                        let fighter_pos = [fighter.x ,fighter.y ,fighter.z];
-                        let target_pos = [target.x ,target.y ,target.z];
-                        if(award){
-                            for(let i = 0;i < award.length;i++){
-                                if(award[i][0] != "money" && award[i][0] != "exp"){
-                                    award_list.push(award[i]);
-                                }
-                            }
-                            if(award_list.length != 0){
-                                let timer = setTimeout(()=>{
-                                    drop_outFun(award_list,target_pos,fighter_pos);
-                                    clearTimeout(timer);                                    
-                                },1500)
-                            }
-                        }
-                    }
-                    //战斗事件处理
-                    handScene[e.type] && handScene[e.type](e, r.now);
-                } catch (ex) {
-                    if (console) {
-                        console.log(e, ex);
-                    }
-                }
-            }
-        }
-        //Move.loop();
-        //if(ft>10)app.mod.scene.log("事件处理时间："+ft);
-        //return;
-        //执行特效
-        setTimeout(()=>{
-            UiFunTable.runCuurUi(r);
-        },0)
-        //if(ft>5)app.mod.scene.log("特效计算时间："+ft);
-        return true;
-    };
+    fightScene.listener = fightListener;
 
     fightScene.setPause(true);
 
     //战斗结束回调
-    fightScene.overCallback = (r, scene) => {
-        if (fighting && overCallback) {
-            //延迟执行战斗结束回调
-            setTimeout(() => {
-                overCallback({
-                    r: r,
-                    time: fightScene.fightTime,
-                    fighters: Fight_common.getLeftHp(fightScene)
-                }, scene);
-                //Music.stopBgSound("fight_only");//停止战斗音乐
-                overCallback = null;
-            }, 1500);
-        }
-    };
-    //战斗每波结束时附加判断，没到最后一波怪，不会真正结束
-    fightScene.over = (r): boolean => {
-        if (r == 1 && fightData.batch < fightData.enemy.length - 1) {
-            fightData.batch += 1;
-            fightData.enemy_fight = fightData.enemy[fightData.batch];
-            //Fight_common.insertEnemy(fightData, fightScene);
-            fightStart(fightData);
-            return false;
-        }
-        return true;
-    };
+    fightScene.overCallback = overBack;
     //战斗开始
     fightScene.start();
 }
@@ -706,7 +627,10 @@ const fightStart = (msg) => {
         Request.insert(f,fightScene)
     }
 }
-
+/**
+ * @description 插入己方人员
+ * @param msg 
+ */
 const initOwn = (msg) => {
     if (!msg) return;
     //插入己方战斗人员

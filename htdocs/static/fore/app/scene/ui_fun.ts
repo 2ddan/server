@@ -612,6 +612,7 @@ export class UiFunTable {
 
         //检查目标是否死亡
         if (target.show_hp <= 0) {
+            target.die_time = now;
             if (target.state !== "die") {
                 
                 //target.ani = { value: "die1", sign: Date.now() };
@@ -1142,7 +1143,7 @@ const sxzy_Z = function (a, b, type) {
 const lineVP = (start,end,r) => {
     let fl_d_x = end.x-start.x,
     fl_d_y = end.y-start.y,
-    fl = Math.sqrt(fl_d_x * fl_d_x + fl_d_y * fl_d_y),
+    fl = Math.sqrt(fl_d_x * fl_d_x + fl_d_y * fl_d_y)||1,
     //新原点坐标
     dx = fl_d_x*(fl+r)/fl+start.x,
     dy = fl_d_y*(fl+r)/fl+start.y;

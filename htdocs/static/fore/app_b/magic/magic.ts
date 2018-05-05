@@ -12,6 +12,7 @@ import { findNodeByAttr } from "pi/widget/virtual_node";
 import { net_request, net_send, net_message } from "app_a/connect/main";
 import { getAttrData } from "app_b/see_attr/attr";
 import { mapList, initMapList, handScene, updateSelfModule, change_status, setChangeData, olFightOrder } from "app_b/fight_ol/handscene";
+import { SMgr } from "app_b/fight_ol/same";
 import { TaskProgress } from "app_b/mod/task_progress";
 import { openUiEffect, destoryUiEffect } from "app/scene/anim/scene"
 import { Util } from "app/mod/util";
@@ -264,13 +265,13 @@ export class RoleWidget extends Widget {
     autoRelease() {
         isAutoRelease = !isAutoRelease ? 1 : 0;
         forelet.paint(getMagicHtmlData());
-        let md = localDB.magic;
+        
         //自动释放不成功，重新调用定时器
         if (autoTimer) {
             clearTimeout(autoTimer);
         }
-        if (isAutoRelease && md.skill_energy >= getCfg("TreasureBase")[md.treasure[0]].max_energy) {
-            rskill(md);
+        if (isAutoRelease) {
+            rskill();
         }
     }
     /**
@@ -655,30 +656,19 @@ const getMagicHtmlData = () => {
     data.img_length = img_length;
     return data;
 }
-const rskill = (md) => {
-    globalSend("releaseMagic", {
-        skill_id: getCfg("TreasurePhase")[md.treasure[0]][md.treasure[1]].skill_id,
-        callback: (data) => {
-            console.log(data);
-            let r: any = Common.changeArrToJson(data.ok);
-            // if(eff_id){
-            //     destoryUiEffect(eff_id);
-            // }
-            // eff_id = 0;
-            if (r.result == "undefined")
-                expendEnergy(0);
-            else {
-                if (isAutoRelease)
-                    autoTimer = setTimeout(() => {
-                        rskill(md);
-                    }, reAutoTime * 1000);
-                globalSend("screenTipFun", {
-                    words: r.result
-                });
-            }
-        }
+const rskill = () => {
+    let md = localDB.magic;
+    if(md.skill_energy < getCfg("TreasureBase")[md.treasure[0]].max_energy){
+        globalSend("screenTipFun", { words: "能量不足" });
     }
-    );
+    showSkillName();
+    SMgr.useSkill(getCfg("TreasurePhase")[md.treasure[0]][md.treasure[1]].skill_id);
+    expendEnergy(0);
+    if (isAutoRelease)
+        autoTimer = setTimeout(() => {
+            rskill();
+        }, reAutoTime * 1000);
+    
 }
 
 /**
@@ -1211,9 +1201,8 @@ const updateEnergy = (() => {
                 forelet.paint(getMagicHtmlData());
             } else if (isAutoRelease && localDB.magic.skill_energy >= _max) {
                 expendEnergy(_max);
-                let md = localDB.magic;
                 //showSkillName();
-                rskill(md);
+                rskill();
 
                 open("app_b-magic-magic_release_tips");
                 let set = setInterval(()=>{
@@ -1280,12 +1269,8 @@ const release = () => {
     //     // node_fun();
     // } else
     //     globalSend("screenTipFun", { words: "能量不足" });
-    if (md.skill_energy >= TreasureBase[md.treasure[0]].max_energy) {
-        showSkillName();
-        rskill(md);
-    } else {
-        globalSend("screenTipFun", { words: "能量不足" });
-    }
+        
+        rskill();
 };
 
 //展示神兵技能名字

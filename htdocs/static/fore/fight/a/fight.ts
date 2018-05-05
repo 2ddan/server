@@ -99,16 +99,9 @@ export class Scene {
     /**
      * @description 战斗结束回调
      * @param r 战斗结果 0表示继续，1表示左边胜利，2表示右边胜利 , 3表示超时
+     * @return true 战斗真正结束; false 战斗不结束，继续朝战斗里面放怪
      */
-    public overCallback(r:number,s: Scene):void{}
-    /**
-     * @description 战斗有结果时回调，但不一定战斗结束，可能只是一波战斗结束，新的怪还没进入场景
-     * @param r 战斗结果 0表示继续，1表示左边胜利，2表示右边胜利 , 3表示超时
-     * @return {boolean} true为最后一波，false战斗还没真正结束
-     */
-    public over(r:number):boolean{
-        return true
-    }
+    public overCallback(r:number,s: Scene):boolean{return true}
     /**
      * @description 开始战斗
      **/  
@@ -217,6 +210,17 @@ export class FMgr{
         return s;
     }
     /**
+     * @description 创建场景
+     * @param type
+     */
+    static getByType(type: any){
+        const arr = [];
+        this.scenes.forEach(v => {
+            arr.push(v);
+        });
+        return arr;
+    }
+    /**
      * @description 销毁场景
      */
     static destroy(s:Scene){
@@ -231,9 +235,9 @@ export class FMgr{
         this.scenes.forEach((v: Scene,k: any)=>{
             let evs = v.loop(),
                 r = Policy.check(v);
-            if(r>0 && v.over && v.over(r)){
-                v.overCallback && v.overCallback(r,v);
-                v.over = null;
+            if(v.level > 1 && r>0 && v.overCallback && v.overCallback(r,v)){
+                // v.setPause(true);
+                v.overCallback = null;
             }
         })
     }

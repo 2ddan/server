@@ -29,6 +29,7 @@ Net[EType.moveto] = (param,callback?) => {
 const olFightOrder = (param,callback?)=>{
 	let msg = {type:"app/same_fight@accept_fight_order",param:{result:JSON.stringify(param)}};
 	net_request(msg,(data)=>{
+		// console.log(msg,data);
 		callback && callback(data);
 	});
 };

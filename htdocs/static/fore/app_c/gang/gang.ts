@@ -703,7 +703,7 @@ const readExpand = function (callback?) {
 /**
  * 读取门派boss数据
  */
-const readBoss = function (callback?) {
+export const readBoss = function (callback?) {
     let arg = {
         "param": {},
         "type": "app/gang/expand@read_boss"

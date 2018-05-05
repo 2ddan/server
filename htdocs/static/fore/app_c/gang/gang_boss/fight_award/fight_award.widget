@@ -1,0 +1,6 @@
+{
+    "tpl": "./fight_award.tpl",
+    "cfg": "./fight_award.cfg",
+    "js": "../gang_boss.ts",
+    "forelet": "../gang_boss.ts"
+}

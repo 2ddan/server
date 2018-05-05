@@ -54,9 +54,9 @@ export const globalReceive = {
         }
     },
     //心法兑换
-    gotoGestExchange: () => {
+    gotoGestExchange: (arg) => {
         if (funIsOpen("gest_fb")) {
-            gestQuality = 4;
+            gestQuality = arg;
             forelet.paint(getData());
             open("app_c-gest-exchange-exchange", "gest_exchange");
         }

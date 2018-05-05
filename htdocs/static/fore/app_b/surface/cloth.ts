@@ -34,7 +34,6 @@ import { openUiEffect, effectcallback, destoryUiEffect } from "app/scene/anim/sc
 export const forelet: any = new Forelet();
 let cloth_id = 10001,//人物时装id
     clothes_coin_id = 150001,//人物代币
-    cloth_restore = 1,//是否还原时装
 
     pet_id = 2222228,//宠物时装id
     pet_coin_id = 100006,//宠物代币
@@ -65,7 +64,8 @@ export const globalReceive: any = {
         let key = (arg == 0) ? "cloth" : "pet";
         if(!arg){
             index = 0;
-            cloth_id = cloth_skin[0],//时装id        
+            let skin = getDB("cloth.wear_skin");
+            cloth_id = skin ? skin : 1,//时装id        
             clothes_coin_id = clothes_change_coin[Object.keys(clothes_change_coin)[0]].award[0][0];
             forelet.paint(getData());
             open("app_b-surface-cloths");
@@ -131,12 +131,17 @@ export class cloth extends Widget {
             }
         }
     }
-    //还原
-    restore(arg) {//0还原，1恢复
-        cloth_restore = arg;
-        forelet.paint(getData());
-        reset_cloths();
+    //已穿戴的提示
+    wearTip(){
+        globalSend("screenTipFun", {
+            words: `已穿戴该时装`
+        });
     }
+    //还原
+    // restore(arg) {//0还原，1恢复
+    //     forelet.paint(getData());
+    //     reset_cloths();
+    // }
     goback(w) {
         close(w.widget);
     }
@@ -337,7 +342,6 @@ const getData = function () {
         data.cloth_id = cloth_id;
         let cloth = getDB("cloth");
         data.cloth = cloth;
-        data.cloth_restore = cloth_restore;
         data.roleCfg = role_base;
     }
     if (index == 1) {
@@ -504,6 +508,7 @@ let logic: any = {
             }, 100)
         })
     },
+    
     //宠物穿戴
     petWear() {
         let data = getDB("bag*sid=" + pet_id).pop();
@@ -538,7 +543,7 @@ let logic: any = {
             let prop: any = Common.changeArrToJson(data.ok);
             updata("cloth.wear_skin", prop.wear_skin);
             globalSend("screenTipFun", {
-                words: `脱衣服成功`
+                words: `穿戴成功`
             });
             forelet.paint(getData());
             let time = setTimeout(() => {
@@ -860,6 +865,10 @@ listenBack("app/prop/clothes@read", (data) => {
 //宠物
 listenBack("app/prop/pet@read", (data) => {
     updata("pet", data);
+});
+// 监听人物money变化
+listen("player.money", () =>{
+    forelet.paint(getData());
 });
 
 forelet.listener = (cmd) => {

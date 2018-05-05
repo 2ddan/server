@@ -79,7 +79,8 @@ export class get_way extends Widget {
             return;
         }
         goback();
-        globalSend(obj.fun);
+        let fun_arr = obj.fun.split(",");
+        globalSend(fun_arr[0],fun_arr[1]);
     };
     gotoCard = function (){
         let w = forelet.getWidget("app_c-get_way-month_card_way")

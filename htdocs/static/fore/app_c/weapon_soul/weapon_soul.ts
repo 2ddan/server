@@ -4,7 +4,7 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { listenBack } from "app/mod/db_back";
-import { updata, insert, get as getDB } from "app/mod/db";
+import { updata, insert, get as getDB,listen } from "app/mod/db";
 import { net_request } from "app_a/connect/main";
 import { globalSend, Pi } from "app/mod/pi";
 import { Common } from "app/mod/common";
@@ -564,7 +564,10 @@ const weaponBreakNet = function () {
         })
 }
 
-
+// 监听人物money变化
+listen("player.money", () =>{
+    forelet.paint(getData());
+});
 
 /**
  * 赋灵升级  async函数异步解决方案

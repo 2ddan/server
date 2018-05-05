@@ -176,14 +176,19 @@ export class handScene {
 	};
 
 	static remove = function (e, now) {
-		let func = function () {
-			task(objCall, [mgr, "remove", [mapList[e.fighter]],mgr_data.name], 60000, 1);
-			pet[e.fighter] && task(objCall, [mgr, "remove", [pet[e.fighter]],mgr_data.name], 60000, 1);
-			//mgr.remove(mapList[e.mapId]);
-			delete mapList[e.fighter];
-			delete pet[e.fighter];
-		};
-		cuurUI.push({"param": {func:func,time:now},"fun": UiFunTable.remove});
+		let f = mapList[e.fighter],t = now-f.die_time,
+			func = function () {
+				task(objCall, [mgr, "remove", [mapList[e.fighter]],mgr_data.name], 60000, 1);
+				pet[e.fighter] && task(objCall, [mgr, "remove", [pet[e.fighter]],mgr_data.name], 60000, 1);
+				//mgr.remove(mapList[e.mapId]);
+				delete mapList[e.fighter];
+				delete pet[e.fighter];
+			};
+		if(t<2250){
+			t = 2250 -t;
+		}else
+			t = 0;
+		cuurUI.push({"param": {func:func,time:now+t},"fun": UiFunTable.remove});
 	};
 
 	static move = function (e) {
@@ -425,10 +430,8 @@ export class handScene {
 			_play = UiFunTable.updateUseSkill(fighter, getSkillAction(e));
 		}
 		// if(_play)objCall(mgr,"setAnimationOnce",[fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]);
-		// TODO 根据e.skill 来确定技能特效
-		for(let j = 0,len = fighter.skill[index].skillEffect.length;j<len;j++){
-			cuurUI.push({ "param": { fighter:fighter,skill:ss,index:j,time:e.time }, "fun": UiFunTable.skillEffect });
-		}
+		// 技能特效
+		skillEffect(fighter,ss,now);
 		//震屏
 		if(fighter.type == "monster" || id == fighter.sid){
 			if(fighter.skill[index].shake){
@@ -601,9 +604,8 @@ export class handScene {
 	/**
 	 * @description 重新插入模型
 	 */
-	static reInsert(){
+	static reInsert(fighters,reset?){
 		let func = (f,type?) => {
-			mgr.remove(f);
 			delete f._show;
 			if (f.sid == id)
 				mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [f.x, f.y, f.z]);
@@ -613,12 +615,28 @@ export class handScene {
 				mgr_data.threeScene[mgr_data.name].modify(f._show.old, ["visible"]);
 			}
 		}
-		for (let k in mapList) {
-			func(mapList[k]);
+		//如果场景没重刷，则需要清楚已经移除的模型
+		if(!reset){
+			for(let k in mapList){
+				if(!fighters.get(k)){
+					mgr.remove(mapList[k]);
+					delete mapList[k];
+				}
+			}
 		}
-		for (let k in pet) {
-			func(pet[k],"pet");
-		}
+		fighters.forEach(f => {
+			let mf = mapList[f.mapId],
+				mp = pet[f.mapId];
+			if(mf && reset){
+				func(f);
+			}
+			if(mp && reset){
+				func(mp,"pet");
+			}
+			if(!mf){
+				handScene.insert({fighter:f},Date.now());
+			}
+		});
 	};
 }
 /**
@@ -999,6 +1017,32 @@ const updateEffectPos = () => {
 	}
 	
 }
+/**
+ * @description 技能特效，连招特效一起计算，到时释放
+ * @param f 
+ * @param skill 
+ * @param time 
+ */
+const skillEffect = (f,skill,time) => {
+	let func = (_f,_skill,_time) => {
+		for(let j = 0,len = _skill.skillEffect.length;j<len;j++){
+			cuurUI.push({ "param": { fighter:_f,skill:_skill,index:j,time:_time+_skill.skillEffect[j][1] }, "fun": UiFunTable.skillEffect });
+		}
+	};
+	func(f,skill,time);
+	if(skill.backSkill){
+		for(let i=0,len = skill.backSkill.length;i<len;i++){
+			let s = f.skill[getSkillIndex(f.skill,skill.backSkill[i])];
+			time += s.actionTime;
+			func(f,s,time);
+		}
+	}
+}
+/**
+ * @description 两点距离公式
+ * @param t 
+ * @param p 
+ */
 const cDd = (t,p) => {
     return Math.sqrt((p.x - t.x) * (p.x - t.x) + (p.y - t.y) * (p.y - t.y))
 };
