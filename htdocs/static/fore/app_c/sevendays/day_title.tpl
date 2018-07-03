@@ -21,7 +21,7 @@
     {{let player = _get("app/mod/db").exports.data.player}}
     {{let career_id = player.career_id}}
 
-    {{let prop = Pi.sample[it.bag[0][0]]}}
+    {{let prop = Pi.sample[it.bag[0][0][0]]}}
     {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
     {{let url = Pi.pictures[icon]}}
     <div style="position:absolute;top:132px;left:3px; " on-tap='propInfoShow({{it.bag[0][0]}})'>

@@ -67,10 +67,9 @@ export const textcfg = {
         "text": "0123/+456789万"
     },//战斗头像BOSS等级
     "boss_level":{
-        "font": "normal 400 20px mnjsh",
+        "font": "normal 400 24px mnjsh",
         "color": "#b5e8ff",
         "isPowerOfTwo": true,
-        "isCommon": true,
         "hfactor": 1.8,
         "textAlign":"center",
         "text": "Lv0123456789",
@@ -82,7 +81,6 @@ export const textcfg = {
         "font": "normal 400 26px mnjsh",
         "color": "#ffffff",
         "isPowerOfTwo": true,
-        "isCommon": true,
         "hfactor": 1.8,
         "strokeWidth": 1,
         "space": -1,
@@ -409,57 +407,58 @@ export const textcfg = {
         "strokeWidth": 1,
         "strokeColor": "rgb(0,0,0)",
         "isPowerOfTwo":true
-    },
+    }, 
     "damage":{
-        "font": "normal 400 35px mnjsh",
+        "font": "normal 400 24px mnjsh",
         "color": { "x1": 0, "y1": "15%", "x2": 0, "y2": "75%", "steps": [0, "rgb(255,219,193)", 0.4 , "rgb(249,38,38)", 1, "rgb(199,34,36)"] },
         "textAlign": "center",
-        "hfactor":1.8,
-        "factor":1.3,
+        "hfactor":2.0,
+        "factor":1.4,
         "strokeWidth": 2,
         "strokeColor": "rgb(24,13,9)",
+        // "isCommon":true,
         "isPowerOfTwo":true,
-        "isCommon": true,
         "space": -6,
-        "text": "+-0123/:456789万"
+        // "text": "+-0123/:456789万"
     },
     "damageM":{
-        "font": "normal 400 35px mnjsh",
+        "font": "normal 400 24px mnjsh",
         "color": { "x1": 0, "y1": "15%", "x2": 0, "y2": "75%", "steps": [0, "rgb(255,253,193)", 0.4 , "rgb(255,250,116)", 1, "rgb(215,131,0)"] },
         "textAlign": "center",
         "hfactor":1.8,
-        "factor":1.3,
+        "factor":1.4,
         "strokeWidth": 2,
         "strokeColor": "rgb(24,13,9)",
+        // "isCommon":true,
         "isPowerOfTwo":true,
-        "isCommon": true,
         "space": -6,
-        "text": "+-0123/:456789万"
+        // "text": "+-0123/:456789万"
     },
     "stealHP":{
-        "font": "normal 400 35px mnjsh",
+        "font": "normal 400 24px mnjsh",
         "color": { "x1": 0, "y1": "15%", "x2": 0, "y2": "75%", "steps": [0, "rgb(229,255,193)", 0.4 , "rgb(133,237,31)", 1, "rgb(77,156,24)"] },
         "textAlign": "center",
         "hfactor":1.8,
-        "factor":1.3,
+        "factor":1.4,
         "strokeWidth": 2,
         "strokeColor": "rgb(24,13,9)",
+        // "isCommon":true,
         "isPowerOfTwo":true,
-        "isCommon": true,
         "space": -6,
-        "text": "+-0123/:456789万"
+        // "text": "+-0123/:456789万"
     },
     "critical":{
-        "font": "normal 400 46px hanyi",
+        "font": "normal 400 28px hanyi",
         "color": { "x1": 0, "y1": "13%", "x2": 0, "y2": "60%", "steps": [0, "rgb(255,254,198)", 0.4 , "rgb(236,234,107)", 0.6, "rgb(229,75,21)"] },
         "textAlign": "center",
-        "hfactor":1.8,
-        "factor":1.2,
+        "hfactor":1.8,  
+        "factor":1.4, 
         "strokeWidth": 1,
         "strokeColor": "rgb(24,13,9)",
         "space": -8,
-        "isCommon":true,
-        "text":"0123456789:/+-万暴击"
+        // "isCommon":true,
+        "isPowerOfTwo":true,
+        // "text":"0123456789:/+-万暴击"
     },
     //荒野降魔我的伤害
     "publicbossrank":{
@@ -500,5 +499,17 @@ export const textcfg = {
         "strokeWidth": 1,
         "strokeColor": "rgb(0,0,0)",
         "isPowerOfTwo":true
+    },
+    //FPS
+    "nodeFps":{
+        "font": "normal 400 28px xxxxx",
+        "color": "#ffffff",
+        "textAlign": "center",
+        "hfactor":1.8,
+        "strokeWidth": 1,
+        "strokeColor": "rgb(0,0,0)",
+        "isPowerOfTwo":true,
+        "isCommon":true,
+        "text": "0123456789.:;zxcvbnmasdfghjklqwertyuiop"
     }
 };

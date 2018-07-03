@@ -1,29 +1,73 @@
-.3 {
+.13{
+    position: absolute;
+    right: 20px;
+    top: 6px;
+}
+
+.s8 {
     position: absolute;
     width: 540px;
     height: 356px;
     top: 50%;
-    left: 50%;
     margin-top: -178px;
-    margin-left: -270px;
+    left:50%;
+    margin-left:-270px;
 }
-.4 {
+.s9 {
     position: absolute;
-    width: 504px;
-    height: 50px;
-    top: 0px;
-    left: 50%;
-    margin-left: -252px;
+    left: 13px;
+    top: 26px;
 }
-.5 {
+.s10 {
     position: absolute;
     left: 0;
     top: 0px;
-    height:40px;
-    z-index: 2;
-    width: 100%;
+    width:100%;
 }
-.6 {
+.s11 {
+    position: absolute;
+    left: 451px;
+    top: -9px;
+}
+.s12 {
+    position: absolute;
+    width: 94%;
+    height: 50px;
+    left: 3%;
+    top: 0px;
+    z-index: 2;
+}
+.s13 {
+	width: 450px;
+    height: 261px;
+	position: absolute;
+	top: 25px;
+    left: 45px;
+	opacity: .95;
+	overflow:hidden;
+}
+.s14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+.s15 {
+    position: absolute;
+    left: 0px;
+    top: 53px;
+    height: 134px;
+    width: 100%;
+    opacity: .95;
+}
+.s16 {
+    position: absolute;
+    left: 50%;
+    top: 228px;
+    margin-left: -58px;
+}
+.s17 {
     position: absolute;
     left: 50%;
     top: 1px;
@@ -31,67 +75,29 @@
     font-size: 22px;
     margin-left: -90px;
 }
-.7 {
-    position: absolute;
-    left: 15px;
-    top: 26px;
-    z-index: 2;
-}
 
-.8 {
+.s19{
     position: absolute;
-    width: 454px;
-    height: 334px;
+    left: 3%;
+	top: 276px;
+	width: 94%;
+}
+.s20{
+	text-align:left;
+    position: absolute;
     left: 50%;
-    margin-left: -227px;
-    top: 26px;
-    overflow: hidden;
-}
-.9 {
-    position: absolute;
-    left: 451px;
-    top: -9px;
-    z-index: 2;
-}
-
-
-.10 {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 246px;
-    opacity:.95;  
-    
-}
-.11 {
-    position: absolute;
-    left: 0px;
-    top: 0;
-    opacity:.6;  
-    height: 100%;    
-}
-.12{
-    position: absolute;
-    left: 0px;
-    top: 26px;
-    height: 168px;  
-    width:100%;
+	top: 82px;
+	margin-left:-225px;
+	width: 450px;
+	height:100px;
+    font-size: 18px;
     line-height: 55px;
     padding: 15px 0px 12px; 
 }
-.13{
+.s21{
+	color:#fff;
     position: absolute;
-    right: 20px;
-    top: 6px;
-}
-
-
-.18{
-    position: absolute;
-    left: 50%;
-    top: 259px;
-    height: 34px;
-    width: 508px;
-    margin-left: -254px;
+    right: 10px;
+    bottom: 3px;
+    z-index: 2;
 }

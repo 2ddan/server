@@ -42,40 +42,12 @@ export const menu_top = [{
         interface:"gotoNews",
         level_limit:0,tips:["mail"]
     },{
-        key:"menu_fanpai_icon",
-        fun_id: -1,
-        icon:"menu_fanpai_icon",
-        name:"翻翻乐",
-        interface:"gotoPlayCard",
-        level_limit:0
-    },{
-        key:"menu_gemGest_icon",
-        fun_id: -1,
-        icon:"menu_gemGest_icon",
-        name:"宝石迷阵",
-        interface:"gotoGem",
-        level_limit:0
-    },{
-        key:"recharge_all",
-        fun_id: -1,
-        icon:"recharge_all",
-        name:"首充",
-        interface:"gotoFirstGift",
-        level_limit:0
-    },{
         key:"menu_sevenday_icon",
         fun_id: 6,
         icon:"menu_sevenday_icon",
         name:"七日活动",
         interface:"gotoSevendaysAct",
         level_limit:0,tips:["sevendays"]
-    },{
-        key:"menu_holiday_icon",
-        fun_id: -1,
-        icon:"menu_holiday_icon",
-        name:"节日活动",
-        interface:"gotoFestivalActivity",
-        level_limit:0,tips:["fest"]
     },{
         key:"menu_shop_icon",
         fun_id: 10,
@@ -84,25 +56,53 @@ export const menu_top = [{
         interface:"gotoStore",
         level_limit:0,tips:["store"]
     },{
-        key:"menu_shop_icon",
+        key:"menu_book_icon",
         fun_id: -1,
-        icon:"menu_shop_icon",
-        name:"抽奖",
+        icon:"menu_book_icon",
+        name:"天书",
         interface:"gotoLottery",
-        level_limit:0
+        level_limit:0,tips:["lottery"]
     },{
-        key:"menu_shop_icon",
+        key:"menu_rune_icon",
         fun_id: -1,
-        icon:"menu_shop_icon",
-        name:"符文",
+        icon:"menu_rune_icon",
+        name:"秘籍",
         interface:"gotoRune",
+        level_limit:0,tips:["role.rune"]
+    },{
+        key:"menu_offLine_icon",
+        fun_id: -1,
+        icon:"menu_offLine_icon",
+        name:"经验宝库",
+        interface:"gotoLeaveExp",
+        level_limit:0,tips:["off_line"]
+    },{
+        key:"menu_fanpai_icon",
+        fun_id: -1,
+        icon:"menu_fanpai_icon",
+        name:"翻翻乐",
+        interface:"gotoPlayCard",
+        level_limit:0,tips:["play_card"]
+    },{
+        key:"menu_gemGest_icon",
+        fun_id: -1,
+        icon:"menu_gemGest_icon",
+        name:"宝石迷阵",
+        interface:"gotoGem",
+        level_limit:0,tips:["gem"]
+    },{
+        key:"recharge_all",
+        fun_id: -1,
+        icon:"recharge_all",
+        name:"首充",
+        interface:"gotoFirstGift",
         level_limit:0
     },{
-        key:"menu_shop_icon",
+        key:"menu_holiday_icon",
         fun_id: -1,
-        icon:"menu_shop_icon",
-        name:"经验宝库",
-        interface:"undefined",
-        level_limit:0
+        icon:"menu_holiday_icon",
+        name:"节日活动",
+        interface:"gotoFestivalActivity",
+        level_limit:0,tips:["fest"]
     }
 ]; 

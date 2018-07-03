@@ -116,6 +116,13 @@ export interface Scene {
 	 * @description 删除obj的ref
 	 */
 	remove(obj);
+	
+	/**
+	 * @description 工具方法：用于转换3D坐标到屏幕
+	 * pt: 3D坐标 [x, y, z]
+	 * result: 结果，2D坐标 [x, y, z]
+	 */
+	getScreenPoint(pt: [number, number, number], result: [number, number, number]);
 }
 
 export const createScene = (renderer: Renderer, data: SceneData): Scene => {
@@ -505,9 +512,9 @@ class SceneImpl implements Scene {
 		let propertyIndex = keys[keys.length - 1];//找到属性数组中的最后一个属性
 		let targetObj = findProperty(obj, keys);
 
-		if (this[propertyIndex]){
+		if (this[propertyIndex])
 			this[propertyIndex].call(this, targetObj[propertyIndex], obj.ref.impl, keys, obj.resTab);
-		}else {
+		else {
 			let targetimpl = findProperty(obj.ref.impl, keys);
 			targetimpl[propertyIndex] = targetObj[propertyIndex];
 		}
@@ -685,6 +692,24 @@ class SceneImpl implements Scene {
 		}
 	}
 
+	/**
+	 * 工具方法：用于转换3D坐标到屏幕
+	 * pt: 3D坐标 [x, y, z]
+	 * result: 结果，2D坐标 [x, y, z]
+	 */
+	public getScreenPoint(pt: [number, number, number], result: [number, number, number]) {
+		_tmpMat.multiplyMatrices(this.camera.projectionMatrix, _tmpMat.getInverse(this.camera.matrixWorld));
+
+		this.impl3D.getSize(_size);
+
+		_tmpV4.set(pt[0], pt[1], pt[2], 1.0);
+		_tmpV4.applyMatrix4(_tmpMat);
+		// tslint:disable:binary-expression-operand-order
+		result[0] = -0.5 * _size.width * _tmpV4.x / _tmpV4.w;
+		result[1] = 0.5 * _size.height * _tmpV4.y / _tmpV4.w;
+		result[2] = 0.5 * _tmpV4.z / _tmpV4.w;
+	}
+
 	initSkybox(cfg, resTab) {
 		let geo = { "width": 8000, "height": 8000, "longness": 8000 };
 		let render = { "material": [] };
@@ -802,26 +827,25 @@ class SceneImpl implements Scene {
 		//初始化骨骼
 		if (skeletonRes && parent) {
 			_LOAD.newloadSkeleton(skeletonRes, resTab, (bones) => {
-				if(parent.ref){ //临时加的不用管
-					//将加载到的骨头添加到骨骼的包装节点和需要使用该骨骼的节点上
-					let skel = parent.ref.impl.setSkeletonChild(bones);
-					for (let i = 0; i < children.length; i++) {
-						let child = children[i];
-						if (child.skinnedMeshRender && child.ref) {
-							let sBonesIndex = child.skinnedMeshRender.bones;
-							if (sBonesIndex) {
-								child.ref.impl.setSkeleton(skel, sBonesIndex);
-							}
-							child.ref.impl.bones = bones;
+				//将加载到的骨头添加到骨骼的包装节点和需要使用该骨骼的节点上
+				let skel = parent.ref.impl.setSkeletonChild(bones);
+				for (let i = 0; i < children.length; i++) {
+					let child = children[i];
+					if (child.skinnedMeshRender && child.ref) {
+						let sBonesIndex = child.skinnedMeshRender.bones;
+						if (sBonesIndex) {
+							child.ref.impl.setSkeleton(skel, sBonesIndex);
 						}
+
+						child.ref.impl.bones = bones;
 					}
-
-					//含有bindBone属性的节点，应该添加到对应骨头的子节点上
-					bindBone(skel, boneChildren);
-
-					resCount.curr++;
-					this.loadResOk(resCount);
 				}
+
+				//含有bindBone属性的节点，应该添加到对应骨头的子节点上
+				bindBone(skel, boneChildren);
+
+				resCount.curr++;
+				this.loadResOk(resCount);
 			});
 		}
 
@@ -892,6 +916,7 @@ class SceneImpl implements Scene {
 		if (obj.lookatOnce) {
 			this.lookatOnce(obj.lookatOnce, obj.ref.impl);
 		}
+		
 	}
 
 	private initBoxCollider(boxCollider: Json, impl: Json) {
@@ -925,7 +950,7 @@ class SceneImpl implements Scene {
 		let textcfg = textCon.textcfg;
 		let impl;
 		if (textcfg.isCommon) {
-			impl = new THREE.ImageText(textCon); //textCon
+			impl = new THREE.ImageText();
 			_LOAD.loadText(impl, textCon, this.renderer, resTab);
 		} else {
 			textcfg.text = textCon.show;
@@ -995,7 +1020,12 @@ class SceneImpl implements Scene {
 			let t = camera.ortho[2], b = camera.ortho[3];
 			let n = camera.ortho[4], f = camera.ortho[5];
 
-			impl = this.camera2D = new THREE.OrthographicCamera(l, r, t, b, n, f);
+			impl = new THREE.OrthographicCamera(l, r, t, b, n, f);
+			if (camera.scene3D) {
+				this.camera = impl;
+			} else {
+				this.camera2D = impl;
+			}
 		}
 		return impl;
 	}
@@ -1066,11 +1096,12 @@ class SceneImpl implements Scene {
 		if (isVisible !== undefined) {
 			impl.visible = isVisible;
 		}
+		// if(impl.visible != undefined || isVisible !== undefined){
+		// 	impl.visible = isVisible !== undefined ? isVisible : (impl.visible !== undefined ? impl.visible : true);
+		// }
 	}
 
 	private textCon(textCon: Json, impl: Json, attr: Array<string>, resTab: ResTab) {
-		impl._material.opacity = textCon.opacity == 0 ? 0 : (textCon.opacity || 1),
-		impl._material.transparent = textCon.transparent || false;
 		if (textCon.textcfg.isCommon) {
 			_LOAD.loadText(impl, textCon, this.renderer, resTab);
 		} else {
@@ -1092,6 +1123,13 @@ class SceneImpl implements Scene {
 		_LOAD.loadImgTexture(texture.image, this.renderer, resTab, texture => {
 			target.map = texture;
 		});
+	}
+    //test
+	private mapst(texture: Json, impl: Json, attr: Array<string>, resTab: ResTab) {
+		let target = findProperty(impl, attr);
+        
+	    target.mapst = new THREE.Vector4(texture[0], texture[1], texture[2], texture[3]);
+		//THREE
 	}
 
 	private geometry(geo: Json, impl: Json, attr: Array<string>, resTab: ResTab) {

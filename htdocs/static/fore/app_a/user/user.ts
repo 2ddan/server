@@ -4,22 +4,16 @@
 
 // ============================== 导入
 //pi
-import { Widget, factory } from "pi/widget/widget";
-import { Json } from 'pi/lang/type';
 import { Forelet } from "pi/widget/forelet";
-import { open, remove, destory } from "pi/ui/root";
-import { loadCssRes } from "pi/widget/util";
+import { open, destory } from "pi/ui/root";
 import * as pi_html from "pi/util/html";
-import { ajax } from "pi/lang/mod";
 import { login, setReloginCallback, logout } from "pi/ui/con_mgr";
 //mod
-import { data as locDB, get, updata, listen, insert } from "app/mod/db";
-import { Pi, setLog, globalSend, refresh } from "app/mod/pi";
+import { data as locDB, updata, listen, insert } from "app/mod/db";
+import { Pi, setLog, globalSend, refresh, InfoToPt } from "app/mod/pi";
 import { Common } from "app/mod/common";
-import { Wx_api } from "app/mod/wx_api";
 //cfg
 import { area as areacfg } from "cfg/a/area";
-import { playerName } from "cfg/a/player_name";
 //app
 import { sha256 } from "./math/sha256";
 import { create } from "./math/bigi";
@@ -39,9 +33,10 @@ export const forelet:any = new Forelet();
 /***
  * 初始化
  */
-export const initOK = (cfg: any) => {
+export const initOK = () => {
 	//打开用户注册登录
 	userWidget = open("app_a-user-main",0);
+	globalSend("openNotice");
 	//TODO 加载首界面所有资源->下载其他资源
 	//TODO 根据本地存放数据信息判断是否需要注册
 	//TODO 根据默认角色信息判断是否需要自动创建角色
@@ -54,16 +49,17 @@ export const initOK = (cfg: any) => {
 	//open("app-scene-frame");
 	loadSlow(
 		_user.name,
-		["cfg/b/","fight/b/","app_b/","cfg/c/","app_c/"],
+		["fight/a/","fight/b/","cfg/b/","cfg/c/","app_b/","app_c/"],
 		()=>{}
 	);
-	// splitDir("app_b");
+	splitDir("app_c");
 };
 //获取本地缓存role id
 export const getLocalRole = () => {
 	return getLocalUser("rid",locKey.rid);
 };
 // ================================ 本地
+let timer = null;
 /**
  * @description 用户主组件
  */
@@ -75,6 +71,7 @@ const paintUser = (props?) => {
 	userWidget.paint();
 }
 
+let u_name = "";
 /**
  * @description 枚举登录状态
  */
@@ -192,7 +189,11 @@ const saveUser = (key,arr) => {
 		if(Pi.localStorage[key] != str){//切换账号登陆时清除前一个账号的自动打BOSS设置
 			let autoFightBoss = Pi.localStorage["autoFightBoss"];
 			if(autoFightBoss){
-				globalSend("setupState",5)
+				Pi.localStorage.removeItem("autoFightBoss");
+				// globalSend("setupState",5);
+			}
+			if(Pi.localStorage["autoRelease"]){
+				Pi.localStorage.removeItem("autoRelease");
 			}
 		}
 		Pi.localStorage[key] = str;
@@ -250,7 +251,7 @@ const clearLoginInfo = () => {
 	updata("user.country.area", 0);
 	updata("user.country.roles", null);
 	updata("user.state", 0);
-	updata("user.username", "");
+	//updata("user.username", "");
 	updata("user.password", "");
 	updata("user.repassword", "");
 	updata("user.relogin", "");
@@ -277,12 +278,15 @@ const loginBack = (name,password,type,pid,sign,errCallback? , succCallback?) => 
 				sid : Pi.sid,
 				step : 13
 			});
-			let u:any = Common.changeArrToJson(r.ok);
+			let u:any = Common.changeArrToJson(r.ok),da;
 			updata("user.uid",u.user_id);
 			updata("user.usertype",type);
 			updata("user.state",loginState.user_logined);
 			saveUser("u",[locDB.user.uid, name, password,type,pid,sign]);
-			dealServer(u.area_detail,1);
+			da = dealServer(u.area_detail,1);
+			if(!da || !da.role){
+				InfoToPt.upload(1,locDB);
+			}
 			if(succCallback){
 				succCallback();
 			}
@@ -300,21 +304,6 @@ const regist_user = (name, password,type,callback?) => {
 	updata("user.state",loginState.user_logining);
 	var param = {user:name,password: password,type:type},
 		url = {"param": param, "type": "app/user/register"};
-	// net_request(url, function (data) {
-	// 	//alert("注册"+JSON.stringify(data));
-	// 	updata("user.state",loginState.init);
-	// 	if (data.error) {
-	// 		updata("user.err.regist",data.why);
-	// 	} else if (data.ok) {
-	// 		//regist.err = "";
-	// 		//更新login数据
-	// 		let u:any = Common.changeArrToJson(data.ok);
-	// 		updata("user.uid",u.user_id);
-	// 		saveUser("u",[locDB.user.uid,name, password, type]);
-			
-	// 		if(callback)callback();
-	// 	}
-	// });
 	Pi.regist(param,type,(data) => {
 		updata("user.state",loginState.init);
 		if (data.err) {
@@ -346,37 +335,20 @@ const loginUser = (name, password,usertype, succCallback?, errCallback?) => {
 		return;
 	}	
 	updata("user.state",loginState.user_logining);
-	let url;
-	// net_request({ "param": { "rand": 100 }, "type": "app/user/login@rand" }, function (data) {
-	// 	let pw;
-	// 	//alert("loginUserrand:" +data.ok +", | " + data.why);
-	// 	if (data.error) {
-	// 		console.log(data.why, url);
-	// 		updata("user.err.login",data.why);
-	// 		updata("user.state",loginState.init);
-	// 		if(errCallback){
-	// 			errCallback(data);
-	// 		}
-	// 	} else if (data.ok) {
-	// 		// password 需要进行加盐哈希sha256
-	// 		pw = sha256.SHA256(password + data.ok).toString();
-	// 		pw = base58.encode(create("0x" + pw, 16));
-			Pi.login({user:name,password: password,type:usertype},(data) => {
-				if(data && data.ok.uid){
-					Pi.ptId({user_id:data.ok.uid},(d)=>{
-						if(!d || !d.ok || !d.ok.ptid || !d.ok.sign){
-							return updata("user.state",loginState.init);
-						}
-						login(d.ok.ptid,usertype,d.ok.sign,loginBack(name,password,usertype,data.ok.uid,d.ok.sign,errCallback,succCallback));
-					});
-					return;
-				}else{
-					errTip(`账号或密码错误`);
+	Pi.login({user:name,password: password,type:usertype},(data) => {
+		if(data && data.ok.uid){
+			Pi.ptId({user_id:data.ok.uid},(d)=>{
+				if(!d || !d.ok || !d.ok.ptid || !d.ok.sign){
+					return updata("user.state",loginState.init);
 				}
-				updata("user.state",loginState.init);
-			})
-	// 	}
-	// });
+				login(d.ok.ptid,usertype,d.ok.sign,loginBack(name,password,usertype,data.ok.uid,d.ok.sign,errCallback,succCallback));
+			});
+			return;
+		}else{
+			errTip(`账号或密码错误`);
+		}
+		updata("user.state",loginState.init);
+	})
 };
 /**
  * 注册角色
@@ -458,7 +430,7 @@ const autoRegist = (username,password, usertype,cb) => {
 		username,
 		password,
 		usertype,
-		function(data){
+		function(){
 			loginUser(
 				username,
 				password,
@@ -563,13 +535,17 @@ const initLoad = () => {
 };
 //检查资源是否下载完成，前台下载
 let getForeload = function () {
-	let arr = ["cfg/b/","fight/b/","app_b/"];
+	let arr = ["fight/a/","cfg/b/","cfg/c/","fight/b/","app_b/"];
 	//判断是否新角色
 	//否则直接app_b/ && app_c/一起下载
-	if(locDB.user.roleType === 1){
-		arr.push("app_c/","cfg/b/");
-	}else{
+	// if(locDB.user.roleType === 1){
+		arr.push("app_c/");
+	// }else{
 		// splitDir("app_c");
+	// }
+	if(timer){
+		clearTimeout(timer);
+		timer = null;
 	}
 	loadNow(arr,() => {
 		if((window as any).pi_modules.store.exports.check())
@@ -595,29 +571,7 @@ let getForeload = function () {
 /**
  * @description 前台点击事件 进入游戏
  */
-const intoMain = (data?) => {
-	// if(data && data.ok[1] && data.ok[1][1] !== "undefined"){
-	// 	//断开连接
-	// 	logout();
-	// 	let s = `其他用户(ip:${data.ok[1][1]})正在登录该账号！\n 请重新进入~`;
-	// 	if(globalSend("popTip", {
-	// 		title:s,
-	// 		btn_name:["刷新",取消],
-	// 		cb:[
-	// 			//确认
-	// 			()=>{
-	// 				refresh();
-	// 			},
-	//			//取消
-	//			()=>{}
-	// 		]
-	// 	})){
-	// 		return;
-	// 	}
-	// 	confirm(s);
-	// 	refresh();
-	// 	return;
-	// }
+const intoMain = () => {
 	//后台记录进入进度
 	setLog("log",{
 		sid : Pi.sid,
@@ -689,6 +643,15 @@ const dealServer = (data,type) => {
 			defaulteServer = a.area;
 			arealist[a.area] = a;
 		}else continue;
+
+		//判断是否以前登录过
+		let serverIndex = Pi.localStorage["serverIndex"];
+		if (serverIndex) {
+			defaulteServer = serverIndex - 0;
+		} else {
+			Pi.localStorage.setItem("serverIndex", defaulteServer);
+		}
+
 		//处理角色
 		if(r.role){
 			a.role = [];
@@ -705,6 +668,7 @@ const dealServer = (data,type) => {
 	updata("user.country.areas",arealist);
 	updata("user.country.defaulteServer",defaulteServer);
 	updata("user.country.roles",roleList);
+	return arealist[defaulteServer];
 };
 
 // ================================== 立即执行
@@ -748,6 +712,7 @@ insert("user",{
 let lu = getLocalUser("u",locKey.u);
 if(lu.username){
 	updata("user.username",lu.username);
+	u_name = lu.username;
 }
 /**
  * @description 监听登录数据变化，刷新widget
@@ -766,6 +731,13 @@ forelet.goIntoGame = () => {
  */
 forelet.openSelectArea = () => {
 	updata("user.select_area", true);
+	if (Object.keys(locDB.user.country.roles).length > 0) {
+		updata("user.country.index", 0);
+		searchArea(0);
+	} else {
+		updata("user.country.index", 1);
+		searchArea(1);
+	}
 	forelet.paint(locDB.user);
 }
 /**
@@ -777,7 +749,21 @@ forelet.goback = () => {
 }
 forelet.select = (index) => {
 	updata("user.country.index", index);
+	searchArea(index);
 	forelet.paint(locDB.user);
+}
+
+const searchArea = function (index) {
+	let hasRoleServer = [];
+	let country = locDB.user.country;
+	if (index == 0) {
+		Object.keys(country.roles).forEach((v) => {
+			hasRoleServer.push(country.areas[v]);
+		});
+	} else {
+		hasRoleServer = country.areas.slice((index - 1) * 10 + 1, index * 10 + 1);
+	}
+	updata("user.country.hasRoleServer", hasRoleServer);
 }
 /**
  * 选择服务器
@@ -785,6 +771,7 @@ forelet.select = (index) => {
 forelet.selectArea = (i) => {
 	updata("user.select_area", false);
 	updata("user.country.defaulteServer", i);
+	Pi.localStorage.setItem("serverIndex", i);
 	forelet.paint(locDB.user);
 }
 /**
@@ -838,6 +825,7 @@ forelet.goIntoNameGame = (arg) => {
 					console.log("Create role ===========================================================",w);
 					destory(w);
 					intoMain();
+					InfoToPt.isCreate = true;
 				}
 			);
 		})(arg.widget);
@@ -860,8 +848,18 @@ forelet.logOut = () => {
 
 //切换登录注册
 forelet.channel = (cmd) => {
-	if(cmd === 1 && locDB.user.uid)clearLoginInfo();
+	if(cmd === 1) {
+		clearLoginInfo();
+		updata("user.username", "");
+	} else {
+		updata("user.username", u_name);
+	}
 	paintUser(cmd);
+	forelet.paint(locDB.user);
+}
+//打开通知
+forelet.openNotice = () => {
+	globalSend("openNotice");
 }
 
 /**
@@ -881,12 +879,6 @@ setReloginCallback((data)=>{
 		if(locDB.user.rid){
 			updata("user.state",loginState.init);
 			globalSend("relogin_ok");
-			// loginRole(locDB.user.rid,locDB.user.usertype,()=>{
-			// 	globalSend("relogin_ok");
-			// },()=>{
-			// 	alert("重新登录失败，请刷新游戏~");
-			// 	refresh();
-			// });
 		}
 	}
 });
@@ -896,9 +888,8 @@ export const errTip = function (words) {
 	let divRoot = document.getElementById("err");
 	if (!divRoot) return;
 	var son = document.createElement("div");
-	var style = '', t;
+	var t;
 	
-	// style = "background-image:url(/dst/app_b/tips/image/err_bg.png);background-size:100% 100%;background-repeat:no-repeat;height:24px;line-height:24px;margin:0 auto;margin-bottom: 3px;padding:0 30px;display:inline-block;animation:errTip 2s forwards;opacity: 0;";
 	t = 1500;
 	son.setAttribute("class", "err_tip");
 	son.innerHTML = words;

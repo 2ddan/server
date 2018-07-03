@@ -1,18 +1,15 @@
-/**
+0/**
  * 排行榜
  */
 //======================================导入
-import { updata, data as db, listen, get, insert } from "app/mod/db";
+import { updata, get, insert } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { globalSend, Pi, cfg } from "app/mod/pi";
-import { listenBack } from "app/mod/db_back";
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { open, piClose } from "app/mod/root";
-import { Util } from "app/mod/util";
+import { net_request, net_message } from "app_a/connect/main";
+import { open } from "app/mod/root";
 
-import { tips_back } from "app_b/tips/tips_back_cfg";
-import { Widget, factory } from "pi/widget/widget";
+import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { resetcanvas } from "app/scene/base/scene";
 import { role_base } from "fight/b/common/role_base";
@@ -160,6 +157,8 @@ const read = ( type? ) => {
                 treasureAndPet(id,type);
             }
         }
+        forelet.paint(getData());
+
     });
     
 }

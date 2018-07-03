@@ -1,17 +1,20 @@
-
-import {THREE} from "../three";
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve";
+/**
+ * 
+ */
+import {THREE} from '../three';
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
 
 export class RotationBySpeedModule {
-	range: THREE.Vector2;
-	separateAxes: boolean;
-	x: IMinMaxCurve;
-	xMultiplier: number;
-	y: IMinMaxCurve;
-	yMultiplier: number;
-	z: IMinMaxCurve;
-	zMultiplier: number;
+	public range: THREE.Vector2;
+	public separateAxes: boolean;
+	public x: IMinMaxCurve;
+	public xMultiplier: number;
+	public y: IMinMaxCurve;
+	public yMultiplier: number;
+	public z: IMinMaxCurve;
+	public zMultiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.range = new THREE.Vector2(config.range.x, config.range.y);
 		this.separateAxes = config.separateAxes;
@@ -22,4 +25,4 @@ export class RotationBySpeedModule {
 		this.z = buildMinMaxCurve(config.z);
 		this.zMultiplier = config.zMultiplier;
 	}
-};
+}

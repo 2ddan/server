@@ -11,7 +11,6 @@
 // ============================== 导入
 //pi
 import { Widget } from "pi/widget/widget";
-import { Forelet } from "pi/widget/forelet";
 import { createHandlerList } from "pi/util/event";
 import { open, destory  } from "pi/ui/root";
 
@@ -108,7 +107,7 @@ let voidElements = {br:1,hr:1,img:1,input:1,link:1,meta:1,area:1,base:1,col:1,co
  */
 let initPlot = (type,list,cur?) => {
 	plotArr.state = type;
-	plotArr.list = lang.clone(list);
+	// plotArr.list = lang.clone(list);
 	plotArr.cur = cur || 0;
 };
 /**
@@ -160,7 +159,7 @@ let type_text  = function(data){
 			plotWidget.paint();
 		}
 	};
-	timer = lang.setInterval(next, data.speed || 30, len+1);
+	// timer = lang.setInterval(next, data.speed || 30, len+1);
 };
 /**
  * @description 文字打印结束
@@ -177,11 +176,11 @@ let text_over = ():any => {
 	
 	plotWidget.setProps(plotArr);
 	plotWidget.paint();
-	if(timer)lang.clearInterval(timer);
+	// if(timer)lang.clearInterval(timer);
 	// 延迟15秒，如果用户没有操作，则自动跳到下一步
-	timer = lang.setInterval(function(){
-		go_next();
-	}, 15000, 1);
+	// timer = lang.setInterval(function(){
+	// 	go_next();
+	// }, 15000, 1);
 	plotArr.cur ++;
 };
 

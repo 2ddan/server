@@ -23,28 +23,28 @@
             <div w-class="38">
                 我的积分:<span style="color:#35e04d;position: relative;">{{Math.ceil(it1.gemData.score)}}</span>
             </div>
-            {{let _list = activity_wanfa[101].award_limit}}
-            {{let _award = activity_wanfa[101].award}}
+            {{let _list = it1.gem_get_score_award.award_limit}}
+            {{let _award = it1.gem_get_score_award.award}}
             <div w-class="39">
                 <div scroller="1" style="box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;height:100%;">
                     {{for i,v of _list}} 
                     {{if it1.gemData.score>=v && !it1.gemData.score_once_award[i] }}
                     <app_c-gem-frame_a>
-                        {"sid":{{_award[i][0]}},"num":1,"count":{{_award[i][1]}},"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} } 
+                        {"award":{{_award[i]}},"num":1,"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} } 
                     </app_c--gem-frame_a>
                     {{end}} 
                     {{end}}  
                     {{for i,v of _list}} 
                     {{if it1.gemData.score < v && !it1.gemData.score_once_award[i] }} 
                     <app_c-gem-frame_a>
-                        {"sid":{{_award[i][0]}},"num":2,"count":{{_award[i][1]}},"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} }
+                        {"award":{{_award[i]}},"num":2,"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} }
                     </app_c--gem-frame_a>
                     {{end}} 
                     {{end}} 
                     {{for i,v of _list}} 
                     {{if it1.gemData.score_once_award[i] }}
                         <app_c-gem-frame_a>
-                            {"sid":{{_award[i][0]}},"num":3,"count":{{_award[i][1]}},"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} }
+                            {"award":{{_award[i]}},"num":3,"need":{{v}},"have":{{it1.gemData.score}},"i":{{i}} }
                          </app_c--gem-frame_a>
                     {{end}} 
                     {{end}}

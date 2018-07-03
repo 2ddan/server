@@ -3,7 +3,7 @@
  */
 
 // ============================== 导入
-import { Widget } from "../widget/widget";
+import { Widget } from '../widget/widget';
 
 // ============================== 导出
 /**
@@ -12,10 +12,10 @@ import { Widget } from "../widget/widget";
  */
 export class InnerHTML extends Widget {
 
-	firstPaint(){
+	public firstPaint() {
 		(this.tree.link as HTMLElement).innerHTML = this.props;
 	}
-	afterUpdate(){
+	public afterUpdate() {
 		(this.tree.link as HTMLElement).innerHTML = this.props;
 	}
 }
@@ -23,4 +23,3 @@ export class InnerHTML extends Widget {
 // ============================== 本地
 
 // ============================== 立即执行
-

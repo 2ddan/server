@@ -8,6 +8,15 @@ export module THREE {
     const RGBFormat;
     const InterpolateLinear;
     const InterpolateSmooth;
+    const LinearFilter;
+    const LinearMipMapLinearFilter;
+    const LinearMipMapNearestFilter;
+    const NearestMipMapLinearFilter;
+    const NearestMipMapNearestFilter;
+    const NearestFilter;
+    const ClampToEdgeWrapping;
+    const MirroredRepeatWrapping;
+    const RepeatWrapping;
 
     class AnimationClip {
         constructor(clipName, duration, tracks);
@@ -105,12 +114,16 @@ export module THREE {
         updateGeometry(mesh);
         setTexture2D(texture, slot);
         getSize(object);
-        render(scene: Scene, camera: Camera, deltaMS: number);
+        render(scene: Scene, camera: Camera, deltaMS: number, target?);
         setPixelRatio(ratio: number);
         setSize(width: number, height: number);
         setClearColor(rgb: number, alpha?: number);
         isContextLost(): boolean;
         forceContextLoss(): void;
+    }
+
+    class WebGLRenderTarget {
+        constructor(w: number,h: number,options?: any)
     }
 
     /**
@@ -171,7 +184,7 @@ export module THREE {
     }
 
     class ImageText {
-        constructor(param); //param
+        constructor();
         setGeometry(geometry);
         setTexture(texture);
         visible;
@@ -241,6 +254,10 @@ export module THREE {
     class BoxBufferGeometry {
         constructor(x, y, z);
     }
+    
+    class BoxGeometry {
+        constructor(x, y, z);
+    }
 
     class ShaderMaterial {
         map: any;
@@ -302,6 +319,19 @@ export module THREE {
     class Camera {
         constructor();
         setProjection(l, r, t, b, n, f);
+        posts: Array<Post>
+    }
+
+    class Post {
+        onRenderImage(postRender, source,destination,delta)
+    }
+    class WaveEffect {
+        constructor(param);
+    }
+
+    class LutEffect {
+        constructor();
+        setTexture(tex);
     }
 
     class OrthographicCamera extends Camera {
@@ -313,6 +343,10 @@ export module THREE {
         matrixWorld: Matrix4;
         constructor(fov, aspect, near, far);
         setProjection(fov, aspect, near, far);
+    }
+
+    class PostRender {
+        constructor(renderer);
     }
 
     class Terrain extends Object3D {
@@ -394,7 +428,8 @@ export module THREE {
         addVectors(w, v): Vector3;
         crossVectors(w, v): Vector3;
         dot(v): number;
-        multiplyScalar(s): Vector3
+        multiplyScalar(s): Vector3;
+        angleTo(v: Vector3):number;
     }
 
     class Vector2 {

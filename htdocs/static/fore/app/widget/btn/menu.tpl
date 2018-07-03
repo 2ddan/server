@@ -3,9 +3,7 @@
     {{if it.select}}
         <img src="./images/menu_select.png" style="position:absolute;left:0px;right: 0px;margin: 0 auto;z-index:1;width: 100%;"/>
     {{end}}
-    {{if it.anima}}
-    <div class="{{it.anima}}" style="z-index:1"></div>
-    {{end}}
+
     <app-widget-image-quality style="width:{{it.imgWidth || 100}}%;position:absolute;left:0px;right: 0px;margin: 0 auto;z-index:1;top:{{it.top || ''}}px">{"isGray":{{it.isGray||0}},"icon":{{it.icon}}}</app-widget-image-quality>
     
     {{if it.bg}}
@@ -23,6 +21,20 @@
     {{else}}
         <app-widget-text-text class="center_t" style="display:inline-block;bottom:{{it.bottom || 0}}px;z-index:1;"> {"textCfg":{{it.isGray?'menu_main_gray':(it.textCfg ? it.textCfg : 'menu_main')}},"fontSize":{{it.fontSize?it.fontSize:16}},"text":{{it.text}},"space":{{it.space || 0}} }</app-widget-text-text>
     {{end}}
+    {{if it.anima}}
+        {{if it.anima == "anim_ling"}}
+    
+            <div style="transform: translate(-51.5%,-49.5%) scale(0.7);width:170px;height:170px;position: absolute;overflow:hidden;left: 50%;top: 50%;z-index: 1;">
+                <div class="anim_ling" style="position: absolute;"></div>
+            </div>
+        {{else}}
+            <div style="transform: translate(-51%,-51%) scale(0.9);width:126px;height:126px;position: absolute;overflow:hidden;left: 50%;top: 50%;">
+                <div class="{{it.anima}}" style="position: absolute;"></div>
+            </div>
+        {{end}}
+    
+    {{end}}
+
     {{if it.guide}}
     <app_a-widget-guide-guide>
         {{it.guide}}

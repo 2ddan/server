@@ -1,14 +1,11 @@
 //pi
 import { Forelet } from "pi/widget/forelet";
 import { open } from "pi/ui/root";
-import { data as localDB, updata, get as getDB, listen } from "app/mod/db";
+import { get as getDB} from "app/mod/db";
 import{ checkTypeof } from "app/mod/db";
-import { Pi,cfg, globalSend } from "app/mod/pi";
+import { Pi} from "app/mod/pi";
 import { Common } from "app/mod/common";
 
-//mod
-//app
-import { net_request, net_send, net_message } from "app_a/connect/main";
 import { tips_back } from "../tips_back_cfg";
 
 //===============================================导出
@@ -20,7 +17,7 @@ export const globalReceive: any = {
         let text = tips_back[msg.words];
 
         text && (msg.words = text);
-        err.push(msg);
+        // err.push(msg);
         // if (msg.role || msg.team) {
         //     //tipsFun.showFightTip(msg);
         //     //forelet.send("fightTipFun",msg,"fightTip");
@@ -45,9 +42,9 @@ export const globalReceive: any = {
         if(prop.type == "equip" && msg.words[1] > 1){
             let i = 0;
             while(i<msg.words[1]){
-                goods.push({"words":[id,1]});
+                // goods.push({"words":[id,1]});
                 let timer = setTimeout(function () {
-                    tipsFun.goodsTip({"words":[id,1]});
+                    tipsFun.goodsTip({"words":[id,1],timeOut:msg.timeOut || 0});
                     clearTimeout(timer);
                     timer = null;
                 }, 0);
@@ -56,7 +53,7 @@ export const globalReceive: any = {
             return;
         }
 
-        goods.push(msg);
+        // goods.push(msg);
         let timer = setTimeout(function () {
             tipsFun.goodsTip(msg);
             clearTimeout(timer);
@@ -64,7 +61,7 @@ export const globalReceive: any = {
         }, 0)
     },
     attrTip: (msg) => {
-        attr.push(msg);
+        // attr.push(msg);
         let timer = setTimeout(function () {
             tipsFun.attrTip(msg);
             clearTimeout(timer);
@@ -72,7 +69,7 @@ export const globalReceive: any = {
         }, 0)
     },
     barTip: (msg)=>{//msg = {"words":"text","left":number,"top":number}
-        bar.push(msg);
+        // bar.push(msg);
         let timer = setTimeout(function () {
             tipsFun.barTip(msg);
             clearTimeout(timer);
@@ -84,10 +81,10 @@ export const globalReceive: any = {
     }
 }
 
-let err = [],
-    goods = [],
-    attr = [],
-    bar = [];
+// let err = [],
+//     goods = [],
+//     attr = [],
+//     bar = [];
 
 let time = 2000;
 
@@ -151,27 +148,26 @@ const createTipsFun = function () {
         }, 600);
     };
     //拾取物品
-    module.goodsTip = function (arr) {
+    module.goodsTip = function (obj) {
         let divRoot = document.getElementById("goods");
         if (!divRoot) return;
         var divNode = document.createElement("div");
-        var t;
-        t = time;
+        let timeOut = obj.timeOut || 0;
        
         divNode.setAttribute("class", "goods_tip");
-        divNode.innerHTML = module.category(arr.words);
+        divNode.innerHTML = module.category(obj.words);
 
         let timer = setTimeout(()=>{
             divRoot.appendChild(divNode);
             clearTimeout(timer);
             timer = null;
-        },1200);
+        },timeOut);
         
         let timer1 = setTimeout(function () {
             divRoot.removeChild(divNode);
             clearTimeout(timer1);
             timer1 = null;
-        }, t-0+1200);
+        }, timeOut + time);
     };
     //物品处理
     module.category = function(arr){//arr=[id,count]

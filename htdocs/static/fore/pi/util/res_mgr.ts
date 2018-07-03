@@ -1,20 +1,19 @@
-﻿// 模块描述
-/*
+/**
  * 负责创建、销毁BlobURL，负责维护资源的缓存和引用计数
  * 异步加载二进制数据，同步创建BlobURL，异步加载资源（图像、字体……）
-*/
+ */
 
 // ============================== 导入
+import { butil, commonjs, depend, load } from '../lang/mod';
 import { now } from '../lang/time';
-import { butil, depend, load, commonjs } from '../lang/mod';
 
 // ============================== 导出
 /**
  * @description blob的资源类型
  * @example
  */
-export const RES_TYPE_BLOB = "blob";
-export const RES_TYPE_FILE = "file";
+export const RES_TYPE_BLOB = 'blob';
+export const RES_TYPE_FILE = 'file';
 /**
  * @description 资源
  * @example
@@ -22,49 +21,52 @@ export const RES_TYPE_FILE = "file";
 export class Res {
 	// 必须要赋初值，不然new出来的实例里面是没有这些属性的
 	// 名称
-	name: string = "";
+	public name: string = '';
 	// 类型
-	type: string = "";
+	// tslint:disable:no-reserved-keywords
+	public type: string = '';
 	// 参数
-	args: any = null;
+	public args: any = null;
 	// 引用数
-	count: number = 0;
+	public count: number = 0;
 	// 超时时间
-	timeout: number = 0;
+	public timeout: number = 0;
 	// 链接
-	link: any = null;
+	public link: any = null;
 
 	/**
 	 * @description 创建, 参数为源数据 可以是二进制数据，也可以是其他
 	 * @example
 	 */
-	create(data: any): void {
+	public create(data: any): void {
 		this.link = data;
 	}
 	/**
 	 * @description 使用
 	 * @example
 	 */
-	use(): void {
+	public use(): void {
 		this.count++;
 	}
 	/**
 	 * @description 不使用
 	 * @example
 	 */
-	unuse(timeout: number, nowTime: number): void {
+	public unuse(timeout: number, nowTime: number): void {
 		this.count--;
-		if (timeout > this.timeout)
+		if (timeout > this.timeout) {
 			this.timeout = timeout;
+		}
 		this.release(nowTime);
 	}
 	/**
 	 * @description 释放
 	 * @example
 	 */
-	release(nowTime: number): void {
-		if (this.count > 0)
+	public release(nowTime: number): void {
+		if (this.count > 0) {
 			return;
+		}
 		if (nowTime < this.timeout) {
 			timeoutRelease(this, nowTime, this.timeout);
 		} else {
@@ -76,7 +78,8 @@ export class Res {
 	 * @description 销毁，需要子类重载
 	 * @example
 	 */
-	destroy(): void {
+	// tslint:disable:no-empty
+	public destroy(): void {
 
 	}
 }
@@ -88,65 +91,72 @@ export class Res {
 export class ResTab {
 	// 必须要赋初值，不然new出来的实例里面是没有这些属性的
 	// 本地表，为空表示资源表已经被释放
-	tab: Map<string, Res> = new Map();
+	public tab: Map<string, Res> = new Map();
 	// 超时时间
-	timeout: number = 30000;
+	public timeout: number = 30000;
 
 	/**
 	 * @description 获取当前资源的数量
 	 * @example
 	 */
-	size(): number {
+	public size(): number {
 		return this.tab ? this.tab.size : -1;
-	}	/**
+	}	
+	/**
 	 * @description 是否已释放
-	 * @example
 	 */
-	isReleased(): boolean {
+	public isReleased(): boolean {
 		return !this.tab;
 	}
 	/**
 	 * @description 获取资源
 	 * @example
 	 */
-	get(name: string): Res {
-		let tab = this.tab;
-		if (!tab)
+	public get(name: string): Res {
+		const tab = this.tab;
+		if (!tab) {
 			return;
+		}
 		let r = tab.get(name);
-		if (r)
+		if (r) {
 			return r;
+		}
 		r = resMap.get(name);
-		if (!r)
+		if (!r) {
 			return;
+		}
 		r.use();
 		tab.set(name, r);
+
 		return r;
 	}
 	/**
 	 * @description 加载资源
 	 * @example
 	 */
-	load(name: string, type: string, args: any, funcArgs: any, successCallback?: Function, errorCallback?: Function): any {
-		let r = this.get(name);
+	public load(name: string, type: string, args: any, funcArgs: any, successCallback?: Function, errorCallback?: Function): any {
+		const r = this.get(name);
 		successCallback = successCallback || empty;
 		errorCallback = errorCallback || empty;
-		if (r)
+		if (r) {
 			return successCallback(r);
-		let create = typeMap.get(type);
-		if (!create)
+		}
+		const create = typeMap.get(type);
+		if (!create) {
 			return false;
-		let cb = (r) => {
-			let tab = this.tab;
+		}
+		const cb = (r) => {
+			const tab = this.tab;
 			if (tab && !tab.has(name)) {
 				r.use();
 				tab.set(r.name, r);
 			}
 			successCallback(r);
-		}
-		let wait = waitMap.get(name);
-		if (wait)
+		};
+		const wait = waitMap.get(name);
+		if (wait) {
 			return wait.push(cb, errorCallback);
+		}
 		waitMap.set(name, [cb, errorCallback]);
 		create(name, type, args, funcArgs);
 	}
@@ -154,40 +164,46 @@ export class ResTab {
 	 * @description 创建资源
 	 * @example
 	 */
-	createRes(name: string, type: string, args: any, construct: any, data: any): Res {
-		let tab = this.tab;
-		if (!tab)
+	public createRes(name: string, type: string, args: any, construct: any, data: any): Res {
+		const tab = this.tab;
+		if (!tab) {
 			return;
-		let r = loadOK(name, type, args, construct, data);
+		}
+		const r = loadOK(name, type, args, construct, data);
 		r.use();
 		tab.set(r.name, r);
+
 		return r;
 	}
 	/**
 	 * @description 释放资源
 	 * @example
 	 */
-	delete(res: Res, timeout?: number): boolean {
-		let tab = this.tab;
-		if (!tab)
+	public delete(res: Res, timeout?: number): boolean {
+		const tab = this.tab;
+		if (!tab) {
 			return false;
-		let b = tab.delete(res.name);
+		}
+		const b = tab.delete(res.name);
 		if (b) {
-			let time = now();
+			const time = now();
 			res.unuse(time + (timeout || this.timeout), time);
 		}
+
 		return b;
 	}
 	/**
 	 * @description 清除全部资源
 	 * @example
 	 */
-	clear(): void {
-		let tab = this.tab;
-		if (!tab)
+	public clear(): void {
+		const tab = this.tab;
+		if (!tab) {
 			return;
-		let time = now(), timeout = time + this.timeout;
-		for (let res of tab.values()) {
+		}
+		const time = now();
+		const timeout = time + this.timeout;
+		for (const res of tab.values()) {
 			res.unuse(timeout, time);
 		}
 		tab.clear();
@@ -196,15 +212,18 @@ export class ResTab {
 	 * @description 释放资源表
 	 * @example
 	 */
-	release(): boolean {
-		let tab = this.tab;
-		if (!tab)
+	public release(): boolean {
+		const tab = this.tab;
+		if (!tab) {
 			return false;
+		}
 		this.tab = null;
-		let time = now(), timeout = time + this.timeout;
-		for (let res of tab.values()) {
+		const time = now();
+		const timeout = time + this.timeout;
+		for (const res of tab.values()) {
 			res.unuse(timeout, time);
 		}
+
 		return true;
 	}
 }
@@ -214,16 +233,16 @@ export class ResTab {
  * @example
  */
 export const BlobType = {
-	png: "image/png",
-	jpg: "image/jpeg",
-	jpeg: "image/jpeg",
-	webp: "image/webp",
-	gif: "image/gif",
-	svg: "image/svg+xml",
-	ttf: "application/x-font-ttf",
-	otf: "application/x-font-opentype",
-	woff: "application/x-font-woff",
-	woff2: "application/x-font-woff2",
+	png: 'image/png',
+	jpg: 'image/jpeg',
+	jpeg: 'image/jpeg',
+	webp: 'image/webp',
+	gif: 'image/gif',
+	svg: 'image/svg+xml',
+	ttf: 'application/x-font-ttf',
+	otf: 'application/x-font-opentype',
+	woff: 'application/x-font-woff',
+	woff2: 'application/x-font-woff2'
 };
 
 /**
@@ -231,16 +250,16 @@ export const BlobType = {
  * @example
  */
 export const createURL = (data: ArrayBuffer, type: string): string => {
-	let blob = new Blob([data], { type: type });
+	const blob = new Blob([data], { type: type });
+
 	return URL.createObjectURL(blob);
-}
+};
 /**
  * @description 销毁BlobURL
-  * @example
-*/
+ */
 export const revokeURL = (url: string): void => {
 	URL.revokeObjectURL(url);
-}
+};
 
 /**
  * @description 注册资源类型对应的创建函数
@@ -248,7 +267,7 @@ export const revokeURL = (url: string): void => {
  */
 export const register = (type: string, create: Function) => {
 	typeMap.set(type, create);
-}
+};
 
 /**
  * @description 等待成功
@@ -263,29 +282,34 @@ export const loadOK = (name: string, type: string, args: any, construct: any, da
 		r.args = args;
 		r.create(data);
 		resMap.set(r.name, r);
-		let t = now();
+		const t = now();
 		timeoutRelease(r, t, t + defalutTimeout);
 	}
-	let arr = waitMap.get(name);
-	if (!arr)
+	const arr = waitMap.get(name);
+	if (!arr) {
 		return r;
+	}
 	waitMap.delete(name);
-	for (let i = arr.length - 2; i >= 0; i -= 2)
+	for (let i = arr.length - 2; i >= 0; i -= 2) {
 		arr[i](r);
+	}
+
 	return r;
-}
+};
 /**
  * @description 等待失败
  * @example
  */
 export const loadError = (name: string, err: any) => {
-	let arr = waitMap.get(name);
-	if (!arr)
+	const arr = waitMap.get(name);
+	if (!arr) {
 		return;
+	}
 	waitMap.delete(name);
-	for (let i = arr.length - 1; i >= 0; i -= 2)
+	for (let i = arr.length - 1; i >= 0; i -= 2) {
 		arr[i](err);
-}
+	}
+};
 
 /**
  * @description 获得资源主表
@@ -293,7 +317,7 @@ export const loadError = (name: string, err: any) => {
  */
 export const getResMap = () => {
 	return resMap;
-}
+};
 
 /**
  * @description 创建ArrayBuffer资源
@@ -302,39 +326,44 @@ export const getResMap = () => {
 const createABRes = (name: string, type: string, file: string, fileMap: Map<string, ArrayBuffer>, construct: Function): void => {
 	file = getTransWebpName(file);
 	if (fileMap) {
-		let data = fileMap[file];
+		const data = fileMap[file];
 		if (data) {
 			loadOK(name, type, file, construct, data);
+
 			return;
 		}
 	}
-	let info = depend.get(file);
-	if (!info)
+	const info = depend.get(file);
+	if (!info) {
 		return loadError(name, {
-			error: "FILE_NOT_FOUND",
-			reason: "createBlobURLRes fail: " + file
+			error: 'FILE_NOT_FOUND',
+			reason: `createBlobURLRes fail: ${file}`			
 		});
-	let down = load.create([info], (r) => {
+	}
+	const down = load.create([info], (r) => {
 		loadOK(name, type, file, construct, r[file]);
 	}, (err) => {
 		loadError(name, err);
 	});
 	load.start(down);
-}
+};
 /**
  * @description 获取 png jpg jpeg 自动转换成同名的webp, webp必须在depend中存在
  * @example
  */
 export const getTransWebpName = (name: string): string => {
-	if (!(commonjs.flags.webp && commonjs.flags.webp.alpha))
+	if (!(commonjs.flags.webp && commonjs.flags.webp.alpha)) {
 		return name;
+	}
 	const suf = butil.fileSuffix(name);
-	if (!(suf === 'png' || suf === 'jpg' || suf === 'jpeg'))
+	if (!(suf === 'png' || suf === 'jpg' || suf === 'jpeg')) {
 		return name;
-	const s = name.slice(0, name.length - suf.length) + 'webp';
-	const i = s.indexOf(":");
+	}
+	const s = `${name.slice(0, name.length - suf.length)}webp`;	
+	const i = s.indexOf(':');
+
 	return depend.get(i < 0 ? s : s.slice(i + 1)) ? s : name;
-}
+};
 
 // ============================== 本地
 // 资源类型对应的构造函数表
@@ -342,8 +371,9 @@ const typeMap: Map<string, Function> = new Map();
 // 全局资源
 const resMap: Map<string, Res> = new Map();
 // 全局等待表
-const waitMap: Map<string, Array<Function>> = new Map();
+const waitMap: Map<string, Function[]> = new Map();
 // 空函数
+// tslint:disable-next-line:only-arrow-functions no-function-expression
 const empty = function () { };
 // 定时的时间
 const defalutTimeout = 1000;
@@ -366,16 +396,16 @@ class BlobURLRes extends Res {
 	 * @description 创建
 	 * @example
 	 */
-	create(data: any): void {
-		let type = butil.fileSuffix(this.args);
-		let blob = new Blob([data], { type: BlobType[type] });
+	public create(data: any): void {
+		const type = butil.fileSuffix(this.args);
+		const blob = new Blob([data], { type: BlobType[type] });
 		this.link = URL.createObjectURL(blob);
 	}
 	/**
 	 * @description 销毁，需要子类重载
 	 * @example
 	 */
-	destroy(): void {
+	public destroy(): void {
 		URL.revokeObjectURL(this.link);
 	}
 }
@@ -385,14 +415,15 @@ class BlobURLRes extends Res {
  * @example
  */
 const collect = (): void => {
-	let time = now(), arr = releaseArray;
+	const time = now();
+	const arr = releaseArray;
 	releaseArray = [];
 	timerRef = 0;
 	timerTime = Number.MAX_SAFE_INTEGER;
-	for (let res of arr) {
+	for (const res of arr) {
 		res.release(time);
 	}
-}
+};
 
 /**
  * @description 超时释放, 最小500ms
@@ -400,13 +431,15 @@ const collect = (): void => {
  */
 const timeoutRelease = (res: Res, nowTime: number, releaseTime: number): void => {
 	releaseArray.push(res);
-	if (timerTime <= releaseTime + minReleaseTimeout)
+	if (timerTime <= releaseTime + minReleaseTimeout) {
 		return;
-	if (timerRef)
+	}
+	if (timerRef) {
 		clearTimeout(timerRef);
+	}
 	timerTime = (releaseTime > nowTime + minReleaseTimeout) ? releaseTime : nowTime + minReleaseTimeout;
 	timerRef = setTimeout(collect, timerTime - nowTime);
-}
+};
 
 // ============================== 立即执行
 register(RES_TYPE_BLOB, (name: string, type: string, args: string, fileMap: Map<string, ArrayBuffer>) => {

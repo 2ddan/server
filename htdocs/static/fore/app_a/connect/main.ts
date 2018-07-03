@@ -109,7 +109,12 @@ let blockFunc = (msg,callback) => {
 	(function(m,b){
 		request(m, function(r){
 			delete waitTable[m.type];
+			let t = Date.now(),d;
 			b(r);
+			d = Date.now() -t;
+			if(d>1){
+				console.warn("slow request ",d,b);
+			}
 			requestStatus[m.type] -= 1;
 			globalSend("net_ok",{type:m.type,data:r});
 			runWait(m.type,r);

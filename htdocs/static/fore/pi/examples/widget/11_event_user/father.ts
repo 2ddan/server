@@ -1,11 +1,14 @@
-import {Widget} from "../../../widget/widget";
-import {notify} from "../../../widget/event";
+/**
+ * 
+ */
+import {notify} from '../../../widget/event';
+import {Widget} from '../../../widget/widget';
 
-export class Father extends Widget{
-    constructor(){
-        super();
-    }
-    fatherClick(event:any){
-        alert("father get it : " + event.value);
-    }
+export class Father extends Widget {
+	constructor() {
+		super();
+	}
+	public fatherClick(event:any) {
+		alert(`father get it : ${event.value}`);        
+	}
 }

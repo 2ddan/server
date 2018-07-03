@@ -13,7 +13,7 @@
 			{"line":"line_7"} 
 		</app_a-widget-line-line>
 		<app_a-widget-bg_frame-bg style="position: absolute;left: 0px;top: 45px;width: 100%;height: 666px;">				{"bgName":"bg_frame21"} 
-		</app_a-widget-bg_frame-bg>
+		</app_a-widget-bg_frame-bg> 
 		
 		<app-widget-tab-navtab style="position:absolute;width:100%;height:89%;top:0;bottom:0;left:0px;top: 0;line-height:45px;" ev-change = "changeTab">
 			{"cur":0,

@@ -1,21 +1,16 @@
 //==================导入======================
 /**pi */
 import { Forelet } from "pi/widget/forelet"
-import { Pi, globalSend, findGlobalReceive } from "app/mod/pi";
 import { Widget } from "pi/widget/widget";
-import { open, destory, remove } from "pi/ui/root";
 
 /**mod */
 import { get as getDB, listen } from "app/mod/db";
-import { Util } from "app/mod/util";
-import { Common } from "app/mod/common";
 import * as piSample from "app/mod/sample";
-import { piClose,piOpen } from "app/mod/root";
+import { piOpen } from "app/mod/root";
 
 /**app */
 import { replaceEquip } from "app_b/role/equip/equip";
 import { equip_level_limit } from "cfg/b/equip_level_limit";
-import { toReadBag } from "app_b/bag/bag";
 
 export const forelet = new Forelet();
 export let flag = true;
@@ -24,7 +19,6 @@ export let fastWearFun;
 let award_equip = {},
     state = "", // 奖励得到装备状态
     fast_wear_equip = [], // 需要快速换装的装备
-    fastWearWidget = null, // 快速穿戴组件
     equip_info,
     count = 10,
     timer = null;

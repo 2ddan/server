@@ -1,0 +1,142 @@
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 540px;
+    height: 106px;
+}
+.5 {
+    position: absolute;
+    left: -23px;
+    top: -14px;
+    z-index: 1;
+}
+.6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 655px;
+}
+.7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 68px;
+    text-align:center;
+    font-family: mnjsh;
+    text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+    -webkit-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+    -moz-text-shadow:#312213 1px 0 0,#312213 0 1px 0,#312213 -1px 0 0,#312213 0 -1px 0;
+}
+.8 {
+    position: absolute;
+    width: 492px;
+    height: 655px;
+    left: 50%;
+    top: 105px;
+    margin-left: -246px;
+}
+
+.13{
+    position: absolute;
+    left: 105px;
+    top: 84px;
+    width:100px;
+    text-align:center;
+    overflow: hidden;
+}
+.14{
+    position: absolute;
+    left: 48px;
+    top: 59px;
+    transform: scale(1.1);
+}
+
+
+.15 {
+    position: absolute;
+    left: 93px;
+    top: 4px;
+    height: 106px;
+    width: 3px;
+}
+.16 {
+    position: absolute;
+    left: 113px;
+    top: 6px;
+    width: 82px;
+    height: 82px;
+    line-height: 9px;
+}
+.17 {
+    position: absolute;
+    color: #ffd8a6;
+    font-size: 22px;
+    left: 212px;
+    top: 37px;
+    width:100px;
+    text-align:center;
+}
+.18 {
+    position: absolute;
+    font-size: 16px;
+    left: 311px;
+    top: 30px;
+    overflow:hidden;
+    width: 180px;
+    white-space: nowrap;
+    bottom: 20px;
+    height:55px;
+    color:#fff;
+}
+
+
+.46{
+    position: absolute;
+    top:542px;
+    left:18px;
+    color:#fde7ca;
+    font-size:20px;
+    font-family: mnjsh;
+    color:#ffd8a6;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    line-height: 28px;
+    width: 450px;
+    height: 148px;
+}
+.47{
+    font-family: "黑体";
+}
+.48{
+    width:258px;
+    height:24px;
+    position: absolute;
+    left:50%;
+    top:702px;
+    line-height: 27px;
+    color:#fde7ca;    
+    margin-left:-113px;
+    font-size:18px;
+    font-family: mnjsh;
+    text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -webkit-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+    -moz-text-shadow:#1b0d08 1px 0 0,#1b0d08 0 1px 0,#1b0d08 -1px 0 0,#1b0d08 0 -1px 0;
+}
+.74{
+    width: 100px;
+    height: 20px;
+    font-size: 45px;
+    text-align: center;
+    color: rgb(174, 140, 100);
+    text-shadow: 1px 0px 0px rgb(6, 8, 54), -1px 0px 0px rgb(6, 8, 54), 0px 1px 0px rgb(6, 8, 54), 0px -1px 0px rgb(6, 8, 54);
+    position: absolute;
+    left: -3px;
+    top: 47px;
+    line-height: 20px;
+    font-family:mnjsh;
+}

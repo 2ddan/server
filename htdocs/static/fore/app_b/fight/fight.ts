@@ -7,13 +7,13 @@
 import { Widget, factory } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { getRealNode } from "pi/widget/painter";
-import { listenerList,open as pi_open, remove, add, destory,closeBack } from "pi/ui/root";
+import { open as pi_open, destory,closeBack } from "pi/ui/root";
 import { findNodeByAttr } from "pi/widget/virtual_node";
 
 //mod
 import { Common } from "app/mod/common";
 import { Music } from "app/mod/music";
-import { data as db, updata, get ,listen} from "app/mod/db";
+import { data as db,listen} from "app/mod/db";
 import { open, close } from "app/mod/root";
 import { Pi, globalSend, cfg } from "app/mod/pi";
 import { Util } from "app/mod/util";
@@ -21,7 +21,7 @@ import { Util } from "app/mod/util";
 //scene
 import { mgr, mgr_data } from "app/scene/scene";
 import { setClickCallback, initAnimFinishCB } from "app/scene/base/scene";
-import { cuurUI, UiFunTable, initValue } from "app/scene/ui_fun";
+import { UiFunTable, initValue } from "app/scene/ui_fun";
 //fight
 import { Scene as FightScene, FMgr } from "fight/a/fight";
 import { Request } from "fight/a/request";
@@ -30,10 +30,7 @@ import { blend } from "fight/a/analyze";
 //app
 import { Fight_common } from "fight/a/fore/fight_common";
 import { Init_Fighter } from "fight/a/common/init_fighter";
-import { handScene, updateSelfModule, initMapList } from "app_b/fight_ol/handscene";
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { loadNow } from "app_a/download/download";
-import { drop_outFun } from "app_b/widget/drop_out";
+import { handScene, updateSelfModule } from "app_b/fight_ol/handscene";
 import { exitWild } from "app_b/wild/wild";
 import { Common_m } from "app_b/mod/common";
 import { scene_music } from "cfg/b/scene_music";
@@ -98,9 +95,7 @@ export class Fightm extends Widget {
         closeBack();
     }
     closeLoseAccount (){
-        let w:any = forelet.getWidget("app_b-fight-wild_lose_account");
-        w && w.cancel && w.cancel();
-        if (accountBack) accountBack();
+        wildLoss();
     }
     changeFight() {
         if (fightScene.level >=2) {
@@ -111,7 +106,13 @@ export class Fightm extends Widget {
         getData.scene = { "autoFight": fightScene.level, "fightData": fightData }
         forelet.paint(getData);
     }
-    //战斗失败，前往
+    //野外战斗失败，前往
+    wildMenu(fun){
+        wildLoss();
+        let arr = fun.split(",");
+        globalSend(arr[0],arr[1] || null);
+    }
+    //副本战斗失败，前往
     gotoMenu(fun){
         goback("app_b-fight-account");
         let arr = fun.split(",");
@@ -135,10 +136,7 @@ export class Fightm extends Widget {
                     //确认
                     () => {
                         goback("app_b-fight-fight");
-                        globalSend("exitFb");
-                        if(type=="exp_mission"){
-                            globalSend("openExpFb",false);
-                        }
+                        // globalSend("exitFb");
                     },
                     //取消
                     () => { }
@@ -152,6 +150,12 @@ export class Fightm extends Widget {
     }
 }
 
+//野外战斗失败弹窗点击
+let wildLoss = ()=>{
+    let w:any = forelet.getWidget("app_b-fight-wild_lose_account");
+    w && w.cancel && w.cancel();
+    if (accountBack) accountBack();
+}
 //========================================导出
 //接收战斗资源管理界面关闭消息
 //这才是真正的战斗开始
@@ -229,6 +233,7 @@ export const showAccount = (msg, callback) => {
         getData.timeStr = timeStr;
         getData.exitStartTime = Util.serverTime();
         forelet.paint(getData);
+        globalSend("popBack");
         if(msg.extra.source === "wild_boss_lose"){
             open("app_b-fight-wild_lose_account");
         }else{
@@ -238,7 +243,6 @@ export const showAccount = (msg, callback) => {
         if (msg.extra.flag) {
             data.flag = msg.extra.flag;
         }
-        globalSend("openAccount", data)
         //Music.startUiSound("fight_win");
     }, 1500)
     // if (msg.result.r == 1 || ((msg.result.r == 2 || msg.result.r == 3) && fo[msg.extra.source].fightBalance)) {
@@ -250,13 +254,16 @@ export const showAccount = (msg, callback) => {
 
 export const goback = (arg: string, isfale?: boolean) => {
     let w: any = forelet.getWidget(arg);
+    if(!w){
+        return;
+    }
     if (!fightScene && w) {
         close_w(arg, w);
         if (accountBack) accountBack();
         accountBack = null;
         return;
     }
-    globalSend("exitFB");
+    globalSend("exitFb");
 
     //Music.startBgSound("normal_only");//播放场景音乐
 
@@ -356,11 +363,15 @@ export const findRes = (msg) => {
  * @param {Json}msg 战斗数据{own_fight:[],enemy_fight:[],type:"arena(功能名字)",scene?:"场景文件名",cfg:{}(战斗配置，包括怪物及自己刷新初始位置)}
  * @param callback 战斗正常结束回调
  * @param escapeback 战斗中途退出回调
+ * @param loclistener 每个功能需要对战斗事件进行的监听函数
  * @example
  */
-export const fight = (msg: any, callback?: Function, escapeback?: Function) => {
+export const fight = (msg: any, callback?: Function , escapeback?: Function,loclistener?: Function) => {
     fightCount += 1;
-    escapeBack = escapeback;
+    if(!fightScene){
+        escapeBack = escapeback;
+        locListener = loclistener;
+    }
     exitWild(() => {
         _fight(msg, callback);
     });
@@ -397,6 +408,8 @@ let countHp = 0,
     accountBack,
     //战斗中途退出回调
     escapeBack,
+    //功能战斗事件监听
+    locListener,
     fightCount = 0;
 
 /**
@@ -431,7 +444,7 @@ const beginShow = (startAni?, time?) => {
  * @description 清理事件
  */
 const clear = () => {
-    initMapList();
+    handScene.clear();
     UiFunTable.clearTO();
     initValue();
 };
@@ -466,9 +479,19 @@ const _fight = (msg, callback?) => {
             fightScene.limitTime = msg.limitTime * 1000;
             //重新设置战斗结束回调
             fightScene.overCallback = overBack;
+            overCallback = (r, scene) => {
+                // fightScene.initmove();
+                fighting = false;
+                return callback(r, scene);
+            };
             getData.scene = { "autoFight": fightScene.level, "fightData": msg };
             forelet.paint(getData);
             initOwn(msg);
+        }
+        //怪物数量
+        if(msg.count){
+            getData.scene.fightData.count = msg.count;
+            forelet.paint(getData);
         }
         fighting = true;
         fightStart(msg);
@@ -527,14 +550,20 @@ const fightListener = (r) => {
     if (r.events.length > 0) {
         for (let i = 0, leng = r.events.length; i < leng; i++) {
             let e = r.events[i];
+            let target = typeof(e.target) == "number" ? FMgr.scenes.fighters.get(e.target) : e.target;
             try {
-                if(e.type == "damage" && e.target.hp <= 0){
-                    let award = e.target.award,
-                        fighter = e.fighter,
-                        target = e.target,
+                if(e.type == "damage" && target.hp <= 0){
+                    let _target = typeof(e.target) == "number" ? FMgr.scenes.fighters.get(e.target) : e.target,
+                        fighter = typeof(e.fighter) == "number" ? FMgr.scenes.fighters.get(e.fighter) : e.fighter,
+                        award = e.target.award ? e.target.award : _target.show_award,
                         award_list = [];
+
+
                     let fighter_pos = [fighter.x ,fighter.y ,fighter.z];
-                    let target_pos = [target.x ,target.y ,target.z];
+                    let target_pos = [_target.x ,_target.y ,_target.z];
+                    if(getData.scene && getData.scene.fightData.type == "exp_mission"){
+                        globalSend("expFBI",{fp:fighter_pos,tp:fighter_pos});                        
+                    }
                     if(award){
                         for(let i = 0;i < award.length;i++){
                             if(award[i][0] != "money" && award[i][0] != "exp"){
@@ -543,12 +572,13 @@ const fightListener = (r) => {
                         }
                         if(award_list.length != 0){
                             let timer = setTimeout(()=>{
-                                drop_outFun(award_list,target_pos,fighter_pos);
+                                UiFunTable.drop_outFun(award_list,target_pos,fighter_pos);
                                 clearTimeout(timer);                                    
                             },1500)
                         }
                     }
                 }
+                locListener && locListener(e);
                 //战斗事件处理
                 handScene[e.type] && handScene[e.type](e, r.now);
             } catch (ex) {
@@ -561,9 +591,9 @@ const fightListener = (r) => {
     //if(ft>10)app.mod.scene.log("事件处理时间："+ft);
     //return;
     //执行特效
-    setTimeout(()=>{
-        UiFunTable.runCuurUi(r);
-    },0)
+    // setTimeout(()=>{
+    //     if(fightScene)UiFunTable.runCuurUi(r,fightScene.now);
+    // },0)
     //if(ft>5)app.mod.scene.log("特效计算时间："+ft);
     return true;
 };
@@ -593,7 +623,7 @@ const initFightScene = (msg) => {
     })
     
     fightScene = FMgr.create("fight");
-    //Fight.createScene(1024, 1024, 1, "fight", mgr.yszzFight.scene, null, mgr.getSceneBuffer(msg.cfg.scene, ".nav"));
+    fightScene.setNavMesh(FMgr.createNavMesh(mgr.getSceneBuffer(msg.cfg.scene, ".nav")));
     mgr_data.sceneTab["fight"] = fightScene;
     //战斗事件监听
     fightScene.listener = fightListener;
@@ -642,7 +672,7 @@ const initOwn = (msg) => {
         let me = fightScene.fighters.get(1);
         // initMapList();
         for (let i in _list[0]) {
-            if (i !== "x" && i !== "y" && i !== "name") me[i] = _list[0][i];
+            if (i !== "x" && i !== "y" && i !== "name" && i != "skill") me[i] = _list[0][i];
         }
         me.show_hp = me.hp;
         // delete me._show;

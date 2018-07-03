@@ -1,42 +1,33 @@
+/**
+ * 
+ */
 
-
-import { ParamType, NativeObject, NativeListener, registerSign } from "../../../browser/native"
+import { NativeListener, NativeObject, ParamType, registerSign } from '../../../browser/native';
 
 export class Person extends NativeObject {
 	private name: string;
 
-	/**
-	 * 
-	 * @param param {
-	 *     date: number,
-	 *     cardID: "abcdef",
-	 *     success: () => {}
-	 *     fail: () => {}
-	 * }
-	 */
-	getName(param: any) {
+	public getName(param: any) {
 
-		let func = param.success;
+		const func = param.success;
 
 		param.success = (name) => {
 			this.name = name;
 			func && func(name);
-		}
+		};
 
-		this.call("getName", param);
+		this.call('getName', param);
 	}
 }
 
-
 registerSign(Person, {
-	"getName": [
+	getName: [
 		{
-			name: "date",
+			name: 'date',
 			type: ParamType.Number
 		},
 		{
-			name: "cardID",
+			name: 'cardID',
 			type: ParamType.String
 		}]
 });
-

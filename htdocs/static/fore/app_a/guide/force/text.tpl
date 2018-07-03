@@ -8,23 +8,23 @@
     {{end}}
     
     {{let appCfg = _get("app/mod/db").exports.data}}
-    {{let fun_id = appCfg.open_fun.id-0+1}}  
+    {{let fun_id = appCfg.open_fun && (appCfg.open_fun.id-0+1)}}  
     
     {{let cfg = _get("app/mod/pi").exports.cfg}}
-    
     {{if it.show.name == "function_open" || it.show.name == "fun_open_active"}}
         {{let function_open = cfg.function_guid.function_guid[fun_id]}}
-        {{:it.show.text = function_open.guide_text}}
+        {{:it.show.text = function_open && function_open.guide_text}}
     {{end}}
-    
+
     {{let top = it.y-50}}
     {{if !tb}}
-    {{:top = 330}}
+    {{:top = 400}}
     {{elseif it.show.name == "fun_open_active"}}
     {{:top = 695}}
     {{end}}
 <div style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events: none;">
-    <div data-desc="文字内容" style="z-index: 4;position: absolute;width:236px;top:{{top}}px;{{if lr}} left:{{it.x-it.w}}px;{{else}}left: 100px;{{end}}">
+    {{if it.show.text}}
+    <div data-desc="文字内容" style="z-index: 4;position: absolute;width:236px;top:{{top}}px;left:170px">
         <div style="position: absolute;height: 69px;display: inline-block;z-index: 3;{{if lr}}right:0px;{{end}}{{if tb}}bottom:0px;{{end}}">
             <app_a-widget-pic_text-pic_text style="position: absolute;top:0;left:0;">
                 {"icon":"text_bg_3","text":" ","width":235,"height":69}
@@ -33,4 +33,5 @@
             <img style="position:absolute;bottom: -9px;left: -78px;z-index: 2;" src="../images/girl.png"/>            
         </div>
     </div>
+    {{end}}
 </div>

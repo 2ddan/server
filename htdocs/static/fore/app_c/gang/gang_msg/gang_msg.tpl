@@ -20,11 +20,14 @@
 			</widget>
 			<div w-class="20" w-sid="20">
 				<div w-class="24" w-sid="24"></div>
-				<widget w-class="21" w-tag="app_a-widget-input-textarea" w-sid="21" length="{{it.flag ? 64 :32 }}"  ev-input-text="getFocusInput" ev-input-blur="upDataInputValue">
-					{"type":"text","placeholder":"请输正确信息_","color":"#885840","length":{{it.flag ? 64 :32 }},"text":"","id":{{it.flag ? "gangnotice" : "gangenounce"}}} 
+				<widget data-desc="text" w-class="21" w-tag="app_a-widget-input-textarea" w-sid="21" length="{{it.flag ? 64 :32 }}"  ev-input-text="getFocusInput" ev-input-blur="upDataInputValue">
+					{"type":"text","placeholder":"请输正确信息_","color":"#885840","length":{{it.flag ? 64 :32 }},"text":{{it1.gangData.gang_notice}},"id":{{it.flag ? "gangnotice" : "gangenounce"}}} 
 				</widget>
 			</div>
-			<widget w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31"  on-tap={{it.flag ? "sureNoticeClick" : "sureMsgClick"}}>
+			<widget w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31"  on-tap="clearText" style="left: 55px;">
+				{"class":"hl","fontsize":18,"color":"#fdedd7;","text":"清 空","width":110,"height":40} 
+			</widget>
+			<widget w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31"  on-tap={{it.flag ? "sureNoticeClick" : "sureMsgClick"}} style="right: 55px;">
 				{"class":"hl","fontsize":18,"color":"#fdedd7;","text":"确 定","width":110,"height":40} 
 			</widget>
 		</div>

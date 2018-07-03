@@ -29,7 +29,7 @@
         {{let url = Pi.pictures[p.icon]}}
         <div style="position:relative;width:60px;height:60px;margin:0px 5px;display:inline-block;color:#ffffff;">
             <widget w-tag="app_a-widget-prop-base" on-tap="propInfoShow({{p.sid || p.id}})">
-                {"width":60,"height":60,"prop":{{p}} ,"url":{{url}},"count":{{n[1]}},"hidden_name":1,"top":22,"right":6,"effect":{{n[2] ? 1 : 0}}} 
+                {"width":60,"height":60,"prop":{{p}} ,"url":{{url}},"count":{{n[1]}},"hidden_name":1,"top":22,"right":6,"effect":{{p.effect}}} 
             </widget>
         </div>
         {{end}}							

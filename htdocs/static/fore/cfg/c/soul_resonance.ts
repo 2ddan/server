@@ -98,51 +98,51 @@ tab["2"]["12"] = [["attack",3247],["un_critical",2000]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["1"] = [["damage_multiple",0.005],["un_damage_multiple",0.005]]
+tab["3"]["1"] = [["pvp_damage_multiple",0.005],["pvp_un_damage_multiple",0.005]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["2"] = [["damage_multiple",0.01],["un_damage_multiple",0.01]]
+tab["3"]["2"] = [["pvp_damage_multiple",0.01],["pvp_un_damage_multiple",0.01]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["3"] = [["damage_multiple",0.015],["un_damage_multiple",0.015]]
+tab["3"]["3"] = [["pvp_damage_multiple",0.015],["pvp_un_damage_multiple",0.015]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["4"] = [["damage_multiple",0.02],["un_damage_multiple",0.02]]
+tab["3"]["4"] = [["pvp_damage_multiple",0.02],["pvp_un_damage_multiple",0.02]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["5"] = [["damage_multiple",0.025],["un_damage_multiple",0.025]]
+tab["3"]["5"] = [["pvp_damage_multiple",0.025],["pvp_un_damage_multiple",0.025]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["6"] = [["damage_multiple",0.03],["un_damage_multiple",0.03]]
+tab["3"]["6"] = [["pvp_damage_multiple",0.03],["pvp_un_damage_multiple",0.03]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["7"] = [["damage_multiple",0.035],["un_damage_multiple",0.035]]
+tab["3"]["7"] = [["pvp_damage_multiple",0.035],["pvp_un_damage_multiple",0.035]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["8"] = [["damage_multiple",0.04],["un_damage_multiple",0.04]]
+tab["3"]["8"] = [["pvp_damage_multiple",0.04],["pvp_un_damage_multiple",0.04]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["9"] = [["damage_multiple",0.045],["un_damage_multiple",0.045]]
+tab["3"]["9"] = [["pvp_damage_multiple",0.045],["pvp_un_damage_multiple",0.045]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["10"] = [["damage_multiple",0.05],["un_damage_multiple",0.05]]
+tab["3"]["10"] = [["pvp_damage_multiple",0.05],["pvp_un_damage_multiple",0.05]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["11"] = [["damage_multiple",0.055],["un_damage_multiple",0.055]]
+tab["3"]["11"] = [["pvp_damage_multiple",0.055],["pvp_un_damage_multiple",0.055]]
 
 tab["3"] = tab["3"]?tab["3"]:{};
 
-tab["3"]["12"] = [["damage_multiple",0.06],["un_damage_multiple",0.06]]
+tab["3"]["12"] = [["pvp_damage_multiple",0.06],["pvp_un_damage_multiple",0.06]]
 
 tab["4"] = tab["4"]?tab["4"]:{};
 
@@ -242,51 +242,51 @@ tab["5"]["12"] = [["max_hp",100000],["un_dodge",2000]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["1"] = [["damage_multiple",0.005],["un_damage_multiple",0.005]]
+tab["6"]["1"] = [["pvp_damage_multiple",0.005],["pvp_un_damage_multiple",0.005]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["2"] = [["damage_multiple",0.01],["un_damage_multiple",0.01]]
+tab["6"]["2"] = [["pvp_damage_multiple",0.01],["pvp_un_damage_multiple",0.01]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["3"] = [["damage_multiple",0.015],["un_damage_multiple",0.015]]
+tab["6"]["3"] = [["pvp_damage_multiple",0.015],["pvp_un_damage_multiple",0.015]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["4"] = [["damage_multiple",0.02],["un_damage_multiple",0.02]]
+tab["6"]["4"] = [["pvp_damage_multiple",0.02],["pvp_un_damage_multiple",0.02]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["5"] = [["damage_multiple",0.025],["un_damage_multiple",0.025]]
+tab["6"]["5"] = [["pvp_damage_multiple",0.025],["pvp_un_damage_multiple",0.025]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["6"] = [["damage_multiple",0.03],["un_damage_multiple",0.03]]
+tab["6"]["6"] = [["pvp_damage_multiple",0.03],["pvp_un_damage_multiple",0.03]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["7"] = [["damage_multiple",0.035],["un_damage_multiple",0.035]]
+tab["6"]["7"] = [["pvp_damage_multiple",0.035],["pvp_un_damage_multiple",0.035]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["8"] = [["damage_multiple",0.04],["un_damage_multiple",0.04]]
+tab["6"]["8"] = [["pvp_damage_multiple",0.04],["pvp_un_damage_multiple",0.04]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["9"] = [["damage_multiple",0.045],["un_damage_multiple",0.045]]
+tab["6"]["9"] = [["pvp_damage_multiple",0.045],["pvp_un_damage_multiple",0.045]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["10"] = [["damage_multiple",0.05],["un_damage_multiple",0.05]]
+tab["6"]["10"] = [["pvp_damage_multiple",0.05],["pvp_un_damage_multiple",0.05]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["11"] = [["damage_multiple",0.055],["un_damage_multiple",0.055]]
+tab["6"]["11"] = [["pvp_damage_multiple",0.055],["pvp_un_damage_multiple",0.055]]
 
 tab["6"] = tab["6"]?tab["6"]:{};
 
-tab["6"]["12"] = [["damage_multiple",0.06],["un_damage_multiple",0.06]]
+tab["6"]["12"] = [["pvp_damage_multiple",0.06],["pvp_un_damage_multiple",0.06]]
 
 tab["7"] = tab["7"]?tab["7"]:{};
 
@@ -386,51 +386,51 @@ tab["8"]["12"] = [["un_defence",3247],["dodge",2000]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["1"] = [["damage_multiple",0.005],["un_damage_multiple",0.005]]
+tab["9"]["1"] = [["pvp_damage_multiple",0.005],["pvp_un_damage_multiple",0.005]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["2"] = [["damage_multiple",0.01],["un_damage_multiple",0.01]]
+tab["9"]["2"] = [["pvp_damage_multiple",0.01],["pvp_un_damage_multiple",0.01]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["3"] = [["damage_multiple",0.015],["un_damage_multiple",0.015]]
+tab["9"]["3"] = [["pvp_damage_multiple",0.015],["pvp_un_damage_multiple",0.015]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["4"] = [["damage_multiple",0.02],["un_damage_multiple",0.02]]
+tab["9"]["4"] = [["pvp_damage_multiple",0.02],["pvp_un_damage_multiple",0.02]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["5"] = [["damage_multiple",0.025],["un_damage_multiple",0.025]]
+tab["9"]["5"] = [["pvp_damage_multiple",0.025],["pvp_un_damage_multiple",0.025]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["6"] = [["damage_multiple",0.03],["un_damage_multiple",0.03]]
+tab["9"]["6"] = [["pvp_damage_multiple",0.03],["pvp_un_damage_multiple",0.03]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["7"] = [["damage_multiple",0.035],["un_damage_multiple",0.035]]
+tab["9"]["7"] = [["pvp_damage_multiple",0.035],["pvp_un_damage_multiple",0.035]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["8"] = [["damage_multiple",0.04],["un_damage_multiple",0.04]]
+tab["9"]["8"] = [["pvp_damage_multiple",0.04],["pvp_un_damage_multiple",0.04]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["9"] = [["damage_multiple",0.045],["un_damage_multiple",0.045]]
+tab["9"]["9"] = [["pvp_damage_multiple",0.045],["pvp_un_damage_multiple",0.045]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["10"] = [["damage_multiple",0.05],["un_damage_multiple",0.05]]
+tab["9"]["10"] = [["pvp_damage_multiple",0.05],["pvp_un_damage_multiple",0.05]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["11"] = [["damage_multiple",0.055],["un_damage_multiple",0.055]]
+tab["9"]["11"] = [["pvp_damage_multiple",0.055],["pvp_un_damage_multiple",0.055]]
 
 tab["9"] = tab["9"]?tab["9"]:{};
 
-tab["9"]["12"] = [["damage_multiple",0.06],["un_damage_multiple",0.06]]
+tab["9"]["12"] = [["pvp_damage_multiple",0.06],["pvp_un_damage_multiple",0.06]]
 
 
 export const soul_resonance = tab;

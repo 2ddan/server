@@ -1,12 +1,14 @@
+/**
+ * 
+ */
+import { createRuleReader } from '../../../compile/ebnf';
+import { Parser } from '../../../compile/parser';
+import { createByStr } from '../../../compile/reader';
+import { Scanner } from '../../../compile/scanner';
+import { Forelet } from '../../../widget/forelet';
+import { Widget } from '../../../widget/widget';
 
-import { Widget } from "../../../widget/widget";
-import { Forelet } from "../../../widget/forelet";
-import { createByStr } from "../../../compile/reader";
-import { Parser } from "../../../compile/parser";
-import { Scanner } from "../../../compile/scanner";
-import { createRuleReader } from "../../../compile/ebnf";
-
-let lex = `
+const lex = `
 
 	whitespace = {?whitespace?}?;
 	(* comment *)
@@ -135,7 +137,7 @@ let lex = `
 	"?" = "?";
 `;
 
-let syntax = `
+const syntax = `
 	cond = ?expr?, ":"?, ?expr?;
 	field = "identifier";
 	fielde = ?expr?, "]"?;
@@ -166,131 +168,131 @@ let syntax = `
 
 `;
 
-
-let cfgs = [
+const cfgs = [
 	// 表达式结束符
-	{type: ",", rbp: -1},
-	{type: ";", rbp: -1},
-	{type: ")", rbp: -1},
-	{type: "]", rbp: -1},
-	{type: "}", rbp: -1},
+	{type: ',', rbp: -1},
+	{type: ';', rbp: -1},
+	{type: ')', rbp: -1},
+	{type: ']', rbp: -1},
+	{type: '}', rbp: -1},
 	// 最低优先级运算符
-	{type: "string"},
+	{type: 'string'},
 
 	// 返回运算符
-	{type: "return", rbp:1},
-	{type: "throw", rbp:1},
+	{type: 'return', rbp:1},
+	{type: 'throw', rbp:1},
 
 	// 赋值运算符
-	{type: "=", lbp: 10, rbp:9},
-	{type: "+=", lbp: 10, rbp:9},
-	{type: "-=", lbp: 10, rbp:9},
-	{type: "*=", lbp: 10, rbp:9},
-	{type: "/=", lbp: 10, rbp:9},
-	{type: "%=", lbp: 10, rbp:9},
-	{type: "<<=", lbp: 10, rbp:9},
-	{type: ">>=", lbp: 10, rbp:9},
-	{type: ">>>=", lbp: 10, rbp:9},
-	{type: "&=", lbp: 10, rbp:9},
-	{type: "|=", lbp: 10, rbp:9},
-	{type: "^=", lbp: 10, rbp:9},
+	{type: '=', lbp: 10, rbp:9},
+	{type: '+=', lbp: 10, rbp:9},
+	{type: '-=', lbp: 10, rbp:9},
+	{type: '*=', lbp: 10, rbp:9},
+	{type: '/=', lbp: 10, rbp:9},
+	{type: '%=', lbp: 10, rbp:9},
+	{type: '<<=', lbp: 10, rbp:9},
+	{type: '>>=', lbp: 10, rbp:9},
+	{type: '>>>=', lbp: 10, rbp:9},
+	{type: '&=', lbp: 10, rbp:9},
+	{type: '|=', lbp: 10, rbp:9},
+	{type: '^=', lbp: 10, rbp:9},
 	// 条件运算符
-	{type: "?", lbp: 20, rbp:19, led:"cond"},
+	{type: '?', lbp: 20, rbp:19, led:'cond'},
 	// 关系运算符
-	{type: "||", lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
-	{type: "&&", lbp: 32, rbp:31},
-	{type: "|", lbp: 35},
-	{type: "^", lbp: 36},
-	{type: "&", lbp: 37},
+	{type: '||', lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
+	{type: '&&', lbp: 32, rbp:31},
+	{type: '|', lbp: 35},
+	{type: '^', lbp: 36},
+	{type: '&', lbp: 37},
 	// 布尔运算符
-	{type: "===", lbp: 40},
-	{type: "!==", lbp: 40},
-	{type: "==", lbp: 40},
-	{type: "!=", lbp: 40},
-	{type: "<=", lbp: 45},
-	{type: ">=", lbp: 45},
-	{type: "<", lbp: 45},
-	{type: ">", lbp: 45},
-	{type: "in", lbp: 45},
-	{type: "instanceof", lbp: 45},
+	{type: '===', lbp: 40},
+	{type: '!==', lbp: 40},
+	{type: '==', lbp: 40},
+	{type: '!=', lbp: 40},
+	{type: '<=', lbp: 45},
+	{type: '>=', lbp: 45},
+	{type: '<', lbp: 45},
+	{type: '>', lbp: 45},
+	{type: 'in', lbp: 45},
+	{type: 'instanceof', lbp: 45},
 	// 按位移动符
-	{type: "<<", lbp: 50},
-	{type: ">>", lbp: 50},
-	{type: ">>>", lbp: 50},
+	{type: '<<', lbp: 50},
+	{type: '>>', lbp: 50},
+	{type: '>>>', lbp: 50},
 	// 算数运算符
-	{type: "+", lbp: 60},
-	{type: "-", lbp: 60},
-	{type: "*", lbp: 70},
-	{type: "/", lbp: 70},
-	{type: "%", lbp: 70},
-	{type: "**", lbp: 70},
+	{type: '+', lbp: 60},
+	{type: '-', lbp: 60},
+	{type: '*', lbp: 70},
+	{type: '/', lbp: 70},
+	{type: '%', lbp: 70},
+	{type: '**', lbp: 70},
 
 	// 前缀运算符
-	{type: "!", rbp: 80 },
-	{type: "~", rbp: 80 },
-	{type: "+", rbp: 80 },
-	{type: "-", rbp: 80 },
-	{type: "++", rbp: 80 },
-	{type: "--", rbp: 80 },
-	{type: "typeof", rbp: 80 },
-	{type: "void", rbp: 80 },
-	{type: "delete", rbp: 80 },
+	{type: '!', rbp: 80 },
+	{type: '~', rbp: 80 },
+	{type: '+', rbp: 80 },
+	{type: '-', rbp: 80 },
+	{type: '++', rbp: 80 },
+	{type: '--', rbp: 80 },
+	{type: 'typeof', rbp: 80 },
+	{type: 'void', rbp: 80 },
+	{type: 'delete', rbp: 80 },
 
 	// 后缀运算符
-	{type: "++", lbp: 85 },
-	{type: "--", lbp: 85 },
+	{type: '++', lbp: 85 },
+	{type: '--', lbp: 85 },
 
 	// 域运算符
-	{type: ".", lbp: 100, led:"field"},
-	{type: "[", lbp: 100, led:"fielde"},
+	{type: '.', lbp: 100, led:'field'},
+	{type: '[', lbp: 100, led:'fielde'},
 
-	//函数调用
-	{type: "(", rbp:90, led:"call"},
-	{type: "new", rbp:90, led:"new"},
+	// 函数调用
+	{type: '(', rbp:90, led:'call'},
+	{type: 'new', rbp:90, led:'new'},
 
 	// 算数表达式
-	{type: "(", lbp: 1000, nud:"bracket"},
+	{type: '(', lbp: 1000, nud:'bracket'},
 
 	// 对象字面量
-	{type: "{", nud:"obj"},
-	{type: "[", nud:"arr"},
+	{type: '{', nud:'obj'},
+	{type: '[', nud:'arr'},
 
 	// 函数定义
-	{type: "fn", nud:"fn"},
+	{type: 'fn', nud:'fn'},
 
 	// statement 语句
-	{type: "let", nud:"def"},
-	{type: "var", nud:"def"},
-	{type: "if", nud:"if"},
-	{type: "for", nud:"for"},
-	{type: "while", nud:"while"},
-	{type: "switch", nud:"switch"},
-	{type: "try", nud:"try"},
+	{type: 'let', nud:'def'},
+	{type: 'var', nud:'def'},
+	{type: 'if', nud:'if'},
+	{type: 'for', nud:'for'},
+	{type: 'while', nud:'while'},
+	{type: 'switch', nud:'switch'},
+	{type: 'try', nud:'try'},
 
 	// 忽略空白
-	{type: "whitespace", ignore : true},
+	{type: 'whitespace', ignore : true},
 	// 注释
-	{type: "commentBlockOuter", comment : 1},
-	{type: "commentBlockInner", comment : 1},
-	{type: "commentBlock", comment : 1},
-	{type: "commentLineOuter", comment : 2},
-	{type: "commentLineInner", comment : 2},
-	{type: "commentLine", comment : 2},
+	{type: 'commentBlockOuter', comment : 1},
+	{type: 'commentBlockInner', comment : 1},
+	{type: 'commentBlock', comment : 1},
+	{type: 'commentLineOuter', comment : 2},
+	{type: 'commentLineInner', comment : 2},
+	{type: 'commentLine', comment : 2}
 ];
 
 export const ebnfTest = () => {
+	/* tslint:disable:no-debugger */
 	debugger;
-	let reader = createRuleReader(syntax);
+	const reader = createRuleReader(syntax);
 	let r = reader();
-	while(r) {
-		console.log("ebnf, ", r);
+	while (r) {
+		console.log('ebnf, ', r);
 		r = reader();
 	}
-}
+};
 // 测试初始化
 export const scannerTest = () => {
 	debugger;
-	let ss = `
+	const ss = `
 	// a
 	//! 	a
 	/** a */
@@ -301,51 +303,50 @@ export const scannerTest = () => {
 		aaa.a = aaa.a + 2 + 25 * 6;
 	}
 	`;
-	let reader = createByStr(ss);
-	let scanner = new Scanner;
+	const reader = createByStr(ss);
+	const scanner = new Scanner();
 	scanner.setRule(lex);
 	scanner.initReader(reader);
 	let t = {type:null, value:null, index:0, line:0, column:0};
 	let r = scanner.scan(t);
-	while(r) {
-		console.log("scan, ", t);
+	while (r) {
+		console.log('scan, ', t);
 		t = {type:null, value:null, index:0, line:0, column:0};
 		r = scanner.scan(t);
 	}
-}
+};
 // 测试初始化
 export const parserTest = () => {
 	debugger;
-	//5+(3 + 2 - 25) * 6
-	//x += y ? dd.xxx(1+2, a) : 1;
+	// 5+(3 + 2 - 25) * 6
+	// x += y ? dd.xxx(1+2, a) : 1;
 	// let d, a = "ssss", x = fn(arr){ let i, len = arr.length; };
 	// let a = [-b, 2+2, "dd", dd.e()];
 	// let a = {b:2+1, c:dd.e()};
 	// let a = ++(b++);
 	// if(1)a++;else if(b){b = c; return true;}else if(x--){b = c;}else --dd;
 	// try{a++; return a;}catch(b){b = c;}finally{return;}
-	let ss1 = `
+	const ss1 = `
 		///同时
 		if(1)a++;else if(b){ //注释1 
 		b = c; return true;}else if(x--){b = c;}else --dd;
 	`;
-	let ss = `a=b=10`;
-	let reader = createByStr(ss1);
-	let scanner = new Scanner;
+	const ss = `a=b=10`;
+	const reader = createByStr(ss1);
+	const scanner = new Scanner();
 	scanner.setRule(lex);
 	scanner.initReader(reader);
-	let parser = new Parser;
+	const parser = new Parser();
 	parser.setRule(syntax, cfgs);
 	parser.initScanner(scanner);
-	let r = parser.parseRule("if");
-	while(r) {
-		console.log("parse, ", r);
+	let r = parser.parseRule('if');
+	while (r) {
+		console.log('parse, ', r);
 		r = parser.parseExpr();
 	}
-}
+};
 
-
-let lexScript = `
+const lexScript = `
 
 	whitespace = {?whitespace?}?;
 	(* comment *)
@@ -444,7 +445,7 @@ let lexScript = `
 	(* condition operator *)
 	"?" = "?";
 `;
-let lexHtml = `
+const lexHtml = `
 	whitespace = {?whitespace?}?;
 	(* normal *)
 	identifier = ?alphabetic? , [ { ? word ? } ] ;
@@ -456,7 +457,7 @@ let lexHtml = `
 	"=" = "=";
 	"{{" = "{{";
 `;
-let lexText = `
+const lexText = `
 	text = { | & ! | "<", "{", "[" | !, ?all? & | } ;
 	"{{" = "{{";
 	"{" = "{";
@@ -464,7 +465,7 @@ let lexText = `
 	"<" = "<";
 `;
 
-let syntaxTpl = `
+const syntaxTpl = `
 	script = "{{"?1, | if |;
 	html = "<"?2, | el |;
 	jobj = "{"?3, | el |;
@@ -488,106 +489,106 @@ let syntaxTpl = `
 	obj = [kv, [{","?, kv}]], "}"?;
 
 `;
-let cfgTpl = [
+const cfgTpl = [
 	// 表达式结束符
-	{type: ",", rbp: -1},
-	{type: ";", rbp: -1},
-	{type: ")", rbp: -1},
-	{type: "]", rbp: -1},
-	{type: "}", rbp: -1},
-	{type: "}}", rbp: -1},
+	{type: ',', rbp: -1},
+	{type: ';', rbp: -1},
+	{type: ')', rbp: -1},
+	{type: ']', rbp: -1},
+	{type: '}', rbp: -1},
+	{type: '}}', rbp: -1},
 	// 最低优先级运算符
-	{type: "string"},
+	{type: 'string'},
 
 	// 赋值运算符
-	{type: "=", lbp: 10, rbp:9},
-	{type: "+=", lbp: 10, rbp:9},
-	{type: "-=", lbp: 10, rbp:9},
-	{type: "*=", lbp: 10, rbp:9},
-	{type: "/=", lbp: 10, rbp:9},
-	{type: "%=", lbp: 10, rbp:9},
-	{type: "<<=", lbp: 10, rbp:9},
-	{type: ">>=", lbp: 10, rbp:9},
-	{type: ">>>=", lbp: 10, rbp:9},
-	{type: "&=", lbp: 10, rbp:9},
-	{type: "|=", lbp: 10, rbp:9},
-	{type: "^=", lbp: 10, rbp:9},
+	{type: '=', lbp: 10, rbp:9},
+	{type: '+=', lbp: 10, rbp:9},
+	{type: '-=', lbp: 10, rbp:9},
+	{type: '*=', lbp: 10, rbp:9},
+	{type: '/=', lbp: 10, rbp:9},
+	{type: '%=', lbp: 10, rbp:9},
+	{type: '<<=', lbp: 10, rbp:9},
+	{type: '>>=', lbp: 10, rbp:9},
+	{type: '>>>=', lbp: 10, rbp:9},
+	{type: '&=', lbp: 10, rbp:9},
+	{type: '|=', lbp: 10, rbp:9},
+	{type: '^=', lbp: 10, rbp:9},
 	// 条件运算符
-	{type: "?", lbp: 20, rbp:19, led:"cond"},
+	{type: '?', lbp: 20, rbp:19, led:'cond'},
 	// 关系运算符
-	{type: "||", lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
-	{type: "&&", lbp: 32, rbp:31},
-	{type: "|", lbp: 35},
-	{type: "^", lbp: 36},
-	{type: "&", lbp: 37},
+	{type: '||', lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
+	{type: '&&', lbp: 32, rbp:31},
+	{type: '|', lbp: 35},
+	{type: '^', lbp: 36},
+	{type: '&', lbp: 37},
 	// 布尔运算符
-	{type: "===", lbp: 40},
-	{type: "!==", lbp: 40},
-	{type: "==", lbp: 40},
-	{type: "!=", lbp: 40},
-	{type: "<=", lbp: 45},
-	{type: ">=", lbp: 45},
-	{type: "<", lbp: 45},
-	{type: ">", lbp: 45},
-	{type: "in", lbp: 45},
-	{type: "instanceof", lbp: 45},
+	{type: '===', lbp: 40},
+	{type: '!==', lbp: 40},
+	{type: '==', lbp: 40},
+	{type: '!=', lbp: 40},
+	{type: '<=', lbp: 45},
+	{type: '>=', lbp: 45},
+	{type: '<', lbp: 45},
+	{type: '>', lbp: 45},
+	{type: 'in', lbp: 45},
+	{type: 'instanceof', lbp: 45},
 	// 按位移动符
-	{type: "<<", lbp: 50},
-	{type: ">>", lbp: 50},
-	{type: ">>>", lbp: 50},
+	{type: '<<', lbp: 50},
+	{type: '>>', lbp: 50},
+	{type: '>>>', lbp: 50},
 	// 算数运算符
-	{type: "+", lbp: 60},
-	{type: "-", lbp: 60},
-	{type: "*", lbp: 70},
-	{type: "/", lbp: 70},
-	{type: "%", lbp: 70},
-	{type: "**", lbp: 70},
+	{type: '+', lbp: 60},
+	{type: '-', lbp: 60},
+	{type: '*', lbp: 70},
+	{type: '/', lbp: 70},
+	{type: '%', lbp: 70},
+	{type: '**', lbp: 70},
 
 	// 前缀运算符
-	{type: "!", rbp: 80 },
-	{type: "~", rbp: 80 },
-	{type: "+", rbp: 80 },
-	{type: "-", rbp: 80 },
-	{type: "++", rbp: 80 },
-	{type: "--", rbp: 80 },
-	{type: "typeof", rbp: 80 },
-	{type: "void", rbp: 80 },
-	{type: "delete", rbp: 80 },
+	{type: '!', rbp: 80 },
+	{type: '~', rbp: 80 },
+	{type: '+', rbp: 80 },
+	{type: '-', rbp: 80 },
+	{type: '++', rbp: 80 },
+	{type: '--', rbp: 80 },
+	{type: 'typeof', rbp: 80 },
+	{type: 'void', rbp: 80 },
+	{type: 'delete', rbp: 80 },
 
 	// 后缀运算符
-	{type: "++", lbp: 85 },
-	{type: "--", lbp: 85 },
+	{type: '++', lbp: 85 },
+	{type: '--', lbp: 85 },
 
 	// 域运算符
-	{type: ".", lbp: 100, led:"field"},
-	{type: "[", lbp: 100, led:"fielde"},
+	{type: '.', lbp: 100, led:'field'},
+	{type: '[', lbp: 100, led:'fielde'},
 
-	//函数调用
-	{type: "(", rbp:90, led:"call"},
-	{type: "new", rbp:90, led:"new"},
+	// 函数调用
+	{type: '(', rbp:90, led:'call'},
+	{type: 'new', rbp:90, led:'new'},
 
 	// 算数表达式
-	{type: "(", lbp: 1000, nud:"bracket"},
+	{type: '(', lbp: 1000, nud:'bracket'},
 
 	// 对象字面量
-	{type: "{", nud:"obj"},
-	{type: "[", nud:"arr"},
+	{type: '{', nud:'obj'},
+	{type: '[', nud:'arr'},
 
 	// 忽略空白
-	{type: "whitespace", ignore : true},
+	{type: 'whitespace', ignore : true},
 	// 注释
-	{type: "commentBlockOuter", comment : 1},
-	{type: "commentBlockInner", comment : 1},
-	{type: "commentBlock", comment : 1},
-	{type: "commentLineOuter", comment : 2},
-	{type: "commentLineInner", comment : 2},
-	{type: "commentLine", comment : 2},
+	{type: 'commentBlockOuter', comment : 1},
+	{type: 'commentBlockInner', comment : 1},
+	{type: 'commentBlock', comment : 1},
+	{type: 'commentLineOuter', comment : 2},
+	{type: 'commentLineInner', comment : 2},
+	{type: 'commentLine', comment : 2}
 ];
 
 // 测试初始化
 export const parserTpl = () => {
 	debugger;
-	let ss = `
+	const ss = `
 	///同时
 	{{if --(it.isOK++)}}
 		<div a="1{{}}">@xx dd</div>
@@ -596,33 +597,33 @@ export const parserTpl = () => {
 	{{end}}
 
 	`;
-	let reader = createByStr(ss);
-	let scanner = new Scanner;
-	scanner.setRule(lexText, "0");
-	scanner.setRule(lexScript, "1");
-	scanner.setRule(lexHtml, "2");
+	const reader = createByStr(ss);
+	const scanner = new Scanner();
+	scanner.setRule(lexText, '0');
+	scanner.setRule(lexScript, '1');
+	scanner.setRule(lexHtml, '2');
 	scanner.initReader(reader);
-	let parser = new Parser;
+	const parser = new Parser();
 	parser.setRule(syntaxTpl, cfgTpl);
 	parser.initScanner(scanner);
-	let r = parser.parseRule("body");
-	while(r) {
-		console.log("parse, ", r);
+	let r = parser.parseRule('body');
+	while (r) {
+		console.log('parse, ', r);
 		r = parser.parseExpr();
 	}
-}
+};
 
 export const forelet = new Forelet();
 forelet.listener = (cmd: string, w: Widget): void => {
-	if (cmd === "firstPaint") {
-		console.log("ok", w.name);
-		//setTimeout(ebnfTest, 1);
-		//setTimeout(scannerTest, 1);
+	if (cmd === 'firstPaint') {
+		console.log('ok', w.name);
+		// setTimeout(ebnfTest, 1);
+		// setTimeout(scannerTest, 1);
 		setTimeout(parserTpl, 1);
 	}
-}
+};
 
-forelet.addHandler("Click", () => {
+forelet.addHandler('Click', () => {
 
 	return 0;
 });

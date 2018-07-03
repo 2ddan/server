@@ -1,5 +1,5 @@
 //导入模块
-import { Mgr, context } from "pi/util/sound";
+import { Mgr, getContext } from "pi/util/sound";
 import { setEvents } from "pi/ui/root";
 import { Pi } from "app/mod/pi";
 import { hiddenTable } from "app/mod/hidden";
@@ -11,20 +11,18 @@ hiddenTable.addHandler('hidden', function (arg):any {
     // } else if (/android/.test(ua)) {
     //     alert("android");
     // }
-    if (/android/.test(ua)) {
-        if (arg) {
-            let key = Object.keys(mgrObj);
-            key.forEach((k) => {
-                Music.destorySoundObj(k);
-            })
-        } else {
-            let key = Object.keys(mgrObj);
-            key.forEach((k) => {
-                Music.getSoundObj(k);
-            });
-            if (!musicState.bgMusic) {
-                mgrObj.mgr_bg.play(`${cfg.src}wild_bg.mp3`, cfg.delay, cfg.repeat);
-            }
+    if (arg) {
+        let key = Object.keys(mgrObj);
+        key.forEach((k) => {
+            Music.destorySoundObj(k);
+        })
+    } else {
+        let key = Object.keys(mgrObj);
+        key.forEach((k) => {
+            Music.getSoundObj(k);
+        });
+        if (!musicState.bgMusic) {
+            mgrObj.mgr_bg.play(`${cfg.src}wild_bg.mp3`, cfg.delay, cfg.repeat);
         }
     }
 })
@@ -146,7 +144,7 @@ if (Pi.flags && Pi.flags.os.name === "ios") {
             try {
                 iphoneM();
             } catch (e) {
-                return;
+                alert(e);
             }
             fixCount += 1;
             if (fixCount == 5) {
@@ -155,6 +153,8 @@ if (Pi.flags && Pi.flags.os.name === "ios") {
         };
     setEvents("touchStart", fixIosSound);
 }
+
+let context = getContext();
 
 //创建一个极小极短的声音[解决iphone必须手动触发问题]
 const iphoneM = function () {

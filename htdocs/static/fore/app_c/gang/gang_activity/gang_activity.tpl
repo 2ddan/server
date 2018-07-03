@@ -37,7 +37,7 @@
                     <div class="shadow" style="position: absolute;width: 200px;height:30px;top:60px;display:flex;justify-content:space-between;font-size:16px;left: 102px;">
                         <div style="line-height: 30px;width:50px;text-align: center;color: #ffd8a6;">奖励:</div>
                         <app_a-widget-coin-coin style="width: 90px;text-align: left;color:#51e650;">
-                            {"icon":"contribute","text":{{[v[0].award.gain_contribute]}},"height":24,"width":24}
+                            {"icon":"contribute","text":{{[v[0].award.gain_contribute[1]]}},"height":24,"width":24}
                         </app_a-widget-coin-coin>
                         <app_a-widget-coin-coin style="width: 90px;text-align: left;color:#51e650;">
                             {"icon":"gang_money","text":{{[v[0].award.gain_guild_money]}},"height":24,"width":24}

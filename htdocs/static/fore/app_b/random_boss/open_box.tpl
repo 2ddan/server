@@ -1,14 +1,15 @@
 <div maxId="13" test="test" style="position:absolute;left:-13%;top:0;width:126%;z-index:3;bottom:0;overflow:hidden;background-color:rgba(0,0,0,.5);" w-sid="3">
+	{{if it1}}
 	<div style="position:absolute;width: 492px;height:195px;left:92px;z-index:4">
 		<widget w-class="6" w-tag="app_a-widget-bg_frame-bg" w-sid="6">{"bgName":"bg_frame31"} 
 		</widget>
 		<widget w-class="7" w-tag="app_a-widget-bg_frame-bg" w-sid="6">{"bgName":"att_bg_2"} 
 		</widget>
 		<widget w-class="8" w-tag="app_a-widget-bar-bar2" w-sid="8">
-			{{if it1.num>100}}
-			{{:it1.num=100}}
+			{{if it1.opening>100}}
+			{{:it1.opening=100}}
 			{{end}}
-			{"progress":{{it1.num}},"text":"{{it1.num}}/100","fontsize":15}
+			{"progress":100,"text":"{{it1.opening}}/100","fontsize":15,collect:1}
 		</widget>	
 			
 		
@@ -20,5 +21,5 @@
 			{"state":"","type":3,"width":80,"height":68}
 		</app_a-widget-box-box>	
 	</div>
-	
+	{{end}}
 </div>

@@ -1,28 +1,32 @@
-
-import { PSSimulationSpace } from "./util"
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve"
-
+/**
+ * 
+ */
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
+import { PSSimulationSpace } from './util';
 
 /**
  * TODO: 因为没法理解分轴计算时候的限速行为，所以暂时不提供分轴计算
  */
 export class LimitVelocityOverLifetimeModule {
-	dampen: number;
+	public dampen: number;
 
-	limit: IMinMaxCurve;
-	limitMultiplier: number;
+	public limit: IMinMaxCurve;
+	public limitMultiplier: number;
 
-	/** 暂时不实现 */
+	/**  
+	 * 暂时不实现 
+	 */
 	
-	limitX: IMinMaxCurve;
-	limitXMultiplier: number;
-	limitY: IMinMaxCurve;
-	limitYMultiplier: number;
-	limitZ: IMinMaxCurve;
-	limitZMultiplier: number;
-	separateAxes: boolean;
-	space: PSSimulationSpace;  // 只实现World
+	public limitX: IMinMaxCurve;
+	public limitXMultiplier: number;
+	public limitY: IMinMaxCurve;
+	public limitYMultiplier: number;
+	public limitZ: IMinMaxCurve;
+	public limitZMultiplier: number;
+	public separateAxes: boolean;
+	public space: PSSimulationSpace;  // 只实现World
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.dampen = config.dampen;
 		this.limit = buildMinMaxCurve(config.limit);
@@ -36,5 +40,4 @@ export class LimitVelocityOverLifetimeModule {
 		this.separateAxes = config.separateAxes;
 		this.space = config.space;
 	}
-};
-
+}

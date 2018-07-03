@@ -7,8 +7,8 @@ tab.push({
     "effect": [],
     "cost": [[100052,30],[100054,30], ["100001",500000]],
     "attr": []
-})
-
+    
+})
 tab.push({
     "class": 1,
     "name": "融会贯通",
@@ -16,8 +16,10 @@ tab.push({
     "effect": ["fumo_rolem_01","fumo_rolef_01","fumo_roleg_01"],
     "cost": [[100053,60],[100055,60], ["100001",1000000]],
     "attr": [['damage_multiple',0.03],['un_damage_multiple',0.03]]
-})
-
+    ,
+    "buff_id": [9000401],
+    "buff_value": ["buff_attr",0.01]
+})
 tab.push({
     "class": 2,
     "name": "出类拔萃",
@@ -25,8 +27,10 @@ tab.push({
     "effect": ["fumo_rolem_02","fumo_rolef_02","fumo_roleg_02"],
     "cost": [[100052,150],[100054,150], ["100001",2000000]],
     "attr": [['damage_multiple',0.06],['un_damage_multiple',0.06]]
-})
-
+    ,
+    "buff_id": [9000401,9000402],
+    "buff_value": ["buff_attr",0.025]
+})
 tab.push({
     "class": 3,
     "name": "炉火纯青",
@@ -34,8 +38,10 @@ tab.push({
     "effect": ["fumo_rolem_03","fumo_rolef_03","fumo_roleg_03"],
     "cost": [[100053,300],[100055,300], ["100001",4000000]],
     "attr": [['damage_multiple',0.09],['un_damage_multiple',0.09]]
-})
-
+    ,
+    "buff_id": [9000401,9000402,9000403],
+    "buff_value": ["buff_attr",0.04]
+})
 tab.push({
     "class": 4,
     "name": "登峰造极",
@@ -43,8 +49,10 @@ tab.push({
     "effect": ["fumo_rolem_04","fumo_rolef_04","fumo_roleg_04"],
     "cost": [[100052,500],[100053,500], ["100001",6000000]],
     "attr": [['damage_multiple',0.12],['un_damage_multiple',0.12]]
-})
-
+    ,
+    "buff_id": [9000401,9000402,9000403,9000404],
+    "buff_value": ["buff_attr",0.06]
+})
 tab.push({
     "class": 5,
     "name": "举世无双",
@@ -52,7 +60,9 @@ tab.push({
     "effect": ["fumo_rolem_05","fumo_rolef_05","fumo_roleg_05"],
     "cost": [ ["100001",0]],
     "attr": [['damage_multiple',0.15],['un_damage_multiple',0.15]]
-})
-
+    ,
+    "buff_id": [9000401,9000402,9000403,9000404,9000405],
+    "buff_value": ["buff_attr",0.09]
+})
 
 export const weapon_soul_base = tab;

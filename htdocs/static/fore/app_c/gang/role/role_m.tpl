@@ -24,11 +24,8 @@
 		
 		{{let img = ''}}
 		{{let post = v.post==1?"会长":(v.post==2?"副会长":"成员")}}
-		{{if v.head && v.head.indexOf("undefined") < 0}}
-		{{: img = v.head}}
-		{{else}}
-		{{: img = (Pi.pictures['playerhead'+v.career_id])}}
-		{{end}}
+
+		{{: img = (Pi.pictures['playerhead'+(v.head || v.career_id)])}}
 		<div w-class="16">
 			
 			<widget w-class="17" w-tag="app_a-widget-head-friend" w-sid="17">
@@ -53,13 +50,13 @@
 		
 		<div w-class="12" w-sid="12" style="width: 400px;left: 50%;margin-left: -200px;height: 40px;">
 			{{if gang.post == 1}}
-			<widget on-tap='gotoPostClick' w-class="19" w-tag="app_a-widget-btn-rect" w-sid="20" style="left: 50%;margin-left: -55px;">
+			<widget on-tap='gotoPostClick' w-class="19" w-tag="app_a-widget-btn-rect" w-sid="19">
 				{"class":"default","fontsize":18,"color":"","text":"管理职位","width":110,"height":39} 
 			</widget>
-			<widget on-tap='kickMember("{{v.role_id}}")' w-class="20" w-tag="app_a-widget-btn-rect" w-sid="21">
+			<widget on-tap='kickMember("{{v.role_id}}")' w-class="20" w-tag="app_a-widget-btn-rect" w-sid="20">
 				{"class":"default","fontsize":18,"color":"","text":"请离门派","width":110,"height":39} 
 			</widget>
-			<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})">
+			<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="18" on-tap="seeOther({{v.role_id}})">
 				{"class":"default","fontsize":18,"color":"","text":"查看装备","width":110,"height":39} 
 			</widget>
 
@@ -69,7 +66,7 @@
 					{"class":"default","fontsize":18,"color":"","text":"请离门派","width":110,"height":39} 
 				</widget>
 				{{end}}
-				<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="19" on-tap="seeOther({{v.role_id}})" style="left:{{it1.gang_member[it1.role_index].post == 3 ? 0 : 104}}px">
+				<widget w-class="18" w-tag="app_a-widget-btn-rect" w-sid="18" on-tap="seeOther({{v.role_id}})" style="left:{{it1.gang_member[it1.role_index].post == 3 ? 0 : 104}}px">
 					{"class":"default","fontsize":18,"color":"","text":"查看装备","width":110,"height":39} 
 				</widget>
 			{{else}}

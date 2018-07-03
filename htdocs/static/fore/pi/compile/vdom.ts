@@ -1,40 +1,42 @@
 /**
  * tpl的词法和语法分析器
  */
-import { createByStr } from "../compile/reader";
-import { Parser } from "../compile/parser";
-import { Scanner } from "../compile/scanner";
-import { createRuleReader } from "../compile/ebnf";
-import * as match from "../util/hash";
+import { createRuleReader } from '../compile/ebnf';
+import { Parser } from '../compile/parser';
+import { createByStr } from '../compile/reader';
+import { Scanner } from '../compile/scanner';
+import * as match from '../util/hash';
 
-//TEXT 文本状态 0
-//文本态无法直接切换到htmlAttr和htmlstr态,只能切换到另外3个状态
+// TEXT 文本状态 0
+// 文本态无法直接切换到htmlAttr和htmlstr态,只能切换到另外3个状态
 
 // 测试初始化
 export const parserTpl = (tpl, filename?:string, errFunc?:any) => {	
-	let reader = createByStr(tpl);
-	let scanner = new Scanner;
-	scanner.setRule(lexText, "0");
-	scanner.setRule(lexScript, "1");
-	scanner.setRule(lexHtml, "2");
-	scanner.setRule(lexAttr, "3");
-	scanner.setRule(lexStr, "4");
-	scanner.setRule(lexStrSingle, "5");	
-	scanner.setRule(lexJson, "10");
+	const reader = createByStr(tpl);
+	const scanner = new Scanner();
+	scanner.setRule(lexText, '0');
+	scanner.setRule(lexScript, '1');
+	scanner.setRule(lexHtml, '2');
+	scanner.setRule(lexAttr, '3');
+	scanner.setRule(lexStr, '4');
+	scanner.setRule(lexStrSingle, '5');	
+	scanner.setRule(lexJson, '10');
 	scanner.initReader(reader);
-	let parser = new Parser;
+	const parser = new Parser();
 	parser.setRule(syntaxTpl, cfgTpl);
 	parser.initScanner(scanner);
-	let syntax = parser.parseRule("body");
-	if(parser.cur){
-		console.log(`\x1b[31m error: "${filename}"解析出错,lastIndex is : ${parser.lastIndex}, lastMatch is : ${JSON.stringify(parser.lastMatch)}\x1b[0m`);
-		if(errFunc){
+	const syntax = parser.parseRule('body');
+	if (parser.cur) {
+		console.log(
+			`\x1b[31m error: "${filename}"解析出错,lastIndex is : ${parser.lastIndex}, lastMatch is : ${JSON.stringify(parser.lastMatch)}\x1b[0m`);
+		if (errFunc) {
 			errFunc(` error: "${filename}"解析出错,lastIndex is : ${parser.lastIndex}, lastMatch is : ${JSON.stringify(parser.lastMatch)}`);
 		}
 	}
+
 	return syntax;
-}
-let lexText = `
+};
+const lexText = `
 	(* comment *)
 	commentBlock = "{{%" , [ { & !"}}"!, ?all? & } ], "}}" ;
 	(* 切换到脚本态 *)
@@ -48,8 +50,8 @@ let lexText = `
 	text = [{ & ! | "<", "{", "[" | !, ?all? & }] ;	
 `;
 
-//JS 脚本状态 1
-let lexScript = `
+// JS 脚本状态 1
+const lexScript = `
 	whitespace = {?whitespace?}#?;	
 
 	(* 特殊的函数声明 *)
@@ -160,8 +162,8 @@ let lexScript = `
 	"?" = "?";
 `;
 
-//HTML状态 2 因为attr是特殊的状态，所以 >和/>应该在htmlAttr中
-let lexHtml = `
+// HTML状态 2 因为attr是特殊的状态，所以 >和/>应该在htmlAttr中
+const lexHtml = `
 	whitespace = {?whitespace?}#?;
 	(* normal *)
 	img = & "img", identifier &;
@@ -171,9 +173,9 @@ let lexHtml = `
 	close = "/", identifier, ">";	
 	(* separator *)	
 `;
-//HTMLattr状态 3
-//这个版本要求value必须是字符串
-let lexAttr = `
+// HTMLattr状态 3
+// 这个版本要求value必须是字符串
+const lexAttr = `
 	whitespace = {?whitespace?}#?;
 	"/>" = "/>";
 	">" = ">";
@@ -186,24 +188,24 @@ let lexAttr = `
 	"quota" = '"';	
 	"singlequota" = "'";
 `;
-//htmlstr状态 4,单指html attr中的字符串，脚本和JSON中的字符串不包含在这种状态之中
-let lexStr = `
+// htmlstr状态 4,单指html attr中的字符串，脚本和JSON中的字符串不包含在这种状态之中
+const lexStr = `
 	(* comment *)
 	
 	commentBlock = "{{%" , [ { & !"}}"!, ?all? & } ], "}}" ;
 	"{{" = "{{";		
 	lstring =  [{ | '\\"', & !'"'!, !'{{'!, !'>'!, !'/>'!, ?visible? & | }];
 `;
-let lexStrSingle = `
+const lexStrSingle = `
 (* comment *)
 	
 commentBlock = "{{%" , [ { & !"}}"!, ?all? & } ], "}}" ;
 "{{" = "{{";		
 singlelstring =  [{ | "\\'", & !"'"!, !"{{"!, !">"!, !"/>"!, ?visible? & | }];
-`
+`;
 
-//json状态 10
-let lexJson = `
+// json状态 10
+const lexJson = `
 whitespace = {?whitespace?}#?;
 
 (* separator *)
@@ -234,12 +236,13 @@ integer10 = [ "-" ] , ? digit19 ? , [ { ? digit ? } ] ;
 identifier = [{"_"}], ?alphabetic? , [ { |?word?, "$"| } ] ;
 `;
 
-//状态 0:text 1:js 2:html 3:htmlAttr 4:htmlAttrStr 10: json 
-//语法
-//j代表json,s代表script
+// 状态 0:text 1:js 2:html 3:htmlAttr 4:htmlAttrStr 10: json 
+// 语法
+// j代表json,s代表script
 
-//body = [{|"text", script, jobj, jarr, html, attr, attrStr, "lstring" |}];删除了lstring,如果不对再加回去
-let syntaxTpl = `
+// body = [{|"text", script, jobj, jarr, html, attr, attrStr, "lstring" |}];删除了lstring,如果不对再加回去
+/* tslint:disable:max-line-length */
+const syntaxTpl = `
 	script = "{{"#?1, | if, for, while, exec,  def,  jsbreak, jscontinue, jsexpr|;
 	html = "<"#?2, | el |;
 	jobj = "{"#?10,  [|jpair,script|], [{[","#?], |jpair,script|}], "}"#?back ;
@@ -306,110 +309,109 @@ let syntaxTpl = `
 	jsdef = [dv, [{","#?, dv}]];
 	jsreturn = [{?expr?}];
 `;
-//attr = "identifier", ["="?, |scriptvalue, tagscript2, value|];
-//scriptvalue = "lstring", tagscript2, "rstring";
-let cfgTpl = [
+// attr = "identifier", ["="?, |scriptvalue, tagscript2, value|];
+// scriptvalue = "lstring", tagscript2, "rstring";
+const cfgTpl = [
 	// 表达式结束符
-	{type: ",", rbp: -1},
-	{type: ";", rbp: -1},
-	{type: ")", rbp: -1},
-	{type: "]", rbp: -1},
-	{type: "}", rbp: -1},
-	{type: "}}", rbp: -1},
+	{type: ',', rbp: -1},
+	{type: ';', rbp: -1},
+	{type: ')', rbp: -1},
+	{type: ']', rbp: -1},
+	{type: '}', rbp: -1},
+	{type: '}}', rbp: -1},
 	// 最低优先级运算符
-	{type: "string"},
+	{type: 'string'},
 
 	// 赋值运算符
-	{type: "=", lbp: 10, rbp:9},
-	{type: "+=", lbp: 10, rbp:9},
-	{type: "-=", lbp: 10, rbp:9},
-	{type: "*=", lbp: 10, rbp:9},
-	{type: "/=", lbp: 10, rbp:9},
-	{type: "%=", lbp: 10, rbp:9},
-	{type: "<<=", lbp: 10, rbp:9},
-	{type: ">>=", lbp: 10, rbp:9},
-	{type: ">>>=", lbp: 10, rbp:9},
-	{type: "&=", lbp: 10, rbp:9},
-	{type: "|=", lbp: 10, rbp:9},
-	{type: "^=", lbp: 10, rbp:9},
+	{type: '=', lbp: 10, rbp:9},
+	{type: '+=', lbp: 10, rbp:9},
+	{type: '-=', lbp: 10, rbp:9},
+	{type: '*=', lbp: 10, rbp:9},
+	{type: '/=', lbp: 10, rbp:9},
+	{type: '%=', lbp: 10, rbp:9},
+	{type: '<<=', lbp: 10, rbp:9},
+	{type: '>>=', lbp: 10, rbp:9},
+	{type: '>>>=', lbp: 10, rbp:9},
+	{type: '&=', lbp: 10, rbp:9},
+	{type: '|=', lbp: 10, rbp:9},
+	{type: '^=', lbp: 10, rbp:9},
 	// 条件运算符
-	{type: "?", lbp: 20, rbp:19, led:"cond"},
+	{type: '?', lbp: 20, rbp:19, led:'cond'},
 	// 关系运算符
-	{type: "||", lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
-	{type: "&&", lbp: 32, rbp:31},
-	{type: "|", lbp: 35},
-	{type: "^", lbp: 36},
-	{type: "&", lbp: 37},
+	{type: '||', lbp: 30, rbp:29}, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
+	{type: '&&', lbp: 32, rbp:31},
+	{type: '|', lbp: 35},
+	{type: '^', lbp: 36},
+	{type: '&', lbp: 37},
 	// 布尔运算符
-	{type: "===", lbp: 40},
-	{type: "!==", lbp: 40},
-	{type: "==", lbp: 40},
-	{type: "!=", lbp: 40},
-	{type: "<=", lbp: 45},
-	{type: ">=", lbp: 45},
-	{type: "<", lbp: 45},
-	{type: ">", lbp: 45},
-	{type: "in", lbp: 45},
-	{type: "instanceof", lbp: 45},
+	{type: '===', lbp: 40},
+	{type: '!==', lbp: 40},
+	{type: '==', lbp: 40},
+	{type: '!=', lbp: 40},
+	{type: '<=', lbp: 45},
+	{type: '>=', lbp: 45},
+	{type: '<', lbp: 45},
+	{type: '>', lbp: 45},
+	{type: 'in', lbp: 45},
+	{type: 'instanceof', lbp: 45},
 	// 按位移动符
-	{type: "<<", lbp: 50},
-	{type: ">>", lbp: 50},
-	{type: ">>>", lbp: 50},
+	{type: '<<', lbp: 50},
+	{type: '>>', lbp: 50},
+	{type: '>>>', lbp: 50},
 	// 算数运算符
-	{type: "+", lbp: 60},
-	{type: "-", lbp: 60},
-	{type: "*", lbp: 70},
-	{type: "/", lbp: 70},
-	{type: "%", lbp: 70},
-	{type: "**", lbp: 70},
+	{type: '+', lbp: 60},
+	{type: '-', lbp: 60},
+	{type: '*', lbp: 70},
+	{type: '/', lbp: 70},
+	{type: '%', lbp: 70},
+	{type: '**', lbp: 70},
 
 	// 前缀运算符
-	{type: "!", rbp: 80 },
-	{type: "~", rbp: 80 },
-	{type: "+", rbp: 80 },
-	{type: "-", rbp: 80 },
-	{type: "++", rbp: 80 },
-	{type: "--", rbp: 80 },
-	{type: "typeof", rbp: 80 },
-	{type: "void", rbp: 80 },
-	{type: "delete", rbp: 80 },
+	{type: '!', rbp: 80 },
+	{type: '~', rbp: 80 },
+	{type: '+', rbp: 80 },
+	{type: '-', rbp: 80 },
+	{type: '++', rbp: 80 },
+	{type: '--', rbp: 80 },
+	{type: 'typeof', rbp: 80 },
+	{type: 'void', rbp: 80 },
+	{type: 'delete', rbp: 80 },
 
 	// 后缀运算符
-	{type: "++", lbp: 85, suf:true },
-	{type: "--", lbp: 85, suf:true },
+	{type: '++', lbp: 85, suf:true },
+	{type: '--', lbp: 85, suf:true },
 
 	// 域运算符
-	{type: ".", lbp: 100, led:"field"},
-	{type: "[", lbp: 100, led:"fielde"},
+	{type: '.', lbp: 100, led:'field'},
+	{type: '[', lbp: 100, led:'fielde'},
 
-	//函数调用
-	{type: "(", rbp:90, led:"call"},
-	{type: "new", rbp:90, led:"new"},
+	// 函数调用
+	{type: '(', rbp:90, led:'call'},
+	{type: 'new', rbp:90, led:'new'},
 
 	// 算数表达式
-	{type: "(", lbp: 1000, nud:"bracket"},
+	{type: '(', lbp: 1000, nud:'bracket'},
 
 	// 对象字面量
-	{type: "{", nud:"obj"},
-	{type: "[", nud:"arr"},
+	{type: '{', nud:'obj'},
+	{type: '[', nud:'arr'},
 	
 	// statement 语句
-	{type: "let", nud:"jsdef"},
-	{type: "var", nud:"jsdef"},
-	{type: "if", nud:"jsif"},
-	{type: "for", nud:"jsfor"},
-	{type: "while", nud:"jswhile"},
-	{type: "switch", nud:"jsswitch"},
-	{type: "try", nud:"jstry"},
-	{type: "function", nud:"jsfn"},
-	{type: "dv", nud:"dv"},
-	{type: "return", nud:"jsreturn"},
+	{type: 'let', nud:'jsdef'},
+	{type: 'var', nud:'jsdef'},
+	{type: 'if', nud:'jsif'},
+	{type: 'for', nud:'jsfor'},
+	{type: 'while', nud:'jswhile'},
+	{type: 'switch', nud:'jsswitch'},
+	{type: 'try', nud:'jstry'},
+	{type: 'function', nud:'jsfn'},
+	{type: 'dv', nud:'dv'},
+	{type: 'return', nud:'jsreturn'},
 	
-
 	// 忽略空白
-	{type: "whitespace", ignore : true},
+	{type: 'whitespace', ignore : true},
 	// 注释
-	{type: "commentBlock", note : 1},
+	{type: 'commentBlock', note : 1}
 ];
 
 // expr  +  expr  -  expr  *  expr  /   

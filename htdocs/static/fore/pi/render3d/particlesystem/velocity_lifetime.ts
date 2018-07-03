@@ -1,18 +1,20 @@
+/**
+ * 
+ */
 
-
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve"
-import { PSSimulationSpace } from "./util"
-
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
+import { PSSimulationSpace } from './util';
 
 export class VelocityOverLifetimeModule {
-	space: PSSimulationSpace;  // 不实现localspace
-	x: IMinMaxCurve;
-	xMultiplier: number;
-	y: IMinMaxCurve;
-	yMultiplier: number;
-	z: IMinMaxCurve;
-	zMultiplier: number;
+	public space: PSSimulationSpace;  // 不实现localspace
+	public x: IMinMaxCurve;
+	public xMultiplier: number;
+	public y: IMinMaxCurve;
+	public yMultiplier: number;
+	public z: IMinMaxCurve;
+	public zMultiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.space = config.space;
 		this.x = buildMinMaxCurve(config.x);
@@ -22,4 +24,4 @@ export class VelocityOverLifetimeModule {
 		this.z = buildMinMaxCurve(config.z);
 		this.zMultiplier = config.zMultiplier;
 	}
-};
+}

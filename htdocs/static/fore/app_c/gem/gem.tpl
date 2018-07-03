@@ -50,9 +50,9 @@
                 {{let prop = Pi.sample[id]}}
                 {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
                 {{let url = Pi.pictures[icon]}}
-                <div w-class="28" style="left:{{arr[j][0]}}px;top:{{arr[j][1]}}px">
-                    <widget w-class="26" w-tag="app_a-widget-prop-base" on-tap="showPropInfo({{id}})">
-                        {"width":84,"height":84,"prop":{{prop}},"url":{{url}},"count":"none","bg":0,"name":"none"} 
+                <div w-class="28" style="color:#ffffff;left:{{arr[j][0]}}px;top:{{arr[j][1]}}px;">
+                    <widget w-class="26" w-tag="app_a-widget-prop-base" on-tap='showPropInfo("{{id}}")'>
+                        {"width":84,"height":84,"prop":{{prop}},"url":{{url}},"count":{{g[1]}},"bg":0,"name":"none"} 
                     </widget>
                     <div w-class="27">
                         <app_a-widget-text-text>
@@ -66,17 +66,6 @@
                     {{end}}
                 </div>
                 {{end}} 
-                {{end}} 
-
-                {{if it1.state == "gem_line_success"}}
-                {{for j, g of it1.rewardAnim_pos}}
-                {{if j!="erl_type"}}
-                <div w-class="gem_prop_p{{g}}" style="position: absolute;width: 74px;height: 74px;z-index: 3;">
-                    <div w="app-widget-anim-class" style="position: absolute;left: -97px; top: -97px;transform: scale(0.3);">
-                    </div>
-                </div>
-                {{end}}
-                {{end}}
                 {{end}}
             </div>
 
@@ -84,7 +73,8 @@
                 {{let arr1 = [[124,86],[236,86],[71,132],[181,132],[291,132],[124,179],[236,179],[71,225],[181,225],[291,225],[124,271],[236,271]] }}                    
                 {{for j, g of it1.gemData.gem_pos}} 
                 {{if j!="erl_type"}}
-                <div w-class="50 {{59-0+j}}"  on-tap="{{if !g}} turnClick({{j}}) {{end}}">
+                <div w-class="{{59-0+j}}"  on-tap="{{if !g}} turnClick({{j}}) {{end}}" style="position: absolute;">
+                    <img w-class="50" src="./images/gem_hole.png" alt="" />
                     {{if g}}
                     <img w-class="51" src="./images/gem_light.png"/>
                     {{end}}
@@ -122,18 +112,19 @@
         </div>  
     </div>
 
-    <div w-class="21">
+    <div w-class="21" style="height: 90px;">
         <div  w-class="22" on-tap="openAward" >
-            <img src="app_b/widget/icons/menu_shop_icon.png"/>
-            <widget w-class="23" w-tag="app_a-widget-text-text" >
+            <app_a-widget-box-box style="-9px;">
+                {"type":"1","tip_keys":["gem.award"]}
+            </app_a-widget-box-box>
+            <widget w-tag="app_a-widget-text-text" style="position: absolute;bottom: 0;z-index: 2;left: 8px;">
                 {"text":"领 奖","textCfg":"gangCoverTitle","space":0,"fontSize":20} 
             </widget>
         </div>
         <div  w-class="22" on-tap="rankClick" style="left:87px" >
-            <img src="app_b/widget/icons/menu_shop_icon.png"/>
-            <widget w-class="23" w-tag="app_a-widget-text-text" >
-                {"text":"排行榜","textCfg":"gangCoverTitle","space":0,"fontSize":20} 
-            </widget>
+            <app-widget-btn-menu style="position: absolute;left: 0;top: 11px;">
+                {"icon":"pic_ranking","text":"排行榜","width":70,"height":70,"top":-8,"bottom":0,"fontSize":20,"space":-6,"position":"absolute","bg":4}
+            </app-widget-btn-menu>
         </div>
 
         <app_a-widget-btn-rect  on-tap="resetClick" style="position:relative;left: 315px;top: 19px;">

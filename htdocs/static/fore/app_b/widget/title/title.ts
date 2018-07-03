@@ -6,11 +6,9 @@
 
 // ============================== 导入
 import { Widget } from "pi/widget/widget";
-import { Forelet } from "pi/widget/forelet";
 import { Json } from 'pi/lang/type';
-import { open, remove, closeBack } from "pi/ui/root";
-import { closeAll } from "app/mod/root";
-import { globalSend, Pi } from "app/mod/pi";
+import { closeBack } from "pi/ui/root";
+import { globalSend} from "app/mod/pi";
 
 import { data as localDB, listen, get } from "app/mod/db";
 
@@ -22,10 +20,15 @@ export class title extends Widget {
 	cancel_all = () => {
 		closeBack();
 	}
-	 //获取方式
-	 gotoGetWay(id) {
-        globalSend("gotoGetWay",id);
-    }
+	//获取方式
+	gotoGetWay(id) {
+		if (id == "gang_contribute") {
+			globalSend("gotoGetWay", 150005);
+		} else {
+			globalSend("gotoGetWay", id);
+		}
+
+	}
 	/**
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
@@ -107,22 +110,28 @@ const runUpDate = (path) => {
 /**
  * @description 获取每个组件需要的物品或货币数量 
  */
-const getCount = (coin,w) =>{
+const getCount = (coin, w) => {
 	let player = localDB.player,
-	r = [];
-	for(let i=0,len = coin.length;i<len;i++){
-		if(player[coin[i]]>=0){
-			r[i] = [coin[i],player[coin[i]]];
-			w.listens.push("player."+coin[i]);
-			setListen("player."+coin[i],w.id);
-		}else{
-			let _p = "bag*sid="+coin[i],
+		r = [];
+	for (let i = 0, len = coin.length; i < len; i++) {
+		if (player[coin[i]] >= 0) {
+			r[i] = [coin[i], player[coin[i]]];
+			if (w.listens.indexOf("player." + coin[i]) < 0) {
+				w.listens.push("player." + coin[i]);
+				setListen("player." + coin[i], w.id);
+			}
+		} else {
+			let _p = "bag*sid=" + coin[i],
 				prop = get(_p).pop();
 			let count = (prop && prop.count) || 0;
-			r[i] = [coin[i],count];
-			w.listens.push(_p);
-			setListen(_p,w.id);
+			r[i] = [coin[i], count];
+			if (w.listens.indexOf(_p) < 0) {
+				w.listens.push(_p);
+				setListen(_p, w.id);
+			}
 		}
 	}
+	// console.log(listenkey);
+	// console.log(widgets);
 	return r;
 }

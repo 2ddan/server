@@ -50,7 +50,7 @@
 
     {{let w = root.getWidth() }}    
     <app_b-widget-title-title style="z-index:9;">
-    {"text":"星级加成","coin":["money","diamond"],"left":"10","top":"10","width":{{w}}}
+    {"text":"星级成就","coin":["money","diamond"],"left":"10","top":"10","width":{{w}}}
     </app_b-widget-title-title>
     <div style="width:100%;position:absolute;left:0px;top:78px;bottom:0">
         <div style="width:100%;height:100%;z-index:2">

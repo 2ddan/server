@@ -4,44 +4,45 @@
  */
 
 // ============================== 导入
-import { createByStr } from "./reader";
-import { Parser, Syntax } from "./parser";
-import { Scanner } from "./scanner";
-import { toFun, compile } from "../util/tpl";
-import { Parser as TplParser } from "../util/tpl_str";
-import { gen } from "./gendrust";
+import { compile, toFun } from '../util/tpl';
+import { Parser as TplParser } from '../util/tpl_str';
+import { gen } from './gendrust';
+import { Parser, Syntax } from './parser';
+import { createByStr } from './reader';
+import { Scanner } from './scanner';
 
 // ============================== 导出
 /**
  * @description 设置后缀对应的模板函数
  */
 export const setSuffixTpl = (suffix: string, s: string, filename?: string) => {
-	//tplMap.set(suffix, toFun(compile(s, TplParser), filename));
-}
+	// tplMap.set(suffix, toFun(compile(s, TplParser), filename));
+};
 
 /**
  * @description 将rust数据结构的定义转成ts的数据结构定义
  * @param rsd rust数据结构定义的源码
  */
 export const translate = (s: string, filename: string, cfg): Syntax => {
-	let reader = createByStr(s);
+	const reader = createByStr(s);
 	scanner.setRule(lex);
 	scanner.initReader(reader);
 	parser.setRule(syntax, cfgs);
 	parser.initScanner(scanner);
-	let r = parser.parseRule("file");
-	let x = gen(r, filename, cfg);
+	const r = parser.parseRule('file');
+	const x = gen(r, filename, cfg);
+
 	return x;
-}
+};
 
 // ============================== 本地
 // 词法解析器
-const scanner: Scanner = new Scanner;
+const scanner: Scanner = new Scanner();
 // 语法解析器
-const parser: Parser = new Parser;
+const parser: Parser = new Parser();
 
 // rust的词法规则
-let lex = `
+const lex = `
 	(* comment *)
 	commentLinePre = "//!" , [{?notbreakline?}] ;
 	commentLineSuf  = "//" , [{?notbreakline?}] ;
@@ -110,7 +111,6 @@ let lex = `
 	"[" = "[";
 	"]" = "]";
 	(* other *)
-	"_" = "_";
 	"?" = "?";
 	"@" = "@";
 	"->" = "->";
@@ -135,6 +135,7 @@ let lex = `
 	">>=" = ">>=";
 	"&=" = "&=";
 	"|=" = "|=";
+
 	"^=" = "^=";
 	(* arithmetic operator *)
 	"**" = "**";
@@ -163,7 +164,7 @@ let lex = `
 	lifetime = "'", identifier ;
 
 	(* normal *)
-	identifier = ?alphabetic? , [ { ? word ? } ] ;
+	identifier = |"_", ?alphabetic?| , [ { ? word ? } ] ;
 	float = [integer], ".", { ? digit ? }, [floate] ;
 	floate = "e", |"+", "-"|, { ? digit ? } ;
 	integer16 = [ "-" ] , "0x" , { |? digit ?, 'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f' | } ;
@@ -172,21 +173,23 @@ let lex = `
 	string = '"', { | '\\"', & !'"'!, ?visible? & | }, '"' ;
 	whitespace = {?whitespace?};
 
+
 `;
 
 // rust的语法规则
-let syntax = `
+const syntax = `
 	importOne = "use"#?,"identifier",[{"::"#?, "identifier"}], [";"#?];
 	importMany = "use"#?,"identifier",[{"::"#?, "identifier"}], "::"#?, importCs, [";"#?];
 	importCs = "{"#?, "identifier", [{","#?, "identifier"}], "}"#?;
 
-	type = |baseType, tupleBody, arrBody, igenType|;
+	type = |baseType, tupleBody, arrBody, igenType, structType|;
 	genType = "<"#?, |type , "lifetime"|, [{","#?, |type , "lifetime"|}], ">"#?;
 
 	igenType = "identifier", genType;
+	structType = "identifier", [{"::"#?, "identifier"}];
 	tupleBody = "("#?, type, [{","#?, type}], ")"#?;
 	arrBody = "["#?, type, [","#?, "integer"], "]"#?;
-	baseType = |"bool", "str", "char", "i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "isize", "usize", "f32", "f64","identifier"|;
+	baseType = |"bool", "str", "char", "i8", "i16", "i32", "i64", "u8", "u16", "u32", "u64", "isize", "usize", "f32", "f64"|;
 
 	defStructTuple = "struct"#?, "identifier", tupleBody;
 	defStructEmpty = "struct"#?, "identifier", "{"#?, "}"#?;
@@ -195,113 +198,177 @@ let syntax = `
 	defStruct = "struct"#?, "identifier", [genType], "{"#?, {structKeyType}, "}"#?;
 
 	enumMember = |@"identifier", tupleBody@, "identifier"|, ","#?;
-	defEnum = "enum"#?, "identifier", [genType], "{"#?, [{enumMember}], "}"#?;
+	enumMemberc = "identifier", ["="#?, |"string","integer", "float", "integer10", "integer16", "floate"|], ","#?;
+	defEnum = "enum"#?, "identifier", [genType], "{"#?, [{enumMemberc}], "}"#?;
 
 	file = {|defStruct, defEnum, defStructEmpty, defStructTuple, importMany, importOne|};
 `;
 
 // rust的算符优先级及绑定函数
-let cfgs = [
+const cfgs = [
 	// 表达式结束符
-	{ type: ",", rbp: -1 },
-	{ type: ";", rbp: -1 },
-	{ type: "}", rbp: -1 },
+	{ type: ',', rbp: -1 },
+	{ type: ';', rbp: -1 },
+	{ type: '}', rbp: -1 },
 
 	// 关系运算符
-	{ type: "||", lbp: 30, rbp: 29 }, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
-	{ type: "&&", lbp: 32, rbp: 31 },
-	{ type: "|", lbp: 35 },
-	{ type: "^", lbp: 36 },
-	{ type: "&", lbp: 37 },
+	{ type: '||', lbp: 30, rbp: 29 }, // 短路逻辑运算符需要右结合，通过减少右约束力来实现的
+	{ type: '&&', lbp: 32, rbp: 31 },
+	{ type: '|', lbp: 35 },
+	{ type: '^', lbp: 36 },
+	{ type: '&', lbp: 37 },
 	// 布尔运算符
 
-	{ type: "=", lbp: 10, rbp: 9 },
-
+	{ type: '=', lbp: 10, rbp: 9 },
 
 	// statement 语句
-	//{ type: "struct", nud: "struct, structTuple, structEmpty" },
-	//{ type: "enum", nud: "enum" },
+	// { type: "struct", nud: "struct, structTuple, structEmpty" },
+	// { type: "enum", nud: "enum" },
 
 	// 忽略空白
-	{type: "whitespace", ignore : true},
+	{type: 'whitespace', ignore : true},
 	// 注释
-	{type: "commentBlockPre", note : -1},
-	{type: "commentBlockSuf", note : 1},
-	{type: "commentLinePre", note : -1},
-	{type: "commentLineSuf", note : 1},
-	//注解
-	{type: "annotatePre", note : -1},
-	{type: "annotateSuf", note : 1},
+	{type: 'commentBlockPre', note : -1},
+	{type: 'commentBlockSuf', note : 1},
+	{type: 'commentLinePre', note : -1},
+	{type: 'commentLineSuf', note : 1},
+	// 注解
+	{type: 'annotatePre', note : -1},
+	{type: 'annotateSuf', note : 1}
 ];
 
 // ============================== 立即执行的代码
+
 // scanner.setRule(lex);
+
 // parser.setRule(syntax, cfgs);
+
 // setSuffixTpl("", `
+
 // 	{{if it.comments}}{{for i, v of it.comments}}{{ v.value }}{{end}}{{end}}
+
 // 	{{if it.type === 'struct'}}
+
 // 	{{let arr = it.childs}}
+
 // 	{{let clazz = arr[0].value }}
+
 // 	export class {{ clazz }} {{if arr[1].childs.length > 0 }} <{{ arr[1].childs[0].value }}>{{end}} {
+
 // 		{{: arr = arr.slice(2)}}
+
 // 		{{for i, v of arr}}
+
 // 		{{if v.comments}}{{for i, vv of v.comments}}{{ vv.value }}{{end}}{{end}}
+
 // 		{{let name = v.childs[1].value}}
+
 // 		{{let type = v.childs[3].childs[0]}}
+
 // 		{{let t = type.type}}
+
 // 		{{if t==='identifier'}}
+
 // 		{{ name }}: {{ type.value }} = null;
+
 // 		{{elseif t==='bool'}}
+
 // 		{{ name }}: boolean = false;
+
 // 		{{elseif t==='f32' || t==='f64'}}
+
 // 		{{ name }}: number = 0.0;
+
 // 		{{else}}
+
 // 		{{ name }}: number = 0;
+
 // 		{{end}}
+
 // 		{{end}}
 
 // 		// 克隆
+
 // 		copy() : {{ clazz }} -> {
+
 // 			return new {{ clazz }}().copy(this);
+
 // 		}
+
 // 		// 拷贝
+
 // 		copy(dst: {{ clazz }}) : {{ clazz }} -> {
+
 // 		}
 
 // 		// 从ArrayBuffer上序列化域
+
 // 		decode(bs:BufferStream) -> {
+
 // 		{{for i, v of arr}}
+
 // 			{{let name = v.childs[1].value}}
+
 // 			{{let type = v.childs[3].childs[0]}}
+
 // 			{{let t = type.type}}
+
 // 			{{if t==='identifier'}}
+
 // 			if(bs.getU8()) {
+
 // 				this.{{ name }} = new {{ type.value }};
+
 // 				this.{{ name }}.decode(bs);
+
 // 			}
+
 // 			{{else}}
+
 // 			this.{{ name }} = bs.get{{ t.charAt(0).toUpperCase() }}{{ t.slice(1) }}();
+
 // 			{{end}}
+
 // 		{{end}}
+
 // 		}
+
 // 		// 将域序列化到ArrayBuffer上
+
 // 		encode(bs:BufferStream) -> {
+
 // 		{{for i, v of arr}}
+
 // 			{{let name = v.childs[1].value}}
+
 // 			{{let type = v.childs[3].childs[0]}}
+
 // 			{{let t = type.type}}
+
 // 			{{if t==='identifier'}}
+
 // 			if({{ name }}) {
+
 // 				bs.setU8(1);
+
 // 				this.{{ name }}.encode(bs);
+
 // 			}else
+
 // 				bs.setU8(0);
+
 // 			{{else}}
+
 // 			bs.set{{ t.charAt(0).toUpperCase() }}{{ t.slice(1) }}(this.{{ name }});
+
 // 			{{end}}
+
 // 		{{end}}
+
 // 		}
 
 // 	}
+
 // 	{{end}}
+
 // `);

@@ -1,0 +1,213 @@
+
+{
+  "name" : "Huanggai_tou",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "attack" : "T6M6tykm7dm71yNUrxGu9k.ai",
+      "show"   : "L1YXBLqWy1XC4feEPUxTQ9.ai",
+      "skill"  : "FZv1ndzeqZjAM4s5Dbx6cn.ai",
+      "die"    : "MpFjb2iUiXtaiqtBx7sjWA.ai",
+      "hit"    : "Kche1Qum4Ey5fpb6t7phzt.ai",
+      "run"    : "ibibooosvAXpZioXM847m.ai",
+      "stand"  : "HerSroqTAoeh5EjVdJdDES.ai",
+      "wait"   : "6gRH5EFCgwtGT2KteivQoN.ai",
+      "attack02" : "AWtDU6bjgbtdXisac5H1Xm.ai"
+    },
+    "aniBox"     : {
+      "attack" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "attack02" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "die"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "hit"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "run"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "show"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "skill"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "stand"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "wait"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "playAnim"   : {
+      "name" : "attack02"
+    }
+  },
+  "children"  : [
+    {
+      "type" : "Skeleton",
+      "res"  : "ET466tWuiYgZdthQKkHnvN.skl"
+    },
+    {
+      "name" : "Juese_Huanggai_Tou_001",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : [
+          9,
+          10
+        ],
+        "bounds" : [
+          [
+            -0.322799056768417,
+            0.303621530532837,
+            0.102324426174164
+          ],
+          [
+            -0.630657732486725,
+            -0.137522533535957,
+            -0.102319598197937
+          ]
+        ],
+        "rootbone" : "Bip001 Spine1",
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "VqR2F5iRyKJ6kXCQ9uYmBp.png"
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "WjKHJ6Vjn4wMfveP4yeU5P.geo"
+        }
+      }
+    }
+  ]
+}

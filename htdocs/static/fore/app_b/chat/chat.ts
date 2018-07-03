@@ -1,35 +1,36 @@
 //==================导入======================
 /**pi */
 import { Forelet } from "pi/widget/forelet";
-import { remove, destory } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
 import { getRealNode } from "pi/widget/painter";
 import { findNodeByAttr } from "pi/widget/virtual_node";
 /**mod */
 import { Common } from "app/mod/common";
-import { Common_m } from "app_b/mod/common";
-import { data as db, updata, get as getDB, insert, listen,checkTypeof } from "app/mod/db";
+import { updata, get as getDB, insert,checkTypeof } from "app/mod/db";
 
 /**app */
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { listenBack } from "app/mod/db_back";
-import { Pi, globalSend, findGlobalReceive } from "app/mod/pi";
-import { open, close } from "app/mod/root";
+import { net_request, net_message } from "app_a/connect/main";
+import { globalSend } from "app/mod/pi";
 
 import { sendChatMsg } from "app/scene/base/scene";
 
-import { mapList, initMapList, handScene, updateSelfModule, change_status, setChangeData, olFightOrder } from "app_b/fight_ol/handscene";
+import { handScene} from "app_b/fight_ol/handscene";
 
 import { talk_Base } from "cfg/b/talk_base";
 import { vip_advantage } from "cfg/c/vip_advantage";
 
 export const forelet = new Forelet();
 
+/**统一聊天数据格式
+ **[tpl,content,globlSendFunctionName,other,...]
+ **以上参数 tpl无则为"",content可为"",function及以后参数可省略
+ **/
+
 let chatDisplay = { "isShow": true };//野外的聊天框显示隐藏
 let tab_type = "world_chat";
 let curr_list = [],world_list = [],gang_list = [];
 let chatFun : any;
-let inter;
+// let inter;
 var input_chat = {
     "role_name":"",
     "role_content":""
@@ -38,10 +39,10 @@ var input_chat = {
 let world_cd = true;
 let gang_cd = true;
 let curr_cd = true;
-let newmessage:any={
-    "tab_chat":"",
-    "count":[0,0]//队伍第一个 私聊第二个  只统计队伍和私聊
-};
+// let newmessage:any={
+//     "tab_chat":"",
+//     "count":[0,0]//队伍第一个 私聊第二个  只统计队伍和私聊
+// };
 //获取最新的聊天
 let all_chat = [];
 /**
@@ -56,6 +57,7 @@ const getData = () => {
     data.curr_list = curr_list;
     data.tab_type = tab_type;
     data.all_chat = all_chat;
+    data.strChange = strChange;
     return data;
 }
 
@@ -81,7 +83,29 @@ const clearValue = () => {
     var _node : any = getRealNode(findNodeByAttr(m.tree, "data-desc" ,"content"));
     _node.value = ""
 }
+//转换字符串成JSON
+const strChange = function(data){
+    let msg = null;
+    if(!(data[0]== "[" && data[data.length - 1] == "]")){
+        return data;
+    }
+    try{
+        msg = JSON.parse(data);
+    }finally{
+        !msg &&(msg  = data);
+        return msg;
+    }
+}
 
+//调用门派聊天接口
+export let sendGangChat = function(msg){
+    net_request({"param": {"chat":JSON.stringify(msg)}, "type": "app/chat@gang_chat"},function (data) {
+        if (data.error) {
+            console.log(data.why);
+            return;
+        }
+    });
+};
 var createChatRoomFun = function(){
     var module:any = {};
     
@@ -115,7 +139,8 @@ var createChatRoomFun = function(){
     module.world_chat = function(callback){
         var content = module.contentFun();
         if(!content){return;};
-        net_request({"param": {"chat":content}, "type": "app/chat@world_chat"},function (data) {
+        let msg = ["",content];
+        net_request({"param": {"chat":JSON.stringify(msg)}, "type": "app/chat@world_chat"},function (data) {
             if (data.error) {
                 // if(data.error)Common.backThrow(data.why,tips_back,screenTipFun);
                 // if(data.reason) Common.backThrow(data.reason,tips_back,screenTipFun);
@@ -138,11 +163,13 @@ var createChatRoomFun = function(){
         obj.role[1] = Common.fromCharCode(obj.role[1]);
         return obj;
     }
+
     //公会聊天
     module.gang_chat = function(callback){
         var content = module.contentFun();
         if(!content){return;};
-        net_request({"param": {"chat":content}, "type": "app/chat@gang_chat"},function (data) {
+        let msg = ["",content];
+        net_request({"param": {"chat":JSON.stringify(msg)}, "type": "app/chat@gang_chat"},function (data) {
             if (data.error) {
                 // if(data.error)Common.backThrow(data.why,tips_back,screenTipFun);
                 // if(data.reason) Common.backThrow(data.reason,tips_back,screenTipFun);
@@ -163,7 +190,8 @@ var createChatRoomFun = function(){
         var content = module.contentFun();
         let portType = "app/chat@current_chat";
         if(!content){return;};
-        net_request({"param": {"chat":content, "type": tab_type }, "type": portType},function (data) {
+        let msg = ["",content];
+        net_request({"param": {"chat":JSON.stringify(msg), "type": tab_type }, "type": portType},function (data) {
             if (data.error) {
                 // if(data.error)Common.backThrow(data.why,tips_back,screenTipFun);
                 // if(data.reason) Common.backThrow(data.reason,tips_back,screenTipFun);
@@ -237,8 +265,19 @@ export class chat extends Widget {
 	attach(): void {
         chatFun.repeatArrange(this,true);
     }
+    //聊天文字中自带的触发事件
+    gotoFun(msg){
+        globalSend(msg);
+    }
      //查看其它玩家
      seeOther(roleId){
+        let m:any = forelet.getWidget("app_b-chat-chat");
+        if(m.parentNode.parent.attrs["data-desc"] === "fight"){
+            globalSend("screenTipFun",{
+                words: "副本内暂时无法查看其它玩家，请退出到野外再查看!"
+            });
+            return;
+        }
          let id = getDB("player.role_id");
          if(roleId == id){
             globalSend("screenTipFun",{
@@ -352,7 +391,8 @@ export class chat extends Widget {
 //接收后台推送world_chat
 net_message("world_chat", (msg) => {
     var _data : any = {},info : any = {};
-    _data.chat = Common.fromCharCode(msg.chat);
+    let content = strChange( Common.fromCharCode(msg.chat));
+    _data.chat = checkTypeof(content,"Array") && content[1] || content;
     if(msg.role_info == "system"){
         info.name = "system";
         info.gang_name = '';
@@ -368,7 +408,7 @@ net_message("world_chat", (msg) => {
     }
     let playerID = getDB("player").role_id;
     if(playerID == info.role_id){
-        sendChatMsg(_data,mapList)
+        sendChatMsg(_data,handScene.mapList)
     }
     all_chat.push(["world_chat",_data]);
     // if(Common.isExist(forelet,"app_b-chat-chat_list")&&tab_type == "world_chat"){
@@ -389,7 +429,8 @@ net_message("world_chat", (msg) => {
 //接收后台推送gang_chat
 net_message("gang_chat", (msg) => {
     var _data : any = {};
-    _data.chat = Common.fromCharCode(msg.chat);
+    let content = strChange( Common.fromCharCode(msg.chat));
+    _data.chat = checkTypeof(content,"Array") && content[1] || content;
     var info : any = Common.changeArrToJson(msg.role_info);
     info.name = Common.fromCharCode(info.name);
     info.gang_name = Common.fromCharCode(info.gang_name);
@@ -399,8 +440,8 @@ net_message("gang_chat", (msg) => {
         gang_list.pop();
     }
     let playerID = getDB("player").role_id;
-    if(playerID == info.role_id){
-        sendChatMsg(_data,mapList)
+    if(playerID == info.role_id && _data.chat){
+        sendChatMsg(_data,handScene.mapList)
     }
     all_chat.push(["gang_chat",_data]);
     // if(Common.isExist(forelet,"app_b-chat-chat_list")&&tab_type == "gang"){
@@ -432,8 +473,8 @@ net_message("current_chat", (msg) => {
         curr_list.pop();
     }
     let playerID = getDB("player").role_id;
-    if(playerID == info.role_id){
-        sendChatMsg(_data,mapList)
+    if(playerID == info.role_id && _data.chat){
+        sendChatMsg(_data,handScene.mapList)
     }
     all_chat.push(["current_chat",_data]);
     // if(Common.isExist(forelet,"app_b-chat-chat_list")&&tab_type == "gang"){
@@ -493,7 +534,6 @@ const read = (callback?) => {
             world_list = fun(_data.world_chat);
             gang_list = fun(_data.gang_chat);
             if(world_list.length == 0 && gang_list.length == 0){
-                let player = getDB("player");
                 let system : any = {};
                 let info : any = {};
                 system.chat = "欢迎来到仙之侠道！！！";
@@ -523,10 +563,7 @@ export const globalReceive :any = {
 }
 
 read()
-// listenBack("app/pve/wild@read", function (data) {
-//     console.log(data);
-//     forelet.paint(getData());
-// });
+
 forelet.listener = (cmd) => {
 	// if(cmd !== "add")
     // 	return;

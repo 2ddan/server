@@ -2,9 +2,8 @@
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 //mod
-import { open, close } from "app/mod/root";
+import { open } from "app/mod/root";
 //app
-import { net_request, net_send, net_message } from "app_a/connect/main";
 import { Pi, globalSend } from "app/mod/pi";
 
 //===============================================导出

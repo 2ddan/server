@@ -74,7 +74,7 @@
     position: relative;
     color: #FFD7A8;
     height: 20px;
-    width: 100px;
+    width: 150px;
     font-size: 18px;
     display: inline-block;
     top: -7px;

@@ -83,11 +83,9 @@
                   {{for i,v of it1.menu}}
                   {{let guide_btn = v.func=="gotoSkill" ? "skill_btn" : v.func=="gotoMagic" ? "magic_btn" :  v.func=="gotoInherit" ? "gest_btn" :  v.func=="gotoSoul" ? "soul_btn" :  v.func=="gotoSurface,0" ? "cloth_btn" : v.func=="gotoSurface,1" ? "pet_btn" :  "weapon_soul_btn"}}
                   {{if (!v.fun_key) || (v.text != "时装" && v.text != "灵宠" && function_open[v.fun_key].id <= it1.localDB.open_fun.id) }}
-                  {{if  v.func!='gotoRune' || 1}}
                   <app-widget-btn-menu on-tap='gotoMenu("{{v.func}}")' style="position:relative;display:inline-block;margin:0 3px;">
                         {"guide":{{guide_btn}},"icon":{{v.icon}},"text":{{v.text}},"width":{{v.text == "神兵"?65:60}},"height":{{v.text == "神兵"?65:60}},"bottom":-2,"fontSize":20,"tip_keys":{{v.tip_keys}} }
                   </app-widget-btn-menu>
-                  {{end}}
                   {{end}}
                   {{if v.text == "时装" }}
                         <app_a-widget-btn-ling style="width: 60px;height: 60px;position: absolute;bottom: 110px;left: 110px;">{"class": "default","fontsize": 12,"color": "#fdedd7;","text": "","width":90,"height":90}</app_a-widget-btn-ling>

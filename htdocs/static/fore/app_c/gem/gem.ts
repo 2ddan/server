@@ -1,25 +1,23 @@
 //====================================导入
-import { Pi, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { Common } from "app/mod/common";
 import { data as localDB, get, updata, listen, insert } from "app/mod/db";
-import {act_progress} from "app_b/mod/act_progress";
 import { open, close } from "app/mod/root";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 import { net_request } from "app_a/connect/main";
-import { findNodeByAttr } from "pi/widget/virtual_node";
-import { getRealNode } from "pi/widget/painter";
 import { deepCopy } from "pi/util/util";
-import { listenBack } from "app/mod/db_back";
 import { Util } from "app/mod/util";
 
 import { plush_award } from "cfg/c/gem_eliter_reward";
 import { flush_min_score } from "cfg/c/gem_floor";
 import { reset_money } from "cfg/c/gem_reset_money";
 import { normal_award } from "cfg/c/gem_score_reward";
-import { activity_wanfa } from "cfg/c/activity_special";
 import { activity_list } from "cfg/c/activity_list";
+import { gem_get_score_award } from "cfg/c/gem_score_award";
+
+
 
 export const forelet = new Forelet();
 export let gemData;
@@ -79,7 +77,6 @@ export class gam_w extends Widget {
     //积分领奖
     openAward = () => {
         forelet.paint(gemFun.getData());
-        // open("app_c-activity-gem-award");
         open("app_c-gem-award");
     }
     //排行榜
@@ -151,12 +148,12 @@ export class gam_w extends Widget {
     }
     //物品详情objectInfoShow
     showPropInfo = (arg) => {
-        globalSend("showPropInfo", arg);
+        globalSend("showOtherInfo", arg);
     };
     //
     getScoreAward = (index) => {
         let score = get("gem_data.score");
-        if(activity_wanfa[101].award_limit[index-1] >= score){
+        if(gem_get_score_award.award_limit[index-1] >= score){
             globalSend("screenTipFun", { words: "您的积分不足" });
             return;
         }
@@ -233,6 +230,8 @@ const createGemFun = () => {
         _data.gemAddState = gemAddState; // 宝石增加状态
         _data.maskState = maskState; // 遮罩层状态
         _data.tabSwitch = tabSwitch;
+
+        _data.gem_get_score_award = gem_get_score_award;
         return _data;
     };
 
@@ -372,16 +371,6 @@ const createGemFun = () => {
                     module.isShowProp();
                     gemAddState = '';
                     module.updataHtml();
-                    // let result: any = Common_m.mixAward(_data.award);
-                    // if (result) {
-                    //     award.score = _data.get_score;
-                    //     result.auto = 1;
-                    //     globalSend("showNewRes",{
-                    //         result, function (result1) {
-                    //             result1.open();
-                    //         }
-                    //     });
-                    // }
                 } else {
                     maskState = "mask_visible";
                     module.updataHtml();
@@ -395,18 +384,23 @@ const createGemFun = () => {
                             gemData.gem += _data.award_gem;
                             gemAddState = 'gem_add';
                             maskState = "";
+                            globalSend("attrTip", {
+                                words: `恭喜获得宝石一颗`
+                            });
                         }
                         module.updataHtml();
-                        let result: any = Common_m.mixAward(_data);
-                        if(!result){
-                            return ;
-                        }
-                        result.auto = 1;
-                        globalSend("showNewRes",{
-                            result, function (result1) {
-                                result1.open();
+                        if (_data.award) {
+                            let result: any = Common_m.mixAward(_data);
+                            if(!result){
+                                return ;
                             }
-                        });
+                            result.auto = 1;
+                            globalSend("showNewRes",{
+                                result, function (result1) {
+                                    result1.open();
+                                }
+                            });
+                        }
                      }, 300)
                 }
 

@@ -1,144 +1,180 @@
 export default {
-    "model_monster01": {
-        "res":["9Bd8k8WanMsKhm2k4fh6FL.jpg","VRpzTKE3tETtpUAkwL3v1.geo","HSosxN8owvBymqxytZYv39.skl"],
-        "aniControl":"model_monster01","tpl":"NKpNBfaoet7ARPBjJFwSty.rtpl",
-        "bones":[[1,2,3,9,11,13,12,4,5,14,15,18,16,17,19,22,21,6,7,8,23,24,27,25,26,28,20,30,31]],
-        "bounds":[[[0.943914175033569,0.860268712043762,1.20266854763031],[-1.75491321086884,-0.804691970348358,-1.20266795158386]]],"rootbone":"Bip001 Pelvis",
-        "names":["model_monster01","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger1","Bip001 L Finger11","Bone003","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger1","Bip001 R Finger11","R Weapon","Bone001","Bone002"],
+    "model_monster01":{
+        "res":["9Bd8k8WanMsKhm2k4fh6FL.jpg","JDhhJJwab4PJxibjP7x3jw.geo","RGste4qRBV4NfdUErKXv7A.skl"],"aniControl":"model_monster01",
+        "tpl":"Ck8BBgNEm5ijVGhCDf9Dg6.rtpl",
+        "bones":[[1,2,3,7,8,10,9,4,11,13,12,5,6,14]],
+        "bounds":[[[1.04103028774261,0.860268652439117,1.29800009727478],[-1.75491309165955,-0.804692149162292,-1.29799973964691]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster01","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","R Weapon"],
         "aniBoxs":[
-            {"act_monster01_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster01_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster01_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster01_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster01_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}},
+            {
+                "act_monster01_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                ,"act_monster01_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster01_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster01_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster01_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+            }
         ]
     },
     "model_monster02":{
-        "res":["KqGuDdQXF9Y5jy7gboj3xq.jpg","GkcMUMxx7DthJ9GF9TJrkH.geo","xVe5EkkHNXvA3hQVhA3ub.skl"],
-        "aniControl":"model_monster02",
-        "tpl":"SYpwyrBzubuQuBjXEh1Yed.rtpl",
-        "bones":[[2,1,3,11,13,15,14,4,31,5,16,17,20,18,19,21,24,23,7,8,9,25,22,32,26,27,28,30,29]],
-        "bounds":[[[0.970550060272217,1.90046381950378,0.733216881752014],[-0.970550417900085,-0.000421464443206787,-0.432263523340225]]],
+        "res":["KqGuDdQXF9Y5jy7gboj3xq.jpg","UP5syj2arEEufYibqt9tSy.geo","Lv2KysGxLmS8CJprCT1PGd.skl"],"aniControl":"model_monster02",
+        "tpl":"QSNcTENPskVGc5Z36XkWWY.rtpl",
+        "bones":[[2,1,3,7,8,10,9,4,11,13,12,5,6,14]],
+        "bounds":[[[1.0410304069519,0.860268592834473,1.3976081609726],[-1.79436767101288,-0.804692268371582,-1.39760756492615]]],
         "rootbone":"Bip001 Pelvis",
-        "names":["model_monster02","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger0Nub","Bip001 L Finger1","Bip001 L Finger11","Bip001 L Finger1Nub","Bone003","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger0Nub","Bip001 R Finger1","Bip001 R Finger11","Bip001 R Finger1Nub","Bone001","Bone002"],
+        "names":["model_monster02","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm"],
         "aniBoxs":[
-            {"act_monster02_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster02_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster02_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster02_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster02_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}},
+            {
+                "act_monster02_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster02_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster02_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster02_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster02_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+            }
         ]
     },
-    "model_monster03": {
-        "res":["r17nRVaaAmVkbE53hmcNd.jpg","Mu4tZVRZ8Ha5pXEHkuRkvJ.geo","9CZBFFNiiKxWLsBBT8SLNk.skl"],
-        "aniControl":"model_monster03",
+    "model_monster03":{
+        "res":["r17nRVaaAmVkbE53hmcNd.jpg","AV6y5pZrHNAEwKmCRBuo8.geo","2d4EXoNR87TKJ3YQk2P8vW.skl"],"aniControl":"model_monster03",
         "tpl":"XvmoB8Vdjkduf3DyxXAQ6o.rtpl",
-        "bones":[[2,1,3,11,13,15,14,4,5,16,17,20,18,19,21,23,22,7,8,9,24,25,28,26,27,29,32,31]],
-        "bounds":[[[0.943914175033569,0.860268652439117,1.07720291614532],[-1.75491297245026,-0.804691910743713,-1.0772020816803]]],"rootbone":"Bip001 Pelvis",
-        "names":["model_monster03","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger0Nub","Bip001 L Finger1","Bip001 L Finger11","Bip001 L Finger1Nub","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger0Nub","Bip001 R Finger1","Bip001 R Finger11","Bip001 R Finger1Nub","R Weapon","Bone001","Bone002"],
+        "bones":[[2,1,3,7,8,10,9,4,11,13,12,5,6,14]],
+        "bounds":[[[1.04103028774261,0.860268592834473,1.2208913564682],[-1.75491309165955,-0.804692149162292,-1.22089052200317]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster03","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","R Weapon"],
         "aniBoxs":[
-            {"act_monster03_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster03_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster03_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster03_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-            "act_monster03_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}},
+            {
+                "act_monster03_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster03_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster03_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster03_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster03_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+            }
         ]
     },
     "model_monster04":{
-        "res":["EwesrvpEe65JoskgXiJ1v8.jpg","4S7192dQ19pALHszQKF5qw.geo","8wXZC4PALcDBsSDm7g4qiv.skl"],"aniControl":"model_monster04",
-        "tpl":"PDSnYMcABqX7ZPTYBeKBV2.rtpl",
-        "bones":[[12,1,21,32,33,2,23,3,25,26,20,8,7,11,9,31,29,17,16,18,36,38,24,10,30,19,37]],"bounds":[[[1.31411266326904,1.37810230255127,2.31627321243286],[-2.03979277610779,-0.99043071269989,-2.34809899330139]]],
+        "res":["EwesrvpEe65JoskgXiJ1v8.jpg","VPvLTsTabRQjpdJJkFD8dd.geo","3N7fjJqCw1Rc8hJYod3ziN.skl"],"aniControl":"model_monster04",
+        "tpl":"9rjeWxJaxDEyPEXDiMFfsg.rtpl",
+        "bones":[[5,1,7,12,13,2,8,3,9,10,4,11,6,14]],
+        "bounds":[[[1.31406140327454,1.37840247154236,2.31618571281433],[-2.0398473739624,-0.990132689476013,-2.34818577766418]]],
         "rootbone":"Bip001 Pelvis",
-        "names":["model_monster04","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bone022","Bone013","Bone018","Bone006","Bone020","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bone023","Bone015","Bone019","Bone008","Bone021","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bone017","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bone010","Bone002","Bone009","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone012","Bone003","Bone011"],
+        "names":["model_monster04","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm"],
         "aniBoxs":[
             {
+                "act_monster04_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
                 "act_monster04_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
                 "act_monster04_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-                "act_monster04_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster04_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
-                "act_monster04_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
-            }   
+                "act_monster04_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster04_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+            }
         ]
     },
     "model_monster05":{
-        "res":["UYeQSBKe6qTRR8FtkHdr1D.jpg","4S7192dQ19pALHszQKF5qw.geo","8wXZC4PALcDBsSDm7g4qiv.skl"],"aniControl":"model_monster05",
-        "tpl":"GEMEGAbApoFENiGyhXHTqc.rtpl",
-        "bones":[[12,1,21,32,33,2,23,3,25,26,20,8,7,11,9,31,29,17,16,18,36,38,24,10,30,19,37]],"bounds":[[[1.31411266326904,1.37810230255127,2.31627321243286],[-2.03979277610779,-0.99043071269989,-2.34809899330139]]],
-        "rootbone":"Bip001 Pelvis","names":["model_monster05","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bone022","Bone013","Bone018","Bone006","Bone020","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bone023","Bone015","Bone019","Bone008","Bone021","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bone017","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bone010","Bone002","Bone009","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone012","Bone003","Bone011"],
+        "res":["UYeQSBKe6qTRR8FtkHdr1D.jpg","VPvLTsTabRQjpdJJkFD8dd.geo","3N7fjJqCw1Rc8hJYod3ziN.skl"],"aniControl":"model_monster05",
+        "tpl":"C2So5K8vJZ316kkW5WAV3W.rtpl",
+        "bones":[[5,1,7,12,13,2,8,3,9,10,4,11,6,14]],
+        "bounds":[[[1.31406140327454,1.37840247154236,2.31618571281433],[-2.0398473739624,-0.990132689476013,-2.34818577766418]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster05","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm"],
         "aniBoxs":[
             {
-                "act_monster04_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster04_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster04_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster04_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster04_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster05_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster05_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster05_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster05_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster05_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster06":{
-        "res":["ND6D49RfNKnrKkymw1yCr2.jpg","4S7192dQ19pALHszQKF5qw.geo","8wXZC4PALcDBsSDm7g4qiv.skl"],"aniControl":"model_monster06",
-        "tpl":"BqULZzg68rNsAFN9CHhkXU.rtpl",
-        "bones":[[12,1,21,32,33,2,23,3,25,26,20,8,7,11,9,31,29,17,16,18,36,38,24,10,30,19,37]],"bounds":[[[1.31411266326904,1.37810230255127,2.31627321243286],[-2.03979277610779,-0.99043071269989,-2.34809899330139]]],
-        "rootbone":"Bip001 Pelvis","names":["model_monster06","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bone022","Bone013","Bone018","Bone006","Bone020","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bone023","Bone015","Bone019","Bone008","Bone021","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bone017","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bone010","Bone002","Bone009","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone012","Bone003","Bone011"],
+        "res":["ND6D49RfNKnrKkymw1yCr2.jpg","VPvLTsTabRQjpdJJkFD8dd.geo","3N7fjJqCw1Rc8hJYod3ziN.skl"],"aniControl":"model_monster06",
+        "tpl":"NN1ekw1h1PxaYXL7XRns5A.rtpl",
+        "bones":[[5,1,7,12,13,2,8,3,9,10,4,11,6,14]],
+        "bounds":[[[1.31406140327454,1.37840247154236,2.31618571281433],[-2.0398473739624,-0.990132689476013,-2.34818577766418]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster06","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm"],
         "aniBoxs":[
             {
-                "act_monster06_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster06_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster06_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster06_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster06_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster06_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster06_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster06_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster06_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster06_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster07":{
-        "res":["AEuU2nhwnFwH2UwrUvdJqf.jpg","MDPVQPnybp7gRTfVVQBJDd.geo","9wWfyL3nqaPJcveWgBuPJB.skl"],
-        "aniControl":"model_monster07",
-        "tpl":"5v7ozmicTAFZsWEXzAZxQg.rtpl",
-        "bones":[[31,32,1,33,11,13,12,2,14,15,16,3,4,34,5,17,18,21,20,19,22,23,24,7,8,9,25,26,29,28,27]],
-        "bounds":[[[0.473960489034653,0.809353947639465,0.753894746303558],[-0.904958486557007,-1.02450728416443,-0.753896296024323]]],
-        "rootbone":"Bip001 Pelvis","names":["model_monster07","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger0Nub","Bip001 L Finger1","Bip001 L Finger11","Bip001 L Finger1Nub","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger0Nub","Bip001 R Finger1","Bip001 R Finger11","Bip001 R Finger1Nub","R Weapon","Bone001","Bone002","Bone003","Bone004","Bone005","monster07"],
+        "res":["AEuU2nhwnFwH2UwrUvdJqf.jpg","Pccf9CEux9q5bL7MXZrtnL.geo","PEGRSnqTFPceL71PtdcAd5.skl"],"aniControl":"model_monster07",
+        "tpl":"SkWSNhbeT8nKM53rW5XWHf.rtpl",
+        "bones":[[1,7,8,2,9,10,11,3,4,12,13,14,5,6]],
+        "bounds":[[[0.602864623069763,0.80935400724411,0.785149157047272],[-0.904958724975586,-1.02372944355011,-0.785150229930878]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster07","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","R Weapon","monster07"],
         "aniBoxs":[
             {
-                "act_monster07_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster07_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster07_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster07_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster07_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster07_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster07_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                ,"act_monster07_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster07_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster07_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster08":{
-        "res":["QwyihK9LgEAUtLGkwrQRTK.jpg","Ue2YpD1X4sqvxG9qK9pcrT.geo","6iLghaCbJ2BKFzauNda4tJ.skl","8avt2qvknVoAqE6vxYFnnM.jpg","KVNwnx97VWkqvfnnwaVmrm.geo","6iLghaCbJ2BKFzauNda4tJ.skl"],"aniControl":"model_monster08",
-        "tpl":"T4i3GKBU6aFbxvDsU3BxkT.rtpl",
-        "bones":[[1,31,32,33,34,11,12,13,2,14,15,16,17,3,4,5,18,21,20,19,7,22,23,24,25,8,9,26,29,28,27]],
-        "bounds":[[[0.473960489034653,0.809353947639465,0.753894746303558],[-0.904958486557007,-1.02463030815125,-0.753896296024323]]],
-        "rootbone":"Bip001 L Forearm",
-        "names":["model_monster08","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger0Nub","Bip001 L Finger1","Bip001 L Finger11","Bip001 L Finger1Nub","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger0Nub","Bip001 R Finger1","Bip001 R Finger11","Bip001 R Finger1Nub","R Weapon","Bone001","Bone002","Bone003","Bone004","Bone005","monster08","monster08_dunpai"],
-        "aniBoxs":[
+        "res":["QwyihK9LgEAUtLGkwrQRTK.jpg","Y7RXUKtnnjDxmXxXhgG5qP.geo","7Sepx91yRdCJwJ8ZZZwf3a.skl","8avt2qvknVoAqE6vxYFnnM.jpg","KVNwnx97VWkqvfnnwaVmrm.geo","7Sepx91yRdCJwJ8ZZZwf3a.skl"],
+        "aniControl":"model_monster08",
+        "tpl":"UML1BjUXjRSU51EdjexxTp.rtpl",
+        "bones":[[1,7,8,2,9,10,11,3,4,12,13,14,5,6]],
+        "bounds":[[[0.602864623069763,0.80935400724411,0.785149157047272],[-0.904958724975586,-1.02372944355011,-0.785150229930878]]],
+        "rootbone":"Bip001 L Forearm","names":["model_monster08","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","R Weapon","monster08","monster08_dunpai"],"aniBoxs":[
             {
-                "act_monster08_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster08_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster08_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster08_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster08_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster08_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster08_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster08_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster08_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster08_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster09":{
-        "res":["LzjY62a1RorXttVTDgyZbN.jpg","Datz89rKiijkYjbHCWmRiw.geo","KTWnCoJ7FcjvZMu5dShnG3.skl"],
-        "aniControl":"model_monster09",
-        "tpl":"JcVnuMLdk52SbQ9Fo25veB.rtpl",
-        "bones":[[11,12,13,2,1,14,15,16,17,3,4,31,32,33,34,5,18,19,21,20,7,23,22,24,25,8,9,26,27,29,28]],
-        "bounds":[[[0.764195024967194,1.30036532878876,1.20611894130707],[-1.45296156406403,-1.63867676258087,-1.20612061023712]]],
-        "rootbone":"Bip001 Pelvis","names":["model_monster09","Bip001","Bip001 Footsteps","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 L Toe0Nub","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 R Toe0Nub","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bip001 HeadNub","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 L Finger0","Bip001 L Finger01","Bip001 L Finger0Nub","Bip001 L Finger1","Bip001 L Finger11","Bip001 L Finger1Nub","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bip001 R Finger0","Bip001 R Finger01","Bip001 R Finger0Nub","Bip001 R Finger1","Bip001 R Finger11","Bip001 R Finger1Nub","R Weapon","Bone001","Bone002","Bone003","Bone004","Bone005","monster09"],
+        "res":["LzjY62a1RorXttVTDgyZbN.jpg","P8LWHjQqsx13oLvtufsUDn.geo","BD292D4xAbuseMkWSRLkAs.skl"],"aniControl":"model_monster09",
+        "tpl":"Ao7uyekQgHnEeiGNns45x8.rtpl",
+        "bones":[[7,8,2,1,9,10,11,3,4,5,13,12,14,6]],
+        "bounds":[[[0.963538885116577,1.30036556720734,1.29751241207123],[-1.45296168327332,-1.63723587989807,-1.29751372337341]]],
+        "rootbone":"Bip001 Pelvis",
+        "names":["model_monster09","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 R Thigh","Bip001 R Calf","Bip001 Spine1","Bip001 Head","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","R Weapon","monster09"],
         "aniBoxs":[
             {
-                "act_monster09_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster09_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster09_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster09_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster09_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster09_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster09_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster09_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster09_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster09_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster10":{
-        "res":["8iREJBYZbZdMCChFuvtAp.jpg","TYTtBKfMDDvZpQdF3swvMC.geo","9vTYDqGvBKQ5hDFnAeMqaV.skl"],"aniControl":"model_monster10",
-        "tpl":"8RuihbGamNRdey89LMfd2C.rtpl",
-        "bones":[[18,17,12,11,13,2,23,14,1,3,33,4,5,16,15,34,35,36,24,27,25,26,19,28,20,7,8,9,22,21,29,31,32,30]],
-        "bounds":[[[0.897498667240143,0.0674977600574493,0.327489644289017],[-0.731951117515564,-0.70302140712738,-0.327485889196396]]],
+        "res":["8iREJBYZbZdMCChFuvtAp.jpg","6f5AQjKxi1CySwZ9TjF78u.geo","4SW9gBDcS5EHpARpyNVxTa.skl"],"aniControl":"model_monster10",
+        "tpl":"4mTA4JWHfRN14hHXs7q4pq.rtpl",
+        "bones":[[5,4,3,2,6,1,12,13,14,7,8,9,10,11]],
+        "bounds":[[[0.899602293968201,0.0674623847007751,0.32748955488205],[-0.732835114002228,-0.705164968967438,-0.327485620975494]]],
         "rootbone":"Bip001 Pelvis",
-        "names":["model_monster10","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 Spine1","Bip001 Neck","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 Neck1","Bip001 Head","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone08","Bone09","Bone05","Bone06","Bone07","Bone017","Bone018","Bone019","Bone020","Bone021","Bone001","Bone002","Bone003","Bone004"],"aniBoxs":[
+        "names":["model_monster10","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bone08","Bone09","Bone06","Bone017","Bone018","Bone019","Bone001","Bone002","Bone003"],
+        "aniBoxs":[
             {
-                "act_monster10_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster10_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster10_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster10_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster10_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster10_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster10_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster10_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster10_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster10_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster11":{
-        "res":["L1S5iv6aebbccFKiDi7ruZ.jpg","TYTtBKfMDDvZpQdF3swvMC.geo","9vTYDqGvBKQ5hDFnAeMqaV.skl"],"aniControl":"model_monster11",
-        "tpl":"WwZWetchU1Pj6oYyEcr9Sj.rtpl",
-        "bones":[[18,17,12,11,13,2,23,14,1,3,33,4,5,16,15,34,35,36,24,27,25,26,19,28,20,7,8,9,22,21,29,31,32,30]],
-        "bounds":[[[0.897498667240143,0.0674977600574493,0.327489644289017],[-0.731951117515564,-0.70302140712738,-0.327485889196396]]],
+        "res":["L1S5iv6aebbccFKiDi7ruZ.jpg","6f5AQjKxi1CySwZ9TjF78u.geo","4SW9gBDcS5EHpARpyNVxTa.skl"],"aniControl":"model_monster11",
+        "tpl":"28SHhyBpKxkjrCUyKZMZSt.rtpl",
+        "bones":[[5,4,3,2,6,1,12,13,14,7,8,9,10,11]],
+        "bounds":[[[0.899602293968201,0.0674623847007751,0.32748955488205],[-0.732835114002228,-0.705164968967438,-0.327485620975494]]],
         "rootbone":"Bip001 Pelvis",
-        "names":["model_monster11","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 Spine1","Bip001 Neck","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 Neck1","Bip001 Head","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone08","Bone09","Bone05","Bone06","Bone07","Bone017","Bone018","Bone019","Bone020","Bone021","Bone001","Bone002","Bone003","Bone004"],
+        "names":["model_monster11","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bone08","Bone09","Bone06","Bone017","Bone018","Bone019","Bone001","Bone002","Bone003"],
         "aniBoxs":[
             {
                 "act_monster11_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
@@ -149,13 +185,14 @@ export default {
             }
         ]
     },
-    "model_monster12":{
-        "res":["9qcUpuUCoAKViGwkGmp7wC.jpg","B8bWKVzMYUkBXqYn1EEwKh.geo","Bo2uz9TMhq9FCV8ZcZ9myk.skl"],"aniControl":"model_monster12",
+    "model_monster12":
+    {
+        "res":["9qcUpuUCoAKViGwkGmp7wC.jpg","6f5AQjKxi1CySwZ9TjF78u.geo","4SW9gBDcS5EHpARpyNVxTa.skl"],"aniControl":"model_monster12",
         "tpl":"DCxvpvCeDtvdw4tM9tWC7u.rtpl",
-        "bones":[[18,17,12,11,13,2,23,14,1,3,33,4,5,16,15,35,34,36,24,27,25,26,19,28,20,7,8,9,22,21,29,31,32,30]],
-        "bounds":[[[0.904147803783417,0.0650776252150536,0.345706760883331],[-0.738600075244904,-0.721289455890656,-0.345703184604645]]],
+        "bones":[[5,4,3,2,6,1,12,13,14,7,8,9,10,11]],
+        "bounds":[[[0.899602293968201,0.0674623847007751,0.32748955488205],[-0.732835114002228,-0.705164968967438,-0.327485620975494]]],
         "rootbone":"Bip001 Pelvis",
-        "names":["model_monster12","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 L Thigh","Bip001 L Calf","Bip001 L Foot","Bip001 L Toe0","Bip001 R Thigh","Bip001 R Calf","Bip001 R Foot","Bip001 R Toe0","Bip001 Spine1","Bip001 Neck","Bip001 L Clavicle","Bip001 L UpperArm","Bip001 L Forearm","Bip001 L Hand","Bip001 Neck1","Bip001 Head","Bip001 R Clavicle","Bip001 R UpperArm","Bip001 R Forearm","Bip001 R Hand","Bone08","Bone09","Bone05","Bone06","Bone07","Bone017","Bone018","Bone019","Bone020","Bone021","Bone001","Bone002","Bone003","Bone004"],
+        "names":["model_monster12","Bip001","Bip001 Pelvis","Bip001 Spine","Bip001 Spine1","Bip001 Neck","Bip001 Head","Bone08","Bone09","Bone06","Bone017","Bone018","Bone019","Bone001","Bone002","Bone003"],
         "aniBoxs":[
             {
                 "act_monster12_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
@@ -167,44 +204,53 @@ export default {
         ]
     },
     "model_monster13":{
-        "res":["B3XC4XwbSoKwEczDJ1iaG2.jpg","TTf7MXgNwoVG6WHj9wYJJX.geo","UcUNQTdKDJsPJPS1Kq8v2k.skl"],
-        "aniControl":"model_monster13",
+        "res":["B3XC4XwbSoKwEczDJ1iaG2.jpg","Bw4DiRL8RfjZc9tB4mGWeh.geo","AuB1dRGnt7w7Ci8D91q1av.skl"],"aniControl":"model_monster13",
         "tpl":"44Y4VZnxzqEPpTWwBDqm6M.rtpl",
-        "bones":[[1,11,13,12,2,18,14,15,16,5,3,4,24,20,19,21,23,22,26,25,27,9,7,8,33,29,28,30,32,31,35,34,10,6]],
-        "bounds":[[[0.310375928878784,0.504619359970093,0.460326731204987],[-0.593326687812805,-0.183488816022873,-0.460587859153748]]],
+        "bones":[[1,9,11,10,2,12,13,14,5,3,4,8,6,7]],
+        "bounds":[[[0.311034798622131,0.504581809043884,0.464725166559219],[-0.593985557556152,-0.195059299468994,-0.46498629450798]]],
         "rootbone":"Bip001 Spine1",
-        "names":["model_monster13","Bone001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone016","Bone027","Bone028","Bone029","Bone030","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010","Spine","Bone018","Bone019","Bone020","Bone021","Bone022","Bone023","Bone024","Bone025","Bone026","Bone031","Bone032","Bone033","Bone034","Bone035","Bone036","Bone037","Bone039","Bone038"],
+        "names":["model_monster13","Bip001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone027","Bone028","Bone029","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010"],
         "aniBoxs":[
             {
-                "act_monster15_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster13_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster13_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster13_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster13_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster13_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster14":{
-        "res":["Fn9qGiN2CnZFXyYbu6xb4J.jpg","K6BuKsorBAcyYA5dsCLxLd.geo","UcUNQTdKDJsPJPS1Kq8v2k.skl"],
-        "aniControl":"model_monster14",
-        "tpl":"QggeUXHXqBJ5zc6cY2SQZg.rtpl",
-        "bones":[[1,11,12,13,2,18,24,21,14,15,16,5,3,4,20,19,22,23,26,25,27,33,30,9,7,8,29,28,32,31,35,34,6,10]],
-        "bounds":[[[0.311416476964951,0.540938556194305,0.441522926092148],[-0.593118011951447,-0.17670351266861,-0.441784292459488]]],
+        "res":["Fn9qGiN2CnZFXyYbu6xb4J.jpg","Ua3nBitGuPY2TfGE84yfi.geo","AuB1dRGnt7w7Ci8D91q1av.skl"],"aniControl":"model_monster14",
+        "tpl":"9XjzdnqBhYYF4G8GJdLCUJ.rtpl",
+        "bones":[[1,9,10,11,2,12,13,14,5,3,4,8,6,7]],
+        "bounds":[[[0.312075018882751,0.540901064872742,0.445918291807175],[-0.59377646446228,-0.188265904784203,-0.44617959856987]]],
         "rootbone":"Bip001 Spine1",
-        "names":["model_monster14","Bone001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone016","Bone027","Bone028","Bone029","Bone030","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010","Spine","Bone018","Bone019","Bone020","Bone021","Bone022","Bone023","Bone024","Bone025","Bone026","Bone031","Bone032","Bone033","Bone034","Bone035","Bone036","Bone037","Bone039","Bone038"],
+        "names":["model_monster14","Bip001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone027","Bone028","Bone029","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010"],
         "aniBoxs":[
             {
-                "act_monster14_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster14_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster14_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster14_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster14_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster14_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster14_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster14_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster14_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster14_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
     "model_monster15":{
-        "res":["6cfZpZPNoR1ELQ4qQ4SyNL.jpg","BcNEiU9J9EYrK4sxvMwJyE.geo","UcUNQTdKDJsPJPS1Kq8v2k.skl"],
-        "aniControl":"model_monster15",
+        "res":["6cfZpZPNoR1ELQ4qQ4SyNL.jpg","XqB7kc8G26RDPU6hfQ8ibn.geo","AuB1dRGnt7w7Ci8D91q1av.skl"],"aniControl":"model_monster15",
         "tpl":"HBkCnSmCkUrADDHTYsvnhR.rtpl",
-        "bones":[[1,2,11,18,24,21,3,12,13,14,15,16,4,5,6,19,20,22,23,25,26,27,33,30,7,8,9,10,28,29,31,32,34,35]],
+        "bones":[[1,2,5,3,9,10,11,12,13,14,4,8,6,7]],
         "bounds":[[[0.321073591709137,0.578718841075897,0.454707473516464],[-0.599371671676636,-0.203434884548187,-0.454707652330399]]],
         "rootbone":"Bip001 Spine1",
-        "names":["model_monster15","Bone001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone016","Bone027","Bone028","Bone029","Bone030","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010","Spine","Bone018","Bone019","Bone020","Bone021","Bone022","Bone023","Bone024","Bone025","Bone026","Bone031","Bone032","Bone033","Bone034","Bone035","Bone036","Bone037","Bone039","Bone038"],
+        "names":["model_monster15","Bip001","Bip001 Spine1","Bone003","Bone012","Bone013","Bone014","Bone027","Bone028","Bone029","Bone005","Bone006","Bone007","Bone008","Bone009","Bone010"],
         "aniBoxs":[
             {
-                "act_monster15_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},"act_monster15_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
+                "act_monster15_die":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster15_diefly":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster15_run":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster15_skill1_1":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]},
+                "act_monster15_standby":{"center":[0.0,0.0,0.0],"size":[1.0,1.0,1.0]}
             }
         ]
     },
@@ -433,52 +479,53 @@ export default {
     },
     "ainMod": {
         "model_monster01":{
-            "act_monster01_die":"YPzLuwm813C6XfF8nCn8u5.ai","act_monster01_run":"PMhQsKv6iuXCvtWLDT7EyC.ai","act_monster01_skill1_1":"8T23qWosa7hEteedub7cmD.ai","act_monster01_standby":"FmVs2P6Buiyxawrwe6siTK.ai","act_monster01_diefly":"DxZLifKzUkycmpAq3BwAxX.ai"
+            "act_monster01_die":"J93vMsLjQME5az4gEuzea6.ai","act_monster01_diefly":"EXpiutU2d6SQdwvrJeGcNe.ai","act_monster01_run":"Dz7qisUUUFrxjrW7TJe38X.ai","act_monster01_skill1_1":"QPfvmLmyyLjCYhx1P8gaHp.ai","act_monster01_standby":"NHBpUktbwrYa8hdHg5yb21.ai"
         },
         "model_monster02":{
-            "act_monster02_die":"B9VvX3hgLPuyiNNooozo94.ai","act_monster02_diefly":"PZSgYGfhR5n2yNPMAFesek.ai","act_monster02_run":"TUqFMjVU6iLLokbFCy4RoY.ai","act_monster02_skill1_1":"HH7Sr2JzWWEiEiBHtUmPrx.ai","act_monster02_standby":"7mG5AnQVFD2ZcRa8Yhzfmd.ai"
+            "act_monster02_die":"JnJfKVov9JdsRzgykEfz2m.ai","act_monster02_diefly":"HaTGbFCNofwB61v8AH4cH6.ai","act_monster02_run":"Su2zApPrRKNu1te3x3mpim.ai","act_monster02_skill1_1":"fnM418kbR5BVhAks5ToGd.ai","act_monster02_standby":"2WY8CmSBpZheVuyDUr5Ndq.ai"
         },
-        "model_monster03": {
-            "act_monster03_die":"HrbTHKFn89uRC9dfeKjQPB.ai","act_monster03_diefly":"JhtieUfEC5dD8GiBhvtDSE.ai","act_monster03_run":"2GrML9TjNVzCKhujMef68V.ai","act_monster03_skill1_1":"JcCZ98A2rCDRGm6EjUSedL.ai","act_monster03_standby":"GjGRD8pLMQWxeEyAB9ubaE.ai"
+        "model_monster03":{
+            "act_monster03_die":"9VPB6vpu5y8QSydpvemLYH.ai",
+            "act_monster03_diefly":"7pztqx3Y8dpDNrUZBwwHCV.ai",
+            "act_monster03_run":"WnNnKC3A5HaSaDAeKEokp6.ai",
+            "act_monster03_skill1_1":"P3QoEy8u4wksWUnCXHRBji.ai",
+            "act_monster03_standby":"85WNkpWcRMhtmZZvPzE5SU.ai"
         },
         "model_monster04":{
-            "act_monster04_run":"SDLpgKQZPWNPFNZxauknxJ.ai","act_monster04_skill1_1":"Yc1EkMFwYCjmU3imvYzrbd.ai","act_monster04_standby":"LZbwisocqVpjNQaEKbdagc.ai","act_monster04_die":"H2M78SsdYGHACTRkQsAnR.ai",
-            "act_monster04_diefly":"RuSiqNzZSFnA3xiMJ7Pite.ai"
+            "act_monster04_die":"FgZhxUkeCXT4jszBWX7tfD.ai","act_monster04_diefly":"UtwRmNQGZjY9ehmFbGqbFw.ai","act_monster04_run":"A65EAtHR9xtT6HdEGYgB4y.ai","act_monster04_skill1_1":"7g4CmYHRv4U2rLETddve8n.ai","act_monster04_standby":"7Cs3RUuFrM2x562pJ8zcLo.ai"
         },
         "model_monster05":{
-            "act_monster05_run":"5V4AWqi8yC2VNKNBqcPqfC.ai","act_monster05_skill1_1":"MEnXa5VEhEfGHCMvNqUq7T.ai","act_monster05_standby":"V9X9E41bBmzFQ7CQ86fXMH.ai","act_monster05_die":"ULm2CStedrM7Lb9DshhqqE.ai",
-            "act_monster05_diefly":"Nbbs8YRXin38bZ7VSFzSr7.ai"
+            "act_monster05_die":"FgZhxUkeCXT4jszBWX7tfD.ai","act_monster05_diefly":"UtwRmNQGZjY9ehmFbGqbFw.ai","act_monster05_run":"A65EAtHR9xtT6HdEGYgB4y.ai","act_monster05_skill1_1":"7g4CmYHRv4U2rLETddve8n.ai","act_monster05_standby":"7Cs3RUuFrM2x562pJ8zcLo.ai"
         },
         "model_monster06":{
-            "act_monster06_run":"TZUdW3z3euRpeooTBcXxha.ai","act_monster06_skill1_1":"VVoZLJcQDo9AXzN8FA1Fjz.ai","act_monster06_standby":"6H2rVC3weSFWnrSqM8k7J1.ai","act_monster06_die":"EaVubcexKK8RsLQmVsRLYZ.ai",
-            "act_monster06_diefly":"SuvGx8bxHSddg7BjWSigh9.ai"
+            "act_monster06_die":"FgZhxUkeCXT4jszBWX7tfD.ai","act_monster06_diefly":"UtwRmNQGZjY9ehmFbGqbFw.ai","act_monster06_run":"A65EAtHR9xtT6HdEGYgB4y.ai","act_monster06_skill1_1":"7g4CmYHRv4U2rLETddve8n.ai","act_monster06_standby":"7Cs3RUuFrM2x562pJ8zcLo.ai"
         },
         "model_monster07":{
-            "act_monster07_die":"WnJwHLW2FrKbt3GZmcpsU1.ai","act_monster07_diefly":"TNAkHj7s84TXUpjMTmP3T2.ai","act_monster07_run":"YEBLfFDGBJ9xDzFW3UeYvg.ai","act_monster07_skill1_1":"MSEhkYozHjiENihyeJHCzL.ai","act_monster07_standby":"KCCKYPBCYYsNYtvxJqtnJM.ai"
+            "act_monster07_die":"VQqEo2kshpfPBKubWdUTTC.ai","act_monster07_diefly":"iZnU7LERmpxcbd5VA2gmo.ai","act_monster07_run":"5tvxr7pJSqYsetKPM9dG6i.ai","act_monster07_skill1_1":"JrxdzoaBR1fMvG48aoqYQV.ai","act_monster07_standby":"Cz8xzpaYzAVieQCNqYZxhU.ai"
         },
         "model_monster08":{
-            "act_monster08_die":"9MvCfHcoHpn5w4T1v5Tte.ai","act_monster08_diefly":"5iceKjtL9QsYS8htQqgyh9.ai","act_monster08_run":"VsjUtYn1Tfna1Km8E5LvpG.ai","act_monster08_skill1_1":"KjEfvegz87a82oNtkGmTcJ.ai","act_monster08_standby":"Gdkr3HASVmX6G4CM1xmkon.ai"
+            "act_monster08_die":"JzfoPg5M21Eu6hM4YQAYau.ai","act_monster08_diefly":"SwRC39ZEq1ofiAQDuxTi4n.ai","act_monster08_run":"W7QDRNhaGaq4oJdpYaCZzC.ai","act_monster08_skill1_1":"SqAMCKEVVKD8c13FK8eQEY.ai","act_monster08_standby":"M6Tazun8EdXDkzvy72R3RG.ai"
         },
         "model_monster09":{
-            "act_monster09_standby":"MjQia1Rqgd2amWc3X46ryv.ai","act_monster09_die":"DUmjFFhV2EaUKefwh3cqyC.ai","act_monster09_diefly":"7nwauD7m76BhxvS6x4PQH2.ai","act_monster09_run":"B4NG7R5j75hRemf51AWbXR.ai","act_monster09_skill1_1":"Ln4fDb2F9DXU56m4ioyk1Y.ai"
+            "act_monster09_die":"UZz39cZmp6Ehbp12fb723h.ai","act_monster09_diefly":"BkhfksQhv8iYRDExfmp51N.ai","act_monster09_run":"JDm6M6yxo3SdfayhvrxFb1.ai","act_monster09_skill1_1":"VhrcwDFrm2FVEnikAZdf7q.ai","act_monster09_standby":"SeKoP5U3uD7ChzSYDVR6XH.ai"
         },
         "model_monster10":{
-            "act_monster10_die":"PkF1VVbhP73wgCBrAMoHqM.ai","act_monster10_diefly":"3sgquhYPESBaNWhGQasG4k.ai","act_monster10_run":"SfkkZZCq42dsCTSGV1E6pA.ai","act_monster10_skill1_1":"SWeyMcedJRNru3g9Us786d.ai","act_monster10_standby":"7LACERuGhLzU552Nnvg8nS.ai"
+            "act_monster10_die":"MtJU8zEbkbfPaBJtHzo3FV.ai","act_monster10_diefly":"MuTFf3m1CBpvnirAtqT4u6.ai","act_monster10_run":"JyRCWSLCzCFYvFJ66Uqjmt.ai","act_monster10_skill1_1":"B7SAJFt2vAHzTGyH3CTxJJ.ai","act_monster10_standby":"M6Y42LUbDgQBhuyi77ZhDQ.ai"
         },
         "model_monster11":{
-            "act_monster11_die":"PkF1VVbhP73wgCBrAMoHqM.ai","act_monster11_diefly":"3sgquhYPESBaNWhGQasG4k.ai","act_monster11_run":"SfkkZZCq42dsCTSGV1E6pA.ai","act_monster11_skill1_1":"SWeyMcedJRNru3g9Us786d.ai","act_monster11_standby":"7LACERuGhLzU552Nnvg8nS.ai"
+            "act_monster11_die":"MtJU8zEbkbfPaBJtHzo3FV.ai","act_monster11_diefly":"MuTFf3m1CBpvnirAtqT4u6.ai","act_monster11_run":"JyRCWSLCzCFYvFJ66Uqjmt.ai","act_monster11_skill1_1":"B7SAJFt2vAHzTGyH3CTxJJ.ai","act_monster11_standby":"M6Y42LUbDgQBhuyi77ZhDQ.ai"
         },
         "model_monster12":{
-            "act_monster12_die":"Ua5RkXNWPbYyrUHsoK6EB7.ai","act_monster12_diefly":"Ux3QuTSoL4HAz2xzeJdYF9.ai","act_monster12_run":"8G18ZLkCPT7jbiEEUzBvCz.ai","act_monster12_skill1_1":"9KDjtjdDKyNmhFyJWirexM.ai","act_monster12_standby":"XXTYqXdUhDDQHcz3iryh9V.ai"
+            "act_monster12_die":"MtJU8zEbkbfPaBJtHzo3FV.ai","act_monster12_diefly":"MuTFf3m1CBpvnirAtqT4u6.ai","act_monster12_run":"JyRCWSLCzCFYvFJ66Uqjmt.ai","act_monster12_skill1_1":"B7SAJFt2vAHzTGyH3CTxJJ.ai","act_monster12_standby":"M6Y42LUbDgQBhuyi77ZhDQ.ai"
         },
         "model_monster13":{
-            "act_monster13_die":"Bn3uQaNrrUxDYHL6SAkPv4.ai","act_monster13_diefly":"9PyG3qMqH6N46NA1jdFAgF.ai","act_monster13_run":"CVPJQea9cBmrmWkqBcs4Su.ai","act_monster13_skill1_1":"8Tip9V9aubt1U3BEqo3yfN.ai","act_monster13_standby":"AzCm7h17XxopLBojTv7nXJ.ai"
+            "act_monster13_die":"NayDHLBVymhHcxLwMC9F4a.ai","act_monster13_diefly":"KMXD2TY7zy58dLxAUzPfJ3.ai","act_monster13_run":"FLV9neGAUnzqU5wfy5uMtf.ai","act_monster13_skill1_1":"K7Q2LJyDc54QWYz5mYu2yK.ai","act_monster13_standby":"FTBft3jx8UKUjU6rtzXhHg.ai"
         },
         "model_monster14":{
-            "act_monster14_die":"6SpQdospVrAgEQ6eBYH2KE.ai","act_monster14_diefly":"QmaaBS6GsRmh6gUWuxdGEZ.ai","act_monster14_run":"VLSHWzGApee6uFrEpaUz7g.ai","act_monster14_skill1_1":"UxT1NvzRH1kqJnXsZ8v6ju.ai","act_monster14_standby":"W7tuK44SbYJJTHebDaizVd.ai"
+            "act_monster14_skill1_1":"XXxWiYB3z1kHmzoRsjKRm5.ai","act_monster14_die":"NayDHLBVymhHcxLwMC9F4a.ai","act_monster14_diefly":"KMXD2TY7zy58dLxAUzPfJ3.ai","act_monster14_run":"FLV9neGAUnzqU5wfy5uMtf.ai","act_monster14_standby":"FTBft3jx8UKUjU6rtzXhHg.ai"
         },
         "model_monster15":{
-            "act_monster15_die":"6SpQdospVrAgEQ6eBYH2KE.ai","act_monster15_diefly":"3LknU9h337iGvnR23JHX3W.ai","act_monster15_run":"VLSHWzGApee6uFrEpaUz7g.ai","act_monster15_skill1_1":"DyY5SQDnYivfFe5m5nogD7.ai","act_monster15_standby":"W7tuK44SbYJJTHebDaizVd.ai"
+            "act_monster15_die":"NayDHLBVymhHcxLwMC9F4a.ai","act_monster15_diefly":"KMXD2TY7zy58dLxAUzPfJ3.ai","act_monster15_run":"FLV9neGAUnzqU5wfy5uMtf.ai","act_monster15_skill1_1":"U9qYR9vpt1WHppQEmTNv4a.ai","act_monster15_standby":"FTBft3jx8UKUjU6rtzXhHg.ai"
         },
         "model_boss01":{
             "act_boss01_anger":"3VQLsfDoR79FNY8r9arbja.ai","act_boss01_attack":"Tkzs4QvWXiGowTfGziPuTF.ai","act_boss01_die":"QnFr9RxDYZbFTVqaXz5QWz.ai","act_boss01_hehe":"8vizkGnvEtbA64fAwoQsYZ.ai","act_boss01_run":"HpKYtBt6CUzyJApGB5gpd6.ai","act_boss01_sk1":"R63pRFKNJqEbP1hSSp5nnd.ai","act_boss01_standby":"FoW3ofgfvw3gNtYZLiL9zp.ai"

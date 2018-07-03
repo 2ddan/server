@@ -1,0 +1,5 @@
+{
+    "tpl":"./card.tpl",
+    "js":"../wild.ts",
+    "forelet":"../wild.ts"
+}

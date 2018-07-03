@@ -94,7 +94,7 @@
     width: 84px;
     height:54px;
     position:absolute;
-    top:20px;
+    top:8px;
     right:44px;
     z-index:2;
 }

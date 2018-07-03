@@ -178,7 +178,6 @@ export class ParticleSystem extends THREE.Object3D {
 
 	// deltaTime的单位：秒
 	update(deltaTime: number) {
-
 		let emission = this.emission;
 		if (!emission || !this.renderer || this.isStop) {
 			return;

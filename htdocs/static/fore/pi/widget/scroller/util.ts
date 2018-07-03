@@ -2,16 +2,16 @@
  * 存放了scroller的util函数
  */
 // ======================================================== 导出
- /**
-  * 是否具有冲量,就是手指松开之后再滑动一段
-  */
-export const  momentum = (current, start, time, lowerMargin, wrapperSize, options) => {
-	let distance = current - start;
-	let speed = Math.abs(distance) / time;
+/**
+ * 是否具有冲量,就是手指松开之后再滑动一段
+ */
+export const momentum = (current, start, time, lowerMargin, wrapperSize, options) => {
+	const distance = current - start;
+	const speed = Math.abs(distance) / time;
 
-	let {deceleration, itemHeight, swipeBounceTime, bounceTime} = options;
+	const { deceleration, itemHeight, swipeBounceTime, bounceTime } = options;
 	let duration = options.swipeTime;
-	let rate = 15;
+	const rate = 15;
 
 	let destination = current + speed / deceleration * (distance < 0 ? -1 : 1);
 
@@ -29,9 +29,9 @@ export const  momentum = (current, start, time, lowerMargin, wrapperSize, option
 	};
 };
 
-/** 属性扩展 */
-export function extend(target, source) {
-	for (var key in source) {
+// 属性扩展
+export const extend = (target, source) => {
+	for (const key in source) {
 		target[key] = source[key];
 	}
 };

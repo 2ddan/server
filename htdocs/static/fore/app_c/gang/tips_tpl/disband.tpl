@@ -17,8 +17,7 @@
             </widget>
         </div>
         <div w-class="16">
-            解散门派，门派成员将无家可归?
-            <div>是否解散门派</div>
+            是否解散门派?<span style="color: red;">(解散门派后，24小时内不能创建门派或加入门派)</span>
         </div>
         
         <div w-class="12" w-sid="12">

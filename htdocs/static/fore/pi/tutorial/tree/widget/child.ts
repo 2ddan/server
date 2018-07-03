@@ -1,4 +1,7 @@
-import { Widget } from "../../../widget/widget";
+/**
+ * 
+ */
+import { Widget } from '../../../widget/widget';
 
 interface Child {
 	name: string;
@@ -10,8 +13,8 @@ interface TreeData {
 	folderOpen: boolean;
 }
 export class Tree extends Widget {
-	props: TreeData;
-	create() {
+	public props: TreeData;
+	public create() {
 		this.props = {
 			open: false,
 			folderOpen: false,
@@ -43,25 +46,25 @@ export class Tree extends Widget {
 					}
 				]
 			}
-		}
+		};
 	}
 
 	// setProps(props: Json, oldProps?: Json): void {
 	// 	this.props = props;
 	// }
 
-	slideDown() {
+	public slideDown() {
 		this.props.open = !this.props.open;
 		this.paint();
 	}
 
-	addChild() {
-		this.props.data.children.push({ name: "new stuff" });
+	public addChild() {
+		this.props.data.children.push({ name: 'new stuff' });
 		this.paint();
 	}
 
-	addFolder(i: number) {
-		this.props.data.children[i].children = [{ name: "new stuff" }];
+	public addFolder(i: number) {
+		this.props.data.children[i].children = [{ name: 'new stuff' }];
 		this.props.folderOpen = true;
 		this.paint();
 	}

@@ -1,6 +1,6 @@
 
 let table = {"1":{
-        index:1,type:1,area:1,dominate:1,name:"幻月传"
+        index:1,type:1,area:1,dominate:1,name:"一世之尊"
     },"2":{
         index:2,type:1,area:2,dominate:1,name:"天威城"
     },"3":{

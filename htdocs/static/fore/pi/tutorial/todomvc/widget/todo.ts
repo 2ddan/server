@@ -1,4 +1,7 @@
-import { Widget } from "../../../widget/widget";
+/**
+ * 
+ */
+import { Widget } from '../../../widget/widget';
 
 /**
  * 选项
@@ -6,16 +9,16 @@ import { Widget } from "../../../widget/widget";
 interface TodoItem {
 	name: string;          // 描述事项
 	isCompleted: boolean;  // 是否完成
-};
+}
 
 /**
  * 显示状态
  */
 enum ShowState {
-	All = "all",             // 显示所有
-	Active = "active",       // 显示未完成
-	Completed = "completed"  // 显示已完成
-};
+	All = 'all',             // 显示所有
+	Active = 'active',       // 显示未完成
+	Completed = 'completed'  // 显示已完成
+}
 
 /**
  * Todo组件
@@ -25,7 +28,8 @@ export class TodoWidget extends Widget {
 	/**
 	 * props就是tpl的it
 	 */
-	props = {
+	// tslint:disable-next-line:typedef
+	public props = {
 
 		isAllCompleted: false,	  // 是否全部选中
 
@@ -33,10 +37,10 @@ export class TodoWidget extends Widget {
 
 		items: <TodoItem[]>[],    // todo列表
 
-		/* 注意：props的属性 只读 */
+		// 注意：props的属性 只读
 		get leftCount() {        // 还剩多少项未完成
 			// 注意：这里主要是为写代码方便，如果获取很频繁（比如一秒钟调用上百次），或者列表很大（比如几千条），那还是用循环不至于损失性能
-			return this.items.filter(v=> !v.isCompleted).length;
+			return this.items.filter(v => !v.isCompleted).length;
 		},
 
 		/**
@@ -55,23 +59,23 @@ export class TodoWidget extends Widget {
 	 * 添加一个选项
 	 * @param e HTML Event
 	 */
-	add(e) {
+	// tslint:disable-next-line:typedef
+	public add(e) {
 		this.props.items.push({
 			name: e.target.value,
 			isCompleted: false
 		});
 
 		// 清空输入框的值
-		e.target.value = "";
+		e.target.value = '';
 		// 绘制，参数一般不填true，除非特殊情况（比如该组件大规模更新）
 		this.paint();
 	}
 
 	/**
 	 * 移除第index个todo选项
-	 * @param index 
 	 */
-	remove(index: number) {
+	public remove(index: number) {
 		this.props.items.splice(index, 1);
 		this.paint();
 	}
@@ -79,11 +83,11 @@ export class TodoWidget extends Widget {
 	/**
 	 * 全选或全不选
 	 */
-	toggleCompleteAll() {
-		let p = this.props;
+	public toggleCompleteAll() {
+		const p = this.props;
 		p.isAllCompleted = !p.isAllCompleted;
 		
-		for (let item of p.items) {
+		for (const item of p.items) {
 			item.isCompleted = p.isAllCompleted;
 		}
 		this.paint();
@@ -92,8 +96,8 @@ export class TodoWidget extends Widget {
 	/**
 	 * 切换完成的状态
 	 */
-	toggleComplete(index: number) {
-		let item = this.props.items[index];
+	public toggleComplete(index: number) {
+		const item = this.props.items[index];
 		item.isCompleted = !item.isCompleted;
 		this.paint();
 	}
@@ -101,7 +105,7 @@ export class TodoWidget extends Widget {
 	/**
 	 * 显示所有
 	 */
-	showAll() {
+	public showAll() {
 		this.props.state = ShowState.All;
 		this.paint();
 	}
@@ -109,7 +113,7 @@ export class TodoWidget extends Widget {
 	/**
 	 * 显示未完成的
 	 */
-	showActive() {
+	public showActive() {
 		this.props.state = ShowState.Active;
 		this.paint();
 	}
@@ -117,7 +121,7 @@ export class TodoWidget extends Widget {
 	/**
 	 * 显示已完成的
 	 */
-	showCompleted() {
+	public showCompleted() {
 		this.props.state = ShowState.Completed;
 		this.paint();
 	}
@@ -125,7 +129,7 @@ export class TodoWidget extends Widget {
 	/**
 	 * 清空已经完成的选项
 	 */
-	clearCompleted() {
+	public clearCompleted() {
 		this.props.items = this.props.items.filter(v => !v.isCompleted);
 		this.paint();
 	}

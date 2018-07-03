@@ -30,7 +30,7 @@
 			<div w-clazz="prop_num_text" style="margin-left:48px;position:relative;right: 0px;text-align: left;height: 16px;line-height: 16px; margin-top: -4px;top: 16px;">
  
 				{{let process = it1.progress}}
-				{{let _arr = ["wild_mission","wild_boss","role_level","skill_level","treasure","treasure_skill","treasure_phase","reclam","ep_levelup","ep_level","jjc_rank","mission","wild_randomboss","mystic_box","ep_diamond","dailyFB","guild","tower_point","instance","ep_star","gestFB","rebel","gest","soul"]}}
+				{{let _arr = ["wild_mission","wild_boss","role_level","skill_level","treasure","treasure_skill","treasure_phase","reclam","ep_levelup","ep_level","jjc_rank","mission","wild_randomboss","mystic_box","ep_diamond","dailyFB","guild","tower_point","instance","ep_star","gestFB","rebel","gest","soul","treasure_hexagram"]}}
 
 				{{if _arr.indexOf(it1.currList.type) == -1 }}
 					{{: process = process >= it1.currList.arg ? 1 : 0}}
@@ -49,7 +49,7 @@
 
 				{{: process = limit}}
 				{{else}}
-					<span style="color:#ff4830;font-size: 16px;">({{process}}/{{limit}})</span>
+					<span style="color:#ff4830;font-size: 16px;">({{process == -1 ? 0 : process}}/{{process == -1 ? 1 : limit }})</span>
 				{{end}}
 				
 			</div>

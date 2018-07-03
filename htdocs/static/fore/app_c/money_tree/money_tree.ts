@@ -1,5 +1,5 @@
 //==========================================导入
-import { Pi, cfg, globalSend } from "app/mod/pi";
+import { Pi, globalSend } from "app/mod/pi";
 import { Util } from "app/mod/util";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";

@@ -391,7 +391,7 @@ tab["fightAbility"].push({
     "params": 100000,
     "descript": "战斗力达到10万",
     "award": [
-        ["100002",100],
+        ["100002",50],
         ["100001",0],
         [0,0]
     ],
@@ -407,7 +407,7 @@ tab["fightAbility"].push({
     "params": 150000,
     "descript": "战斗力达到15万",
     "award": [
-        ["100002",150],
+        ["100002",100],
         ["100001",0],
         [0,0]
     ],
@@ -423,7 +423,7 @@ tab["fightAbility"].push({
     "params": 200000,
     "descript": "战斗力达到20万",
     "award": [
-        ["100002",200],
+        ["100002",100],
         ["100001",0],
         [0,0]
     ],
@@ -439,7 +439,7 @@ tab["fightAbility"].push({
     "params": 300000,
     "descript": "战斗力达到30万",
     "award": [
-        ["100002",300],
+        ["100002",250],
         ["100001",0],
         [0,0]
     ],
@@ -3029,7 +3029,7 @@ tab["all_equipment_star"].push({
     "sid": "10190",
     "type": "all_equipment_star",
     "params": 5,
-    "descript": "所有装备总星级达到5级",
+    "descript": "装备总星级达到5级",
     "award": [
         ["100002",0],
         ["100001",10000],
@@ -3045,7 +3045,7 @@ tab["all_equipment_star"].push({
     "sid": "10191",
     "type": "all_equipment_star",
     "params": 10,
-    "descript": "所有装备总星级达到10级",
+    "descript": "装备总星级达到10级",
     "award": [
         ["100002",0],
         ["100001",20000],
@@ -3061,7 +3061,7 @@ tab["all_equipment_star"].push({
     "sid": "10192",
     "type": "all_equipment_star",
     "params": 15,
-    "descript": "所有装备总星级达到15级",
+    "descript": "装备总星级达到15级",
     "award": [
         ["100002",0],
         ["100001",30000],
@@ -3077,7 +3077,7 @@ tab["all_equipment_star"].push({
     "sid": "10193",
     "type": "all_equipment_star",
     "params": 20,
-    "descript": "所有装备总星级达到20级",
+    "descript": "装备总星级达到20级",
     "award": [
         ["100002",0],
         ["100001",40000],
@@ -3093,7 +3093,7 @@ tab["all_equipment_star"].push({
     "sid": "10194",
     "type": "all_equipment_star",
     "params": 25,
-    "descript": "所有装备总星级达到25级",
+    "descript": "装备总星级达到25级",
     "award": [
         ["100002",0],
         ["100001",50000],
@@ -3109,7 +3109,7 @@ tab["all_equipment_star"].push({
     "sid": "10195",
     "type": "all_equipment_star",
     "params": 30,
-    "descript": "所有装备总星级达到30级",
+    "descript": "装备总星级达到30级",
     "award": [
         ["100002",0],
         ["100001",60000],
@@ -3125,7 +3125,7 @@ tab["all_equipment_star"].push({
     "sid": "10196",
     "type": "all_equipment_star",
     "params": 35,
-    "descript": "所有装备总星级达到35级",
+    "descript": "装备总星级达到35级",
     "award": [
         ["100002",0],
         ["100001",70000],
@@ -3141,7 +3141,7 @@ tab["all_equipment_star"].push({
     "sid": "10197",
     "type": "all_equipment_star",
     "params": 40,
-    "descript": "所有装备总星级达到40级",
+    "descript": "装备总星级达到40级",
     "award": [
         ["100002",0],
         ["100001",80000],
@@ -3157,7 +3157,7 @@ tab["all_equipment_star"].push({
     "sid": "10198",
     "type": "all_equipment_star",
     "params": 45,
-    "descript": "所有装备总星级达到45级",
+    "descript": "装备总星级达到45级",
     "award": [
         ["100002",0],
         ["100001",90000],
@@ -3173,7 +3173,7 @@ tab["all_equipment_star"].push({
     "sid": "10199",
     "type": "all_equipment_star",
     "params": 50,
-    "descript": "所有装备总星级达到50级",
+    "descript": "装备总星级达到50级",
     "award": [
         ["100002",0],
         ["100001",100000],
@@ -3189,7 +3189,7 @@ tab["all_equipment_star"].push({
     "sid": "10200",
     "type": "all_equipment_star",
     "params": 55,
-    "descript": "所有装备总星级达到55级",
+    "descript": "装备总星级达到55级",
     "award": [
         ["100002",0],
         ["100001",110000],
@@ -3205,7 +3205,7 @@ tab["all_equipment_star"].push({
     "sid": "10201",
     "type": "all_equipment_star",
     "params": 60,
-    "descript": "所有装备总星级达到60级",
+    "descript": "装备总星级达到60级",
     "award": [
         ["100002",0],
         ["100001",120000],
@@ -3221,7 +3221,7 @@ tab["all_equipment_star"].push({
     "sid": "10202",
     "type": "all_equipment_star",
     "params": 65,
-    "descript": "所有装备总星级达到65级",
+    "descript": "装备总星级达到65级",
     "award": [
         ["100002",0],
         ["100001",130000],
@@ -3237,7 +3237,7 @@ tab["all_equipment_star"].push({
     "sid": "10203",
     "type": "all_equipment_star",
     "params": 70,
-    "descript": "所有装备总星级达到70级",
+    "descript": "装备总星级达到70级",
     "award": [
         ["100002",0],
         ["100001",140000],
@@ -3253,7 +3253,7 @@ tab["all_equipment_star"].push({
     "sid": "10204",
     "type": "all_equipment_star",
     "params": 75,
-    "descript": "所有装备总星级达到75级",
+    "descript": "装备总星级达到75级",
     "award": [
         ["100002",0],
         ["100001",150000],
@@ -3269,7 +3269,7 @@ tab["all_equipment_star"].push({
     "sid": "10205",
     "type": "all_equipment_star",
     "params": 80,
-    "descript": "所有装备总星级达到80级",
+    "descript": "装备总星级达到80级",
     "award": [
         ["100002",0],
         ["100001",160000],
@@ -3285,7 +3285,7 @@ tab["all_equipment_star"].push({
     "sid": "10206",
     "type": "all_equipment_star",
     "params": 85,
-    "descript": "所有装备总星级达到85级",
+    "descript": "装备总星级达到85级",
     "award": [
         ["100002",0],
         ["100001",170000],
@@ -3301,7 +3301,7 @@ tab["all_equipment_star"].push({
     "sid": "10207",
     "type": "all_equipment_star",
     "params": 90,
-    "descript": "所有装备总星级达到90级",
+    "descript": "装备总星级达到90级",
     "award": [
         ["100002",0],
         ["100001",180000],
@@ -3317,7 +3317,7 @@ tab["all_equipment_star"].push({
     "sid": "10208",
     "type": "all_equipment_star",
     "params": 95,
-    "descript": "所有装备总星级达到95级",
+    "descript": "装备总星级达到95级",
     "award": [
         ["100002",0],
         ["100001",190000],
@@ -3333,7 +3333,7 @@ tab["all_equipment_star"].push({
     "sid": "10209",
     "type": "all_equipment_star",
     "params": 100,
-    "descript": "所有装备总星级达到100级",
+    "descript": "装备总星级达到100级",
     "award": [
         ["100002",0],
         ["100001",200000],
@@ -3349,7 +3349,7 @@ tab["all_equipment_star"].push({
     "sid": "10210",
     "type": "all_equipment_star",
     "params": 105,
-    "descript": "所有装备总星级达到105级",
+    "descript": "装备总星级达到105级",
     "award": [
         ["100002",0],
         ["100001",210000],
@@ -3365,7 +3365,7 @@ tab["all_equipment_star"].push({
     "sid": "10211",
     "type": "all_equipment_star",
     "params": 110,
-    "descript": "所有装备总星级达到110级",
+    "descript": "装备总星级达到110级",
     "award": [
         ["100002",0],
         ["100001",220000],
@@ -3381,7 +3381,7 @@ tab["all_equipment_star"].push({
     "sid": "10212",
     "type": "all_equipment_star",
     "params": 115,
-    "descript": "所有装备总星级达到115级",
+    "descript": "装备总星级达到115级",
     "award": [
         ["100002",0],
         ["100001",230000],
@@ -3397,7 +3397,7 @@ tab["all_equipment_star"].push({
     "sid": "10213",
     "type": "all_equipment_star",
     "params": 120,
-    "descript": "所有装备总星级达到120级",
+    "descript": "装备总星级达到120级",
     "award": [
         ["100002",0],
         ["100001",240000],
@@ -3413,7 +3413,7 @@ tab["all_equipment_star"].push({
     "sid": "10214",
     "type": "all_equipment_star",
     "params": 125,
-    "descript": "所有装备总星级达到125级",
+    "descript": "装备总星级达到125级",
     "award": [
         ["100002",0],
         ["100001",250000],
@@ -3429,7 +3429,7 @@ tab["all_equipment_star"].push({
     "sid": "10215",
     "type": "all_equipment_star",
     "params": 130,
-    "descript": "所有装备总星级达到130级",
+    "descript": "装备总星级达到130级",
     "award": [
         ["100002",0],
         ["100001",260000],
@@ -3445,7 +3445,7 @@ tab["all_equipment_star"].push({
     "sid": "10216",
     "type": "all_equipment_star",
     "params": 135,
-    "descript": "所有装备总星级达到135级",
+    "descript": "装备总星级达到135级",
     "award": [
         ["100002",0],
         ["100001",270000],
@@ -3461,7 +3461,7 @@ tab["all_equipment_star"].push({
     "sid": "10217",
     "type": "all_equipment_star",
     "params": 140,
-    "descript": "所有装备总星级达到140级",
+    "descript": "装备总星级达到140级",
     "award": [
         ["100002",0],
         ["100001",280000],
@@ -3477,7 +3477,7 @@ tab["all_equipment_star"].push({
     "sid": "10218",
     "type": "all_equipment_star",
     "params": 145,
-    "descript": "所有装备总星级达到145级",
+    "descript": "装备总星级达到145级",
     "award": [
         ["100002",0],
         ["100001",290000],
@@ -3493,7 +3493,7 @@ tab["all_equipment_star"].push({
     "sid": "10219",
     "type": "all_equipment_star",
     "params": 150,
-    "descript": "所有装备总星级达到150级",
+    "descript": "装备总星级达到150级",
     "award": [
         ["100002",0],
         ["100001",300000],
@@ -3509,11 +3509,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10220",
     "type": "all_equipment_diamond",
     "params": 5,
-    "descript": "所有装备总宝石等级达到5级",
+    "descript": "宝石总等级达到5级",
     "award": [
         ["100002",0],
-        ["100001",5000],
-        [101201,5]
+        ["100001",10000],
+        [100007,5]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3525,11 +3525,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10221",
     "type": "all_equipment_diamond",
     "params": 10,
-    "descript": "所有装备总宝石等级达到10级",
+    "descript": "宝石总等级达到10级",
     "award": [
         ["100002",0],
-        ["100001",5000],
-        [101201,10]
+        ["100001",10000],
+        [100008,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3541,11 +3541,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10222",
     "type": "all_equipment_diamond",
     "params": 20,
-    "descript": "所有装备总宝石等级达到20级",
+    "descript": "宝石总等级达到20级",
     "award": [
         ["100002",0],
         ["100001",10000],
-        [101201,10]
+        [100013,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3557,11 +3557,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10223",
     "type": "all_equipment_diamond",
     "params": 30,
-    "descript": "所有装备总宝石等级达到30级",
+    "descript": "宝石总等级达到30级",
     "award": [
         ["100002",0],
         ["100001",15000],
-        [101201,10]
+        [100014,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3573,11 +3573,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10224",
     "type": "all_equipment_diamond",
     "params": 40,
-    "descript": "所有装备总宝石等级达到40级",
+    "descript": "宝石总等级达到40级",
     "award": [
         ["100002",0],
         ["100001",20000],
-        [101201,10]
+        [100009,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3589,11 +3589,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10225",
     "type": "all_equipment_diamond",
     "params": 50,
-    "descript": "所有装备总宝石等级达到50级",
+    "descript": "宝石总等级达到50级",
     "award": [
         ["100002",0],
         ["100001",25000],
-        [101201,10]
+        [100010,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3605,11 +3605,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10226",
     "type": "all_equipment_diamond",
     "params": 60,
-    "descript": "所有装备总宝石等级达到60级",
+    "descript": "宝石总等级达到60级",
     "award": [
         ["100002",0],
         ["100001",30000],
-        [101201,10]
+        [100011,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3621,11 +3621,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10227",
     "type": "all_equipment_diamond",
     "params": 70,
-    "descript": "所有装备总宝石等级达到70级",
+    "descript": "宝石总等级达到70级",
     "award": [
         ["100002",0],
         ["100001",35000],
-        [101201,10]
+        [100012,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3637,11 +3637,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10228",
     "type": "all_equipment_diamond",
     "params": 80,
-    "descript": "所有装备总宝石等级达到80级",
+    "descript": "宝石总等级达到80级",
     "award": [
         ["100002",0],
         ["100001",40000],
-        [101201,10]
+        [100007,10]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3653,11 +3653,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10229",
     "type": "all_equipment_diamond",
     "params": 90,
-    "descript": "所有装备总宝石等级达到90级",
+    "descript": "宝石总等级达到90级",
     "award": [
         ["100002",0],
         ["100001",45000],
-        [101201,20]
+        [100008,20]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3669,11 +3669,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10230",
     "type": "all_equipment_diamond",
     "params": 100,
-    "descript": "所有装备总宝石等级达到100级",
+    "descript": "宝石总等级达到100级",
     "award": [
         ["100002",0],
         ["100001",50000],
-        [101201,20]
+        [100013,20]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3685,11 +3685,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10231",
     "type": "all_equipment_diamond",
     "params": 110,
-    "descript": "所有装备总宝石等级达到110级",
+    "descript": "宝石总等级达到110级",
     "award": [
         ["100002",0],
         ["100001",60000],
-        [101201,20]
+        [100014,20]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3701,11 +3701,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10232",
     "type": "all_equipment_diamond",
     "params": 120,
-    "descript": "所有装备总宝石等级达到120级",
+    "descript": "宝石总等级达到120级",
     "award": [
         ["100002",0],
         ["100001",70000],
-        [101201,20]
+        [100009,20]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3717,11 +3717,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10233",
     "type": "all_equipment_diamond",
     "params": 130,
-    "descript": "所有装备总宝石等级达到130级",
+    "descript": "宝石总等级达到130级",
     "award": [
         ["100002",0],
         ["100001",80000],
-        [101201,30]
+        [100010,30]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3733,11 +3733,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10234",
     "type": "all_equipment_diamond",
     "params": 140,
-    "descript": "所有装备总宝石等级达到140级",
+    "descript": "宝石总等级达到140级",
     "award": [
         ["100002",0],
         ["100001",90000],
-        [101201,30]
+        [100011,30]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3749,11 +3749,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10235",
     "type": "all_equipment_diamond",
     "params": 150,
-    "descript": "所有装备总宝石等级达到150级",
+    "descript": "宝石总等级达到150级",
     "award": [
         ["100002",0],
         ["100001",100000],
-        [101201,30]
+        [100012,30]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3765,11 +3765,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10236",
     "type": "all_equipment_diamond",
     "params": 160,
-    "descript": "所有装备总宝石等级达到160级",
+    "descript": "宝石总等级达到160级",
     "award": [
         ["100002",0],
         ["100001",120000],
-        [101201,30]
+        [100007,30]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3781,11 +3781,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10237",
     "type": "all_equipment_diamond",
     "params": 170,
-    "descript": "所有装备总宝石等级达到170级",
+    "descript": "宝石总等级达到170级",
     "award": [
         ["100002",0],
         ["100001",140000],
-        [101201,40]
+        [100008,40]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3797,11 +3797,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10238",
     "type": "all_equipment_diamond",
     "params": 180,
-    "descript": "所有装备总宝石等级达到180级",
+    "descript": "宝石总等级达到180级",
     "award": [
         ["100002",0],
         ["100001",160000],
-        [101201,40]
+        [100013,40]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3813,11 +3813,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10239",
     "type": "all_equipment_diamond",
     "params": 190,
-    "descript": "所有装备总宝石等级达到190级",
+    "descript": "宝石总等级达到190级",
     "award": [
         ["100002",0],
         ["100001",180000],
-        [101201,40]
+        [100014,40]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3829,11 +3829,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10240",
     "type": "all_equipment_diamond",
     "params": 200,
-    "descript": "所有装备总宝石等级达到200级",
+    "descript": "宝石总等级达到200级",
     "award": [
         ["100002",0],
         ["100001",200000],
-        [101201,40]
+        [100009,40]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3845,11 +3845,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10241",
     "type": "all_equipment_diamond",
     "params": 220,
-    "descript": "所有装备总宝石等级达到220级",
+    "descript": "宝石总等级达到220级",
     "award": [
         ["100002",0],
         ["100001",250000],
-        [101201,50]
+        [100010,50]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3861,11 +3861,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10242",
     "type": "all_equipment_diamond",
     "params": 240,
-    "descript": "所有装备总宝石等级达到240级",
+    "descript": "宝石总等级达到240级",
     "award": [
         ["100002",0],
         ["100001",300000],
-        [101201,50]
+        [100011,50]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3877,11 +3877,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10243",
     "type": "all_equipment_diamond",
     "params": 260,
-    "descript": "所有装备总宝石等级达到260级",
+    "descript": "宝石总等级达到260级",
     "award": [
         ["100002",0],
         ["100001",350000],
-        [101201,50]
+        [100012,50]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3893,11 +3893,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10244",
     "type": "all_equipment_diamond",
     "params": 280,
-    "descript": "所有装备总宝石等级达到280级",
+    "descript": "宝石总等级达到280级",
     "award": [
         ["100002",0],
         ["100001",400000],
-        [101201,50]
+        [100007,50]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3909,11 +3909,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10245",
     "type": "all_equipment_diamond",
     "params": 300,
-    "descript": "所有装备总宝石等级达到300级",
+    "descript": "宝石总等级达到300级",
     "award": [
         ["100002",0],
         ["100001",450000],
-        [101201,60]
+        [100008,60]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3925,11 +3925,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10246",
     "type": "all_equipment_diamond",
     "params": 320,
-    "descript": "所有装备总宝石等级达到320级",
+    "descript": "宝石总等级达到320级",
     "award": [
         ["100002",0],
         ["100001",500000],
-        [101201,60]
+        [100013,60]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3941,11 +3941,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10247",
     "type": "all_equipment_diamond",
     "params": 340,
-    "descript": "所有装备总宝石等级达到340级",
+    "descript": "宝石总等级达到340级",
     "award": [
         ["100002",0],
         ["100001",550000],
-        [101201,60]
+        [100014,60]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3957,11 +3957,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10248",
     "type": "all_equipment_diamond",
     "params": 360,
-    "descript": "所有装备总宝石等级达到360级",
+    "descript": "宝石总等级达到360级",
     "award": [
         ["100002",0],
         ["100001",600000],
-        [101201,60]
+        [100009,60]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3973,11 +3973,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10249",
     "type": "all_equipment_diamond",
     "params": 380,
-    "descript": "所有装备总宝石等级达到380级",
+    "descript": "宝石总等级达到380级",
     "award": [
         ["100002",0],
         ["100001",650000],
-        [101201,70]
+        [100010,70]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -3989,11 +3989,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10250",
     "type": "all_equipment_diamond",
     "params": 400,
-    "descript": "所有装备总宝石等级达到400级",
+    "descript": "宝石总等级达到400级",
     "award": [
         ["100002",0],
         ["100001",700000],
-        [101201,70]
+        [100011,70]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -4005,11 +4005,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10251",
     "type": "all_equipment_diamond",
     "params": 420,
-    "descript": "所有装备总宝石等级达到420级",
+    "descript": "宝石总等级达到420级",
     "award": [
         ["100002",0],
         ["100001",750000],
-        [101201,70]
+        [100012,70]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -4021,11 +4021,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10252",
     "type": "all_equipment_diamond",
     "params": 440,
-    "descript": "所有装备总宝石等级达到440级",
+    "descript": "宝石总等级达到440级",
     "award": [
         ["100002",0],
         ["100001",800000],
-        [101201,70]
+        [100007,70]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -4037,11 +4037,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10253",
     "type": "all_equipment_diamond",
     "params": 460,
-    "descript": "所有装备总宝石等级达到460级",
+    "descript": "宝石总等级达到460级",
     "award": [
         ["100002",0],
         ["100001",800000],
-        [101201,80]
+        [100008,80]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -4053,11 +4053,11 @@ tab["all_equipment_diamond"].push({
     "sid": "10254",
     "type": "all_equipment_diamond",
     "params": 480,
-    "descript": "所有装备总宝石等级达到480级",
+    "descript": "宝石总等级达到480级",
     "award": [
         ["100002",0],
         ["100001",800000],
-        [101201,80]
+        [100009,80]
     ],
     "func": "allEquipDiam",
     "icon": "menu_gem_icon",
@@ -4352,41 +4352,9 @@ tab["pet"].push({
     "goto": "gotoSurface,1",
     "fun_key": "pet"
 });
-tab["pet"] = tab["pet"] ? tab["pet"] : [];
-tab["pet"].push({
-    "sid": "10273",
-    "type": "pet",
-    "params": 19,
-    "descript": "灵宠达到19阶",
-    "award": [
-        ["100002",300],
-        ["100001",300000],
-        [0,0]
-    ],
-    "func": "getPetLevel",
-    "icon": "menu_pet_icon",
-    "goto": "gotoSurface,1",
-    "fun_key": "pet"
-});
-tab["pet"] = tab["pet"] ? tab["pet"] : [];
-tab["pet"].push({
-    "sid": "10274",
-    "type": "pet",
-    "params": 20,
-    "descript": "灵宠达到20阶",
-    "award": [
-        ["100002",300],
-        ["100001",300000],
-        [0,0]
-    ],
-    "func": "getPetLevel",
-    "icon": "menu_pet_icon",
-    "goto": "gotoSurface,1",
-    "fun_key": "pet"
-});
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10275",
+    "sid": "10273",
     "type": "fashion",
     "params": 1,
     "descript": "集齐1件时装",
@@ -4402,7 +4370,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10276",
+    "sid": "10274",
     "type": "fashion",
     "params": 2,
     "descript": "集齐2件时装",
@@ -4418,7 +4386,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10277",
+    "sid": "10275",
     "type": "fashion",
     "params": 3,
     "descript": "集齐3件时装",
@@ -4434,7 +4402,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10278",
+    "sid": "10276",
     "type": "fashion",
     "params": 4,
     "descript": "集齐4件时装",
@@ -4450,7 +4418,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10279",
+    "sid": "10277",
     "type": "fashion",
     "params": 5,
     "descript": "集齐5件时装",
@@ -4466,7 +4434,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10280",
+    "sid": "10278",
     "type": "fashion",
     "params": 6,
     "descript": "集齐6件时装",
@@ -4482,7 +4450,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10281",
+    "sid": "10279",
     "type": "fashion",
     "params": 7,
     "descript": "集齐7件时装",
@@ -4498,7 +4466,7 @@ tab["fashion"].push({
 });
 tab["fashion"] = tab["fashion"] ? tab["fashion"] : [];
 tab["fashion"].push({
-    "sid": "10282",
+    "sid": "10280",
     "type": "fashion",
     "params": 8,
     "descript": "集齐8件时装",
@@ -4514,7 +4482,7 @@ tab["fashion"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10283",
+    "sid": "10281",
     "type": "moneytree",
     "params": 100000,
     "descript": "摇钱树累计获得10万银两",
@@ -4530,7 +4498,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10284",
+    "sid": "10282",
     "type": "moneytree",
     "params": 200000,
     "descript": "摇钱树累计获得20万银两",
@@ -4546,7 +4514,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10285",
+    "sid": "10283",
     "type": "moneytree",
     "params": 500000,
     "descript": "摇钱树累计获得50万银两",
@@ -4562,7 +4530,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10286",
+    "sid": "10284",
     "type": "moneytree",
     "params": 1000000,
     "descript": "摇钱树累计获得100万银两",
@@ -4578,7 +4546,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10287",
+    "sid": "10285",
     "type": "moneytree",
     "params": 1500000,
     "descript": "摇钱树累计获得150万银两",
@@ -4594,7 +4562,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10288",
+    "sid": "10286",
     "type": "moneytree",
     "params": 2000000,
     "descript": "摇钱树累计获得200万银两",
@@ -4610,7 +4578,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10289",
+    "sid": "10287",
     "type": "moneytree",
     "params": 2500000,
     "descript": "摇钱树累计获得250万银两",
@@ -4626,7 +4594,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10290",
+    "sid": "10288",
     "type": "moneytree",
     "params": 3000000,
     "descript": "摇钱树累计获得300万银两",
@@ -4642,7 +4610,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10291",
+    "sid": "10289",
     "type": "moneytree",
     "params": 4000000,
     "descript": "摇钱树累计获得400万银两",
@@ -4658,7 +4626,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10292",
+    "sid": "10290",
     "type": "moneytree",
     "params": 5000000,
     "descript": "摇钱树累计获得500万银两",
@@ -4674,7 +4642,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10293",
+    "sid": "10291",
     "type": "moneytree",
     "params": 6000000,
     "descript": "摇钱树累计获得600万银两",
@@ -4690,7 +4658,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10294",
+    "sid": "10292",
     "type": "moneytree",
     "params": 7000000,
     "descript": "摇钱树累计获得700万银两",
@@ -4706,7 +4674,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10295",
+    "sid": "10293",
     "type": "moneytree",
     "params": 10000000,
     "descript": "摇钱树累计获得1000万银两",
@@ -4722,7 +4690,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10296",
+    "sid": "10294",
     "type": "moneytree",
     "params": 15000000,
     "descript": "摇钱树累计获得1500万银两",
@@ -4738,7 +4706,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10297",
+    "sid": "10295",
     "type": "moneytree",
     "params": 20000000,
     "descript": "摇钱树累计获得2000万银两",
@@ -4754,7 +4722,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10298",
+    "sid": "10296",
     "type": "moneytree",
     "params": 25000000,
     "descript": "摇钱树累计获得2500万银两",
@@ -4770,7 +4738,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10299",
+    "sid": "10297",
     "type": "moneytree",
     "params": 30000000,
     "descript": "摇钱树累计获得3000万银两",
@@ -4786,7 +4754,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10300",
+    "sid": "10298",
     "type": "moneytree",
     "params": 40000000,
     "descript": "摇钱树累计获得4000万银两",
@@ -4802,7 +4770,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10301",
+    "sid": "10299",
     "type": "moneytree",
     "params": 50000000,
     "descript": "摇钱树累计获得5000万银两",
@@ -4818,7 +4786,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10302",
+    "sid": "10300",
     "type": "moneytree",
     "params": 60000000,
     "descript": "摇钱树累计获得6000万银两",
@@ -4834,7 +4802,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10303",
+    "sid": "10301",
     "type": "moneytree",
     "params": 70000000,
     "descript": "摇钱树累计获得7000万银两",
@@ -4850,7 +4818,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10304",
+    "sid": "10302",
     "type": "moneytree",
     "params": 80000000,
     "descript": "摇钱树累计获得8000万银两",
@@ -4866,7 +4834,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10305",
+    "sid": "10303",
     "type": "moneytree",
     "params": 90000000,
     "descript": "摇钱树累计获得9000万银两",
@@ -4882,7 +4850,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10306",
+    "sid": "10304",
     "type": "moneytree",
     "params": 100000000,
     "descript": "摇钱树累计获得10000万银两",
@@ -4898,7 +4866,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10307",
+    "sid": "10305",
     "type": "moneytree",
     "params": 120000000,
     "descript": "摇钱树累计获得12000万银两",
@@ -4914,7 +4882,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10308",
+    "sid": "10306",
     "type": "moneytree",
     "params": 140000000,
     "descript": "摇钱树累计获得14000万银两",
@@ -4930,7 +4898,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10309",
+    "sid": "10307",
     "type": "moneytree",
     "params": 160000000,
     "descript": "摇钱树累计获得16000万银两",
@@ -4946,7 +4914,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10310",
+    "sid": "10308",
     "type": "moneytree",
     "params": 180000000,
     "descript": "摇钱树累计获得18000万银两",
@@ -4962,7 +4930,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10311",
+    "sid": "10309",
     "type": "moneytree",
     "params": 200000000,
     "descript": "摇钱树累计获得20000万银两",
@@ -4978,7 +4946,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10312",
+    "sid": "10310",
     "type": "moneytree",
     "params": 250000000,
     "descript": "摇钱树累计获得25000万银两",
@@ -4994,7 +4962,7 @@ tab["moneytree"].push({
 });
 tab["moneytree"] = tab["moneytree"] ? tab["moneytree"] : [];
 tab["moneytree"].push({
-    "sid": "10313",
+    "sid": "10311",
     "type": "moneytree",
     "params": 300000000,
     "descript": "摇钱树累计获得30000万银两",
@@ -5010,10 +4978,10 @@ tab["moneytree"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10314",
+    "sid": "10312",
     "type": "treasure_GM",
     "params": 1,
-    "descript": "激活神兵",
+    "descript": "神兵达到1阶",
     "award": [
         ["100002",20],
         ["100001",0],
@@ -5026,7 +4994,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10315",
+    "sid": "10313",
     "type": "treasure_GM",
     "params": 2,
     "descript": "神兵达到2阶",
@@ -5042,7 +5010,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10316",
+    "sid": "10314",
     "type": "treasure_GM",
     "params": 3,
     "descript": "神兵达到3阶",
@@ -5058,7 +5026,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10317",
+    "sid": "10315",
     "type": "treasure_GM",
     "params": 4,
     "descript": "神兵达到4阶",
@@ -5074,7 +5042,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10318",
+    "sid": "10316",
     "type": "treasure_GM",
     "params": 5,
     "descript": "神兵达到5阶",
@@ -5090,7 +5058,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10319",
+    "sid": "10317",
     "type": "treasure_GM",
     "params": 6,
     "descript": "神兵达到6阶",
@@ -5106,7 +5074,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10320",
+    "sid": "10318",
     "type": "treasure_GM",
     "params": 7,
     "descript": "神兵达到7阶",
@@ -5122,7 +5090,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10321",
+    "sid": "10319",
     "type": "treasure_GM",
     "params": 8,
     "descript": "神兵达到8阶",
@@ -5138,7 +5106,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10322",
+    "sid": "10320",
     "type": "treasure_GM",
     "params": 9,
     "descript": "神兵达到9阶",
@@ -5154,7 +5122,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10323",
+    "sid": "10321",
     "type": "treasure_GM",
     "params": 10,
     "descript": "神兵达到10阶",
@@ -5170,7 +5138,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10324",
+    "sid": "10322",
     "type": "treasure_GM",
     "params": 11,
     "descript": "神兵达到11阶",
@@ -5186,7 +5154,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10325",
+    "sid": "10323",
     "type": "treasure_GM",
     "params": 12,
     "descript": "神兵达到12阶",
@@ -5202,7 +5170,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10326",
+    "sid": "10324",
     "type": "treasure_GM",
     "params": 13,
     "descript": "神兵达到13阶",
@@ -5218,7 +5186,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10327",
+    "sid": "10325",
     "type": "treasure_GM",
     "params": 14,
     "descript": "神兵达到14阶",
@@ -5234,7 +5202,7 @@ tab["treasure_GM"].push({
 });
 tab["treasure_GM"] = tab["treasure_GM"] ? tab["treasure_GM"] : [];
 tab["treasure_GM"].push({
-    "sid": "10328",
+    "sid": "10326",
     "type": "treasure_GM",
     "params": 15,
     "descript": "神兵达到15阶",
@@ -5250,14 +5218,46 @@ tab["treasure_GM"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10329",
+    "sid": "10327",
     "type": "treasure_BG",
     "params": 2,
     "descript": "神兵铸魂达到2重天",
     "award": [
         ["100002",0],
         ["100001",0],
-        [100017,50]
+        [100017,10]
+    ],
+    "func": "treasureBG",
+    "icon": "pic_common_attribute",
+    "goto": "gotoMagic,1",
+    "fun_key": "magic_activate"
+});
+tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
+tab["treasure_BG"].push({
+    "sid": "10328",
+    "type": "treasure_BG",
+    "params": 3,
+    "descript": "神兵铸魂达到3重天",
+    "award": [
+        ["100002",0],
+        ["100001",0],
+        [100017,15]
+    ],
+    "func": "treasureBG",
+    "icon": "pic_common_attribute",
+    "goto": "gotoMagic,1",
+    "fun_key": "magic_activate"
+});
+tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
+tab["treasure_BG"].push({
+    "sid": "10329",
+    "type": "treasure_BG",
+    "params": 4,
+    "descript": "神兵铸魂达到4重天",
+    "award": [
+        ["100002",0],
+        ["100001",0],
+        [100017,20]
     ],
     "func": "treasureBG",
     "icon": "pic_common_attribute",
@@ -5268,12 +5268,12 @@ tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10330",
     "type": "treasure_BG",
-    "params": 3,
-    "descript": "神兵铸魂达到3重天",
+    "params": 5,
+    "descript": "神兵铸魂达到5重天",
     "award": [
         ["100002",0],
         ["100001",0],
-        [100017,50]
+        [100017,30]
     ],
     "func": "treasureBG",
     "icon": "pic_common_attribute",
@@ -5284,8 +5284,8 @@ tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10331",
     "type": "treasure_BG",
-    "params": 4,
-    "descript": "神兵铸魂达到4重天",
+    "params": 6,
+    "descript": "神兵铸魂达到6重天",
     "award": [
         ["100002",0],
         ["100001",0],
@@ -5300,12 +5300,12 @@ tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10332",
     "type": "treasure_BG",
-    "params": 5,
-    "descript": "神兵铸魂达到5重天",
+    "params": 7,
+    "descript": "神兵铸魂达到7重天",
     "award": [
         ["100002",0],
         ["100001",0],
-        [100017,100]
+        [100017,70]
     ],
     "func": "treasureBG",
     "icon": "pic_common_attribute",
@@ -5316,12 +5316,12 @@ tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10333",
     "type": "treasure_BG",
-    "params": 6,
-    "descript": "神兵铸魂达到6重天",
+    "params": 8,
+    "descript": "神兵铸魂达到8重天",
     "award": [
         ["100002",0],
         ["100001",0],
-        [100017,100]
+        [100017,90]
     ],
     "func": "treasureBG",
     "icon": "pic_common_attribute",
@@ -5331,38 +5331,6 @@ tab["treasure_BG"].push({
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10334",
-    "type": "treasure_BG",
-    "params": 7,
-    "descript": "神兵铸魂达到7重天",
-    "award": [
-        ["100002",0],
-        ["100001",0],
-        [100017,100]
-    ],
-    "func": "treasureBG",
-    "icon": "pic_common_attribute",
-    "goto": "gotoMagic,1",
-    "fun_key": "magic_activate"
-});
-tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
-tab["treasure_BG"].push({
-    "sid": "10335",
-    "type": "treasure_BG",
-    "params": 8,
-    "descript": "神兵铸魂达到8重天",
-    "award": [
-        ["100002",0],
-        ["100001",0],
-        [100017,120]
-    ],
-    "func": "treasureBG",
-    "icon": "pic_common_attribute",
-    "goto": "gotoMagic,1",
-    "fun_key": "magic_activate"
-});
-tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
-tab["treasure_BG"].push({
-    "sid": "10336",
     "type": "treasure_BG",
     "params": 9,
     "descript": "神兵铸魂达到9重天",
@@ -5378,7 +5346,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10337",
+    "sid": "10335",
     "type": "treasure_BG",
     "params": 10,
     "descript": "神兵铸魂达到10重天",
@@ -5394,14 +5362,46 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10338",
+    "sid": "10336",
     "type": "treasure_BG",
     "params": 11,
     "descript": "神兵铸魂达到11重天",
     "award": [
         ["100002",0],
         ["100001",0],
-        [100017,150]
+        [100017,120]
+    ],
+    "func": "treasureBG",
+    "icon": "pic_common_attribute",
+    "goto": "gotoMagic,1",
+    "fun_key": "magic_activate"
+});
+tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
+tab["treasure_BG"].push({
+    "sid": "10337",
+    "type": "treasure_BG",
+    "params": 12,
+    "descript": "神兵铸魂达到12重天",
+    "award": [
+        ["100002",0],
+        ["100001",0],
+        [100017,120]
+    ],
+    "func": "treasureBG",
+    "icon": "pic_common_attribute",
+    "goto": "gotoMagic,1",
+    "fun_key": "magic_activate"
+});
+tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
+tab["treasure_BG"].push({
+    "sid": "10338",
+    "type": "treasure_BG",
+    "params": 13,
+    "descript": "神兵铸魂达到13重天",
+    "award": [
+        ["100002",0],
+        ["100001",0],
+        [100017,120]
     ],
     "func": "treasureBG",
     "icon": "pic_common_attribute",
@@ -5411,38 +5411,6 @@ tab["treasure_BG"].push({
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
     "sid": "10339",
-    "type": "treasure_BG",
-    "params": 12,
-    "descript": "神兵铸魂达到12重天",
-    "award": [
-        ["100002",0],
-        ["100001",0],
-        [100017,150]
-    ],
-    "func": "treasureBG",
-    "icon": "pic_common_attribute",
-    "goto": "gotoMagic,1",
-    "fun_key": "magic_activate"
-});
-tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
-tab["treasure_BG"].push({
-    "sid": "10340",
-    "type": "treasure_BG",
-    "params": 13,
-    "descript": "神兵铸魂达到13重天",
-    "award": [
-        ["100002",0],
-        ["100001",0],
-        [100017,150]
-    ],
-    "func": "treasureBG",
-    "icon": "pic_common_attribute",
-    "goto": "gotoMagic,1",
-    "fun_key": "magic_activate"
-});
-tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
-tab["treasure_BG"].push({
-    "sid": "10341",
     "type": "treasure_BG",
     "params": 14,
     "descript": "神兵铸魂达到14重天",
@@ -5458,7 +5426,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10342",
+    "sid": "10340",
     "type": "treasure_BG",
     "params": 15,
     "descript": "神兵铸魂达到15重天",
@@ -5474,7 +5442,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10343",
+    "sid": "10341",
     "type": "treasure_BG",
     "params": 16,
     "descript": "神兵铸魂达到16重天",
@@ -5490,7 +5458,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10344",
+    "sid": "10342",
     "type": "treasure_BG",
     "params": 17,
     "descript": "神兵铸魂达到17重天",
@@ -5506,7 +5474,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10345",
+    "sid": "10343",
     "type": "treasure_BG",
     "params": 18,
     "descript": "神兵铸魂达到18重天",
@@ -5522,7 +5490,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10346",
+    "sid": "10344",
     "type": "treasure_BG",
     "params": 19,
     "descript": "神兵铸魂达到19重天",
@@ -5538,7 +5506,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10347",
+    "sid": "10345",
     "type": "treasure_BG",
     "params": 20,
     "descript": "神兵铸魂达到20重天",
@@ -5554,7 +5522,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10348",
+    "sid": "10346",
     "type": "treasure_BG",
     "params": 21,
     "descript": "神兵铸魂达到21重天",
@@ -5570,7 +5538,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10349",
+    "sid": "10347",
     "type": "treasure_BG",
     "params": 22,
     "descript": "神兵铸魂达到22重天",
@@ -5586,7 +5554,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10350",
+    "sid": "10348",
     "type": "treasure_BG",
     "params": 23,
     "descript": "神兵铸魂达到23重天",
@@ -5602,7 +5570,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10351",
+    "sid": "10349",
     "type": "treasure_BG",
     "params": 24,
     "descript": "神兵铸魂达到24重天",
@@ -5618,7 +5586,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10352",
+    "sid": "10350",
     "type": "treasure_BG",
     "params": 25,
     "descript": "神兵铸魂达到25重天",
@@ -5634,7 +5602,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10353",
+    "sid": "10351",
     "type": "treasure_BG",
     "params": 26,
     "descript": "神兵铸魂达到26重天",
@@ -5650,7 +5618,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10354",
+    "sid": "10352",
     "type": "treasure_BG",
     "params": 27,
     "descript": "神兵铸魂达到27重天",
@@ -5666,7 +5634,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10355",
+    "sid": "10353",
     "type": "treasure_BG",
     "params": 28,
     "descript": "神兵铸魂达到28重天",
@@ -5682,7 +5650,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10356",
+    "sid": "10354",
     "type": "treasure_BG",
     "params": 29,
     "descript": "神兵铸魂达到29重天",
@@ -5698,7 +5666,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10357",
+    "sid": "10355",
     "type": "treasure_BG",
     "params": 30,
     "descript": "神兵铸魂达到30重天",
@@ -5714,7 +5682,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10358",
+    "sid": "10356",
     "type": "treasure_BG",
     "params": 31,
     "descript": "神兵铸魂达到31重天",
@@ -5730,7 +5698,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10359",
+    "sid": "10357",
     "type": "treasure_BG",
     "params": 32,
     "descript": "神兵铸魂达到32重天",
@@ -5746,7 +5714,7 @@ tab["treasure_BG"].push({
 });
 tab["treasure_BG"] = tab["treasure_BG"] ? tab["treasure_BG"] : [];
 tab["treasure_BG"].push({
-    "sid": "10360",
+    "sid": "10358",
     "type": "treasure_BG",
     "params": 33,
     "descript": "神兵铸魂达到33重天",
@@ -5762,7 +5730,7 @@ tab["treasure_BG"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10361",
+    "sid": "10359",
     "type": "forge_red_equipment",
     "params": 1,
     "descript": "锻造1件红装",
@@ -5778,7 +5746,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10362",
+    "sid": "10360",
     "type": "forge_red_equipment",
     "params": 2,
     "descript": "锻造2件红装",
@@ -5794,7 +5762,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10363",
+    "sid": "10361",
     "type": "forge_red_equipment",
     "params": 3,
     "descript": "锻造3件红装",
@@ -5810,7 +5778,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10364",
+    "sid": "10362",
     "type": "forge_red_equipment",
     "params": 4,
     "descript": "锻造4件红装",
@@ -5826,7 +5794,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10365",
+    "sid": "10363",
     "type": "forge_red_equipment",
     "params": 5,
     "descript": "锻造5件红装",
@@ -5842,7 +5810,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10366",
+    "sid": "10364",
     "type": "forge_red_equipment",
     "params": 6,
     "descript": "锻造6件红装",
@@ -5858,7 +5826,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10367",
+    "sid": "10365",
     "type": "forge_red_equipment",
     "params": 7,
     "descript": "锻造7件红装",
@@ -5874,7 +5842,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10368",
+    "sid": "10366",
     "type": "forge_red_equipment",
     "params": 8,
     "descript": "锻造8件红装",
@@ -5890,7 +5858,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10369",
+    "sid": "10367",
     "type": "forge_red_equipment",
     "params": 9,
     "descript": "锻造9件红装",
@@ -5906,7 +5874,7 @@ tab["forge_red_equipment"].push({
 });
 tab["forge_red_equipment"] = tab["forge_red_equipment"] ? tab["forge_red_equipment"] : [];
 tab["forge_red_equipment"].push({
-    "sid": "10370",
+    "sid": "10368",
     "type": "forge_red_equipment",
     "params": 10,
     "descript": "锻造10件红装",
@@ -5922,7 +5890,7 @@ tab["forge_red_equipment"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10371",
+    "sid": "10369",
     "type": "red_equipment_collect",
     "params": 80,
     "descript": "收集80级或以上的红装一套",
@@ -5938,7 +5906,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10372",
+    "sid": "10370",
     "type": "red_equipment_collect",
     "params": 100,
     "descript": "收集100级或以上的红装一套",
@@ -5954,7 +5922,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10373",
+    "sid": "10371",
     "type": "red_equipment_collect",
     "params": 120,
     "descript": "收集120级或以上的红装一套",
@@ -5970,7 +5938,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10374",
+    "sid": "10372",
     "type": "red_equipment_collect",
     "params": 140,
     "descript": "收集140级或以上的红装一套",
@@ -5986,7 +5954,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10375",
+    "sid": "10373",
     "type": "red_equipment_collect",
     "params": 160,
     "descript": "收集160级或以上的红装一套",
@@ -6002,7 +5970,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10376",
+    "sid": "10374",
     "type": "red_equipment_collect",
     "params": 180,
     "descript": "收集180级或以上的红装一套",
@@ -6018,7 +5986,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10377",
+    "sid": "10375",
     "type": "red_equipment_collect",
     "params": 200,
     "descript": "收集200级或以上的红装一套",
@@ -6034,7 +6002,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10378",
+    "sid": "10376",
     "type": "red_equipment_collect",
     "params": 220,
     "descript": "收集220级或以上的红装一套",
@@ -6050,7 +6018,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10379",
+    "sid": "10377",
     "type": "red_equipment_collect",
     "params": 240,
     "descript": "收集240级或以上的红装一套",
@@ -6066,7 +6034,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10380",
+    "sid": "10378",
     "type": "red_equipment_collect",
     "params": 250,
     "descript": "收集250级或以上的红装一套",
@@ -6082,7 +6050,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10381",
+    "sid": "10379",
     "type": "red_equipment_collect",
     "params": 260,
     "descript": "收集260级或以上的红装一套",
@@ -6098,7 +6066,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_collect"] = tab["red_equipment_collect"] ? tab["red_equipment_collect"] : [];
 tab["red_equipment_collect"].push({
-    "sid": "10382",
+    "sid": "10380",
     "type": "red_equipment_collect",
     "params": 270,
     "descript": "收集270级或以上的红装一套",
@@ -6114,7 +6082,7 @@ tab["red_equipment_collect"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10383",
+    "sid": "10381",
     "type": "red_equipment_Wash",
     "params": 20,
     "descript": "红装洗练20次",
@@ -6130,7 +6098,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10384",
+    "sid": "10382",
     "type": "red_equipment_Wash",
     "params": 50,
     "descript": "红装洗练50次",
@@ -6146,7 +6114,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10385",
+    "sid": "10383",
     "type": "red_equipment_Wash",
     "params": 100,
     "descript": "红装洗练100次",
@@ -6162,7 +6130,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10386",
+    "sid": "10384",
     "type": "red_equipment_Wash",
     "params": 200,
     "descript": "红装洗练200次",
@@ -6178,7 +6146,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10387",
+    "sid": "10385",
     "type": "red_equipment_Wash",
     "params": 300,
     "descript": "红装洗练300次",
@@ -6194,7 +6162,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10388",
+    "sid": "10386",
     "type": "red_equipment_Wash",
     "params": 400,
     "descript": "红装洗练400次",
@@ -6210,7 +6178,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10389",
+    "sid": "10387",
     "type": "red_equipment_Wash",
     "params": 500,
     "descript": "红装洗练500次",
@@ -6226,7 +6194,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10390",
+    "sid": "10388",
     "type": "red_equipment_Wash",
     "params": 600,
     "descript": "红装洗练600次",
@@ -6242,7 +6210,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10391",
+    "sid": "10389",
     "type": "red_equipment_Wash",
     "params": 700,
     "descript": "红装洗练700次",
@@ -6258,7 +6226,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10392",
+    "sid": "10390",
     "type": "red_equipment_Wash",
     "params": 800,
     "descript": "红装洗练800次",
@@ -6274,7 +6242,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10393",
+    "sid": "10391",
     "type": "red_equipment_Wash",
     "params": 900,
     "descript": "红装洗练900次",
@@ -6290,7 +6258,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10394",
+    "sid": "10392",
     "type": "red_equipment_Wash",
     "params": 1000,
     "descript": "红装洗练1000次",
@@ -6306,7 +6274,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10395",
+    "sid": "10393",
     "type": "red_equipment_Wash",
     "params": 1200,
     "descript": "红装洗练1200次",
@@ -6322,7 +6290,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10396",
+    "sid": "10394",
     "type": "red_equipment_Wash",
     "params": 1400,
     "descript": "红装洗练1400次",
@@ -6338,7 +6306,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10397",
+    "sid": "10395",
     "type": "red_equipment_Wash",
     "params": 1600,
     "descript": "红装洗练1600次",
@@ -6354,7 +6322,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10398",
+    "sid": "10396",
     "type": "red_equipment_Wash",
     "params": 1800,
     "descript": "红装洗练1800次",
@@ -6370,7 +6338,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10399",
+    "sid": "10397",
     "type": "red_equipment_Wash",
     "params": 2000,
     "descript": "红装洗练2000次",
@@ -6386,7 +6354,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10400",
+    "sid": "10398",
     "type": "red_equipment_Wash",
     "params": 2500,
     "descript": "红装洗练2500次",
@@ -6402,7 +6370,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10401",
+    "sid": "10399",
     "type": "red_equipment_Wash",
     "params": 3000,
     "descript": "红装洗练3000次",
@@ -6418,7 +6386,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10402",
+    "sid": "10400",
     "type": "red_equipment_Wash",
     "params": 3500,
     "descript": "红装洗练3500次",
@@ -6434,7 +6402,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10403",
+    "sid": "10401",
     "type": "red_equipment_Wash",
     "params": 4000,
     "descript": "红装洗练4000次",
@@ -6450,7 +6418,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10404",
+    "sid": "10402",
     "type": "red_equipment_Wash",
     "params": 4500,
     "descript": "红装洗练4500次",
@@ -6466,7 +6434,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10405",
+    "sid": "10403",
     "type": "red_equipment_Wash",
     "params": 5000,
     "descript": "红装洗练5000次",
@@ -6482,7 +6450,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10406",
+    "sid": "10404",
     "type": "red_equipment_Wash",
     "params": 5500,
     "descript": "红装洗练5500次",
@@ -6498,7 +6466,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10407",
+    "sid": "10405",
     "type": "red_equipment_Wash",
     "params": 6000,
     "descript": "红装洗练6000次",
@@ -6514,7 +6482,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10408",
+    "sid": "10406",
     "type": "red_equipment_Wash",
     "params": 6500,
     "descript": "红装洗练6500次",
@@ -6530,7 +6498,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10409",
+    "sid": "10407",
     "type": "red_equipment_Wash",
     "params": 7000,
     "descript": "红装洗练7000次",
@@ -6546,7 +6514,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10410",
+    "sid": "10408",
     "type": "red_equipment_Wash",
     "params": 7500,
     "descript": "红装洗练7500次",
@@ -6562,7 +6530,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10411",
+    "sid": "10409",
     "type": "red_equipment_Wash",
     "params": 8000,
     "descript": "红装洗练8000次",
@@ -6578,7 +6546,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10412",
+    "sid": "10410",
     "type": "red_equipment_Wash",
     "params": 8500,
     "descript": "红装洗练8500次",
@@ -6594,7 +6562,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10413",
+    "sid": "10411",
     "type": "red_equipment_Wash",
     "params": 9000,
     "descript": "红装洗练9000次",
@@ -6610,7 +6578,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10414",
+    "sid": "10412",
     "type": "red_equipment_Wash",
     "params": 9500,
     "descript": "红装洗练9500次",
@@ -6626,7 +6594,7 @@ tab["red_equipment_Wash"].push({
 });
 tab["red_equipment_Wash"] = tab["red_equipment_Wash"] ? tab["red_equipment_Wash"] : [];
 tab["red_equipment_Wash"].push({
-    "sid": "10415",
+    "sid": "10413",
     "type": "red_equipment_Wash",
     "params": 10000,
     "descript": "红装洗练10000次",

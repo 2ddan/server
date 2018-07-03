@@ -1,12 +1,13 @@
+// tslint:disable:no-reserved-keywords only-arrow-functions
 declare function require(modName: string);
-declare function postMessage(e: any, ab?: Array<ArrayBuffer>);
+declare function postMessage(e: any, ab?: ArrayBuffer[]);
 
 // ============================== 导入
 // ============================== 导出
 /**
  * 组名 线程编号
  */
-export let name: string = "";
+export let name: string = '';
 
 /**
  * 消息接收函数，接受任务事件
@@ -15,16 +16,17 @@ export let name: string = "";
 export const onmessage = (e: any): void => {
 	const data = e.data;
 	const r = exec(data.mod, data.func, data.args, data.sendResult);
-	if (r.ok !== undefined && r.ok instanceof ArrayBuffer)
+	if (r.ok !== undefined && r.ok instanceof ArrayBuffer) {
 		postMessage(r, [r.ok]);
-	else
-		postMessage(r)
-}
+	} else {
+		postMessage(r);
+	}
+};
 /**
  * @description 函数调用
  * @example
  */
-export const call = (func: Function, args: Array<any>) => {
+export const call = (func: Function, args: any[]) => {
 	if (Array.isArray(args)) {
 		switch (args.length) {
 			case 0:
@@ -48,37 +50,41 @@ export const call = (func: Function, args: Array<any>) => {
 			default:
 				func.apply(undefined, args);
 		}
-	} else
+	} else {
 		return func(args);
-}
+	}
+};
 
 // ============================== 本地
 // 任务执行
-const exec = (modName: string, funcName: string, args: Array<any>, sendResult: boolean): any => {
+const exec = (modName: string, funcName: string, args: any[], sendResult: boolean): any => {
 	let mod;
-	try{
- 		mod = require(modName);
+	try {
+		// tslint:disable:non-literal-require
+		mod = require(modName);
 	} catch (ex) {
 		return {
-			error: "ERR_ARGS",
-			reason: "server worker, mod not found, name: " + modName + "." + funcName
+			error: 'ERR_ARGS',
+			// tslint:disable:prefer-template
+			reason: 'server worker, mod not found, name: ' + modName + '.' + funcName
 		};
 	}
-	let func = mod[funcName];
+	const func = mod[funcName];
 	if (!func) {
 		return {
-			error: "ERR_ARGS",
-			reason: "server worker, func not found, name: " + modName + "." + funcName
+			error: 'ERR_ARGS',
+			reason: 'server worker, func not found, name: ' + modName + '.' + funcName
 		};
 	}
 	try {
-		let r = call(func, args);
+		const r = call(func, args);
+		
 		return (sendResult) ? { ok: r } : 0;
 	} catch (ex) {
 		return {
-			error: "ERR_NORMAL",
+			error: 'ERR_NORMAL',
 			stack: ex.stack,
-			reason: "server worker, func error! name: " + modName + "." + funcName + ", " + ex.msg
-		}
+			reason: 'server worker, func error! name: ' + modName + '.' + funcName + ', ' + ex.msg
+		};
 	}
-}
+};

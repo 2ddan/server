@@ -31,7 +31,7 @@ let table = {
     "skill3":{
         "key": "skill3",
         "name": "技能开启",
-        "level_limit": 15,
+        "level_limit": 8,
         "stage_id": null,
         "id": 4
     },
@@ -60,40 +60,40 @@ let table = {
         "key": "money_tree",
         "name": "摇钱树",
         "level_limit": null,
-        "stage_id": 7,
+        "stage_id": 8,
         "id": 8
     },
-    "equip_gem":{
-        "key": "equip_gem",
-        "name": "装备宝石",
-        "level_limit": null,
-        "stage_id": 8,
+    "skill4":{
+        "key": "skill4",
+        "name": "技能开启",
+        "level_limit": 18,
+        "stage_id": null,
         "id": 9
     },
     "store":{
         "key": "store",
         "name": "商店",
         "level_limit": null,
-        "stage_id": 8,
+        "stage_id": 9,
         "id": 10
+    },
+    "equip_gem":{
+        "key": "equip_gem",
+        "name": "装备宝石",
+        "level_limit": null,
+        "stage_id": 10,
+        "id": 11
     },
     "tower":{
         "key": "tower",
         "name": "天庭秘境",
         "level_limit": null,
-        "stage_id": 9,
-        "id": 11
+        "stage_id": 11,
+        "id": 12
     },
     "gang":{
         "key": "gang",
         "name": "门派",
-        "level_limit": null,
-        "stage_id": 10,
-        "id": 12
-    },
-    "daily_fb":{
-        "key": "daily_fb",
-        "name": "材料副本",
         "level_limit": null,
         "stage_id": 12,
         "id": 13
@@ -102,63 +102,63 @@ let table = {
         "key": "random_boss",
         "name": "神秘宝物",
         "level_limit": null,
-        "stage_id": 16,
+        "stage_id": 13,
         "id": 14
     },
-    "skill4":{
-        "key": "skill4",
-        "name": "技能开启",
-        "level_limit": 40,
-        "stage_id": null,
+    "daily_fb":{
+        "key": "daily_fb",
+        "name": "材料副本",
+        "level_limit": null,
+        "stage_id": 14,
         "id": 15
+    },
+    "investment":{
+        "key": "investment",
+        "name": "成长基金",
+        "level_limit": null,
+        "stage_id": 15,
+        "id": 16
     },
     "public_boss":{
         "key": "public_boss",
         "name": "荒野降魔",
         "level_limit": null,
-        "stage_id": 18,
-        "id": 16
-    },
-    "equip_fb":{
-        "key": "equip_fb",
-        "name": "装备副本",
-        "level_limit": null,
-        "stage_id": 20,
+        "stage_id": 16,
         "id": 17
     },
     "arena":{
         "key": "arena",
         "name": "竞技场",
         "level_limit": null,
-        "stage_id": 22,
+        "stage_id": 18,
         "id": 18
     },
-    "investment":{
-        "key": "investment",
-        "name": "成长基金",
+    "equip_fb":{
+        "key": "equip_fb",
+        "name": "装备副本",
         "level_limit": null,
-        "stage_id": 22,
+        "stage_id": 20,
         "id": 19
     },
     "equip_star":{
         "key": "equip_star",
         "name": "装备升星",
         "level_limit": null,
-        "stage_id": 24,
+        "stage_id": 22,
         "id": 20
     },
     "soul":{
         "key": "soul",
         "name": "龙魂",
         "level_limit": null,
-        "stage_id": 26,
+        "stage_id": 24,
         "id": 21
     },
     "instance_fb":{
         "key": "instance_fb",
         "name": "九幽幻境",
         "level_limit": null,
-        "stage_id": 30,
+        "stage_id": 26,
         "id": 22
     },
     "equip_red_forge":{
@@ -171,7 +171,7 @@ let table = {
     "equip_red_wash":{
         "key": "equip_red_wash",
         "name": "神装洗练",
-        "level_limit": 82,
+        "level_limit": 85,
         "stage_id": null,
         "id": 24
     },
@@ -196,10 +196,10 @@ let table = {
         "stage_id": null,
         "id": 27
     },
-    "off_line":{
-        "key": "off_line",
-        "name": "离线收益",
-        "level_limit": 200,
+    "robres":{
+        "key": "robres",
+        "name": "掠夺水晶",
+        "level_limit": 100,
         "stage_id": null,
         "id": 28
     }

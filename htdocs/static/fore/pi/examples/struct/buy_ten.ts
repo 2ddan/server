@@ -4,11 +4,9 @@ import { BinBuffer, BinCode, ReadNext, WriteNext } from "util/bin";
 import { addToMeta, removeFromMeta, Struct, notifyModify, StructMgr } from "struct/struct_mgr";
 import { Component } from "../../ecs/world";
 
-export class Tansfrom extends Component {
-position: Vector;
-rotation: Vector;
-scale: Vector;
+export class Tansfrom extends Component {position: Vector;rotation: Vector;scale: Vector;
 
+	// 添加
 	addMeta(mgr: StructMgr){
 		if(this._$meta)
 			return;
@@ -18,6 +16,7 @@ scale: Vector;
 		addToMeta(mgr, this);
 	}
 
+	// 移除
 	removeMeta(){
 		removeFromMeta(this);
 		this.position && this.position.removeMeta();
@@ -25,6 +24,7 @@ scale: Vector;
 		this.scale && this.scale.removeMeta();
 	}
 
+	//set 设置
 	setPosition (value: Vector){	
 		let old = this.position;
 		this.position = value;
@@ -55,9 +55,9 @@ scale: Vector;
 
 
 	copy(o: Tansfrom) : Tansfrom {
-		o.position && (this.position = o.position.clone());
-		o.rotation && (this.rotation = o.rotation.clone());
-		o.scale && (this.scale = o.scale.clone());
+		this.position = o.position.clone();
+		this.rotation = o.rotation.clone();
+		this.scale = o.scale.clone();
 		return this;
 	}
 
@@ -97,19 +97,21 @@ scale: Vector;
 	fields:{ position:{"name":"position","type":{"type":"Vector"}},rotation:{"name":"rotation","type":{"type":"Vector"}},scale:{"name":"scale","type":{"type":"Vector"}} }
 }
 
-export class Vector extends Struct {
-value: [number,number,number];
+export class Vector extends Struct {value: [number,number,number];
 
+	// 添加
 	addMeta(mgr: StructMgr){
 		if(this._$meta)
 			return;
 		addToMeta(mgr, this);
 	}
 
+	// 移除
 	removeMeta(){
 		removeFromMeta(this);
 	}
 
+	//set 设置
 	setValue_0 (value: number){
 		!this.value && (this.value = [] as [number,number,number]);
 		let old = this.value[0];
@@ -150,12 +152,10 @@ value: [number,number,number];
 
 
 	copy(o: Vector) : Vector {
-		if(o.value){
-			this.value = [] as [number,number,number]
-			this.value[0] = o.value[0];
-			this.value[1] = o.value[1];
-			this.value[2] = o.value[2];
-		}
+		this.value = [] as [number,number,number];
+		this.value[0] = o.value[0];
+		this.value[1] = o.value[1];
+		this.value[2] = o.value[2];
 		return this;
 	}
 

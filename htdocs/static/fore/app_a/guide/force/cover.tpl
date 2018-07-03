@@ -14,6 +14,6 @@
 
     <div data-desc="手" w-class="hand" style="width:80px;animation: guide_hand 0.8s infinite;left:{{it.x+it.w/2-15}}px;top: {{it.y+it.h/2-20}}px;z-index: 11"></div>
     <div data-desc="圈" w-class="halo" style="left:{{it.x+it.w/2-53}}px;top: {{it.y+it.h/2-68}}px;">
-        <img style="animation: guide_halo 0.8s infinite;left:50%;top: 50%;transform:translate(-50%,-50%);position:absolute;" src="../images/halo.png" />        
+        <img style="animation: guide_halo 0.8s infinite;left:50%;top: 50%;margin-left:-50%;margin-top:-50%;position:absolute;" src="../images/halo.png" />        
     </div>
 </div>

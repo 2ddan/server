@@ -26,9 +26,9 @@
                         {"icon":"light_bottom"}
                     </app_a-widget-pic_other-pic_other>
                     <app_a-widget-text-text style="position:absolute;top: 15px;left: 0px;right:0px;margin:auto;">
-                        {"text":{{v.level+"每日俸禄"}},"textCfg":"heroEquip","fontSize":26}
+                        {"text":{{v.level+"级俸禄"}},"textCfg":"heroEquip","fontSize":26}
                     </app_a-widget-text-text>
-                    {{let arr = [["100002", v.daily_diamond], ["150005", v.daily_contribute]]}}
+                    {{let arr = [["100002", v.daily_diamond], v.daily_contribute]}}
                     <div data-desc="奖励" style="position: absolute;top:54px;left:28px;height:60px;width:295px;">
                         {{for m, n of arr}}
                         {{if n[1] > 0}}

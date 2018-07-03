@@ -1,4 +1,4 @@
-<div maxId="67" test="test" style="position: absolute;width: 60px;height: 60px;right:20px;top:195px" w-sid="2">
+<div maxId="67" test="test" style="position: absolute;width: 60px;height: 60px;right:20px;top:222px" w-sid="2">
     {{if it1}}
     {{let root = _get("pi/ui/root").exports}}
     {{if it1.next_fun}}
@@ -54,16 +54,16 @@
     {{if it1.player.level >= it1.fly_fun.level_limit}}
         {{if it1.fly_fun.target_point[0] == 0}}
             {{:right = (root.getWidth() - 480) / 2 + (5 - it1.fly_fun.target_point[1]) * 80 - 15}}
-            {{:top = root.getHeight() - 275}}
+            {{:top = root.getHeight() - 315}}
         {{elseif it1.fly_fun.target_point[0] == 1}}
             {{:right = (root.getWidth() - 335 + (3 - it1.fly_fun.target_point[1]) * 63)}}
-            {{:top = -88}}
+            {{:top = -118}}
         {{elseif it1.fly_fun.target_point[0] == 2}}
             {{:right = root.getWidth() - (it1.fly_fun.target_point[1] + 1) * 66 - 23}}
-            {{:top = -25}}
+            {{:top = -52}}
         {{elseif it1.fly_fun.target_point[0] == 3}}
             {{:right = root.getWidth() - (it1.fly_fun.target_point[1] + 1) * 66 - 23}}
-            {{:top = 36}}
+            {{:top = 8}}
         {{end}}
 
         {{let key = it1.fly_fun.key.slice(0,5)}}
@@ -86,7 +86,7 @@
         {{end}}
     {{end}}
     {{if it1.skill_anima}}
-    {{let id = it1.skill[it1.next_fun.key.slice(-1)-1][0]}}
+    {{let id = it1.skill[it1.fly_fun.key.slice(-1)-1][0]}}
     {{let icon = it1.skill_describe[id]["skill_icon"]}}
     {{let url = it1.Pi.pictures[icon]}}
     {{let right = root.getWidth()*0.5 - 55 }}

@@ -7,8 +7,11 @@
 	{{let player = appCfg.player}}
 	{{let jjc_score  = Common.getBagPropById(cfg_base.prop_id)?Common.getBagPropById(cfg_base.prop_id)[1].count:0}}
 	{{let root = _get("pi/ui/root").exports}}
-	<widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond"],"left":0,"top":15,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"width":{{root.getWidth()}}} 
-	</widget>
+	{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
+
+    <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
+		{"text":"竞技场","coin":["money","diamond", 150004],"left":0,"top":15,"width":540,"type":"jjc_score","width":{{root.getWidth()}}}
+    </widget>
 	<div w-class="58" w-sid="58">
         <img src="./image/vein_2.png" style="position:absolute;left: 425px;top: 14px;z-index: 1;" />
 		<widget w-class="57" w-tag="app_a-widget-bg_frame-bg" w-sid="57">{"bgName":"bg_frame25"} 
@@ -31,10 +34,12 @@
 					<widget w-class="13" w-tag="app_a-widget-bg_frame-bg" w-sid="13">
 						{"bgName":"bg_frame19"} 
 					</widget>
-                    {{%cfg_price[v[0]].prop[1]}}
-					{{let img = it1.pi.pictures[prop.icon]}}
-					<widget class="shadow" on-tap="propInfoShow({{prop.sid}})" w-class="16" w-tag="app_a-widget-prop-base" w-sid="16">
-						{"prop":{{prop}},"url":{{img}},"color":"#ffeee2","count":{{cfg_price[v[0]].prop[1]}},"width":80,"height":80,"name":{{prop.name}} }
+					{{%cfg_price[v[0]].prop[1]}}
+					{{let icon = prop.module ? prop.module[prop.career_id.indexOf(player.career_id)][0] : prop.icon}}
+					{{let img = it1.pi.pictures[icon]}}
+					{{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(player.career_id)] : prop.name}}
+					<widget class="shadow" on-tap="propInfoShow({{cfg.prop[0]}})" w-class="16" w-tag="app_a-widget-prop-base" w-sid="16">
+						{"prop":{{prop}},"url":{{img}},"color":"#ffeee2","count":{{cfg_price[v[0]].prop[1]}},"width":80,"height":80,"name":{{name}} }
 					</widget>
 
 					{{if cfg.discount}}
@@ -83,13 +88,6 @@
 		</div>
 	</div>
 	<div w-class="61" w-sid="61">
-		<widget class="shadow" w-class="62" w-tag="app_a-widget-pic_text-pic_text" w-sid="62">
-			{"icon":"resource_bar","width":116,"height":26,"align":"center","marginLeft":"10px","text":{{jjc_score + ""}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
-		</widget>
-		<widget w-class="64" w-tag="app_a-widget-coin-coin" w-sid="64">
-			{"icon":"jjc_score","width":25,"height":21,"left":3,"text":[""],"color":"#f0f0f0"} 
-		</widget>
-
 		{{let tap = "refresh("+(it1.cost?JSON.stringify(it1.cost):0)+")"}}
 		<widget w-class="65" on-tap={{tap}} w-tag="app_a-widget-btn-rect" w-sid="65">
 			{"class":"default","fontsize":24,"color":"#fdedd7;","text":"刷   新","width":116,"height":45} 

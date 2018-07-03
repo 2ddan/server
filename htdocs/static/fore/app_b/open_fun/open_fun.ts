@@ -5,7 +5,6 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { Common } from "app/mod/common";
 import { updata, listen, get as getDB, insert } from "app/mod/db";
-import { listenBack } from "app/mod/db_back";
 import { Pi, globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { Common_m } from "app_b/mod/common";
@@ -17,8 +16,7 @@ import { getPage, is_guide } from "app_a/guide/guide";
 import { function_guid } from "cfg/b/function_guid";
 import { function_open } from "cfg/b/function_open";
 import { skill_describe } from "cfg/b/skill_describe";
-import { guide_cfg } from "cfg/b/guide_cfg";
-import { wild_boss } from "fight/b/common/wild_boss_cfg";
+import { guide_cfg } from "cfg/a/guide_cfg";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
 import { publicboss_base } from "cfg/c/publicboss_base";
 
@@ -85,7 +83,7 @@ export class OpenFun extends Widget {
             return;
         }
         let wild = getDB("wild");
-        if (next_fun.stage_id > wild.wild_max_mission || (wild.wild_max_mission == next_fun.stage_id && wild.wild_task_num < condition[1])) {
+        if (next_fun.stage_id > wild.wild_max_mission || (wild.wild_max_mission == next_fun.stage_id && wild.wild_task_num < (condition && condition[1]))) {
             let guard_name = wild_mission[next_fun.stage_id].guard_name.split(",");
             globalSend("screenTipFun", {
                 words: `通过${guard_name[1]} ${guard_name[0]}开放`
@@ -242,9 +240,8 @@ const award = function () {
  * @param fun_key [功能key]
  */
 export const funIsOpen = function (fun_key) {
-    
+    let id = getDB("open_fun.id");
     if(function_open[fun_key].stage_id){
-        let id = getDB("open_fun.id");
         let wild = getDB("wild");
         let limit_guide = function_open[fun_key].stage_id;
         if (limit_guide > wild.wild_max_mission || (wild.wild_max_mission == limit_guide && wild.wild_task_num < condition[1] && id < function_open[fun_key].id)) {
@@ -322,9 +319,9 @@ listen("player.function_record", (data) => {
     id = player.function_record + 1;
     updata("open_fun.id", player.function_record);
     let magic = getDB("magic.treasure");
-    if(id >= function_open.magic_activate.id && !magic.length){
-        globalSend("activateMagic"); 
-    }
+    // if(id >= function_open.magic_activate.id && magic && !magic.length){
+    //     globalSend("activateMagic"); 
+    // }
     if (player.function_record >= -1 && function_guid[id]) {
         for (let i = id, len = function_guid.length; i < len; i++) {
             tips[function_guid[i].func_tips] = 0;

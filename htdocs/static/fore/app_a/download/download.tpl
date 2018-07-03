@@ -1,6 +1,6 @@
 <div class="download_css" w-class="login_bg" group="download" style="top: 0px;visibility:{{it.display == 'none'?'hidden':'visible'}};pointer-events:{{it.display == 'none'?'none':'all'}};width:{{it.width}}px;height: {{it.height}}px;">
 	<div w-class="bg_2"></div>
-	<img src="app/style/images/logo.png" style="position:absolute;top: 40px;right: 25px;width: 259px;height: 140px;" />
+	<img src="app/style/images/logo.png" style="position:absolute;top: 40px;right: 25px;width: 259px;height: 182px;" />
 	<div class="shadow9" w-class="tips_bg" style="position:absolute;bottom:60px;left:50%;margin-left:-121px;display:{{if it.pause}}none{{else}}block{{end}};font-family:'mnjsh';">{{it.state}}</div>
 	{{let progress = (it.show*100).toFixed(2)}}
 	<div style="position:absolute;bottom:26px;left:50%;margin-left: -243px;width: 487px;height: 41px;">

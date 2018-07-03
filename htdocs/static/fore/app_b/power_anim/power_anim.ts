@@ -1,8 +1,7 @@
 // ============================== 导入
-import { Widget, factory } from "pi/widget/widget";
-import { data, updata , listen } from "app/mod/db";
+import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { open, remove, destory} from "pi/ui/root";
+import { open, destory} from "pi/ui/root";
 
 /**
  * @description 导出给组件用的forelet

@@ -1,9 +1,9 @@
 /** 翻翻乐**/
 
 //================================导入
-import { Pi,cfg, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { net_request } from "app_a/connect/main";
-import { open, close } from "app/mod/root";
+import { open} from "app/mod/root";
 
 import { Widget } from "pi/widget/widget";
 import { Common } from "app/mod/common";
@@ -22,10 +22,15 @@ import { plush_award } from "cfg/c/playcard_plush_award";
 import { plush_exp } from "cfg/c/playcard_plush_exp";
 
 import { flush_min_score } from "cfg/c/playcard_flush_min_score";
+//积分奖励
+import { card_get_score_award } from "cfg/c/card_score_award";
+
 
 export const forelet = new Forelet();
 
 insert("play_card", {})
+
+let remind = false;
 
 export const globalReceive: any = {
     gotoPlayCard: () => {
@@ -59,12 +64,7 @@ export class play_card_w extends Widget {
             });
             return;
         }
-        // popTipFun({
-        //     words: "豪华模式下，一局只能翻倍一次",
-        //     callback: [["确定", () => {
-        //         cardFun.double();
-        //     }]]
-        // });
+        cardFun.double();
     }
     tabChange (type) {
         if (tabSwitch === type) {
@@ -82,39 +82,52 @@ export class play_card_w extends Widget {
             return;
         }
         cardFun.reset();
-        // popTipFun({
-        //     words: "清除并重置所有卡片，本轮游戏结束",
-        //     callback: [["确定", () => {
-        //         cardFun.read(1);
-        //     }]]
-        // });
     }
     //翻牌
     turnClick = (arg) => {
         arg = arg.cmd
-        if (!isCover && !cardData.use_count) return;
+        // if (!isCover && !cardData.use_count) return;
         if (cardData.record[arg - 0]) {
             if (cardData.record[arg - 0].length == 2) return;
             // this.objectInfoShow({ "cmd": cardData.record[arg - 0][0] }); return;
         }
         let costCfg = cardData.type == "normal" ? normal_money : plush_money;
         let diamond = costCfg[cardData.use_count] || costCfg[costCfg.length - 1];
-        if (diamond > getDB("player.diamond")) {
-            globalSend("screenTipFun", {
-                words: "元宝不足!"
-            });
-            return;
-        }
-        // let cost = { "diamond": diamond }
-        cardFun.turn(arg-0);
-
-        // if (Common.isReach({ "cost": cost }, forelet)) {
-        //     cardFun.turn(arg - 0);
-        // }
+        
+        if (!remind) {
+            globalSend("popTip", {
+                title: `<div>此次翻牌花费${diamond}元宝</div>`,
+                btn_name: ["确定", "取消"],
+                status: () => {
+                    remind = !remind
+                },
+                cb: [
+                    //确认
+                    () => {
+                        if (diamond > getDB("player.diamond")) {
+                            globalSend("screenTipFun", {
+                                words: "元宝不足!"
+                            });
+                            return;
+                        }
+                        cardFun.turn(arg-0);
+                    },
+                    () => { }
+                ]
+            })
+        } else {
+            if (diamond > getDB("player.diamond")) {
+                globalSend("screenTipFun", {
+                    words: "元宝不足!"
+                });
+                return;
+            }
+            cardFun.turn(arg-0);
+        } 
     }
     //物品详情objectInfoShow
     showPropInfo = (arg) => {
-        globalSend("showPropInfo", arg)
+        globalSend("showOtherInfo", arg)
     };
     //帮助详情
     getHelp = () => {
@@ -127,8 +140,21 @@ export class play_card_w extends Widget {
     }
     //排行榜
     rankClick = () => {
-        forelet.paint(cardFun.getData());
-        open("app_c-play_card-rank");
+        let i = 0;
+        let fun = function () {
+            i++;
+            if (i == 2) {
+                i = null;
+                forelet.paint(cardFun.getData());
+                open("app_c-play_card-rank");
+            }
+        }
+        cardFun.read_rank(() => {
+            fun();
+        });
+        cardFun.read_eliter(() => {
+            fun();
+        });
     }
     //领取积分奖励
     getScoreAward = (index) => {
@@ -162,15 +188,15 @@ export class play_card_w extends Widget {
 let cardFun,
     cardData,
     normalRank: any = {},
-    isCover,
+    // isCover,
     plushRank: any = {},
     startTime,
     lookTimeOut,//看牌时间定时器
     tabSwitch = "normal";
 const createCardFun = () => {
     let module: any = {}, cardList, currLevel,
-        lookTime = 2,//看牌时间5s
-        moveArr = [];
+        lookTime = 2;//看牌时间5s
+        //moveArr = [];
     module.getData = () => {
         let _data: any = {};
         _data.normal_card = normal_card;
@@ -180,16 +206,18 @@ const createCardFun = () => {
         _data.plush_card = plush_card;
         _data.plush_exp = plush_exp;
         _data.cardList = cardList;
-        _data.isCover = isCover;//是否可以翻牌
+        // _data.isCover = isCover;//是否可以翻牌
         _data.rankData = { "normal": normalRank, "plush": plushRank };//排行榜数据
         _data.award = { "normal": normal_award, "plush": plush_award };//奖励
         _data.flush_min_score = flush_min_score;//精英榜最低积分
         _data.currLevel = currLevel;
         _data.lookTime = lookTime;//看牌时间
-        _data.moveArr = moveArr;
+        //_data.moveArr = moveArr;
         _data.award_fun = award_fun;//计算奖励方法
         _data.next_fun = next_fun;//计算目标方法
         _data.tabSwitch = tabSwitch;
+
+        _data.card_get_score_award = card_get_score_award;
         return _data;
     };
 
@@ -208,24 +236,18 @@ const createCardFun = () => {
                 cardData = Common.changeArrToJson(data.ok);
                 updata("play_card", cardData)
                 cardList = module.getCurrLevel().sort((a, b) => .5 - Math.random());
-                for (let k = 0; k < cardData.record.length; k++) {
-                    if (cardData.record[k]) moveArr[k] = 1;
-                    else moveArr[k] = 0;
-                }
-                if (arg) isCover = 0;
-                else {
-                    setInterval(() => {
-                        module.read_rank();
-                        module.read_eliter();
-                    }, 30 * 60 * 60 * 1000)
-                }
+                // for (let k = 0; k < cardData.record.length; k++) {
+                //     if (cardData.record[k]) moveArr[k] = 1;
+                //     else moveArr[k] = 0;
+                // }
+                // if (arg) isCover = 0;
                 module.updataHtml();
-                module.move();
+                // module.move();
             }
         });
     };
     //读取积分榜
-    module.read_rank = () => {
+    module.read_rank = (callback?) => {
         let msg = { "param": {}, "type": "app/activity/card@rank" };
         net_request(msg, (data) => {
             if (data.error) {
@@ -245,12 +267,12 @@ const createCardFun = () => {
                     }
                 }
                 normalRank.list = arr;
-                console.log(normalRank);
+                callback && callback();
             }
         });
     };
     //读取精英榜
-    module.read_eliter = () => {
+    module.read_eliter = (callback?) => {
         let msg = { "param": {}, "type": "app/activity/card@eliter_rank" };
         net_request(msg, (data) => {
             if (data.error) {
@@ -270,7 +292,7 @@ const createCardFun = () => {
                     }
                 }
                 plushRank.list = arr;
-                console.log(plushRank);
+                callback && callback();
             }
         });
     };
@@ -325,31 +347,33 @@ const createCardFun = () => {
                     cardData.ex += list.ex ? list.ex : 0;
                     cardData.score += list.score ? list.score : 0;
                     cardData.num = 1;
-                    if (list.score) {
-                        module.read_rank();
-                        module.read_eliter();
-                    }
+                    // if (list.score) {
+                    //     module.read_rank();
+                    //     module.read_eliter();
+                    // }
                 }
                 cardData.use_count++;
                 updata("play_card", cardData)
                 module.updataHtml();
                 // setTimeout(() => {
                 //     module.move(arg + '');
-                //     // award && showNewRes(award, (result) => {
-                //     //     result.open(() => {
-                //     //         if (_data.all_card) {
-                //     //             cardData.record = _data.all_card;
-                //     //             updata("play_card", cardData)
-                //     //             module.updataHtml()
-                //     //             for (let i = 0; i < cardData.record.length; i++) {
-                //     //                 if (!moveArr[i]) moveArr[i] = 1;
-                //     //             }
-                //     //             setTimeout(() => {
-                //     //                 module.updataHtml()
-                //     //             }, 1000)
-                //     //         }
-                //     //     });
-                //     // })
+                //     globalSend("showNewRes", {
+                //         result, function(result1) {
+                //             result.open(() => {
+                //                 if (_data.all_card) {
+                //                     cardData.record = _data.all_card;
+                //                     updata("play_card", cardData)
+                //                     module.updataHtml()
+                //                     for (let i = 0; i < cardData.record.length; i++) {
+                //                         if (!moveArr[i]) moveArr[i] = 1;
+                //                     }
+                //                     setTimeout(() => {
+                //                         module.updataHtml()
+                //                     }, 1000)
+                //                 }
+                //             });
+                //         }
+                //     });
                 // }, 700)
             }
         });
@@ -366,20 +390,20 @@ const createCardFun = () => {
         return [];
     }
     //动画时间
-    module.move = (msg) => {
-        let time = (lookTime + 2) * 1000;
-        if (cardData.use_count == 0) {
-            lookTimeOut = setTimeout(() => {
-                isCover = 1;
-                module.updataHtml();
-            }, time);
-            return;
-        }
-        if (msg) {
-            moveArr[msg - 0] = 1;
-            module.updataHtml();
-        }
-    }
+    // module.move = (msg) => {
+    //     let time = (lookTime + 2) * 1000;
+    //     if (cardData.use_count == 0) {
+    //         lookTimeOut = setTimeout(() => {
+    //             isCover = 1;
+    //             module.updataHtml();
+    //         }, time);
+    //         return;
+    //     }
+    //     if (msg) {
+    //         moveArr[msg - 0] = 1;
+    //         module.updataHtml();
+    //     }
+    // }
     //随机排序
     module.randomsort = (a, b) => {
         return Math.random() > .5 ? -1 : 1;
@@ -399,9 +423,9 @@ const openPlayCard = () => {
         });
         return;
     }
-    isCover = 0;
+    // isCover = 0;
     startTime = Util.serverTime();
-    cardFun.move();
+    //cardFun.move();
     forelet.paint(cardFun.getData());    
     open("app_c-play_card-play_card"); 
     

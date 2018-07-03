@@ -24,7 +24,7 @@
 					{"prop":{{prop}},"url":{{url}},"quality":6,"width":78,"height":78,"count":"none","name":"none","bg":0}
 				</app_a-widget-prop-base>
 				<app_a-widget-text-text style="position: absolute;top:80px;left:18px;">
-				{"textCfg":"heroEquip","fontSize":22,"text":"月卡" }
+				{"textCfg":"heroEquip","fontSize":22,"text":"铂金卡" }
 				</app_a-widget-text-text>	
 			</div>
 

@@ -1,4 +1,4 @@
-{{let weapon = _get("app/scene/art_cfg/weapon").exports.default}}
+{{let weapon = _get("app/scene/art_cfg/weapon").exports["default"]}}
 {{let mgr = _get("app/scene/scene").exports.mgr}}
 {{let child = [] }}
 {{for k, v of it.w_eff}}
@@ -12,6 +12,7 @@
 {{end}}
 {{let rotate_1 = it.rotate[1] + 0.33}}
 {{let posi_1 = it.position[1]-0.3 }}
+{{let posi_0 = it.position[0]-0.6 }}
 {
     "type":"node",
     "transform":{
@@ -21,7 +22,7 @@
     },
     "children":[
         {{if it.scene_bg}}
-        {{scene2d}}
+        {{scene2d}} 
         ,
         {{end}}
         {
@@ -33,14 +34,17 @@
             "scale": {{it.scale || [1,1,1]}},
             "rotate":{{it.rotate || [-0.55,1.57,3.14]}},
             "child":{{child}}
-        }{{if it.double}},{
+        },
+        {{it.double ?
+        {
             "type":"prefab",
             "tpl":"weapon",
-            "res":{{weapon[it.module].res}},
-            "rotate": [-1.75,{{rotate_1}},0.9],
-            "position":[-0.3,{{posi_1}},0],
-            "scale":{{it.scale || [1,1,1]}},
-            "child":{{child}}
-        }{{end}}
+            "res":weapon[it.module].res,
+            "rotate": [-1.75,rotate_1,0.9],
+            "position":[posi_0,posi_1,0],
+            "scale":it.scale || [1,1,1],
+            "child":child
+        }
+        : null}}
     ]
 }

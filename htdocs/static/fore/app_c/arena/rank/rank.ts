@@ -8,6 +8,7 @@ import { updata } from "app/mod/db";
 import { open,close } from "app/mod/root";
 import { Forelet } from "pi/widget/forelet";
 import { Widget, factory } from "pi/widget/widget";
+import { Common } from "app/mod/common";
 
 let lookRank = 1, arena_rankW;
 export const forelet = new Forelet();
@@ -116,8 +117,21 @@ export class Rank extends Widget {
         globalSend("gotoSeeOther", roleId);
         
     }
-} 
+}
 
+const jjc_rank = (data: Array<any>) => {
+    let arr = [];
+    for (let i = 0, len = data.length; i < len; i++) {
+        arr[i] = Common.changeArrToJson(data[i]);
+        arr[i].detail = Common.changeArrToJson(arr[i].detail);
+    }
+    return arr;
+};
+
+net_message("jjc_rank",(msg)=>{
+    arenaRead.jjc_rank = jjc_rank(msg.jjc_rank);
+    forelet.paint(rankFun.zData());
+})
 
 // export const showInfo = function (arg) {
 //     let rank_list;

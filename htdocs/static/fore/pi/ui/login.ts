@@ -1,27 +1,32 @@
-import { Widget } from "../widget/widget";
-import * as Android from "../browser/android";
+/**
+ * 
+ */
+import * as Android from '../browser/android';
+import { Widget } from '../widget/widget';
 
+// tslint:disable-next-line:class-name
+export class login extends Widget {
+	constructor() {
+		super();
+	}
 
-export class login extends Widget{
-    constructor(){
-        super();
-    }
+	// 登录微信
+	public loginWX() {
+		Android.loginWX();
 
-    //登录微信
-    loginWX(){
-        Android.loginWX();
-        return true;
-    };
+		return true;
+	}
 
-    //登录QQ
-    loginQQ(){
-        Android.loginQQ();
-        return true;
-    };
+	// 登录QQ
+	public loginQQ() {
+		Android.loginQQ();
 
-    //微博登录
-    loginWeiBo(){
-        Android.loginWB();
-    }
+		return true;
+	}
+
+	// 微博登录
+	public loginWeiBo() {
+		Android.loginWB();
+	}
 
 }

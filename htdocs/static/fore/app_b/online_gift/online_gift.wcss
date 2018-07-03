@@ -26,24 +26,6 @@
     background-image: url(./image/dl_2.png);
     background-repeat: no-repeat;
 }
-.hd_1 {
-    position: absolute;
-    width: 35px;
-    height: 36px;
-    left: 122px;
-    top: -4px;
-    background-image: url(./image/hd_1.png);
-    background-repeat: no-repeat;
-}
-.hd_2 {
-    position: absolute;
-    width: 35px;
-    height: 36px;
-    left: 290px;
-    top: -50px;
-    background-image: url(./image/hd_2.png);
-    background-repeat: no-repeat;
-}
 .title_light {
     position: absolute;
     width: 410px;

@@ -1,8 +1,11 @@
 <div maxId="40" test="test" style="position: absolute;width: 100%;height: 100%;z-index:2" w-sid="2">
     {{let Pi = _get("app/mod/pi").exports.Pi}}
     {{let player = _get("app/mod/db").exports.data.player}}
+    {{let cfg = _get("app/mod/pi").exports.cfg}}
     {{let Common = _get("app/mod/common").exports.Common}}
     {{let career_id = player.career_id}}
+    {{let robot_cfg = cfg.robot.robot_base}}
+
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond"],"top":"13","left":10}</widget>
     <div w-class="8" w-sid="8">
         <widget w-class="5" w-tag="app_a-widget-line-line" w-sid="5">{"line":"line_7"} 
@@ -28,9 +31,16 @@
 
                     <widget w-class="13" w-tag="app_a-widget-line-line" w-sid="13">{"line":"line_9"} 
                     </widget>
-                    {{let id = v.detail.role_id || null}}                    
+                    {{let id = v.detail.role_id || null}}
+                    {{let imgX= ''}}
+                    {{if v.role_type == "robot"}}
+                        {{: imgX = Pi.pictures[robot_cfg[v.sid].head]}}
+                    {{else}} 
+                        {{: imgX = Pi.pictures['playerhead'+(v.detail.head || v.career_id)]}}
+                    {{end}}
+                    
                     <widget on-tap="seeOther({{id}})" w-class="14" w-tag="app_a-widget-head-friend" w-sid="14">
-                        {"width":107,"height":108,"url":"app/scene_res/res/playerhead/playerhead700001.png","top":23.5,"level":0} 
+                        {"width":107,"height":108,"url":{{imgX}},"top":23.5,"level":0} 
                     </widget>
                     <span w-class="16" w-sid="16">{{Common.fromCharCode( v.name ? v.name : v.detail.name) || "玩家现在名字为空"}}</span>
                     <span class="shadow" w-class="17" w-sid="17">门派：</span>

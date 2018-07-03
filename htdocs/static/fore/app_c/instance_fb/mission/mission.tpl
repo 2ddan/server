@@ -5,7 +5,7 @@
 {{let Pi = it1.Pi}}
 
 <div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%;z-index:2;">
-    <div w-class="s8" style="height:710px;margin-top:-355px;">
+    <div w-class="s8" style="height:710px;margin-top:-370px;">
         <div w-class="s12" >
             <widget w-class="s10" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"tips_top"} 
             </widget>
@@ -62,8 +62,8 @@
                             "type":"monster",
                             "module":{
                                 "module":{{it.module}},
-                                "position":[-0.5,-3,0],
-                                "scale":0.7,
+                                "position":[0,-3,0],
+                                "scale":{{it.scale*2.2}},
                                 "rotate":[0,0,0]
                             },
                             "width":450,

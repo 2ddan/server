@@ -54,13 +54,13 @@ table["202002"] = {content:"undefined",css:"undefined"};
 
 table["202003"] = {content:"undefined",css:"undefined"};
 
-table["203001"] = {content:"本次宝石迷阵精英排名#，恭喜获得大量奖励",css:"undefined"};
+table["203001"] = {content:"本次宝石迷阵精英榜排名第#，恭喜获得大量奖励",css:"undefined"};
 
-table["203002"] = {content:"本次宝石迷阵普通排名#，恭喜获得大量奖励",css:"undefined"};
+table["203002"] = {content:"本次宝石迷阵普通榜排名第#，恭喜获得大量奖励",css:"undefined"};
 
-table["203003"] = {content:"本次翻翻乐精英排名#，恭喜获得大量奖励",css:"undefined"};
+table["203003"] = {content:"本次翻翻乐精英榜排名第#，恭喜获得大量奖励",css:"undefined"};
 
-table["203004"] = {content:"本次翻翻乐普通排名#，恭喜获得大量奖励",css:"undefined"};
+table["203004"] = {content:"本次翻翻乐普通榜排名第#，恭喜获得大量奖励",css:"undefined"};
 
 table["204001"] = {content:"每日摇钱树购买次数：#",css:"undefined"};
 
@@ -68,9 +68,9 @@ table["204002"] = {content:"装备背包格子上线：#",css:"undefined"};
 
 table["204003"] = {content:"每日神装免费洗练次数：#",css:"undefined"};
 
-table["204004"] = {content:"每日副本免费挑战次数：#",css:"undefined"};
+table["204004"] = {content:"材料副本免费挑战次数：#",css:"undefined"};
 
-table["204005"] = {content:"每日副本购买次数：#",css:"undefined"};
+table["204005"] = {content:"材料副本购买次数：#",css:"undefined"};
 
 table["204006"] = {content:"每日比武场免费挑战次数：#",css:"undefined"};
 
@@ -129,6 +129,36 @@ table["205017"] = {content:"少侠在荒野除魔280级boss战役中伤害突出
 table["205101"] = {content:"#把荒野除魔中获得的极品装备分配给少侠，请查收",css:"undefined"};
 
 table["205102"] = {content:"少侠在荒野除魔#级boss战役中伤害最高，特发此邮件奖励",css:"undefined"};
+
+table["206001"] = {content:"贵门派浴血沙场、团结一致，位列门派boss击杀数榜单第一，特发此补给品，望少侠继续奋勇杀敌！",css:"undefined"};
+
+table["206002"] = {content:"贵门派浴血沙场、团结一致，位列门派boss击杀数榜单第二，特发此补给品，望少侠继续奋勇杀敌！",css:"undefined"};
+
+table["206003"] = {content:"贵门派浴血沙场、团结一致，位列门派boss击杀数榜单第三，特发此补给品，望少侠继续奋勇杀敌！",css:"undefined"};
+
+table["206004"] = {content:"贵门派浴血沙场、团结一致，位列门派boss击杀数榜单第四，特发此补给品，望少侠继续奋勇杀敌！",css:"undefined"};
+
+table["206005"] = {content:"贵门派浴血沙场、团结一致，位列门派boss击杀数榜单第五，特发此补给品，望少侠继续奋勇杀敌！",css:"undefined"};
+
+table["207001"] = {content:"恭喜智勇双全的道友在水晶掠夺战中位列本服第一，特发奖励以资鼓励",css:"undefined"};
+
+table["207002"] = {content:"恭喜智勇双全的道友在水晶掠夺战中位列本服第二，特发奖励以资鼓励",css:"undefined"};
+
+table["207003"] = {content:"恭喜智勇双全的道友在水晶掠夺战中位列本服第三，特发奖励以资鼓励",css:"undefined"};
+
+table["207004"] = {content:"恭喜智勇双全的道友在水晶掠夺战中位列本服5--10名，特发奖励以资鼓励",css:"undefined"};
+
+table["207005"] = {content:"恭喜智勇双全的道友在水晶掠夺战中位列本服11--20名，特发奖励以资鼓励",css:"undefined"};
+
+table["207011"] = {content:"道友举世无双,在水晶掠夺战中位列战区第一，特发奖励以资鼓励",css:"undefined"};
+
+table["207012"] = {content:"道友举世无双,在水晶掠夺战中位列战区第二，特发奖励以资鼓励",css:"undefined"};
+
+table["207013"] = {content:"道友举世无双,在水晶掠夺战中位列战区第三，特发奖励以资鼓励",css:"undefined"};
+
+table["207014"] = {content:"道友举世无双,在水晶掠夺战中位列战区5--10名，特发奖励以资鼓励",css:"undefined"};
+
+table["207015"] = {content:"道友举世无双,在水晶掠夺战中位列战区11--20名，特发奖励以资鼓励",css:"undefined"};
 
 
 export const msg = table;

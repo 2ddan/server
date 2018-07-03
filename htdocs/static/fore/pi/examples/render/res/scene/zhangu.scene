@@ -1,0 +1,589 @@
+
+{
+  "name" : "zhangu",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      6.80999994277954,
+      -3.96281337738037,
+      8.10345458984375
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "complet",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "run" : "PBewsimHPgJGZ6uTFXVsFM.ai"
+        },
+        "aniBox"     : {
+          "run" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "playAnim"   : {
+          "name" : "run"
+        }
+      },
+      "children"  : [
+        {
+          "name" : "Bip001 L Toe0",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              -0.301115721464157,
+              2.35653638839722,
+              -0.967832624912262
+            ],
+            "scale"    : [
+              1.00000011920929,
+              0.999999940395355,
+              1.00000011920929
+            ],
+            "rotate"   : [
+              1.33158266635292E-07,
+              1.51552450656891,
+              3.8403959479183E-07
+            ]
+          },
+          "children"  : [
+          ]
+        },
+        {
+          "name" : "Bip001 Neck",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0175644587725401,
+              3.93007135391235,
+              -1.29140365123749
+            ],
+            "scale"    : [
+              1.0,
+              1.00000011920929,
+              1.00000011920929
+            ],
+            "rotate"   : [
+              6.112877368927,
+              5.30968236923218,
+              4.59919023513794
+            ]
+          }
+        },
+        {
+          "name" : "Bip001 R Toe0",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.296902388334274,
+              2.35136795043945,
+              -0.973593711853027
+            ],
+            "scale"    : [
+              1.00000011920929,
+              1.0,
+              1.00000011920929
+            ],
+            "rotate"   : [
+              2.42229294178983E-16,
+              1.78117394447327,
+              2.55742159679041E-17
+            ]
+          },
+          "children"  : [
+          ]
+        },
+        {
+          "type" : "Skeleton",
+          "res"  : "SREjaDwebP49wo7vL4RSao.skl"
+        },
+        {
+          "name" : "Guchui_001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.735011637210846,
+              1.04870748519897,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              33
+            ],
+            "bounds" : [
+              [
+                0.0493673123419285,
+                0.01430903095752,
+                0.907688200473785
+              ],
+              [
+                -0.0493521504104137,
+                -0.0181309469044209,
+                -0.322252482175827
+              ]
+            ],
+            "rootbone" : "Bip001 Prop1",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "FQSPagbLwB19nBUHD3FXym.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "PQ4dZJbAh6iHqRpSGZdb9J.geo"
+            }
+          }
+        },
+        {
+          "name" : "Guchui_002",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              1.09858429431915,
+              1.04870736598969,
+              -1.04904174236253E-07
+            ],
+            "scale"    : [
+              0.99999988079071,
+              0.99999988079071,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              -1.03316118327257E-07,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              33,
+              34
+            ],
+            "bounds" : [
+              [
+                0.0994050353765488,
+                0.067005529999733,
+                0.820466220378876
+              ],
+              [
+                -0.0994238033890724,
+                -0.0671633780002594,
+                -0.235028967261314
+              ]
+            ],
+            "rootbone" : "Bip001 Prop2",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "FQSPagbLwB19nBUHD3FXym.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "9YRD9ACBoTEXuQ4Kzkd34D.geo"
+            }
+          }
+        },
+        {
+          "name" : "Juese_Shou_002",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              4.38381286826939E-09,
+              4.38381286826939E-09,
+              -0.100289955735207
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              20,
+              19,
+              24,
+              23
+            ],
+            "bounds" : [
+              [
+                0.444843977689743,
+                -0.226373359560966,
+                1.15070104598999
+              ],
+              [
+                -0.39652481675148,
+                -0.891009867191315,
+                -1.02086687088013
+              ]
+            ],
+            "rootbone" : "Bip001 R Forearm",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "DmhTk3Ccj8AKjShnopTKqB.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "Paa71fXVZ1ukQxBQvjSynL.geo"
+            }
+          }
+        },
+        {
+          "name" : "Juese_Zhoucang_Body_002",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              4.38381286826939E-09,
+              4.38381286826939E-09,
+              -0.100289955735207
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              17,
+              19,
+              18,
+              4,
+              11,
+              12,
+              21,
+              5,
+              3,
+              25,
+              26,
+              29,
+              6,
+              8,
+              7,
+              20,
+              27,
+              31,
+              30,
+              23,
+              22,
+              9,
+              10,
+              24
+            ],
+            "bounds" : [
+              [
+                1.12626302242279,
+                0.681147158145905,
+                0.578068971633911
+              ],
+              [
+                -0.813425540924072,
+                -0.829407632350922,
+                -0.617632567882538
+              ]
+            ],
+            "rootbone" : "Bip001 Pelvis",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "NmqHLrWy5QLo4wDu49NR7W.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "NCjkjRYLp4kzghBxhBY7SM.geo"
+            }
+          }
+        },
+        {
+          "name" : "Juese_Zhoucang_Tou_002",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              4.38381286826939E-09,
+              4.38381286826939E-09,
+              -0.100289955735207
+            ],
+            "scale"    : [
+              0.954693496227264,
+              0.954693496227264,
+              0.954693496227264
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              11,
+              12,
+              13,
+              15,
+              14,
+              16
+            ],
+            "bounds" : [
+              [
+                -0.298968911170959,
+                0.667885720729828,
+                -0.0268545895814896
+              ],
+              [
+                -0.751015603542328,
+                -0.544892907142639,
+                -0.0755308717489243
+              ]
+            ],
+            "rootbone" : "Bip001 Spine1",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "NmqHLrWy5QLo4wDu49NR7W.jpg"
+                  }
+                }
+              },
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "2PkBgJQcLzNLdzKBXZMDca.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "DPKkSE2GSokateG29nqHo2.geo"
+            }
+          }
+        },
+        {
+          "name" : "Zhanguche_001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              1,
+              52,
+              51,
+              35,
+              39,
+              36,
+              40,
+              41,
+              37,
+              47,
+              43,
+              48,
+              44,
+              45,
+              49
+            ],
+            "bounds" : [
+              [
+                1.90812385082245,
+                4.18089151382446,
+                4.18313980102539
+              ],
+              [
+                -1.91141128540039,
+                -2.85640692710876,
+                -1.26203346252441
+              ]
+            ],
+            "rootbone" : "Dummy001",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "FQSPagbLwB19nBUHD3FXym.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "7zJXL7vZzMytjJPjeefxz6.geo"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name" : "break",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "H5tohsJioNTyNnMyFNwWoV.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "FQSPagbLwB19nBUHD3FXym.jpg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

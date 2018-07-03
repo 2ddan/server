@@ -12,9 +12,8 @@
     {{let levels = friend_battle.equip_level}}
     {{let player = appCfg.player}}
     {{let career_id = player.career_id}}
-
        
-    {{for i, v of type}}
+    {{for i, v of type}} 
         {{if i !== "erl_type"}}
         {{let module = v ? (v.module[v.career_id.indexOf(career_id)][0] ? v.module[v.career_id.indexOf(career_id)][0] : v.module[v.career_id.indexOf(career_id)][0]): ''}}
         {{let img = v?Pi.pictures[module]:""}} 
@@ -76,7 +75,7 @@
             <span style="width:40%;height:20px;line-height:20px;position:absolute;left:13px;font-size:16px;color:#ffd8a6;top:79px;text-align:center;">
                 {{for n,h of attr}}
                     {{if n!=="erl_type"}}
-                    {{it1.attriCfg[attr[n][0]] + "+" + (Math.ceil((attr[n][1]-0) * (level_index[levels[index]][2]-0))+level_index[levels[index]][3])}}
+                    {{it1.attriCfg[attr[n][0]] + "+" + (Math.ceil((attr[n][1]-0) * (level_index[levels[index]][2]-0))+it1.fixed_pre)}}
                     {{end}}
                 {{end}}
             </span>
@@ -89,7 +88,7 @@
                 {{if level_index[levels[index]+1]}}
                     {{for o,p of attr}}
                         {{if o!=="erl_type"}}
-                        {{it1.attriCfg[attr[o][0]] + "+" + (Math.ceil((attr[o][1]-0) * (level_index[levels[index]+1][2]-0)) + level_index[levels[index]+1][3])}}
+                        {{it1.attriCfg[attr[o][0]] + "+" + (Math.ceil((attr[o][1]-0) * (level_index[levels[index]+1][2]-0)) + it1.fixed_next)}}
                         {{end}}
                     {{end}}
                 {{end}}
@@ -125,12 +124,12 @@
         </div>
         
         {{ let color_3 = it1.once_strong_cost[1][1] > player.money  ? "#ff0000" : "#e7e09e"}}
-        {{ let color_4 = it1.levelUpMoney > player.money  ? "#ff0000" : "#"}}
+        {{ let color_4 = it1.levelUpMoney > player.money  ? "#ff0000" : "#e7e09e"}}
         <div style="width: 110px;height: 18px;position: absolute;top: 732px;text-align: center;line-height: 15px;font-size: 18px;color:#e7e09e;left:120px;">
-            <app-widget-coin-coin style="left:3px;color:{{color_3}};display: inline-block;">{"icon":"money","text":{{it1.once_strong_cost[1][1] || 0}} }</app-widget-coin-coin>
+            <app_a-widget-coin-coin style="left:3px;color:{{color_3}};display: inline-block;">{"icon":"money","text":[{{it1.once_strong_cost[1][1] || 0}}] }</app_a-widget-coin-coin>
         </div>
         <div style="width: 110px;height: 18px;position: absolute;top: 732px;text-align: center;line-height: 15px;font-size: 18px;color:#e7e09e;right:120px;">
-            <app-widget-coin-coin style="left:3px;color:{{color_4}};display: inline-block;">{"icon":"money","text":{{it1.levelUpMoney || 0}} }</app-widget-coin-coin>
+            <app_a-widget-coin-coin style="left:3px;color:{{color_4}};display: inline-block;">{"icon":"money","text":[{{it1.levelUpMoney || 0}}] }</app_a-widget-coin-coin>
         </div>
 
         {{let cla = (bag_count >= it1.once_strong_cost[0][1] && player.money >= it1.once_strong_cost[1][1]) ? "hl" : "disabled"}}

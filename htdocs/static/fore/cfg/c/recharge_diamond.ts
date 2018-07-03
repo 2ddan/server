@@ -10,6 +10,7 @@ export const currency = [
 		"first_extra_diamond":60,
 		"extra_diamond":6,
 		"vip_exp":60,
+		"prop_info":[150009,2],
 		"is_show": 1
 	},
 	{
@@ -22,6 +23,7 @@ export const currency = [
 		"first_extra_diamond":300,
 		"extra_diamond":30,
 		"vip_exp":300,
+		"prop_info":[150009,10],
 		"is_show": 1
 	},
 	{
@@ -34,6 +36,7 @@ export const currency = [
 		"first_extra_diamond":500,
 		"extra_diamond":50,
 		"vip_exp":500,
+		"prop_info":[150009,15],
 		"is_show": 1
 	},
 	{
@@ -46,6 +49,7 @@ export const currency = [
 		"first_extra_diamond":980,
 		"extra_diamond":98,
 		"vip_exp":980,
+		"prop_info":[150009,30],
 		"is_show": 1
 	},
 	{
@@ -58,6 +62,7 @@ export const currency = [
 		"first_extra_diamond":1980,
 		"extra_diamond":198,
 		"vip_exp":1980,
+		"prop_info":[150009,60],
 		"is_show": 1
 	},
 	{
@@ -70,6 +75,7 @@ export const currency = [
 		"first_extra_diamond":2880,
 		"extra_diamond":288,
 		"vip_exp":2880,
+		"prop_info":[150009,88],
 		"is_show": 1
 	},
 	{
@@ -82,6 +88,7 @@ export const currency = [
 		"first_extra_diamond":5480,
 		"extra_diamond":548,
 		"vip_exp":5480,
+		"prop_info":[150009,168],
 		"is_show": 1
 	},
 	{
@@ -94,106 +101,11 @@ export const currency = [
 		"first_extra_diamond":6480,
 		"extra_diamond":648,
 		"vip_exp":6480,
+		"prop_info":[150009,200],
 		"is_show": 1
 	},
 	{
-		"prop_id":66008,
-		"name":"60元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":6,
-		"diamond_count":60,
-		"first_extra_diamond":0,
-		"extra_diamond":6,
-		"vip_exp":60,
-		"is_show": 0
-	},
-	{
-		"prop_id":66009,
-		"name":"300元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":30,
-		"diamond_count":300,
-		"first_extra_diamond":0,
-		"extra_diamond":30,
-		"vip_exp":300,
-		"is_show": 0
-	},
-	{
-		"prop_id":66010,
-		"name":"500元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":50,
-		"diamond_count":500,
-		"first_extra_diamond":0,
-		"extra_diamond":50,
-		"vip_exp":500,
-		"is_show": 0
-	},
-	{
-		"prop_id":66011,
-		"name":"980元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":98,
-		"diamond_count":980,
-		"first_extra_diamond":0,
-		"extra_diamond":98,
-		"vip_exp":980,
-		"is_show": 0
-	},
-	{
-		"prop_id":66012,
-		"name":"1980元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":198,
-		"diamond_count":1980,
-		"first_extra_diamond":0,
-		"extra_diamond":198,
-		"vip_exp":1980,
-		"is_show": 0
-	},
-	{
-		"prop_id":66013,
-		"name":"2880元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":288,
-		"diamond_count":2880,
-		"first_extra_diamond":0,
-		"extra_diamond":288,
-		"vip_exp":2880,
-		"is_show": 0
-	},
-	{
-		"prop_id":66014,
-		"name":"5480元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":548,
-		"diamond_count":5480,
-		"first_extra_diamond":0,
-		"extra_diamond":548,
-		"vip_exp":5480,
-		"is_show": 0
-	},
-	{
-		"prop_id":66015,
-		"name":"6480元宝",
-		"first_buy_desc":"undefined",
-		"normal_buy_desc":"undefined",
-		"price":648,
-		"diamond_count":6480,
-		"first_extra_diamond":0,
-		"extra_diamond":648,
-		"vip_exp":6480,
-		"is_show": 0
-	},
-	{
-		"prop_id":66016,
+		"prop_id":66102,
 		"name":"成长基金198",
 		"first_buy_desc":"undefined",
 		"normal_buy_desc":"undefined",
@@ -202,6 +114,124 @@ export const currency = [
 		"first_extra_diamond":0,
 		"extra_diamond":0,
 		"vip_exp":1980,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66201,
+		"name":"60元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":6,
+		"diamond_count":60,
+		"first_extra_diamond":0,
+		"extra_diamond":6,
+		"vip_exp":60,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66202,
+		"name":"120元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":12,
+		"diamond_count":120,
+		"first_extra_diamond":0,
+		"extra_diamond":12,
+		"vip_exp":120,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66203,
+		"name":"300元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":30,
+		"diamond_count":300,
+		"first_extra_diamond":0,
+		"extra_diamond":30,
+		"vip_exp":300,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66204,
+		"name":"500元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":50,
+		"diamond_count":500,
+		"first_extra_diamond":0,
+		"extra_diamond":50,
+		"vip_exp":500,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66205,
+		"name":"980元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":98,
+		"diamond_count":980,
+		"first_extra_diamond":0,
+		"extra_diamond":98,
+		"vip_exp":980,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66206,
+		"name":"1980元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":198,
+		"diamond_count":1980,
+		"first_extra_diamond":0,
+		"extra_diamond":198,
+		"vip_exp":1980,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66207,
+		"name":"2880元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":288,
+		"diamond_count":2880,
+		"first_extra_diamond":0,
+		"extra_diamond":288,
+		"vip_exp":2880,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66208,
+		"name":"5480元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":548,
+		"diamond_count":5480,
+		"first_extra_diamond":0,
+		"extra_diamond":548,
+		"vip_exp":5480,
+		"prop_info":null,
+		"is_show": 0
+	},
+	{
+		"prop_id":66209,
+		"name":"6480元宝",
+		"first_buy_desc":"undefined",
+		"normal_buy_desc":"限时限购",
+		"price":648,
+		"diamond_count":6480,
+		"first_extra_diamond":0,
+		"extra_diamond":648,
+		"vip_exp":6480,
+		"prop_info":null,
 		"is_show": 0
 	}
 ];

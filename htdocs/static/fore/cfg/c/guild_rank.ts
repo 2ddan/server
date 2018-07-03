@@ -2,17 +2,17 @@ export let guild_rank = {}
 
 
     guild_rank["1"] = {
-        "contribute": 100000
+        "contribute": [150005,10000]
     }
     guild_rank["2"] = {
-        "contribute": 80000
+        "contribute": [150005,6000]
     }
     guild_rank["3"] = {
-        "contribute": 60000
+        "contribute": [150005,4000]
     }
     guild_rank["4"] = {
-        "contribute": 40000
+        "contribute": [150005,3000]
     }
     guild_rank["5"] = {
-        "contribute": 30000
+        "contribute": [150005,2000]
     }

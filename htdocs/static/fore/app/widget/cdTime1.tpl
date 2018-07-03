@@ -11,4 +11,4 @@
 {{let full = it.full || 0}}
 
 
-<div>{{Util.dateForm(seconds,type,full)}}</div>
+<div>{{Util.dateForm(seconds,type,full) || "00"}}</div>

@@ -1,0 +1,3 @@
+- 这是一个继承样式的重绘示例
+- 在father页面设置定时器，改变样式的class,this.paint()重绘，可以看到字体大小由font-size:160px;变为默认字体
+- 在grand页面，child字体大小font-size:20px;father字体大小由font-size:160px;一段时间后font-size:80px;grand字体大小font-size:80px;

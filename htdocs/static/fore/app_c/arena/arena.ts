@@ -2,25 +2,27 @@
  * 竞技场
  */
 //======================================导入
-import { updata, data as db, listen, get, insert } from "app/mod/db";
+import { updata, data as db, get, insert } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { globalSend, Pi, cfg } from "app/mod/pi";
+import { globalSend,cfg } from "app/mod/pi";
 import { listenBack } from "app/mod/db_back";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request, net_message } from "app_a/connect/main";
 import { open, close } from "app/mod/root";
 import { Util } from "app/mod/util";
 import { map_cfg } from "app/scene/plan_cfg/map";
 
-import { tips_back } from "app_b/tips/tips_back_cfg";
-import { Widget, factory } from "pi/widget/widget";
+import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 
 //外部
 import { fight } from "app_b/fight/fight";
-import { function_open } from "../../cfg/b/function_open";
-import { function_guid } from "../../cfg/b/function_guid";
+
+import { arena_base } from "cfg/c/arena_base";
+import { robot_base } from "cfg/c/robot";
+import { vip_advantage } from "cfg/c/vip_advantage";
+
 //======================================本地
 let arenafunc,
     interval,
@@ -115,47 +117,34 @@ export class Arena extends Widget {
     }
 
     //购买挑战次数
-    //购买的数据
     buyCount = () => {
-        let diamond = get("player.diamond"),
-            vip = get("player.vip"),
-            costArr = cfg.arena_base.arena_base.buycount_cost,
+        let vip = get("player.vip"),
             num = get("arena.buy_fight_times"),
-            max = 1000000000;
-
-        globalSend("popTip", {
-            title: "<div>是否花费<span style='color:#ff9600'>" + costArr[num > costArr.length - 1 ? costArr.length - 1 : num] + "</span>元宝购买挑战次数</div>",
-            btn_name: ["确 定", "取 消"],
-            cb: [
-                //确认
-                () => {
-                    if (diamond >= costArr[num > costArr.length - 1 ? costArr.length - 1 : num]) {
-                        buy();
-                    } else {
-                        globalSend("popTip", {
-                            title: "<div>元宝不足</div><div>是否前往充值</div>",
-                            btn_name: ["充值","取消"],
-                            cb: [
-                                //确认
-                                () => {
-                                    globalSend("gotoRecharge");
-                                },
-                                //取消
-                                () => {}
-                            ]
-                        })
-                    }
-                },
-                () => { }
-            ]
-        })
-
+            use = get("arena.fight_times");
+        //购买的数据
+        let buyData = {
+            "title": "购买次数",
+            "type": "竞技场",
+            "coin": "diamond",
+            "btn_name": "购 买",
+            "price": arena_base.buycount_cost,
+            "max_buy": undefined,
+            "already_buy": num,
+            "has_count":  vip_advantage[vip].jjc_free_times + num - use,
+            "buy_count": 1,//购买数量初始值默认为1
+            "callBack": (r) => {//参数为本次购买次数
+                buy(r);
+            }
+        };
+        globalSend("gotoBuyCount", buyData);
     }
 }
 
-const buy = () => {
+const buy = (num) => {
     let arg = {
-        "param": {},
+        "param": {
+            "times":num || 1
+        },
         "type": "app/pvp/jjc@buy_times"
     };
     net_request(arg, function (data) {
@@ -212,7 +201,7 @@ mixFun.jjc_top_rank = (_data) => {//我的竞技场最佳排名
 };
 
 const read = (data) => {
-    console.log(data);
+    // console.log(data);
     arenaRead = data;
     //rankFun.avgLevel();
     arenaRead = mixData(arenaRead, mixFun, "arena");
@@ -242,9 +231,17 @@ const limitBuy = (arg) => {
             console.log(data);
         } else if (data.ok) {
             console.log(data.ok);
-
-            let prop: any = Common_m.mixAward(data.ok[0][1]);
-            let cost: any = Common_m.mixAward(data.ok[0][2]);
+            let prop = Common.changeArrToJson(data.ok);
+            //扣除花费
+            Common_m.deductfrom(prop);
+            //奖励
+            let result: any = Common_m.mixAward(prop);
+            result.auto = 1;
+            globalSend("showNewRes", {
+                result, function(result) {
+                    result.open();
+                }
+            })
             arenaRead.life_store[arg[0]] = arenaRead.life_store[arg[0]] + 1;
             updataHtml();
         }
@@ -256,6 +253,7 @@ const refreshRival = (arg?) => {
     let _player = get("player");
     let msg = { "param": { "type": whichRank }, "type": "app/pvp/jjc@refresh_rival" };
     net_request(msg, function (data) {
+
         if (data.error) {
             // if (data.error) Common.backThrow(data.why, tips_back, screenTipFun);
             // if (data.reason) Common.backThrow(data.reason, tips_back, screenTipFun);
@@ -265,13 +263,13 @@ const refreshRival = (arg?) => {
             // arenaRead.jjc_rival = mixFun.jjc_rival(data.ok[1]);
             // if (whichRank - 0 == 0) {
                 arenaRead.jjc_rival = mixData(mixFun.jjc_rival(data.ok[1]), mixFun, '');
-                //Common.replaceAttr(arenaRead.jjc_rival, mixFun.jjc_rival(data.ok[1]), mixFun);
-                // for (let i = 0; i < arenaRead.jjc_rival.length; i++) {
-                //     if (_player.role_id == arenaRead.jjc_rival[i].sid - 0) {
-                //         updata("arena.role_jjc_rank", arenaRead.jjc_rival[i].role_rank);
-                //     }
-                // }
-                totalData.referTime = cfg.arena_base.arena_base.refresh_time;
+                // Common.replaceAttr(arenaRead.jjc_rival, mixFun.jjc_rival(data.ok[1]), mixFun);
+                for (let i = 0; i < arenaRead.jjc_rival.length; i++) {
+                    if (_player.role_id == arenaRead.jjc_rival[i].sid - 0) {
+                        updata("arena.role_jjc_rank", arenaRead.jjc_rival[i].role_rank);
+                    }
+                }
+                totalData.referTime = arena_base.refresh_time;
                 referTime_end();
             // } else {
             //     //Common.replaceAttr(arenaRead.dominate_rival, mixFun.jjc_rival(data.ok[1]), mixFun);
@@ -283,6 +281,11 @@ const refreshRival = (arg?) => {
             //     }
                 // setTime();
             // }
+        }
+        if(arg){
+            getData();
+            updataHtml();
+            open("app_c-arena-arena");
         }
     });
 }
@@ -325,15 +328,16 @@ const toFight = (args: string) => {
         } else if (data.ok) {
             let fightData: any = Common.changeArrToJson(data.ok);
             fightData.type = "arena";
-            fightData.cfg = cfg.arena_base.arena_base;
+            fightData.cfg = arena_base;
             fightData.cfg.scene = map_cfg["arena"];
             fight(fightData, function (r) {
+                fightEnd(arg[0] - 0, r);
                 if (r.r === 1) {
-                    fightEnd(arg[0] - 0, r);
+                    // fightEnd(arg[0] - 0, r);
                 } else {
                     Common_m.openAccount(r, "arena", {});
                 }
-                
+                return true;
             });
             console.log(data.ok);
         }
@@ -357,6 +361,16 @@ const fightEnd = (type, result) => {
             console.log(data.why);
         } else if (data.ok) {
             let r: any = Common.changeArrToJson(data.ok);
+
+            //失败
+            if(result.r !== 1){
+                updata("arena.fight_times", r.fight_times);
+                Common_m.openAccount(r, "arena", {});
+                updataHtml();
+                return;
+            }
+
+            //成功
             let award = Common_m.mixAward(r);
             if (!Common.checkJsonIsEmpty(award.player)) r.player = award.player;
             if (award.bag.length) r.bag = award.bag;
@@ -367,7 +381,6 @@ const fightEnd = (type, result) => {
             Common_m.openAccount(result, "arena", r,"none");
             getData();
             updataHtml();
-            console.log(data.ok);
         }
     });
 }
@@ -392,7 +405,7 @@ const getData = () => {
     let temp: any = {};
     temp.arenaRead = arenaRead;
     totalData.getData = temp;
-    totalData.referTime = cfg.arena_base.arena_base.refresh_time;
+    totalData.referTime = arena_base.refresh_time;
 };
 
 const mixData = (_data, mixFun, name) => {
@@ -452,10 +465,23 @@ const sort_shop = (a, b) => {
 export const globalReceive: any = {
     gotoArena: () => {
         if (funIsOpen("arena")) {
-            getData();
-            updataHtml()
-            open("app_c-arena-arena");
+            if (!totalData.delay) {
+                getData();
+                updataHtml();
+                open("app_c-arena-arena");
+            }else{
+                refreshRival(true);
+            }
             globalSend("openNewFun", "arena");
+        }
+    },
+    gotoArenaShop: () => {
+        if (funIsOpen("arena")) {
+            totalData.shopData = shopData();
+            updataHtml();
+            if (!forelet.getWidget("app_b-arena-commonShop")) {
+                open("app_c-arena-commonShop");
+            };
         }
     }
 }
@@ -470,16 +496,17 @@ export const totalData = {
         "title": "战勋商店",
         "icon": "pic_common_shop",
         "func": "commonShop",
-        "tip_keys": "warcraft"
+        "tip_keys": ""
     }, {
         "title": "成就奖励",
         "icon": "menu_achieve_icon",
         "func": "achievementShop",
-        "tip_keys": "arena"
+        "tip_keys": "explore.arena.award"
     }, {
         "title": "排行奖励",
         "icon": "pic_ranking",
-        "func": "setrankData"
+        "func": "setrankData",
+        "tip_keys": ""
     }],
     "widget": "app_b-arena-arena",
     "text": ["竞技场", "挑战消耗精力"],
@@ -493,6 +520,11 @@ export const updataHtml = (isSet?: boolean) => {
     forelet.paint(totalData);
 }
 
+
+net_message("jjc_rank",(msg)=>{
+    arenaRead.jjc_rank = mixFun.jjc_rank(msg.jjc_rank);
+    updataHtml();
+})
 
 // ================================ 立即执行
 /**

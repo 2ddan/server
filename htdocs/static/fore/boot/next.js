@@ -12,7 +12,7 @@ winit.div_node.setAttribute("pi", "1");
 winit.div_node.setAttribute("style", "position:absolute;width:100%;height:100%;z-index:10000;background:url("+winit.domains[0]+"/dst/app/style/images/bg.jpg) 0 0 no-repeat/100% 100%;");
 winit.div_node.id = "circle"; 
 document.body.appendChild(winit.div_node);
-winit.pic_list = [winit.domains[0]+"/dst/app/style/images/logo.png?3"];
+winit.pic_list = [winit.domains[0]+"/dst/app/style/images/logo.png?6"];
 
 winit.open_anim=function(list){
 	var str = "position:absolute;top: 40px;left: 17%;width: 66%;margin: auto 0;-webkit-transition: all 1s linear;-moz-transition: all 1s linear;-o-transition: all 1s linear;-ms-transition: all 1s linear;";
@@ -106,13 +106,11 @@ winit.initNext = function() {
     var firstLoad = pi_modules.commonjs.exports.require(["pi/util/html", "pi/widget/util","app/mod/db","app/mod/pi","pi/worker/client"],{}, function(mods,fm) {
  		var time = Date.now() - startTime;
 		console.log("first mods time:", time, mods);
-		var html = mods[0], util = mods[1], div_node = winit.div_node,pi=mods[3].Pi,setLog=mods[3].setLog,findGlobalReceive = mods[3].findGlobalReceive, worker = mods[4], markFilesLoad = mods[3].markFilesLoad;
+		var html = mods[0], util = mods[1], pi=mods[3].Pi,setLog=mods[3].setLog,findGlobalReceive = mods[3].findGlobalReceive, worker = mods[4], markFilesLoad = mods[3].markFilesLoad;
         // 判断是显示片头界面还是开始界面
-        var titleShowed = html.getCookie("titleShowed");
         var flags = html.userAgent(winit.flags);
         pi_modules.commonjs.exports.flags = flags;
-        var host = winit.main,
-			domains = winit.domains,
+        var domains = winit.domains,
             remote  = winit.remote,
             main = winit.main;
         // TODO 显示加载进度条
@@ -135,6 +133,7 @@ winit.initNext = function() {
         pi.login = winit.piLogin;
         pi.ptId = winit.piPtId;
         pi.pay = winit.piPay;
+        pi.ptUpload = winit.ptUpload;
         
         //文件下载标记
         markFilesLoad(firstLoad.fileMap);
@@ -162,18 +161,21 @@ winit.initNext = function() {
         // 加载基础及初始目录，显示加载目录的进度动画
         console.log("二次加载开始："+(Date.now() - startTime));
         //第一次加载app模块
-        var loadFirstApp = function(callback){
+        var loadFirstApp = function(){
             // alert("loaddir !!");
             util.loadDir([
-                "pi/ui/","pi/render3d/", "pi/net/", 
+                "pi/ui/",
+                //"pi/render3d/", "pi/net/", 
                 "app/mod/", "app/scene/", "app/scene_res/res/scene/", "app/style/","app/widget/", 
-                "app_a/","cfg/a/","fight/a/"
-            ], flags,{}, {png:"download", jpg:"download", jpeg:"download", webp:"download", gif:"download", svg:"download", mp3:"download", ogg:"download", aac:"download"}, function(fileMap, mods) {
+                "app_a/","cfg/a/"
+            ], flags,{}, {png:"download", jpg:"download", jpeg:"download", webp:"download", gif:"download", svg:"download", mp3:"download", ogg:"download", aac:"download"}, function(fileMap) {
+                // alert("loaddir back");
                 //播放音乐
                 var Music = pi_modules["app/mod/music"].exports.Music;
                 Music.playBgMusci("forest_bg");
                 console.log("二次加载结束："+(Date.now() - startTime));
                 var fms = fileMap;
+                console.log(fileMap);
                 setLog("log",{
                     sid : pi.sid,
                     step : 2
@@ -181,19 +183,19 @@ winit.initNext = function() {
                 //文件下载标记
                 markFilesLoad(fms);
                 //绑定全局广播函数
-                //findGlobalReceive(mods);
                 findGlobalReceive(fms);
+                // alert("loadCssRes start");
                 var tab = util.loadCssRes(fms);
                 // 将预加载的资源缓冲60秒，释放
                 tab.timeout = 120000;
                 // if(pi.flags.os.name == "ios")
                 // tab.release();
                 //clear();
-                
+                // alert("loadCssRes end");
                 //初始化场景
                 var scene = pi_modules["app/scene/scene"].exports;
                 if(gcStorage.cpu){
-                    scene.setScale(gcStorage.cpu,flags);
+                    scene.setScale(gcStorage.cpu,pi.flags);
                 }else{
                     winit.setSceneScale = scene.setScale;
                 }
@@ -204,11 +206,14 @@ winit.initNext = function() {
                         alert("😥webgl不见了，游戏场景将无法正常运行（"+e.message+"）");
                     }else alert(e.message);
                 }
+                // alert("addSceneRes start");
                 //添加场景资源
                 pi_modules["pi/render3d/load"].exports.addSceneRes(fms, "app/scene_res/");
+                // alert("addSceneRes end");
                 //解析场景模型模板
                 var template = pi_modules["app/scene/scene"].exports.set_cfg;
                 template(fms);
+                // alert("scene template end");
                 // 加载根组件
                 var root = pi_modules.commonjs.exports.relativeGet("pi/ui/root").exports;
                 root.cfg.width = 540;
@@ -216,6 +221,9 @@ winit.initNext = function() {
                 var w = pi_modules.commonjs.exports.relativeGet("pi/widget/widget").exports.factory("app-widget-root");
                 w.paint();
                 document.body.appendChild(w.tree.link);
+                // w = pi_modules.commonjs.exports.relativeGet("pi/widget/widget").exports.factory("app-widget-ani");
+                // w.paint();
+                // document.body.appendChild(w.tree.link);
                 setLog("log",{
                     sid : pi.sid,
                     step : 3
@@ -241,6 +249,7 @@ winit.initNext = function() {
                     });
                 };
                 try{
+                    // alert("open connect");
                     //打开网络通讯组件
                     root.open("app_a-connect-main");
                     loadForelet();
@@ -261,7 +270,6 @@ winit.initNext = function() {
                     alert(e);
                 }
                 
-                //if(callback)callback();
             }, function(r) {
                 alert("加载目录失败, " + r.error + ":" + r.reason);
             }, dirProcess.handler);

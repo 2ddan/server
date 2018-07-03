@@ -1,0 +1,109 @@
+
+{
+  "name" : "juma (1)",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "break",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "rotate"   : [
+          1.57045114040375,
+          3.14159274101257,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "BRPETkzPkJPenTBJb5p9Cp.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "RDPErNiD9X3icTt5t6CF59.jpg"
+              }
+            },
+            "side" : 0
+          }
+        ]
+      }
+    },
+    {
+      "name" : "complet",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "GoLCqRuNSA3ye2NKgQVvhD.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "RDPErNiD9X3icTt5t6CF59.jpg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

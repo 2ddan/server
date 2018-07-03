@@ -1,14 +1,13 @@
 //====================================导入
-import { Pi, cfg, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { act_progress } from "app_b/mod/act_progress";
 import { Util } from "app/mod/util";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { data as localDB, insert, updata, listen } from "app/mod/db";
-import { open, remove, destory } from "pi/ui/root";
+import { insert, updata, listen } from "app/mod/db";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { net_request, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 
 import { weekact_type_fore as weekact_type } from "cfg/c/weekact_type";
 import { weekact_list_fore as weekact_list } from "cfg/c/weekact_list";
@@ -103,60 +102,9 @@ const getData = () => {
     _data.currAct = weekact_type[weekAct.type];
     return _data;
 }
-//待删除
-// const read = () => {
-//     let msg = { "param": {}, "type": "app/activity/week@read" };
-//     net_request(msg, (data) => {
-//         if (data.error) {
-//             if (data.error) globalSend("screenTipFun", { words: data.error });
-//             if (data.reason) globalSend("screenTipFun", { words: data.reason });
-//             console.log(data.why);
-//         }
-//         else if (data.ok) {
-//             let week_base;
-//             let result: any = Common.changeArrToJson(data.ok);
-//             weekActRead = Common.changeArrToJson(result.record);
-//             updata("week.week_act_read", weekActRead);
-//             let weekday = new Date(Util.serverTime()).getDay();
-//             weekAct = {};
-//             for (let e in weekact_list) {
-//                 let v = weekact_list[e];
-//                 let list = weekact_type[v.act_id];
-//                 if (list.open_date <= weekday && weekday <= list.close_date) {
-//                     weekAct[e] = v;
-//                     if (!weekAct.type) weekAct.type = v.act_id;
-//                     weekAct.listen_key = v.type;
-//                 }
-//             }
-//             weekAct.weekDay = weekday;
-//             if (weekAct.type) {
-//                 return;
-//             }
-//             updata("week.week_act", weekAct);
-//             forelet.paint(getData());
-//             if (weekAct.listen_key) {
-//                 listen("data_record." + weekAct.listen_key, () => {
-//                     forelet.paint(getData());
-//                 })
-//                 //forelet.paint(getData());
-//                 //监听任务完成度
-//                 // if (!_temp) {//已存在的监听则不重复添加
-//                 //     for (let i in weekAct) {
-//                 //         if (_temp.indexOf(weekAct[i].type) >= 0) {
-//                 //             listen("data_record." + weekAct[i].type, () => {
-//                 //                 forelet.paint(getData());
-//                 //             })
-//                 //             _temp += weekAct[i].type;
-//                 //         }
-//                 //     }
-//                 // }
-//             }
-//         }
-//     });//通讯结束
-// }
+
 const read = (result) => {
     let week_base;
-    //let result: any = Common.changeArrToJson(data.ok);
     weekActRead = Common.changeArrToJson(result.record);
     updata("week.week_act_read", weekActRead);
     let weekday = new Date(Util.serverTime()).getDay();

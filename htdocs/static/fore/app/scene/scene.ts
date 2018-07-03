@@ -3,17 +3,26 @@
  */
 
 //===========================导入
+//pi
 import { Renderer } from "pi/render3d/renderer";
 import { THREE } from "pi/render3d/three";
-import { ResTab } from "pi/util/res_mgr";
-import { clear } from 'pi/util/task_mgr';
+import { clear, getSize } from 'pi/util/task_mgr';
 import * as Hash from "pi/util/hash";
-import { configMap, findRes } from "pi/render3d/load";
+import { configMap } from "pi/render3d/load";
 import { butil } from 'pi/lang/mod';
 import { toJson } from "pi/util/util";
-import { toFun, toFunc, compile } from "pi/util/tpl";
-import { Parser } from "pi/util/tpl_str";
 import { createHandlerList } from "pi/util/event";
+import { create as createFrame, setInterval as setFrameInterval } from 'pi/widget/frame_mgr';
+import * as Genhjson from "pi/compile/genhjson";
+
+import { commonjs } from 'pi/lang/mod';
+//scene
+import {Camera2d, Camera3d} from "./class";
+//MOD
+import { Pi } from 'app/mod/pi';
+import { Device } from "app/mod/device";
+
+
 
 let resTab = {},
     limitTime,
@@ -33,8 +42,7 @@ let resTab = {},
     _cfg = {},
     //帧率
     ftime,
-    rangFrame = [10,33,60],//最低，最高，采用
-    FPS = 0,
+    _FPS = 0,
     lastTime = new Date().getTime(),
     clock = new THREE.Clock(),
     //模型的json模板
@@ -64,6 +72,17 @@ export let mgr_data = {
     "fightSceneName":""
 }
 
+let FpsNode = {
+    type : "team_damage",
+    text : "fps:0;task:0;slowtime:0",
+    x : 0,
+    y : 0,
+    z : 0,
+    horizontalAlign : "center",
+    verticalAlign : "center",
+    textcfg : "nodeFps",
+}
+
 /**
  * @description 设置模型的配置文件（美术导出）
  */
@@ -75,16 +94,36 @@ export const set_cfg = (filesMap) => {
 
         return { module: filename, name: name[name.length - 1] };
     };
+    const parseRtpl = (k,fm) => {
+        let tpl = Genhjson.toFun(butil.utf8Decode(fm));
+        rtplMap.set(k, tpl);
+    };
+    let t = Date.now(),len = 145;
+    let a = [];
+    let _k;
     for (let k in filesMap) {
         if (k.startsWith("app/scene/")) {
             let type = butil.fileSuffix(k);
             if (type === "json" && k.startsWith("app/scene/template/")) {
-                let tpl = toFunc(compile(butil.utf8Decode(filesMap[k]), Parser))
-                templateMap.set(k, tpl);
+                // let tpl = toFunc(compile(butil.utf8Decode(filesMap[k]), Parser))
+                // templateMap.set(k, tpl);
+                _k = k.replace(".json", "");
+                if (templateMap.get(_k) === undefined) {
+                    templateMap.set(_k, 0);
+                    releaseDefine(filesMap[k]);
+                }
             }
-            if (type === "rtpl" && k.startsWith("app/scene/rtpl/")) {
-                let tpl = toFunc(compile(butil.utf8Decode(filesMap[k]), Parser))
-                rtplMap.set(k, tpl);
+            if (type === "rtpl") {
+                _k = k;
+                a.push(_k);
+                if (!_k.startsWith("app/scene/rtpl/")) {
+                    _k = _k.substring(_k.lastIndexOf("/") + 1);
+                }
+                _k = _k.replace(".rtpl","");
+                if(rtplMap.get(_k) === undefined){
+                    rtplMap.set(_k,0);
+                    releaseDefine(filesMap[k]);
+                }
             }
             if (type === "js" && k.startsWith("app/scene/cfg/")) {
                 let f = parseFile(k),
@@ -93,43 +132,74 @@ export const set_cfg = (filesMap) => {
             }
         }
     }
+    // console.log(a);
+    // if(Date.now()-t > 1000){
+        // alert(len+"/"+a.length+" == slow build :: "+JSON.stringify(a));
+    // }
 }
 /**
  * @description 设置canvas缩放
  * @param {number}c
  */
 export const setScale = (c,flags) => {
-    let v,bv = 1.2;
-    if(flags.os.name != "android"){
-        scale = mgr_data.scale = bv+(c/1000-4)/10;
-        return;
+    let v,bv = 1.2,m;
+    if(flags.os.name == "unknown"){
+        if(c<100){
+            scale = mgr_data.scale = .5;
+        }else{
+            let m = c>350?1800:350,
+                r = (1/m)*c;
+            r = r>1?1:r;
+            scale = mgr_data.scale = 0.7+r/2;
+        }
+    }else if(flags.device.platform == "iPhone"){
+        m = Device.getGlRenderer() || "";
+        m = m.match(/Apple A(\d+) /);
+        if(m){
+            m = m[1];
+            m = bv+(m-9)/10;
+            m = m > bv?bv:m;
+            scale = mgr_data.scale = m;
+        }
+    }else if(flags.os.name != "android"){
+        v = bv+(c/1000-5)/10;
+        v += (v-1);
+        v = v > bv?bv:v;
+        scale = mgr_data.scale = v;
+        // return;
+    }else{
+        v = parseInt(flags.os.version);
+        if(v){
+            v = bv+(v-8)/10;
+            v = v > bv?bv:v;
+            scale = mgr_data.scale = v;
+            // return;
+        }
     }
-    v = parseInt(flags.os.version);
-    if(v){
-        scale = mgr_data.scale = bv+(v-7)/10;
-        return;
-    }
-
-    //基本无用
-    if(c<100){
-        scale = mgr_data.scale = .5;
-        return;
-    }
-    let m = c>350?1800:350,
-        r = (1/m)*c;
-    r = r>1?1:r;
-    scale = mgr_data.scale = 0.7+r/2;
+    // alert(scale+" "+c+" "+(32+(scale-1)*10*4));
+    mgr.setFPS(32+(scale-1)*10*4);
+    // mgr.setFPS(40);
 };
 
 /**
  * @description 得到模型的json或rtpl的模板
  */
 const getTemplateFunction = (type: string, filename: string) => {
-    let fun;
-    if (type === "json") {
-        fun = templateMap.get("app/scene/template/" + filename + ".json");
-    } else {
-        fun = rtplMap.get("app/scene/rtpl/" + filename + ".rtpl");
+    let fun,m,p;
+    if(type === "json"){
+        m = templateMap;
+        p = `app/scene/template/${filename}`;
+    }else{
+        m =rtplMap;
+        p = `app/scene/rtpl/${filename}`;
+    }
+    fun = m.get(p);
+    if(fun.compile){
+        fun = fun.f;
+    }else{
+        fun.compile = 1;
+        fun.f = fun.f(Hash.nextHash, Hash.anyHash, commonjs ? commonjs.relativeGet:null);
+        fun = fun.f;
     }
 
     return fun;
@@ -142,19 +212,13 @@ const getTemplateFunction = (type: string, filename: string) => {
 
 export class mgr {
     /**
-     * @description new新实例
+     * @description 理想帧率
      */
-    static yszzFight = {
-        fighter: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        effect: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        otherEffect: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        skillImage: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        mesh: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        scene: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        damage: (obj: Object) => JSON.parse(JSON.stringify(obj)),
-        camera: (obj: Object) => JSON.parse(JSON.stringify(obj))
-    }
-
+    static FPS = 40
+    /**
+     * @description 真实帧率
+     */
+    static _FPS = 0
     /**
      * @description 初始化场景
      */
@@ -166,51 +230,67 @@ export class mgr {
             //alert("renderer init!!");
         }
     }
-
+    /**
+     * @description 渲染循环
+     */
     static render() {
-        let now = Date.now();
-        requestAnimationFrame(mgr.render);
-        //if (Date.now()-t>20)
-        //alert(Date.now()-20)
-        if (pause[mgr_data.name] || !scene[mgr_data.name])
-            return;
-        ftime = ftime || now;
-        FPS += 1;
-        if (now - ftime >= 1000) {
-            ftime = now;
-            caclFrame.add(FPS) && caclFrame.clear();
-            // console.log(FPS,rangFrame[2]);
-            FPS = 0;
-        }
-        if (now - lastTime < 1000 / 20) {
-            return;
-        }
-        lastTime = now;
-        let delta = clock.getDelta();
-        // console.log(delta*1000);
-        renderHandlerList({type:"before",delta:delta});
-        scene[mgr_data.name].render(delta, true);
-        renderHandlerList({type:"after",delta:delta});
-    }
-    static getproperties(){
-        return scene[mgr_data.name].properties;
+        var frame = createFrame();
+        // tslint:disable-next-line:no-string-based-set-interval
+        frame.setInterval(Pi.debug ? 1000 / this.FPS : 1000 / this.FPS);
+        setFrameInterval(frame);
+        frame.setPermanent( ()=>{
+                if (pause[mgr_data.name] || !scene[mgr_data.name])
+                    return;
+                let now = Date.now();
+                // requestAnimationFrame(mgr.render);
+                //if (Date.now()-t>20)
+                //alert(Date.now()-20)
+                
+                ftime = ftime || now;
+                this._FPS += 1;
+                
+                if (now - ftime >= 1000) {
+                    ftime = now;
+                    let slowCost = frame.getLastStat();
+                    if(Pi.debug){
+                        FpsNode.text = "fps:"+this._FPS+";task:" + getSize()+";slowtime:"+slowCost.frame.slowCost.toFixed(1);
+                        mgr.modify(FpsNode);
+                    }
+                    this._FPS = 0;
+                }
+                // if (now - lastTime < 1000 / rangFrame[2]) {
+                //     return;
+                // }
+                lastTime = now;
+                let delta = clock.getDelta();
+                renderHandlerList({type:"before",delta:delta});
+                scene[mgr_data.name].render(delta, true);
+                renderHandlerList({type:"after",delta:delta});
+            }
+        );
+        
     }
 
     /**
-     * @description 得到帧率
+     * @description 得到真实帧率
      */
-    static FPS() {
-        return FPS;
+    static getFPS() {
+        return _FPS;
     }
-
+    /**
+     * @description 设置理想帧率
+     */
+    static setFPS(_f){
+        if(_f>40){
+            return this.FPS = 40;
+        }
+        this.FPS = _f;
+    }
     /**
      * @description 暂停场景渲染
      */
     static pause(b, name?) {
         name = name || mgr_data.name;
-        if(pause[name] != b && pause[name]){
-            caclFrame.clear();
-        }
         pause[name] = b;
         if (!b) {
             renderer.setSize(width[mgr_data.name], height[mgr_data.name]);
@@ -262,36 +342,28 @@ export class mgr {
         width[name] = w * scale;
         height[name] = h * scale;
         resTab[name] = sceneData.resTab;
-        renderer.setSize(w, h);
+        renderer.setSize(width[name], height[name]);
         let scene1 = renderer.createScene(sceneData);
         scene[name] = scene1;
         //创建2D摄像机
-        let camera2D = {
-            "transform": {
-                scale: [1, 1, -1],
-                rotate: [0, 3.14159265, 0],
-                position: [1, 1, 1]
-            },
-            "camera": {
-                "ortho": [-width[name] / 2, width[name] / 2, height[name] / 2, -height[name] / 2, -10000, 10000]
-            }
-        };
-        camera2D = mgr.yszzFight.camera(camera2D);
-        scene1.insert(camera2D);
+        scene1.insert(new Camera2d(width[name],height[name]));
         //创建3D摄像机
         if (cameraData) {
             cameraData.perspective[1] = width[name] / height[name];
-            camera[name] = mgr.yszzFight.camera(cameraData);
+            camera[name] = new Camera3d(cameraData);
             mgr.create(camera[name], "camera");
         }
         div[mgr_data.name] = this.initDiv(width[mgr_data.name], height[mgr_data.name]);
+        if(Pi.debug){
+            mgr.create(FpsNode,"text");
+        }
     }
 
     static parseRtpl(data) {
 
         let parse = (fn: string, dt) => {
             let tplfun = getTemplateFunction("rtpl", fn);
-            return JSON.parse(tplfun(null, dt));
+            return tplfun(null, dt);
         }
 
         let parseChild = (obj) => {
@@ -335,15 +407,16 @@ export class mgr {
         let obj;
         if (type) {
             func = getTemplateFunction("json", type);;
-            try {
-                obj = JSON.parse(func(undefined, data));
-                obj = this.parseRtpl(obj)
-            } catch (e) {
-                console.log(data, e);
-            }
-        } else obj = data;
+            obj = func(undefined, data);
+            obj = this.parseRtpl(obj);
+        } else{
+            obj = data;
+        }
 
-        addHash(obj);
+        let time1 = Date.now();
+        addHash(obj,false);
+        let time2 = Date.now();
+        // console.log("create消耗时间+"+(time2 - time1),type);
         if (type) {
             data._show = data._show || {};
             data._show.tpl = func;
@@ -370,11 +443,14 @@ export class mgr {
         }
 
         try {
-            obj = JSON.parse(data._show.tpl(undefined, data));
-            obj = this.parseRtpl(obj)
-            addHash(obj);
+            obj = data._show.tpl(undefined, data);
+            obj = this.parseRtpl(obj);
+            addHash(obj,false);
+            // if(data.hidden !== undefined || data.visible !== undefined){
+            //     SetVisible(data,!data.hidden);
+            // }
         } catch (e) {
-            console.log(data._show.tpl(undefined, data));
+            console.log(data._show.tpl(data));
         }
 
         if (data._show.old.ref){
@@ -390,42 +466,46 @@ export class mgr {
      * @param lookat: 朝向
      * @param anim: 动作
      */
-    static setPos(data, position: Array<number>, lookat?: any, anim?: string) {
-
+    static setPos(data, position: Array<number>, lookat?: any) {
+        let anim;
         data._show.old.transform.position[0] = position[0];
         data._show.old.transform.position[1] = position[2] || 0;
         data._show.old.transform.position[2] = position[1];
         let isfirst = true;
 
-        if (lookat && anim) {
+        if (lookat) {
             //改变该模型的朝向
             data._show.old.children[0].lookatOnce.value = [lookat.value[0] - position[0], lookat.value[2] - position[2], lookat.value[1] - position[1]];
             data._show.old.children[0].lookatOnce.sign = lookat.sign;
-            //改变该模型的动作，若一致，则不变
-            if (anim === data._show.old.children[0].animator.playAnim.name) isfirst = false;
-            else data._show.old.children[0].animator.playAnim.name = anim;
+
         }
 
         if (data._show.old.ref) {
             scene[mgr_data.name].modify(data._show.old, ["transform", "position"]);
-            if (lookat && anim) {
+            if (lookat) {
                 scene[mgr_data.name].modify(data._show.old.children[0], ["lookatOnce"]);
-                if (isfirst){
-                    scene[mgr_data.name].modify(data._show.old.children[0], ["animator", "playAnim"]);
-                }
             }
         }
     }
-
+    static setRotate(data, rotate){
+        data = data.ref ? data : data._show.old;
+        data.transform.rotate[0] = rotate[0];
+        data.transform.rotate[1] = rotate[1];
+        data.transform.rotate[2] = rotate[2];
+        scene[mgr_data.name].modify(data, ["transform", "rotate"]);
+    }
     /**
      * @description 设置场景对象的位置，
      * @param data: 需要更新的对象
      * @param anim: 动作
      */
-    static setAnimator(data, anim, isOnce?) {
-        if (anim !== data._show.old.children[0].animator.playAnim.name){
-            data._show.old.children[0].animator.playAnim.name = anim;
-            data._show.old.children[0].animator.playAnim.isOnce = !!isOnce;
+    static setAnimator(data) {
+        if (data.playAnim.name !== data._show.old.children[0].animator.playAnim.name){
+            data._show.old.children[0].animator.playAnim.name = data.playAnim.name;
+            data._show.old.children[0].animator.playAnim.isOnce = !!data.playAnim.isOnce;
+            if(data.playAnim.id > 0){
+                data._show.old.children[0].animator.playAnim.id = data.playAnim.id;
+            }
             scene[mgr_data.name].modify(data._show.old.children[0], ["animator", "playAnim"]);
         } 
     }
@@ -435,6 +515,34 @@ export class mgr {
      * @param position: 位置
      */
     static setOnlyPos(data, position: Array<number>) {
+        let obj;
+        if(data.ref){
+            obj = data;
+        }else if(data._show.old.ref){
+            obj = data._show.old;
+        }
+        if(!obj){
+            return;
+        }
+        obj.transform.position[0] = position[0];
+        obj.transform.position[1] = position[2] || 0;
+        obj.transform.position[2] = position[1];
+        scene[mgr_data.name].modify(obj, ["transform", "position"]);
+    }
+    /**
+     * @description 设置场景对象的朝向
+     * @param data: 需要更新的场景对象
+     * @param lookat: 朝向
+     */
+    static setLookAt(data,lookat) {
+        data._show.old.lookatOnce.value = [lookat.value[0], lookat.value[2], lookat.value[1]];
+        data._show.old.lookatOnce.sign = lookat.sign;
+        scene[mgr_data.name].modify(data._show.old, ["lookatOnce"]);
+    }
+    /**
+     * 修改3D相机位置
+     */
+    static setCameraPos(data,position) {
         data._show.old.transform.position[0] = position[0];
         data._show.old.transform.position[1] = position[2] || 0;
         data._show.old.transform.position[2] = position[1];
@@ -442,7 +550,6 @@ export class mgr {
             scene[mgr_data.name].modify(data._show.old, ["transform", "position"]);
         }
     }
-
 
     /**
      * @description 飘字设置缩放，可见，颜色
@@ -452,7 +559,7 @@ export class mgr {
      * @param vivisible：可见性
      * @param color：颜色
      */
-    static setDamage(data: any, scale?,index?: number, opacity?,  visible?: boolean, color?: number) {
+    static setDamage(data: any, scale?,index?: number, opacity?,  visible?: boolean, color?: number,position? : Array<number>) {
         index = index || 0;
         scale = (typeof scale !== "number") ? scale : [scale, scale, scale];
         if (scale) {
@@ -467,7 +574,59 @@ export class mgr {
             data._show.old.children[index].color = color;
             scene[mgr_data.name].modify(data._show.old.children[0], ["color"]);
         }
+        if (position){
+            data._show.old.transform.position[0] = position[0];
+            data._show.old.transform.position[1] = position[2] || 0;
+            data._show.old.transform.position[2] = position[1];
+            scene[mgr_data.name].modify(data._show.old, ["transform","position"]);
+        }
 
+    }
+    /**
+     * @description 更新血条缩放 
+     * @param data 需要更新的模型信息
+     * @param index 支持在根节点下的任何一个子节点，但是不支持节点的节点
+     * @param sclae:数组 缩放
+     */
+    static setHP(data: any, index?: number, scale?,visible? ) {
+        index = index || 0;
+        scale = (typeof scale !== "number") ? scale : [scale, scale, scale];
+        if (scale) {
+            data._show.old.children[1].children[index].children[0].transform.scale = scale;
+            scene[mgr_data.name].modify(data._show.old.children[1].children[index].children[0], ["transform","scale"]);
+        }
+        if(visible || visible == false){
+            // data._show.old.children[1].children[index].meshRender.visible = false;
+            data._show.old.children[1].children[index].children[0].meshRender.visible = visible;
+            // SetVisible(data,visible);
+            // scene.modify(data._show.old.children[1].children[index], ["meshRender","visible"]);
+            scene[mgr_data.name].modify(data._show.old.children[1].children[index].children[0], ["meshRender","visible"]);
+        }
+    }
+    /**
+     * @description 初始化血条状态
+     * @param data 
+     * @param index 
+     * @param scale 
+     * @param visible 
+     */
+    static initializationHP(data: any, index?: number, scale?,visible? ) {
+        index = index || 0;
+        scale = (typeof scale !== "number") ? scale : [scale, scale, scale];
+
+        // data._show.old.children[1].children[index].meshRender.visible = false;
+        data._show.old.children[1].children[index].children[0].meshRender.visible = true;
+        // SetVisible(data,visible);
+        // scene.modify(data._show.old.children[1].children[index], ["meshRender","visible"]);
+        scene[mgr_data.name].modify(data._show.old.children[1].children[index].children[0], ["meshRender","visible"]);
+        
+        data._show.old.children[1].children[index].children[0].geometry.width = 74.36;
+        // SetVisible(data,visible);
+        // scene.modify(data._show.old.children[1].children[index], ["meshRender","visible"]);
+        scene[mgr_data.name].modify(data._show.old.children[1].children[index].children[0], ["geometry","width"]);
+
+        data._show.old.children[1].children[index].children[0].transform.scale = [1,1,1];
+        scene[mgr_data.name].modify(data._show.old.children[1].children[index].children[0], ["transform","scale"]);
     }
 
     /**
@@ -502,6 +661,25 @@ export class mgr {
     }
 
     /**
+     * description 更新文字节点（无子节点）
+     * @param data：需要更新的模型信息
+     * @param str：文字
+     * @param index：支持在根节点下的任何一个子节点
+     * @param child：支持在index的节点下的任何一个子节点
+     */
+    static setTextNoChild(data: any, str?: string, visible?: boolean) {
+        if(str){
+            data._show.old.textCon.show = str;
+            scene[mgr_data.name].modify(data._show.old, ["textCon"]);
+        }
+        if(visible){
+            data._show.old.textCon.show = str;
+            scene[mgr_data.name].modify(data._show.old, ["textCon"]);
+        }
+        
+    }
+
+    /**
      * @description 设置场景对象的一次性动画
      * @param data：需要更新的模型信息
      * @param position 模型位置，和lookat配合使用
@@ -519,17 +697,60 @@ export class mgr {
     }
 
     /**
+     * @description 设置场景对象的一次性动画
+     * @param data：需要更新的模型信息
+     * @param index：支持在根节点下的任何一个子节点
+     * @param visible：可见性
+     */
+    static setVisibled(data, index: any, visible: boolean) {
+        index = index || 0;
+        // data._show.old.children[index].ref.impl.__visible = visible;
+        // mgr.modify(data);
+        let _data = data._show.old.children[index];
+        for(let i=0;i<_data.children.length;i++){
+            let child = _data.children[i];
+            fun(child);
+            if (child.meshRender) {
+                if(child.meshRender.visible == visible){
+                    continue;
+                }
+                child.meshRender.visible = visible;
+                scene[mgr_data.name].modify(child, ["meshRender", "visible"]);
+            }
+        }
+
+        function fun (node) {
+            if (node.children) {
+                for(let j=0,len=node.children.length;j<len;j++){
+                    let v = node.children[j];
+                    fun(v);
+                    if (v.meshRender) {
+                        if(v.meshRender.visible == visible){
+                            continue;
+                        }
+                        v.meshRender.visible = visible;
+                        scene[mgr_data.name].modify(v, ["meshRender", "visible"]);
+                    }
+                }
+
+            } 
+        }
+    }
+
+    /**
      * @description 移除指定数据对应的场景对象
      */
     static remove(data, name?: string) {
         name = name || mgr_data.name;
         if(!data)return;
+        const old = data.old || data._show.old;
         try {
-            scene[name].remove(data._show.old);
+            scene[name].remove(old);
         } catch (ex) {
             if (console) {
                 console.log("remove, ex: ", ex);
             }
+
         }
     }
 
@@ -599,61 +820,6 @@ export class mgr {
 }
 
 //============================本地
-/**
- * @description 动态计算应用帧率
- */
-class CaclFrame {
-    /**
-     * 
-     * @param _rangFrame [最低，最高，当前] 取值范围
-     * @param start 样本截取位置
-     * @param count 样本截取数量
-     */
-    constructor(_rangFrame:Array<number>,start?:number,count?:number){
-        this.rang = _rangFrame;
-        if(start)this.start = start;
-        if(count)this.count = count;
-        this.max = this.start + this.count + 1;
-    }
-    private start:number = 5; //样本截取位置
-    private count:number = 10; //样本截取数量
-    private max:number = 16; //样本上限达到该数量开始计算
-    private rang:Array<number> //[最低，最高，当前] 取值范围
-    private d:Array<number> = [] //样本采集数组
-    private c():number{
-        let a = this.d.splice(this.start,this.count),t = 0,r;
-        for(let i =0;i<this.count;i++){
-            t += a[i];
-        }
-        return t / this.count;
-    }
-    /**
-     * @description 清空样本
-     */
-    public clear():void{
-        this.d = [];
-    }
-    /**
-     * @description 添加样本
-     */
-    public add(f):boolean{
-        this.d.push(f);
-        //样本达到上限
-        if(this.d.length == this.max){
-            let r = this.c();
-            r -= 3;
-            if(r > this.rang[1])
-                r = this.rang[1];
-            else if(r < this.rang[0])
-                r = this.rang[0];
-            this.rang[2] = r;
-            this.d = [];
-            return true;
-        }
-        return false;
-    };
-}
-let caclFrame = new CaclFrame(rangFrame,5,5);
 
 const mergeProperty = (obj, newAttr, old, key, resTab, attr, name) => {
     let i;
@@ -725,20 +891,22 @@ const mergeNode = function (newObj, old, resTab, skip?, name?) {
     }
 };
 
-const addHash = function (obj) {
+const addHash = function (obj,boolean) {
     let k, parentHash = 0,
         childHash = 0,
         keyHash = 0,
-        valueHash = 0;;
+        valueHash = 0;
+    if(obj["_$hash"] && boolean){
+        return obj["_$hash"];
+    }
     for (k in obj) {
         let v = obj[k];
         keyHash = Hash.iterHashCode(k, 0, Hash.charHash);
-
         if ('object' === typeof v) {
             if (v === null)
                 continue;
             else {
-                v["_$hash"] = valueHash = addHash(v);
+                v["_$hash"] = valueHash = addHash(v,boolean);
                 childHash = Hash.nextHash(keyHash, valueHash);
             }
         } else if (isNaN(v))
@@ -757,4 +925,52 @@ const addHash = function (obj) {
     }
     obj["_$hash"] = parentHash;
     return parentHash;
+}
+
+
+/**
+ * @description 设置显示隐藏
+ */
+const SetVisible = function (obj,boolean) {
+    if(obj._show && obj._show.old.ref){
+        obj._show.old.ref.impl.__visible = boolean;
+    }
+}
+
+// 用BlobURL的方式加载的模块，二进制转换字符串及编译，浏览器内核会异步处理
+// 创建函数的方式加载，二进制转换字符串及编译，主线程同步处理性能不好
+const releaseDefine = function (data/*:ArrayBuffer*/) {
+    var blob = new Blob([data], { type: "text/javascript" });
+    loadJS({src: URL.createObjectURL(blob), revokeURL: URL.revokeObjectURL });
+};
+
+const loadJS = function (cfg) {
+    var head = document.head;
+    var n:any = document.createElement('script');
+    n.charset = 'utf8';
+    n.onerror = function (e) {
+        n.onload = n.onerror = undefined;
+        head.removeChild(n);
+        cfg.revokeURL && cfg.revokeURL(cfg.src);
+    };
+    n.onload = function () {
+        n.onload = n.onerror = undefined;
+        head.removeChild(n);
+        cfg.revokeURL && cfg.revokeURL(cfg.src);
+    };
+    n.async = true;
+    n.crossorigin = true;
+    n.src = cfg.src;
+    head.appendChild(n);
+};
+
+(self as any).$difineRTPL = (name,func) => {
+    if(rtplMap.get(name) === 0){
+        // rtplMap.set(name, func(hash.nextHash, hash.anyHash, commonjs ? commonjs.relativeGet:null));
+        rtplMap.set(name, {f:func,compile:0});
+    }  
+    if (templateMap.get(name) === 0) {
+        // rtplMap.set(name, func(hash.nextHash, hash.anyHash, commonjs ? commonjs.relativeGet:null));
+        templateMap.set(name, { f: func, compile: 0 });
+    }
 }

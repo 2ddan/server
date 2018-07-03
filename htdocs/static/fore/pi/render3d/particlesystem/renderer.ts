@@ -1,27 +1,32 @@
-import { newloadMesh, newloadPlane, newloadShape } from "../load"
-import { THREE } from "../three"
-import { Renderer } from "../renderer"
-import { ResTab } from "../../util/res_mgr"
+/**
+ * 
+ */
+
+import { ResTab } from '../../util/res_mgr';
+import { newloadMesh, newloadPlane, newloadShape } from '../load';
+import { Renderer } from '../renderer';
+import { THREE } from '../three';
 
 export class RendererModule {
-	mesh: THREE.Mesh;
+	public mesh: THREE.Mesh;
 
-	map: THREE.Texture;
-	geometry: THREE.BufferGeometry;
+	public map: THREE.Texture;
+	public geometry: THREE.BufferGeometry;
 
-
+	// tslint:disable-next-line:typedef
 	constructor(config, renderer: Renderer, resTab: ResTab) {
 		if (!config.meshRender) return;
-		let geo = config.geometry;
-		if (geo.type === "BufferGeometry") 
+		const geo = config.geometry;
+		if (geo.type === 'BufferGeometry') { 
 			this.mesh = newloadMesh(renderer, config.geometry, config.meshRender, resTab);
-		else if (geo.type === "Plane") {
+		} else if (geo.type === 'Plane') {
 			this.mesh = newloadPlane(renderer, geo, config.meshRender, resTab);
-		} else 
+		} else { 
 			this.mesh = newloadShape(renderer, geo, config.meshRender, resTab);
+							}
 	}
 
-	update() {
+	public update() {
 		if (this.geometry && this.map) {
 			return true;
 		}
@@ -32,7 +37,7 @@ export class RendererModule {
 
 		if (!this.map && this.mesh.material && this.mesh.material[0].map) {
 			this.map = this.mesh.material[0].map;
-			if (! (this.map instanceof THREE.Texture) ) {
+			if (! (this.map instanceof THREE.Texture)) {
 				this.map = undefined;
 			}
 		}

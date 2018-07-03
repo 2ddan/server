@@ -4,20 +4,18 @@ import { activity_wanfa } from "cfg/c/activity_special";
 import { activity_list } from "cfg/c/activity_list";
 import { weekact_type_fore } from "cfg/c/weekact_type";
 
-import { Pi, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { Util } from "app/mod/util";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { data as localDB, insert,get, updata, listen } from "app/mod/db";
 import { act_progress } from "app_b/mod/act_progress";
-import { open, close } from "app/mod/root";
+import { open } from "app/mod/root";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request, net_message } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
 
-import { findNodeByAttr } from "pi/widget/virtual_node";
-import { getRealNode } from "pi/widget/painter";
 
 
 import { TipFun } from "app/mod/tip_fun";
@@ -213,7 +211,7 @@ export class activety_w extends Widget {
             globalSend("gotoBuy", buyData);
             return;
         }
-
+        
 
         openAward(arg, 1);
 
@@ -236,7 +234,7 @@ export class activety_w extends Widget {
 }
 
 //====================================本地
-
+let id_arr = [101, 102];
 //初始化今日活动
 const initToday = () => {
     let day: any = {},
@@ -247,11 +245,7 @@ const initToday = () => {
     for (let k in activity_list) {
         let v = activity_list[k];
         if (!v.delay_date || (day[v.time_type] <= v.delay_date && day[v.time_type] >= v.open_date)) {
-            // if (v.id == 105 || v.id == 109) {//是否包含微信活动
-            //     if (Pi.localStorage.ptFrom && JSON.parse(Pi.localStorage.ptFrom).from == "ganchukeji") table.push(v);
-            // }
-            //else    (此处将 微信活动、微信绑定、每日礼包、手机绑定除外)
-            if (v.level_limit <= localDB.player.level && !(v.id == 105 || v.id == 109 || v.id == 107 || v.id == 108)) {
+            if (v.level_limit <= localDB.player.level && (id_arr.indexOf(v.id) == -1)) {
                 table.push(v);
             }
         }
@@ -278,7 +272,7 @@ const openAward = (arg, count) => {//领奖
     };
     net_request(msg, (data) => {
         if (data.error) {
-            console.log(data.why);
+            if (data.error) globalSend("screenTipFun", { words: data.why });
         } else if (data.ok) {
             let prop: any = Common.changeArrToJson(data.ok);
             actData.activityRead[arg[0]] = prop.award_record;
@@ -346,6 +340,7 @@ const sortProp = (act_info) => {
             "id": act_info.id,//活动ID
             "init_count": act_info["init_count"][i],
             "condition": act_info.condition[condition][i],//领奖条件
+            "discount": act_info.discount && act_info.discount[i] || 0,//折扣
             "progress": progress, //progress
             "index": i,//奖励ID
             "get": actData.activityRead[act_info.id][i]//领奖记录
@@ -381,28 +376,29 @@ const read = (data) => {
 //从服务器读取领奖记录
 const readRecord = (i) => {
     let actList = [
-        "login",
-        "instance",
-        "jjc_top",
-        "recharge",
-        "open_mystic_box",
-        "money_tree",
-        "dailyCopy",
-        "arena",
-        "rebel",
-        "equip_fb",
-        "tower_sweep",
-        "pet",
-        "wild_elite_kill",
-        "world_speak",
-        "rank_pt",
-        "treasure_hexagram",
+        "login", // 登录
+        "instance", // 九幽幻境
+        "jjc_top", // 竞技场
+        "recharge", // 充值
+        "open_mystic_box", // 开神秘宝箱
+        "money_tree", // 摇钱树
+        "dailyCopy", // 每日副本
+        "arena", // 
+        "rebel", // 
+        "equip_fb", // 装备副本
+        "tower_sweep", // 天庭秘境
+        "pet", // 宠物
+        "wild_elite_kill", 
+        "world_speak", // 世界频道发言
+        "rank_pt", // 排行
+        "treasure_hexagram", // 神兵
         "equip_intensify",
         "equip_melt",
-        "equip_wash",
-        "gest_fight",
-        "exp_fb",
-        "gest_inherit"
+        "equip_wash", // 装备洗练
+        "gest_fight", // 心法副本
+        "exp_fb", // 经验副本
+        "gest_inherit", //
+        "wilderness_fight"
     ];
     if (!actList[i]) return;
     let msg = { "param": { "type": actList[i] }, "type": "app/activity/various@record" };

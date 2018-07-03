@@ -22,10 +22,10 @@
  */
 
 // ============================== 导入
-import {World, Entity, Component} from "./world";
+import { butil, commonjs, depend, load, Mod } from '../lang/mod';
 import { Json } from '../lang/type';
-import { Mod, butil, depend, load, commonjs } from '../lang/mod';
-import { getExport, checkType, checkInstance } from "../util/util";
+import { checkInstance, checkType, getExport } from '../util/util';
+import {Component, Entity, World} from './world';
 
 // ============================== 导出
 // 系统
@@ -33,15 +33,16 @@ export class System {
 	/**
 	 * 初始化
 	 */
-	init(w: World, cfg: Json){}
+	/* tslint:disable:no-empty */
+	public init(w: World, cfg: Json) {}
 	/**
 	 * 运行
 	 */
-	run(context: any){}
+	public run(context: any) {}
 	/**
 	 * 销毁
 	 */
-	destroy(){}
+	public destroy() {}
 }
 
 /**
@@ -50,11 +51,12 @@ export class System {
  */
 export class SysMgr {
 	// 世界
-	world: World;
+	public world: World;
 	// 系统表
-	map = new Map<string, System>();
+	/* tslint:disable:typedef */
+	public map = new Map<string, System>();
 	// 系统运行图， 有向无环图
-	graph: SystemGraph;
+	public graph: SystemGraph;
 
 	/**
 	 * 初始化
@@ -65,9 +67,9 @@ export class SysMgr {
 	/**
 	 * 根据配置初始化，可以多次调用
 	 */
-	init(cfg: Json) {
-		let g = new SystemGraph;
-		let m = new Map;
+	public init(cfg: Json) {
+		const g = new SystemGraph();
+		const m = new Map();
 		g.init(this.world, {graph: cfg.graph, args: cfg.args, map: m, mgr: this});
 		this.map = m;
 		this.graph.destroy();
@@ -76,7 +78,7 @@ export class SysMgr {
 	/**
 	 * 运行
 	 */
-	run(context: any) {
+	public run(context: any) {
 		this.graph && this.graph.run(context);
 	}
 
@@ -86,39 +88,41 @@ export class SysMgr {
 // 可并发的系统图节点
 class SystemGraph extends System {
 	// 系统管理器
-	mgr: SysMgr;
+	public mgr: SysMgr;
 	// 并发
-	async = false;
+	public async = false;
 	// 包含的系统
-	arr: Array<[string, System]> = [];
+	public arr: [string, System][] = [];
 	
 	/**
 	 * 初始化
 	 */
-	init(w: World, cfg: Json){
+	public init(w: World, cfg: Json) {
 		this.mgr = cfg.mgr;
 		let arr = cfg.graph;
 		// 判断是否并发执行
-		if(arr[0] === "async") {
+		if (arr[0] === 'async') {
 			this.async = true;
 			arr = arr.slice(1);
 		}
-		for(let s of arr) {
-			if(Array.isArray(s)) {
+		for (const s of arr) {
+			if (Array.isArray(s)) {
 				// 生成系统图节点，并放入数组
-				let r = new SystemGraph;
+				const r = new SystemGraph();
 				r.init(w, {graph: s, args: cfg.args, map: cfg.map, mgr: this.mgr});
-				this.arr.push(["", r]);
+				this.arr.push(['', r]);
 				continue;
 			}
 			let r = this.mgr.map.get(s);
-			if(!r) {
-				let mod = commonjs.relativeGet(s);
-				if (!mod)
-					throw new Error("invalid mod: " + s);
-				let sys = getExport(mod, checkType, System);
-				if (!sys)
-					throw new Error("invalid system in: " + s);
+			if (!r) {
+				const mod = commonjs.relativeGet(s);
+				if (!mod) {
+					throw new Error(`invalid mod: ${s}`);					
+				}
+				const sys = getExport(mod, checkType, System);
+				if (!sys) {
+					throw new Error(`invalid system in: ${s}`);					
+				}
 				r = sys();
 				r.init(w, cfg.args[s]);
 				// 放入到管理器的新系统表
@@ -130,18 +134,20 @@ class SystemGraph extends System {
 	/**
 	 * 运行
 	 */
-	run(context: any){
-		for(let [k, s] of this.arr)
+	public run(context: any) {
+		for (const [k, s] of this.arr) {
 			s.run(context);
+		}
 	}
 	/**
 	 * 销毁
 	 */
-	destroy() {
-		for(let [k, s] of this.arr) {
+	public destroy() {
+		for (const [k, s] of this.arr) {
 			// 如果不在管理器的系统表，则移除
-			if(!this.mgr.map.has(k))
+			if (!this.mgr.map.has(k)) {
 				s.destroy();
+			}
 		}
 	}
 

@@ -124,9 +124,6 @@
     line-height: 26px;
     color:#b27d5c;
     text-align:justify;
-    background-image:url(../images/des_bg.png);
-    background-repeat:no-repeat;
-    background-position:center center;
     position: relative;
     margin-top:26px;
 }

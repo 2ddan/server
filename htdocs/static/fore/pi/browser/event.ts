@@ -1,4 +1,3 @@
-
 /**
  * webview回调和派发
  */
@@ -7,13 +6,13 @@
  * 调用底层函数
  */
 export const callNative = (nativeName, funcName, ...args) => {
-	let native = self[nativeName];
+	const native = self[nativeName];
 	if (native && native[funcName]) {
 		return native[funcName](...args);
 	} else {
-		console.log("warning: Native " + nativeName + " isn't exist");
+		console.log(`warning: Native ${nativeName} isn\'t exist`);
 	}
-}
+};
 
 /**
  * java层的回调
@@ -21,28 +20,30 @@ export const callNative = (nativeName, funcName, ...args) => {
  * funcName: string, 函数名
  * jsonArray：string, 函数参数字符串
  */
-window["_$handleNativeMessage"] = (moduleName, funcName, jsonArray) => {
+(<any>window)._$handleNativeMessage = (moduleName, funcName, jsonArray) => {
 
-	
 	// alert("_$handleNativeMessage: " + moduleName + ", " + funcName + ", " + jsonArray);
 
-	let params = jsonArray ? JSON.parse(jsonArray) : [];
+	const params = jsonArray ? JSON.parse(jsonArray) : [];
+	/* tslint:disable:no-reserved-keywords */
 	let module = (<any>self).pi_modules[moduleName];
 
 	if (!module) {
-		moduleName = "pi/" + moduleName;
+		moduleName = `pi/${moduleName}`;		
 		module = (<any>self).pi_modules[moduleName];
-		if(!module) {
-			console.log("warning: _$handleNativeMessage, module " + moduleName + " isn't exist!");
+		if (!module) {
+			console.log(`warning: _$handleNativeMessage, module ${moduleName} isn\'t exist!`);			
+
 			return;	
 		}
 	}
 
-	let func = module.exports[funcName];
+	const func = module.exports[funcName];
 	if (!func) {
-		console.log("warning: _$handleNativeMessage, exports function " + funcName + " in module " + moduleName + "isn't exist!");
+		console.log(`warning: _$handleNativeMessage, exports function ${funcName} in module ${moduleName} isn\'t exist!`);
+
 		return;
 	}
 
 	func.apply(undefined, params);
-}
+};

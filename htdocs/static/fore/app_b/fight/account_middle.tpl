@@ -1,4 +1,4 @@
-<div style="height:auto;position:relative;width:519px;left:50%;margin-left:-260px;top: 105px;padding-bottom: 24px;padding-top:14px;">
+<div style="height:auto;position:relative;width:519px;left:50%;margin-left:-260px;top: 85px;padding-bottom: 24px;padding-top:14px;">
     {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
     {{let Pi = it1.Pi}}
     {{let evaluate = ""}}
@@ -47,7 +47,7 @@
                     <widget style="position:absolute;top:14px;left:50%;transform:translateX(-50%)" w-tag="app_a-widget-title-single" >
                         {"padding":10,"type":10,"text":"获得物品","textCfg":"singleTitle","fontSize":22,"space":-2,"color":"#b27d5c","wear":0} 
                     </widget>
-                    <div style="width:406px;height:min-height: 117px;text-align: center;max-height: 300px;position:relative;top:0;left:47.5%;margin-left:-203px;overflow: hidden;">
+                    <div style="width:406px;min-height: 117px;text-align: center;max-height: 300px;position:relative;top:0;left:47.5%;margin-left:-203px;overflow: hidden;">
                         <div style="width:105%;max-height: 300px;overflow-x: hidden;overflow-y: auto;">
                             {{if it1.account.player}}
                             {{for i, v in it1.account.player}}

@@ -5,14 +5,12 @@
 //pi
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { destory } from "pi/ui/root";
 
 //mod
 import { globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { data as localDB,listen ,updata} from "app/mod/db"
 import { resetcanvas } from "app/scene/base/scene";
-import { mgr } from "app/scene/scene"; 
 
 //fight
 import { role_base } from "fight/b/common/role_base";
@@ -39,20 +37,23 @@ export const globalReceive :any = {
 		//return "app_b-role-role"
 	} ,
 	magicClosed: ()=>{
-		let w = forelet.getWidget("app_b-role-role");
-		if(!w){return;}
-		let data : any;
-		for(let i=0;i<w.children.length;i++){
-			if(w.children[i].name == "app-scene-base-scene"){
-				data = w.children[i];
-				break;
-			}
-		}
-		resetcanvas(data);
+		reset();
 	}
 }
 
-globalSend("");
+//重绘
+let reset = function(){
+	let w = forelet.getWidget("app_b-role-role");
+	if(!w){return;}
+	let data : any;
+	for(let i=0;i<w.children.length;i++){
+		if(w.children[i].name == "app-scene-base-scene"){
+			data = w.children[i];
+			break;
+		}
+	}
+	resetcanvas(data);
+}
 /**
  * @description  导出组件
  */

@@ -4,7 +4,7 @@
     {{let appCfg = _get("app/mod/db").exports.data}}    
     {{let chatShow = appCfg.chat.show}}
 
-    <app-scene-base-scene>{"name":"gang_boss","newscene":"scene_map03"}</app-scene-base-scene>
+    <app-scene-base-scene>{"name":"gang_boss","newscene":{{it1.map_cfg["gang_boss"]}} }</app-scene-base-scene>
     
     <app_b-chat-chat></app_b-chat-chat>
     <app_b-magic-skill style="position:absolute;right:0;bottom:110px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-magic-skill>

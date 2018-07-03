@@ -1,4 +1,4 @@
-<div onselectstart="return false" style="position:absolute; top:0px; left:0px; height:100%; width:100%; z-index:5;">
+<div onselectstart="return false" data-desc="fight" style="position:absolute; top:0px; left:0px; height:100%; width:100%; z-index:5;">
     {{let scenename = _get("app/scene/scene").exports.mgr_data.name}} 
     {{let Util = _get("app/mod/util").exports.Util}}
     {{let appCfg = _get("app/mod/db").exports.data}}
@@ -18,7 +18,7 @@
     </div>
     <app_b-chat-chat></app_b-chat-chat>
     {{if it1.scene.fightData.type == "tower" || it1.scene.fightData.type == "exp_mission"}}
-        {{let text = it1.scene.fightData.type == "tower" ? "第"+it1.scene.fightData.floor_point+"层" : "第"+it1.scene.fightData.index+"波"}}
+        {{let text = it1.scene.fightData.type == "tower" ? "第"+it1.scene.fightData.floor_point+"层" : "数量:"+it1.scene.fightData.count[0]+"/"+it1.scene.fightData.count[1]}}
         <app_a-widget-pic_text-pic_text style="position:absolute;left:-14px;">
             {"icon":"now_attr_bg","width":200,"height":48,"align":"center","marginLeft":3,"text":{{text}},"textCfg":"menu_main","space":0,"fontSize":20,"top":12,"left":0}
         </app_a-widget-pic_text-pic_text>
@@ -31,8 +31,7 @@
             {{end}}
         </div>
         {{if it1.scene.fightData.type == "exp_mission"}}
-        <app_b-player-exp style="left:0;bottom:0;width:{{root.getWidth()}}px;"></app_b-player-exp>
-        <app_c-exp_fb-exp_bar style="left:0;top:100px;width:{{root.getWidth()}}px;"></app_c-exp_fb-exp_bar>
+        <app_c-exp_fb-exp_bar style="left: 30px;top: 150px;width:{{root.getWidth()}}px;"></app_c-exp_fb-exp_bar>
         {{end}}
     {{end}}
     {{%=======战斗时长,星星==========}}

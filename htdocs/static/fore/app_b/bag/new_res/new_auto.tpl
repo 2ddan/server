@@ -1,6 +1,6 @@
 
 <div class="new_auto" group="cover_top" style="position: absolute;left:0;top:0;width:100%;height:100%;z-index: 4;" on-tap="goback">
-	<div  data-desc="bag_move" style="position: absolute;width:538px;height: auto;left: 50%;top: 220px;margin-left: -269px;overflow: hidden;animation:showNewRes 2s forwards;">
+	<div  data-desc="bag_move" style="position: absolute;width:538px;height: auto;left: 50%;top:200px;margin-left: -269px;overflow: hidden;animation:showNewRes 2s forwards;">
 		<div style="position: absolute;top: -35px;width: 100%;height: 238px;z-index: 2;">
 			<div w-class="new_auto_title"></div>
 		</div>

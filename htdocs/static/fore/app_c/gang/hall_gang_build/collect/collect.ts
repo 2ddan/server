@@ -3,20 +3,18 @@
  * 野外采集功能
  */
 import { Forelet } from "pi/widget/forelet";
-import { Widget } from "pi/widget/widget";
 import { net_message } from "app_a/connect/main";
 import { getPage } from "app_b/playermission/playermission";
-import { mapList, change_status, olFightOrder } from "app_b/fight_ol/handscene";
-import { mgr_data, mgr } from "app/scene/scene";
-import { insert, updata, get as getDB, checkTypeof } from "app/mod/db";
+import { SMgr } from "app_b/fight_ol/same";
+import {  mgr } from "app/scene/scene";
+import { updata, get as getDB } from "app/mod/db";
 import { net_request } from "app_a/connect/main";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { globalSend, Pi } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { guild_collect } from "cfg/c/guild_collect";
 import { wild_map } from "fight/b/common/wild_map_cfg";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
-import { getFighter, Move} from "app/scene/move";
 import { getGlobal } from "pi/widget/frame_mgr";
 
 
@@ -25,10 +23,9 @@ import { getGlobal } from "pi/widget/frame_mgr";
  */
 export let forelet = new Forelet();
 let frame_mgr = getGlobal();
-
-export let process_num = 0;//进度条数字
+let clearTimer = null;
+let process_num = 0;//进度条数字
 let target = [];//采集物坐标
-let map_id = null;//角色map_id
 let forbid = false;//是否禁止操作
 export const globalReceive: any = {
     leavewild: () => {
@@ -81,10 +78,24 @@ let createCollect = function () {
         "isOnce": true
     };
     mgr.create(node_list["collect"], "effect");
+    if(clearTimer){
+        clearTimeout(clearTimer);
+        clearTimer = null;
+    }
+    clearTimer = setTimeout(()=>{
+        clearTimeout(clearTimer);
+        clearTimer = null;
+        clearCollect();
+    },30000);
 }
 
 //清除场景采集物
 let clearCollect = function () {
+    if(clearTimer){
+        frame_mgr.clearPermanent(moveEnd);
+        clearTimeout(clearTimer);
+        clearTimer = null;
+    }
     if (!node_list["collect"]) { return; }
     mgr.remove(node_list["collect"]);
     delete node_list["collect"];
@@ -92,15 +103,30 @@ let clearCollect = function () {
 
 //采集物进度条
 let collectBar = function (callBack) {
-    let timer = setInterval(function () {
-        process_num += 1;
-        forelet.paint(getData());
-        if (process_num >= 100) {
-            clearInterval(timer);
-            timer = null;
-            callBack();
-        }
-    }, 20);
+    updata("open_box",true);
+    let time = new Date().getTime();
+    barChange(callBack,time);
+    // let timer = setInterval(function () {
+    //     updata("open_box",true);
+    //     process_num += 4;
+    //     forelet.paint(getData());
+    //     if (process_num >= 100) {
+    //         clearInterval(timer);
+    //         timer = null;
+    //         callBack();
+    //     }
+    // }, 80);
+}
+let barChange = function(callBack,time){
+    process_num = Math.floor((new Date().getTime() - time)/2000*100);
+    forelet.paint(getData());
+    if (process_num >= 100) {
+        callBack();
+    }else{
+        frame_mgr.setAfter(()=>{
+            barChange(callBack,time);
+        })
+    }
 }
 
 //采集领奖
@@ -113,6 +139,11 @@ let collect = function () {
         if (data.error) {
             console.log(data);
         } else {
+            clearCollect();
+            process_num = 0;
+            updata("open_box",false);
+            forelet.paint(getData());
+
             let prop: any = Common.changeArrToJson(data.ok);
             let result = Common_m.mixAward(prop);
             result.auto = 1;
@@ -124,24 +155,24 @@ let collect = function () {
             //更新采集次数和等级
             let collect_info = getDB("gang.gangExpandData.collect_info");
             let level = collect_info[0];
-            let count = collect_info[1]
-            if ((count + 1) >= guild_collect[level]) {
-                level++;
-                count = 0;
-            } else {
-                count++;
+            let count = collect_info[1];
+            let max_count = guild_collect[level].count;
+            if (max_count) {
+                if ((count + 1) >= max_count) {
+                    level++;
+                    count = 0;
+                } else {
+                    count++;
+                }
+                updata("gang.gangExpandData.collect_info", [level, count]);
             }
-            updata("gang.gangExpandData.collect_info", [level, count]);
         }
-        clearCollect();
-        process_num = 0;
-        forbid = false;
-        forelet.paint(getData());
+        
         let timer = setTimeout(() => {
-            change_status(0);
+            SMgr.change_ai(true);
             clearTimeout(timer);
             timer = null;
-        }, 2000)
+        }, 1000)
     })
 
 }
@@ -149,50 +180,51 @@ let collect = function () {
 /**
  * 后台捐献【野外采集】
  **/
-let fighterPosition = [];//角色当前位置，随机后为采集物出现的位置
 let node_list: any = {};//采集物
 net_message("gang_collect", (msg) => {
     if (getPage() !== "app_b-wild-wild") {
         collect();
         return;
     }
-    createCollect();
-    let role_id = getDB("player.role_id");
-    for(let i in mapList){
-        if(mapList[i].sid == role_id){
-            map_id = mapList[i].mapId; 
-            break;
-        }
+    if(node_list["collect"]){
+        frame_mgr.clearPermanent(moveEnd);
+        clearCollect();
+        clearTimeout(clearTimer);
+        clearTimer = null;
     }
+    createCollect();
+    let me = SMgr.getSelf();
+    forbid = true;
+    forelet.paint(getData());
 
-    let result = {
-        data:[target[0],0,target[1]],
-        id:-1001,
-        type:"terrain",
-    };
+    //防止不去采集，5s后解除锁定
+    let timer = setTimeout(()=>{
+        clearTimeout(timer);
+        timer = null;
+        if(forbid){
+            forbid = false;
+            forelet.paint(getData());
+        }
+    },5000);
+
+
     //跑到采集点
-    change_status(1,()=>{
-        forbid = true;
-        forelet.paint(getData());
-        olFightOrder({ "type": "wild", "result": JSON.stringify(result) });
-    });
+    SMgr.change_ai(false);
+    SMgr.move({x:target[0],y:target[1]});
     frame_mgr.setPermanent(moveEnd);
-
 });
 //判断是否到达采集物
 let moveEnd = ()=>{
-    if(node_list["collect"] && !Move.isMove(map_id) && !process_num){
-        let f = getFighter(map_id);
-        if(Math.abs(f.x - target[0]) <= 0.5 && Math.abs(f.y - target[1]) <= 0.5 ){
-            //清除定时器
+    let f = SMgr.getSelf();
+    if(node_list["collect"] && f && !f.moving && !process_num){
+        if(Math.sqrt( Math.pow(f.x - target[0],2) + Math.pow(f.y - target[1],2) )<4 ){
             frame_mgr.clearPermanent(moveEnd);
-            //重置长时间不动会自动打怪的间隔时间
-            globalSend("fightRandomBoss");
+            forbid = false;
+            forelet.paint(getData());
+            globalSend("resetTimer");
             //采集
-            change_status(1, () => {
-                collectBar(collect);
-            });
-            
+            SMgr.change_ai(false);
+            collectBar(collect);
         }
     }
 }

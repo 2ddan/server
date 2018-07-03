@@ -18,6 +18,9 @@
         <app_a-widget-text-text w-class="f3" >
             {"text":{{"活动"+it1.actIndex}},"fontSize":40,"textCfg":"activity","space":-4 }
         </app_a-widget-text-text>
+        <app_a-widget-btn_pic-btn_pic style="position:absolute;right:12px;top:124px;" on-tap="getHelp">
+            {"icon":"look_info"}
+        </app_a-widget-btn_pic-btn_pic>
         <div w-class="f5">
             <img w-class="f6" src="./images/bg_2.png" />
             <app_a-widget-text-text style="position: relative;">

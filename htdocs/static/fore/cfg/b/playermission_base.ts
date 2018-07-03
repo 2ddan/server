@@ -107,5 +107,9 @@ export const playermission_base = {
 		"type":1,
 		"comment":"红装洗练2次"
 	}
+	,treasure_hexagram:{
+		"type":1,
+		"comment":"神兵铸魂10次"
+	}
 	
 };

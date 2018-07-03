@@ -26,10 +26,10 @@ canvas.ImgTextCfg {
  */
 
 // ============================== 导入
-import { Widget } from "../widget/widget";
 import { Json } from '../lang/type';
-import { ResTab } from '../util/res_mgr';
 import { getImgTextKey, RES_TYPE_IMGTEXT } from '../util/canvas';
+import { ResTab } from '../util/res_mgr';
+import { Widget } from '../widget/widget';
 
 // ============================== 导出
 /**
@@ -42,37 +42,41 @@ export class ImgText extends Widget {
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
 	 */
-	setProps(props: Json, oldProps?: Json): void {
-		let key = getImgTextKey(props.textCfg);
-		if(!props.textCfg.isCommon){
+	public setProps(props: Json, oldProps?: Json): void {
+		const key = getImgTextKey(props.textCfg);
+		if (!props.textCfg.isCommon) {
 			props.space && (props.textCfg.space = props.space);
 			props.show && (props.textCfg.text = props.show);
 		}
-		if(this.props && this.props.textCfg && this.props.textCfg.key === key) {
+		if (this.props && this.props.textCfg && this.props.textCfg.key === key) {
 			this.props.show = props.show;
-		}else{
+		} else {
 			this.props = props;
 			let tab = this.resTab;
-			if(!tab)
-				this.resTab = tab = new ResTab;
-			let res = tab.get(key);
-			if(res){
+			if (!tab) {
+				this.resTab = tab = new ResTab();
+			}
+			const res = tab.get(key);
+			if (res) {
 				props.textCfg.url = res.link;
-				if(res.args.charUV)
+				if (res.args.charUV) {
 					props.textCfg.charUV = res.args.charUV;
+				}
 				props.textCfg.width = res.args.width;
 				props.textCfg.height = res.args.height;
 				props.textCfg.zoomfactor = res.args.zoomfactor;
-			}else
+			} else {
 				tab.load(key, RES_TYPE_IMGTEXT, props.textCfg, undefined, (res) => {
 					props.textCfg.url = res.link;
-					if(res.args.charUV)
+					if (res.args.charUV) {
 						props.textCfg.charUV = res.args.charUV;
+					}
 					props.textCfg.width = res.args.width;
 					props.textCfg.height = res.args.height;
 					props.textCfg.zoomfactor = res.args.zoomfactor;
 					this.paint();
 				});
+			}
 		}
 	}
 
@@ -81,4 +85,3 @@ export class ImgText extends Widget {
 // ============================== 本地
 
 // ============================== 立即执行
-

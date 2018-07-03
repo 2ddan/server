@@ -1,0 +1,7 @@
+{
+    "tpl":"./people_num_tips.tpl",
+    "css":"./people_num_tips.wcss",
+    "js":"./people_num_tips.ts",
+    "forelet":"./people_num_tips.ts",
+    "cfg":"./people_num_tips.cfg"
+}

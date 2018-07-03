@@ -1,13 +1,21 @@
-
-import { THREE } from "../three";
-import { IMinMaxGradient, buildMinMaxGradient } from "./gradient";
+/**
+ * 
+ */
+import { THREE } from '../three';
+import { buildMinMaxGradient, IMinMaxGradient } from './gradient';
 
 export class ColorBySpeedModule {
-	range: THREE.Vector2;
-	color: IMinMaxGradient;
+	public range: THREE.Vector2;
 
+	public color: IMinMaxGradient;
+
+	// tslint:disable-next-line:typedef
 	constructor(config) {
+
 		this.range = new THREE.Vector2(config.range.x, config.range.y);
+
 		this.color = buildMinMaxGradient(config.color);
+
 	}
+
 }

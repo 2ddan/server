@@ -2,8 +2,8 @@
  * 此功能为门派boss, 可理解为单独的门派
  * 有自己的 widget, forelet
  */
-import { analyseFighter, analyseData } from "fight/a/fore/node_fight";
-import { updata, get as getDB, checkTypeof } from "app/mod/db";
+import { analyseFighter } from "fight/a/fore/node_fight";
+import { updata, get as getDB, checkTypeof, listen } from "app/mod/db";
 import { globalSend, Pi } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
@@ -12,19 +12,22 @@ import { Forelet } from "pi/widget/forelet";
 import { open, close } from "app/mod/root";
 import { net_message, net_request } from "app_a/connect/main";
 import { map_cfg } from "app/scene/plan_cfg/map";
+import { FMgr } from "fight/a/fight";
 
 import { mgr_data, mgr } from "app/scene/scene";
-import { initAnimFinishCB, setClickCallback, resetcanvas } from "app/scene/base/scene";
-import { handScene, mapList, initMapList, change_status, olFightOrder } from "app_b/fight_ol/handscene";
-import { UiFunTable, initValue, getEffectId } from "app/scene/ui_fun";
-import { Fight_common } from "fight/a/fore/fight_common";
+import {  resetcanvas } from "app/scene/base/scene";
+import { handScene, olFightOrder } from "app_b/fight_ol/handscene";
 import { monster_base } from "fight/b/common/monsterBase";
 import { monster_attribute } from "fight/b/common/monster_attribute";
 
 import { guild_boss } from "cfg/c/guild_boss";
+import { guild_boss_add } from "cfg/c/guild_boss_add";
+import { attribute_config } from "cfg/c/attribute_config";
 import { guild_base } from "cfg/c/guild_base";
 import { guild_rank } from "cfg/c/guild_rank";
-import { readBoss } from "../gang";
+import { readBoss, gangTipFun } from "../gang";
+import { SMgr } from "app_b/fight_ol/same";
+
 
 export let forelet = new Forelet();
 
@@ -47,17 +50,14 @@ export let globalReceive = {
 
 let index = 0; //boss切换
 let gangRank = []; //门派排行
-let fight_r: any = {
-    "fightEvent": [],
-    "now": 0
-};
-let gang_rank:any = {}; //门派击杀boss排行
-let fm; //切换场景位置
-let Boss;
+
+let gang_rank: any = {}; //门派击杀boss排行
+
+let boss_hp;
 let boss_max_hp; //boss最大血量
 let my_damage = 0;
 let fight_ing = false; //战斗是否结束
-
+let mixAndMaxGet = [0, 0]; //最小和最大可领奖关卡
 
 const getData = function () {
     let data: any = {};
@@ -65,19 +65,26 @@ const getData = function () {
     data.guild_boss = guild_boss;
     data.map_cfg = map_cfg;
     data.monster_base = monster_base;
+    data.attribute_config = attribute_config;
+    data.guild_boss_add = guild_boss_add;
     data.Pi = Pi;
     data.Common = Common;
     data.checkTypeof = checkTypeof;
     data.guild_rank = guild_rank;
+    data.damageAdd = logic.damageAdd;
+    data.roleNum = getDB("gang.gangBoss.gang_person_num") || 0;
 
     data.index = index;
+    data.currIndex = logic.searchIndex();
     data.gangRank = gangRank;
     data.boss_max_hp = boss_max_hp;
     data.gangBoss = getDB("gang.gangBoss");
+    data.entry_time = getDB("gang.gangExpandData.entry_time");
     data.career_id = getDB("player.career_id");
     data.gang_rank = gang_rank;
     data.my_damage = my_damage;
     data.fight_ing = fight_ing;
+    data.mixAndMaxGet = mixAndMaxGet;
     return data;
 }
 
@@ -95,14 +102,14 @@ export class GangBoss extends Widget {
     }
     //倒计时回调
     timeEnd() {
-        exitFight(0);
+        exitFight();
     }
     //切换boss
     bossTab(num) {
         index += (num - 0);
         if (index <= 0) {
             index = 0;
-        } else if (index >= (guild_boss.length - 1)) {
+        } else if (index >= guild_boss.length) {
             index = guild_boss.length - 1;
         }
         boss_max_hp = logic.searchMaxHp(index);
@@ -121,7 +128,19 @@ export class GangBoss extends Widget {
     }
     //退出战斗
     exit() {
-        exitFight(1);
+        //弹出询问框
+        globalSend("popTip",{
+            title:"<div>是否确定退出?</div>",
+            btn_name:["退出","取消"],
+            cb:[
+                //确认
+                ()=>{
+                    exitFight();
+                },
+                //取消
+                () => {}
+            ]
+        })
     }
     //打开宝箱界面
     gotoBox() {
@@ -157,12 +176,39 @@ export class GangBoss extends Widget {
     closeFightAward() {
         logic.closeFightAward();
     }
+    //查看组队伤害加成
+    seeDamage = ()=>{
+        globalSend("peopleNumTips",guild_boss_add);
+    }
 }
 
 /**
  * 数据处理
  */
 const logic = {
+     damageAdd(){
+         let num = getDB("gang.gangBoss.gang_person_num") || 0;
+        if(!num){
+            return false;
+        }
+        if(guild_boss_add[num] !== undefined){
+            return guild_boss_add[num];
+        }else{
+            let r = Object.keys(guild_boss_add).pop();
+            return guild_boss_add[r];
+        }
+    },
+    //查找可领奖的最小关卡和最大关卡
+    findMinAndMaxAward: function () {
+        let tip = getDB("gang.tip");
+        let arr = [];
+        for (let i in tip) {
+            if (tip.hasOwnProperty(i) && tip[i] == 1) {
+                arr.push(i);
+            }
+        }
+        return [Math.min.apply(null, arr), Math.max.apply(null, arr)]
+    },
     //重绘模型
     resetCanvas: function () {
         let w = forelet.getWidget("app_c-gang-gang_boss-gang_boss");
@@ -218,68 +264,53 @@ const logic = {
         //退出野外(回调请求数据, 开始战斗)
         globalSend("exitWild", enterFight);
     },
-    //进入游戏初始化场景
-    initScene: function () {
-        //此处判断是否需要切换场景位置
-        initAnimFinishCB((id) => {
-            if (fm && id === fm.id) {
-                mgr.remove(fm);
-                fm = undefined
-                return;
-            }
-        });
-        // //设置点击监听
-        // setClickCallback(function (result) {
-        //     logic.clickScene(result);
-        // });
-    },
-    //清除场景数据
-    clearData: function () {
-        initMapList();
-        UiFunTable.clearTO();
-        initValue();
-    },
     //处理接收到的战斗事件
-    dealFightEvents: function () {
-        if (fight_r.fightEvents.length > 0) {
+    dealFightEvents: function (events) {
+        if (events.event.length > 0) {
             let i = 0,
-                len = fight_r.fightEvents.length;
+                len = events.event.length;
             for (; i < len; i++) {
-                let e = fight_r.fightEvents[i];
-                handScene[e.type](e, fight_r.now);
+                let e = events.event[i];
                 if (e.type === "damage" || e.type === "effect") {
                     logic.damageFun(e);
                 }
             }
-            if (!Boss) {
-                for (let v in mapList) {
-                    if (mapList[v].type === "monster") {
-                        Boss = mapList[v];
-                        break;
-                    }
-                }
-            }
         }
-        UiFunTable.runCuurUi(fight_r);
-        return true;
     },
     //处理战斗伤害事件
     damageFun: function (e) {
-        let role_id = getDB("player.role_id"),
-            target = mapList[e.target.mapId],
-            _fighter = mapList[e.fighter.mapId],
-            r = e.r,
-            d;
-        //console.log(my_damage, "------------>", r.damage);
-        my_damage += (r.damage || 0);
-        //自己死亡
-        if(target.sid === role_id &&　target.hp <= 0){
-            //直接调取结算界面
-            exitFight(0);
+        let role_id = getDB("player.role_id");
+        let target;
+        let r = e.r;
+        if (typeof e.target == 'number') {
+            target = handScene.mapList[e.target]
+        } else {
+            target = e.target;
         }
-        //console.log(Boss.show_hp, "------", Boss.hp);
-        if(target.type == "monster" && target.hp <= 0){
-            exitFight(0);
+            // target = handScene.mapList[e.target],
+            // _fighter = handScene.mapList[e.fighter],
+ 
+            // d;
+        //自己死亡
+        if (target.sid === role_id && target.hp <= 0) {
+            //直接调取结算界面
+            exitFight();
+        }
+        //如果目标是boss
+        if ((target.show_type == 1) && (target.type == "monster")) {
+            my_damage += (r.damage || 0);
+            boss_hp = target.hp || boss_hp;
+            // console.log("boss血量=>boss_hp---------------------------", boss_hp);
+            if (target.hp <= 0) {
+                console.log("boss死亡-------------")
+                boss_hp = 0;
+                // console.log("boss血量=>-----------------------", target);
+                let t = setTimeout(() => {
+                    clearTimeout(t);
+                    t = null;
+                    exitFight();
+                }, 1000)
+            }
         }
     },
     //关闭结算页面
@@ -289,16 +320,14 @@ const logic = {
         if (_w) {
             close(_w);
         }
-        logic.clearData();
+        //logic.clearData();
         let w = forelet.getWidget("app_c-gang-gang_boss-fight_boss-fight_boss");
         if (w) {
             close(w);
         }
+        globalSend("intoWild");
+        logic.resetCanvas();
         forelet.paint(getData());
-        //进入野外战斗
-        globalSend("intoWild", () => {
-            logic.resetCanvas();
-        });
     }
 }
 
@@ -319,7 +348,7 @@ export const gangBossNet = function (param) {
 };
 
 /**
- * 进入门派boss(创建战斗场景)
+ * 进入门派boss(创建战斗场景) 
  */
 const enterFight = async function () {
     let arg = {
@@ -331,29 +360,27 @@ const enterFight = async function () {
     let data;
     try {
         data = await gangBossNet(arg);
+        if (data.error) {
+            return;
+        }
     } catch (err) {
         console.log(err);
+        globalSend("screenTipFun", {
+            words: `${data.why}`
+        })
         return;
     }
+    updata("gang.other.is_fighting", 1);
     let prop: any = Common.changeArrToJson(data.ok);
     updata("gang.gangBoss.fight_count", prop.fight_count);
     let events: any = analyseFighter(prop);
-    //初始化场景
-    logic.initScene();
-    fight_r.fightEvents = events.event;
-    fight_r.now = events.now;
-    //处理伤害事件
-    logic.dealFightEvents();
-    //自动战斗
-    change_status(0);
+    let sce = map_cfg["gang_boss"];
+    SMgr.start("gang_boss", events, [null, logic.dealFightEvents], FMgr.createNavMesh(mgr.getSceneBuffer(sce, ".nav")));
 };
 /**
  * 退出战斗  
- * 玩家自己主动退出 type = 1
- * 战斗结束退出 type = 0
  */
-const exitFight = async function (type) {
-    updata(`gang.gangBoss.boss_info.${index}.2`, Boss.hp);
+const exitFight = async function () {
     let arg = {
         "param": {},
         "type": "app/gang/expand@exit_boss"
@@ -365,16 +392,15 @@ const exitFight = async function (type) {
         console.log(error);
         return;
     }
+    updata("gang.other.is_fighting", 0);
+    updata(`gang.gangBoss.boss_info.${index}.2`, boss_hp);
+    SMgr.leave();
     let prop = Common.changeArrToJson(data.ok);
     let result = Common_m.mixAward(prop);
     fight_ing = false; //战斗结束
-    if (type) {
-        logic.closeFightAward();
-    } else {
-        forelet.paint(getData());
-        //打开结算页面
-        open("app_c-gang-gang_boss-fight_award-fight_award");
-    }
+    forelet.paint(getData());
+    //打开结算页面
+    open("app_c-gang-gang_boss-fight_award-fight_award");
 };
 /**
  * 查看门派排行
@@ -395,7 +421,7 @@ const readGnagRank = async function (callback?) {
     let rank = gang_rank.rank_info[1];
     for (let i = 0, len = rank.length; i < len; i++) {
         rank[i] = Common.changeArrToJson(rank[i]);
-        rank[i].gang_name = checkTypeof(rank[i].gang_name, "array") ? Common.fromCharCode(rank[i].gang_name) : rank[i].gang_name;
+        rank[i].gang_name = checkTypeof(rank[i].gang_name, "Array") ? Common.fromCharCode(rank[i].gang_name) : rank[i].gang_name;
     }
     console.log(gang_rank);
     callback && callback();
@@ -422,6 +448,7 @@ const getBoxAward = async function (boss_index, box_index) {
     //记录已领取
     //updata(`gang.gangBoss.boss_award_info.${boss_index - 1}.${box_index - 1}.1`, 1); //推送中处理
     updata(`gang.gangBoss.role_boss_award.${boss_index - 1}`, 1);
+
     //保存奖励
     let result = Common_m.mixAward(prop);
     forelet.paint(getData());
@@ -431,26 +458,21 @@ const getBoxAward = async function (boss_index, box_index) {
             result1.open();
         }
     });
-}
 
-//接收后台推送战斗指令
-net_message("order", (msg) => {
-    if (mgr_data.name !== "gang_boss") {
-        return;
-    }
-    let events: any = analyseData(msg);
-    fight_r.fightEvents = events.event;
-    fight_r.now = events.now;
-    logic.dealFightEvents();
-});
+    updata(`gang.tip.${boss_index - 1}`, 0);
+}
 
 //boss死
 net_message("gang_boss_dead", (msg) => {
     console.log(msg);
     //重新读取
     readBoss(() => {
+        gangTipFun();
         forelet.paint(getData());
     });
+    readGnagRank(() => {
+        forelet.paint(getData());
+    })
 });
 
 //boss每周刷新 [重新读取boss相关数据]
@@ -470,6 +492,7 @@ net_message("gang_boss_refresh", (msg) => {
         fun();
     });
     readBoss(() => {
+        gangTipFun();
         fun();
     });
 });
@@ -478,8 +501,18 @@ net_message("gang_boss_refresh", (msg) => {
 net_message("gang_boss_award", (msg) => {
     //boss_index  1, 2, 3 ....
     //box_index  1, 2, 3 ....
-    updata(`gang.gangBoss.boss_award_info.${msg.boss_index - 1}.${msg.box_index - 1}.1`, 1);
+    updata(`gang.gangBoss.boss_award_info.${msg.boss_index - 1}.${msg.box_index - 1}.1`, msg.role_name);
     forelet.paint(getData());
 });
 
 // gang_person_num_refresh //门派boss成员人数更新
+//其他成员打开宝箱
+net_message("gang_person_num_refresh", (msg) => {
+    updata("gang.gangBoss.gang_person_num", msg.role_length);
+    forelet.paint(getData());
+});
+//监听红点
+listen("gang.tip", () => {
+    mixAndMaxGet = logic.findMinAndMaxAward();
+    forelet.paint(getData());
+})

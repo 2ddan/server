@@ -2,24 +2,25 @@
  * 本质上是专门给备注使用的输入框
  */
 // ======================================= 导入
-import {Widget} from "../../../widget/widget";
-import {notify} from "../../../widget/event";
+import {notify} from '../../../widget/event';
+import {Widget} from '../../../widget/widget';
 
 // ======================================= 导出
 export class Input extends Widget {
-    props:Props;
-    create(){
+    public props:Props;
+    public create() {
         super.create();
+        /* tslint:disable:no-object-literal-type-assertion */
         this.props = {} as Props;
-        this.props.defaultText="";
+        this.props.defaultText = '';
     }
-    getInput(event:any){
+    public getInput(event:any) {
         event.fixedValue = event.currentTarget.value;
-        notify(event.node, "ev-input", {fixedValue:event.fixedValue, fixedEvent:event});
+        notify(event.node, 'ev-input', {fixedValue:event.fixedValue, fixedEvent:event});
     }
 }
 
 // ======================================= 本地
-interface Props{
+interface Props {
     defaultText:string;
 }

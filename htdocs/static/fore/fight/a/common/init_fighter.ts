@@ -63,7 +63,7 @@ export class Init_Fighter {
         //type
         monster.type = "monster";
         //name 
-        monster.name = _item[3] ? fromCharCode(_item[3]) : base_cfg[boss_id].name;
+        monster.name = _item[3] ? (_item[3] && typeof(_item[3][0]) == "number" ? fromCharCode(_item[3]) : base_cfg[boss_id].name) : base_cfg[boss_id].name;
         //模型
         monster.module = base_cfg[boss_id].module;
         //缩放
@@ -123,6 +123,8 @@ export class Init_Fighter {
         fighter.clothes = player.info.clothes;
         //技能列表
         fighter.skillList = skillList;
+        //buff列表
+        fighter.buffList = this.initBuff(player.buff);
         //赋灵阶段
         fighter.ensoulClass = player.info.ensoul_class;
         //装备总星级
@@ -148,6 +150,9 @@ export class Init_Fighter {
                 //机器人或怪物
             } else
                 f = Init_Fighter.createMonster(monsterList[i], base_cfg);
+                if(monsterList[i][3] && typeof(monsterList[i][3][0]) != "number"){
+                    f.show_award = monsterList[i][3];
+                }
             //机器人重新设置type
             if (monsterList[i][2] == 2)
                 f.type = "fighter";
@@ -155,7 +160,14 @@ export class Init_Fighter {
         }
         return _array;
     }
-
+    //初始化buff列表
+    static initBuff(buffs){
+        const bs = [];
+        for (let i = 0; i < buffs.length; i++) {
+            bs.push(getBuff(buffs[i][0]));
+        }
+        return bs;
+    }
     //创建fighter对象
     static initFighter(fighterList) {
         let _array = [];

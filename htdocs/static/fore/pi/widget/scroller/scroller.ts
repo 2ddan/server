@@ -12,115 +12,115 @@
  * ev-scroller-destroy - 销毁 better-scroll 实例时触发
  */
 // ====================================== 导入
+import { notify } from '../../widget/event';
+import { cancelFrame, requestFrame } from '../../widget/frame_mgr';
+import { getRealNode, paintCmd3 } from '../../widget/painter';
+import { Widget } from '../../widget/widget';
+import { VirtualNode } from '../virtual_node';
 import {
+	addEvent,
+	click,
+	eventType,
+	getRect,
 	hasPerspective,
 	hasTouch,
 	hasTransform,
 	hasTransition,
-	getRect,
-	eventType,
-	style,
 	offset,
-	addEvent,
-	removeEvent,
 	prepend,
 	preventDefaultException,
-	tap,
-	click
+	removeEvent,
+	style,
+	tap
 } from './dom';
-import { requestFrame, cancelFrame } from "../../widget/frame_mgr";
-import { Widget } from "../../widget/widget";
-import { isBadAndroid, momentum, extend } from './util';
-import { ease } from "./ease";
-import { getRealNode, paintCmd3 } from "../../widget/painter";
-import { notify } from "../../widget/event";
-import { VirtualNode } from "../virtual_node";
+import { ease } from './ease';
+import { extend, isBadAndroid, momentum } from './util';
 
 // ====================================== 常量声明
 const TOUCH_EVENT = 1;
-const scrollerInstanceMap = new Map;
+const scrollerInstanceMap = new Map();
 // ====================================== 导出
 
 export const pluginBind = (w: Widget, vNode, args: any, oldArgs: any) => {
-	let scrollerInstance = scrollerInstanceMap.get(args.options.id);
+	const scrollerInstance = scrollerInstanceMap.get(args.options.id);
 	if (!scrollerInstance) {
-		let bScroller = new BScroll(w, vNode, args.options as Options);
+		const bScroller = new BScroll(w, vNode, args.options as Options);
 		scrollerInstanceMap.set(args.options.id, bScroller);
-	}
-	else {
+	} else {
 		scrollerInstance.update(args.options as Options, vNode);
-		console.log(`id : ${args.options.id}已经存在, 直接可用`)
-	}	
-}
+		console.log(`id : ${args.options.id}已经存在, 直接可用`);
+	}
+};
 
 export class BScroll {
-	parentWidget: Widget;
-	vNode: VirtualNode;
-	options: Options;
-	wrapper: HTMLElement;
-	scroller: HTMLElement;
-	translateZ: string;
-	wrapperWidth: number;
-	wrapperHeight: number;
-	scrollerWidth: number;
-	scrollerHeight: number;
-	maxScrollX: number;
-	maxScrollY: number;
-	x: number = 0; 
-	y: number = 0;
-	directionX: number = 0;
-	directionY: number = 0;
-	startX: number;
-	startY: number;		
-	isInTransition: number | boolean;	
-	hasHorizontalScroll: boolean;
-	hasVerticalScroll: boolean;
-	probeTimer: any;
-	enabled: boolean;
-	wrapperOffset: { left: number, top: number };
-	destroyed: boolean;
-	initiated: boolean;
-	moved: boolean;
-	distX: number;
-	distY: number;
-	endTime: number;
-	startTime: number;
-	directionLocked: any;
-	target: any;
-	absStartX: number;
-	absStartY: number;
-	pointX: number;
-	pointY: number;
-	resizeTimeout: number;
+	public parentWidget: Widget;
+	public vNode: VirtualNode;
+	public options: Options;
+	public wrapper: HTMLElement;
+	public scroller: HTMLElement;
+	public translateZ: string;
+	public wrapperWidth: number;
+	public wrapperHeight: number;
+	public scrollerWidth: number;
+	public scrollerHeight: number;
+	public maxScrollX: number;
+	public maxScrollY: number;
+	public x: number = 0;
+	public y: number = 0;
+	public directionX: number = 0;
+	public directionY: number = 0;
+	public startX: number;
+	public startY: number;
+	public isInTransition: number | boolean;
+	public hasHorizontalScroll: boolean;
+	public hasVerticalScroll: boolean;
+	public probeTimer: any;
+	public enabled: boolean;
+	public wrapperOffset: { left: number; top: number };
+	public destroyed: boolean;
+	public initiated: boolean;
+	public moved: boolean;
+	public distX: number;
+	public distY: number;
+	public endTime: number;
+	public startTime: number;
+	public directionLocked: any;
+	public target: any;
+	public absStartX: number;
+	public absStartY: number;
+	public pointX: number;
+	public pointY: number;
+	public resizeTimeout: number;
 
 	constructor(w: Widget, vNode: VirtualNode, options: Options) {
-		this.parentWidget = w;		
-		let tempAttach = w.attach;
+		this.parentWidget = w;
+		const tempAttach = w.attach;
 		w.attach = () => {
 			tempAttach();
 			this.update(options, vNode);
-		}
-		let tempAfterupdate = w.afterUpdate;
+		};
+		const tempAfterupdate = w.afterUpdate;
 		w.afterUpdate = () => {
 			tempAfterupdate();
 			this.refresh();
-		}
+		};
 		// cache style for better performance    
 	}
 
-	update(options, vNode) {
+	// tslint:disable:typedef no-object-literal-type-assertion
+	public update(options, vNode) {
 		this.wrapper = <HTMLElement>getRealNode(vNode);
-		this.scroller = <HTMLElement>getRealNode(vNode).children[0];		
+		this.scroller = <HTMLElement>getRealNode(vNode).children[0];
 		this.options = {
 			startX: 0,
 			startY: 0,
-			scrollX: false,			
+			scrollX: false,
 			scrollY: true,
 			directionLockThreshold: 5,
 			momentum: true,
 			bounce: true,
 			swipeTime: 2500,
-			bounceTime: 700,			
+			bounceTime: 700,
 			swipeBounceTime: 1200,
 			deceleration: 0.001,
 			momentumLimitTime: 300,
@@ -130,11 +130,11 @@ export class BScroll {
 			preventDefaultException: {
 				tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT)$/
 			},
-			bindToWrapper:true,
+			bindToWrapper: true,
 			HWCompositing: true,
 			useTransition: true,
-			useTransform: true,		
-			probeType : 3				
+			useTransform: true,
+			probeType: 3
 		} as Options;
 
 		extend(this.options, options);
@@ -165,7 +165,8 @@ export class BScroll {
 		this.enable();
 	}
 
-	_init() {
+	// tslint:disable:function-name
+	public _init() {
 		this.x = 0;
 		this.y = 0;
 		this.directionX = 0;
@@ -174,18 +175,18 @@ export class BScroll {
 		this._addEvents();
 	}
 
-	_addEvents() {
-		let eventOperation = addEvent;
+	public _addEvents() {
+		const eventOperation = addEvent;
 		this._handleEvents(eventOperation);
 	}
 
-	_removeEvents() {
-		let eventOperation = removeEvent;
+	public _removeEvents() {
+		const eventOperation = removeEvent;
 		this._handleEvents(eventOperation);
 	}
 
-	_handleEvents(eventOperation) {
-		let target = this.options.bindToWrapper ? this.wrapper : window;
+	public _handleEvents(eventOperation) {
+		const target = this.options.bindToWrapper ? this.wrapper : window;
 		eventOperation(window, 'orientationchange', this);
 		eventOperation(window, 'resize', this);
 
@@ -210,8 +211,9 @@ export class BScroll {
 		eventOperation(this.scroller, style.transitionEnd, this);
 	}
 
-	_start(e) {
-		let _eventType = eventType[e.type];
+	public _start(e) {
+		// tslint:disable:variable-name
+		const _eventType = eventType[e.type];
 		if (_eventType !== TOUCH_EVENT) {
 			if (e.button !== 0) {
 				return;
@@ -238,14 +240,14 @@ export class BScroll {
 
 		if (this.options.useTransition && this.isInTransition) {
 			this.isInTransition = false;
-			let pos = this.getComputedPosition();
+			const pos = this.getComputedPosition();
 			this._translate(pos.x, pos.y);
-			if(this.parentWidget.tree){
-				notify(this.parentWidget.tree, "ev-scroller-scrollend", { id: this.options.id, x: this.x, y: this.y, instance:this })
+			if (this.parentWidget.tree) {
+				notify(this.parentWidget.tree, 'ev-scroller-scrollend', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
 		}
 
-		let point = e.touches ? e.touches[0] : e;
+		const point = e.touches ? e.touches[0] : e;
 
 		this.startX = this.x;
 		this.startY = this.y;
@@ -253,20 +255,21 @@ export class BScroll {
 		this.absStartY = this.y;
 		this.pointX = point.pageX;
 		this.pointY = point.pageY;
-		if(this.parentWidget.tree){
-			notify(this.parentWidget.tree, "ev-scroller-beforescrollstart", { id: this.options.id, x: this.x, y: this.y, instance:this })
+		if (this.parentWidget.tree) {
+			notify(this.parentWidget.tree, 'ev-scroller-beforescrollstart', { id: this.options.id, x: this.x, y: this.y, instance: this });
 		}
 	}
 
-	_move(e) {
+	// tslint:disable-next-line:cyclomatic-complexity
+	public _move(e) {
 		if (!this.enabled || this.destroyed || eventType[e.type] !== this.initiated) {
 			return;
-		}		
+		}
 		if (this.options.preventDefault) {
 			e.preventDefault();
 		}
 
-		let point = e.touches ? e.touches[0] : e;
+		const point = e.touches ? e.touches[0] : e;
 		let deltaX = point.pageX - this.pointX;
 		let deltaY = point.pageY - this.pointY;
 
@@ -276,13 +279,14 @@ export class BScroll {
 		this.distX += deltaX;
 		this.distY += deltaY;
 
-		let absDistX = Math.abs(this.distX);
-		let absDistY = Math.abs(this.distY);		
-		let timestamp = +new Date();		
+		const absDistX = Math.abs(this.distX);
+		const absDistY = Math.abs(this.distY);
+		const timestamp = +new Date();
 		// We need to move at least 15 pixels for the scrolling to initiate
-		if (timestamp - this.endTime > this.options.momentumLimitTime && (absDistY < this.options.momentumLimitDistance && absDistX < this.options.momentumLimitDistance)) {
+		if (timestamp - this.endTime > this.options.momentumLimitTime &&
+			(absDistY < this.options.momentumLimitDistance && absDistX < this.options.momentumLimitDistance)) {
 			return;
-		}		
+		}
 		// If you are scrolling in one direction lock the other
 		if (!this.directionLocked && !this.options.freeScroll) {
 			if (absDistX > absDistY + this.options.directionLockThreshold) {
@@ -298,6 +302,7 @@ export class BScroll {
 				e.preventDefault();
 			} else if (this.options.eventPassthrough === 'horizontal') {
 				this.initiated = false;
+
 				return;
 			}
 			deltaY = 0;
@@ -306,6 +311,7 @@ export class BScroll {
 				e.preventDefault();
 			} else if (this.options.eventPassthrough === 'vertical') {
 				this.initiated = false;
+
 				return;
 			}
 			deltaX = 0;
@@ -335,10 +341,10 @@ export class BScroll {
 
 		if (!this.moved) {
 			this.moved = true;
-			if(this.parentWidget.tree){
-				notify(this.parentWidget.tree, "ev-scroller-scrollstart", { id: this.options.id, x: this.x, y: this.y, instance:this })
+			if (this.parentWidget.tree) {
+				notify(this.parentWidget.tree, 'ev-scroller-scrollstart', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
-		}		
+		}
 		this._translate(newX, newY);
 
 		if (timestamp - this.startTime > this.options.momentumLimitTime) {
@@ -347,27 +353,29 @@ export class BScroll {
 			this.startY = this.y;
 
 			if (this.options.probeType === 1) {
-				notify(this.parentWidget.tree, "ev-scroller-scroll", { id: this.options.id, x: this.x, y: this.y, instance:this })
+				notify(this.parentWidget.tree, 'ev-scroller-scroll', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
 		}
 
 		if (this.options.probeType > 1) {
-			notify(this.parentWidget.tree, "ev-scroller-scroll", { id: this.options.id, x: this.x, y: this.y, instance:this })
+			notify(this.parentWidget.tree, 'ev-scroller-scroll', { id: this.options.id, x: this.x, y: this.y, instance: this });
 		}
 
-		let scrollLeft = document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft;
-		let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+		const scrollLeft = document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft;
+		const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 
-		let pX = this.pointX - scrollLeft;
-		let pY = this.pointY - scrollTop;
+		const pX = this.pointX - scrollLeft;
+		const pY = this.pointY - scrollTop;
 
-		if (pX > document.documentElement.clientWidth - this.options.momentumLimitDistance || pX < this.options.momentumLimitDistance || pY < this.options.momentumLimitDistance || pY > document.documentElement.clientHeight - this.options.momentumLimitDistance
+		if (pX > document.documentElement.clientWidth - this.options.momentumLimitDistance || pX < this.options.momentumLimitDistance ||
+			pY < this.options.momentumLimitDistance || pY > document.documentElement.clientHeight - this.options.momentumLimitDistance
 		) {
 			this._end(e);
 		}
 	}
 
-	_end(e) {
+	// tslint:disable-next-line:cyclomatic-complexity
+	public _end(e) {
 		if (!this.enabled || this.destroyed || eventType[e.type] !== this.initiated) {
 			return;
 		}
@@ -376,8 +384,8 @@ export class BScroll {
 		if (this.options.preventDefault && !preventDefaultException(e.target, this.options.preventDefaultException)) {
 			e.preventDefault();
 		}
-		if(this.parentWidget.tree){
-			notify(this.parentWidget.tree, "ev-scroller-touchend", { id: this.options.id, x: this.x, y: this.y, instance:this })
+		if (this.parentWidget.tree) {
+			notify(this.parentWidget.tree, 'ev-scroller-touchend', { id: this.options.id, x: this.x, y: this.y, instance: this });
 		}
 
 		// reset if we are outside of the boundaries
@@ -398,38 +406,44 @@ export class BScroll {
 			if (this.options.click) {
 				click(e);
 			}
-			if(this.parentWidget.tree){
-				notify(this.parentWidget.tree, "ev-scroller-scrollcancel", { id: this.options.id, x: this.x, y: this.y, instance:this })
+			if (this.parentWidget.tree) {
+				notify(this.parentWidget.tree, 'ev-scroller-scrollcancel', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
+
 			return;
 		}
 		this.scrollTo(newX, newY);
 
-		let deltaX = newX - this.absStartX;
-		let deltaY = newY - this.absStartY;
+		const deltaX = newX - this.absStartX;
+		const deltaY = newY - this.absStartY;
 		this.directionX = deltaX > 0 ? -1 : deltaX < 0 ? 1 : 0;
 		this.directionY = deltaY > 0 ? -1 : deltaY < 0 ? 1 : 0;
 
 		this.endTime = +new Date();
 
-		let duration = this.endTime - this.startTime;
-		let absDistX = Math.abs(newX - this.startX);
-		let absDistY = Math.abs(newY - this.startY);
+		const duration = this.endTime - this.startTime;
+		const absDistX = Math.abs(newX - this.startX);
+		const absDistY = Math.abs(newY - this.startY);
 
 		// fastclick
-		if (duration < this.options.momentumLimitTime && absDistX < this.options.momentumLimitDistance && absDistY < this.options.momentumLimitDistance) {
-			if(this.parentWidget.tree){
-				notify(this.parentWidget.tree, "ev-scroller-flick", { id: this.options.id, x: this.x, y: this.y, instance:this })
+		if (duration < this.options.momentumLimitTime && absDistX < this.options.momentumLimitDistance &&
+			absDistY < this.options.momentumLimitDistance) {
+			if (this.parentWidget.tree) {
+				notify(this.parentWidget.tree, 'ev-scroller-flick', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
+
 			return;
 		}
 
 		let time = 0;
 		// start momentum animation if needed
-		if (this.options.momentum && duration < this.options.momentumLimitTime && (absDistY > this.options.momentumLimitDistance || absDistX > this.options.momentumLimitDistance)) {
-			let momentumX = this.hasHorizontalScroll ? momentum(this.x, this.startX, duration, this.maxScrollX, this.options.bounce ? this.wrapperWidth : 0, this.options)
+		if (this.options.momentum && duration < this.options.momentumLimitTime &&
+			(absDistY > this.options.momentumLimitDistance || absDistX > this.options.momentumLimitDistance)) {
+			const momentumX = this.hasHorizontalScroll ? momentum(this.x, this.startX, duration, this.maxScrollX, this.options.bounce ?
+				this.wrapperWidth : 0, this.options)
 				: { destination: newX, duration: 0 };
-			let momentumY = this.hasVerticalScroll ? momentum(this.y, this.startY, duration, this.maxScrollY, this.options.bounce ? this.wrapperHeight : 0, this.options)
+			const momentumY = this.hasVerticalScroll ? momentum(this.y, this.startY, duration, this.maxScrollY, this.options.bounce ?
+				this.wrapperHeight : 0, this.options)
 				: { destination: newY, duration: 0 };
 			newX = momentumX.destination;
 			newY = momentumY.destination;
@@ -445,14 +459,15 @@ export class BScroll {
 				easing = ease.swipeBounce;
 			}
 			this.scrollTo(newX, newY, time, easing);
-			return;		
+
+			return;
 		}
-		if(this.parentWidget.tree){
-			notify(this.parentWidget.tree, "ev-scroller-scrollend", { id: this.options.id, x: this.x, y: this.y, instance:this })
+		if (this.parentWidget.tree) {
+			notify(this.parentWidget.tree, 'ev-scroller-scrollend', { id: this.options.id, x: this.x, y: this.y, instance: this });
 		}
 	}
 
-	_resize() {
+	public _resize() {
 		if (!this.enabled) {
 			return;
 		}
@@ -463,16 +478,18 @@ export class BScroll {
 		}, this.options.resizePolling);
 	}
 
-	_startProbe() {
+	public _startProbe() {
 		cancelFrame(this.probeTimer);
 		this.probeTimer = requestFrame(probe);
 
-		let me = this;
+		// tslint:disable:no-this-assignment
+		const me = this;
 
+		// tslint:disable:only-arrow-functions
 		function probe() {
-			let pos = me.getComputedPosition();
-			if(me.parentWidget.tree){
-				notify(me.parentWidget.tree, "ev-scroller-scroll", { id: me.options.id, x: pos.x, y: pos.y, instance:me })
+			const pos = me.getComputedPosition();
+			if (me.parentWidget.tree) {
+				notify(me.parentWidget.tree, 'ev-scroller-scroll', { id: me.options.id, x: pos.x, y: pos.y, instance: me });
 			}
 			if (me.isInTransition) {
 				me.probeTimer = requestFrame(probe);
@@ -480,31 +497,32 @@ export class BScroll {
 		}
 	}
 
-	_transitionTime(time = 0) {		
+	public _transitionTime(time = 0) {
 
+		// tslint:disable:prefer-template
 		paintCmd3(this.scroller.style, style.transitionDuration, time + 'ms');
 		// this.scroller.style[style.transitionDuration] = time + 'ms';
 
 		if (!time && isBadAndroid) {
-			paintCmd3(this.scroller.style, style.transitionDuration, '0.001s');	
+			paintCmd3(this.scroller.style, style.transitionDuration, '0.001s');
 			// this.scroller.style[style.transitionDuration] = '0.001s';					
 
 			requestFrame(() => {
 				if (this.scroller.style[style.transitionDuration] === '0.0001ms') {
-					paintCmd3(this.scroller.style, style.transitionDuration, '0s');			
+					paintCmd3(this.scroller.style, style.transitionDuration, '0s');
 					// this.scroller.style[style.transitionDuration] = '0s';
 				}
 			});
 		}
 	}
 
-	_transitionTimingFunction(easing) {
+	public _transitionTimingFunction(easing) {
 		console.log(`easing is ${easing}`);
-		paintCmd3(this.scroller.style, style.transitionTimingFunction, easing);		
+		paintCmd3(this.scroller.style, style.transitionTimingFunction, easing);
 		// this.scroller.style[style.transitionTimingFunction] = easing;
 	}
 
-	_transitionEnd(e) {
+	public _transitionEnd(e) {
 		if (e.target !== this.scroller || !this.isInTransition) {
 			return;
 		}
@@ -512,21 +530,21 @@ export class BScroll {
 		this._transitionTime();
 		if (!this.resetPosition(this.options.bounceTime, ease.bounce)) {
 			this.isInTransition = false;
-			if(this.parentWidget.tree){
-				notify(this.parentWidget.tree, "ev-scroller-scrollend", { id: this.options.id, x: this.x, y: this.y, instance:this })
+			if (this.parentWidget.tree) {
+				notify(this.parentWidget.tree, 'ev-scroller-scrollend', { id: this.options.id, x: this.x, y: this.y, instance: this });
 			}
 		}
 	}
 
-	_translate(x, y) {
+	public _translate(x, y) {
 		if (this.options.useTransform) {
-			paintCmd3(this.scroller.style, style.transform, 'translate(' + x + 'px,' + y + 'px)' + this.translateZ);			
+			paintCmd3(this.scroller.style, style.transform, 'translate(' + x + 'px,' + y + 'px)' + this.translateZ);
 			// this.scroller.style[style.transform] = 'translate(' + x + 'px,' + y + 'px)' + this.translateZ;
 		} else {
 			x = Math.round(x);
 			y = Math.round(y);
-			paintCmd3(this.scroller.style, "left", x + 'px');			
-			paintCmd3(this.scroller.style, "top", y + 'px');			
+			paintCmd3(this.scroller.style, 'left', x + 'px');
+			paintCmd3(this.scroller.style, 'top', y + 'px');
 			// this.scroller.style.left = x+"px";
 			// this.scroller.style.top = y+"px";
 		}
@@ -535,24 +553,24 @@ export class BScroll {
 		this.y = y;
 	}
 
-	enable() {
+	public enable() {
 		this.enabled = true;
 	}
 
-	disable() {
+	public disable() {
 		this.enabled = false;
 	}
 
-	refresh() {
-		/* eslint-disable no-unused-vars */
-		let rf = this.wrapper.offsetHeight;
+	public refresh() {
+		const rf = this.wrapper.offsetHeight;
 
+		// tslint:disable:radix
 		this.wrapperWidth = parseInt(this.wrapper.style.width) || this.wrapper.clientWidth;
 		this.wrapperHeight = parseInt(this.wrapper.style.height) || this.wrapper.clientHeight;
 
 		this.scrollerWidth = parseInt(this.scroller.style.width) || this.scroller.clientWidth;
 		this.scrollerHeight = parseInt(this.scroller.style.height) || this.scroller.clientHeight;
-		
+
 		this.maxScrollX = this.wrapperWidth - this.scrollerWidth;
 		this.maxScrollY = this.wrapperHeight - this.scrollerHeight;
 
@@ -573,13 +591,13 @@ export class BScroll {
 		this.directionX = 0;
 		this.directionY = 0;
 		this.wrapperOffset = offset(this.wrapper);
-		if(this.parentWidget.tree){
-			notify(this.parentWidget.tree, "ev-scroller-refresh", { id: this.options.id, x: this.x, y: this.y, instance:this })
-		}		
+		if (this.parentWidget.tree) {
+			notify(this.parentWidget.tree, 'ev-scroller-refresh', { id: this.options.id, x: this.x, y: this.y, instance: this });
+		}
 		this.resetPosition();
 	}
 
-	resetPosition(time = 0, easeing = ease.bounce) {
+	public resetPosition(time = 0, easeing = ease.bounce) {
 		let x = this.x;
 		if (!this.hasHorizontalScroll || x > 0) {
 			x = 0;
@@ -603,11 +621,10 @@ export class BScroll {
 		return true;
 	}
 
-
-	scrollTo(x, y, time?, easing?) {
+	public scrollTo(x, y, time?, easing?) {
 		if (!easing) {
 			// easing = ease.bounce
-			easing = ease.swipe			
+			easing = ease.swipe;
 		}
 		this.isInTransition = this.options.useTransition && time > 0 && (x !== this.x || y !== this.y);
 
@@ -619,10 +636,10 @@ export class BScroll {
 			if (time && this.options.probeType === 3) {
 				this._startProbe();
 			}
-		}		
+		}
 	}
 
-	getComputedPosition() {
+	public getComputedPosition() {
 		let matrix: any = window.getComputedStyle(this.scroller, null);
 		let x;
 		let y;
@@ -642,16 +659,16 @@ export class BScroll {
 		};
 	}
 
-	destroy() {
+	public destroy() {
 		this._removeEvents();
 
 		this.destroyed = true;
-		if(this.parentWidget.tree){
-			notify(this.parentWidget.tree, "ev-scroller-destroy", { id: this.options.id, x: this.x, y: this.y, instance:this })
+		if (this.parentWidget.tree) {
+			notify(this.parentWidget.tree, 'ev-scroller-destroy', { id: this.options.id, x: this.x, y: this.y, instance: this });
 		}
 	}
 
-	handleEvent(e) {
+	public handleEvent(e) {
 		switch (e.type) {
 			case 'touchstart':
 			case 'mousedown':
@@ -683,6 +700,7 @@ export class BScroll {
 					e.stopPropagation();
 				}
 				break;
+			default:
 		}
 	}
 }
@@ -691,39 +709,39 @@ export class BScroll {
  * 所有可设置的参数
  */
 interface Options {
-	id?: string | number,//主键
-	startX?: number,//开始的X轴位置
-	startY?: number,//开始的Y轴位置
-	scrollX?: boolean,//滚动方向为 X 轴
-	scrollY?: boolean,//滚动方向为 Y 轴
-	directionLockThreshold?: number,//X轴和Y轴滚动的临界值,X - Y >directionLockThreshold则沿X轴滚动
-	momentum?: boolean,//当快速滑动时是否开启滑动惯性
-	bounce?: boolean,//是否启用回弹动画效果
-	swipeTime?: number,//swipe动画持续时间
-	swipeBounceTime?: number,//swipe回弹持续时间
-	bounceTime?: number,//弹力动画持续时间		
-	deceleration?: number,//滚动动量减速越大越快，建议不大于0.01
-	momentumLimitTime?: number,//符合惯性拖动的最大时间
-	momentumLimitDistance?: number,//符合惯性拖动的最小拖动距离
-	resizePolling?: number,//重新调整窗口大小时，重新计算better-scroll的时间间隔
-	preventDefault?: boolean,//是否阻止默认事件
+	id?: string | number;// 主键
+	startX?: number;// 开始的X轴位置
+	startY?: number;// 开始的Y轴位置
+	scrollX?: boolean;// 滚动方向为 X 轴
+	scrollY?: boolean;// 滚动方向为 Y 轴
+	directionLockThreshold?: number;// X轴和Y轴滚动的临界值,X - Y >directionLockThreshold则沿X轴滚动
+	momentum?: boolean;// 当快速滑动时是否开启滑动惯性
+	bounce?: boolean;// 是否启用回弹动画效果
+	swipeTime?: number;// swipe动画持续时间
+	swipeBounceTime?: number;// swipe回弹持续时间
+	bounceTime?: number;// 弹力动画持续时间		
+	deceleration?: number;// 滚动动量减速越大越快，建议不大于0.01
+	momentumLimitTime?: number;// 符合惯性拖动的最大时间
+	momentumLimitDistance?: number;// 符合惯性拖动的最小拖动距离
+	resizePolling?: number;// 重新调整窗口大小时，重新计算better-scroll的时间间隔
+	preventDefault?: boolean;// 是否阻止默认事件
 	preventDefaultException?: {
-		tagName: RegExp//阻止默认事件的例外配置
-	},
-	HWCompositing?: boolean,//是否启用硬件加速
-	useTransition?: boolean,//是否使用CSS3的Transition属性
-	useTransform?: boolean,//是否使用CSS3的Transform属性	
+		tagName: RegExp;// 阻止默认事件的例外配置
+	};
+	HWCompositing?: boolean;// 是否启用硬件加速
+	useTransition?: boolean;// 是否使用CSS3的Transition属性
+	useTransform?: boolean;// 是否使用CSS3的Transform属性	
 	/**
 	 * 1会截流,只有在滚动结束的时候派发一个 scroll 事件。
 	 * 2在手指 move 的时候也会实时派发 scroll 事件，不会截流。 
 	 * 3除了手指 move 的时候派发scroll事件，在 swipe（手指迅速滑动一小段距离）的情况下，列表会有一个长距离的滚动动画，这个滚动的动画过程中也会实时派发滚动事件
 	 */
-	probeType?: number,	
-	eventPassthrough?: boolean | string,//是否在单方向上阻止原生事件冒泡
-	freeScroll?: boolean,//可以同时沿两个方向滚动
-	bindToWrapper?: boolean,//事件是在wrapper上触发还是在window上触发
-	click?: boolean,//是否允许click事件
-	disableMouse?: boolean,//是否允许mouse事件
-	disableTouch?: boolean,//是否允许touch事件
-	tap?: boolean | string,//是否允许tap事件
+	probeType?: number;
+	eventPassthrough?: boolean | string;// 是否在单方向上阻止原生事件冒泡
+	freeScroll?: boolean;// 可以同时沿两个方向滚动
+	bindToWrapper?: boolean;// 事件是在wrapper上触发还是在window上触发
+	click?: boolean;// 是否允许click事件
+	disableMouse?: boolean;// 是否允许mouse事件
+	disableTouch?: boolean;// 是否允许touch事件
+	tap?: boolean | string;// 是否允许tap事件
 }

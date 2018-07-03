@@ -1,10 +1,10 @@
 .3 {
     position: absolute;
     width: 540px;
-    height: 714px;
+    height: 678px;
     top: 50%;
     left: 50%;
-    margin-top: -357px;
+    margin-top: -340px;
     margin-left: -270px; 
 }
 .4 {
@@ -22,9 +22,7 @@
 }
 .6{
     width:121px;
-    height: 677px;
-    background-image:url(../image/select_map_bg.png);
-    background-size:100% 100%;
+    height: 639px;
     position: absolute;
     top: 0;
     left: 0;
@@ -38,7 +36,7 @@
 }
 .8{
     width:358px;
-    height: 677px;
+    height: 644px;
     position: absolute;
     top: 0;
     left: 121px;
@@ -55,7 +53,7 @@
 .10 {
     position: absolute;
     width: 480px;
-    height: 677px;
+    height: 642px;
     left: 30px;
     top: 26px;
     overflow: hidden;
@@ -86,7 +84,7 @@
 .19 {
     position: absolute;
     left: 0px;
-    top: 691px;
+    top: 655px;
     height: 30px;
     width: 100%;
 }

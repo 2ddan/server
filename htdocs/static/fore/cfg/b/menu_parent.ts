@@ -25,7 +25,7 @@ export const menu_parent = [{
         icon:"pic_gang",
         name:"门派",
         interface:"gotoGang",
-        stage_id:"10",
+        stage_id:"12",
         level_limit:0,tips:["gang"]
     },{
         key:"exp_fb",
@@ -39,7 +39,7 @@ export const menu_parent = [{
         icon:"menu_explore_icon",
         name:"探索",
         interface:"gotoExplore",
-        stage_id:"18",
+        stage_id:"16",
         level_limit:0,tips:["new_fun"]
     }
 ]; 

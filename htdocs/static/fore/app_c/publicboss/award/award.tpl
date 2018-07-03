@@ -6,6 +6,7 @@
 {{let Util = _get("app/mod/util").exports.Util}}
 {{let cfg = _get("app/mod/pi").exports.cfg}}
 {{let publicboss_config = cfg.publicboss_config.publicboss_config}}
+{{let publicboss_base = cfg.publicboss_base.publicboss_base}}
 <div style="position: absolute;width: 100%;height: 100%;z-index:2;left: 50%;margin-left: -270px;">
     {{let root = _get("pi/ui/root").exports}}
 
@@ -56,8 +57,9 @@
                         {{: boos_name = it1.boss_base[k[4]].name}}
                         {{: boss_index = k[4]}}
                     {{end}}
-                {{end}}
-                <img src="../images/boss_head_{{boss_index - 0 + 1}}.png" style="position:absolute;left:0px;top:0px;z-index:1" />
+                {{end}}                
+
+                <img src="../images/boss_head_{{publicboss_base[v[1][0]].boss_head - 1}}.png" style="position:absolute;left:0px;top:0px;z-index:1" />
                 <app_a-widget-pic_text-pic_text style="top:65px;position:absolute;left:-5px;color: #ffffff;font-family:mnjsh;    z-index: 2;">
                     {"icon":"boss_leve_bg","width":39,"height":39,"align":"center","marginLeft":0,"text":{{boss_level}},"textCfg":"","space":2,"fontSize":18,"top":0,"left":0} 
                 </app_a-widget-pic_text-pic_text>
@@ -71,7 +73,7 @@
                 {{let icon = Pi.pictures[_icon]}}
                 {{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(it1.player.career_id)] : prop.name}}
                 <app_a-widget-prop-base on-tap="showPropInfo({{prop.sid ? prop.sid : prop.id}})" style="position:absolute;margin-right:10px;font-size: 18px;left: 125px;top: 30px;">
-                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":"none","name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(prop.sid ? prop.sid : prop.id) > -1 ? 1 : 0}} }
+                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":"none","name":{{name}},"bg":1,"effect":{{prop.effect}} }
                 </app_a-widget-prop-base>
                 
                 {{let apply_flag = 0}}

@@ -6,16 +6,19 @@
  */
 
 // ============================== 导入
-import { create, replace, getAttribute, VNode, VWNode, VirtualNode, VirtualWidgetNode, VirtualTextNode, isVirtualNode, isVirtualWidgetNode } from './virtual_node';
-import { getGlobal } from './frame_mgr';
-import { factory, relative, Widget } from "./widget";
-import { URLInfo, URLEffect, parseEffect, calc, merge, difference, filter } from "./style";
-import * as event from "./event";
-import { Json } from '../lang/type';
 import { butil, commonjs } from '../lang/mod';
-import { call, objCall, arrDrop } from '../util/util';
-import { Res, ResTab, RES_TYPE_BLOB } from '../util/res_mgr';
+import { Json } from '../lang/type';
 import { LogLevel, logLevel, warn } from '../util/log';
+import { Res, RES_TYPE_BLOB, ResTab } from '../util/res_mgr';
+import { arrDrop, call, objCall } from '../util/util';
+import * as event from './event';
+import { getGlobal } from './frame_mgr';
+import { calc, difference, filter, merge, parseEffect, URLEffect, URLInfo } from './style';
+import {
+	create, getAttribute, isVirtualNode, isVirtualWidgetNode, replace,
+	VirtualNode, VirtualTextNode, VirtualWidgetNode, VNode, VWNode
+} from './virtual_node';
+import { factory, relative, Widget } from './widget';
 
 // ============================== 导出
 export let level = commonjs.debug ? logLevel : LogLevel.info;
@@ -60,11 +63,12 @@ export const getRealNode = (node: VNode): HTMLElement => {
 	let n: VirtualWidgetNode;
 	while (node) {
 		n = isVirtualWidgetNode(node);
-		if (!n)
+		if (!n) {
 			return (<any>node).link;
+		}
 		node = n.link.tree;
 	}
-}
+};
 
 /**
  * @description 替换节点，只替换了当前节点的link ext, 其他属性和子节点均没有替换
@@ -72,12 +76,13 @@ export const getRealNode = (node: VNode): HTMLElement => {
  */
 export const replaceNode = (oldNode: VWNode, newNode: VWNode): void => {
 	newNode.link = oldNode.link;
-	let n = isVirtualWidgetNode(newNode);
-	if (n)
+	const n = isVirtualWidgetNode(newNode);
+	if (n) {
 		n.link.parentNode = n;
+	}
 	newNode.ext = oldNode.ext;
 	event.rebindEventMap(oldNode, newNode);
-}
+};
 
 /**
  * @description 添加节点的属性，并没有真正的添加，只是传了一个命令
@@ -85,72 +90,81 @@ export const replaceNode = (oldNode: VWNode, newNode: VWNode): void => {
  */
 export const addAttr = (node: VWNode, key: string, value: string): void => {
 	setAttr(node, key, value);
-}
+};
 /**
  * @description 修改节点的属性
  * @example
  */
 export const modifyAttr = (node: VWNode, key: string, newValue: string, oldValue: string): void => {
 	setAttr(node, key, newValue);
-}
+};
 /**
  * @description 删除节点的属性
  * @example
  */
 export const delAttr = (node: VWNode, key: string): void => {
 	setAttr(node, key);
-}
+};
 
 /**
  * @description 添加节点的属性，并没有真正的添加，只是传了一个命令
  * @example
  */
+// tslint:disable-next-line:cyclomatic-complexity
 export const setAttr = (node: VWNode, key: string, value?: string, immediately?: boolean): void => {
-	if (key === "class") {
-		cmdSet(getRealNode(node), "className", value, immediately);
+	if (key === 'class') {
+		cmdSet(getRealNode(node), 'className', value, immediately);
+
 		return;
 	}
-	if (key === "style")
+	if (key === 'style') {
 		return setAttrStyle(node, key, value, immediately);
-	if (setAttrEventListener(node, key, value) && !showWAttr)
+	}
+	if (setAttrEventListener(node, key, value) && !showWAttr) {
 		return;
+	}
 	if (key.charCodeAt(0) === 119 && key.charCodeAt(1) === 45) {
-		if (key === "w-class") {
+		if (key === 'w-class') {
 			setAttrClazz(node, key, value, immediately);
-		} else if (key === "w-plugin") {
+		} else if (key === 'w-plugin') {
 			setAttrPlugin(node, value ? JSON.parse(value) : undefined);
-		} else if (key === "w-props") {
+		} else if (key === 'w-props') {
 			if (isVirtualWidgetNode(node)) {
-				(<VirtualWidgetNode>node).ext.propsUpdate = (value === "update");
+				(<VirtualWidgetNode>node).ext.propsUpdate = (value === 'update');
 			}
 		} else if (key.charCodeAt(2) === 101 && key.charCodeAt(3) === 118 && key.charCodeAt(4) === 45) {
 			// "w-ev-***"
 			let attr = node.ext.eventAttr;
-			if (!attr)
+			if (!attr) {
 				node.ext.eventAttr = attr = {};
+			}
 			attr[key.slice(5)] = value ? JSON.parse(value) : undefined;
 		}
-		if (!showWAttr)
+		if (!showWAttr) {
 			return;
+		}
 	}
-	let el = getRealNode(node);
+	const el = getRealNode(node);
 	// 匹配img src
-	if (key === "src" && node.tagName === "img") {
+	if (key === 'src' && node.tagName === 'img') {
 		if (value) {
-			if (value.indexOf(":") < 0) {
+			if (value.indexOf(':') < 0) {
 				value = butil.relativePath(value, node.widget.tpl.path);
 				loadSrc(el, node.widget, value, immediately);
-			} else
-				cmdSet(el, "src", value, immediately);
-		} else
-			cmdSet(el, "src", "", immediately);
-	} else if (key === "value" && (node.tagName === "INPUT" || node.tagName === "TEXTAREA")) {
-		cmdSet(el, "value", value, immediately);
-	} else if (value) {
-		cmdObjCall(el, "setAttribute", key, value, immediately);
-	} else
-		cmdObjCall(el, "removeAttribute", key, "", immediately);
-}
+			} else {
+				cmdSet(el, 'src', value, immediately);
+			}
+		} else {
+			cmdSet(el, 'src', '', immediately);
+		}
+	} else if (key === 'value' && (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA')) {
+		cmdSet(el, 'value', value, immediately);
+	} else if (value !== undefined) {
+		cmdObjCall(el, 'setAttribute', key, value, immediately);
+	} else {
+		cmdObjCall(el, 'removeAttribute', key, '', immediately);
+	}
+};
 
 /**
  * @description 创建组件
@@ -159,68 +173,77 @@ export const setAttr = (node: VWNode, key: string, value?: string, immediately?:
 export const createWidget = (node: VirtualWidgetNode): void => {
 	// 处理相对tpl路径的组件
 	let s = node.widget.tpl.wpath;
-	if (!s)
-		node.widget.tpl.wpath = s = node.widget.tpl.path.replace(/\//g, "-");
-	let w = factory(relative(node.tagName, s));
-	if (!w)
-		throw new Error("widget not found, name: " + node.tagName);
+	if (!s) {
+		node.widget.tpl.wpath = s = node.widget.tpl.path.replace(/\//g, '-');
+	}
+	const w = factory(relative(node.tagName, s));
+	if (!w) {
+		throw new Error(`widget not found, name: ${node.tagName}`);		
+	}
 	node.link = w;
 	node.widget.children.push(w);
 	w.parentNode = node;
 	if (node.hasChild || node.child) {
-		if (getAttribute(node.attrs, "w-props"))
+		if (getAttribute(node.attrs, 'w-props')) {
 			w.updateProps(node.child);
-		else
+		} else {
 			w.setProps(node.child);
+		}
 	}
 	w.paint();
-	if (node.widget.inDomTree)
+	if (node.widget.inDomTree) {
 		attachList.push(w);
-	if (node.attrSize)
+	}
+	if (node.attrSize) {
 		node.ext = {};
-	let obj = node.attrs;
-	for (let k in obj)
+	}
+	const obj = node.attrs;
+	for (const k in obj) {
 		setAttr(node, k, obj[k], true);
+	}
 	createHandler && createHandler(node);
-}
+};
 /**
  * @description 创建真实节点
  * @example
  */
 export const createNode = (node: VirtualNode): void => {
 	node.link = document.createElement(node.tagName);
-	if (node.attrSize)
+	if (node.attrSize) {
 		node.ext = {};
-	let obj = node.attrs;
-	for (let k in obj)
+	}
+	const obj = node.attrs;
+	for (const k in obj) {
 		setAttr(node, k, obj[k], true);
+	}
 	createHandler && createHandler(node);
-}
+};
 /**
  * @description 创建文本节点
  * @example
  */
 export const createTextNode = (node: VirtualTextNode): void => {
 	node.link = <HTMLElement>(<any>document.createTextNode(node.text));
-}
+};
 /**
  * @description 插入节点
  * @example
  */
 export const insertNode = (parent: HTMLElement, node: VNode, offset: number): void => {
 	cmdList.push([insertBefore, [parent, getRealNode(node), offset]]);
-}
+};
 /**
  * @description 添加节点
  *
  * @example
  */
 export const addNode = (parent: HTMLElement, node: VNode, immediately?: boolean): void => {
-	if (immediately)
+	if (immediately) {
 		parent.appendChild(getRealNode(node));
-	else
-		cmdList.push([parent, "appendChild", [getRealNode(node)]]);
-}
+	} else {
+		cmdList.push([parent, 'appendChild', [getRealNode(node)]]);
+	}
+};
 /**
  * @description 删除节点，不仅要删除节点还要删除其下widget
  * @example
@@ -231,156 +254,169 @@ export const delNode = (node: VNode): void => {
 		delChilds(<VirtualNode>node);
 	} else if (isVirtualWidgetNode(node)) {
 		arrDrop((node as VirtualWidgetNode).widget.children, r);
-		let w = <Widget>r;
+		const w = <Widget>r;
 		delWidget(w);
 		r = getRealNode(w.tree);
 	}
-	cmdList.push([r, "remove", []]);
-}
+	cmdList.push([r, 'remove', []]);
+};
 /**
  * @description 修改组件节点的数据
  * @example
  */
 export const modifyWidget = (node: VirtualWidgetNode, newValue: Json, oldValue: Json): void => {
-	let w = <Widget>node.link;
-	if (node.ext && node.ext.propsUpdate)
+	const w = <Widget>node.link;
+	if (node.ext && node.ext.propsUpdate) {
 		w.updateProps(newValue, oldValue);
-	else
+	} else {
 		w.setProps(newValue, oldValue);
+	}
 	w.paint();
-}
+};
 /**
  * @description 修改文本节点的文本
  * @example
  */
 export const modifyText = (node: VirtualTextNode, newValue: string, oldValue: string): void => {
-	cmdList.push([node.link, "nodeValue", newValue]);
-}
+	cmdList.push([node.link, 'nodeValue', newValue]);
+};
 
 /**
  * @description 删除widget及其子widgets
  * @example
  */
 export const delWidget = (w: Widget): void => {
-	if (!w.destroy())
+	if (!w.destroy()) {
 		return;
-	if (w.inDomTree)
+	}
+	if (w.inDomTree) {
 		detachList.push(w);
+	}
 	delWidgetChildren(w.children);
-}
+};
 /**
  * @description 获得显示在真实的dom节点的组件名称
  * @example
  */
 export const getShowWidgetName = (node: VNode, name: string): string => {
-	let n = isVirtualWidgetNode(node);
-	return (n) ? getShowWidgetName(n.link.tree, name + " " + n.link.name) : name;
-}
+	const n = isVirtualWidgetNode(node);
+	
+	// tslint:disable:prefer-template
+	return (n) ? getShowWidgetName(n.link.tree, name + ' ' + n.link.name) : name;
+};
 
 /**
  * @description 渲染Widget方法，如果当前正在渲染，则缓冲，渲染完成后会继续渲染该数据
  * @example
  */
 export const paintWidget = (w: Widget, reset?: boolean): void => {
-	let tpl = w.tpl;
-	if (!tpl)
+	const tpl = w.tpl;
+	if (!tpl) {
 		return;
-	let frameMgr: any = getGlobal();
-	if (cmdList.length === 0)
+	}
+	const frameMgr: any = getGlobal();
+	if (cmdList.length === 0) {
 		frameMgr.setBefore(paint1);
-	let tree = tpl.value(w.getConfig() || empty, w.getProps(), w.getState(), w);
+	}
+	const tree = tpl.value(w.getConfig() || empty, w.getProps(), w.getState(), w);
 	let old = w.tree;
 	tree.widget = w;
 	if (old) {
 		if (reset) {
 			try {
 				w.beforeUpdate();
-				let arr = w.children;
-				for (let w of arr)
+				const arr = w.children;
+				for (const w of arr) {
 					delWidget(w);
+				}
 				w.children = [];
 				create(tree);
-				let node = getRealNode(tree);
-				node.setAttribute("w-tag", getShowWidgetName(tree, w.name));
+				const node = getRealNode(tree);
+				node.setAttribute('w-tag', getShowWidgetName(tree, w.name));
 				cmdList.push([replaceTree, [node, getRealNode(old)]]);
-				cmdList.push([w, "afterUpdate", []]);
+				cmdList.push([w, 'afterUpdate', []]);
 				w.tree = tree;
-			}catch(e) {
-				warn(level, "paint reset fail, ", w, e);
+			} catch (e) {
+				warn(level, 'paint reset fail, ', w, e);
 			}
 		} else {
-			let b = old.attrHash !== tree.attrHash || old.childHash !== tree.childHash || forceReplace;
+			const b = old.attrHash !== tree.attrHash || old.childHash !== tree.childHash || forceReplace;
 			if (b) {
 				try {
 					w.beforeUpdate();
 					old = w.tree;
 					replace(old, tree);
-					cmdList.push([w, "afterUpdate", []]);
+					cmdList.push([w, 'afterUpdate', []]);
 					w.tree = tree;
-				}catch(e) {
-					warn(level, "paint replace fail, ", w, e);
-					if(old.offset < 0)
+				} catch (e) {
+					warn(level, 'paint replace fail, ', w, e);
+					if (old.offset < 0) {
 						fixOld(isVirtualNode(old));
+					}
 				}
 			}
 		}
 	} else {
 		try {
 			create(tree);
-			getRealNode(tree).setAttribute("w-tag", getShowWidgetName(tree, w.name));
+			getRealNode(tree).setAttribute('w-tag', getShowWidgetName(tree, w.name));
 			w.tree = tree;
 			w.firstPaint();
-		}catch(e) {
-			warn(level, "paint create fail, ", w, e);
+		} catch (e) {
+			warn(level, 'paint create fail, ', w, e);
 		}
 	}
-}
+};
 
 /**
  * @description 渲染命令2方法
  * @example
  */
 export const paintCmd = (func, args?): void => {
-	let frameMgr: any = getGlobal();
-	if (cmdList.length === 0)
+	const frameMgr: any = getGlobal();
+	if (cmdList.length === 0) {
 		frameMgr.setBefore(paint1);
+	}
 	cmdList.push([func, args]);
-}
+};
 /**
  * @description 渲染命令3方法
  * @example
  */
 export const paintCmd3 = (obj: any, funcOrAttr: string, args?: any): void => {
-	let frameMgr: any = getGlobal();
-	if (cmdList.length === 0)
+	const frameMgr: any = getGlobal();
+	if (cmdList.length === 0) {
 		frameMgr.setBefore(paint1);
+	}
 	cmdList.push([obj, funcOrAttr, args]);
-}
+};
 /**
  * @description 绘制时，添加组件，调用组件及子组件的attach方法
  * @example
  */
 export const paintAttach = (w: Widget): void => {
 	attachList.push(w);
-}
+};
 /**
  * @description 绘制时，删除组件，调用组件及子组件的detach方法
  * @example
  */
 export const paintDetach = (w: Widget): void => {
 	detachList.push(w);
-}
+};
 
 // ============================== 本地
 // 空配置
-let empty = {};// 每个painter的指令都被放入其中
+const empty = {};// 每个painter的指令都被放入其中
 let cmdList = [];
 // 每个被添加的widget
-let attachList: Array<Widget> = [];
+let attachList: Widget[] = [];
 // 每个被删除的widget
-let detachList: Array<Widget> = [];
+let detachList: Widget[] = [];
 // 临时变量
-let cmdList1 = [], attachList1: Array<Widget> = [], detachList1: Array<Widget> = [];
+let cmdList1 = [];
+let attachList1: Widget[] = [];
+let detachList1: Widget[] = [];
 
 /**
  * @description 最终的渲染方法，渲染循环时调用，负责实际改变dom
@@ -398,63 +434,71 @@ const paint1 = (): void => {
 	attachList1 = arr;
 	// 先调用所有要删除的widget的detach方法
 	arr = detachList1;
-	for (let w of arr)
+	for (const w of arr) {
 		paintDetach1(w);
+	}
 	arr.length = 0;
 	arr = cmdList1;
-	for (let cmd of (arr as Array<any>)) {
+	for (const cmd of (arr as any[])) {
 		if (cmd.length === 3) {
-			let args = cmd[2];
+			const args = cmd[2];
 			if (Array.isArray(args)) {
 				objCall(cmd[0], cmd[1], args);
-			} else
+			} else {
 				cmd[0][cmd[1]] = args;
+			}
 		} else if (cmd.length === 2) {
 			call(cmd[0], cmd[1]);
 		}
 	}
-	//arr.length > 3 && level <= LogLevel.debug && debug(level, "painter cmd: ", arr.concat([]));
+	// arr.length > 3 && level <= LogLevel.debug && debug(level, "painter cmd: ", arr.concat([]));
 	arr.length = 0;
 	// 调用所有本次添加上的widget的attach方法
 	arr = attachList1;
-	for (let w of arr)
+	for (const w of arr) {
 		paintAttach1(w);
+	}
 	arr.length = 0;
-}
+};
 /**
  * @description 删除子组件
  * @example
  */
-const delWidgetChildren = (arr: Array<Widget>): void => {
-	for (let w of arr) {
-		if (w.destroy())
+const delWidgetChildren = (arr: Widget[]): void => {
+	for (const w of arr) {
+		if (w.destroy()) {
 			delWidgetChildren(w.children);
+		}
 	}
-}
+};
 /**
  * @description 绘制时，添加组件，调用组件及子组件的attach方法
  * @example
  */
 const paintAttach1 = (w: Widget): void => {
-	if (w.inDomTree)
+	if (w.inDomTree) {
 		return;
+	}
 	w.inDomTree = true;
 	w.attach();
-	for (let c of w.children)
+	for (const c of w.children) {
 		paintAttach1(c);
-}
+	}
+};
 /**
  * @description 绘制时，删除组件，调用组件及子组件的detach方法
  * @example
  */
 const paintDetach1 = (w: Widget): void => {
-	if (!w.inDomTree)
+	if (!w.inDomTree) {
 		return;
+	}
 	w.inDomTree = false;
-	for (let c of w.children)
+	for (const c of w.children) {
 		paintDetach1(c);
+	}
 	w.detach();
-}
+};
 
 /**
  * @description 设置节点的style
@@ -463,52 +507,57 @@ const paintDetach1 = (w: Widget): void => {
 const setAttrStyle = (node: VWNode, key: string, value: string, immediately?: boolean): void => {
 	node.ext.innerStyle = value ? parseEffect(value, node.widget.tpl.path) : null;
 	setDiffStyle(node, immediately);
-}
+};
 /**
  * @description 设置节点的clazz
  * @example
  */
 const setAttrClazz = (node: VWNode, key: string, value: string, immediately?: boolean): void => {
 	if (value) {
-		let clazz = value.trim().split(/\s+/);
-		if (clazz[0].length > 0)
+		const clazz = value.trim().split(/\s+/);
+		if (clazz[0].length > 0) {
 			node.ext.clazzStyle = calc(node.widget, clazz, clazz.join(' '), { map: new Map(), url: null });
-	} else
+		}
+	} else {
 		node.ext.clazzStyle = null;
+	}
 	setDiffStyle(node, immediately);
-}
+};
 /**
  * @description 设置节点的插件
  * @example
  */
 const setAttrPlugin = (node: VWNode, cfg: Json): void => {
-	let mod, w = node.widget;
-	let old = node.ext.plugin;
+	let mod;
+	const w = node.widget;
+	const old = node.ext.plugin;
 	node.ext.plugin = cfg;
 	if (cfg) {
 		mod = commonjs.relativeGet(cfg.mod, w.tpl.path);
 	} else if (old) {
-		let mod = commonjs.relativeGet(old.mod, w.tpl.path);
+		const mod = commonjs.relativeGet(old.mod, w.tpl.path);
 	}
 	mod && mod.exports.pluginBind && mod.exports.pluginBind(w, node, cfg, old);
-}
+};
 /**
  * @description 设置节点的style
  * @example
  */
 const setDiffStyle = (node: VWNode, immediately?: boolean): void => {
-	let ext = node.ext;
-	let style = merge(ext.innerStyle, ext.clazzStyle);
-	let diff = difference(ext.style, style);
+	const ext = node.ext;
+	const style = merge(ext.innerStyle, ext.clazzStyle);
+	const diff = difference(ext.style, style);
 	ext.style = style;
-	if (!diff)
+	if (!diff) {
 		return;
-	let el = getFilterStyleRealNode(node, diff);
-	if (!el)
+	}
+	const el = getFilterStyleRealNode(node, diff);
+	if (!el) {
 		return;
+	}
 	loadURL(el, node.widget, diff);
 	cmdCall(setStyle, el, diff, immediately);
-}
+};
 
 /**
  * @description 获得过滤样式后的真实的dom节点,如果过滤的样式不存在，则不向下获取dom节点
@@ -518,90 +567,103 @@ const getFilterStyleRealNode = (node: VWNode, diff: URLEffect): HTMLElement => {
 	let n: VirtualWidgetNode;
 	while (true) {
 		n = isVirtualWidgetNode(node);
-		if (!n)
+		if (!n) {
 			return (<any>node).link;
+		}
 		node = n.link.tree;
-		if (!node)
-		return null;
-		if (!node.ext)
+		if (!node) {
+			return null;
+		}
+		if (!node.ext) {
 			continue;
+		}
 		filter(node.ext.clazzStyle, diff);
 		filter(node.ext.innerStyle, diff);
-		if (diff.map.size === 0)
+		if (diff.map.size === 0) {
 			return null;
+		}
 	}
-}
+};
 
 /**
  * @description 设置节点的事件，因为并不影响显示，所以立即处理，而不是延迟到渲染时。因为vnode已经被改变，如果延迟，也是会有事件不一致的问题
  * @example
  */
 const setAttrEventListener = (node: VWNode, key: string, value: string): boolean => {
-	let type = event.getEventType(key);
+	// tslint:disable:no-reserved-keywords
+	const type = event.getEventType(key);
 	if (type === event.USER_EVENT_PRE) {
 		event.addUserEventListener(node, key, type, value);
+
 		return true;
 	}
 	if (type) {
 		event.addNativeEventListener(node, getRealNode(node), key, type, value);
+
 		return true;
 	}
+
 	return false;
-}
+};
 /**
  * @description 命令属性设置
  * @example
  */
 const cmdSet = (obj: any, key: string, value: any, immediately?: boolean): void => {
-	if (immediately)
+	if (immediately) {
 		obj[key] = value;
-	else
+	} else {
 		cmdList.push([obj, key, value]);
-}
+	}
+};
 /**
  * @description 命令方法调用
  * @example
  */
 const cmdCall = (func: Function, arg1: any, arg2: any, immediately?: boolean): void => {
-	if (immediately)
+	if (immediately) {
 		func(arg1, arg2);
-	else
+	} else {
 		cmdList.push([func, [arg1, arg2]]);
-}
+	}
+};
 /**
  * @description 命令方法调用
  * @example
  */
 const cmdObjCall = (obj: any, func: string, arg1: any, arg2: any, immediately?: boolean): void => {
-	if (immediately)
+	if (immediately) {
 		obj[func](arg1, arg2);
-	else
+	} else {
 		cmdList.push([obj, func, [arg1, arg2]]);
-}
+	}
+};
 /**
  * @description 删除节点的子节点，不仅要删除节点还要删除其下widget
  * @example
  */
 const delChilds = (node: VirtualNode): void => {
-	let arr = node.children;
-	for (let n of arr) {
+	const arr = node.children;
+	for (const n of arr) {
 		if (isVirtualNode(n)) {
 			delChilds(<VirtualNode>n);
 		} else if (isVirtualWidgetNode(n)) {
 			delWidget(<Widget>n.link);
 		}
 	}
-}
+};
 
 /**
  * @description 设置元素的样式，跳过指定样式
  * @example
  */
 export const setStyle = (el: HTMLElement, style: URLEffect): void => {
-	let s = el.style, map = style.map;
-	for (let [k, v] of map)
+	const s = el.style;
+	const map = style.map;
+	for (const [k, v] of map) {
 		s[k] = v;
-}
+	}
+};
 
 /**
  * @description 插入节点
@@ -609,16 +671,16 @@ export const setStyle = (el: HTMLElement, style: URLEffect): void => {
  */
 const insertBefore = (parent: HTMLElement, el: HTMLElement, offset: number): void => {
 	parent.insertBefore(el, parent.childNodes[offset]);
-}
+};
 
 /**
  * @description 删除树节点
  * @example
  */
 const replaceTree = (newEl: HTMLElement, oldEl: HTMLElement): void => {
-	let parent = oldEl.parentNode;
+	const parent = oldEl.parentNode;
 	parent && parent.replaceChild(newEl, oldEl);
-}
+};
 
 /**
  * @description 替换图像的src
@@ -626,72 +688,81 @@ const replaceTree = (newEl: HTMLElement, oldEl: HTMLElement): void => {
  */
 const loadSrc = (el: HTMLElement, widget: Widget, src: string, immediately?: boolean): void => {
 	let tab = widget.resTab;
-	if (!tab)
-		widget.resTab = tab = new ResTab;
-	let name = RES_TYPE_BLOB + ":" + src;
-	let res = tab.get(name);
+	if (!tab) {
+		widget.resTab = tab = new ResTab();
+	}
+	const name = RES_TYPE_BLOB + ':' + src;
+	const res = tab.get(name);
 	if (res) {
-		cmdSet(el, "src", res.link, immediately);
+		cmdSet(el, 'src', res.link, immediately);
 	} else {
 		tab.load(name, RES_TYPE_BLOB, src, undefined, (res) => {
-			paintCmd3(el, "src", res.link);
+			paintCmd3(el, 'src', res.link);
 		});
 	}
-}
+};
 /**
  * @description 替换含URL的样式或图像的src
  * @example
  */
 const loadURL = (el: HTMLElement, widget: Widget, style: URLEffect): void => {
-	let tab = widget.resTab, url = style.url;
-	if (!url)
+	let tab = widget.resTab;
+	const url = style.url;
+	if (!url) {
 		return;
-	if (!tab)
-		widget.resTab = tab = new ResTab;
-	let arr = url.arr.concat();
+	}
+	if (!tab) {
+		widget.resTab = tab = new ResTab();
+	}
+	const arr = url.arr.concat();
 	let count = (arr.length / 2) | 0;
 	for (let i = arr.length - 2; i > 0; i -= 2) {
-		let file = arr[i];
-		let name = RES_TYPE_BLOB + ":" + file;
-		let res = tab.get(name);
+		const file = arr[i];
+		const name = RES_TYPE_BLOB + ':' + file;
+		const res = tab.get(name);
 		if (res) {
 			arr[i] = res.link;
 			count--;
-			if (count <= 0)
-				style.map.set(url.key, arr.join(""));
-		} else
+			if (count <= 0) {
+				style.map.set(url.key, arr.join(''));
+			}
+		} else {
 			tab.load(name, RES_TYPE_BLOB, file, undefined, urlLoad(arr, i, () => {
 				count--;
-				if (count <= 0)
-					paintCmd3(el.style, url.key, arr.join(""));
+				if (count <= 0) {
+					paintCmd3(el.style, url.key, arr.join(''));
+				}
 			}));
+		}
 	}
-}
+};
 
 /**
  * @description 替换含URL的样式或图像的src
  * @example
  */
-const urlLoad = (arr: Array<string>, i: number, callback: Function): Function => {
+const urlLoad = (arr: string[], i: number, callback: Function): Function => {
 	return (res) => {
 		arr[i] = res.link;
 		callback();
-	}
-}
+	};
+};
 
 /**
  * @description 尽量修复旧节点，已经重绑定的事件和发出的渲染指令还是会生效
  * @example
  */
 const fixOld = (old: VirtualNode): void => {
-	if(!old)
+	if (!old) {
 		return;
-	let arr = old.children;
+	}
+	const arr = old.children;
 	for (let n, i = 0, len = arr.length; i < len; i++) {
 		n = arr[i];
-		if(n.offset >= 0)
+		if (n.offset >= 0) {
 			continue;
+		}
 		n.offset = i;
 		fixOld(isVirtualNode(n));
 	}
-}
+};

@@ -92,12 +92,12 @@ export class Tree<K, V> {
 		while (node) {
 			const r = this.cmp(key, node.key);
 			if (r > 0) {
-				c += (node.left) ? node.size + 1 : 1;
+				c += (node.left) ? node.left.size + 1 : 1;
 				node = node.right;
 			} else if (r < 0) {
 				node = node.left;
 			} else
-				return (node.left) ? c + node.size : c;
+				return (node.left) ? c + node.left.size : c;
 		}
 		return -c;
 	}
@@ -108,17 +108,20 @@ export class Tree<K, V> {
 		rank--;
 		let node = this.root;
 		while (node) {
-			if (!node.left)
-				return { key: node.key, value: node.value };
-			const c = node.left.size;
+			const c = node.left ? node.left.size : 0;
 			if (rank > c) {
+				if(node.right)
+					break;
 				rank -= c + 1;
 				node = node.right;
 			} else if (rank < c) {
+				if(node.left)
+					break;
 				node = node.left;
 			} else
-				return { key: node.key, value: node.value };
+				break;
 		}
+		return { key: node.key, value: node.value };
 	}
 
 	/**
@@ -293,22 +296,19 @@ export class Tree<K, V> {
 	 * 返回从指定键开始的键迭代器，如果不指定键，则从最小键开始
 	 */
 	*keys(key?: K): IterableIterator<K> {
-		const root = this.root, cmp = this.cmp;
-		yield* (key ? iterKey(root, cmp, key, getKey) : iter(root, getKey));
+		yield* (key ? iterKey(this.root, this.cmp, key, getKey) : iter(this.root, getKey));
 	}
 	/**
 	 * 返回从指定键开始的值迭代器，如果不指定键，则从最小键开始
 	 */
 	*values(key?: K): IterableIterator<V> {
-		const root = this.root, cmp = this.cmp;
-		yield* (key ? iterKey(root, cmp, key, getValue) : iter(root, getValue));
+		yield* (key ? iterKey(this.root, this.cmp, key, getValue) : iter(this.root, getValue));
 	}
 	/**
 	 * 返回从指定键开始的条目迭代器，如果不指定键，则从最小键开始
 	 */
 	*items(key?: K): IterableIterator<{ key: K, value: V }> {
-		const root = this.root, cmp = this.cmp;
-		yield* (key ? iterKey(root, cmp, key, getItem) : iter(root, getItem));
+		yield* (key ? iterKey(this.root, this.cmp, key, getItem) : iter(this.root, getItem));
 	}
 
 }
@@ -362,6 +362,8 @@ const rightRatote = <K, V>(key: K, value: V, size: number, left: Node<K, V>, rig
 // 左节点增加大小，Maintain操作
 const maintainLeft = <K, V>(key: K, value: V, size: number, left: Node<K, V>, right: Node<K, V>) => {
 	if (right) {
+		if(!left)
+			return new Node(key, value, size, left, right);
 		if (left.left && left.left.size > right.size)
 			return rightRatote(key, value, size, left, right);
 		if (left.right && left.right.size > right.size)
@@ -375,6 +377,8 @@ const maintainLeft = <K, V>(key: K, value: V, size: number, left: Node<K, V>, ri
 // 右节点增加大小，Maintain操作
 const maintainRight = <K, V>(key: K, value: V, size: number, left: Node<K, V>, right: Node<K, V>) => {
 	if (left) {
+		if(!right)
+			return new Node(key, value, size, left, right);
 		if (right.right && right.right.size > left.size)
 			return leftRatote(key, value, size, left, right);
 		if (right.left && right.left.size > left.size)

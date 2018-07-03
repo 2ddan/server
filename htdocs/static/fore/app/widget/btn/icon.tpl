@@ -18,4 +18,10 @@
         <app-widget-text-text style="position: absolute;display:inline-block;bottom:{{it.bottom || 0}}px;z-index:1;left: 50%;transform: translateX(-50%);">{{cfg}}</app-widget-text-text>
 
     {{end}}
+
+    {{if it.tip_keys && it.tip_keys.length}}
+    <app-widget-tip-tip style="right:3px;top:5px;">
+        {"tip_keys":{{it.tip_keys}} }
+    </app-widget-tip-tip>
+    {{end}}
 </div>

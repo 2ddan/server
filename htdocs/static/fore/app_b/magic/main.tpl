@@ -20,8 +20,8 @@
 				"top":"-1",
 				"margin":2,
 				"arr":[
-					{"tab":"app_b-magic-treasure-treasure","btn":{"text":"铸 魂","type":"border","type_m":"treasure","fontSize":19},"tip_keys":{{["role.magic_activate.bg"]}} },
-					{"tab":"app_b-magic-magic","btn":{"text":"进 阶","type":"border","type_m":"magic","fontSize":19},"tip_keys":{{["role.magic_activate.gm"]}} }
+					{"tab":"app_b-magic-treasure-treasure","btn":{"text":"铸 魂","type":"border","type_m":"treasure","fontSize":24},"tip_keys":{{["role.magic_activate.bg"]}} },
+					{"tab":"app_b-magic-magic","btn":{"text":"进 阶","type":"border","type_m":"magic","fontSize":24},"tip_keys":{{["role.magic_activate.gm"]}} }
 					
 				],
 				"type":0}

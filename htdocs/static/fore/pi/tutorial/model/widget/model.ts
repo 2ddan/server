@@ -1,24 +1,27 @@
-import { Widget } from "../../../widget/widget";
-import { getRealNode } from "../../../widget/painter";
-import { notify } from "../../../widget/event";
+/**
+ * 
+ */
+import { notify } from '../../../widget/event';
+import { getRealNode } from '../../../widget/painter';
+import { Widget } from '../../../widget/widget';
 
 interface ModelData {
 	show: boolean;
 }
 export class Tree extends Widget {
-	props: ModelData; 
-    create() {
+	public props: ModelData; 
+	public create() {
 		this.props = {
 			show: false
-		}
+		};
 	}
 
-	showModel() {
+	public showModel() {
 		this.props.show = true;
 		this.paint();
 	}
 
-	closeModel() {
+	public closeModel() {
 		this.props.show = false;
 		this.paint();
 	}

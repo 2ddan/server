@@ -2,7 +2,7 @@
 	{{let root = _get("pi/ui/root").exports}}
 	
 	<widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
-		{"text":"门派列表","coin":["money","diamond",150005],"left":6,"top":15,"width":540,"type":"","type":"","width":{{root.getWidth()}} } 
+		{"text":"门派列表","coin":["money","diamond"],"left":6,"top":15,"width":540,"width":{{root.getWidth()}} } 
 	</widget>
 	<div w-class="6" w-sid="6">
 		<widget w-class="5" w-tag="app_a-widget-bg_frame-bg" w-sid="5">{"bgName":"bg_frame21"} 

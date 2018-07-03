@@ -22,7 +22,7 @@
                 {{elseif v[0] == "x" || v[0]=="nummul"}}
                 {{: v[0] = "x"}}
                 {{end}}
-                <widget style="vertical-align:middle;;margin:0 20px;" w-tag="app_a-widget-text-text" >
+                <widget style="vertical-align:middle;;margin:0 10px;" w-tag="app_a-widget-text-text" >
                     {"text":{{v[0]+v[1]}},"textCfg":"powerNum","space":0,"fontSize":51} 
                 </widget>
             {{end}}

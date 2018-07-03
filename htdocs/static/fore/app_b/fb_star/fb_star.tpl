@@ -5,6 +5,10 @@
 {{:time = cfg.equip_fb_base.equip_fb_base}}
 {{end}}
 
+{{if it.type == "daily_mission"}}
+{{:time = cfg.daily_fb_star.daily_fb_star}}
+{{end}}
+
 {{let Util = _get("app/mod/util").exports.Util}}       
 
 {{let obj = {"1":"成功通关","2":"通关时间≤"+time["2"].time+"秒","3":"通关时间≤"+time["3"].time+"秒"}  }}

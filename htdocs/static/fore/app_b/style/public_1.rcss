@@ -863,49 +863,70 @@ rule_in_sheet{
 /*新手引导*/
 @keyframes guide_hand{
     0% {
-        margin-left:30px;
-        margin-top:30px;
-    }
-    35% {
-        margin-left:10px;
-        margin-top:10px;
+        -webkit-transform: translate3d(30px,30px,0);
+        -moz-transform: translate3d(30px,30px,0);
+        -o-transform: translate3d(30px,30px,0);
+        transform: translate3d(30px,30px,0);
     }
     40% {
-        margin-left:0;
-        margin-top:0;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
     100% {
-        margin-left:30px;
-        margin-top:30px; 
+        -webkit-transform: translate3d(30px,30px,0);
+        -moz-transform: translate3d(30px,30px,0);
+        -o-transform: translate3d(30px,30px,0);
+        transform: translate3d(30px,30px,0);
     }
 }
 
 @keyframes guide_halo{
     0% {
-        width:0;
+        -webkit-transform: scale3d(0,0,0);
+        -moz-transform: scale3d(0,0,0);
+        -o-transform: scale3d(0,0,0);
+        transform: scale3d(0,0,0);
         opacity: 0;
     }
     39% {
-        width:0;
+        -webkit-transform: scale3d(0,0,0);
+        -moz-transform: scale3d(0,0,0);
+        -o-transform: scale3d(0,0,0);
+        transform: scale3d(0,0,0);
         opacity: 1;
     }
     40% {
-        width:64px;
+        -webkit-transform: scale3d(0.5,0.5,0.5);
+        -moz-transform: scale3d(0.5,0.5,0.5);
+        -o-transform: scale3d(0.5,0.5,0.5);
+        transform: scale3d(0.5,0.5,0.5);
         opacity: 1;
     }
     70% {
-        width:96px;
+        -webkit-transform: scale3d(0.75,0.75,0.75);
+        -moz-transform: scale3d(0.75,0.75,0.75);
+        -o-transform: scale3d(0.75,0.75,0.75);
+        transform: scale3d(0.75,0.75,0.75);
         opacity: 1;
     }
     80% {
-        width:128px;
+        -webkit-transform: scale3d(1,1,1);
+        -moz-transform: scale3d(1,1,1);
+        -o-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1);
         opacity: 0.4;
     }
     100% {
-        width:128px;
+        -webkit-transform: scale3d(1,1,1);
+        -moz-transform: scale3d(1,1,1);
+        -o-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1);
         opacity: 0;
     }
 }
+
 
 /* 在线礼包 */
 .anim_bag{
@@ -955,8 +976,8 @@ rule_in_sheet{
 }
 /* 首冲菱形光效 */
 .anim_ling {
-    width: 170px;
-    height: 170px;
+    width: 512px;
+    height: 512px;
     background-image: url(app_b/style/image_1/ling_first_recharge.png);
     animation-name: frames_anim_bag;
     -webkit-animation-name: frames_anim_bag;
@@ -972,38 +993,89 @@ rule_in_sheet{
     -webkit-animation-direction: normal;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    left: 50%;
-    top: 50%;
     position: absolute;
-    transform: translate(-51.5%,-49.5%) scale(0.7);
 }
 @keyframes frames_anim_bag{
-    0% {background-position: calc(0%) calc(0%);}
-    12.50% {background-position: calc(50%) calc(0%);}
-    25% {background-position: calc(100%) calc(0%);}
-    37.50% {background-position: calc(0%) calc(50%);}
-    50% {background-position: calc(50%) calc(50%);}
-    62.50% {background-position: calc(100%) calc(50%);}
-    75% {background-position: calc(0%) calc(100%);}
-    87.50% {background-position: calc(50%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    12.50% {
+        transform: translate3d(-33.3333%,0,0);
+        -webkit-transform: translate3d(-33.3333%,0,0);
+    }
+    25% {
+        transform: translate3d(-66.6666%,0,0);
+        -webkit-transform: translate3d(-66.6666%,0,0);
+    }
+    37.50% {
+        transform: translate3d(0,-33.3333%,0);
+        -webkit-transform: translate3d(0,-33.3333%,0);
+    }
+    50% {
+        transform: translate3d(-33.3333%,-33.3333%,0);
+        -webkit-transform: translate3d(-33.3333%,-33.3333%,0);
+    }
+    62.50% {
+        transform: translate3d(-66.6666%,-33.3333%,0);
+        -webkit-transform: translate3d(-66.6666%,-33.3333%,0);
+    }
+    75% {
+        transform: translate3d(0,-66.6666%,0);
+        -webkit-transform: translate3d(0,-66.6666%,0);
+    }
+    87.50% {
+        transform: translate3d(-33.3333%,-66.6666%,0);
+        -webkit-transform: translate3d(-33.3333%,-66.6666%,0);
+    }
+    100% {
+        transform: translate3d(-66.6666%,-66.6666%,0);
+        -webkit-transform: translate3d(-66.6666%,-66.6666%,0);
+    }
 }
 @-webkit-keyframes frames_anim_bag{
-    0% {background-position: calc(0%) calc(0%);}
-    12.50% {background-position: calc(50%) calc(0%);}
-    25% {background-position: calc(100%) calc(0%);}
-    37.50% {background-position: calc(0%) calc(50%);}
-    50% {background-position: calc(50%) calc(50%);}
-    62.50% {background-position: calc(100%) calc(50%);}
-    75% {background-position: calc(0%) calc(100%);}
-    87.50% {background-position: calc(50%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    12.50% {
+        transform: translate3d(-33.3333%,0,0);
+        -webkit-transform: translate3d(-33.3333%,0,0);
+    }
+    25% {
+        transform: translate3d(-66.6666%,0,0);
+        -webkit-transform: translate3d(-66.6666%,0,0);
+    }
+    37.50% {
+        transform: translate3d(0,-33.3333%,0);
+        -webkit-transform: translate3d(0,-33.3333%,0);
+    }
+    50% {
+        transform: translate3d(-33.3333%,-33.3333%,0);
+        -webkit-transform: translate3d(-33.3333%,-33.3333%,0);
+    }
+    62.50% {
+        transform: translate3d(-66.6666%,-33.3333%,0);
+        -webkit-transform: translate3d(-66.6666%,-33.3333%,0);
+    }
+    75% {
+        transform: translate3d(0,-66.6666%,0);
+        -webkit-transform: translate3d(0,-66.6666%,0);
+    }
+    87.50% {
+        transform: translate3d(-33.3333%,-66.6666%,0);
+        -webkit-transform: translate3d(-33.3333%,-66.6666%,0);
+    }
+    100% {
+        transform: translate3d(-66.6666%,-66.6666%,0);
+        -webkit-transform: translate3d(-66.6666%,-66.6666%,0);
+    }
 }
 
 /* 神兵释放水球满了 */
 .treasure_full {
-    width: 170px;
-    height: 170px;
+    width: 512px;
+    height: 512px;
     background-image: url(app_b/style/image_1/treasure_full.png);
     animation-name: anim_treasure_full;
     -webkit-animation-name: anim_treasure_full;
@@ -1021,26 +1093,80 @@ rule_in_sheet{
     -webkit-animation-fill-mode: forwards;
 }
 @keyframes anim_treasure_full{
-    0% {background-position: calc(0%) calc(0%);}
-    12.50% {background-position: calc(50%) calc(0%);}
-    25% {background-position: calc(100%) calc(0%);}
-    37.50% {background-position: calc(0%) calc(50%);}
-    50% {background-position: calc(50%) calc(50%);}
-    62.50% {background-position: calc(100%) calc(50%);}
-    75% {background-position: calc(0%) calc(100%);}
-    87.50% {background-position: calc(50%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    12.50% {
+        transform: translate3d(-33.3333%,0,0);
+        -webkit-transform: translate3d(-33.3333%,0,0);
+    }
+    25% {
+        transform: translate3d(-66.6666%,0,0);
+        -webkit-transform: translate3d(-66.6666%,0,0);
+    }
+    37.50% {
+        transform: translate3d(0,-33.3333%,0);
+        -webkit-transform: translate3d(0,-33.3333%,0);
+    }
+    50% {
+        transform: translate3d(-33.3333%,-33.3333%,0);
+        -webkit-transform: translate3d(-33.3333%,-33.3333%,0);
+    }
+    62.50% {
+        transform: translate3d(-66.6666%,-33.3333%,0);
+        -webkit-transform: translate3d(-66.6666%,-33.3333%,0);
+    }
+    75% {
+        transform: translate3d(0,-66.6666%,0);
+        -webkit-transform: translate3d(0,-66.6666%,0);
+    }
+    87.50% {
+        transform: translate3d(-33.3333%,-66.6666%,0);
+        -webkit-transform: translate3d(-33.3333%,-66.6666%,0);
+    }
+    100% {
+        transform: translate3d(-66.6666%,-66.6666%,0);
+        -webkit-transform: translate3d(-66.6666%,-66.6666%,0);
+    }
 }
 @-webkit-keyframes anim_treasure_full{
-    0% {background-position: calc(0%) calc(0%);}
-    12.50% {background-position: calc(50%) calc(0%);}
-    25% {background-position: calc(100%) calc(0%);}
-    37.50% {background-position: calc(0%) calc(50%);}
-    50% {background-position: calc(50%) calc(50%);}
-    62.50% {background-position: calc(100%) calc(50%);}
-    75% {background-position: calc(0%) calc(100%);}
-    87.50% {background-position: calc(50%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    12.50% {
+        transform: translate3d(-33.3333%,0,0);
+        -webkit-transform: translate3d(-33.3333%,0,0);
+    }
+    25% {
+        transform: translate3d(-66.6666%,0,0);
+        -webkit-transform: translate3d(-66.6666%,0,0);
+    }
+    37.50% {
+        transform: translate3d(0,-33.3333%,0);
+        -webkit-transform: translate3d(0,-33.3333%,0);
+    }
+    50% {
+        transform: translate3d(-33.3333%,-33.3333%,0);
+        -webkit-transform: translate3d(-33.3333%,-33.3333%,0);
+    }
+    62.50% {
+        transform: translate3d(-66.6666%,-33.3333%,0);
+        -webkit-transform: translate3d(-66.6666%,-33.3333%,0);
+    }
+    75% {
+        transform: translate3d(0,-66.6666%,0);
+        -webkit-transform: translate3d(0,-66.6666%,0);
+    }
+    87.50% {
+        transform: translate3d(-33.3333%,-66.6666%,0);
+        -webkit-transform: translate3d(-33.3333%,-66.6666%,0);
+    }
+    100% {
+        transform: translate3d(-66.6666%,-66.6666%,0);
+        -webkit-transform: translate3d(-66.6666%,-66.6666%,0);
+    }
 }
 
 /* 宠物突破按钮提示 */
@@ -1104,19 +1230,17 @@ rule_in_sheet{
 
 /* 菱形背景的边框动画 */
 .menu_seven_avtive {
-    width: 126px;
+    width: 1008px;
     height: 126px;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-51%,-51%) scale(0.9);
+
     background-image: url(app_b/style/image_1/menu_effect.png);
     animation-name: frames_menu_seven;
     -webkit-animation-name: frames_menu_seven;
     animation-duration: 1000ms;
     -webkit-animation-duration: 1000ms;
-    animation-timing-function: step-start;
-    -webkit-animation-timing-function: step-start;
+    animation-timing-function: steps(7,end);
+    -webkit-animation-timing-function: steps(7,end);
     animation-delay: 0ms;
     -webkit-animation-delay: 0ms;
     animation-iteration-count: infinite;
@@ -1127,37 +1251,35 @@ rule_in_sheet{
     -webkit-animation-fill-mode: forwards;
 }
 @keyframes frames_menu_seven{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-87.5%,0,0);
+        -webkit-transform: translate3d(-87.5%,0,0);
+    }
 }
 @-webkit-keyframes frames_menu_seven{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-87.5%,0,0);
+        -webkit-transform: translate3d(-87.5%,0,0);
+    }
 }
 
 /*wild task任务完成边框 */
 .wild_task_complete {
-    width: 232px;
-    height: 183px;
     background-image: url(app_b/style/image_1/task_complete.png);
     animation-name: frames_task_complete;
     -webkit-animation-name: frames_task_complete;
     animation-duration: 1000ms;
     -webkit-animation-duration: 1000ms;
-    animation-timing-function: step-start;
-    -webkit-animation-timing-function: step-start;
+    animation-timing-function: steps(7,end);
+    -webkit-animation-timing-function: steps(7,end);
     animation-delay: 0ms;
     -webkit-animation-delay: 0ms;
     animation-iteration-count: infinite;
@@ -1168,25 +1290,59 @@ rule_in_sheet{
     -webkit-animation-fill-mode: forwards;
 }
 @keyframes frames_task_complete{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-87.5%,0,0);
+        -webkit-transform: translate3d(-87.5%,0,0);
+    }
 }
 @-webkit-keyframes frames_task_complete{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {
+        transform: translate3d(0,0,0);
+        -webkit-transform: translate3d(0,0,0);
+    }
+    100% {
+        transform: translate3d(-87.5%,0,0);
+        -webkit-transform: translate3d(-87.5%,0,0);
+    }
 }
+
+/* wild task任务消失出现动画*/
+.taskInOut{
+    animation-name: task_opacity;
+    -webkit-animation-name: task_opacity;
+    animation-duration:2100ms;
+    -webkit-animation-duration: 2100ms;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+
+@keyframes task_opacity{
+    0% {
+       opacity: 1;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 /* wild task任务刷新 */
 .task_refresh {
@@ -1318,43 +1474,25 @@ rule_in_sheet{
 
 /* 在线礼包摇晃 */
 .online_award {
-    width: 107px;
+    width: 856px;
     height: 109px;
     background-image: url(app_b/style/image_1/online_award.png);
     animation-name: frames_online_award;
     -webkit-animation-name: frames_online_award;
     animation-duration: 1200ms;
     -webkit-animation-duration: 1200ms;
-    animation-timing-function: step-start;
-    -webkit-animation-timing-function: step-start;
-    animation-delay: 0ms;
-    -webkit-animation-delay: 0ms;
+    animation-timing-function: steps(7, end);
+    -webkit-animation-timing-function: steps(7,end);
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    animation-direction: normal;
-    -webkit-animation-direction: normal;
-    animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
 }
 @keyframes frames_online_award{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {transform: translate3d(0px,0px,0px);}
+    100% {transform: translate3d(-749px,0px,0px);}
 }
 @-webkit-keyframes frames_online_award{
-    0% {background-position: calc(0%) calc(100%);}
-    14.29% {background-position: calc(14.29%) calc(100%);}
-    28.57% {background-position: calc(28.57%) calc(100%);}
-    42.86% {background-position: calc(42.86%) calc(100%);}
-    57.14% {background-position: calc(57.14%) calc(100%);}
-    71.43% {background-position: calc(71.43%) calc(100%);}
-    85.71% {background-position: calc(85.71%) calc(100%);}
-    100% {background-position: calc(100%) calc(100%);}
+    0% {transform: translate3d(0px,0px,0px);}
+    100% {transform: translate3d(-749px,0px,0px);}
 }
 
 /* 铸魂进度条满动画 */
@@ -1506,4 +1644,652 @@ rule_in_sheet{
         opacity:0;
         transform: scale(8);
     }
+}
+
+/* 采集锤子动画 */
+@keyframes collect_anim{
+    0% {
+        transform: rotate(18deg);
+    }
+    25% {
+        transform: rotate(-16deg);
+    }
+    50% {
+        transform: rotate(18deg);
+    }
+    75% {
+        transform: rotate(-16deg);
+    }
+    100% {
+        transform: rotate(18deg);
+    }
+}
+
+/* 离线进度条动画 */
+.anim_off_line_bar {
+    width: 301px;
+    height: 106px;
+    background-image: url(app_b/style/image_1/off_line_bar.png);
+    animation-name: off_line_bar;
+    -webkit-animation-name: off_line_bar;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes off_line_bar{
+    0% {background-position: calc(0%) calc(100%);}
+    7.14% {background-position: calc(7.14%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    21.43% {background-position: calc(21.43%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    35.71% {background-position: calc(35.71%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    64.29% {background-position: calc(64.29%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    78.57% {background-position: calc(78.57%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    92.86% {background-position: calc(92.86%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes off_line_bar{
+    0% {background-position: calc(0%) calc(100%);}
+    7.14% {background-position: calc(7.14%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    21.43% {background-position: calc(21.43%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    35.71% {background-position: calc(35.71%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    64.29% {background-position: calc(64.29%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    78.57% {background-position: calc(78.57%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    92.86% {background-position: calc(92.86%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 经验副本进度条动画 */
+.anim_exp_bar {
+    width: 79px;
+    height: 262px;
+    background-image: url(app_b/style/image_1/exp_bar.png);
+    animation-name: exp_bar;
+    -webkit-animation-name: exp_bar;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes exp_bar{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes exp_bar{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 高级抽奖页面 动画*/
+.anim_lottery {
+    width: 276px;
+    height: 285px;
+    background-image: url(app_b/style/image_1/book_1.png);
+    animation-name: frames_lottery;
+    -webkit-animation-name: frames_lottery;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes frames_lottery{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes frames_lottery{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+
+/* 低级抽奖获得奖励动画*/
+.anim_lottery_diamond {
+    width: 256px;
+    height: 256px;
+    background-image: url(app_b/style/image_1/lottery_diamond.png);
+    animation-name: lottery_diamond;
+    -webkit-animation-name: lottery_diamond;
+    animation-duration: 2000ms;
+    -webkit-animation-duration: 2000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes lottery_diamond{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes lottery_diamond{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 高级抽奖获得奖励动画*/
+.anim_lottery_prop{
+    width: 256px;
+    height: 256px;
+    background-image: url(app_b/style/image_1/lottery_prop.png);
+    animation-name: lottery_prop;
+    -webkit-animation-name: lottery_prop;
+    animation-duration: 2000ms;
+    -webkit-animation-duration: 2000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes lottery_prop{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes lottery_prop{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 奖励出现时动画*/
+.anim_lottery_award {
+    width: 170px;
+    height: 166px;
+    background-image: url(app_b/style/image_1/lottery_award.png);
+    animation-name: lottery_award;
+    -webkit-animation-name: lottery_award;
+    animation-duration: 210ms;
+    -webkit-animation-duration: 210ms;
+    animation-timing-function: step-end;
+    -webkit-animation-timing-function: step-end;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes lottery_award{
+    0% {background-position: calc(0%) calc(0%);}
+    33.33% {background-position: calc(100%) calc(0%);}
+    66.67% {background-position: calc(0%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes lottery_award{
+    0% {background-position: calc(0%) calc(0%);}
+    33.33% {background-position: calc(100%) calc(0%);}
+    66.67% {background-position: calc(0%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 抽奖天书浮动动画*/
+@keyframes lottery_float{
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    50% {
+        transform: translate3d(0,5px,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+/* 符文 高级镶嵌 动画*/
+.anim_rune_high {
+    width: 72px;
+    height: 72px;
+    background-image: url(app_b/style/image_1/rune_high.png);
+    animation-name: rune_high;
+    -webkit-animation-name: rune_high;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes rune_high{
+    0% {background-position: calc(0%) calc(100%);}
+    7.14% {background-position: calc(7.14%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    21.43% {background-position: calc(21.43%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    35.71% {background-position: calc(35.71%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    64.29% {background-position: calc(64.29%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    78.57% {background-position: calc(78.57%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    92.86% {background-position: calc(92.86%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes rune_high{
+    0% {background-position: calc(0%) calc(100%);}
+    7.14% {background-position: calc(7.14%) calc(100%);}
+    14.29% {background-position: calc(14.29%) calc(100%);}
+    21.43% {background-position: calc(21.43%) calc(100%);}
+    28.57% {background-position: calc(28.57%) calc(100%);}
+    35.71% {background-position: calc(35.71%) calc(100%);}
+    42.86% {background-position: calc(42.86%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    57.14% {background-position: calc(57.14%) calc(100%);}
+    64.29% {background-position: calc(64.29%) calc(100%);}
+    71.43% {background-position: calc(71.43%) calc(100%);}
+    78.57% {background-position: calc(78.57%) calc(100%);}
+    85.71% {background-position: calc(85.71%) calc(100%);}
+    92.86% {background-position: calc(92.86%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 符文 旗子浮动 动画*/
+.anim_rune_flag {
+    width: 240px;
+    height: 228px;
+    background-image: url(app_b/style/image_1/rune_flag.png);
+    animation-name: rune_flag;
+    -webkit-animation-name: rune_flag;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes rune_flag{
+    0% {background-position: calc(0%) calc(100%);}
+    10% {background-position: calc(10%) calc(100%);}
+    20% {background-position: calc(20%) calc(100%);}
+    30% {background-position: calc(30%) calc(100%);}
+    40% {background-position: calc(40%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    60% {background-position: calc(60%) calc(100%);}
+    70% {background-position: calc(70%) calc(100%);}
+    80% {background-position: calc(80%) calc(100%);}
+    90% {background-position: calc(90%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes rune_flag{
+    0% {background-position: calc(0%) calc(100%);}
+    10% {background-position: calc(10%) calc(100%);}
+    20% {background-position: calc(20%) calc(100%);}
+    30% {background-position: calc(30%) calc(100%);}
+    40% {background-position: calc(40%) calc(100%);}
+    50% {background-position: calc(50%) calc(100%);}
+    60% {background-position: calc(60%) calc(100%);}
+    70% {background-position: calc(70%) calc(100%);}
+    80% {background-position: calc(80%) calc(100%);}
+    90% {background-position: calc(90%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 符文 修行点亮 动画*/
+.anim_state_light {
+    width: 155px;
+    height: 155px;
+    background-image: url(app_b/style/image_1/state_light.png);
+    animation-name: state_light;
+    -webkit-animation-name: state_light;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes state_light{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes state_light{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 符文 修行升级 动画*/
+.anim_state_up {
+    width: 531px;
+    height: 454px;
+    background-image: url(app_b/style/image_1/state_up.png);
+    animation-name: state_up;
+    -webkit-animation-name: state_up;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes state_up{
+    0% {background-position: calc(0%) calc(0%);}
+    9.09% {background-position: calc(50%) calc(0%);}
+    18.18% {background-position: calc(100%) calc(0%);}
+    27.27% {background-position: calc(0%) calc(33.33%);}
+    36.36% {background-position: calc(50%) calc(33.33%);}
+    45.45% {background-position: calc(100%) calc(33.33%);}
+    54.55% {background-position: calc(0%) calc(66.67%);}
+    63.64% {background-position: calc(50%) calc(66.67%);}
+    72.73% {background-position: calc(100%) calc(66.67%);}
+    81.82% {background-position: calc(0%) calc(100%);}
+    90.91% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes state_up{
+    0% {background-position: calc(0%) calc(0%);}
+    9.09% {background-position: calc(50%) calc(0%);}
+    18.18% {background-position: calc(100%) calc(0%);}
+    27.27% {background-position: calc(0%) calc(33.33%);}
+    36.36% {background-position: calc(50%) calc(33.33%);}
+    45.45% {background-position: calc(100%) calc(33.33%);}
+    54.55% {background-position: calc(0%) calc(66.67%);}
+    63.64% {background-position: calc(50%) calc(66.67%);}
+    72.73% {background-position: calc(100%) calc(66.67%);}
+    81.82% {background-position: calc(0%) calc(100%);}
+    90.91% {background-position: calc(50%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 符文 经脉点亮 动画*/
+.anim_practice_light {
+    width: 85px;
+    height: 84px;
+    background-image: url(app_b/style/image_1/practice_light.png);
+    animation-name: practice_light;
+    -webkit-animation-name: practice_light;
+    animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes practice_light{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes practice_light{
+    0% {background-position: calc(0%) calc(0%);}
+    6.67% {background-position: calc(33.33%) calc(0%);}
+    13.33% {background-position: calc(66.67%) calc(0%);}
+    20% {background-position: calc(100%) calc(0%);}
+    26.67% {background-position: calc(0%) calc(33.33%);}
+    33.33% {background-position: calc(33.33%) calc(33.33%);}
+    40% {background-position: calc(66.67%) calc(33.33%);}
+    46.67% {background-position: calc(100%) calc(33.33%);}
+    53.33% {background-position: calc(0%) calc(66.67%);}
+    60% {background-position: calc(33.33%) calc(66.67%);}
+    66.67% {background-position: calc(66.67%) calc(66.67%);}
+    73.33% {background-position: calc(100%) calc(66.67%);}
+    80% {background-position: calc(0%) calc(100%);}
+    86.67% {background-position: calc(33.33%) calc(100%);}
+    93.33% {background-position: calc(66.67%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+/* 门派技能升级 */
+.gang_skill_anim {
+    width: 210px;
+    height: 210px;
+    background-image: url(app_b/style/image_1/gang_skill_anim.png);
+    animation-name: gang_skill;
+    -webkit-animation-name: gang_skill;
+    animation-duration: 700ms;
+    -webkit-animation-duration: 700ms;
+    animation-timing-function: step-start;
+    -webkit-animation-timing-function: step-start;
+    animation-delay: 0ms;
+    -webkit-animation-delay: 0ms;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-direction: normal;
+    -webkit-animation-direction: normal;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes gang_skill{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
+}
+@-webkit-keyframes gang_skill{
+    0% {background-position: calc(0%) calc(100%);}
+    7.69% {background-position: calc(7.69%) calc(100%);}
+    15.38% {background-position: calc(15.38%) calc(100%);}
+    23.08% {background-position: calc(23.08%) calc(100%);}
+    30.77% {background-position: calc(30.77%) calc(100%);}
+    38.46% {background-position: calc(38.46%) calc(100%);}
+    46.15% {background-position: calc(46.15%) calc(100%);}
+    53.85% {background-position: calc(53.85%) calc(100%);}
+    61.54% {background-position: calc(61.54%) calc(100%);}
+    69.23% {background-position: calc(69.23%) calc(100%);}
+    76.92% {background-position: calc(76.92%) calc(100%);}
+    84.62% {background-position: calc(84.62%) calc(100%);}
+    92.31% {background-position: calc(92.31%) calc(100%);}
+    100% {background-position: calc(100%) calc(100%);}
 }

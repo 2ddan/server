@@ -1,0 +1,148 @@
+
+{
+  "name" : "eff_model_wing03",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      -2.17204189300537,
+      -0.920435428619385,
+      -6.06782245635986
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "2333uv" : "T6coTWfVrckKWDFAHBVqYJ.ai"
+    },
+    "playAnim"   : {
+      "name" : "2333uv"
+    }
+  },
+  "children"  : [
+    {
+      "name" : "eff_model_wing03",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "wingdaiji03" : "UxkeNVUA5vND3ZbWAtVkpM.ai",
+          "wingpaobu03" : "J4s2jtKuyTY5WRYcR6a17Q.ai",
+          "wingzhanshi03" : "4HixVF8e5B7F2nVmyKdaCb.ai"
+        },
+        "playAnim"   : {
+          "name" : "wingzhanshi03"
+        }
+      },
+      "children"  : [
+        {
+          "name" : "model_wing03",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              -1.58989568177503E-08
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              8,
+              14,
+              11,
+              12,
+              9,
+              10,
+              13,
+              1,
+              4,
+              7,
+              5,
+              2,
+              3,
+              6
+            ],
+            "bounds" : [
+              [
+                1.27346444129944,
+                1.15579319000244,
+                0.0625446140766144
+              ],
+              [
+                -1.91310811042786,
+                -1.76468801498413,
+                -0.0625469535589218
+              ]
+            ],
+            "rootbone" : "Bone001",
+            "material" : [
+              {
+                "type" : "MeshParticlesMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "T1rqZQ6sMgyV2vyddGtjPh.png"
+                  }
+                },
+                "transparent" : true,
+                "blendSrc"    : 204,
+                "blendDst"    : 201,
+                "side"        : 2,
+                "tintColor"   : 8355711,
+                "tintOpacity" : 0.5,
+                "layer"       : 3000,
+                "blending"    : 5
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "FuMzFCgvYWtWBjXoqJAPTP.geo"
+            }
+          }
+        },
+        {
+          "type" : "Skeleton",
+          "res"  : "4z82gJdGJb7CRAqNKR1L5p.skl"
+        }
+      ]
+    }
+  ]
+}

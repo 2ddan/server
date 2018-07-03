@@ -1,18 +1,21 @@
 
-
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve"
+/**
+ * 
+ */
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
 
 export class SizeOverLifetimeModule {
-	separateAxes: boolean;
-	size: IMinMaxCurve;
-	sizeMultiplier: number;
-	x: IMinMaxCurve;
-	xMultiplier: number;
-	y: IMinMaxCurve;
-	yMultiplier: number;
-	z: IMinMaxCurve;
-	zMultiplier: number;
+	public separateAxes: boolean;
+	public size: IMinMaxCurve;
+	public sizeMultiplier: number;
+	public x: IMinMaxCurve;
+	public xMultiplier: number;
+	public y: IMinMaxCurve;
+	public yMultiplier: number;
+	public z: IMinMaxCurve;
+	public zMultiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.separateAxes = config.separateAxes;
 		this.size = buildMinMaxCurve(config.size);
@@ -24,4 +27,4 @@ export class SizeOverLifetimeModule {
 		this.z = buildMinMaxCurve(config.z);
 		this.zMultiplier = config.zMultiplier;
 	}
-};
+}

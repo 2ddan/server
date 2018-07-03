@@ -49,7 +49,7 @@
                                 
                                 {{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(it1.player.career_id)] : prop.name}}
                                 <app_a-widget-prop-base on-tap="showPropInfo({{n}})" style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;">
-                                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":{{prop.type == "equip" ? "Lv" + prop.level[1] : (count == 0 ? "none" : count)}},"name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(id) > -1 ? 1 : 0}} }
+                                    {"prop":{{prop}},"url":{{icon}},"width":68,"height":68,"count":{{prop.type == "equip" ? "Lv" + prop.level[1] : (count == 0 ? "none" : count)}},"name":{{name}},"bg":1,"effect":{{prop.effect}} }
                                 </app_a-widget-prop-base>
                             {{end}}
                         </div>

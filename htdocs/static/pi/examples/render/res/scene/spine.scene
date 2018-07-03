@@ -1,0 +1,43 @@
+{
+  "name" : "spine_scene",
+  "type" : "node",
+  "children" : [
+    {
+      "name" : "spine",
+      "type" : "spine",
+      "spine": {
+          "atlas" : "raptor.atlas",
+          "proRes" : "raptor-pro.json",
+          "imgRes" : "raptor.png",
+          "scale" : 0.3,
+          "position" : [0,0,0],
+          "aniName":"jump"
+      }
+    },
+    {
+      "name" : "box",
+      "type" : "node",
+      "box" : {
+          "geometry":{
+            "width":200,
+            "height":200,
+            "depth":200
+          },
+          "material":{
+            "color":0xff0000
+          }
+      }
+    },
+    {
+      "name" : "Camera",
+      "type" : "node",
+      "transform" : {
+        "position" : [0,100,400]
+      },
+      "camera" : {
+        "type" : "Camera",
+        "perspective" : [75, 0.7, 1, 3000]
+      }
+    }
+  ]
+}

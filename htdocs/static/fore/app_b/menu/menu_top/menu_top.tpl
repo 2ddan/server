@@ -23,7 +23,7 @@
 						
 					</div>
 					{{end}}
-					{{if v.interface != "undefined" &&  v.name != "七日活动" &&  v.name != "节日活动" &&  v.name != "宝石迷阵" &&  v.name != "翻翻乐" && (v.name != "抽奖")}}
+					{{if v.interface != "undefined" &&  v.name != "七日活动" &&  v.name != "节日活动" &&  v.name != "宝石迷阵" &&  v.name != "翻翻乐"}}
 					{{let first_recharge = v.name == "首充"}}
 					<div style="margin:0 3px;display: inline-block">
 						{{let new_tip = 0}}
@@ -31,8 +31,10 @@
 						{{:new_tip = 1}}
 						{{elseif v.tips =="activities" && open_fun && open_fun.tips && open_fun.tips["activities-104"]}}
 						{{:new_tip = 1}}
+						{{elseif v.tips =="lottery"}}
+						{{:new_tip = 1}}
 						{{end}}
-						<app-widget-btn-menu on-tap={{'gotoMenu("'+v.interface+'",true)'}}>
+						<app-widget-btn-menu style="overflow: hidden;" on-tap={{'gotoMenu("'+v.interface+'",true)'}}>
 							{"guide":{{v.interface}},"anima":{{first_recharge? "anim_ling": new_tip ? "menu_seven_avtive":""}},"icon":{{v.icon}},"text":{{v.name}},"width":60,"height":60,"bottom":"-3","bg":3,"fontSize":16,"space":-6,"tip_keys":{{v.tips}} }
 						</app-widget-btn-menu>
 					</div>

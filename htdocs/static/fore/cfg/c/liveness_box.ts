@@ -20,29 +20,29 @@ export const liveness_box = [
     },
     {
          "sid":3,
-         "liveness_value":95,
+         "liveness_value":90,
          "award": [
             [100002,50],
             [100001,30000],
-            [101101,10]
+            
         ],
     },
     {
          "sid":4,
-         "liveness_value":130,
+         "liveness_value":120,
          "award": [
             [100002,0],
             [100001,40000],
-            [100018,2]
+            [101101,10]
         ],
     },
     {
          "sid":5,
-         "liveness_value":165,
+         "liveness_value":150,
          "award": [
             [100002,100],
             [100001,50000],
-            [100029,1]
+            [100027,1]
         ],
     }  
 ];

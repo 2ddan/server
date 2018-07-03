@@ -13,6 +13,11 @@ import { guild_build } from "cfg/c/guild_build"; //门派建设
 import { guild_charge } from "cfg/c/guild_charge"; //祭天
 import { guild_contribution } from "cfg/c/guild_contribution"; //捐献
 
+export const globalReceive = {
+    "gotoSacrifice": () => {
+        open("app_c-gang-hall_gang_build-sacrifice-sacrifice");
+    }
+}
 
 export class GangBuild extends Widget {
     funInfo_one() {
@@ -89,12 +94,12 @@ const salaryRank = function (arr) {
 /**
  * 判断是否满足祭天要求 [0, 1, 2]
  */
-export const canSacrifice = function (index) {
+const canSacrifice = function (index) {
     let limit = guild_charge[index].limit;
     //次数限制
     if (limit >= 0 && getDB(`gang.gangExpandData.pray_info.${index}`) >= limit) {
         globalSend("screenTipFun", {
-            words: `该祭祀次数已用完`
+            words: `该祈福次数已用完`
         });
         return;
     }
@@ -183,7 +188,7 @@ const isCanBuildUp = function (index) {
 /**
  * 判断有无捐献材料 [0, 1, 2]
  */
-export const canDonateProp = function (index) {
+const canDonateProp = function (index) {
     let donate_record = getDB("gang.gangExpandData.donate_record");
     let id = guild_contribution[donate_record[0]][index].id;
     let prop = getDB(`bag*sid=${id}`).pop();
@@ -209,26 +214,22 @@ const memberSacrifice = function (index) {
     gangNet(arg)
         .then((data: any) => {
             let _data: any = Common.changeArrToJson(data.ok);
-            let award = Common.changeArrToJson(_data.award);
             //扣除花费
             Common_m.deductfrom(_data);
             let result = Common_m.mixAward(_data);
+            let num = Common_m.awardFindProp(150005, result.bag);
             //添加奖励 [门派资金, 贡献]
             let gangExpandData = getDB("gang.gangExpandData");
-            //可用贡献
-            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 + result.player["gang_contribute"];
+
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + num;
             //今日贡献
-            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + num;
             
             gangExpandData.pray_info = _data.pray_info;
             //门派总总资金 [后台推消息统一处理]
             updata("gang.gangExpandData", gangExpandData);
             forelet.paint(getData());
-            globalSend("attrTip", {
-                words: `祭天成功`
-            });
             result.auto = 1;
             globalSend("showNewRes", {
                 result, function(result) {
@@ -283,18 +284,16 @@ const memberDonateProp = function (index) {
     gangNet(arg)
         .then((data: any) => {
             let _data: any = Common.changeArrToJson(data.ok);
-            let award = Common.changeArrToJson(_data.award);
             //扣除花费
             Common_m.deductfrom(_data);
             let result = Common_m.mixAward(_data);
+            let num = Common_m.awardFindProp(150005, result.bag);
             //添加奖励 [贡献]
             let gangExpandData = getDB("gang.gangExpandData");
-            //可用贡献
-            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 + result.player["gang_contribute"];
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + num;
             //今日贡献
-            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + num;
             
             //门派总总资金 [后台推消息统一处理]
             updata("gang.gangExpandData", gangExpandData);
@@ -327,14 +326,16 @@ listen("gang.gangExpandData.collect_info", () => {
 
 
 /**
- * 后台推送 [祭天]
+ * 后台推送 [祈福]
  */
 net_message("gang_pray", (msg) => {
     let gang_money = getDB("gang.gangExpandData.gang_money");
     updata("gang.gangExpandData.gang_money", msg.gang_money);
-    globalSend("attrTip", {
-        words: `门派资金增加:${msg.gang_money - gang_money}`
-    })
+    if (getDB("player.role_id") == msg.role_id) {
+        globalSend("attrTip", {
+            words: `门派资金增加:${msg.gang_money - gang_money}`
+        })
+    }
     forelet.paint(getData());
 });
 /**
@@ -358,8 +359,10 @@ net_message("gang_donate", (msg) => {
     updata("gang.gangExpandData.donate_record", msg.donate_info);
     let gang_money = getDB("gang.gangExpandData.gang_money");
     updata("gang.gangExpandData.gang_money", msg.gang_money);
-    globalSend("attrTip", {
-        words: `门派资金增加:${msg.gang_money - gang_money}`
-    })
+    if (getDB("player.role_id") == msg.role_id) {
+        globalSend("attrTip", {
+            words: `门派资金增加:${msg.gang_money - gang_money}`
+        })
+    }
     forelet.paint(getData());
 });

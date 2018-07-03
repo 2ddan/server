@@ -1,10 +1,9 @@
 //pi
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { open, remove, add, destory } from "pi/ui/root";
 import { menu_top } from "cfg/b/menu_top";
 //app
-import { updata, get as getDB, listen } from "app/mod/db";
+import {get as getDB, listen } from "app/mod/db";
 import { globalSend } from "app/mod/pi";
 import { menu_parent } from "cfg/b/menu_parent";
 
@@ -26,12 +25,7 @@ export const globalReceive = {
 }
 
 // =========================== 本地
-/**
- * @description 处理body点击事件,完成点击菜单外部区域，隐藏子菜单
- */
-const listenBody = () => {
 
-};
 let data: any = {},
     show = false;
 /**
@@ -39,8 +33,8 @@ let data: any = {},
  */
 //menu_top数据
 const getData = () => {
-    let state = getDB("recharge.first_pay_gift_state");
-    state && (data.state = state.length > 0 ? 1 : 0); //首冲领取状态
+    let state = getDB("recharge.first_pay_gift_state.0.1") || 0;
+    data.state = state;
     data.menu_top = menu_top;
     data.fun_open_id = getDB("open_fun.id") || 0;
     data.show = show;

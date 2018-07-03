@@ -1,4 +1,4 @@
-import { Widget, factory } from "pi/widget/widget";
+import { Widget } from "pi/widget/widget";
 import { data as localDB, updata } from "app/mod/db";
 import { mgr, mgr_data } from "app/scene/scene";
 import { Common } from "app/mod/common";
@@ -46,6 +46,8 @@ export class Regist extends Widget {
                 updata("user.index", index);
                 changeModule(index);
             }
+        } else {
+            errTip(`动作展示中, 请稍后再切换`);
         }
     }
     firstPaint() {
@@ -112,7 +114,7 @@ const creatModule = function () {
         "isOnce": true
     }
     mgr.create(eff[`${moduleId}01`], "effect");
-    //创建武器特效
+
     initAnimFinishCB(finishCb);
     //场景特效
     mgr.create(sceneEff[1000], "effect");

@@ -8,6 +8,8 @@
     {{let area = _get("cfg/a/area").exports.area}}
     {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
     {{let mission = _get("app/mod/db").exports.data.wild.wild_max_mission}}
+    {{let vip_advantage = _get("app/mod/pi").exports.cfg.vip_advantage.vip_advantage}}
+
     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:450px;height:508px;left:0;top:0;">
         {"bgName":"bg_frame35"} 
     </widget>
@@ -31,15 +33,12 @@
         {"icon":"pendant"} 
     </widget>
 
-    {{let img = player.head}}
-    {{if !img || img.indexOf("undefined") >= 0}}
-    {{: img = Pi.pictures['playerhead'+player.career_id]}}
-    {{end}}
+    {{let img = Pi.pictures['playerhead'+(player.head || player.career_id)]}}
     <div style="position:absolute;width:443px;height:180px;overflow:hidden;top:30px;left:4px;">
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:470px;height:180px;left:50%;transform:translate(-50%);">
             {"bgName":"bg_frame36"} 
         </widget>
-        <div style="width:107px;height:108px;position:absolute;top:22px;left:80px;" on-tap="alertTaskSize">
+        <div style="width:107px;height:108px;position:absolute;top:22px;left:80px;">
             <div w-class="player_head_bg" style="position:absolute;top:0px;left:0px;top: 0px;left: -10px;"></div>
             <div class="shadow" w-class="player_head_level" style="position:absolute;top:0px;left:0px;top: 5px;left: 0px;color: #b5e8ff;font-family: mnjsh;line-height: 31px;text-align: center;z-index: 1;">{{player.level}}</div>
             <img src="{{img}}" style="position:absolute;top: 5px;left: -2px;"/>
@@ -47,9 +46,11 @@
 
         <div style="position:absolute;height:30px;line-height:30px;left:183px;top:43px;">
             <div style="display:inline-block;height:30px;line-height:30px;left:183px;top:43px;font-family:mnjsh;color:#f3d6af;">{{player.name}}</div>
-            <widget style="position:relative;display:inline-block;top: 4px;margin-right: 6px;" w-tag="app_a-widget-pic_text-pic_text">
-                {"icon":"chat_vip_bg","width":54,"height":17,"align":"center","marginLeft":3,"text":{{"VIP"+player.vip}},"textCfg":"gangVip","space":0,"fontSize":16,"top":0,"left":0} 
+            {{if player.vip}}
+            <widget class="shadow7" style="position:relative;display:inline-block;top: 6px;margin-left: 5px;;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+                {"icon":{{"vip_lv_"+(vip_advantage[player.vip].lv_frame || 1)}},"width":52,"height":25,"align":"center","marginLeft":3,"text":{{"VIP"+player.vip}},"top":0,"left":0} 
             </widget>
+            {{end}}
         </div>
         <div w-class="wild_name_bg" style="left: 180px;top: 80px;">
             {{let num = 0}}

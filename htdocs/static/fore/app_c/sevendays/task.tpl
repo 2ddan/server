@@ -34,26 +34,27 @@
                     </div>
                     
                     <div w-class="s4">
-                        {{let prop = Pi.sample[v.goods[0]]}}
+                        {{for i, v of v.goods}}
+                        {{let prop = Pi.sample[v[0]]}}
                         {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
                         {{let url = Pi.pictures[icon]}}
-                        {{let count = prop.type !== "equip" ? v.goods[1] : "none"}}
+                        {{let count = prop.type !== "equip" ? v[1] : "none"}}
                         <div class="shadow1" w-class="s5">
-                            <app_a-widget-prop-base  on-tap='propInfoShow({{v.goods[0]}})'>
+                            <app_a-widget-prop-base  on-tap='propInfoShow({{v[0]}})'>
                                 {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{count}},"name":"none","bg":0,"right":7,"top":22}
                             </app_a-widget-prop-base>
                             {{if count == "none"}}
                             <div  w-class="s9">{{"Lv"+prop.level[1] || 20}}</div>
                             {{end}}
                         </div>
-                        
+                        {{end}}
                     </div>
                     {{let progress = act_progress.sevenday(v.type,v.params)}}
                     {{if v.type !== "login" && !it1.record[v.act_id]}}
                     <div w-class="s6">
                         进度:
                         <span style="color:#fff;padding-left:8px;">
-                            {{common.numberCarry(parseInt(progress[1] || 0),10000)+""}}/{{v.type == "soul"?1:common.numberCarry(parseInt(v.params || 0),10000)}}
+                            {{common.numberCarry(parseInt(progress[1] || 0),10000)+""}}/{{v.type == "jjc_rank"? 1 :common.numberCarry(parseInt(v.params || 0),10000)}}
                         </span>
                     </div>
                     {{end}}

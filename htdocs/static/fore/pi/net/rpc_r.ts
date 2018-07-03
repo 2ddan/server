@@ -1,7 +1,7 @@
 
-import { partWrite, allWrite } from "pi/struct/util";
-import { BinBuffer, BinCode, ReadNext, WriteNext } from "pi/util/bin";
-import { addToMeta, removeFromMeta, Struct, notifyModify, StructMgr } from "pi/struct/struct_mgr";
+import { partWrite, allWrite } from "../struct/util";
+import { BinBuffer, BinCode, ReadNext, WriteNext } from "../util/bin";
+import { addToMeta, removeFromMeta, Struct, notifyModify, StructMgr } from "../struct/struct_mgr";
 
 
 export class OK extends Struct {

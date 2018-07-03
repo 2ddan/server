@@ -18,7 +18,7 @@
 			<div style="opacity:0.95">
 				<widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">
 					{"bgName":"bg_frame26"} 
-				</widget>
+				</widget> 
 				<widget w-class="11" w-tag="app_a-widget-bg_frame-bg" w-sid="11">
 					{"bgName":"bg_frame23"} 
 				</widget>
@@ -26,8 +26,8 @@
 			<div w-class="12" w-sid="12">
                 <div style="font-family:mnjsh;font-size:24px;">{{it1.type+"挑战次数"}}</div>
                 <div style="position:relative;width:200px;text-align:left;left: 170px;margin-top: 20px;line-height: 28px;">
-                    <div>当前次数：{{it1.hasCount}}</div>
-                    <div>还可购买：{{it1.max-it1.now}}</div>
+                    <div>当前次数：{{it1.has_count}}</div>
+                    <div>还可购买：{{it1.max_buy ? it1.max_buy-it1.already_buy :"无限制"}}</div>
                 </div>
             </div>
 			
@@ -40,7 +40,7 @@
                 </div>
                
                 <app_a-widget-pic_text-pic_text w-class="15" w-sid="15">
-                    {"icon":"resource_bar","width":136,"height":37,"align":"center","marginLeft":3,"textCfg":"","space":0,"fontSize":12,"text": {{it1.num}}}
+                    {"icon":"resource_bar","width":136,"height":37,"align":"center","marginLeft":3,"textCfg":"","space":0,"fontSize":12,"text": {{it1.buy_count}}}
                 </app_a-widget-pic_text-pic_text>
 
                 <div w-class="14" w-sid="14" on-tap="add(1)">

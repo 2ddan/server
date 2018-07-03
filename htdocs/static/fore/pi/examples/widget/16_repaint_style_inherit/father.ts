@@ -1,21 +1,24 @@
-import {Widget} from "../../../widget/widget";
+/**
+ * 
+ */
+import {Widget} from '../../../widget/widget';
 
-interface Props{
-    style:string;
+interface Props {
+	style:string;
 }
 
-export class Father extends Widget{
-    prop:Props;
-    constructor(){
-        super();
-        this.props = {
-            style: "b"
-        }
-    }
-    attach(){
-        setTimeout(() => {
-            this.props.style = "c";
-            this.paint();
-        }, 3000);
-    }
+export class Father extends Widget {
+	public prop:Props;
+	constructor() {
+		super();
+		this.props = {
+			style: 'b'
+		};
+	}
+	public attach() {
+		setTimeout(() => {
+			this.props.style = 'c';
+			this.paint();
+		}, 3000);
+	}
 }

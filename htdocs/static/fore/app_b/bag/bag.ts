@@ -1,18 +1,14 @@
 import * as piSample from "app/mod/sample";
 import { Forelet } from "pi/widget/forelet";
-import { getRealNode } from "pi/widget/painter";
-import { findNodeByAttr } from "pi/widget/virtual_node";
 import { Widget } from "pi/widget/widget";
-import { remove, destory, getRoot } from "pi/ui/root";
 import { Common } from "app/mod/common";
 import { updata, get as getDB, listen, insert } from "app/mod/db";
 import { listenBack } from "app/mod/db_back";
-import { Pi, globalSend, findGlobalReceive, cfg } from "app/mod/pi";
+import { Pi, globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { vip_advantage } from "cfg/c/vip_advantage";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { Common_m } from "app_b/mod/common";
-import { UiFunTable } from "app/scene/ui_fun";
 
 
 export const forelet = new Forelet();
@@ -20,23 +16,17 @@ export const forelet = new Forelet();
  * @description 导出给组件用的forelet
  * @example
  */
-var m_down,
+var 
     allBagPropsArr = [],
     select = [],//筛选
-    wts,
     page = 1,
     maxPage = 1,
     newResCallBack,
-    connected = [],
-    set = {},
     tabswitch = "equip",
-    player = null,
-    stage = null,
     isChoose = false,
-    tips = 0,
     smithyMake = 0,
     propRes = null;
-var newAutoData, newInter;
+var newAutoData;
 
 //获取背包物品数量
 var getBagPropsCount = function () {
@@ -48,24 +38,42 @@ var getBagPropsCount = function () {
     return count;
 };
 
-//ep_level>ep_star>ep_wash>skill_level>stone>soul>key>box
+// coin>rune_chip>activity>rune>ep_level>ep_star>ep_wash>skill_level>stone>soul>key>donate>box
 const type_value = {
-    "ep_level": 1,
-    "ep_star": 2,
-    "ep_wash": 3,
-    "skill_level": 4,
-    "stone": 5,
-    "soul": 6,
-    "key": 7,
-    "box": 8,
+    coin: 1,
+    rune_chip: 2,
+    activity: 3,
+    rune: 4,
+    ep_level: 5,
+    ep_star: 6,
+    ep_wash: 7,
+    skill_level: 8,
+    stone: 9,
+    soul: 10,
+    key: 11,
+    donate: 12,
+    box: 13
 }
 //背包物品排序
 const bagPropSort = (a, b) => {
-    if (a.type == b.type) {
+    if (a.type === b.type) {
         return a.sid - b.sid;
     } else {
-        return type_value[a.type] - type_value[b.type];
+        let a_num = findOrder(a.type);
+        let b_num = findOrder(b.type);
+        return a_num - b_num;
     }
+}
+const findOrder = function (type) {
+    let index;
+    if (type_value[type]) {
+        index = type_value[type];
+    } else if (type.indexOf("coin") >= 0) {
+        index = 1;
+    } else {
+        index = 20;
+    }
+    return index;
 }
 
 //背包装备排序
@@ -150,17 +158,17 @@ const getNewRes = function (msg) {
 
 /********************** 前台点击事件 **********************/
 //页面切换
-const changeColumns = (msg) => {
-    if (tabswitch != msg) select = [];
-    tabswitch = msg;
-    page = 1;
-    forelet.paint(getBagHtmlData());
-    // Common.updataHtml(forelet,"app_b-bag-main-bag_m",getBagHtmlData());
-};
+// const changeColumns = (msg) => {
+//     if (tabswitch != msg) select = [];
+//     tabswitch = msg;
+//     page = 1;
+//     forelet.paint(getBagHtmlData());
+//     // Common.updataHtml(forelet,"app_b-bag-main-bag_m",getBagHtmlData());
+// };
 
 
 //获取当前Tab类型的所有物品
-const allTabProp = (arr) => {
+export const allTabProp = (arr) => {
     let prop = [[], []];
     arr.forEach(v => {
 
@@ -172,6 +180,7 @@ const allTabProp = (arr) => {
         }
     });
     prop[0] = prop[0].length && prop[0].sort(bagPropSort) || null;
+
     prop[1] = prop[1].length && prop[1].sort(bagEquipSort) || null;
     return prop;
 }
@@ -256,11 +265,13 @@ export const globalReceive: any = {
         open("app_b-bag-main-bag");
     },
     showNewRes: (data) => {
-
         showNewRes(data.result, data.function)
     },
     useProp: (msg) => {
         usePropx(msg.arg, msg.cb);
+    },
+    reclaimEnd: () => {
+        forelet.paint(getBagHtmlData());
     }
 }
 /*
@@ -341,7 +352,6 @@ export class bag_m extends Widget {
     };
     extensionBag(): void {
         let player = getDB("player");
-        let vip_advantage = cfg.vip_advantage.vip_advantage;
         if (vip_advantage[player.vip + 1]) {
             globalSend("popTip", {
                 title: "<div>提升至<span style='color:#ff9600'>VIP" + (player.vip + 1) + "</span>可扩展至" + vip_advantage[player.vip + 1].equip_count + "个装备格</div>",
@@ -367,7 +377,6 @@ export class bag_m extends Widget {
         } else {
             globalSend("showPropInfo", arg);
         }
-
     }
 };
 // ================================ 立即执行
@@ -378,9 +387,9 @@ insert("bag", []);
 /**
  * @description 监听背包数据变化
  */
-listen("bag", function () {
-    forelet.paint(getBagHtmlData());
-});
+// listen("bag", function () {
+//     forelet.paint(getBagHtmlData());
+// });
 /**
  * @description 获取背包数据
  */
@@ -392,3 +401,4 @@ forelet.listener = (cmd, w) => {
     if (cmd !== "first_paint") return;
     forelet.paint(getBagHtmlData());
 };
+

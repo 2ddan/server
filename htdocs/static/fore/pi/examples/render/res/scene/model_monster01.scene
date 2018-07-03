@@ -1,0 +1,188 @@
+
+{
+  "name" : "model_monster01",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      0.699999988079071,
+      0.699999988079071,
+      0.699999988079071
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "act_monster01_die" : "YPzLuwm813C6XfF8nCn8u5.ai",
+      "act_monster01_run" : "PMhQsKv6iuXCvtWLDT7EyC.ai",
+      "act_monster01_skill1_1" : "8T23qWosa7hEteedub7cmD.ai",
+      "act_monster01_standby"  : "FmVs2P6Buiyxawrwe6siTK.ai",
+      "act_monster01_diefly"   : "DxZLifKzUkycmpAq3BwAxX.ai"
+    },
+    "aniBox"     : {
+      "act_monster01_die" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "act_monster01_run" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "act_monster01_skill1_1" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "act_monster01_standby"  : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "act_monster01_diefly"   : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "playAnim"   : {
+      "name" : "act_monster01_die"
+    }
+  },
+  "children"  : [
+    {
+      "type" : "Skeleton",
+      "res"  : "HSosxN8owvBymqxytZYv39.skl"
+    },
+    {
+      "name" : "model_monster01",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : [
+          1,
+          2,
+          3,
+          9,
+          11,
+          13,
+          12,
+          4,
+          5,
+          14,
+          15,
+          18,
+          16,
+          17,
+          19,
+          22,
+          21,
+          6,
+          7,
+          8,
+          23,
+          24,
+          27,
+          25,
+          26,
+          28,
+          20,
+          30,
+          31
+        ],
+        "bounds" : [
+          [
+            0.943914175033569,
+            0.860268712043762,
+            1.20266854763031
+          ],
+          [
+            -1.75491321086884,
+            -0.804691970348358,
+            -1.20266795158386
+          ]
+        ],
+        "rootbone" : "Bip001 Pelvis",
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "9Bd8k8WanMsKhm2k4fh6FL.jpg"
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "VRpzTKE3tETtpUAkwL3v1.geo"
+        }
+      }
+    }
+  ]
+}

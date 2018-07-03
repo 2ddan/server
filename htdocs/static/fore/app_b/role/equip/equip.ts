@@ -1,17 +1,11 @@
 import * as piSample from "app/mod/sample";
 import { Forelet } from "pi/widget/forelet";
-import { getRealNode } from "pi/widget/painter";
-import { findNodeByAttr } from "pi/widget/virtual_node";
 import { Widget } from "pi/widget/widget";
-import { remove, destory,getRoot } from "pi/ui/root";
-import { Common } from "app/mod/common";
+import { remove, destory } from "pi/ui/root";
 import { updata, get as getDB, listen,checkTypeof,insert } from "app/mod/db";
-import { Pi,cfg, globalSend } from "app/mod/pi";
-import { open, close } from "app/mod/root";
-import { vip_advantage } from "cfg/c/vip_advantage";
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { Common_m } from "app_b/mod/common";
-import { UiFunTable } from "app/scene/ui_fun";
+import { Pi, globalSend } from "app/mod/pi";
+import { open } from "app/mod/root";
+import { net_request} from "app_a/connect/main";
 
 import { equip_level_limit } from "cfg/b/equip_level_limit";
 import { fastWearFun, forelet as fastWearForelet } from "app_b/role/equip/equip_fast_wear";
@@ -26,21 +20,18 @@ var conect: any = {},
 equip_up_tab = "level",
 equip_index = 0,
 funcallback,
-vibes_tab = "star",
-equip_up_mark = 0,
-equip_star_mark = 0,
 oneKey = true,//一键升级开关
 beforeLevel = 0,
-getData = {
-    wear : function(_index){
-        var _equip = getDB("friend_battle.equip_set"),
-            _list = getDB("bag*slot="+_index);
-        return {
-            equip:_equip,
-            bag:_list
-        }
-    }
-},
+// getData = {
+//     wear : function(_index){
+//         var _equip = getDB("friend_battle.equip_set"),
+//             _list = getDB("bag*slot="+_index);
+//         return {
+//             equip:_equip,
+//             bag:_list
+//         }
+//     }
+// },
 equipType = 0;
 
 conect.getData = function(){
@@ -85,13 +76,14 @@ const star_achieve = () => {
     }
     let achieve = equip_star_achieve;
     for(let i in achieve){
-        if(achieve[i - 0 + 1]){
-            if(all_star >= achieve[i].star && all_star < achieve[i - 0 + 1].star){
-                return i - 0;
+		let _i = parseInt(i);
+        if(achieve[_i + 1]){
+            if(all_star >= achieve[i].star && all_star < achieve[_i + 1].star){
+                return _i;
             }
         }else{
             if(all_star >= achieve[i].star){
-                return i - 0;
+                return _i;
             }
         }
     }

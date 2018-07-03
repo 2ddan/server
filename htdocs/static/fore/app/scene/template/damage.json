@@ -1,6 +1,7 @@
 {{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
 {
     "type":"node",
+    "name":"damage",
     "transform":{
         "position":[{{it.x/100}},{{it.z/100}},{{it.y/100}}],
         "scale":[1,1,1],
@@ -13,7 +14,7 @@
       "tpl":"skill_image",
       "width": 128,
       "height": 64,
-      "opacity":{{it.opacity || 0}},
+      "opacity":{{it.opacity || 0}}, 
       "position": [20, 80, 0],
       "scale": {{if it.scale}}[{{it.scale}},{{it.scale}},{{it.scale}}]{{else}}[1,1,1]{{end}},
       "image": "img/{{it.text_type}}.png"

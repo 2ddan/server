@@ -13,14 +13,19 @@
 	<widget w-class="6" w-tag="app_a-widget-pic_text-pic_text">
 		{"icon":"name_bg_2","width":184,"height":32,"text":{{it1.treasur + "阶神兵" }}} 
 	</widget>
-	<img w-class="9" src="app_b/magic/images/magic_bg.png" w-sid="9"/>
-	<img w-class="8" src="app_b/magic/images/magic_light.png" w-sid="8"/>
+
 	{{let bol = true}}
 	<div w-class="10" w-sid="10">
+		<widget  w-tag="app_a-widget-bg_frame-bg" style="position: absolute;width: 100%;height: 100%;">
+			{"bgName":"bg_frame28"} 
+		</widget>
 		<widget w-class="11" w-tag="app_a-widget-title-single" w-sid="11">
 			{"padding":10,"type":9,"width":124,"text":"神兵进阶","textCfg":"singleTitle","fontSize":20,"space":-2,"color":"","wear":0} 
 		</widget>
 		<div w-class="12" w-sid="12">
+			<widget  w-tag="app_a-widget-bg_frame-bg" style="position: absolute;width: 100%;height: 100%;">
+				{"bgName":"bg_frame27"} 
+			</widget>
 			<div w-class="13" w-sid="13">
 				<widget w-class="14" w-tag="app_a-widget-pic_other-pic_other" w-sid="14"></widget>
 				<span style="padding:0 5px">{{it1.skill.table[it1.TreasurePhase.skill_id].name }}</span>

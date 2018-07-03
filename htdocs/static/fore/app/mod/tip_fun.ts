@@ -97,7 +97,8 @@ export class TipFun {
         for(let k in keys){
             old = getTips(keys[k]);
             if(!!r !== !!old){
-                task(updateTips,[keys[k],r],20000,0);
+                task(updateTips,[keys[k],r],1,0);
+                // updateTips(keys[k],r);
             }
             //updateTips(r.tipKey,r);
         }
@@ -105,8 +106,8 @@ export class TipFun {
     //绑定依赖监听
     static bindListen(k,_cfg) {
         db.listen(k, function (path, subpath, extra) {
-            //TipFun.udTips(_cfg);
-            task(TipFun.udTips,[_cfg],15000,0);
+            TipFun.udTips(_cfg);
+            // task(TipFun.udTips,[_cfg],1,0);
         });
     };
     //初始化配置
@@ -125,7 +126,7 @@ export class TipFun {
             }
             //非第一次初始化配置表，则先运行一次，防止数据监听已经跑过了
             if(notFirst){
-                task(TipFun.udTips,[cfg[n]],10000,0);
+                task(TipFun.udTips,[cfg[n]],1,0);
             }
         }
     };

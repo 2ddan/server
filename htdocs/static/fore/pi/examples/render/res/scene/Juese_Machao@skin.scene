@@ -1,0 +1,238 @@
+
+{
+  "name" : "Juese_Machao@skin",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "attack01" : "CZVa2QwEJQ4zP7xNQ1erPP.ai",
+      "attack02" : "43aPFXBpdccK7pRLdQeuuV.ai",
+      "die"      : "XHWJMGnHrZ3HF1cNwvQkUV.ai",
+      "hit"      : "PCHTeEJt7fixPLo27k9a2c.ai",
+      "run"      : "Rytnsd2jhyyYjzuNYjbf48.ai",
+      "show"     : "GbDGN6A7orRZpDn6p9Kda4.ai",
+      "skill"    : "NYaCtwmJnkymHWHXJEqtP7.ai",
+      "stand"    : "MGMgCauNkya9x1Ad4UocXi.ai",
+      "wait"     : "9HrUTQt3L5sah6JzwhrEtn.ai"
+    },
+    "aniBox"     : {
+      "attack01" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "attack02" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "die"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "hit"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "run"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "show"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "skill"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "stand"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "wait"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "playAnim"   : {
+      "name" : "wait"
+    }
+  },
+  "children"  : [
+    {
+      "name" : "Juese_Machao_001",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : [
+          9,
+          10,
+          15,
+          16,
+          18,
+          12,
+          33,
+          29,
+          27,
+          3,
+          2,
+          34,
+          31,
+          30,
+          20,
+          19,
+          21,
+          28,
+          8,
+          4,
+          5,
+          23,
+          14,
+          24,
+          25,
+          32,
+          6
+        ],
+        "bounds" : [
+          [
+            1.10804891586304,
+            0.27876541018486,
+            0.73619544506073
+          ],
+          [
+            -1.11653816699982,
+            -0.821436822414398,
+            -0.736195206642151
+          ]
+        ],
+        "rootbone" : "Bip001 Pelvis",
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "JZDjUDRW4Dvu34NGapcVNk.png"
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "Q9T7T7SfNB4dDFR2BDwFJk.geo"
+        }
+      }
+    },
+    {
+      "type" : "Skeleton",
+      "res"  : "7JGK8zA9HgwUArkwRA5ztY.skl"
+    }
+  ]
+}

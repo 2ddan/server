@@ -111,7 +111,7 @@ export const playermission = {
     "10":{
         "id":10,
         "type": "treasure",
-        "arg": 1,
+        "arg": 0,
         "des": "激活神兵",
         "award": [[150002,20]],
         "money": 0,
@@ -122,6 +122,18 @@ export const playermission = {
     ,
     "11":{
         "id":11,
+        "type": "treasure_hexagram",
+        "arg": 5,
+        "des": "神兵铸魂5次",
+        "award": [[150002,20]],
+        "money": 10000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "12":{
+        "id":12,
         "type": "ep_level",
         "arg": 10,
         "des": "装备强化总等级达10级",
@@ -132,8 +144,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "12":{
-        "id":12,
+    "13":{
+        "id":13,
         "type": "skill_level",
         "arg": 2,
         "des": "任意技能达到2级",
@@ -144,8 +156,8 @@ export const playermission = {
         "listen":"skill"
     }
     ,
-    "13":{
-        "id":13,
+    "14":{
+        "id":14,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -156,8 +168,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "14":{
-        "id":14,
+    "15":{
+        "id":15,
         "type": "reclam",
         "arg": 2,
         "des": "熔炼2件装备",
@@ -168,8 +180,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "15":{
-        "id":15,
+    "16":{
+        "id":16,
         "type": "ep_levelup",
         "arg": 2,
         "des": "装备强化2次",
@@ -180,8 +192,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "16":{
-        "id":16,
+    "17":{
+        "id":17,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -192,8 +204,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "17":{
-        "id":17,
+    "18":{
+        "id":18,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -204,8 +216,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "18":{
-        "id":18,
+    "19":{
+        "id":19,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -216,8 +228,20 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "19":{
-        "id":19,
+    "20":{
+        "id":20,
+        "type": "treasure_hexagram",
+        "arg": 5,
+        "des": "神兵铸魂5次",
+        "award": [[150002,20]],
+        "money": 10000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "21":{
+        "id":21,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -228,11 +252,11 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "20":{
-        "id":20,
+    "22":{
+        "id":22,
         "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
+        "arg": 2,
+        "des": "装备强化2次",
         "award": [[100004,20]],
         "money": 5000,
         "diamond": 0,
@@ -240,8 +264,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "21":{
-        "id":21,
+    "23":{
+        "id":23,
         "type": "ep_level",
         "arg": 30,
         "des": "装备强化总等级达20级",
@@ -252,8 +276,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "22":{
-        "id":22,
+    "24":{
+        "id":24,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -264,20 +288,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "23":{
-        "id":23,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
-        "listen":"undefined"
-    }
-    ,
-    "24":{
-        "id":24,
+    "25":{
+        "id":25,
         "type": "ep_level",
         "arg": 30,
         "des": "装备强化总等级达30级",
@@ -288,8 +300,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "25":{
-        "id":25,
+    "26":{
+        "id":26,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -300,8 +312,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "26":{
-        "id":26,
+    "27":{
+        "id":27,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -312,8 +324,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "27":{
-        "id":27,
+    "28":{
+        "id":28,
         "type": "role_level",
         "arg": 30,
         "des": "等级达到30级",
@@ -324,8 +336,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "28":{
-        "id":28,
+    "29":{
+        "id":29,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -336,8 +348,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "29":{
-        "id":29,
+    "30":{
+        "id":30,
         "type": "ep_diamond",
         "arg": 3,
         "des": "宝石总等级达到3级",
@@ -348,8 +360,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "30":{
-        "id":30,
+    "31":{
+        "id":31,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -360,8 +372,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "31":{
-        "id":31,
+    "32":{
+        "id":32,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -372,8 +384,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "32":{
-        "id":32,
+    "33":{
+        "id":33,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -384,8 +396,20 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "33":{
-        "id":33,
+    "34":{
+        "id":34,
+        "type": "treasure_hexagram",
+        "arg": 5,
+        "des": "神兵铸魂5次",
+        "award": [[150002,20]],
+        "money": 10000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "35":{
+        "id":35,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -396,8 +420,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "34":{
-        "id":34,
+    "36":{
+        "id":36,
         "type": "ep_levelup",
         "arg": 5,
         "des": "装备强化5次",
@@ -408,8 +432,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "35":{
-        "id":35,
+    "37":{
+        "id":37,
         "type": "ep_level",
         "arg": 40,
         "des": "装备强化总等级达40级",
@@ -420,8 +444,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "36":{
-        "id":36,
+    "38":{
+        "id":38,
         "type": "skill_level",
         "arg": 3,
         "des": "任意技能达到3级",
@@ -432,8 +456,8 @@ export const playermission = {
         "listen":"skill"
     }
     ,
-    "37":{
-        "id":37,
+    "39":{
+        "id":39,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -444,8 +468,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "38":{
-        "id":38,
+    "40":{
+        "id":40,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -456,8 +480,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "39":{
-        "id":39,
+    "41":{
+        "id":41,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -468,20 +492,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "40":{
-        "id":40,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
-        "listen":"undefined"
-    }
-    ,
-    "41":{
-        "id":41,
+    "42":{
+        "id":42,
         "type": "ep_level",
         "arg": 60,
         "des": "装备强化总等级达60级",
@@ -492,8 +504,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "42":{
-        "id":42,
+    "43":{
+        "id":43,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -504,8 +516,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "43":{
-        "id":43,
+    "44":{
+        "id":44,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -516,8 +528,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "44":{
-        "id":44,
+    "45":{
+        "id":45,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -528,8 +540,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "45":{
-        "id":45,
+    "46":{
+        "id":46,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -540,8 +552,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "46":{
-        "id":46,
+    "47":{
+        "id":47,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -552,8 +564,20 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "47":{
-        "id":47,
+    "48":{
+        "id":48,
+        "type": "treasure_hexagram",
+        "arg": 5,
+        "des": "神兵铸魂5次",
+        "award": [[150002,20]],
+        "money": 10000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "49":{
+        "id":49,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -564,8 +588,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "48":{
-        "id":48,
+    "50":{
+        "id":50,
         "type": "ep_levelup",
         "arg": 5,
         "des": "装备强化5次",
@@ -576,8 +600,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "49":{
-        "id":49,
+    "51":{
+        "id":51,
         "type": "ep_level",
         "arg": 100,
         "des": "装备强化总等级达100级",
@@ -588,8 +612,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "50":{
-        "id":50,
+    "52":{
+        "id":52,
         "type": "tower_point",
         "arg": 3,
         "des": "天庭秘境达到3层以上",
@@ -600,8 +624,8 @@ export const playermission = {
         "listen":"tower"
     }
     ,
-    "51":{
-        "id":51,
+    "53":{
+        "id":53,
         "type": "ep_diamond",
         "arg": 5,
         "des": "宝石总等级达到5级",
@@ -612,8 +636,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "52":{
-        "id":52,
+    "54":{
+        "id":54,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -624,8 +648,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "53":{
-        "id":53,
+    "55":{
+        "id":55,
         "type": "skill_level",
         "arg": 5,
         "des": "任意技能达到5级",
@@ -636,8 +660,8 @@ export const playermission = {
         "listen":"skill"
     }
     ,
-    "54":{
-        "id":54,
+    "56":{
+        "id":56,
         "type": "role_level",
         "arg": 40,
         "des": "等级达到40级",
@@ -648,8 +672,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "55":{
-        "id":55,
+    "57":{
+        "id":57,
         "type": "guild",
         "arg": 1,
         "des": "创建门派或申请加入",
@@ -660,8 +684,8 @@ export const playermission = {
         "listen":"gang"
     }
     ,
-    "56":{
-        "id":56,
+    "58":{
+        "id":58,
         "type": "world_talk",
         "arg": 1,
         "des": "世界频道发言1次",
@@ -672,8 +696,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "57":{
-        "id":57,
+    "59":{
+        "id":59,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -684,8 +708,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "58":{
-        "id":58,
+    "60":{
+        "id":60,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -696,8 +720,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "59":{
-        "id":59,
+    "61":{
+        "id":61,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -708,8 +732,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "60":{
-        "id":60,
+    "62":{
+        "id":62,
         "type": "treasure_phase",
         "arg": 2,
         "des": "神兵进阶至2阶",
@@ -720,8 +744,8 @@ export const playermission = {
         "listen":"magic"
     }
     ,
-    "61":{
-        "id":61,
+    "63":{
+        "id":63,
         "type": "skill_level",
         "arg": 6,
         "des": "任意技能达到6级",
@@ -732,8 +756,8 @@ export const playermission = {
         "listen":"skill"
     }
     ,
-    "62":{
-        "id":62,
+    "64":{
+        "id":64,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -744,8 +768,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "63":{
-        "id":63,
+    "65":{
+        "id":65,
         "type": "ep_levelup",
         "arg": 5,
         "des": "装备强化5次",
@@ -756,8 +780,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "64":{
-        "id":64,
+    "66":{
+        "id":66,
         "type": "ep_level",
         "arg": 120,
         "des": "装备强化总等级达120级",
@@ -768,8 +792,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "65":{
-        "id":65,
+    "67":{
+        "id":67,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -780,8 +804,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "66":{
-        "id":66,
+    "68":{
+        "id":68,
         "type": "role_level",
         "arg": 50,
         "des": "等级达到50级",
@@ -792,8 +816,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "67":{
-        "id":67,
+    "69":{
+        "id":69,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -804,8 +828,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "68":{
-        "id":68,
+    "70":{
+        "id":70,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -816,8 +840,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "69":{
-        "id":69,
+    "71":{
+        "id":71,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -828,8 +852,20 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "70":{
-        "id":70,
+    "72":{
+        "id":72,
+        "type": "treasure_hexagram",
+        "arg": 5,
+        "des": "神兵铸魂5次",
+        "award": [[150002,20]],
+        "money": 10000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "73":{
+        "id":73,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -840,20 +876,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "71":{
-        "id":71,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
-        "listen":"undefined"
-    }
-    ,
-    "72":{
-        "id":72,
+    "74":{
+        "id":74,
         "type": "ep_level",
         "arg": 140,
         "des": "装备强化总等级达140级",
@@ -864,8 +888,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "73":{
-        "id":73,
+    "75":{
+        "id":75,
         "type": "ep_diamond",
         "arg": 8,
         "des": "宝石总等级达到8级",
@@ -876,8 +900,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "74":{
-        "id":74,
+    "76":{
+        "id":76,
         "type": "role_level",
         "arg": 55,
         "des": "等级达到55级",
@@ -888,8 +912,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "75":{
-        "id":75,
+    "77":{
+        "id":77,
         "type": "dailyFB",
         "arg": 2,
         "des": "参加2次材料副本",
@@ -900,8 +924,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "76":{
-        "id":76,
+    "78":{
+        "id":78,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -912,8 +936,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "77":{
-        "id":77,
+    "79":{
+        "id":79,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -924,8 +948,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "78":{
-        "id":78,
+    "80":{
+        "id":80,
         "type": "world_talk",
         "arg": 1,
         "des": "世界频道发言1次",
@@ -936,8 +960,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "79":{
-        "id":79,
+    "81":{
+        "id":81,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -948,8 +972,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "80":{
-        "id":80,
+    "82":{
+        "id":82,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -960,8 +984,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "81":{
-        "id":81,
+    "83":{
+        "id":83,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -972,8 +996,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "82":{
-        "id":82,
+    "84":{
+        "id":84,
         "type": "ep_levelup",
         "arg": 5,
         "des": "装备强化5次",
@@ -984,8 +1008,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "83":{
-        "id":83,
+    "85":{
+        "id":85,
         "type": "ep_level",
         "arg": 160,
         "des": "装备强化总等级达160级",
@@ -996,8 +1020,8 @@ export const playermission = {
         "listen":"equip"
     }
     ,
-    "84":{
-        "id":84,
+    "86":{
+        "id":86,
         "type": "pet_starup",
         "arg": 1,
         "des": "宠物培养1次",
@@ -1008,8 +1032,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "85":{
-        "id":85,
+    "87":{
+        "id":87,
         "type": "world_talk",
         "arg": 1,
         "des": "世界频道发言1次",
@@ -1020,8 +1044,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "86":{
-        "id":86,
+    "88":{
+        "id":88,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -1032,20 +1056,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "87":{
-        "id":87,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
-        "listen":"undefined"
-    }
-    ,
-    "88":{
-        "id":88,
+    "89":{
+        "id":89,
         "type": "exp_fb",
         "arg": 1,
         "des": "参与1次试炼副本",
@@ -1056,8 +1068,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "89":{
-        "id":89,
+    "90":{
+        "id":90,
         "type": "dailyFB",
         "arg": 2,
         "des": "参加2次材料副本",
@@ -1068,8 +1080,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "90":{
-        "id":90,
+    "91":{
+        "id":91,
         "type": "role_level",
         "arg": 60,
         "des": "等级达到60级",
@@ -1080,8 +1092,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "91":{
-        "id":91,
+    "92":{
+        "id":92,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -1089,18 +1101,6 @@ export const playermission = {
         "money": 5000,
         "diamond": 0,
         "func": "open_reclaim",
-        "listen":"undefined"
-    }
-    ,
-    "92":{
-        "id":92,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
         "listen":"undefined"
     }
     ,
@@ -1142,6 +1142,18 @@ export const playermission = {
     ,
     "96":{
         "id":96,
+        "type": "treasure_hexagram",
+        "arg": 10,
+        "des": "神兵铸魂10次",
+        "award": [[150002,50]],
+        "money": 20000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "97":{
+        "id":97,
         "type": "wild_mission",
         "arg": 1,
         "des": "完成1次修炼任务",
@@ -1152,8 +1164,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "97":{
-        "id":97,
+    "98":{
+        "id":98,
         "type": "world_talk",
         "arg": 1,
         "des": "世界频道发言1次",
@@ -1164,8 +1176,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "98":{
-        "id":98,
+    "99":{
+        "id":99,
         "type": "wild_boss",
         "arg": 1,
         "des": "击杀1次野外首领",
@@ -1176,8 +1188,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "99":{
-        "id":99,
+    "100":{
+        "id":100,
         "type": "treasure_skill",
         "arg": 1,
         "des": "释放1次神兵技能",
@@ -1188,8 +1200,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "100":{
-        "id":100,
+    "101":{
+        "id":101,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -1197,18 +1209,6 @@ export const playermission = {
         "money": 5000,
         "diamond": 0,
         "func": "open_reclaim",
-        "listen":"undefined"
-    }
-    ,
-    "101":{
-        "id":101,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
         "listen":"undefined"
     }
     ,
@@ -1418,6 +1418,18 @@ export const playermission = {
     ,
     "119":{
         "id":119,
+        "type": "treasure_hexagram",
+        "arg": 10,
+        "des": "神兵铸魂10次",
+        "award": [[150002,50]],
+        "money": 20000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "120":{
+        "id":120,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -1425,18 +1437,6 @@ export const playermission = {
         "money": 5000,
         "diamond": 0,
         "func": "open_reclaim",
-        "listen":"undefined"
-    }
-    ,
-    "120":{
-        "id":120,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
         "listen":"undefined"
     }
     ,
@@ -1682,6 +1682,18 @@ export const playermission = {
     ,
     "141":{
         "id":141,
+        "type": "treasure_hexagram",
+        "arg": 10,
+        "des": "神兵铸魂10次",
+        "award": [[150002,50]],
+        "money": 20000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "142":{
+        "id":142,
         "type": "treasure_phase",
         "arg": 3,
         "des": "神兵进阶至3阶",
@@ -1692,8 +1704,8 @@ export const playermission = {
         "listen":"magic"
     }
     ,
-    "142":{
-        "id":142,
+    "143":{
+        "id":143,
         "type": "reclam",
         "arg": 6,
         "des": "熔炼6件装备",
@@ -1701,18 +1713,6 @@ export const playermission = {
         "money": 5000,
         "diamond": 0,
         "func": "open_reclaim",
-        "listen":"undefined"
-    }
-    ,
-    "143":{
-        "id":143,
-        "type": "ep_levelup",
-        "arg": 5,
-        "des": "装备强化5次",
-        "award": [[100004,20]],
-        "money": 5000,
-        "diamond": 0,
-        "func": "gotoForge",
         "listen":"undefined"
     }
     ,
@@ -1910,6 +1910,18 @@ export const playermission = {
     ,
     "160":{
         "id":160,
+        "type": "treasure_hexagram",
+        "arg": 10,
+        "des": "神兵铸魂10次",
+        "award": [[150002,50]],
+        "money": 20000,
+        "diamond": 0,
+        "func": "gotoMagic",
+        "listen":"undefined"
+    }
+    ,
+    "161":{
+        "id":161,
         "type": "gestFB",
         "arg": 2,
         "des": "挑战心法副本2次",
@@ -1920,8 +1932,8 @@ export const playermission = {
         "listen":"undefined"
     }
     ,
-    "161":{
-        "id":161,
+    "162":{
+        "id":162,
         "type": "role_level",
         "arg": 120,
         "des": "等级达到120级",
@@ -1932,8 +1944,8 @@ export const playermission = {
         "listen":"player"
     }
     ,
-    "162":{
-        "id":162,
+    "163":{
+        "id":163,
         "type": "role_level",
         "arg": 130,
         "des": "等级达到130级",

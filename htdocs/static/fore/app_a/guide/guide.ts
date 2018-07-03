@@ -1,31 +1,24 @@
 
 // ============================== 导入
 //pi
-import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { getGlobal } from "pi/widget/frame_mgr";
-import { listenerList, setForbidBack, lastBack, closeBack, getHeight, getWidth, open, forbidEvent } from "pi/ui/root";
-import { remove , popNew, linkClose, popLink, show } from "pi/ui/root";
+import { listenerList, lastBack, closeBack, getHeight, getWidth, open } from "pi/ui/root";
 import { listenerList as guideListen, init as initGuide, start as start_force,end, setGuideForceWidgetName,guideFind } from "pi/ui/guide";
 import { listenBack } from "app/mod/db_back";
 import { Util } from "app/mod/util";
-
 //mod
-import { mgr_data } from "app/scene/scene";
 import { net_request } from "app_a/connect/main";
-import { Pi, globalSend, setLog } from "app/mod/pi";
+import { Pi, setLog } from "app/mod/pi";
 import { Common } from "app/mod/common";
-import { data as localDB, updata, get as getDB, insert, listen,checkTypeof } from "app/mod/db";
+import { data as localDB, updata, get as getDB, insert, listen } from "app/mod/db";
 import { Music } from "app/mod/music";
 
 //app
 
-import { listenerList as plotListen, initCfg as initPlot, start as start_plot, setPlotWidgetName } from "./plot";
-import { force_cfg } from "cfg/b/force_cfg";
-import { guide_cfg } from "cfg/b/guide_cfg";
-import { function_guid } from "cfg/b/function_guid";
-import { wild_mission } from "fight/b/common/wild_mission_cfg";
-import { function_open } from "cfg/b/function_open";
+import { listenerList as plotListen} from "app_a/guide/plot";
+import { force_cfg } from "cfg/a/force_cfg";
+import { guide_cfg } from "cfg/a/guide_cfg";
 
 
 // ============================== 导出
@@ -36,7 +29,7 @@ import { function_open } from "cfg/b/function_open";
  */
 export const forelet = new Forelet();
 let frame_mgr = getGlobal();
-// let postTimer = 0;//距离上一步引导完成时间
+let postTimer = 0;//距离上一步引导完成时间
 // let is_frame = 0;//创建全局渲染帧永久调用函数和参数
 
 insert("clientData",{});
@@ -251,6 +244,7 @@ const guideEv = {
 	"guideOver" : (state) => {
 		let _curr = guide_cfg[record.curr][record.start];
 		updateCover(true);
+		postTimer = (new Date()).getTime();
 		//修正路径结束，进入正式引导
 		if(state == _curr.fix){
 			//放入定时器，等待引导按钮组件清除状态
@@ -358,7 +352,7 @@ const addPageListen = (widgetName) => {
  * @description 监听启动引导
  */
 const listenStart = (key) => {
-	if(record.curr &&　!guideState　&& getDB("clientData.hasRead")){
+	if(record.curr &&　!guideState　&& getDB("clientData.hasRead") && key!=12){
 		tempState = record.curr;
 		start();
 		return;
@@ -394,29 +388,6 @@ const initCfg = () => {
 			continue;
 		let _cfg = guide_cfg[k];
 		//添加数据监听
-		if(_cfg.need_map){
-			outer:
-			for(let key in wild_mission){
-				let arr = wild_mission[key].guide;
-				if(!arr){continue;}
-				inter:
-				for(let j = 0,leng = arr.length;j<leng;j++){
-					if(k == arr[j][0]){
-						if(_cfg.need){//是否需要强制完成才能刷新下一个任务
-							_cfg.trigger += "&&wild.wild_history>="+wild_mission[key].guard;
-							_cfg.trigger += "&&wild.wild_task_num>="+arr[j][1];
-						}else{
-							_cfg.trigger += "&&(db.wild.wild_history>"+wild_mission[key].guard;
-							_cfg.trigger += "||(db.wild.wild_task_num>="+arr[j][1] + "&&wild.wild_history=="+wild_mission[key].guard +"))";
-						}
-
-						break outer;
-					}
-				}
-			}
-		}else if(_cfg.fun_key && function_open[_cfg.fun_key].level_limit){
-			_cfg.trigger += "&&player.level>="+function_open[_cfg.fun_key].level_limit;
-		}
 		let triggers = _cfg.trigger.match(/[^&&]+/g);
 		for(let i in triggers){
 			addDbListen(triggers[i],k);	
@@ -457,6 +428,7 @@ const updateCover = (forbid) =>{
  * @description 开始引导
  */
 export const start = () => {
+	postTimer =(new Date()).getTime();
 	if(guideState)
 		return;
 	let dg = getDB("clientData");
@@ -474,18 +446,23 @@ export const start = () => {
 			_curr:any = {};
 		if(!_c){
 			netListener.func();
+		//引导目的已经达到，则直接结束此段引导
+		}else if(_c.purpose && _c.purpose(localDB)){
+		//存入后台
+		// netListener.func(start);
+		record.list = record.list+(record.list?"-":"")+record.curr;
+		record.curr = "";
+		record.start = 0;
+		setStep(JSON.stringify(record));
 		//有修正路径
 		}else if(_c.fix){
 			_curr.type = "force";
 			_curr.name = _c.fix;
 			go_next(_curr);
-		//引导目的已经达到，则直接结束此段引导
+		//忽略的步骤
 		}else if(_c.ignore){
 			record.start+=1;
 			start();
-		}else if(_c.purpose && _c.purpose(localDB)){
-			//存入后台
-			netListener.func(start);
 		//否则直接进入下一步
 		}else go_next();
 	//判断当前监听是否触发了引导
@@ -503,7 +480,7 @@ export const start = () => {
  * @description 进入下一步引导
  */
 const go_next = (_curr?) => {
-	// postTimer = Util.serverTime();
+	postTimer = (new Date()).getTime();
 	let music = false;
 	if(!_curr){
 		music = true;
@@ -526,12 +503,8 @@ const go_next = (_curr?) => {
 			return;
 		}
 		let mus = guide_cfg[record.curr].music;
-		if(music && (_curr.name == "fun_open" || mus)){
-			let id = getDB("open_fun.id")-0+1;
-			let curr_music = mus || function_guid[id]["music"];
-			if(curr_music && curr_music!="undefined"){
-				Music.roleSound(curr_music);		    			
-			}
+		if(music && mus){
+			Music.roleSound(mus);		    			
 		}
 	}
 };
@@ -560,16 +533,7 @@ const setStep = (value:string,callback?) => {
 listen("clientData.guide",()=>{
 	start();
 });
-// listen("chat.show,playermission.guide",()=>{
-// 	let chat = getDB("chat.show");
-// 	let curr = guide_cfg[record.curr];
-// 	let playermission = getDB("playermission.guide");
-// 	if(guideState && !chat && curr && !record.start || (record.curr==1 && !playermission)){
-// 		guideState = 0;				
-// 		updateCover(false);
-// 		end();
-// 	}
-// })
+
 
 //读取零散数据
 listenBack("app/client@read",(data)=>{
@@ -607,8 +571,9 @@ listenBack("app/client@read",(data)=>{
 			widgetsMap.push(cmd.widget.name);
 			addPageListen(cmd.widget.name);
 			if(record.curr && cmd.widget.name!="app_b-widget-bg-secondary" && cmd.widget.name!="app_b-widget-bg-goback" && cmd.widget.name!="app_b-widget-bg-cover"){
-				if(guideState && !record.start && record.curr != 12 && cmd.widget.name!="app_b-wild-wild"){
+				if(guideState && !record.start && record.curr != 12 && cmd.widget.name!="app_b-wild-wild" && cmd.group.name !== "scene"){
 					guideState = 0;
+					// record.curr = "";
 					updateCover(false);
 					end();
 					return;
@@ -640,10 +605,12 @@ listenBack("app/client@read",(data)=>{
 });
 
 frame_mgr.setPermanent(()=>{
-	if(guideState && !record.start && guide_cfg[record.curr].checkDB && !guide_cfg[record.curr].checkDB(localDB)){
-		guideState = 0;
-		record.curr = "";
-		updateCover(false);
-		end();
+	if(guideState){
+		if(!record.start && guide_cfg[record.curr].checkDB && !guide_cfg[record.curr].checkDB(localDB) || ((new Date()).getTime() - postTimer >= 4000 && !guideFind(true))){
+			guideState = 0;
+			record.curr = "";
+			updateCover(false);
+			end();
+		}
 	}
 })

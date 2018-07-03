@@ -9,28 +9,30 @@
 {{let chatShow = appCfg.chat.show}}
 {{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
 {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
-{{let Util = _get("app/mod/util").exports.Util}}       
+{{let Util = _get("app/mod/util").exports.Util}}        
 
 <div style="visibility:{{it1.visible ? 'hidden' : 'visible'}};position:absolute;width:100%;height:100%;left:0;top:0;">
         {{let un_defence = player.allAttr ? player.allAttr.un_defence : 0}}
         {{let a =  (it1.wild_mission[wild.wild_boss_order].A/(it1.attackCount + 0.25*un_defence )) }}
         
-        {{let exp_info = Math.ceil(24500/a*it1.wild_mission[wild.wild_boss_order].B + player.power/700)}}
+        {{let exp_info = Math.ceil(5500/a*it1.wild_mission[wild.wild_boss_order].B + player.power/100 + it1.treasury_act[wild.wild_max_mission].exp*2)}}
         
         {{if wild.wild_task_num > wild.wild_boss[wild.wild_boss_order].task_num}}
         {{: cur = wild.wild_boss[wild.wild_boss_order].task_num}}
         {{end}}
     <app-scene-base-scene style="visibility:visible">{"name":"wild","newscene":{{it1.wild_map[curMission.map_id].res}}}</app-scene-base-scene>   
     <div on-tap="gotoBug(0)" class="resource_bar" style="top:5px;left:174px;z-index:1">
-        <div class="money" style="height: 20px;width: 22px;position: absolute;left: 5px;top: 2px;"></div>
-        <span w-class="title_money">{{Common.numberCarry(player.money,10000)}}</span>
+        <widget w-tag="app_a-widget-coin-coin" style="height: 20px;position: absolute;left: 5px;color: #e3d8bb;">
+            {"icon":"money", "text":[{{Common.numberCarry(player.money,10000)}}]} 
+        </widget>
         <span  class="add_btn" style="right:-12px;"></span>
         <div class="resource_light" style="bottom: -7px;left: 13px;"></div>
     </div>
 
     <div on-tap="gotoBug(1)" class="resource_bar" style="top:5px;left:318px;z-index:1">
-        <div class="diamond" style="height: 20px;width: 22px;position: absolute;left: 5px;top: 2px;"></div>
-        <span w-class="title_money">{{Common.numberCarry(player.diamond,10000)}}</span>
+        <widget w-tag="app_a-widget-coin-coin" style="height: 20px;position: absolute;left: 5px;color: #e3d8bb;">
+            {"icon":"diamond", "text":[{{Common.numberCarry(player.diamond,10000)}}]} 
+        </widget>        
         <span class="add_btn" style="right:-12px;"></span>
         <div class="resource_light" style="bottom: -7px;left: 13px;"></div>
     </div>
@@ -44,7 +46,7 @@
                 </app_a-widget-guide-guide>
             </div>
             {{end}}
-            {{if it1.openFlagHitBoss.inhert}}
+            {{if it1.openFlagHitBoss.inhert && it1.openFlagHitBoss.icon}}
             <div class="chanllengeBossAnim" style="position: absolute;left: 50%;margin-left: -53px;bottom: 160px;z-index:1;display: block;pointer-events: none;display:{{ chatShow ? 'block' : 'none'}}"></div>                
             {{end}}
         {{end}}
@@ -64,34 +66,32 @@
             </div>
         </div>
         <div data-desc="月卡" class="shadow" on-tap="gotoCard" style="position: absolute;width: 155px;right:50%;text-align: left;top: 111px;font-size:18px;color:#fff;font-family: mnjsh;margin-right:-{{root.getWidth() / 2 - 3}}px">
-            {{let month = player.month_card_due_time}}
-            {{let week = player.annual_card_due_time}}
             {{let now = Util.serverTime(true)}}
-            <div>月卡:<span style="color:{{month > now ? '#57ff3b':'#aaa'}}">{{month > now ? '收益+'+(it1.vipcard[0].exp_add*100+"%") :'未生效'}}</span></div>
-            <div>周卡:<span style="color:{{week > now ? '#57ff3b':'#aaa'}}">{{week > now ? '收益+'+(it1.vipcard[1].exp_add*100+"%") :'未生效'}}</span></div>
+            {{let week = player.annual_card_due_time > now ? it1.vipcard[1].exp_add : 0}}
+            {{let month = player.month_card_due_time > now ? it1.vipcard[0].exp_add : 0}}
+            <app_b-wild-card-card>{"type":"","add":{{month}}}</app_b-wild-card-card>
+            <app_b-wild-card-card style="margin-top:5px;">{"type":"_1","add":{{week}}}</app_b-wild-card-card>
         </div>
 
         {{let prop_id = it1.bossMisson ? it1.wild_boss[curMission.skip_boss].show_award :  wild.task.guide ? curMission.guide_drop_id : curMission.drop_id[wild.task.award_index]}}
         {{let propName = Pi.sample[prop_id] }}
-        <div style="width:207px;height:127px;background:rgba(0,0,0,0.6);border-radius: 5px;right: 50%;margin-right: -{{root.getWidth() / 2 - 10}}px;bottom: 140px;padding-top: 5px;position: absolute;display:{{ chatShow ? 'block' : 'none'}};opacity:0;transition:opacity 0.6s;{{if it1.task_anima.border_opacity}}opacity:1;{{end}}">
+        <div {{if it1.task_anima.border_opacity}}class="taskInOut"{{else}}{{end}} style="width:207px;height:127px;background:rgba(0,0,0,0.6);border-radius: 5px;right: 50%;margin-right: -{{root.getWidth() / 2 - 10}}px;bottom: 140px;padding-top: 5px;position: absolute;display:{{ chatShow ? 'block' : 'none'}};">
             {{let complete = wild.wild_task_num+wild.guide_num + (wild.task.killNum >= wild.task.needKillNum ? 1:0)}}
             {{let total = wild.wild_boss[wild.wild_boss_order].task_num +wild.wild_boss[wild.wild_boss_order].guide_num}}
             {{let bol = wild.task.killNum >= wild.task.needKillNum}}
-            <div style="position:absolute;top: 13px;left: 7px;overflow:hidden;width:0;height:26px;{{if it1.task_anima.con_opacity}}width:191px;transition:width 0.6s{{end}}">
+            <div style="position:absolute;top: 13px;left: 7px;overflow:hidden;height:26px;width:191px;">
                 <div class="shadow" w-class="mission_title" style="position:absolute;top: 0;left: 0;">
                     修行任务<span style="color:{{bol ? '#51e650' :'#fad731'}}"> ({{ (it1.bossMisson ? it1.bossNum : bol) ? "已完成" : "进行中" }})</span>  
                     {{if !it1.bossMisson}}
                     <img src="app_b/wild/image/task_{{wild.task.taskQuality}}.png" style="position:absolute;left: 17px;top: 1px;height: 24px;"/>
                     {{end}}
                 </div>
-                {{if it1.task_anima.con_opacity}}
-                <div class="task_refresh" style="position:absolute;top:-20px;left:-100px;"></div>
-                {{end}}
+
             </div>
            
             
 
-            <div style="height:64px;position: absolute;top:40px;left:0;overflow:hidden;width:0;{{if it1.task_anima.con_opacity>=2}}width:100%;transition:width 0.6s{{end}}">
+            <div style="height:64px;position: absolute;top:40px;left:0;overflow:hidden;width:100%;">
                 <div style="width:200px;height:26px;color:#fde7ca;font-size:18px;position: absolute;top: 0px;left: 0;font-family:mnjsh;">
                     <img src="./image/exp_award_img.png" style="transform: scale(0.9);position:absolute;left: 2px;top: 0;"/>
                     {{if !it1.bossMisson}}
@@ -119,15 +119,11 @@
                         {"prop":{{propName}},"url":{{Pi.pictures[icon]}}}
                     </app-widget-prop-base_prop-base_prop>
                 </div>
-                {{if it1.task_anima.con_opacity>=2}}
-                <div class="task_refresh" style="position:absolute;top:-17px;left:-100px;"></div>
-                <div class="task_refresh" style="position:absolute;top:11px;left:-100px;"></div>
-                {{end}}
             </div>
 
-            {{if (it1.bossMisson ? it1.bossNum : bol)}}
-            <div class="wild_task_complete" style="position: absolute;left: -18px;top: -25px;z-index: 1;"></div>
-            {{end}}
+            <div style="position: absolute;left: -18px;top: -25px;z-index: 1;width: 232px;height: 183px;pointer-events: none;overflow:hidden">
+                <div {{if it1.bossMisson && it1.bossNum || bol}}class="wild_task_complete"{{else}}{{end}} style="position: absolute;width: 1856px;height:183px;"></div>
+            </div>
             {{if wild.wild_history == wild.wild_max_mission}}
                 {{let percent = complete / total * 100}}
                 {{let add = wild.task.killNum >= wild.task.needKillNum ? 1:0}}

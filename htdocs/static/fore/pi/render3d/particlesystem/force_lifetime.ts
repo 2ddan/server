@@ -1,18 +1,21 @@
-
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve"
-import { PSSimulationSpace } from "./util"
+/**
+ * 
+ */
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
+import { PSSimulationSpace } from './util';
 
 export class ForceOverLifetimeModule {
 
-	randomized: boolean;
-	space: PSSimulationSpace;
-	x: IMinMaxCurve;
-	xMultiplier: number;
-	y: IMinMaxCurve;
-	yMultiplier: number;
-	z: IMinMaxCurve;
-	zMultiplier: number;
+	public randomized: boolean;
+	public space: PSSimulationSpace;
+	public x: IMinMaxCurve;
+	public xMultiplier: number;
+	public y: IMinMaxCurve;
+	public yMultiplier: number;
+	public z: IMinMaxCurve;
+	public zMultiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.randomized = config.randomized;
 		this.space = config.space;  // 只实现World
@@ -23,4 +26,4 @@ export class ForceOverLifetimeModule {
 		this.z = buildMinMaxCurve(config.z);
 		this.zMultiplier = config.zMultiplier;
 	}
-};
+}

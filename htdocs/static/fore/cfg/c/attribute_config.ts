@@ -30,13 +30,15 @@ export const attribute_config={
     
     "per_un_defence":"破甲比例",
     
-    "skill_level_attr":"技能等级战斗力",
-    
     "damage_multiple":"伤害加成",
     
     "un_damage_multiple":"伤害减免",
     
     "pvp_damage_multiple":"pvp增伤",
     
-    "pvp_un_damage_multiple":"pvp免伤"
+    "pvp_un_damage_multiple":"pvp免伤",
+    
+    "skill_level_attr":"技能等级战斗力",
+    
+    "buff_attr":"buff增益战斗力"
 }

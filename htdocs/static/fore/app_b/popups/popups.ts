@@ -1,15 +1,14 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { notify } from "pi/widget/event";
-import { open,close } from "app/mod/root";
+import { close } from "app/mod/root";
 
-import { updata, get as getDB, listen, insert } from "app/mod/db";
+import { updata, get as getDB} from "app/mod/db";
 import { Pi, globalSend,cfg } from "app/mod/pi";
 import { attribute_config } from "cfg/c/attribute_config"; //属性
 import { equip_star_promote } from "cfg/c/equip_star_promote_fore"; //升星
 import { equip_diam_equip } from "cfg/c/equip_diam_equip";//宝石
 import { equip_diam_promote } from "cfg/c/equip_diam_promote";//宝石属性
-import { replaceEquip } from "app_b/role/equip/equip"
+import { equip_level_up_fixed } from "cfg/c/equip_level_up_fixed_fore";
 
 let P_equip = []; //玩家穿戴所有装备
 let P_id = 0; //玩家角色id
@@ -135,7 +134,7 @@ const getReinforcement = () => {
     equip_level = getDB("friend_battle.equip_level")[slot];//装备等级
     let star = cfg.equip_star_promote_fore.equip_star_promote[slot+1][star_];
     let equip = cfg.equip_level_up.equip_level_up[equip_level][2] - 0;//基数
-    let equip_j = cfg.equip_level_up.equip_level_up[equip_level][3] - 0;//固定加成
+    // let equip_j = cfg.equip_level_up.equip_level_up[equip_level][3] - 0;//固定加成
     let mainAttr = getAttr(P_equip[slot])[0];
     bonus = star.attr_ratio;
     let starArr:any = {};
@@ -150,7 +149,15 @@ const getReinforcement = () => {
         starArr.attr = mainAttr.attr,
         starArr.val = 0;
     }
-    
+    // 固定加成
+    let up_arr = equip_level_up_fixed[slot + 1];
+    let j = 0;
+    for (let i = 0, len = up_arr.length; i < len; i++) {
+        if (equip_level >= up_arr[i].level) {
+            j = i;
+        }
+    }
+    let ep_level = equip_level;
         
     /* for(let j in equipArr){
         equipArr[j]["color"] = "#0F0";
@@ -159,7 +166,7 @@ const getReinforcement = () => {
     
     let equipArr:any ={
         "attr":mainAttr.attr,
-        "val":Math.ceil(mainAttr.val * equip + equip_j)
+        "val":Math.ceil(mainAttr.val * equip + eval('('+ up_arr[j].val +')'))
     }
     qhOBJ["star"] = starArr;
     qhOBJ["equip"] = equipArr;

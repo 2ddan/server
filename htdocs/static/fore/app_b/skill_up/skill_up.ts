@@ -1,18 +1,17 @@
 //==================导入======================
 /**pi */
 import { Forelet } from "pi/widget/forelet";
-import { remove, destory } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
 
 /**mod */
 import { Common} from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { data as db, updata, get as getDB, insert, listen } from "app/mod/db";
+import {  updata, get as getDB, insert, listen } from "app/mod/db";
 
 /**app */
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request} from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { Pi, globalSend, findGlobalReceive } from "app/mod/pi";
+import { Pi, globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 
 import { skill_describe } from "cfg/b/skill_describe";// 技能描述表
@@ -31,8 +30,8 @@ let playerLevel = 0,//人物等级
     skill_icon_id = skill_level[Object.keys(skill_level)[0]][1].prop_id,
     canUp = true;
 
-
-
+//插入本地数据库
+insert("skill",[]);
 /**
  * @description  获取页面数据
  */

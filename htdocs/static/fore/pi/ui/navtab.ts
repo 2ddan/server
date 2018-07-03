@@ -5,10 +5,10 @@
  */
 
 // ============================== 导入
-import {set as task} from '../util/task_mgr';
-import { Widget } from "../widget/widget";
-import { notify } from "../widget/event";
 import { Json } from '../lang/type';
+import {set as task} from '../util/task_mgr';
+import { notify } from '../widget/event';
+import { Widget } from '../widget/widget';
 
 // ============================== 导出
 /**
@@ -17,14 +17,15 @@ import { Json } from '../lang/type';
  */
 export class NavTab extends Widget {
 
-	old: any = {};
+	public old: any = {};
 	/**
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
 	 */
-	setProps(props: Json, oldProps?: Json): void {
-		if(!Number.isInteger(props.cur))
+	public setProps(props: Json, oldProps?: Json): void {
+		if (!Number.isInteger(props.cur)) {
 			props.cur = this.props ? this.props.cur : 0;
+		}
 		this.old[props.cur] = true;
 		props.old = this.old;
 		this.props = props;
@@ -33,18 +34,18 @@ export class NavTab extends Widget {
 	 * @description 选择按钮切换
 	 * @example
 	 */
-	change(e:any) {
-		if(e.cmd === this.props.cur)
+	public change(e:any) {
+		if (e.cmd === this.props.cur) {
 			return;
-		let old = this.props.cur;
+		}
+		const old = this.props.cur;
 		this.props.cur = e.cmd;
 		this.old[e.cmd] = true;
 		this.paint();
-		task(notify, [this.parentNode, "ev-change", e], 90000, 1);
+		task(notify, [this.parentNode, 'ev-change', e], 90000, 1);
 	}
 }
 
 // ============================== 本地
 
 // ============================== 立即执行
-

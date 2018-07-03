@@ -1,0 +1,2 @@
+- 这是动态移除dom的示例
+- father组件设置hasChild2=true初始值，并在attach函数中设置定时器，一段时间后改变hasChild2为false,并用this.paint()重绘，可以看到child2组件在一段时间后消失

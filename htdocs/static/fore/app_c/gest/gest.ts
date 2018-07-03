@@ -10,7 +10,7 @@ import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { fight, showAccount } from "app_b/fight/fight";
+import { fight } from "app_b/fight/fight";
 import { map_cfg } from "app/scene/plan_cfg/map";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 //导入配置
@@ -23,8 +23,6 @@ import { gest_act } from "cfg/c/gest_act";
 import { resetcanvas } from "app/scene/base/scene";
 import { monster_base } from "fight/b/common/monsterBase";
 import { Music } from "app/mod/music";
-//掉落效果
-import { node_fun, drop_outFun } from "app_b/widget/drop_out";
 import { function_open } from "cfg/b/function_open";
 
 
@@ -38,12 +36,12 @@ let inhType = "1",//传承提示
 
 export const globalReceive = {
     gotoInherit: () => {
-        // if (funIsOpen("gest")) {
+        if (funIsOpen("gest")) {
             gestNumInBag = logic.gestNeedInBag();
             forelet.paint(getData());
             open("app_c-gest-gest");
             globalSend("openNewFun", "gest");
-        // }
+        }
     },
     //心法副本
     gotoGest: () => {
@@ -829,7 +827,7 @@ export const gestActiveOrStarUp = function (gest_id, level) {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                words: `通讯失败`
+                words: data.why
             });
             console.log(data);
         })
@@ -848,7 +846,6 @@ const buyGest = function (str) {
     };
     gestNet(arg)
         .then((data: any) => {
-            console.log(data,"55555555555555");
             let prop = Common.changeArrToJson(data.ok);
             Common_m.deductfrom(prop);
             Common_m.mixAward(prop);

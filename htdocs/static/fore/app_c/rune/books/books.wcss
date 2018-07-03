@@ -166,21 +166,16 @@
     color:#51e650;
     font-size:20px;
 }
-.80{
-    width: 50%;
-    display:inline-block;
-    white-space: nowrap;
-}
+
 .81{
-    width: 300px;
+    width: 94%;
     overflow: hidden;
     height: 62px;
     position: absolute;
-    left: 50%;
-    margin-left: -150px;
+    left: 3%;
     line-height: 27px;
     top: 12px;
-    text-align: left;
+    text-align: center;
 }
 .82{
     position:absolute;

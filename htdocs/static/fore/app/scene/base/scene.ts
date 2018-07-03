@@ -12,11 +12,13 @@ import { Common } from "app/mod/common";
 import { Pi } from "app/mod/pi";
 import { updata } from "app/mod/db";
 import { createHandlerList } from "pi/util/event";
+import { depend } from "pi/lang/mod";
 
 import { mgr, mgr_data } from "../scene";
 import { camera_cfg } from "../plan_cfg/camera_config";
 import { map_cfg} from "../plan_cfg/map";
 import { map_eff} from "../plan_cfg/map_eff";
+import { Camera3d } from "../class"
 
 // ================================== 导出
 /**
@@ -66,7 +68,7 @@ export class Scene extends Widget {
     down(e){
         if (mgr_data.name !== "uiscene") {
             downMove = e;
-            dealMove();
+            // dealMove();
         }
     }
 
@@ -161,7 +163,7 @@ export const resetcanvas = (widget, data?) => {
     //配置 camera 
     let c: any;
     //if (mgr_data.name !== "loginscene") {
-        c = mgr.yszzFight.camera(camera_cfg[mgr_data.name + "_camera"]||camera_cfg["wild_camera"]);
+        c = new Camera3d(camera_cfg[mgr_data.name + "_camera"]||camera_cfg["wild_camera"]);
         c._pos = {x:0,y:0};
     //}
 
@@ -169,7 +171,7 @@ export const resetcanvas = (widget, data?) => {
         curResTab.release();
     
     scene_cfg.resTab = curResTab = new ResTab();
-    curResTab.timeout = 10000;
+    curResTab.timeout = 300000;
     mgr.reset(scene_cfg, mgr_data.name, c, widget.props.width || getWidth(), widget.props.height || getHeight());
 
     mgr.pause(false);
@@ -180,7 +182,7 @@ export const resetcanvas = (widget, data?) => {
     } else {
         paintCmd3(getRealNode(widget.tree), "appendChild", [canvas]);
     }
-
+    
     let scene_module = widget.props.newscene || map_cfg[widget.props.type] || map_cfg[mgr_data.name] || null;
     if (scene_module) {
         let sceneJson = mgr.getSceneFile(scene_module);
@@ -189,7 +191,10 @@ export const resetcanvas = (widget, data?) => {
             mapEff = mgr.getSceneFile(map_eff[scene_module]);
         }
         mgr.create(sceneJson);
-        if(map_eff[scene_module]) mgr.create(mapEff);
+        if(map_eff[scene_module]){
+            mgr.create(mapEff);
+        }
+        // getScene(scene_module);
     }
 
     if (widget.props.module) {
@@ -310,6 +315,19 @@ let listener = {},
  * @param event 
  */   
 const sceneResetEvents = createHandlerList();
+/**
+ * @description 拿到对应的scene文件
+ * @param arg : 需要匹配的scene文件
+ */
+const getScene = (arg) => {
+    let scene_arg = depend.get("app/scene_res/res/scene/").children;
+    for(let i in scene_arg){
+        if(i.indexOf(arg) > -1 && i.split(".")[0] != arg){
+            let sceneFile = mgr.getSceneFile(i.split(".")[0]);
+            mgr.create(sceneFile);
+        }
+    }
+}
  /**
  * @description 处理手指移动事件
  * @param event 
@@ -426,8 +444,8 @@ forelet.listener = (cmd: string, widget: Widget): void => {
 
         if (d.length !== 0 && d[d.length - 1].props && d[d.length - 1].props.name === "uiscene") {
             mgr_data.name = d[d.length - 1].props.name;
-            d[d.length - 1].paint(true);
-            // resetcanvas(d[d.length - 1]);
+            // d[d.length - 1].paint(true);
+            resetcanvas(d[d.length - 1]);
         }
         SceneW = d[d.length - 1]; 
 

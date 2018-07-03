@@ -1,17 +1,13 @@
 //***************** 签到 ***************//
 //====================================导入
 import { Pi, globalSend } from "app/mod/pi";
-import { Util } from "app/mod/util";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { get, insert, updata } from "app/mod/db";
-import { open, remove, destory } from "pi/ui/root";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 import { net_request } from "app_a/connect/main";
 
-import { findNodeByAttr } from "pi/widget/virtual_node";
-import { getRealNode } from "pi/widget/painter";
 
 import { checkinCfg } from "cfg/c/checkin_cfg";
 

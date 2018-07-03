@@ -6,22 +6,24 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { logout } from "pi/ui/con_mgr";
-import { getTask, getPrioritySize } from "pi/util/task_mgr";
 //mod
-import { globalSend, refresh, Pi } from "app/mod/pi";
+import { globalSend, refresh, Pi, InfoToPt } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { insert, updata, listen, data as localDB } from "app/mod/db";
 import { listenBack } from "app/mod/db_back";
 import { setShield } from "app/scene/ui_fun";
-import { Music, changeMusicState } from "app/mod/music";
+import { changeMusicState } from "app/mod/music";
 //scene
 import { setRole } from "app/scene/ui_fun";
 //app
 import { net_message, net_send } from "app_a/connect/main";
 
 //外部
+import { area as areacfg } from "cfg/a/area";
+import { role_base } from "fight/b/common/role_base";
 import { powerAnim } from "app_b/power_anim/power_anim"
 import { changeAutoFinght } from "app_b/wild/wild";
+
 // ======================================= 导出
 /**
  * @description  导出forelet
@@ -58,21 +60,6 @@ export class Player extends Widget {
 		stateChange(index);
 		forelet.paint();
 	}
-	alertTaskSize(){
-		let ts = getTask(),s = `${ts.size()}|||`,t = {},tail;
-		ts.sync.forEach((v,k)=>{
-			s += `${k}:${v.size};`;
-		})
-		for(let i = ts.async.size;i>0;i--){
-			if(!tail)tail = ts.async.tail;
-			if(t[tail.priority]){
-				t[tail.priority] += 1;
-			}else 
-				t[tail.priority] = 1;
-			tail = tail.next
-		}
-		alert(s+JSON.stringify(t));
-	}
 }
 /**
  * 全局广播
@@ -91,7 +78,9 @@ let _db = {
 	area_time: 0,
 	annual_card_due_time: 0,
 	area: 1,
+	area_name: "",
 	career_id: 0,
+	career_name: "",
 	diamond: 0,
 	dominate_area: 0,
 	exp: 0,
@@ -116,8 +105,7 @@ let _db = {
 	wx_bind: 0,
 	wx_share: 0,
 	wx_share_award: 0,
-	function_record: -1,
-	gang_contribute: 0 //门派可用贡献
+	function_record: -1
 };
 let funArr = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss"];
 /**
@@ -127,8 +115,31 @@ const initData = (data) => {
 	for (let k in data) {
 		updata(`player.${k}`, data[k]);
 	}
+	updata("player.area_name", areacfg[localDB.player.area].name);
+	updata("player.career_name", role_base[localDB.player.career_id].name);
 	//设置uifun里面的role id
 	setRole(localDB.player.role_id);
+	InfoToPt.upload(2, localDB);
+}
+
+const stateChange = function (index) {
+	if (index < 2) {
+		fun(index, changeMusicState);
+	} else if (index == 5) {
+		fun(index, changeAutoFinght);
+	} else {
+		fun(index, setShield);
+	}
+};
+
+const fun = function (index, callback) {
+	if (!Pi.localStorage[funArr[index]]) {
+		Pi.localStorage.setItem(funArr[index], 1);
+		callback(funArr[index], true);
+	} else {
+		Pi.localStorage.removeItem([funArr[index]]);
+		callback(funArr[index], false);
+	}
 }
 
 // =========================== 立即执行
@@ -139,6 +150,10 @@ listenBack("app/role@read", initData);
 //监听玩家数据变化
 listen("player", () => {
 	forelet.paint();
+});
+//上传玩家信息到平台
+listen("player.level",()=>{
+	InfoToPt.upload(4, localDB);
 });
 /**
  * 监听战斗力是否变化
@@ -181,17 +196,6 @@ net_message("other_place_login", (msg) => {
 	}
 	confirm();
 	refresh();
-	// popTipFun(
-	// 	{
-	// 		words: Common.mergeTips(tips_pop.other_place_login, [msg.param.ip]),
-	// 		callback: [[tips_pop.other_place_login.btn_name[0], function () {
-	// 			refresh();
-	// 		}]],
-	// 		close: function () {
-	// 			refresh();
-	// 		}
-	// 	}
-	// )
 });
 
 
@@ -210,22 +214,4 @@ net_message("other_place_login", (msg) => {
 	})
 })();
 
-const stateChange = function (index) {
-	if (index < 2) {
-		fun(index, changeMusicState);
-	} else if (index == 5) {
-		fun(index, changeAutoFinght);
-	} else {
-		fun(index, setShield);
-	}
-};
 
-const fun = function (index, callback) {
-	if (!Pi.localStorage[funArr[index]]) {
-		Pi.localStorage.setItem(funArr[index], 1);
-		callback(funArr[index], true);
-	} else {
-		Pi.localStorage.removeItem([funArr[index]]);
-		callback(funArr[index], false);
-	}
-}

@@ -5,46 +5,59 @@
  * @description 枚举事件类型
  */
 export enum EType{
-    insert      = "a", 
-    remove      = "b", 
-    moveto      = "c", 
-    move        = "d",
-    useSkill    = "e",
-    spreadSkill = "f", 
-    addBuff     = "g", 
-    clearBuff   = "h", 
-    effect      = "i", 
-    addGroup    = "j", 
-    removeGroup = "k",
-    damage      = "l",
-    refreshAttr = "m",
-    refreshPet  = "n",
-    refreshClothes = "o",
-    refreshSkill = "p",
-    task        = "q"
+    insert             = "a", 
+    remove             = "b", 
+    moveto             = "c", 
+    move               = "d",
+    useSkill           = "e",
+    spreadSkill        = "f", 
+    addBuff            = "g", 
+    clearBuff          = "h", 
+    effect             = "i", 
+    addGroup           = "j", 
+    removeGroup        = "k",
+    damage             = "l",
+    refreshAttr        = "m",
+    refreshPet         = "n",
+    refreshClothes     = "o",
+    refreshSkill       = "p",
+    task               = "q",
+    refreshEnsoulClass = "r",
+    refreshEquipStar   = "s",
+    refreshWeapon      = "t",
+    revive             = "u"
 }
 /**
  * @description 推送事件映射表
  */
 export const eventsKeys = {
-    insert     : ["type","fighter"],
-    addGroup   : ["type","fighter","groupId"],
-    useSkill   : ["type","fighter","skill","curTarget","pos"],
-    spreadSkill: ["type","fighter","target","skill"],
-    addBuff    : ["type","fighter","target","skill","buff"],
-    clearBuff  : ["type","fighter","buff"],
-    effect     : ["type","fighter","target","effect","value"],
-    damage     : ["type","fighter","curTarget","target","r","skill"],//curTarget 是否为主目标
-    remove     : ["type","fighter"],
-    move       : ["type","fighter","moveto","moving"],
-    moveto     : ["type","fighter","moveto"],
+    insert             : ["type","fighter"],
+    addGroup           : ["type","fighter","groupId"],
+    useSkill           : ["type","fighter","skill","curTarget","pos","pk"],
+    spreadSkill        : ["type","fighter","target","skill"],
+    addBuff            : ["type","fighter","target","skill","buff"],
+    clearBuff          : ["type","fighter","buff"],
+    effect             : ["type","fighter","target","effect","value"],
+    damage             : ["type","fighter","curTarget","target","r","skill"],//curTarget 是否为主目标
+    remove             : ["type","fighter"],
+    move               : ["type","fighter","moveto","moving"],
+    moveto             : ["type","fighter","moveto"],
 
-    refreshAttr: ["type","fighter","attr"],
-    refreshPet : ["type","pet","fighter"],
-    refreshClothes : ["type","clothes","fighter"],
-    refreshSkill : ["type","skill","fighter"],
-    task       : ["type", "fighter","killNum"]
+    refreshAttr        : ["type","fighter","attr"],
+    refreshEnsoulClass : ["type","fighter","attr"],
+    refreshEquipStar   : ["type","fighter","attr"],
+    refreshWeapon      : ["type","fighter","attr"],
+
+    refreshPet         : ["type","pet","fighter"],
+    refreshClothes     : ["type","clothes","fighter"],
+    refreshSkill       : ["type","skill","fighter"],
+    task               : ["type", "fighter","killNum"],
+
+    revive             : ["type","fighter"]
 }
+/**
+ * @description 混合后台事件(单个)，转换为{key,value}
+ */
 export const blendOne = (evs):any => {
     let ot = evs[0],
         t = types[ot],
@@ -58,7 +71,7 @@ export const blendOne = (evs):any => {
     return r;
 }
 /**
- * @description 混合后台事件，转换为{key,value}
+ * @description 混合后台事件(列表)，转换为{key,value}
  */
 export const blend = (evsList:any[]) => {
     let arr = [];

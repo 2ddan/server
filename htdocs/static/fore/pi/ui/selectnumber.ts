@@ -8,11 +8,11 @@
  */
 
 // ============================== 导入
-import { Widget } from "../widget/widget";
 import { Json } from '../lang/type';
 import { ResTab } from '../util/res_mgr';
-import {set as task} from '../util/task_mgr';
-import { notify } from "../widget/event";
+import { set as task } from '../util/task_mgr';
+import { notify } from '../widget/event';
+import { Widget } from '../widget/widget';
 
 const INTERVAL = 200;
 // ============================== 导出
@@ -21,13 +21,13 @@ const INTERVAL = 200;
  * @example
  */
 export class SelectNumber extends Widget {
-	timerRef: number = 0;
+	public timerRef: number = 0;
 
 	/**
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
 	 */
-	setProps(props: Json, oldProps?: Json): void {
+	public setProps(props: Json, oldProps?: Json): void {
 		props.count = props.count || 1;
 		props.minCount = props.minCount || 0;
 		props.maxCount = props.maxCount || Number.MAX_SAFE_INTEGER;
@@ -39,36 +39,41 @@ export class SelectNumber extends Widget {
 	 * @description 按下事件
 	 * @example
 	 */
-	down(step){
+	// tslint:disable-next-line:typedef
+	public down(step) {
 		this.props.step = step;
-		let w = this;
-		this.timerRef = setTimeout(function(){changeCount(w, step, true)}, 800);
-	};
+		// tslint:disable-next-line:no-this-assignment
+		const w = this;
+		this.timerRef = setTimeout(() => { changeCount(w, step, true); }, 800);
+	}
 
 	/**
 	 * @description 鼠标或手指抬起事件
 	 * @example
 	 */
-	up(e){
-		if(this.timerRef){
+	// tslint:disable-next-line:typedef
+	public up(e) {
+		if (this.timerRef) {
 			clearTimeout(this.timerRef);
 			this.timerRef = 0;
 		}
 		changeCount(this, this.props.step, false);
-		task(notify, [this.parentNode, "ev-selectcount", {"count":this.props.count}], 90000, 1);
-	};
+		task(notify, [this.parentNode, 'ev-selectcount', { count: this.props.count }], 90000, 1);
+	}
 	/**
 	 * @description 销毁时调用，一般在渲染循环外调用
 	 * @example
 	 */
-	destroy(): boolean {
-		if(!super.destroy())
+	public destroy(): boolean {
+		if (!super.destroy()) {
 			return false;
+		}
 		this.timerRef && clearTimeout(this.timerRef);
+
 		return true;
 	}
 
-};
+}
 
 /**
  * @description 更改选择数量
@@ -76,26 +81,27 @@ export class SelectNumber extends Widget {
  * @example
  */
 const changeCount = (w: SelectNumber, step: number, startTimeout: boolean) => {
-	let to = w.props.count + step;
-	if(step > 0){
-		if(to >= w.props.maxCount){
+	const to = w.props.count + step;
+	if (step > 0) {
+		if (to >= w.props.maxCount) {
 			w.props.count = w.props.maxCount;
 			w.timerRef = 0;
-		}else{
+		} else {
 			w.props.count = to;
-			if(startTimeout)
-				w.timerRef = setTimeout(function(){changeCount(w, step, true)}, w.props.interval);
+			if (startTimeout) {
+				w.timerRef = setTimeout(() => { changeCount(w, step, true); }, w.props.interval);
+			}
 		}
-	}else if(step < 0){
-		if(to <= w.props.minCount){
+	} else if (step < 0) {
+		if (to <= w.props.minCount) {
 			w.props.count = w.props.minCount;
 			w.timerRef = 0;
-		}else{
+		} else {
 			w.props.count = to;
-			if(startTimeout)
-				w.timerRef = setTimeout(function(){changeCount(w, step, true)}, w.props.interval);
+			if (startTimeout) {
+				w.timerRef = setTimeout(() => { changeCount(w, step, true); }, w.props.interval);
+			}
 		}
 	}
 	w.paint();
-}
-
+};

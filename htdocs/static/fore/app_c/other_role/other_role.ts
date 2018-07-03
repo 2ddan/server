@@ -1,19 +1,12 @@
 //导入模块
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { Common } from "app/mod/common";
-import { Common_m } from "app_b/mod/common";
-import {  get as getDB, checkTypeof, updata ,listen,insert } from "app/mod/db";
+import {  get as getDB } from "app/mod/db";
 import { open, close } from "app/mod/root";
-import { open as _open ,remove, destory } from "pi/ui/root"
-import { Util } from "app/mod/util";
-import { Pi,globalSend ,cfg} from "app/mod/pi";
-import { listenBack } from "app/mod/db_back";
+import { Pi,globalSend} from "app/mod/pi";
 import * as piSample from "app/mod/sample";
-import {set as task} from 'pi/util/task_mgr';
-import { notify } from "pi/widget/event";
-import { Json } from 'pi/lang/type';
 
 import { treasure_up } from "cfg/b/treasure_up";
 import { treasure_break } from "cfg/b/treasure_break";
@@ -35,7 +28,7 @@ import { DiamPictur } from "cfg/b/DiamPictur";//宝石属性
 
 
 //scene
-import { mgr_data, mgr } from "app/scene/scene";
+import {  mgr } from "app/scene/scene";
 import { resetcanvas } from "app/scene/base/scene";
 
 export const forelet = new Forelet();
@@ -185,16 +178,16 @@ const changeState = () => {
     let i = 0;
     pose_timer = setInterval(() => {
         i++;
-        if (i / 10 == (time[0] * 5)) {
+        if (i / 100 == (time[0] * 5)) {
             pose = "pose";
             forelet.paint(getData());
         }
-        if (i / 10 == (time[0] * 5 + time[1])) {
+        if (i / 100 == (time[0] * 5 + time[1])) {
             pose = "";
             i = 0;
             forelet.paint(getData());
         }
-    }, 100);
+    }, 10);
 }
 const getMondule = () => {
     let pet = _data.role.pet;

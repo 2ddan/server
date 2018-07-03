@@ -1,15 +1,14 @@
+/** 
+ * 
+ */
 // 判断相等函数
-export interface Equal<T> {
-	(el1: T, el2: T): boolean;
-}
+export type Equal<T> = (el1: T, el2: T) => boolean;
 // 单参数函数
-export interface Func<T>{
+export interface Func<T> {
 	(arg: T);
 }
 // 比较函数，返回值大于0 表示el1 大于 el2，返回值小于0 表示el1 小于 el2，返回值等于0 表示el1 等于 el2，
-export interface Compare<T> {
-	(el1: T, el2: T): number;
-}
+export type Compare<T> = (el1: T, el2: T) => number;
 export type Json = any;
 export type char = string;
 export type i8 = number;

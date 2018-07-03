@@ -49,5 +49,12 @@ tab.push({
     "tip_keys": ["role.weapon_soul"],
     "fun_key": "weapon_soul"
 })
+tab.push({
+    "icon": "menu_rune_icon",
+    "text": "秘籍",
+    "func": "gotoRune",
+    "tip_keys": ["role.rune"],
+    "fun_key": null
+})
 
 export const menu_role_menu = tab;

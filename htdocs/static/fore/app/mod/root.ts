@@ -34,9 +34,9 @@ const deal = {
 		if (group[msg.group.name] >= 0) {
 			group[msg.group.name] += 1;
 		} else group[msg.group.name] = 1;
-		//if (group[msg.group.name] === 1) {
+		// if (group[msg.group.name] === 1) {
 			globalSend("widgetOpen", msg.group.name);
-		//}
+		// }
 		// if (msg.group.name === "cover") {
 		// 	showCover(history.cover, false);
 		// 	history.cover.push(msg);
@@ -47,6 +47,7 @@ const deal = {
 		if(openList[msg.widget.name] !== undefined)openList[msg.widget.name] -= 1;
 		group[msg.group.name] -= 1;
 		if (msg.group.name === "secondary" && group.secondary === 0) {
+			globalSend("widgetClose");
 			globalSend("widgetOpen", "main");
 			return;
 		}

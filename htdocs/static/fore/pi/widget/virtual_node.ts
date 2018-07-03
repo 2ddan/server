@@ -1,17 +1,16 @@
-/*
- 这个模块实际并不使用class定义的类型，类型也并不导出。主要的考虑是，在模板函数中为了优化性能，直接使用字面量表达
- 类型定义：
- Node = {type, attrMap, attrHash, children, childHash, simHash, ext, dom|widget}
- ext = {classSet, clazzSet, clazzStyle, style}
- TextNode = {hash, content, dom | json}
+/** 
+ * 这个模块实际并不使用class定义的类型，类型也并不导出。主要的考虑是，在模板函数中为了优化性能，直接使用字面量表达
+ * 类型定义：
+ * Node = {type, attrMap, attrHash, children, childHash, simHash, ext, dom|widget}
+ * ext = {classSet, clazzSet, clazzStyle, style}
+ * TextNode = {hash, content, dom | json}
  */
-
 // ============================== 导入
 import { Json } from '../lang/type';
-import { Widget } from './widget';
-import * as painter from "./painter";
-import { URLEffect } from './style';
 import { objDiff } from '../util/util';
+import * as painter from './painter';
+import { URLEffect } from './style';
+import { Widget } from './widget';
 // ============================== 导出
 
 /**
@@ -26,11 +25,11 @@ export interface VirtualNode {
 	attrs: Object;
 	attrHash: number; // 属性计算出来的hash
 	attrSize: number; // 属性数量
-	children: Array<VNode>;
+	children: VNode[];
 	childHash: number; // 子节点数组计算出来的内容的hash
 	didMap: Map<string, VNode>; // did快速判断是否为相同节点， 如果是其他语言，可以将tagName和sid也放入键中，这样结构更好一些
-	childHashMap: Map<number, Array<VWNode>>; // childHash快速判断是否为相同节点， 如果是其他语言，可以将tagName和sid也放入键中，这样结构更好一些
-	textHashMap: Map<number, Array<VirtualTextNode>>; // textHash快速判断是否为相同节点
+	childHashMap: Map<number, VWNode[]>; // childHash快速判断是否为相同节点， 如果是其他语言，可以将tagName和sid也放入键中，这样结构更好一些
+	textHashMap: Map<number, VirtualTextNode[]>; // textHash快速判断是否为相同节点
 	parent: VirtualNode;
 	offset: number; // 在父节点的位置
 	oldOffset: number; // 在旧节点上的位置
@@ -68,16 +67,15 @@ export interface VirtualTextNode {
 }
 
 export interface VNodeExt {
-	style?: URLEffect;//合并后的样式
-	innerStyle?: URLEffect;//内联样式
-	clazzStyle?: URLEffect;//clazz内联样式
+	style?: URLEffect;// 合并后的样式
+	innerStyle?: URLEffect;// 内联样式
+	clazzStyle?: URLEffect;// clazz内联样式
 	plugin?: any;
 	eventAttr?: any;
-	eventMap?: Map<string, any>;//用户事件表
-	nativeEventMap?: Map<string, any>;//本地事件表 key:"click" value: ()=>{}
-	propsUpdate?: boolean;//props是否使用更新模式，默认为false,替换模式
+	eventMap?: Map<string, any>;// 用户事件表
+	nativeEventMap?: Map<string, any>;// 本地事件表 key:"click" value: ()=>{}
+	propsUpdate?: boolean;// props是否使用更新模式，默认为false,替换模式
 }
-
 
 export type VWNode = VirtualNode | VirtualWidgetNode;
 export type VNode = VWNode | VirtualTextNode;
@@ -87,78 +85,89 @@ export type VNode = VWNode | VirtualTextNode;
  * @example
  */
 export const isVirtualNode = (node: VNode): VirtualNode => {
-	if ((<any>node).children)
+	if ((<any>node).children) {
 		return node as VirtualNode;
-}
+	}
+};
 /**
  * @description 转换类型获得VirtualNode
  * @example
  */
 export const isVirtualWidgetNode = (node: VNode): VirtualWidgetNode => {
-	if ((<any>node).hasChild !== undefined || (<any>node).child !== undefined)
+	if ((<any>node).hasChild !== undefined || (<any>node).child !== undefined) {
 		return node as VirtualWidgetNode;
-}
+	}
+};
 /**
  * @description 转换类型获得VirtualNode
  * @example
  */
 export const isVirtualTextNode = (node: VNode): VirtualTextNode => {
-	if ((<any>node).text !== undefined)
+	if ((<any>node).text !== undefined) {
 		return node as VirtualTextNode;
-}
+	}
+};
 /**
  * @description 获得指定属性的值
  * @example
  */
 export const getAttribute = (attrs: Object, name: string): string => {
 	return attrs[name];
-}
+};
 /**
  * @description 寻找满足指定属性的第一个节点，递归调用，遍历vdom树。value为undefined，有属性就可以
  * @example
  */
 export const findNodeByAttr = (node: VirtualNode, key: string, value?: string): VWNode => {
-	let arr = node.children;
+	const arr = node.children;
 	for (let n of arr) {
 		if ((<any>n).children) {
-			let r = getAttribute((n as VirtualNode).attrs, key);
+			const r = getAttribute((n as VirtualNode).attrs, key);
 			if (value !== undefined) {
-				if (value === r)
+				if (value === r) {
 					return n as VirtualNode;
-			} else if (r !== undefined)
+				}
+			} else if (r !== undefined) {
 				return n as VirtualNode;
+										}
 			n = findNodeByAttr(n as VirtualNode, key, value);
-			if (n)
+			if (n) {
 				return n as VirtualNode;
+			}
 		} else if (isVirtualWidgetNode(n)) {
-			let r = getAttribute((n as VirtualWidgetNode).attrs, key);
+			const r = getAttribute((n as VirtualWidgetNode).attrs, key);
 			if (value !== undefined) {
-				if (value === r)
+				if (value === r) {
 					return n as VirtualWidgetNode;
-			} else if (r !== undefined)
+				}
+			} else if (r !== undefined) {
 				return n as VirtualWidgetNode;
+										}
 		}
 	}
-}
+};
 /**
  * @description 寻找满足指定Tag的第一个节点，递归调用，遍历vdom树
  * @example
  */
 export const findNodeByTag = (node: VirtualNode, tag: string): VWNode => {
-	let arr = node.children;
+	const arr = node.children;
 	for (let n of arr) {
 		if ((<any>node).children) {
-			if ((n as VirtualNode).tagName === tag)
+			if ((n as VirtualNode).tagName === tag) {
 				return n as VirtualNode;
+			}
 			n = findNodeByTag(n as VirtualNode, tag);
-			if (n)
+			if (n) {
 				return n as VirtualNode;
+			}
 		} else if (isVirtualWidgetNode(n)) {
-			if ((n as VirtualWidgetNode).tagName === tag)
+			if ((n as VirtualWidgetNode).tagName === tag) {
 				return n as VirtualWidgetNode;
+			}
 		}
 	}
-}
+};
 
 /**
  * @description 用新节点创建
@@ -172,7 +181,7 @@ export const create = (n: VNode): void => {
 	} else if ((<any>n).text) {
 		painter.createTextNode((n as VirtualTextNode));
 	}
-}
+};
 
 /**
  * @description 用新节点替换旧节点
@@ -185,12 +194,15 @@ export const replace = (oldNode: any, newNode: any): boolean => {
 		newNode.link = oldNode.link;
 		newNode.oldOffset = oldNode.offset;
 		oldNode.offset = -1;
-		if (oldNode.text === newNode.text)
+		if (oldNode.text === newNode.text) {
 			return false;
+		}
 		painter.modifyText(newNode, newNode.text, oldNode.text);
+
 		return true;
 	}
 	painter.replaceNode(oldNode, newNode);
+
 	newNode.oldOffset = oldNode.offset;
 	oldNode.offset = -1;
 	b = replaceAttr(oldNode, newNode);
@@ -207,11 +219,14 @@ export const replace = (oldNode: any, newNode: any): boolean => {
 		newNode.childHashMap = oldNode.childHashMap;
 		newNode.textHashMap = oldNode.textHashMap;
 		newNode.children = oldNode.children;
-		for (let n of newNode.children)
+		for (const n of newNode.children) {
+
 			n.parent = newNode;
+		}
 	}
+
 	return b;
-}
+};
 
 // ============================== 本地
 /**
@@ -219,249 +234,468 @@ export const replace = (oldNode: any, newNode: any): boolean => {
  * @example
  */
 const replaceAttr = (oldNode: VWNode, newNode: VWNode): boolean => {
-	let oldArr = oldNode.attrs;
-	if (oldNode.attrHash === newNode.attrHash && !painter.forceReplace)
+	const oldArr = oldNode.attrs;
+	if (oldNode.attrHash === newNode.attrHash && !painter.forceReplace) {
 		return false;
-	if(newNode.attrSize && !newNode.ext)
+	}
+	if (newNode.attrSize && !newNode.ext) {
 		newNode.ext = {};
+
+	}
 	objDiff(newNode.attrs, newNode.attrSize, oldArr, oldNode.attrSize, attrDiff, newNode);
+
 	return true;
-}
+};
 /**
  * @description 替换属性，计算和旧节点属性的差异
  * @example
  */
 const attrDiff = (newNode: VWNode, key: string, v1: string, v2: string) => {
-	if (v1 === undefined)
+	if (v1 === undefined) {
 		return painter.delAttr(newNode, key);
-	if (v2 === undefined)
+	}
+	if (v2 === undefined) {
 		return painter.addAttr(newNode, key, v1);
+	}
 	painter.modifyAttr(newNode, key, v1, v2);
-}
+};
 /**
  * @description 在数组中寻找相同节点
  * @example
  */
-const findSameHashNode = (arr: Array<VWNode>, node: VWNode): VWNode | void => {
-	if (!arr)
+const findSameHashNode = (arr: VWNode[], node: VWNode): VWNode | void => {
+	if (!arr) {
 		return;
+	}
 	for (let n, i = 0, len = arr.length; i < len; i++) {
 		n = arr[i];
-		if (n.offset >= 0 && n.tagName === node.tagName && n.sid === node.sid && n.attrHash === node.attrHash)
+		if (n.offset >= 0 && n.tagName === node.tagName && n.sid === node.sid && n.attrHash === node.attrHash) {
 			return n;
+		}
 	}
-}
+};
 /**
  * @description 在数组中寻找相似节点
  * @example
  */
-const findLikeHashNode = (arr: Array<VWNode>, node: VWNode): VWNode | void => {
-	if (!arr)
+const findLikeHashNode = (arr: VWNode[], node: VWNode): VWNode | void => {
+	if (!arr) {
 		return;
-	for (let n, i = 0, len = arr.length; i < len; i++) {
-		n = arr[i];
-		if (n.offset >= 0 && n.tagName === node.tagName && n.sid === node.sid)
-			return n;
+
 	}
-}
+
+	for (let n, i = 0, len = arr.length; i < len; i++) {
+
+		n = arr[i];
+
+		if (n.offset >= 0 && n.tagName === node.tagName && n.sid === node.sid) {
+
+			return n;
+
+		}
+
+	}
+
+};
+
 /**
  * @description 寻找相同节点的函数
  * VirtualNode根据 did attrHash childHash 寻找相同节点，如果没有找到，则返回undefined
  * @example
  */
+
 const findSameVirtualNode = (oldParent: VirtualNode, newParent: VirtualNode, child: VWNode): VWNode | void => {
+
 	let n;
+
 	if (child.did && oldParent.didMap) {
+
 		n = oldParent.didMap.get(child.did);
-		if (n && n.offset >= 0 && (n as any).tagName === child.tagName && (n as any).sid === child.sid)
+
+		if (n && n.offset >= 0 && (n as any).tagName === child.tagName && (n as any).sid === child.sid) {
+
 			return n as any;
-	} else if (oldParent.childHashMap)
+
+		}
+
+	} else if (oldParent.childHashMap) {
+
 		return findSameHashNode(oldParent.childHashMap.get(child.childHash), child);
-}
+
+	}
+
+};
+
 /**
  * @description 寻找相似节点的函数
  * VirtualNode根据 childHash attrHash offset 依次寻找相似节点，如果没有找到，则返回undefined
  * @example
  */
+
 const findLikeVirtualNode = (oldParent: VirtualNode, newParent: VirtualNode, child: VWNode, offset: number): VWNode | void => {
-	if (!oldParent.childHashMap)
+
+	if (!oldParent.childHashMap) {
+
 		return;
+
+	}
+
 	let n;
-	let arr = oldParent.childHashMap.get(child.childHash);
+
+	const arr = oldParent.childHashMap.get(child.childHash);
+
 	n = findLikeHashNode(arr, child);
-	if (n)
+
+	if (n) {
+
 		return n;
+
+	}
+
 	n = oldParent.children[offset];
-	if (n && n.childHash !== undefined && n.offset >= 0 && child.tagName === n.tagName && child.sid === n.sid)
+
+	if (n && n.childHash !== undefined && n.offset >= 0 && child.tagName === n.tagName && child.sid === n.sid) {
+
 		return n;
-}
+
+	}
+
+};
+
 /**
  * @description 寻找相同文本节点的函数
  * VirtualNode根据 textHash依次寻找相同节点，如果没有找到，则返回undefined
  * @example
  */
+
 const findSameVirtualTextNode = (oldParent: VirtualNode, newParent: VirtualNode, child: VirtualTextNode): VirtualTextNode | void => {
-	let arr = oldParent.textHashMap && oldParent.textHashMap.get(child.childHash);
+
+	const arr = oldParent.textHashMap && oldParent.textHashMap.get(child.childHash);
+
 	if (arr && arr.length > 0) {
+
 		return arr.shift();
+
 	}
-}
+
+};
+
 /**
  * @description 寻找相似文本节点的函数
  * VirtualNode根据 offset 寻找相似节点，如果没有找到，则返回undefined
  * @example
  */
+
+// tslint:disable:max-line-length
 const findLikeVirtualTextNode = (oldParent: VirtualNode, newParent: VirtualNode, child: VirtualTextNode, offset: number): VirtualTextNode | void => {
-	let n = oldParent.children[offset];
-	if (n && (<VirtualTextNode>n).text && n.offset >= 0)
+
+	const n = oldParent.children[offset];
+
+	if (n && (<VirtualTextNode>n).text && n.offset >= 0) {
+
 		return <VirtualTextNode>n;
-}
+
+	}
+
+};
 
 /**
  * @description 初始化子节点，并在父节点上添加索引
  * @example
  */
+
 const initAndMakeIndex = (n: VWNode, i: number, parent: VirtualNode): void => {
-	let map, nodes;
+
+	let map;
+	let nodes;
+
 	n.parent = parent;
+
 	n.offset = i;
+
 	n.widget = parent.widget;
+
 	if (n.did) {
-		if (!parent.didMap)
+
+		if (!parent.didMap) {
+
 			parent.didMap = new Map();
+
+		}
+
 		parent.didMap.set(n.did, n);
+
 	} else {
+
 		map = parent.childHashMap;
-		if (!map)
+
+		if (!map) {
+
 			parent.childHashMap = map = new Map();
+
+		}
+
 		nodes = map.get(n.childHash) || [];
+
 		nodes.push(n);
+
 		map.set(n.childHash, nodes);
+
 		nodes = map.get(n.attrHash) || [];
+
 		nodes.push(n);
+
 		map.set(n.attrHash, nodes);
+
 	}
-}
+
+};
+
 /**
  * @description 文本索引
  * @example
  */
+
 const makeTextIndex = (n: VirtualTextNode, i: number, parent: VirtualNode): void => {
+
 	n.parent = parent;
+
 	n.offset = i;
+
 	let map = parent.textHashMap;
-	if (!map)
+
+	if (!map) {
+
 		parent.textHashMap = map = new Map();
-	let nodes = map.get(n.childHash) || [];
+
+	}
+
+	const nodes = map.get(n.childHash) || [];
+
 	nodes.push(n);
+
 	map.set(n.childHash, nodes);
-}
+
+};
 
 /**
  * @description 用新节点创建
  * @example
  */
+
 const createNode = (node: VirtualNode): void => {
-	let arr = node.children;
+
+	const arr = node.children;
+
 	painter.createNode(node);
-	let parent = node.link;
+
+	const parent = node.link;
+
 	for (let n, i = 0, len = arr.length; i < len; i++) {
+
 		n = arr[i];
+
 		if (isVirtualWidgetNode(n)) {
+
 			initAndMakeIndex(n, i, node);
+
 			painter.createWidget(n);
+
 		} else if (n.children) {
+
 			initAndMakeIndex(n, i, node);
+
 			createNode(n);
+
 		} else {
+
 			makeTextIndex(n, i, node);
+
 			painter.createTextNode(n);
+
 		}
+
 		painter.addNode(parent, n, true);
+
 	}
-}
+
+};
 
 /**
  * @description 子节点替换方法，不应该使用编辑距离算法
  * 依次处理所有删除的和一般修改的节点。最后处理位置变动和新增的，如果位置变动超过1个，则清空重新添加节点
  * @example
  */
+
+// tslint:disable-next-line:cyclomatic-complexity
 const replaceChilds = (oldNode: VirtualNode, newNode: VirtualNode): void => {
-	let n, same, arr = newNode.children, len = arr.length, next = false, insert = false, move = 0;
+
+	let n;
+	let same;
+	let arr = newNode.children;
+	const len = arr.length;
+	let next = false;
+	let insert = false;
+	let move = 0;
+
 	for (let i = 0, offset = 0; i < len; i++) {
+
 		n = arr[i];
+
 		if (n.tagName !== undefined) {
+
 			initAndMakeIndex(n, i, newNode);
+
 			// 在旧节点寻找相同节点
+
 			same = findSameVirtualNode(oldNode, newNode, n);
+
 		} else {
+
 			makeTextIndex(n, i, newNode);
+
 			// 在旧节点寻找相同节点
+
 			same = findSameVirtualTextNode(oldNode, newNode, n);
+
 		}
+
 		if (!same) {
+
 			offset++;
+
 			// 猜测用最新的位置差能够找到变动的节点
+
 			n.oldOffset = -offset;
+
 			next = true;
+
 			continue;
+
 		}
+
 		// 记录最新相同节点的位置差
+
 		offset = same.offset + 1;
+
 		replace(same, n);
+
 		// 计算有无次序变动
-		if (move >= 0)
+
+		if (move >= 0) {
+
 			move = (move <= offset) ? offset : -1;
+
+		}
+
 	}
+
 	if (next) {
+
 		move = 0;
+
 		// 寻找相似节点
+
 		for (let i = 0; i < len; i++) {
+
 			n = arr[i];
+
 			if (n.oldOffset >= 0) {
+
 				// 计算有无次序变动
-				if (move >= 0)
+
+				if (move >= 0) {
+
 					move = (move <= n.oldOffset) ? n.oldOffset : -1;
+
+				}
+
 				continue;
+
 			}
+
 			if (n.tagName !== undefined) {
+
 				same = findLikeVirtualNode(oldNode, newNode, n, -n.oldOffset - 1);
+
 			} else {
+
 				same = findLikeVirtualTextNode(oldNode, newNode, n, -n.oldOffset - 1);
+
 			}
+
 			if (!same) {
+
 				create(n);
+
 				insert = true;
+
 				continue;
+
 			}
+
 			replace(same, n);
+
 			// 计算有无次序变动
-			if (move >= 0)
+
+			if (move >= 0) {
+
 				move = (move <= n.oldOffset) ? n.oldOffset : -1;
+
+			}
+
 		}
+
 	}
+
 	// 删除没有使用的元素
+
 	arr = oldNode.children;
+
 	for (let i = arr.length - 1; i >= 0; i--) {
-		if (arr[i].offset >= 0)
+
+		if (arr[i].offset >= 0) {
+
 			painter.delNode(arr[i]);
+
+		}
+
 	}
+
 	arr = newNode.children;
-	let parent = newNode.link;
+
+	const parent = newNode.link;
+
 	// 如果有节点次序变动，则直接在新节点上加入新子节点数组，代码更简单，性能更好
+
 	if (move < 0) {
+
 		// painter.paintCmd3(parent, "innerHTML", ""); //不需要清空，重新加一次，一样保证次序
+
 		for (let i = 0; i < len; i++) {
+
 			painter.addNode(parent, arr[i]);
+
 		}
+
 	} else if (insert) {
+
 		// 如果没有节点次序变动，则插入节点
+
 		for (let i = 0; i < len; i++) {
+
 			n = arr[i];
-			if (n.oldOffset < 0)
+
+			if (n.oldOffset < 0) {
+
 				painter.insertNode(parent, n, n.offset);
+
+			}
+
 		}
+
 	}
-}
+
+};
 
 // ============================== 立即执行

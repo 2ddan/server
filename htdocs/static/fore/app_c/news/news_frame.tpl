@@ -1,6 +1,7 @@
 <div w-class="7" w-sid="7">
     {{let Pi = it1.Pi}}
     {{let career_id =it1.career_id}}
+    {{let piSample = _get("app/mod/sample").exports.decode}}
     <img w-class="8" w-sid="8" src="./images/bg_top.png"/>
     <div w-class="12" w-sid="12">
         {{let time = it1.Util.getIntervalDate(it.time/1000 + 3600*24*(!it.receive ? 7 : 3) - it1.Util.serverTime(true))}}
@@ -14,31 +15,34 @@
         {{if !it.receive}}
         <img w-class="6" w-sid="6" src="app/widget/tip/images/new.png" />
         {{end}}
-        <div w-class="13" w-sid="13">{{it.detail}}</div>
+        <pi-ui-html w-class="13" w-sid="13">{{it.detail}}</pi-ui-html>
         {{if it.prop}}
         <div w-class="15" w-sid="15">
             <div style="overflow:hidden;position: absolute;width: 277px;white-space: nowrap;bottom: 90px;left: 32px;top: 9px; height: 70px;">
                 <div style="width: 100%;overflow-x: auto;overflow-y: hidden;position: absolute;height: 88px;">
                     {{for k ,v of it.prop}}
-                    {{if v[0] != "exp" && v[0] != "rmb"}}
-                    {{let id = ( v[0] == "money" ? 100001 : v[0] == "diamond" ? 100002 : v[0] )}}
-                    {{let prop = Pi.sample[id]}}
-                    {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
-                    {{let url = Pi.pictures[icon]}}
-                    <app_a-widget-prop-base on-tap='showPropInfo("{{id}}")' style="position:relative;margin:0 5px;display:inline-block;color:#fff">
-                        {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
-                    </app_a-widget-prop-base>
-                    {{elseif v[0] == "exp"}}
-                    {{: url = "app/scene_res/res/Item/res_100003.png"}}
-                    <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
-                        {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
-                    </app_a-widget-prop-base>
-                    {{elseif v[0] == "rmb"}}
-                    {{: url = "app/scene_res/res/Item/res_100002.png"}}
-                    <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
-                        {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
-                    </app_a-widget-prop-base>
-                    {{end}}
+                        {{if v[0] != "exp" && v[0] != "rmb"}}
+                            {{let id = ( v[0] == "money" ? 100001 : v[0] == "diamond" ? 100002 : v[0] )}}
+                            {{let prop = Pi.sample[id]}}
+                            {{if prop.type == "equip"}}
+                                {{: prop = piSample(v,Pi.sample)}}
+                            {{end}}
+                            {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
+                            {{let url = Pi.pictures[icon]}}
+                                <app_a-widget-prop-base on-tap='showPropInfo("{{id}}")' style="position:relative;margin:0 5px;display:inline-block;color:#fff">
+                                    {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{prop.type =="equip" ? "Lv"+prop.level :v[1]}},"name":"none","bg":0}
+                                </app_a-widget-prop-base>
+                            {{elseif v[0] == "exp"}}
+                            {{: url = "app/scene_res/res/Item/res_100003.png"}}
+                                <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
+                                    {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
+                                </app_a-widget-prop-base>
+                            {{elseif v[0] == "rmb"}}
+                            {{: url = "app/scene_res/res/Item/res_100002.png"}}
+                                <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
+                                    {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
+                                </app_a-widget-prop-base>
+                        {{end}}
                     {{end}}
 
                 </div>

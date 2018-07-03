@@ -3,10 +3,9 @@
  */
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { close, open } from "app/mod/root";
-import { Common } from "app/mod/common";
-import { updata, get as getDB } from "app/mod/db";
-import { Pi, globalSend } from "app/mod/pi";
+import { open } from "app/mod/root";
+import { get as getDB } from "app/mod/db";
+import { globalSend } from "app/mod/pi";
 
 /**
  * 配置文件
@@ -22,6 +21,20 @@ export const forelet = new Forelet();
 export const globalReceive = {
     "gotoDailyAct": (arg) => {
         totalData.index = arg || 0;
+        let w = forelet.getWidget("app_c-daily_activity-main");
+        if (w) {
+            forelet.paint(totalData);
+            return;
+        }
+        openDailyAct();
+    },
+    "gotoMoneyTree": () => {
+        totalData.index = 1;
+        let w = forelet.getWidget("app_c-daily_activity-main");
+        if (w) {
+            forelet.paint(totalData);
+            return;
+        }
         openDailyAct();
     }
 }

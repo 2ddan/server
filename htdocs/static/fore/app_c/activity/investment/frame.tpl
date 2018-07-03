@@ -9,7 +9,7 @@
                 {{let prop=it1.Pi.sample[n[0]]}}
                 {{let url=it1.Pi.pictures[prop.icon]}}
                 <app_a-widget-prop-base on-tap='showPropInfo("{{n[0]}}")' style="position:relative;margin:0 2px;display:inline-block;width:51px;height:51px">
-                    {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{n[1]}},"name":"none","bg":0,"effect":{{n[2] ? 1 : 0}}}
+                    {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{n[1]}},"name":"none","bg":0,"effect":{{prop.effect}}}
                 </app_a-widget-prop-base>
             {{end}}   
         </div>

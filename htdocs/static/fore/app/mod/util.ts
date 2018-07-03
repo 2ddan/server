@@ -8,7 +8,7 @@ export class Util {
      * @param secound 转化成秒
      */
     static serverTime(secound?: Boolean) {
-        return getSeverTime() / (secound ? 1000 : 1);
+        return Math.round(getSeverTime() / (secound ? 1000 : 1));
     };
 
     /**

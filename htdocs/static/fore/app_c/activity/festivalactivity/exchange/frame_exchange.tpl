@@ -38,7 +38,7 @@
         {{let need = it.award_condition[0]}}
         {{let have = Common.getBagPropById(need[0])}}
         {{let c = (have && have[1].count) || 0}}
-        <widget w-class="44" w-tag="app_a-widget-coin-coin"  style=" color:{{c>=need[1] ? '#ffd8a6':'#fe3636'}};">
+        <widget on-tap="propInfoShow({{need[0]}})" w-class="44" w-tag="app_a-widget-coin-coin"  style=" color:{{c>=need[1] ? '#ffd8a6':'#fe3636'}};">
             {"icon":{{need[0]}},"width":25,"height":21,"left":3,"text":[{{need[1]}}],"color":"#ffd8a6"} 
         </widget>
     </div>

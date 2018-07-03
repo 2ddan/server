@@ -1,0 +1,7 @@
+{
+    "tpl":"./change_rune.tpl",
+    "js":"../lottery.ts",
+    "forelet":"../lottery.ts",
+    "css":"./change_rune.wcss",
+    "cfg": "./change_rune.cfg"
+}

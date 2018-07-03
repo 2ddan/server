@@ -1,65 +1,75 @@
-import { CreateDecoderModule } from '../polyfill/drc_decoder';
+/**
+ * 
+ */
 import { Json } from '../lang/type';
+import { CreateDecoderModule } from '../polyfill/drc_decoder';
 import { THREE } from '../render3d/three';
 
 let DecoderModule;
 const decoderType = {};
 
 export const decodeDrc = (rawBuffer: ArrayBuffer, attributeIdMap: Json, callback: Function, dracoDecoderType?: Json) => {
-	attributeIdMap = attributeIdMap|| {};
-	dracoDecoderType = dracoDecoderType?dracoDecoderType: decoderType;
-	getDecoder(this, dracoDecoderType,(dracoDecoder) => {decodeDrcInternal(rawBuffer, attributeIdMap, dracoDecoder, callback);});
-}
+	attributeIdMap = attributeIdMap || {};
+	dracoDecoderType = dracoDecoderType ? dracoDecoderType : decoderType;
+	// tslint:disable-next-line:no-invalid-this
+	getDecoder(this, dracoDecoderType, (dracoDecoder) => { decodeDrcInternal(rawBuffer, attributeIdMap, dracoDecoder, callback); });
+};
 
 const decodeDrcInternal = (rawBuffer: ArrayBuffer, attributeIdMap: Json, dracoDecoder, callback) => {
-	let buffer = new dracoDecoder.DecoderBuffer();
+	const buffer = new dracoDecoder.DecoderBuffer();
 	buffer.Init(new Int8Array(rawBuffer), rawBuffer.byteLength);
-	let decoder = new dracoDecoder.Decoder();
-	let geometryType = decoder.GetEncodedGeometryType(buffer);
+	const decoder = new dracoDecoder.Decoder();
+	const geometryType = decoder.GetEncodedGeometryType(buffer);
 	if (geometryType !== dracoDecoder.TRIANGULAR_MESH) {
-	  throw "drc_loader: 类型不支持";
-	} 
+		throw new Error(`drc_loader: 类型不支持`);
+	}
 	callback(convertDracoGeometryTo3JS(dracoDecoder, decoder,
 		geometryType, buffer, attributeIdMap));
-}
+};
 
 const addAttributeToGeometry = (geometry: THREE.BufferGeometry, name: string, attribute, attributeData, numPoints) => {
-	if (attribute.ptr === 0) 
-		throw 'THREE.DRACOLoader: No attribute ' + name;
+	if (attribute.ptr === 0) {
+		throw new Error(`THREE.DRACOLoader: No attribute ${name}`);
+
+	}
 	const numComponents = attribute.num_components();
 	const numValues = numPoints * numComponents;
 	let buffer;
-	
+
 	buffer = new Float32Array(numValues);
-	if(name === "skinIndex")
-		for (var i = 0; i < numValues; i++) {	
-				buffer[i] = Math.round(attributeData.GetValue(i));//skinIndex应该是整数
+	if (name === 'skinIndex') {
+		for (let i = 0; i < numValues; i++) {
+			buffer[i] = Math.round(attributeData.GetValue(i));// skinIndex应该是整数
 		}
-	else{
-		for (var i = 0; i < numValues; i++) {	
+	} else {
+		for (let i = 0; i < numValues; i++) {
 			buffer[i] = attributeData.GetValue(i);
-		}	
+		}
 	}
 	geometry.addAttribute(name, new THREE.BufferAttribute(buffer, numComponents));
-}
+};
 
 const convertDracoGeometryTo3JS = (dracoDecoder, decoder, geometryType, buffer, attributeIdMap) => {
+	// tslint:disable-next-line:variable-name
 	const start_time = performance.now();
 	const dracoGeometry = new dracoDecoder.Mesh();
 	const decodingStatus = decoder.DecodeBufferToMesh(buffer, dracoGeometry);
-	if (!decodingStatus.ok() || dracoGeometry.ptr == 0){
+	if (!decodingStatus.ok() || dracoGeometry.ptr === 0) {
 		dracoDecoder.destroy(decoder);
 		dracoDecoder.destroy(dracoGeometry);
-		throw 'THREE.DRACOLoader: Decoding failed: ' + decodingStatus.error_msg();
+		throw new Error(`THREE.DRACOLoader: Decoding failed: ${decodingStatus.error_msg()}`);
 	}
+	// tslint:disable-next-line:variable-name
 	const decode_end = performance.now();
 
 	dracoDecoder.destroy(buffer);
 	const numFaces = dracoGeometry.num_faces();
 	const numPoints = dracoGeometry.num_points();
-	let attributeData, attribute, geometry = new THREE.BufferGeometry();;
-	
-	for (let name in attributeIdMap) {
+	let attributeData;
+	let attribute;
+	const geometry = new THREE.BufferGeometry();
+
+	for (const name in attributeIdMap) {
 		attribute = decoder.GetAttribute(dracoGeometry, attributeIdMap[name]);
 		attributeData = new dracoDecoder.DracoFloat32Array();
 		decoder.GetAttributeFloatForAllPoints(dracoGeometry, attribute, attributeData);
@@ -68,10 +78,12 @@ const convertDracoGeometryTo3JS = (dracoDecoder, decoder, geometryType, buffer, 
 	}
 
 	const numIndices = numFaces * 3;
-	let indexBuffer, ia, firstIndex;
+	let indexBuffer;
+	let ia;
+	let firstIndex;
 	indexBuffer = new Uint32Array(numIndices);
 	ia = new dracoDecoder.DracoInt32Array();
-	for (var i = 0; i < numFaces; ++i) {
+	for (let i = 0; i < numFaces; ++i) {
 		decoder.GetFaceFromMesh(dracoGeometry, i, ia);
 		firstIndex = i * 3;
 		indexBuffer[firstIndex] = ia.GetValue(0);
@@ -79,10 +91,10 @@ const convertDracoGeometryTo3JS = (dracoDecoder, decoder, geometryType, buffer, 
 		indexBuffer[firstIndex + 2] = ia.GetValue(2);
 	}
 	dracoDecoder.destroy(ia);
-	if(numIndices < 65536){
-		let temp = indexBuffer;
+	if (numIndices < 65536) {
+		const temp = indexBuffer;
 		indexBuffer = new Uint16Array(temp.length);
-		for(let i = 0; i < temp.length; i++){
+		for (let i = 0; i < temp.length; i++) {
 			indexBuffer[i] = temp[i];
 		}
 	}
@@ -91,27 +103,30 @@ const convertDracoGeometryTo3JS = (dracoDecoder, decoder, geometryType, buffer, 
 	dracoDecoder.destroy(decoder);
 	dracoDecoder.destroy(dracoGeometry);
 
-	console.log('Decode time: ' + (decode_end - start_time));
-	console.log('Import time: ' + (performance.now() - decode_end));
-	return geometry;
-}
+	console.log(`Decode time: ${decode_end - start_time}`);
+	console.log(`Import time: ${performance.now() - decode_end}`);
 
-const getDecoder = (function() {
+	return geometry;
+};
+
+const getDecoder = (() => {
 	let decoder;
 	let decoderCreationCalled = false;
-	return function(dracoDecoder, dracoDecoderType, loadCallback) {
+
+	return (dracoDecoder, dracoDecoderType, loadCallback) => {
 		if (typeof decoder !== 'undefined') {
 			// Module already initialized.
 			if (typeof loadCallback !== 'undefined') {
 				loadCallback(decoder);
 			}
-		}else {
+		} else {
 			decoderCreationCalled = true;
-			dracoDecoderType['onModuleLoaded'] = (module) => {
+			// tslint:disable-next-line:no-reserved-keywords
+			dracoDecoderType.onModuleLoaded = (module) => {
 				decoder = module;
 				loadCallback(decoder);
-			}
+			};
 			DecoderModule = CreateDecoderModule(dracoDecoderType);
 		}
-    };
+	};
 })();

@@ -9,11 +9,8 @@
 		
 		{{let img = ''}}
 		{{let post = v.post==1?"会长":(v.post==2?"副会长":"成员")}}
-		{{if v.head && v.head.indexOf("undefined") < 0}}
-		{{: img = v.head}}
-		{{else}}
-		{{: img = (Pi.pictures['playerhead'+v.career_id])}}
-		{{end}}
+
+		{{: img = (Pi.pictures['playerhead'+ (v.head || v.career_id)])}}
 		<div w-class="7" w-sid="7">
 			<widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">{"icon":"tips_top"} 
 			</widget>

@@ -52,6 +52,7 @@
                 {{let data = it1.rankData[it1.tabSwitch].list}}
                 {{if data.length}}
                 {{for k,v of data}}
+                    {{if v.score > 0}}
                     {{if it1.tabSwitch=="normal" || (it1.tabSwitch=="plush" && v.score >= it1.flush_min_score)}}
                     <div style="position: relative; width: 478px; height: 110px;margin-bottom:10px;">
                         <app_a-widget-img_stitch-stitch style="position: absolute;width: 478px;height: 110px;z-index:0;left: 0;">
@@ -80,11 +81,8 @@
                         </widget>
 
                         {{let img = ""}}
-                        {{if player.head && player.head.indexOf("undefined") < 0 }}
-                        {{:img = player.head}}
-                        {{else}}
-                        {{:img = Pi.pictures['playerhead'+player.sex] }}
-                        {{end}}
+
+                        {{:img = Pi.pictures['playerhead'+(player.head || player.sex)] }}
 
                         <widget w-class="16" w-tag="app_a-widget-head-friend">
                             {"url":"app/scene_res/res/playerhead/playerhead700001.png","top":23.5,"level":0,"width":100,"height":100,"level":{{v.detail.level}}}    
@@ -94,9 +92,9 @@
                                 {"text":{{typeof(v.detail.name)=="string" ? v.detail.name : Common.fromCharCode(v.detail.name)}},"show":"","space":0,"fontSize":18,"lineHeight":20,"textCfg":"heroEquip"} 
                             </widget>
                         </div>
-                        <span w-class="17">{{Math.ceil(v.score)}}</span>
+                        <span w-class="17">{{Math.ceil(v.score)+""}}</span>
                         
-                        <div class="shadow" w-class="18">
+                        <div class="shadow" w-class="18" style="width: 152px;">
                             <div style="width: 100%;overflow-x: auto;overflow-y: hidden;position: absolute;height: 70px;">
                                 {{for j,p of it1.award[it1.tabSwitch][it1.currLevel].rank[it1.award_fun(k)]}}
                                 {{let prop = Pi.sample[p[0]]}}
@@ -109,7 +107,8 @@
                             </div>
                         </div>                              
                     </div>
-                    {{end}}   
+                    {{end}}
+                    {{end}}
                 {{end}}  
                 {{else}} 
                 <div style="line-height:450px;text-align:center;width: 450px;color: #fff;font-size: 18px;">
@@ -120,10 +119,10 @@
         </div>
         <div w-class="46">
             <div style="position:absolute;left:0;top:0;">
-                <div>我的积分: <span w-class="47">{{Math.ceil(it1.rankData[it1.tabSwitch].ownRank.score)}}</span></div>
+                <div>我的积分: <span w-class="47">{{Math.ceil(it1.rankData[it1.tabSwitch].ownRank.score)+""}}</span></div>
                 <div>我的排名: <span w-class="47">{{own_index ? own_index: '无'}}</span></div>
                 <div style="position:relative">
-                    我的奖励:<span w-class="47">{{own_index ? "": '无'}}</span>
+                    我的奖励:<span w-class="47">{{own_index ? " ": '无'}}</span>
                     {{if own_index}}
                     <div class="shadow" w-class="18" style="top:30px;left:0;">
                         <div w-class="47"  style="width: 100%;overflow-x: auto;overflow-y: hidden;position: absolute;height: 70px;">
@@ -133,7 +132,7 @@
                             {{let url = Pi.pictures[icon]}}
             
                             <widget style="display:inline-block;position:relative" w-tag="app_a-widget-prop-base" on-tap="showPropInfo({{p[0]}})">
-                                {"width":60,"height":60,"prop":{{prop}},"url":{{url}},"count":{{p[1]}},"bg":0,"name":"none","right":7,"top":21} 
+                                {"width":60,"height":60,"prop":{{prop}},"url":{{url}},"count":{{p[1]+""}},"bg":0,"name":"none","right":7,"top":21} 
                             </widget>
                             {{end}}
                         </div>
@@ -154,10 +153,8 @@
                     {{if it1.tabSwitch=="plush" && it1.rankData[it1.tabSwitch].ownRank.score < it1.flush_min_score}}
                         {{: score = it1.flush_min_score}}
                     {{end}}
-                    {{:console.log(next,_data)}}
-                    {{:console.log(score)}}
-                    <div>目标积分: <span w-class="47">{{Math.ceil(score)}}</span></div>
-                    <div>目标排名: <span w-class="47">{{next}}</span></div>
+                    <div>目标积分: <span w-class="47">{{Math.ceil(score)+""}}</span></div>
+                    <div>目标排名: <span w-class="47">{{next+""}}</span></div>
                     <div style="position:relative">
                         目标奖励:
                         <div class="shadow" w-class="18" style="top:30px;left:0;">
@@ -168,7 +165,7 @@
                                 {{let url = Pi.pictures[icon]}}
                 
                                 <widget style="display:inline-block;position:relative" w-tag="app_a-widget-prop-base" on-tap="showPropInfo({{p[0]}})">
-                                    {"width":60,"height":60,"prop":{{prop}},"url":{{url}},"count":{{p[1]}},"bg":0,"name":"none","right":7,"top":21} 
+                                    {"width":60,"height":60,"prop":{{prop}},"url":{{url}},"count":{{p[1]+""}},"bg":0,"name":"none","right":7,"top":21} 
                                 </widget>
                                 {{end}}
                             </div>

@@ -3,12 +3,13 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { close, open } from "app/mod/root";
 import { Common } from "app/mod/common";
-import { updata, get as getDB } from "app/mod/db";
-import { Pi, globalSend, cfg } from "app/mod/pi";
+import { updata, get as getDB, listen } from "app/mod/db";
+import { globalSend, cfg } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { fight, showAccount, goback as closeFight } from "app_b/fight/fight";
+
+import { fight} from "app_b/fight/fight";
 import { Util } from "app/mod/util";
 import { map_cfg } from "app/scene/plan_cfg/map";
 import { funIsOpen } from "app_b/open_fun/open_fun";
@@ -21,21 +22,35 @@ import { tower_welfare } from "cfg/c/tower_welfare";
 
 export const forelet = new Forelet();
 
+/**
+ * @description 当前显示商城类型
+ */
+let towerType = "1";
+/**
+ * @description 刷新提醒,false为需要提醒
+ */
+let remind = [];
 
 let floorsNum = [],//层数
     specificNum = [10, 0],//特定层数领取宝箱
     fastSweepTime = [],
     cost_diamond = 0,//快速扫荡消耗总元宝
     time_cd = 5,//挑战间隔
+    sweep_timer = null,//扫荡计算元宝定时器
     show_time = true, //倒计时显示
     sweep_total_time = 0,//扫荡总时间
     timer_next_fight; //下一关挑战倒计时
+
+let award_timer = null; // 扫荡完毕,领取奖励
+
 let max = Object.keys(tower_monster).length;
 //打开本功能
 export const globalReceive = {
     gotoTower: () => {
         if (funIsOpen("tower")) {
             tplData();
+            getSweepTime();
+            refreshDiamond();
             forelet.paint(getData());
             open("app_c-tower-tower");
             globalSend("openNewFun", "tower");
@@ -48,7 +63,9 @@ export class Tower extends Widget {
     showPropInfo = (arg) => {
         globalSend("showOtherInfo", arg)
     }
-
+    cdEnd(){
+        forelet.paint(getData());
+    }
     //奖励详情页
     awardDetails() {
         open("app_c-tower-award-award");
@@ -56,6 +73,10 @@ export class Tower extends Widget {
 
     goback(arg) {
         close(arg.widget);
+        if(arg.widget.name == "app_c-tower-fast_sweep-fast_sweep"){
+            clearInterval(sweep_timer);
+            sweep_timer = null;
+        }
     }
 
     startFight() {
@@ -119,20 +140,23 @@ const refreshDiamond = () => {
     let nowTime = Util.serverTime(true);
     let arr = tower_base.diamond_coefficient;
     let xxx = JSON.parse(JSON.stringify(sweep_total_time - nowTime));
-
-    if (sweep_total_time >= nowTime) {
-        let time = setInterval(function () {
+    if (sweep_total_time >= nowTime && !sweep_timer) {
+        sweep_timer = setInterval(function () {
             let surplus_time = Math.ceil((xxx) / 60);
             cost_diamond = Math.pow(surplus_time / arr[0], arr[1]) + arr[2];
             xxx--;
             if (xxx <= 0) {
-                clearInterval(time);
-                time = undefined;
+                clearInterval(sweep_timer);
+                sweep_timer = undefined;
                 cost_diamond = 0;
                 forelet.paint(getData());
             }
-            forelet.paint(getData());
+            if(tower_data.cost_diamond !== cost_diamond){
+                forelet.paint(getData());
+            }
         }, 1000);
+    }else{
+        cost_diamond = 0;
     }
 }
 
@@ -217,6 +241,7 @@ export let logic = {
             //     words: `通过${tower_welfare[box_id].floor_limit}楼才能领取`
             // });
             open("app_c-tower-preview_award-preview_award");
+            return false;
         }
         return true;
     },
@@ -245,7 +270,26 @@ export let logic = {
             // let num = tower_data.use_sweep_count - (vip_advantage[vip].tower_sweep_times + vip_advantage[vip].tower_diamond_sweep_times);
             let i = (num >= tower_base.sweep_spend.length) ? tower_base.sweep_spend.length - 1 : num;
             if (diamond >= tower_base.sweep_spend[i]) {
-                return startSweep();
+                if(!remind[towerType]){
+                    globalSend("popTip",{
+                        title:"是否花费<span class='shadow1' style='font-size:19px;color:rgb(255,222,0);'>"+tower_base.sweep_spend[i]+"</span>元宝进行扫荡？",
+                        btn_name:["确定","取消"],
+                        cb:[
+                            //确认
+                            ()=>{
+                                startSweep();
+                            },
+                            //取消
+                            ()=>{}
+                        ],
+                        status:()=>{
+                            remind[towerType] = !remind[towerType];
+                        }
+                    })
+                    return ;
+                }else{
+                    return startSweep();
+                }
             } else {
                 globalSend("screenTipFun", {
                     words: `${num <= 0 ? "次数已用完" : "元宝不足"}`
@@ -327,12 +371,18 @@ export const startFight = function () {
             let ms = Util.serverTime();
             let prop: any = Common.shallowClone(tower_monster[tower_data.floor_point + 1]);
             let _data: any = Common.changeArrToJson(data.ok);
-
+            let _show_award = Common.shallowClone(_data.show_award);
+            for(let i= 0; i<_data.enemy_fight.length; i++){
+                for(let j=0; j<_data.enemy_fight[i].length; j++){
+                    _data.enemy_fight[i][j].push(_show_award[0]);
+                    _show_award.splice(0,1);
+                }
+            }
             let msg: any = {};
             msg.enemy_fight = [_data.enemy_fight[0]];
             msg.own_fight = _data.own_fight;
             msg.show_award = _data.show_award;
-
+            
             prop.scene = map_cfg["tower"];
             msg.type = "tower";
             msg.cfg = prop;
@@ -343,7 +393,7 @@ export const startFight = function () {
         })
         .then((obj) => {
             let count = 1;
-            fight(obj.msg, (fightData) => {
+            return fight(obj.msg, (fightData) => {
                 if (fightData.r === 1) {
                     if (obj._data.enemy_fight[count]) {
                         let m: any = {};
@@ -357,8 +407,10 @@ export const startFight = function () {
                         return false;
                     } else {
                         count = 1;
+                        obj = null;
                         //判断还有没怪物
-                        return winFight(fightData);
+                        winFight(fightData);
+                        return true;
                     }
                 } else {
                     //战斗失败
@@ -389,7 +441,6 @@ export const startFight = function () {
  * @param r 
  */
 const winFight = function (result) {
-    console.log(result.time);
     let arg = {
         "param": { "fight_time": Math.floor(result.time / 1000) },
         "type": "app/pve/tower@end_fight"
@@ -421,7 +472,7 @@ const winFight = function (result) {
                     show_time = false;
                     time_cd -= 1;
                     forelet.paint(getData());
-                    if (time_cd == 0) {
+                    if (time_cd == 0 && timer_next_fight) {
                         clearInterval(timer_next_fight);
                         timer_next_fight = undefined;
                         time_cd = 5;
@@ -482,6 +533,9 @@ const startSweep = function () {
         .then((data: any) => {
             let surplus_time = 0;
             let prop: any = Common.changeArrToJson(data.ok);
+            if(!!prop.cost){
+                Common_m.deductfrom(prop);
+            }
             updata("tower.start_sweep_time", prop.start_sweep_time);
             updata("tower.use_sweep_count", prop.use_times);
             updata("tower.sweep_award", prop.sweep_award);
@@ -494,6 +548,13 @@ const startSweep = function () {
             }
             //扫荡总时间
             sweep_total_time = prop.start_sweep_time + sweep_box_time;
+
+            award_timer = setTimeout(() => {
+                clearTimeout(award_timer);
+                award_timer = null;
+                updata("tower.get_sweep_award", 1);
+            }, sweep_box_time * 1000)
+
             let arr = tower_base.diamond_coefficient;
             surplus_time = Math.ceil((prop.start_sweep_time + sweep_box_time - nowTime / 1000) / 60);
             cost_diamond = Math.pow(surplus_time / arr[0], arr[1]) + arr[2];
@@ -528,6 +589,12 @@ export const getSweepAward = function () {
                 }
             });
             updata("tower.start_sweep_time", prop.start_sweep_time);
+            // 奖励领取完
+            if (prop.start_sweep_time == 0) {
+                clearTimeout(award_timer);
+                award_timer = null;
+                updata("tower.get_sweep_award", 0);
+            }
             updata("tower.sweep_award", prop.sweep_award);
 
             for (let i = 0; i < count; i++) {
@@ -557,6 +624,9 @@ export const fastSweep = function () {
     towerNet(arg)
         .then((data: any) => {
             let prop: any = Common.changeArrToJson(data.ok);
+            if(!!prop.cost){
+                Common_m.deductfrom(prop);
+            }
             let result = Common_m.mixAward(prop);
             result.auto = 1;
             globalSend("showNewRes", {
@@ -566,8 +636,15 @@ export const fastSweep = function () {
             });
             updata("tower.sweep_award", prop.sweep_award);
             updata("tower.start_sweep_time", prop.start_sweep_time);
+            
+            clearTimeout(award_timer);
+            award_timer = null;
+            updata("tower.get_sweep_award", 0);
+
             sweep_total_time = 0;
             cost_diamond = 0;
+            clearInterval(sweep_timer);
+            sweep_timer = undefined;
             forelet.paint(getData());
         })
         .catch((data) => {
@@ -575,11 +652,15 @@ export const fastSweep = function () {
         })
 }
 
+listen("player.diamond",()=>{
+    forelet.paint(getData());
+})
 
 //读取基本数据
 listenBack("app/pve/tower@read", (data) => {
     console.log(data);
     updata("tower", data);
+    updata("tower.get_sweep_award", 0);
     //获取领取宝箱id
     box_id = logic.floorBoxId();
     forelet.paint(getData());

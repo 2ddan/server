@@ -18,9 +18,9 @@
  * recorder.release();
  */
 
-import { base64ToArrayBuffer } from "../util/base64"
+import { base64ToArrayBuffer } from '../util/base64';
 
-let NativeRecord = (<any>self).YNAudioRecord;
+const NativeRecord = (<any>self).YNAudioRecord;
 
 // 浏览器的音频支持格式
 const SUPPORT_MP3 = 0;
@@ -31,34 +31,35 @@ const testAACSupport = () => {
 	// AAC数据
 
 	if (AudioContext) {
-		var aacData = new Int8Array([-1, -15, -20, 64, 1, -65, -4, 0, 0, 20, 3, -23, 28, -1, -15, -20, 64, 1, -65, -4, 0, 0, 20, 3, -23, 28]);
+		const aacData = new Int8Array([-1, -15, -20, 64, 1, -65, -4, 0, 0, 20, 3, -23, 28, -1, -15, -20, 64, 1, -65, -4, 0, 0, 20, 3, -23, 28]);
 
-		var context = new AudioContext();
-		var source = context.createBufferSource();
-		context.decodeAudioData(aacData.buffer, function (data) {
+		const context = new AudioContext();
+		const source = context.createBufferSource();
+		context.decodeAudioData(aacData.buffer,  (data) => {
 			// 有回调，则说明浏览器支持AAC
 			NativeRecord.supportFormat(SUPPORT_AAC);
 		});
 	}
-}
+};
 
-if (NativeRecord)
+if (NativeRecord) {
 	testAACSupport();
+}
 
 export class AudioRecorder {
 
-	isRecording: boolean = false;
-	native: number = 0;
+	public isRecording: boolean = false;
+	public native: number = 0;
 
 	/**
 	 * 初始化
 	 */
-	init() {
+	public init() {
 		if (!NativeRecord) {
-			throw new Error("window.YNAudioRecord can't found");
+			throw new Error('window.YNAudioRecord can\'t found');
 		}
 		if (this.native) {
-			throw new Error("already init");
+			throw new Error('already init');
 		}
 		this.native = NativeRecord.create();
 	}
@@ -66,9 +67,9 @@ export class AudioRecorder {
 	/**
 	 * 释放底层的录制器资源
 	 */
-	release() {
+	public release() {
 		if (!this.native) {
-			throw new Error("don't init");
+			throw new Error('don\'t init');
 		}
 		NativeRecord.destroy(this.native);
 		this.native = 0;
@@ -77,12 +78,12 @@ export class AudioRecorder {
 	/**
 	 * 开始录制
 	 */
-	start() {
+	public start() {
 		if (!NativeRecord) {
-			throw new Error("window.YNAudioRecord can't found");
+			throw new Error('window.YNAudioRecord can\'t found');
 		}
 		if (!this.native) {
-			throw new Error("don't init");
+			throw new Error('don\'t init');
 		}
 
 		if (this.isRecording) {
@@ -97,12 +98,12 @@ export class AudioRecorder {
 	/**
 	 * 停止录制
 	 */
-	stop() {
+	public stop() {
 		if (!NativeRecord) {
-			throw new Error("window.YNAudioRecord can't found");
+			throw new Error('window.YNAudioRecord can\'t found');
 		}
 		if (!this.native) {
-			throw new Error("don't init");
+			throw new Error('don\'t init');
 		}
 		this.isRecording = false;
 		NativeRecord.stop(this.native);
@@ -112,22 +113,23 @@ export class AudioRecorder {
 	 * 取最近一次的录制的内容
 	 * @return ArrayBuffer 二进制数据
 	 */
-	getContent() {
+	public getContent() {
 		if (!NativeRecord) {
-			throw new Error("window.YNAudioRecord can't found");
+			throw new Error('window.YNAudioRecord can\'t found');
 		}
 		if (!this.native) {
-			throw new Error("don't init");
+			throw new Error('don\'t init');
 		}
 		if (this.isRecording) {
-			throw new Error("getContent: must after stop");
+			throw new Error('getContent: must after stop');
 		}
 
 		// Base64Str
 		let content = NativeRecord.get(this.native);
-		if (content !== "") {
+		if (content !== '') {
 			content = base64ToArrayBuffer(content);
 		}
+		
 		return content;
 	}
 }

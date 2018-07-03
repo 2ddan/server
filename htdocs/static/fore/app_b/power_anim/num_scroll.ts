@@ -1,7 +1,5 @@
 import { Widget } from "pi/widget/widget";
 import { Json } from 'pi/lang/type';
-import { listen, get } from "app/mod/db";
-import { open, destory} from "pi/ui/root";
 import {set as task} from 'pi/util/task_mgr';
 import { notify } from "pi/widget/event";
 

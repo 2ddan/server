@@ -3,10 +3,10 @@
  */
 
 // ============================== 导入
-import { VirtualNode } from "../widget/virtual_node";
-import { getRealNode, paintCmd3 } from "../widget/painter";
-import { notify } from "../widget/event";
-import { Input } from "./input";
+import { notify } from '../widget/event';
+import { getRealNode, paintCmd3 } from '../widget/painter';
+import { VirtualNode } from '../widget/virtual_node';
+import { Input } from './input';
 
 // ============================== 导出
 /**
@@ -19,17 +19,17 @@ export class Submit extends Input {
 	 * @description 获取输入框
 	 * @example
 	 */
-	getInput() {
+	public getInput() {
 		return findInput(<VirtualNode>this.tree);
 	}
 	/**
 	 * @description 提交
 	 * @example
 	 */
-	submit() {
-		let i = this.getInput() as HTMLInputElement;
-		paintCmd3(i, "value", this.lastText || "");
-		notify(this.parentNode, "ev-input-submit", {"id": this.props.id, "text": i.value, input: i });
+	public submit() {
+		const i = this.getInput() as HTMLInputElement;
+		paintCmd3(i, 'value', this.lastText || '');
+		notify(this.parentNode, 'ev-input-submit', {id: this.props.id, text: i.value, input: i });
 	}
 
 }
@@ -37,14 +37,16 @@ export class Submit extends Input {
 // ============================== 本地
 // 递归查找input
 const findInput = (node: VirtualNode) : HTMLElement => {
-	for(let i of node.children) {
-		if(!(<VirtualNode>i).children)
+	for (const i of node.children) {
+		if (!(<VirtualNode>i).children) {
 			continue;
-		if((<VirtualNode>i).tagName === "input")
+		}
+		if ((<VirtualNode>i).tagName === 'input') {
 			return getRealNode(i);
-		let r = findInput(<VirtualNode>i);
-		if(r)
+		}
+		const r = findInput(<VirtualNode>i);
+		if (r) {
 			return r;
+		}
 	}
-}
-
+};

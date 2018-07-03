@@ -1,0 +1,7 @@
+{
+    "tpl":"./award.tpl",
+    "css":"app_b/bag/new_res/new_auto.wcss",
+    "js":"../off_line.ts",
+    "forelet":"../off_line.ts",
+    "cfg":"./award.cfg"
+}

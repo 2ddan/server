@@ -71,11 +71,11 @@
                 {{let id  = ( n[0]=="money"?100001:n[0]=="diamond"?100002:n[0])}}
                     {{let prop = it1.Pi.sample[id]}}                    
                     {{let url = it1.Pi.pictures[prop.icon]}}
-                    <div style="position:relative;width:85px;height:85px;display:inline-block;margin-left:3px;" on-tap='showPropInfo("{{id}}")'>
+                    <div class="shadow" style="position:relative;width:85px;height:85px;display:inline-block;margin-left:3px;color:#fff" on-tap='showPropInfo("{{id}}")'>
                         <app_a-widget-prop-base style="width:85px;height:85px;">
-                            {"prop":{{prop}},"url":{{url}} ,"hidden_name":1,"count":"none"}
+                            {"prop":{{prop}},"url":{{url}} ,"hidden_name":1,"count":{{n[1]}}}
                         </app_a-widget-prop-base>
-                        <div style="position:absolute;width:50px;text-align:right;bottom:10px;right:10px;font-size:16px;color:#ebc79a;z-index:3">x{{n[1]}}</div>
+                       
                     </div>
                 {{end}}
                 {{end}}	

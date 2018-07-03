@@ -1,10 +1,13 @@
-
-import { IMinMaxGradient, buildMinMaxGradient } from "./gradient"
+/**
+ * 
+ */
+import { buildMinMaxGradient, IMinMaxGradient } from './gradient';
 
 export class ColorOverLifetimeModule {
-	color: IMinMaxGradient;
+	public color: IMinMaxGradient;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.color = buildMinMaxGradient(config.color);
 	}
-};
+}

@@ -10,7 +10,7 @@
     {{let fight_times = cfg.vip_advantage.vip_advantage[player.vip].jjc_free_times + appCfg.arena.buy_fight_times}}
     {{let jjc_score  = Common.getBagPropById(150004)?Common.getBagPropById(150004)[1].count:0}}
     {{let root = _get("pi/ui/root").exports}}
-    <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond"],"left":0,"top":15,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}}}
+    <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond", 150004],"left":0,"top":15,"width":540,"type":"jjc_score","width":{{root.getWidth()}}}
     </widget>
     
     <div w-class="8" w-sid="8">
@@ -29,7 +29,6 @@
                 {{if v.sid === player.role_id}}
                 {{let rank_me = v}}
                 {{end}}
-                {{:console.log(k,v)}}
                 <div w-class="10" w-sid="10">
                     <widget w-class="11" w-tag="app_a-widget-bg_frame-bg" w-sid="11">{"bgName":"bg_frame19"} 
                     </widget>
@@ -52,11 +51,7 @@
                     </widget>
                     {{let imgX= ''}}
                     {{if v.role_type == "player"}}
-                    {{if v.detail.head && v.detail.head.indexOf("undefined") < 0}}
-                    {{: imgX = v.detail.head}}
-                    {{else}}
-                    {{: imgX = Pi.pictures['playerhead'+v.detail.career_id]}}
-                    {{end}}
+                    {{: imgX = Pi.pictures['playerhead'+(v.detail.head || v.detail.career_id)]}}
                     {{else}}
                     {{: imgX = Pi.pictures[robot_cfg[v.sid].head]}}
                     {{end}}
@@ -74,14 +69,14 @@
                     <span class="shadow" w-class="51" w-sid="51">{{v.detail.gang_name?Common.fromCharCode(v.detail.gang_name) : "无"}}</span>
 
                     {{if v.sid == player.role_id}}
-                    <app_a-widget-pic_text-pic_text style="right: 45px;top: 35px;position: absolute;">
+                    <app_a-widget-pic_text-pic_text style="right: 30px;top: 35px;position: absolute;">
                         {"icon":"my_rank","width":113,"height":65,"align":"center","marginLeft":3,"textCfg":"","space":0,"fontSize":12,"top":0,"left":0,"text":" "}
                     </app_a-widget-pic_text-pic_text>
 
                     <app_a-widget-pic_other-pic_other style="position: absolute;left: 21px;width: 452px;">{"icon":"my_rank_bg"}</app_a-widget-pic_other-pic_other>
                     
                     {{else}}
-                    <widget w-class="42" on-tap='toFight("{{0+','+k}}")' w-tag="app_a-widget-btn-rect" w-sid="42">
+                    <widget w-class="42" on-tap='toFight("{{0+','+k}}")' w-tag="app_a-widget-btn-rect" w-sid="42" style="right: 30px;">
                         {"guide":{{index == 0?"arena_open":""}},"class":"default","fontsize":24,"color":"#fdedd7;","text":"挑 战","width":116,"height":45} 
                     </widget>
                     {{end}}
@@ -117,7 +112,7 @@
         {{for i, v of it1.other}}
         {{if it1.widget === "app_b-arena-arena" || (it1.widget === "app_b-arena-warcraft-arena_warcrft" && i != 0)}}
         <app-widget-btn-icon on-tap="{{v.func}}" style="width:70px;height:70px;position:relative;margin-right:15px;display: inline-block;">
-            {"icon":{{v.icon}},"text":{{v.title}},"bottom":-10,"fontSize":18 }
+            {"icon":{{v.icon}},"text":{{v.title}},"bottom":-10,"fontSize":18, "tip_keys": [{{v.tip_keys}}]}
         </app-widget-btn-icon>
 
         {{end}}

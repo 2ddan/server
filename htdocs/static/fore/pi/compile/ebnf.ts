@@ -18,9 +18,7 @@ import { CharReader, createByStr } from './reader';
 /**
  * @description 规则读取器
  */
-export interface RuleReader {
-	(): Rule;
-}
+export type RuleReader = () => Rule;
 /**
  * @description 规则
  */
@@ -32,11 +30,12 @@ export interface Rule {
  * @description 规则项
  */
 export interface Entry {
-	type: "series" | "and" | "or" | "not" | "terminal" | "name" | "optional" | "repeat" | "builtIn";
+	/* tslint:disable:no-reserved-keywords */
+	type: 'series' | 'and' | 'or' | 'not' | 'terminal' | 'name' | 'optional' | 'repeat' | 'builtIn';
 	str: string;
 	value?: string;
 	child?: Entry;
-	childs?: Array<Entry>;
+	childs?: Entry[];
 	option: any;
 }
 /**
@@ -47,77 +46,85 @@ export const builtIn = {
 		return !!c;
 	},
 	visible: (c: string): boolean => {
-		return (" " <= c && c <= "~") || c.charCodeAt(0) > 256;
+		return (c >= ' ' && c <= '~') || c.charCodeAt(0) > 256;
 	},
 	whitespace: (c: string): boolean => {
-		return " " === c || "\t" === c || "\v" === c || "\f" === c || "\n" === c || "\r" === c;
+		return c === ' ' || c === '\t' || c === '\v' || c === '\f' || c === '\n' || c === '\r';
 	},
 	notwhitespace: (c: string): boolean => {
-		return !((!c) || " " === c || "\t" === c || "\v" === c || "\f" === c || "\n" === c || "\r" === c);
+		return !((!c) || c === ' ' || c === '\t' || c === '\v' || c === '\f' || c === '\n' || c === '\r');
 	},
 	spacetab: (c: string): boolean => {
-		return " " === c || "\t" === c || "\v" === c || "\f" === c;
+		return c === ' ' || c === '\t' || c === '\v' ||  c === '\f';
 	},
 	breakline: (c: string): boolean => {
-		return "\n" === c || "\r" === c;
+		return c === '\n' || c === '\r';
 	},
 	notbreakline: (c: string): boolean => {
-		return !((!c) || "\n" === c || "\r" === c);
+		return !((!c) ||  c === '\n' || c === '\r');
 	},
 	digit: (c: string): boolean => {
-		return ("0" <= c && c <= "9");
+		return (c >= '0' && c <= '9');
 	},
 	notdigit: (c: string): boolean => {
-		return !((!c) || "0" <= c && c <= "9");
+		return !((!c) ||  c >= '0' && c <= '9');
 	},
 	digit19: (c: string): boolean => {
-		return ("1" <= c && c <= "9");
+		return (c >= '1' && c <= '9');
 	},
 	alphabetic: (c: string): boolean => {
-		return ("a" <= c && c <= "z") || ("A" <= c && c <= "Z");
+		return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 	},
 	notalphabetic: (c: string): boolean => {
-		return !((!c) || ("a" <= c && c <= "z") || ("A" <= c && c <= "Z"));
+		return !((!c) || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 	},
 	lowercase: (c: string): boolean => {
-		return ("a" <= c && c <= "z");
+		return (c >= 'a' && c <= 'z');
 	},
 	uppercase: (c: string): boolean => {
-		return ("A" <= c && c <= "Z");
+		return (c >= 'A' && c <= 'Z');
 	},
 	word: (c: string): boolean => {
-		return "_" === c || ("a" <= c && c <= "z") || ("A" <= c && c <= "Z") || ("0" <= c && c <= "9");
+		return c === '_' || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
 	},
 	notword: (c: string): boolean => {
-		return !((!c) || "_" === c || ("a" <= c && c <= "z") || ("A" <= c && c <= "Z") || ("0" <= c && c <= "9"));
+		return !((!c) || c === '_' || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'));
 	}
-}
+};
 
 /**
  * @description 创建规则读取器
  */
 export const createRuleReader = (s: string): RuleReader => {
-	let parser = new Parser;
-	parser.reader = createByStr(s.replace(regComment, "").trim());
+	const parser = new Parser();
+	parser.reader = createByStr(s.replace(regComment, '').trim());
+
 	parser.nextIgnoreWhitespace();
+
 	return () => {
-		if (!parser.cur)
+		if (!parser.cur) {
 			return;
-		let name = parseDefine(parser);
+		}
+		const name = parseDefine(parser);
 		parser.name = name;
-		if (builtIn.whitespace(parser.cur))
+		if (builtIn.whitespace(parser.cur)) {
 			parser.nextIgnoreWhitespace();
-		if (parser.cur !== "=")
-			throw new Error(parser.name + ", parse rule error, need = !");
-		let e = parseSeries(parser.next());
-		if (<string>parser.cur !== ";")
-			throw new Error(parser.name + ", parse rule error, need ; !");
+		}
+		if (parser.cur !== '=') {
+			throw new Error(`${parser.name}, parse rule error, need = !`);			
+		}
+		const e = parseSeries(parser.next());
+		if (<string>parser.cur !== ';') {
+			throw new Error(`${parser.name}, parse rule error, need ; !`);			
+		}
 		parser.next();
-		if (builtIn.whitespace(parser.cur))
+		if (builtIn.whitespace(parser.cur)) {
 			parser.nextIgnoreWhitespace();
+		}
+
 		return { name: name, entry: e };
 	};
-}
+};
 // ============================== 本地
 // 匹配注释，要排除"(*" "*)" 被放入到终止符的情况
 const regComment = /\(\*[^"'][^\*]*[^"']\*\)/g;
@@ -126,20 +133,21 @@ const regComment = /\(\*[^"'][^\*]*[^"']\*\)/g;
  * @description 解析器
  */
 class Parser {
-	name: string = null;
-	reader: CharReader = null;
-	cur: string = null;
+	public name: string = null;
+	public reader: CharReader = null;
+	public cur: string = null;
 
 	// 读取下一个字符
-	next() {
+	public next() {
 		this.cur = this.reader();
+
 		return this;
 	}
 	// 读取下一个非空白字符
-	nextIgnoreWhitespace() {
+	public nextIgnoreWhitespace() {
 		do {
 			this.cur = this.reader();
-		} while (this.cur && this.cur <= " ");
+		} while (this.cur && this.cur <= ' ');
 	}
 }
 
@@ -148,25 +156,28 @@ const parseDefine = (parser: Parser): string => {
 	switch (parser.cur) {
 		case '"':
 			return parseTerminal(parser.next(), '"').value;
-		case "'":
-			return parseTerminal(parser.next(), "'").value;
+		case '\'':
+			return parseTerminal(parser.next(), '\'').value;
 		default:
-			if (builtIn.word(parser.cur))
+			if (builtIn.word(parser.cur)) {
 				return parseName(parser).value;
+			}
 	}
-}
+};
 
 // 解析结果集
 const parseResult = (parser: Parser): string => {
-	let s = "";
-	while (parser.cur !== ";") {
-		if (!parser.cur)
-			throw new Error(parser.name + ", parse result incomplate!");
+	let s = '';
+	while (parser.cur !== ';') {
+		if (!parser.cur) {
+			throw new Error(`${parser.name}, parse result incomplate!`);			
+		}
 		s += parser.cur;
 		parser.next();
 	}
+	
 	return s.trim();
-}
+};
 
 // 解析
 const parse = (parser: Parser): Entry => {
@@ -174,16 +185,16 @@ const parse = (parser: Parser): Entry => {
 		switch (parser.cur) {
 			case '"':
 				return parseTerminal(parser.next(), '"');
-			case "'":
-				return parseTerminal(parser.next(), "'");
+			case '\'':
+				return parseTerminal(parser.next(), '\'');
 			case '[':
 				return parseOptional(parser.next());
 			case '{':
 				return parseRepeat(parser.next());
 			case '|':
-				return parseAndOr(parser, "or");
+				return parseAndOr(parser, 'or');
 			case '&':
-				return parseAndOr(parser, "and");
+				return parseAndOr(parser, 'and');
 			case '!':
 				return parseNot(parser.next());
 			case '?':
@@ -191,208 +202,240 @@ const parse = (parser: Parser): Entry => {
 			case '@':
 				return parseSeries(parser.next(), true);
 			default:
-				if (parser.cur == "_" || builtIn.alphabetic(parser.cur))
+				if (parser.cur === '_' || builtIn.alphabetic(parser.cur)) {
 					return parseName(parser);
+				}
 		}
 		parser.nextIgnoreWhitespace();
 	}
-}
+};
 // 解析规则项的可选项，#字符开始，?为忽略，?1为忽略并切换到状态1，back2为状态退后2次
 const parseOption = (parser: Parser) : any => {
-	if (builtIn.whitespace(parser.cur))
+	if (builtIn.whitespace(parser.cur)) {
 		parser.nextIgnoreWhitespace();
-	if (parser.cur !== "#")
+	}
+	if (parser.cur !== '#') {
 		return;
+	}
 	parser.next();
-	let s = {ignore: true, state: "", back: 0};
-	if ((parser.cur) as any !== "?")
+	const s = {ignore: true, state: '', back: 0};
+	if ((parser.cur) as any !== '?') {
 		s.ignore = false;
-	else
+	} else {
 		parser.next();
+	}
 	while (parser.cur && builtIn.word(parser.cur)) {
 		s.state += parser.cur;
 		parser.next();
 	}
-	if(s.state.startsWith("back"))
-		s.back = parseInt(s.state.slice(4)) || 1;
+	if (s.state.startsWith('back')) {
+		s.back = parseInt(s.state.slice(4), 10) || 1;
+	}
+
 	return s;
-}
+};
 
 // 解析终结符或规则名
 const parseTerminal = (parser: Parser, char: string): Entry => {
-	let s = "";
+	let s = '';
 	while (parser.cur !== char) {
-		if (!parser.cur)
-			throw new Error(parser.name + ", parse terminal incomplate!");
+		if (!parser.cur) {
+			throw new Error(`${parser.name}, parse terminal incomplate!`);			
+		}
 		s += parser.cur;
 		parser.next();
 	}
 	parser.next();
+
 	return {
-		type: "terminal",
+		type: 'terminal',
+		/* tslint:disable:prefer-template */
 		str: '"' + s + '"',
 		value: s,
 		child: null,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 
 // 解析规则名
 const parseName = (parser: Parser): Entry => {
-	let s = "";
+	let s = '';
 	while (parser.cur) {
-		if (parser.cur !== " " && !builtIn.word(parser.cur))
+		if (parser.cur !== ' ' && !builtIn.word(parser.cur)) {
 			break;
+		}
 		s += parser.cur;
 		parser.next();
 	}
 	s = s.trim();
+
 	return {
-		type: "name",
+		type: 'name',
 		str: s,
 		value: s,
 		child: null,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 
 // 解析连续操作
 const parseSeries = (parser: Parser, end?:boolean): Entry => {
-	let arr = [];
+	const arr = [];
 	while (parser.cur) {
 		arr.push(parse(parser));
-		if (builtIn.whitespace(parser.cur))
+		if (builtIn.whitespace(parser.cur)) {
 			parser.nextIgnoreWhitespace();
-		if (parser.cur !== ",")
+		}
+		if (parser.cur !== ',') {
 			break;
+		}
 		parser.next();
 	}
-	if(end)
+	if (end) {
 		parser.next();
-	if (arr.length === 1)
+	}
+	if (arr.length === 1) {
 		return arr[0];
+	}
+
 	return {
-		type: "series",
+		type: 'series',
 		str: getArrStr(arr),
 		value: null,
 		child: null,
 		childs: arr,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 
 // 解析与或操作
-const parseAndOr = (parser: Parser, type: "and" | "or"): Entry => {
-	let c = parser.cur;
-	let arr = [];
+const parseAndOr = (parser: Parser, type: 'and' | 'or'): Entry => {
+	const c = parser.cur;
+	const arr = [];
 	parser.next();
 	while (parser.cur) {
 		arr.push(parse(parser));
-		if (builtIn.whitespace(parser.cur))
+		if (builtIn.whitespace(parser.cur)) {
 			parser.nextIgnoreWhitespace();
+		}
 		if (parser.cur === c) {
 			parser.next();
-			if (arr.length === 1)
+			if (arr.length === 1) {
 				return arr[0];
+			}
+			
 			return {
 				type: type,
-				str: c + " " + getArrStr(arr) + " " + c,
+				str: c + ' ' + getArrStr(arr) + ' ' + c,
 				value: null,
 				child: null,
 				childs: arr,
 				option: parseOption(parser)
-			}
+			};
 		}
-		if (parser.cur !== ",")
-			throw new Error(parser.name + ", parse " + type + " error, need , !");
+		if (parser.cur !== ',') {
+			throw new Error(parser.name + ', parse ' + type + ' error, need , !');
+		}
 		parser.next();
 	}
-	throw new Error(parser.name + ", parse " + type + " incomplate!");
-}
+	throw new Error(parser.name + ', parse ' + type + ' incomplate!');
+};
 
 // 解析取反操作
 const parseNot = (parser: Parser): Entry => {
-	let e = parseSeries(parser);
-	if (builtIn.whitespace(parser.cur))
+	const e = parseSeries(parser);
+	if (builtIn.whitespace(parser.cur)) {
 		parser.nextIgnoreWhitespace();
-	if (parser.cur !== "!")
-		throw new Error(parser.name + ", parse not error, need ! !");
+	}
+	if (parser.cur !== '!') {
+		throw new Error(parser.name + ', parse not error, need ! !');
+	}
 	parser.next();
+
 	return {
-		type: "not",
-		str: "! " + e.str + " !",
+		type: 'not',
+		str: '! ' + e.str + ' !',
 		value: null,
 		child: e,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 
 // 解析重复操作
 const parseRepeat = (parser: Parser): Entry => {
-	let e = parseSeries(parser);
-	if (builtIn.whitespace(parser.cur))
+	const e = parseSeries(parser);
+	if (builtIn.whitespace(parser.cur)) {
 		parser.nextIgnoreWhitespace();
-	if (parser.cur !== "}")
-		throw new Error(parser.name + ", parse repeat error, need } !");
+	}
+	if (parser.cur !== '}') {
+		throw new Error(parser.name + ', parse repeat error, need } !');
+	}
 	parser.next();
+
 	return {
-		type: "repeat",
-		str: "{ " + e.str + " }",
+		type: 'repeat',
+		str: '{ ' + e.str + ' }',
 		value: null,
 		child: e,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 // 解析可选操作
 const parseOptional = (parser: Parser): Entry => {
-	let e = parseSeries(parser);
-	if (builtIn.whitespace(parser.cur))
+	const e = parseSeries(parser);
+	if (builtIn.whitespace(parser.cur)) {
 		parser.nextIgnoreWhitespace();
-	if (parser.cur !== "]")
-		throw new Error(parser.name + ", parse optional error, need ] !");
+	}
+	if (parser.cur !== ']') {
+		throw new Error(parser.name + ', parse optional error, need ] !');
+	}
 	parser.next();
+
 	return {
-		type: "optional",
-		str: "[ " + e.str + " ]",
+		type: 'optional',
+		str: '[ ' + e.str + ' ]',
 		value: null,
 		child: e,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 // 解析内置操作
 const parseBuiltIn = (parser: Parser): Entry => {
-	let s = "";
-	while (parser.cur !== "?") {
-		if (!parser.cur)
-			throw new Error(parser.name + ", parse builtIn incomplate!");
+	let s = '';
+	while (parser.cur !== '?') {
+		if (!parser.cur) {
+			throw new Error(parser.name + ', parse builtIn incomplate!');
+		}
 		s += parser.cur;
 		parser.next();
 	}
 	parser.next();
 	s = s.trim();
+
 	return {
-		type: "builtIn",
-		str: "? " + s + " ?",
+		type: 'builtIn',
+		str: '? ' + s + ' ?',
 		value: s,
 		child: null,
 		childs: null,
 		option: parseOption(parser)
-	}
-}
+	};
+};
 
 // 获得数组字符串
-const getArrStr = (arr: Array<Entry>): string => {
-	let a = [];
+const getArrStr = (arr: Entry[]): string => {
+	const a = [];
 	a.length = arr.length;
-	for (let i = arr.length - 1; i >= 0; i--)
+	for (let i = arr.length - 1; i >= 0; i--) {
 		a[i] = arr[i].str;
-	return a.join(" , ");
-}
+	}
+
+	return a.join(' , ');
+};
 
 // ============================== 立即执行
-

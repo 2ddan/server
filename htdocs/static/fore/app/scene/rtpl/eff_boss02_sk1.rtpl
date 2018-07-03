@@ -42,7 +42,21 @@
       },
       "animator"  : {
         "controller" : {
-          "eff_boss02_sk1" : "Cf67i93iTeCpDCqD7ADgGa.ai"
+          "eff_boss02_sk1" : "XCwEQJt8ayLVXvJ29omehT.ai"
+        },
+        "aniBox"     : {
+          "eff_boss02_sk1" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
         },
         "playAnim"   : {{it.playAnim?it.playAnim:null}}
       },
@@ -53,13 +67,13 @@
           "transform" : {
             "position" : [
               0.0,
-              0.0199999995529652,
+              -1.41999995708466,
               -0.347110003232956
             ],
             "scale"    : [
-              1.60574567317963,
-              1.60574579238892,
-              1.60574579238892
+              0.200000002980232,
+              0.200000002980232,
+              0.200000002980232
             ],
             "rotate"   : [
               0.0485724434256554,
@@ -829,7 +843,11 @@
               {
                 "type" : "MeshParticlesMaterial",
                 "map"  : {
-                  "wrap" : [
+                  "offset" : [
+                    -0.189999997615814,
+                    0.0
+                  ],
+                  "wrap"   : [
                     1001,
                     1001
                   ],

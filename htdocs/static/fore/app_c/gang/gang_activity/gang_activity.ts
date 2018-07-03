@@ -61,17 +61,18 @@ export const getAward = function (id) {
     gangNet(arg)
         .then((data:any) => {
             let _data: any = Common.changeArrToJson(data.ok);
-            let result = Common_m.mixAward(_data);
             //扣除花费
             Common_m.deductfrom(_data);
+            let result = Common_m.mixAward(_data);
+            let num = Common_m.awardFindProp(150005, result.bag);
+
             //添加奖励 [门派资金, 贡献]
             let gangExpandData = getDB("gang.gangExpandData");
-            //可用贡献
-            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 + result.player["gang_contribute"];
+
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + num;
             //今日贡献
-            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + result.player["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + num;
             
             gangExpandData.liveness_info = _data.liveness_info;
             //门派总总资金 [后台推消息统一处理]
@@ -100,9 +101,11 @@ export const getAward = function (id) {
 net_message("gang_liveness", (msg) => {
     let gang_money = getDB("gang.gangExpandData.gang_money");
     updata("gang.gangExpandData.gang_money", msg.gang_money);
-    globalSend("attrTip", {
-        words: `门派资金增加:${msg.gang_money - gang_money}`
-    })
+    if (getDB("player.role_id") == msg.role_id) {
+        globalSend("attrTip", {
+            words: `门派资金增加:${msg.gang_money - gang_money}`
+        })
+    }
     forelet.paint(getData());
 });
 

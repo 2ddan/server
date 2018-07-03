@@ -1,5 +1,5 @@
 <div style="position: absolute;width: 100%;height: 100%;">
-    <div style="top: 0px;bottom: 0px;left: 0px;right: 0px;margin: auto;position: absolute;width: {{it.width}}px;height: {{it.hieght}}px;">
+    <div style="{{if it.top}}top:{{it.top}}px;left:50%;margin-left:-{{it.width/2}}px;{{else}}top: 0px;bottom: 0px;left: 0px;right: 0px;margin: auto;{{end}} position: absolute;width: {{it.width}}px;height: {{it.hieght}}px;">
         <app_a-widget-img_stitch-stitch style="position: absolute;left: 0px;width: 100%;height: 100%;">
             {"type":1,"height":15,"width":15}
         </app_a-widget-img_stitch-stitch>

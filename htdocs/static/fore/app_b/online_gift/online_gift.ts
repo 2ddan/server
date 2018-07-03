@@ -3,16 +3,17 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { close, open } from "app/mod/root";
 import { Common } from "app/mod/common";
-import { updata, get as getDB } from "app/mod/db";
+import { updata, get as getDB, insert } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
 import { Util } from "app/mod/util";
 import { online_gift_base } from "cfg/b/online_gift_base";
-import { Music } from "app/mod/music";
 
 export const forelet = new Forelet();
+//存入本地数据库
+insert("online_gift",{});
 
 //前台点击操作
 export class OnlineGift extends Widget {

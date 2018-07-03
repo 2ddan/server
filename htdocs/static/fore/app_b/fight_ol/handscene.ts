@@ -4,22 +4,24 @@ import { getWidth, getHeight, getScale,open,destory } from "pi/ui/root";
 import { Forelet } from "pi/widget/forelet";
 import { objCall, call } from 'pi/util/util';
 import { set as task } from 'pi/util/task_mgr';
+import { THREE } from "pi/render3d/three";
+import { getGlobal } from "pi/widget/frame_mgr";
 //mod
-import { Pi, cfg as pi_cfg ,globalSend } from "app/mod/pi";
-import { data as localDB, updata, get as getDB, listen } from "app/mod/db";
+import { Pi, cfg as pi_cfg, globalSend } from "app/mod/pi";
+import { get as getDB } from "app/mod/db";
+import { Cach } from "app/mod/cach";
 
 //fight
-import * as Fight from "fight/a/common/fight";
 import { Fight_common } from "fight/a/fore/fight_common";
-
+import { FMgr } from "fight/a/fight";
 import { monster_base } from "fight/b/common/monsterBase";
 import { role_base } from "fight/b/common/role_base";
 import { Init_Fighter,createSkill } from "fight/a/common/init_fighter";
 //scene
 import { mgr, mgr_data, renderHandlerList } from "app/scene/scene";
-import { uiEffect } from "app/scene/anim/scene"
-import { cuurUI,cuurShow,UiFunTable, initValue, effectList, getEffectId, setShieldBack,getShield } from "app/scene/ui_fun";
-import { Move, setShow, setList } from "app/scene/move";
+import { uiEffect } from "app/scene/anim/scene";
+import { cuurUI,UiFunTable, initValue, effectList, getEffectId, setShieldBack,getShield } from "app/scene/ui_fun";
+import { Mesh } from "app/scene/class"
 //app
 import { net_request } from "app_a/connect/main";
 import { monster_cfg } from "app/scene/plan_cfg/monster_config";
@@ -30,7 +32,6 @@ import { weapon_soul_base } from "cfg/c/weapon_soul_base";
 import { clothes_module } from "cfg/b/clothes_module";
 import { equip_star_achieve } from "cfg/c/equip_star_achieve";
 import { Common } from "app/mod/common";
-import { ShowFunTable } from "app_b/widget/drop_out";
 
 export const forelet = new Forelet();
 // ========================================= 导出
@@ -41,7 +42,7 @@ let openExpFb = false,//是否进入试炼副本
 export let globalReceive = {
     "openExpFb": (arg?) => {// 3重置map_id数组，true进入经验副本，false退出经验副本
 		if(arg === 3){
-			exp_monster = [];
+			// exp_monster = [];
 			return;			
 		}
 		if(arg){
@@ -65,26 +66,39 @@ export const clearToCallBack = function(){
 	_limit = undefined;
 }
 
-export const initMapList = function () {
-	for(let k in mapList){
-		mgr.remove(mapList[k]);
-		if(pet[k]){
-			mgr.remove(pet[k]);
-		}
-	}
-	mapList = {};
-	pet = {};
-	setList(mapList);
-}
-
-// let img_length = 0;
-// let magic_w : any;
-
-export let mapList = {};
-
-export let pet = {};
 
 export class handScene {
+		/**
+	 * @description 渲染列表
+	 */
+	static mapList = {}
+	/**
+	 * @description 宠物列表
+	 */
+	static pet = {}
+	/**
+	 * @description 缓冲模型列表
+	 */
+	static cach = new Cach()
+	/**
+	 * @description 清除
+	 */
+	static clear(){
+		for(let k in this.mapList){
+			mgr.remove(this.mapList[k]);
+			if(this.pet[k]){
+				mgr.remove(this.pet[k]);
+			}
+			delete this.mapList[k];
+			delete this.pet[k];
+		}
+		this.cach.list.forEach(v => {
+			for(let i=0,len = v.length;i<len;i++){
+				mgr.remove(v[i]);
+			}
+		});
+		this.cach.clear();
+	}
 	/**
 	 * @description 一次性移动停止回调
 	 */
@@ -98,7 +112,7 @@ export class handScene {
 
 	static insert(e, now) {
 		if (!id) id = getDB("user.rid");
-		if (!mapList[e.fighter.mapId]) {
+		if (!handScene.mapList[e.fighter.mapId]) {
 			//添加show_hp
 			e.fighter.show_hp = e.fighter.hp;
 			// 初始化时，应该看向场景中心(0,0,0)
@@ -107,24 +121,24 @@ export class handScene {
 				e.fighter.lookat = { "value": [0, 0, 0], sign: Date.now() };
 			e.fighter.state = "standby";
 			//名字前加服务器
-			if (e.fighter.type != "monster" && e.fighter.area>=0) {
+			if (e.fighter.type != "monster" && e.fighter.area>=0 && !(/S\d+ /).test(e.fighter.name)) {
 				e.fighter.name = "S" + e.fighter.area + " " + e.fighter.name;
 			}
 			
 			//task(objCall, [mgr, "create", [e.fighter, e.fighter.type]], 60000, 1);
 
-			let skillList = [];
+			// let skillList = [];
 			//创建技能 {id,index,level}
-			for (let i = 0; i < e.fighter.skill.length; i++) {
-				let s = e.fighter.skill[i];
-				let ss = createSkill(s.id, s.level, role_base[e.fighter.career_id]);
-				ss.cdNextTime = ss.initialCDTime + now;
-				skillList.push(ss);
-			}
-			e.fighter.skill = skillList;
+			// for (let i = 0; i < e.fighter.skill.length; i++) {
+			// 	let s = e.fighter.skill[i];
+			// 	let ss = createSkill(s.id, s.level, role_base[e.fighter.career_id]);
+			// 	ss.cdNextTime = ss.initialCDTime + now;
+			// 	skillList.push(ss);
+			// }
+			// e.fighter.skill = skillList;
 			
 			//插入的时候 把fighter 放在 list 里面
-			mapList[e.fighter.mapId] = e.fighter;
+			handScene.mapList[e.fighter.mapId] = e.fighter;
 			if(e.fighter.type == "monster"){
 				e.fighter.scale = monster_base[e.fighter.sid].scale;
 			}
@@ -135,7 +149,7 @@ export class handScene {
 				updateSelfModule(e.fighter);
 			}
 			if (e.fighter.sid == id && !e.fighter.isMirror) {
-				__self = mapList[e.fighter.mapId];
+				__self = handScene.mapList[e.fighter.mapId];
 				
 				
 				mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [e.fighter.x, e.fighter.y, e.fighter.z]);
@@ -164,10 +178,19 @@ export class handScene {
 				updateStarEffect(e.fighter);
 			}
 			//创建模型
-			mgr.create(e.fighter, e.fighter.type);
-			if(e.fighter.hidden == true){
-				mgr_data.threeScene[mgr_data.name].modify(e.fighter._show.old, ["visible"]);
-			}
+			const cach = this.cach.one(e.fighter.sid);
+			if(cach){
+				e.fighter._show = cach;
+				mgr.setOnlyPos(e.fighter,[e.fighter.x,e.fighter.y,0]);
+				let sclae = UiFunTable.initHP(e.fighter,true);
+
+				//初始化动作
+				UiFunTable.modifyStatus(e.fighter,"attack_standby",false);
+			}else
+				mgr.create(e.fighter, e.fighter.type);
+			// if(e.fighter.hidden == true){
+			// 	mgr_data.threeScene[mgr_data.name].modify(e.fighter._show.old, ["visible"]);
+			// }
 			return true;
 		}else{
 			console.error("There is a same fighter which mapid is "+e.fighter.mapId);
@@ -176,31 +199,35 @@ export class handScene {
 	};
 
 	static remove = function (e, now) {
-		let f = mapList[e.fighter],t = now-f.die_time,
+		let f = this.mapList[e.fighter],
 			func = function () {
-				task(objCall, [mgr, "remove", [mapList[e.fighter]],mgr_data.name], 60000, 1);
-				pet[e.fighter] && task(objCall, [mgr, "remove", [pet[e.fighter]],mgr_data.name], 60000, 1);
-				//mgr.remove(mapList[e.mapId]);
-				delete mapList[e.fighter];
-				delete pet[e.fighter];
+				if(f.type == "monster"){
+					mgr.setOnlyPos(f,[1000,0,0]);
+					f._show.time = Date.now();
+					handScene.cach.add(f.sid,f._show);
+				}else{
+					task(objCall, [mgr, "remove", [f],mgr_data.name], 60000, 1);
+					if(handScene.pet[e.fighter]){
+						task(objCall, [mgr, "remove", [handScene.pet[e.fighter]],mgr_data.name], 60000, 1);
+						delete handScene.pet[e.fighter];
+					}
+				}
+				delete handScene.mapList[e.fighter];
+				// console.log("show remove :: ",e.fighter);
 			};
-		if(t<2250){
-			t = 2250 -t;
-		}else
-			t = 0;
-		cuurUI.push({"param": {func:func,time:now+t},"fun": UiFunTable.remove});
+		
+		if(f)cuurUI.push({"param": {func:func,time:f.remove},"fun": UiFunTable.remove});
 	};
 
 	static move = function (e) {
-		//e = Move.getPos(e[1]);
-		
-		let fighter = mapList[e.fighter];
-		if(!fighter || fighter.hp<=0)return;
-
-		//setChangeData(fighter, e.fighter,now);
+		const fighter = handScene.mapList[e.fighter];
+		let drop_mark = false;
+		if(!fighter || fighter.state =="die_fly" || fighter.state =="die"){
+			return;
+		}
 		if (e.moveto.status && e.moving === 0) {
-			fighter.state = "standby";
-			fighter.moving = 0;
+			UiFunTable.modifyStatus(fighter,"standby",false);
+			// fighter.moving = 0;
 			//处理第一个fighter移动停止的回调
 			this.stopMoveBack && ((back,ev)=>{
 				setTimeout(() => {
@@ -210,22 +237,14 @@ export class handScene {
 			}
 			)(this.stopMoveBack,e) && this.setStopMoveBack(null);
 		} else {
-			fighter.state = "run";
-			fighter.moving = Date.now();
+			UiFunTable.modifyStatus(fighter,"run",false);
+			// fighter.moving = Date.now();
 		}
-
 		if (fighter.sid === id && fighter.playAnim){
 			delete fighter.playAnim;
 		}
 
-		// if(mgr_data.name == "gang_war" && toCallBack && _limit && fighter.mapId == __self.mapId){
-		// 	if((__self.x-_limit.x)*(__self.x-_limit.x)+(__self.y-_limit.y)*(__self.y-_limit.y)<=_limit.range*_limit.range){
-		// 		toCallBack();
-		// 		clearToCallBack();
-		// 	}
-		// }
-
-		if(e.moveto){
+		if(e.moving !== 0){
 			// if(fighter.sid == 10000){
 			// 	console.log("move: ",e);
 			// }
@@ -233,125 +252,71 @@ export class handScene {
 				"value": [e.moveto.x, e.moveto.z, 0],
 				sign: Date.now()
 			};
-			// if(e.moveing == 0 || fighter.path[0].x == e.fighter.x && fighter.path[0].y == e.fighter.y){
-			// 	fighter.path.shift();
-			// }
         //看向点击操作的方向
         }
-		// fighter.x = e.fighter.x;
-		// fighter.y = e.fighter.y;
-		// mgr_data.camera[mgr_data.name]._pos.x = e.fighter.x;
-		// mgr_data.camera[mgr_data.name]._pos.y = e.fighter.y;
-		//if(limitModify(fighter) || e.moving === 0)
-			mgr.setPos(fighter, [fighter.x, fighter.y, 0], fighter.lookat, cfg[fighter.type][fighter.module][fighter.state]);
-		// if (fighter.sid == id){
-			// mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [e.fighter.x, e.fighter.y,0]);
-			//moveToSever(e.fighter);
-			//refreshRand(mapList);
-		// }
+		mgr.setPos(fighter, [fighter.x, fighter.y, 0], fighter.lookat);
 
 		if(!__self || mgr_data.name == "loginscene" || mgr_data.name == "uiscene")
             return;
         let c = mgr_data.camera[mgr_data.name],
             cp = c._show.old.transform.position,
             fp = __self._show.old.transform.position,
-            r;
-        if(__self){
-            let fighterPosition = [fp[0],fp[1],fp[2]];
-            globalSend("fighter_position",fighterPosition);
-        }
-        // globalSend("runShowFun",msg);
+            r,
+			b = c.fixto;
+
         if(!c.hand && (cp[0] != fp[0] || cp[2] != fp[2])){
             r = setCamera(cp,fp,__self.speed,1);
-            r && mgr.setOnlyPos(c, r);
-        }
+			r && mgr.setOnlyPos(c, r);
+			if(e.moveto){
+				c.fixto = calcRang(fighter,{x:e.moveto.x,y:e.moveto.z})||b;
+				// console.log(c.fixto);
+				//Util.slope(fighter,{x:e.moveto.x,y:e.moveto.z}) || 0;
+			}
+			// if(!c.fixing && !isNaN(c.fixto)){
+				// cuurUI.push({ "param": {camera:c}, "fun": UiFunTable.rotateCamera });
+				
+				// c.fixing = true;
+			// }
+			if(isNaN(c.fixto)){
+				c.fixto = b;
+			}
+		}
+		if(__self){
+			let fighterPosition = [fp[0],fp[1],fp[2]];
+
+			if(cuurUI.length == 0){
+				cuurUI.push({ "param": {msg:fighterPosition},"fun": UiFunTable.fighter_position });	
+				drop_mark = true;
+				return;
+			}
+			for(var i in cuurUI){
+				if(cuurUI[i]){
+					if(cuurUI[i].fun.name == "fighter_position"){
+						cuurUI[i].param.msg = fighterPosition;
+						drop_mark = true;
+						return;
+					}
+				}
+			}
+			if(!drop_mark){
+				cuurUI.push({ "param": {msg:fighterPosition},"fun": UiFunTable.fighter_position });
+			}
+			
+            // globalSend("fighter_position",fighterPosition);
+		}
 	};
 
 	static spreadSkill = function (e, now) {
-		let curTarget = mapList[e.fighter.curTarget];
-		let fighter = mapList[e.fighter.mapId];
-		// if(!curTarget)return;
-		if(!fighter)return;
-		let targets = [];
-		let target_mark = false;
-		let ss = e.skill;
-		let index = getSkillIndex(fighter.skill,ss.id);
-		let _play;
-		let player = getDB("player");
-
-		//神兵类技能不更新释放者
-		if(fighter.skill[index].hand !== 2){
-			setChangeData(fighter, e.fighter,now);
-		}
-		//此处神兵技能释放，已移动到神兵功能里面，此处暂留
-		// }else if(fighter.sid == player.role_id && fighter.skill[index].hand == 2){
-		// 	updata("magic.img_length",img_length);
-			
-		// 	if(!magic_w){
-		// 		magic_w = true;
-		// 		open("app_b-magic-magic_release_tips");
-		// 		let set = setInterval(()=>{
-		// 			img_length += 0.1;
-		// 			updata("magic.img_length",img_length);
-		// 			if(img_length >= 3.5){
-		// 				clearInterval(set);
-		// 				img_length = 0
-		// 				updata("magic.img_length",0);
-		// 				set = undefined;
-		// 				let w = forelet.getWidget("app_b-magic-magic_release_tips");
-		// 				destory(w);
-		// 				magic_w = undefined;
-		// 			}
-		// 		},100);
-		// 	}
-		// }
-		for (let i = 0; i < e.target.length; i++) {
-			setChangeData(mapList[e.target[i].mapId], e.target[i],now);
-			targets.push(mapList[e.target[i].mapId]);
-		}
-		
-
-		e.fighter = fighter;
-		e.target = targets;
-		e.curTarget = curTarget;
-				
-		// if(_play)task(objCall, [mgr, "setAnimationOnce", [fighter, fighter.playAnim, fighter.lookat,[e.fighter.x, e.fighter.y, e.fighter.z]]], 60000, 1);
-		
-		
-		
-		if(fighter.curTarget && (mgr_data.name == "public_boss" || Fight.count > 0)){
-			if(mapList[fighter.curTarget] && mapList[fighter.curTarget].type == "monster" && mapList[fighter.curTarget].show_type == 1){			
-				if(cuurShow.length == 0){
-					cuurShow.push({ "param": { head: null, f: e.fighter ,mapList:mapList }, "fun": ShowFunTable.targetHead });	
-					target_mark = true;
-					return;
-				}
-				for(var i in cuurShow){
-					if(cuurShow[i]){
-						if(cuurShow[i].fun.name == "targetHead"){
-							cuurShow[i].param.f =  e.fighter;
-							cuurShow[i].param.mapList = mapList;
-							target_mark = true;
-							return;
-						}
-					}
-				}
-				if(!target_mark){
-					cuurShow.push({ "param": { head: null, f: e.fighter ,mapList:mapList }, "fun": ShowFunTable.targetHead });
-				}	
-			}
-		}
-		//插入BOSS头像
-
-		//cuurUI.push({ "param": e, "fun": UiFunTable.skillSpecialEffect });
-
-		// TODO 根据e.skill 来确定技能音效
 		
 	};
-
+	static revive(e){
+		const fighter = handScene.mapList[e.fighter];
+		UiFunTable.modifyStatus(fighter,"standby",false);
+		UiFunTable.modifyHP(fighter);
+	}
 	static damage = function (e, now) {
-		let fighter = mapList[e.fighter];
-		let curTarget = mapList[e.target];
+		let fighter = handScene.mapList[e.fighter];
+		let curTarget = handScene.mapList[e.target];
 		e = Common.shallowClone(e);
 		if(!fighter){
 			console.warn("Don't find the fighter who is ",e.fighter);
@@ -366,13 +331,13 @@ export class handScene {
 		e.fighter = fighter;
 		e.skill = fighter.skill[getSkillIndex(fighter.skill,e.skill)];
 		e.time = now + e.skill.bloodDelayTime;
-		MCrontal.add(curTarget);	
+		// MCrontal.add(curTarget);	
 		cuurUI.push({ "param": e, "fun": UiFunTable.hitEffect });
 		let dieMoster = [];
 
 		if(openExpFb){
-			for(let key in mapList){
-				let me = mapList[key];
+			for(let key in handScene.mapList){
+				let me = handScene.mapList[key];
 				if(me.type == "monster" && exp_monster.indexOf(me.mapId) == -1 && me.hp <= 0){
 					curr_die_monster.push(me.sid+"-"+me.level);
 					exp_monster.push(me.mapId);
@@ -382,7 +347,9 @@ export class handScene {
 				globalSend("monsterDied",curr_die_monster.join(","));
 				curr_die_monster = [];
 			}
-		}	
+		}
+
+		modifyTargetHead(fighter,e);
 	};
 
 	//添加buff
@@ -393,20 +360,22 @@ export class handScene {
 
 	//激发buff
 	static effect = function (e, now) {
-		let fighter = mapList[e.fighter.mapId];
-		let curTarget = mapList[e.target.mapId];
+		let fighter = handScene.mapList[e.fighter];
+		let curTarget = handScene.mapList[e.target];
 		if(!curTarget)return;
-		setChangeData(fighter, e.fighter,now);
-		setChangeData(curTarget, e.target,now);
+		// setChangeData(fighter, e.fighter,now);
+		// setChangeData(curTarget, e.target,now);
 		e.target = curTarget;
 		e.fighter = fighter;
 		if(fighter.mapId == __self.mapId || curTarget.mapId == __self.mapId){
 			// if (curTarget.hp<=0 ) {
-				MCrontal.add(curTarget);
+				// MCrontal.add(curTarget);
 				cuurUI.push({ "param": e, "fun": UiFunTable.excitationBuff });
 			// }
+		}else if(e.effect == "hp"){
+			curTarget.show_hp += e.value;
+			UiFunTable.modifyHP(curTarget);
 		}
-
 	};
 
 	//清除buff
@@ -416,14 +385,22 @@ export class handScene {
 
 	//释放技能
 	static useSkill = function (e, now) {
-		let _play,
-			fighter = mapList[e.fighter],
-			curTarget = mapList[e.curTarget],
-			index = getSkillIndex(fighter.skill,e.skill),
-			ss = fighter.skill[index];
+		let _play;
+		let fighter = handScene.mapList[e.fighter];
+		if(!fighter){
+			return;
+		}
+		let curTarget = handScene.mapList[e.curTarget];
+		let index = getSkillIndex(fighter.skill,e.skill);
+		if(index === undefined){
+			return;
+		}
+		let ss = fighter.skill[index];
+		let target_mark = false;
 		//先改变朝向
 		if (fighter.skill[index].hand !== 2 && curTarget && (fighter.lookat.value[0] != curTarget.x || fighter.lookat.value[1] != curTarget.y)) {
 			fighter.lookat = { "value": [curTarget.x, curTarget.y, curTarget.z], sign: Date.now() };
+			mgr.setPos(fighter,[fighter.x,fighter.y,0],fighter.lookat);
 		}
 		//更新技能动作
 		if(fighter.skill[index].hand !== 2){
@@ -435,44 +412,41 @@ export class handScene {
 		//震屏
 		if(fighter.type == "monster" || id == fighter.sid){
 			if(fighter.skill[index].shake){
-				cuurShow.push({"param": {fighter:fighter,skill:ss,index:index,time:Date.now() + fighter.skill[index].shakeTime},"fun": UiFunTable.shakeEffect});
-				
+				cuurUI.push({"param": {fighter:fighter,skill:ss,index:index,time:Date.now() + fighter.skill[index].shakeTime},"fun": UiFunTable.shakeEffect});
+				// let _time = {fighter:fighter,skill:ss,index:index,time:Date.now() + fighter.skill[index].shakeTime};
+				// UiFunTable.shakeEffect(_time);
+
 			}
 			if(fighter.skill[index].skillSound){
 				cuurUI.push({ "fun": UiFunTable.sound, "param": {name:fighter.skill[index].skillSound,time:now+fighter.skill[index].skillSoundDelay} });
 			}
 		}
-		
+		//插入BOSS头像		
+		modifyTargetHead(fighter,e);
 	};
 	//更新技能
 	static refreshSkill = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		updateSkill(f,e.skill,now);
-	};
-	//更新技能
-	static refreshAttr = (e,now) => {
-		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
-		updateAttr(f,e,now);
 	};
 	//更新技能
 	static refreshWeapon = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		f.weaponId = e.weaponId;
 		updateSelfModule(f);
 	};
 	//更新宠物
 	static refreshPet = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		updatePet(e.pet,f);
 	};
 	//更新时装
 	static refreshClothes = (e,now) => {
 		// console.log("refreshSkill",e);
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		if(f.clothes == e.clothes)
 			return;
 		f.clothes = e.clothes;
@@ -481,7 +455,7 @@ export class handScene {
 	};
 	//更新附灵特效
 	static refreshEnsoulClass = (e,now) => {
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		if(f.ensoulClass == e.ensoulClass)
 			return;
 		f.ensoulClass = e.ensoulClass;
@@ -489,7 +463,7 @@ export class handScene {
 	}
 	//更新星宿成就特效
 	static refreshEquipStar = (e,now) => {
-		let f = mapList[e.fighter];
+		let f = handScene.mapList[e.fighter];
 		if(f.equipStar == e.equipStar)
 			return;
 		f.equipStar = e.equipStar;
@@ -511,15 +485,10 @@ export class handScene {
 			let skill = skills[k];
 			if (!skill.hand)
 				continue;
-			let img: any = Fight.createMesh(mgr.yszzFight.mesh);
-			img.y = -42;
-			img.x = startX - j * 80.5;
-			img.z = 100;
+			let img: any = new Mesh(-42,startX - j * 80.5,100);
 			j++;
 			img.res = "skill/" + skill.icon + ".png";
 			img.name = skill.name;
-			img.cdSpeed = 0;
-			img.time = 0;
 			img.node = node;
 			img.type = "skill_img";
 			img.rayID = skill.id;
@@ -533,15 +502,10 @@ export class handScene {
 		}
 		if (j < 4) {
 			for (let i = j; i < 4; i++) {
-				let img: any = Fight.createMesh(mgr.yszzFight.mesh);
-				img.y = -42;
-				img.x = startX - j * 80;
-				img.z = 100;
+				let img: any = new Mesh(-42,startX - j * 80,100);
 				j++;
 				img.res = "images/skill_lock.png";
 				img.name = "未激活";
-				img.cdSpeed = 0;
-				img.time = 0;
 				img.isClose = true;
 				img.type = "skill_img";
 				img.rayID = -100001;
@@ -553,8 +517,8 @@ export class handScene {
 
 	static getFighters(){
 		let arr = [];
-		for(let e in mapList){
-			if(mapList[e].type != "monster"){
+		for(let e in handScene.mapList){
+			if(handScene.mapList[e].type != "monster"){
 				arr.push(e);
 			}
 		}
@@ -563,8 +527,8 @@ export class handScene {
 
 	static getGroupFighters(){
 		let arr = [];
-		for(let e in mapList){
-			if(mapList[e].groupId == __self.groupId){
+		for(let e in handScene.mapList){
+			if(handScene.mapList[e].groupId == __self.groupId){
 				arr.push(e);
 			}
 		}
@@ -583,7 +547,7 @@ export class handScene {
      * @param {Json}obj 需要更新的节点数据
      */
 	static updateModule(mapId,obj){
-		let f = mapList[mapId];
+		let f = handScene.mapList[mapId];
 		if(!f)return;
 		for(let k in obj){
 			f[k] = obj[k];
@@ -594,8 +558,8 @@ export class handScene {
 	 * @description 渲染空帧
 	 */
 	static emptyFrame(delta){
-		for(let k in pet){
-			let p = pet[k];
+		for(let k in handScene.pet){
+			let p = handScene.pet[k];
 			petMove(p,delta);
 			updatePetPos(p);
 			updateEffectPos();
@@ -608,25 +572,25 @@ export class handScene {
 		let func = (f,type?) => {
 			delete f._show;
 			if (f.sid == id)
-				mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [f.x, f.y, f.z]);
+				mgr.setCameraPos(mgr_data.camera[mgr_data.name], [f.x, f.y, f.z]);
 			f.state = "standby";
 			mgr.create(f, type || f.type);
-			if(f.hidden == true || (type && mapList[f.id].hidden == true)){
-				mgr_data.threeScene[mgr_data.name].modify(f._show.old, ["visible"]);
-			}
+			// if(f.hidden == true || (type && handScene.mapList[f.id].hidden == true)){
+			// 	mgr_data.threeScene[mgr_data.name].modify(f._show.old, ["visible"]);
+			// }
 		}
 		//如果场景没重刷，则需要清楚已经移除的模型
 		if(!reset){
-			for(let k in mapList){
+			for(let k in handScene.mapList){
 				if(!fighters.get(k)){
-					mgr.remove(mapList[k]);
-					delete mapList[k];
+					mgr.remove(handScene.mapList[k]);
+					delete handScene.mapList[k];
 				}
 			}
 		}
 		fighters.forEach(f => {
-			let mf = mapList[f.mapId],
-				mp = pet[f.mapId];
+			let mf = handScene.mapList[f.mapId],
+				mp = handScene.pet[f.mapId];
 			if(mf && reset){
 				func(f);
 			}
@@ -648,18 +612,18 @@ export const updatePet = (pId,_fighter?) => {
 	if(_fighter){
 		fighter = _fighter
 	}else{
-		for(let i in mapList){
-			if(mapList[i].sid == player.role_id){
-				fighter = mapList[i];
+		for(let i in handScene.mapList){
+			if(handScene.mapList[i].sid == player.role_id){
+				fighter = handScene.mapList[i];
 				break;
 			}
 		}
 	}
 	let p = pet_module[pId],
-		cp = pet[fighter.mapId],
+		cp = handScene.pet[fighter.mapId],
 	x = fighter.x,
 	y = fighter.y;
-	if(pet[pId] && pet[pId].module === p.module){
+	if(handScene.pet[pId] && handScene.pet[pId].module === p.module){
 		return;
 	}
 	//删除老的宠物
@@ -669,18 +633,18 @@ export const updatePet = (pId,_fighter?) => {
 		mgr.remove(cp);
 	}
 	
-	pet[fighter.mapId] = Init_Fighter.initPet(cp,p,fighter);
+	handScene.pet[fighter.mapId] = Init_Fighter.initPet(cp,p,fighter);
 	if(!cp){
-		pet[fighter.mapId].name = Common.fromCharCode(pet[fighter.mapId].name);
+		handScene.pet[fighter.mapId].name = Common.fromCharCode(handScene.pet[fighter.mapId].name);
 	}
 	//单独为玄晶兽添加宠物特效
-	if(pet[fighter.mapId].module == 45007){
-		pet[fighter.mapId].pet_eff = "eff_pet_1";
+	if(handScene.pet[fighter.mapId].module == 45007){
+		handScene.pet[fighter.mapId].pet_eff = "eff_pet_1";
 	}
 	//创建模型
-	mgr.create(pet[fighter.mapId], "pet");
+	mgr.create(handScene.pet[fighter.mapId], "pet");
 	if(fighter.hidden == true){
-		mgr_data.threeScene[mgr_data.name].modify(pet[fighter.mapId]._show.old, ["visible"]);
+		mgr_data.threeScene[mgr_data.name].modify(handScene.pet[fighter.mapId]._show.old, ["visible"]);
 	}
 };
 /**
@@ -733,6 +697,14 @@ export const updateSkill = (f, skills, now) => {
 	}
 	f.skill = skillList;
 };
+
+export const refreshClothes = (e,now) => {
+	let f = FMgr.scenes.fighters.get(e.fighter);
+	if(f.clothes == e.clothes)
+		return;
+	f.clothes = e.clothes;
+	initFighterModule(f);
+};
 /**
  * @description 向后台发送战斗指令
  * @param {Json}param {result:{type:"terrain",data:[0,0,0]}} => 移动
@@ -771,6 +743,35 @@ let toCallBack,_limit,
 	},
 	status_net;
 /**
+ * 插入更新头像血条
+ */
+const modifyTargetHead = (fighter,e) => {
+	let target_mark = false;
+	if(fighter.curTarget && (mgr_data.name == "public_boss" || mgr_data.name == "wild" || mgr_data.name == "gang_boss" || (FMgr.scenes && FMgr.scenes.type == "fight"))){
+		if(handScene.mapList[fighter.curTarget] && handScene.mapList[fighter.curTarget].type == "monster" && handScene.mapList[fighter.curTarget].show_type == 1 && handScene.mapList[fighter.curTarget].name.indexOf("宝箱守卫") == -1){			
+			if(cuurUI.length == 0){
+				cuurUI.push({ "param": { head: null, f: e ,mapList:handScene.mapList }, "fun": UiFunTable.targetHead });	
+				target_mark = true;
+				return;
+			}
+			for(var i in cuurUI){
+				if(cuurUI[i]){
+					if(cuurUI[i].fun.name == "targetHead"){
+						target_mark = true;
+						cuurUI[i].param.f =  e;
+						cuurUI[i].param.mapList = handScene.mapList;
+						return;
+					}
+				}
+			}
+			if(!target_mark){
+				cuurUI.push({ "param": { head: null, f: e ,mapList:handScene.mapList }, "fun": UiFunTable.targetHead });
+			}
+		}
+	}
+}
+ 
+/**
  * @description 更新属性
  */
 export const setChangeData = function (before, target,now) {
@@ -782,7 +783,7 @@ export const setChangeData = function (before, target,now) {
 			before[k] = target[k];
 		}
 	}
-	if(before.show_hp<=0 && target.hp != undefined && target.hp>0)before.show_hp = target.hp;
+	// if(before.show_hp<=0 && target.hp != undefined && target.hp>0)before.show_hp = target.hp;
 }
 /**
  * @description 初始化模型时装
@@ -871,14 +872,24 @@ const updateStarEffect = ( f ) => {
 		f.body_eff = body_eff;
 	}
 }
-
-const updateAttr = (f,attr,now?) => {
-	for(let k in attr){
-		if(k == "mapId" || k == "type")
-			continue;
-		f[k] = attr[k];
+/**
+ * 计算两点的直线与y正方向的夹角
+ * @param src 
+ * @param target 
+ */
+const calcRang = (src, target) => {
+	let zero = new THREE.Vector3(0,0,12),a = new THREE.Vector3(target.x-src.x,0,target.y-src.y),r = zero.angleTo(a);
+	// console.log(a,r);
+	if(a.x<0){
+		r = Math.PI*2-r;
 	}
-};
+	r+=Math.PI;
+	// if(r>=Math.PI*2){
+	// 	r-=Math.PI*2;
+	// }
+	// console.log(r,"=========================");
+	return r;
+}
 /**
  * @description 计算距离
  * @param s 源对象
@@ -904,12 +915,12 @@ const limitModify = (target,d?) => {
  * @description 显示或隐藏fighter
  */
 const refreshRand = (b)=>{
-	let fighters = mapList;
+	let fighters = handScene.mapList;
 	for(let i in fighters){
 		if(fighters[i].type == "fighter" && __self && fighters[i].sid !== __self.sid){
 			fighters[i].hidden = b;
 			mgr.modify(fighters[i]);
-			pet[fighters[i].mapId] && mgr.modify(pet[fighters[i].mapId]);
+			handScene.pet[fighters[i].mapId] && mgr.modify(handScene.pet[fighters[i].mapId]);
 		}
 	}
 }
@@ -926,7 +937,7 @@ const getSkillIndex = function(skillList,id){
  */
 const getSkillAction = (e) => {
 	let __cfg = pi_cfg.robot,
-		f = mapList[e.fighter],
+		f = handScene.mapList[e.fighter],
 		_during,
 		skill_action;
 	//获取配置信息
@@ -946,7 +957,7 @@ const getSkillAction = (e) => {
 const petMove = (p,delta) => {
 	let n = 1.5,//靠近玩家的距离，停止移动
 		m = 2.5,//开始移动距离，与玩家达到此距离开始移动
-		f = mapList[p.id],
+		f = handScene.mapList[p.id],
 		during = delta/50,
 		dd = calcDst(p,f),
 		near = dd<=n,
@@ -984,9 +995,10 @@ const petMove = (p,delta) => {
 	}else{
 		p.state = "standby";
 	}
-		
+	p.playAnim = {"name" : cfg[p.type][p.module][p.state],"isOnce" : p.state == "standby"? true : false }
+	mgr.setAnimator(p);
 	// mgr.modify(p);
-	mgr.setPos(p, [p.x, p.y, 0], p.lookat, cfg[p.type][p.module][p.state]);
+	mgr.setPos(p, [p.x, p.y, 0], p.lookat);
 };
 /**
  * @description 更新宠物pos动作
@@ -998,11 +1010,13 @@ const updatePetPos = (p) => {
 		p.poseTime = t;
 	if(t-p.poseTime > 1600 && p.state == poseState){
 		p.state = "standby";
-		mgr.setAnimator(p,cfg[p.type][p.module][p.state],false);
+		p.playAnim = {"name" : cfg[p.type][p.module][p.state],"isOnce":true}
+		mgr.setAnimator(p);
 	}else if(t-p.poseTime > 10000 && p.state == "standby"){
 		p.state = "pose";
 		p.poseTime = t;
-		mgr.setAnimator(p,cfg[p.type][p.module][p.state],false);
+		p.playAnim = {"name" : cfg[p.type][p.module][p.state],"isOnce":false}
+		mgr.setAnimator(p);
 	}
 }
 /**
@@ -1031,8 +1045,14 @@ const skillEffect = (f,skill,time) => {
 	};
 	func(f,skill,time);
 	if(skill.backSkill){
+		
 		for(let i=0,len = skill.backSkill.length;i<len;i++){
-			let s = f.skill[getSkillIndex(f.skill,skill.backSkill[i])];
+			let index = getSkillIndex(f.skill,skill.backSkill[i])
+			let s = f.skill[index];
+
+			if (s.shake && id == f.sid) {
+				cuurUI.push({"param": {fighter:f,skill:s,index:index,time:time + skill.actionTime + s.shakeTime},"fun": UiFunTable.shakeEffect});
+			}
 			time += s.actionTime;
 			func(f,s,time);
 		}
@@ -1054,33 +1074,84 @@ const cDd = (t,p) => {
  * @param n 
  */
 const setCamera = (c,f,s,n) => {
-    let d = cDd({x:c[0],y:c[2]},{x:f[0],y:f[2]}),r;
+    // let d = cDd({x:c[0],y:c[2]},{x:f[0],y:f[2]}),r;
     return [f[0],f[2],0];
 };
-/**
- * @description 场景modify
- */
-class MCrontal {
-	static add (mesh){
-		if(mesh.modify === undefined){
-			mesh.modify = 0;
-		}else if(mesh.modify > 0){
-			return;
-		}
-		mesh.modify += 1;
-		task(objCall, [MCrontal,"modify", [mesh]], 60000, 1);
-		if(mesh.modify > 1){
-			alert(`repeat add mesh modify event~`);
-		}
+//相机旋转
+const rotateCamera = () => {
+	let DELAY = 300,
+		perRotate = Math.PI/400,
+		camera = mgr_data.camera[mgr_data.name];
+	
+	if(!camera || mgr_data.name !== "wild" || (FMgr.scenes && FMgr.scenes.type == "fight")) return;
+
+	let	rotate = camera.rotate[1],
+		diff = camera.fixto-rotate,
+		dtime,
+		func = () => {
+			if(camera.rotate[1]>=Math.PI*2){
+				camera.rotate[1]-=Math.PI*2;
+			}
+			if(camera.rotate[1]<0){
+				camera.rotate[1]+=Math.PI*2;
+			}
+			camera.time = Date.now()+10000000;
+			camera.fixing = false;
+		};
+	if(!__self){
+		return;
 	}
-	static modify (mesh){
-		mgr.modify(mesh);
-		mesh.modify -= 1;
-	}	
+	// console.log(__self.moving,__self.state);
+	if(__self.moving === 0 || diff == 0){
+		func();
+		camera.fixto = camera.rotate[1];
+		return;
+	}else if(__self.moving > 0 && !camera.fixing){
+		camera.time = Date.now()+DELAY;
+		camera.fixing = true;
+		return;
+	}
+	dtime = Date.now() - camera.time;
+	if(dtime <= 0){
+		return;
+	}
+	camera.time = Date.now();
+	perRotate *= (dtime/16);
+	let per,
+		abs = Math.abs(diff),
+		mark = abs/diff;
+	if(abs>Math.PI){
+		camera.rotate[1] +=  mark*2*Math.PI;
+		rotate = camera.rotate[1];
+		diff = camera.fixto-rotate;
+	}
+	per = diff/perRotate;
+	abs = Math.abs(per);
+	mark = per/abs;
+	per = abs<=1?diff:(perRotate*mark);
+	mgr.setRotate(camera,[0,rotate+per,0]);
+	camera.rotate[1] = rotate+per;
+	if(abs<=1){
+		func();
+	}
+}
+/**
+ * @description 全局帧回调
+ */
+const permanent = ()=>{
+	rotateCamera();
+	// let t = Date.now();
+	// handScene.cach.list.forEach((v, j) => {
+	// 	for(let i = 0, len = v.length; i < len; i++){
+	// 		if (t - v[i].time > 10000) {
+	// 			v.splice(i, 1);
+	// 			i--;
+	// 			len--;
+	// 		}
+	// 	}
+	// });
 }
 // ================================= 立即执行
-setShow(handScene);
-setList(mapList);
 setShieldBack("fighter",refreshRand);
 (renderHandlerList as any).add((msg)=>{
     if(msg.type !== "before"){
@@ -1088,3 +1159,4 @@ setShieldBack("fighter",refreshRand);
 	}
 	handScene.emptyFrame(msg.delta*1000);
 });
+getGlobal().setPermanent(permanent);

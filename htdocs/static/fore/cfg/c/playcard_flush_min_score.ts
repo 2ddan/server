@@ -1,3 +1,3 @@
-export const flush_min_score =35000;
+export const flush_min_score =30000;
 
 

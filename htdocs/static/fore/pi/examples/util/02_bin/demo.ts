@@ -1,12 +1,13 @@
-
-import { Widget } from "../../../widget/widget";
-import { Forelet } from "../../../widget/forelet";
-import { HandlerResult } from "../../../util/event";
-
-
+/**
+ * 
+ */
+import { HandlerResult } from '../../../util/event';
+import { Forelet } from '../../../widget/forelet';
+import { Widget } from '../../../widget/widget';
 
 export const forelet = new Forelet();
-forelet.addHandler("ok", (text): HandlerResult => {
+forelet.addHandler('ok', (text): HandlerResult => {
 	forelet.paint(text);
+	
 	return HandlerResult.BREAK_OK;
 });

@@ -1,23 +1,26 @@
-import {Widget} from "../../../widget/widget";
+/**
+ * 
+ */
+import { Spine } from '../../../render3d/spine';
+import { Widget } from '../../../widget/widget';
 
-interface Props{
-    id:string;
-    name:string;
+interface Props {
+	id:string;
+	name:string;
 }
 
-export class Attr extends Widget{
-    constructor(){
-        super();
-        this.props = {
-            id:"1",
-            name:"tangmin"
-        }
-    }
-    attach(){
-        setTimeout(()=>{
-            this.props.id = "2";
-            this.paint();
-        }, 3000);
-    }
+export class Attr extends Widget {
+	constructor() {
+		super();
+		this.props = {
+			id:'1',
+			name:'tangmin'
+		};
+	}
+	public attach() {
+		setTimeout(() => {
+			this.props.id = '2';
+			this.paint();
+		}, 3000);
+	}
 }
-

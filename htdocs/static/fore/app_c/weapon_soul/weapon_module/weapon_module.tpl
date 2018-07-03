@@ -1,10 +1,21 @@
 <div style="position:absolute;width:494px;height:487px;">
+    {{let module = ""}}
+    {{let module_id = 0}}
     {{let equip = it1.equip}}
     {{let obj = it1.weapon_soul_base[it1.class]}}
-    {{let index = obj.career_id.indexOf(it1.career_id)}}
-    {{let module_id = equip.module[equip.career_id.indexOf(it1.career_id)][1]}}
-    {{%%模型}}
-    {{let module = it1.parts_cfg[module_id].module[0][0]}}	
+    {{let index = 0}}
+
+    {{%%如果穿戴了时装}}
+    {{if it1.wear_skin}}
+        {{:index = it1.clothes_module[it1.wear_skin].career_id.indexOf(it1.career_id)}}
+        {{:module_id = it1.clothes_module[it1.wear_skin].module[index]}}
+        {{:module = it1.module_cfg[module_id].init_weapon[0][0]}}
+    {{else}}
+        {{:index = obj.career_id.indexOf(it1.career_id)}}
+        {{:module_id = equip.module[equip.career_id.indexOf(it1.career_id)][1]}}
+        {{:module = it1.parts_cfg[module_id].module[0][0]}}
+    {{end}}
+
     {{%%特效}}
     {{let w_eff = it.effect[index] || obj.effect[index]}}
     {{let double = it1.career_id == "700002" ? true : false}}

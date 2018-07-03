@@ -1,4 +1,8 @@
 {{let Pi = _get("app/mod/pi").exports.Pi}}
+{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
+{{let appCfg = _get("app/mod/db").exports.data}}
+{{let career_id = appCfg.player.career_id}}
+
 <div style="width:448px;height:127px;position:relative;display:flex;align-items:center;margin:0 0 10px 21px;">
     <app_a-widget-img_stitch-stitch style="position: absolute;width: 448px;height: 127px;">
         {"type":2,"height":20,"width":30}
@@ -11,11 +15,12 @@
     <div data-desc="奖励" style="position: absolute;top:44px;left:16px;height:60px;width:260px;">
         {{for i, n of it.prop}}
         {{let prop_id = (n[0] == "money" ? 100001 : (n[0] == "diamond" ? 100002 : n[0]))}}
-        {{let p = Pi.sample[prop_id]}}
-        {{let url = Pi.pictures[p.icon]}}
+        {{let prop = Pi.sample[prop_id]}}
+        {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
+        {{let url = Pi.pictures[icon]}}
         <div style="position:relative;width:60px;height:60px;margin:0px 5px;display:inline-block;color:#ffffff;font-family:mnjsh;">
-            <widget w-tag="app_a-widget-prop-base" on-tap="propInfoShow({{p.sid || p.id}})">
-                {"width":60,"height":60,"prop":{{p}} ,"url":{{url}},"count":{{n[1]}},"hidden_name":1,"top":22,"right":6,"effect":{{n[2] ? 1 : 0}}} 
+            <widget w-tag="app_a-widget-prop-base" on-tap="propInfoShow({{prop.sid || prop.id}})">
+                {"width":60,"height":60,"prop":{{prop}} ,"url":{{url}},"count":{{n[1]}},"hidden_name":1,"top":22,"right":6,"effect":{{prop.effect}}} 
             </widget>
         </div>
         {{end}}							

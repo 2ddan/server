@@ -3,7 +3,8 @@ import { Request } from "fight/a/request";
 import { sceneNaves } from "./main";
 import * as fight_scene from "./fight_scene";
 import * as wildMap from "fight/b/common/wild_map_cfg";
-    
+import * as publicboss_add from "cfg/c/publicboss_add";
+
 // =========================================== 导出
 //执行战斗
 export const loop = function (fightScene) {
@@ -30,7 +31,8 @@ export const createScene = function (data) {
     //刷怪
     createMonster(fightScene, bossInfo[0], bossInfo[1], data.extra);
     fightScene.setNavMesh(sceneNaves[data.extra.scene_id]);
-    Request.insert(f,fightScene);
+    Request.insert(f, fightScene);
+    updateAttrRate(fightScene);
     return fightScene;
 };
 
@@ -43,6 +45,22 @@ export const createFight = function (data) {
     f.status = 0;
     return f;
 }
+
+// 更新属性加成
+export const updateAttrRate = function (scene, ID?) {
+    var obj = fight_scene.calcFighterCount(scene, ID),
+        addBuff = publicboss_add.publicboss_add[obj.count];
+    for (var i = 0; i < obj.list.length; i++) {
+        var f = obj.list[i],
+            attr = f.A;
+        for (var j = 0; j < addBuff.length; j++) {
+            var attrName = addBuff[j][0];
+            var val = attr[attrName];
+            f[attrName + "Count"] = val + addBuff[j][1];
+        }
+    }
+}
+
 // =========================================== 本地
 var INTERVAL = 1000;
 //创建boss
@@ -58,5 +76,7 @@ function createMonster(scene, id, level, data) {
     monster.groupId = 0;
     monster.hp = hp;
     monster.show_type = 1;
-    Request.insert(monster,scene);
+    Request.insert(monster, scene);
 }
+
+

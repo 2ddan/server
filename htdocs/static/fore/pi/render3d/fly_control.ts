@@ -1,43 +1,46 @@
-import { THREE } from "./three"
+/**
+ * 
+ */
+import { THREE } from './three';
 
 export interface Dimension {
 	size: [number, number];
 	offset: [number, number];
-};
+}
 
 export class FlyControl {
 
-	dimension: Dimension;
-	target: any;
+	public dimension: Dimension;
+	public target: any;
 
-	movementSpeed: number;
-	rollSpeed: number;
+	public movementSpeed: number;
+	public rollSpeed: number;
 
-	tmpQuaternion: THREE.Quaternion;
+	public tmpQuaternion: THREE.Quaternion;
 
-	state: any;
-	
-	moveVector: THREE.Vector3;
-	rotationVector: THREE.Vector3;
+	public state: any;
 
-	lastMouseX: number;
-	lastMouseY: number;
+	public moveVector: THREE.Vector3;
+	public rotationVector: THREE.Vector3;
 
-	constructor(target: any, movementSpeed = 80.0, rollSpeed = 0.1, dimension: Dimension = {size: [1, 1], offset: [0, 0]}) {
-		
+	public lastMouseX: number;
+	public lastMouseY: number;
+
+	constructor(target: any, movementSpeed: number = 80.0, rollSpeed: number = 0.1, dimension: Dimension = { size: [1, 1], offset: [0, 0] }) {
+
 		this.target = target;
 		this.dimension = dimension;
-		
+
 		this.movementSpeed = movementSpeed;
 		this.rollSpeed = rollSpeed;
 
 		this.tmpQuaternion = new THREE.Quaternion();
-		
+
 		this.state = {
 			x: 0,  // 左右
 			y: 0,  // 上下
 			z: 0,  // 前后
-			rx: 0, 
+			rx: 0,
 			ry: 0
 		};
 
@@ -45,31 +48,32 @@ export class FlyControl {
 		this.rotationVector = new THREE.Vector3(0, 0, 0);
 	}
 
-	setRollSpeed(rollSpeed){
+	public setRollSpeed(rollSpeed: number) {
 		this.rollSpeed = rollSpeed;
-	};
+	}
 
-	setMovementSpeed(movementSpeed){
+	public setMovementSpeed(movementSpeed: number) {
 		this.movementSpeed = movementSpeed;
-	};
+	}
 
-	onMouseLDown(event) {
+	public onMouseLDown(event: any) {
 		if (event.which === 1) {
 			this.updateLastPos(event.clientX, event.clientY);
 		}
 	}
 
-	onMouseMDown(event) {
+	public onMouseMDown(event: any) {
 		if (event.which === 2) {
 			this.updateLastPos(event.clientX, event.clientY);
 		}
 	}
 
-	onMouseLMove(event) {
-		if(event.which !== 1)
+	public onMouseLMove(event: any) {
+		if (event.which !== 1) {
 			return;
-		let xc = event.clientX - this.lastMouseX;
-		let yc = event.clientY - this.lastMouseY;
+		}
+		const xc = event.clientX - this.lastMouseX;
+		const yc = event.clientY - this.lastMouseY;
 		this.state.ry = xc;
 		this.state.rx = yc;
 
@@ -78,13 +82,13 @@ export class FlyControl {
 		this.restoreState();
 	}
 
-	onMouseMMove(event) {
+	public onMouseMMove(event: any) {
 		if (event.which !== 2) {
 			return;
 		}
 
-		let xc = event.clientX - this.lastMouseX;
-    	let yc = event.clientY - this.lastMouseY;
+		const xc = event.clientX - this.lastMouseX;
+		const yc = event.clientY - this.lastMouseY;
 
 		this.state.x = xc;
 		this.state.y = yc;
@@ -94,8 +98,8 @@ export class FlyControl {
 		this.restoreState();
 	}
 
-	onMouseWheel(event) {
-		let dy = event.deltaY;
+	public onMouseWheel(event: any) {
+		const dy = event.deltaY;
 
 		this.state.z = dy;
 
@@ -104,9 +108,9 @@ export class FlyControl {
 		this.restoreState();
 	}
 
-	update(delta = 0.02) {
-		var moveMult = delta * this.movementSpeed;
-		var rotMult = delta * this.rollSpeed;
+	public update(delta: number = 0.02) {
+		const moveMult = delta * this.movementSpeed;
+		const rotMult = delta * this.rollSpeed;
 
 		this.target.translateX(-this.state.x * moveMult);
 		this.target.translateY(this.state.y * moveMult);
@@ -114,21 +118,21 @@ export class FlyControl {
 
 		this.target.rotation._x += this.state.rx * rotMult;
 		this.target.rotation._y += this.state.ry * rotMult;
-		//this.target.rotation._z += this.state.z * rotMult;
+		// this.target.rotation._z += this.state.z * rotMult;
 
 		this.target.quaternion.setFromEuler(this.target.rotation);
 	}
 
-	updateLastPos(x: number, y: number) {
+	public updateLastPos(x: number, y: number) {
 		this.lastMouseX = x;
 		this.lastMouseY = y;
 	}
 
-	restoreState() {
+	public restoreState() {
 		this.state.x = 0;
 		this.state.y = 0;
 		this.state.z = 0;
 		this.state.rx = 0;
 		this.state.ry = 0;
 	}
-};
+}

@@ -70,7 +70,7 @@ table[51]={
 "level_limit":1,
 "time_type":"server",
 "care":[60041],
-"open_date":1,"close_date":7,"delay_date":7,
+"open_date":11,"close_date":17,"delay_date":17,
 "img":"recharge_all"
 }
 table[101]={
@@ -79,7 +79,7 @@ table[101]={
 "level_limit":1,
 "time_type":"date",
 "care":[60134],
-"open_date":1477670400000,"close_date":1482249599000,"delay_date":1482249599000,
+"open_date":1527436800000,"close_date":1527695999000,"delay_date":1527695999000,
 "img":"menu_gemGest_icon"
 }
 table[102]={
@@ -88,7 +88,7 @@ table[102]={
 "level_limit":1,
 "time_type":"date",
 "care":[60135],
-"open_date":1477670400000,"close_date":1482249599000,"delay_date":1482249599000,
+"open_date":1527436800000,"close_date":1527695999000,"delay_date":1527695999000,
 "img":"menu_fanpai_icon"
 }
 table[103]={
@@ -439,7 +439,7 @@ table[3001]={
 "level_limit":1,
 "time_type":"server",
 "care":[60114],
-"open_date":8,"close_date":14,"delay_date":14,
+"open_date":1,"close_date":7,"delay_date":7,
 "img":"menu_loginAward_icon"
 }
 table[3002]={

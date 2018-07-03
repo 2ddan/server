@@ -11,19 +11,19 @@ import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { open, close } from "app/mod/root";
 import { parts_cfg } from "app/scene/plan_cfg/parts_config";
-import { resetcanvas, setResetListener } from "app/scene/base/scene";
+import { resetcanvas } from "app/scene/base/scene";
 import { mgr } from "app/scene/scene";
 import { Music } from "app/mod/music";
-import { openUiEffect, effectcallback, destoryUiEffect } from "app/scene/anim/scene";
+import { openUiEffect, effectcallback } from "app/scene/anim/scene";
 import { funIsOpen } from "app_b/open_fun/open_fun";
-
+import { module_cfg } from "app/scene/plan_cfg/module_config";
 /**
  * 配置数据
  */
 import { weapon_soul_base } from "cfg/c/weapon_soul_base";
 import { weapon_soul_grade } from "cfg/c/weapon_soul_grade";
 import { attribute_config } from "cfg/c/attribute_config";
-
+import { clothes_module } from "cfg/b/clothes_module";
 
 
 
@@ -87,6 +87,7 @@ export let eff = {
 
 
 const getData = function () {
+    weapon_data.module_cfg = module_cfg;
     weapon_data.weapon_soul_base = weapon_soul_base;
     weapon_data.weapon_soul_grade = weapon_soul_grade;
     weapon_data.attribute_config = attribute_config; parts_cfg
@@ -108,6 +109,9 @@ const getData = function () {
     weapon_data.eff_index = eff_index;
     weapon_data.is_break = is_break;
     weapon_data.is_full = is_full;
+
+    weapon_data.clothes_module = clothes_module;
+    weapon_data.wear_skin = getDB("cloth.wear_skin") || 0;
 
     return weapon_data
 }

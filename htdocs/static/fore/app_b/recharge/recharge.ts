@@ -1,18 +1,16 @@
 //导入模块
 import { listenBack } from "app/mod/db_back";
-import { net_request, net_message } from "app_a/connect/main";
-import { data as localDB, updata, get as getDB, listen, insert } from "app/mod/db";
+import { net_request } from "app_a/connect/main";
+import {  updata, get as getDB, listen, insert } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { Forelet } from "pi/widget/forelet";
-import { Util } from "app/mod/util";
 import { open,close } from "app/mod/root";
 import { Widget } from "pi/widget/widget";
 import { Pi, globalSend } from "app/mod/pi";
 
 import { pay } from "./pay"
-//导入配置
-import { vip_advantage } from "cfg/c/vip_advantage";
+
 //购买周卡，月卡
 import { vipcard } from "cfg/c/recharge_buy_robolet";
 //购买元宝
@@ -26,11 +24,7 @@ insert("recharge", {
     "first_pay_gift_state":[]
 });
 
-let tab = "vipcard",//currency || vipcard
-    cardPrefix = ["month_card", "annual_card"],
-    conect: any = {},
-    args,
-    callbackFun,
+let callbackFun,
     detail = [false,false];//是否显示详情
 
 const getData = () => {
@@ -41,6 +35,7 @@ const getData = () => {
     _data.vip_level = getDB("player.vip");
     _data.vip_exp = getDB("player.vip_exp");
     _data.detail = detail;
+    _data.Pi = Pi;
     _data.vipcard = vipcard;
     _data.vipUpNeed = recharge_vip_upgrade[_data.vip_level].exp;
     _data.card = [ _data.player.annual_card_due_time,_data.player.month_card_due_time];//周卡，月卡
@@ -48,7 +43,7 @@ const getData = () => {
 };
 
 export const globalReceive: any = {
-    gotoRecharge: (arg) => {
+    gotoRecharge: () => {
         let w = forelet.getWidget("app_b-recharge-recharge");
         if(w){
             return;
@@ -85,22 +80,15 @@ export class recharge extends Widget {
     };
  
     buy_currency = (arg) => {
-        args = arg;
-        let //data: any = {},
-            _player = getDB("player"),
-            _item = currency[arg],
+        let _item = currency[arg],
             money = _item.price;
-        // data.money = _item.price;
-        // data.type = _item.prop_id;
-        // data.describe = _item;   //描述
-        // data.propCount = 1;   //数量
+        
 
         if ((getDB("player.rmb") - money) >= 0) {
             buyDiamond(arg);
         } else {
-            //globalSend("screenTipFun", { words: `您的RMB不足,请充值` });
             //直接调用充值
-            pay(_item.prop_id,_item.prop_id,1);
+            pay(_item.prop_id, "recharge", 1);
         }
     };
 
@@ -114,6 +102,9 @@ listen("player.vip_exp",() => {
     forelet.paint(getData());
 });
 
+listen("recharge.first_recharge", () => {
+    forelet.paint(getData());
+})
 
 
 //购买元宝通讯

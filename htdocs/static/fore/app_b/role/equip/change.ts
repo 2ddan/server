@@ -1,10 +1,8 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { notify } from "pi/widget/event";
-import { open,destory } from "pi/ui/root";
-import {  close,piOpen,piClose } from "app/mod/root";
-import { updata, get as getDB, listen, insert } from "app/mod/db";
-import { Pi, globalSend,cfg } from "app/mod/pi";
+import { open, close } from "app/mod/root";
+import { get as getDB } from "app/mod/db";
+import { Pi } from "app/mod/pi";
 import { attribute_config } from "cfg/c/attribute_config"; //属性
 import { replaceEquip } from "app_b/role/equip/equip";
 let P_equip = []; //玩家穿戴所有装备
@@ -19,7 +17,7 @@ export const globalReceive :any = {
   	"equipChange" : (msg) => {
         type = msg.type;
         initData(msg);
-        piOpen("app_b-role-equip-change",getPopupsBagHtmlData());
+        open("app_b-role-equip-change",getPopupsBagHtmlData());
     }
 }
 export class Change extends Widget {
@@ -27,13 +25,13 @@ export class Change extends Widget {
         ((w)=>{
 			//循环外调用
             setTimeout(()=>{
-                piClose(w);
+                close(w);
             },0);
 		})(this);
     }
     change = (ang) =>{
         replaceEquip(ang,() => {
-            piClose(forelet.getWidget("app_b-role-equip-change"));
+            close(forelet.getWidget("app_b-role-equip-change"));
         });
     }
 }

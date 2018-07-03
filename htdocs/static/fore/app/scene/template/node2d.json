@@ -25,23 +25,26 @@
         "horizontalAlign":"left",
         "verticalAlign":"top"
     }
-    {{if it.quality}},
     "children":[
+        {{it.quality ? 
         {
             "type" : "prefab",
             "tpl":"skill_image",
             "height":44,
             "width":44,
-            "image":"images/prop_border_{{it.quality}}.png",
+            "image":"images/prop_border_"+it.quality+".png",
             "position":[0, 0, 0]
-        },{
+        }
+        : null}},
+        {{it.quality ? 
+        {
             "type" : "prefab",
             "tpl":"skill_image",
             "height":44,
             "width":44,
-            "image":"images/prop_bg_{{it.quality}}.png",
+            "image":"images/prop_bg_"+it.quality+".png",
             "position":[0, 0, 0]
         }
+        : null}}
     ]
-    {{end}}
 }

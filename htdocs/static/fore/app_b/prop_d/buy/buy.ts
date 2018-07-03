@@ -1,8 +1,8 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { open, close } from "app/mod/root";
-import { globalSend, Pi } from "app/mod/pi";
-import { data as db, updata, get as getDB, insert, listen } from "app/mod/db";
+import { open} from "app/mod/root";
+import {  Pi } from "app/mod/pi";
+import {  get as getDB} from "app/mod/db";
 
 
 export const forelet = new Forelet();

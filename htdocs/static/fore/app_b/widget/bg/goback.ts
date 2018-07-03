@@ -1,10 +1,11 @@
 
 import { Widget } from "pi/widget/widget";
-import { Forelet } from "pi/widget/forelet";
 
 import { close } from "app/mod/root";
+import { globalSend } from "app/mod/pi";
 export class Goback extends Widget {
     goback(e) {
-			close(e.widget);
+		close(e.widget);
+		globalSend("secondaryClose");
 	}
 }

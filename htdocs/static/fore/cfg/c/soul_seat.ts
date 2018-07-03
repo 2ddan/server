@@ -10,7 +10,7 @@ tab.push({
 tab.push({
     "id": 2,
     "name": "灵逸",
-    "open_level": "80",
+    "open_level": "60",
     "hole": [3,4,5,6]
 })
 

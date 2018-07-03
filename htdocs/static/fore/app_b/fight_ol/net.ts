@@ -8,8 +8,6 @@ import { EType } from "fight/a/analyze"
 //app
 import { net_request } from "app_a/connect/main";
 
-import { handScene } from "./handscene";
-
 // ========================================= 导出
 export const Net = {};
 

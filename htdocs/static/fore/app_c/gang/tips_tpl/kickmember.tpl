@@ -10,11 +10,8 @@
         
         {{let img = ''}}
         {{let post = v.post==1?"会长":(v.post==2?"副会长":"成员")}}
-        {{if v.head && v.head.indexOf("undefined") < 0}}
-        {{: img = v.head}}
-        {{else}}
-        {{: img = (Pi.pictures['playerhead'+v.career_id])}}
-        {{end}}
+
+        {{: img = (Pi.pictures['playerhead'+(v.head || v.career_id)])}}
         <div w-class="7" w-sid="7">
             <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">{"icon":"tips_top"} 
             </widget>
@@ -52,7 +49,7 @@
         </div>
         
         <div  w-class="19" w-sid="19">是否将该玩家请离门派?</div>
-        <widget on-tap="KickMember" w-class="20" w-tag="app_a-widget-btn-rect" w-sid="20">
+        <widget on-tap="sureKickMember" w-class="20" w-tag="app_a-widget-btn-rect" w-sid="20">
             {"class":"default","fontsize":18,"color":"","text":"请离门派","width":84,"height":32} 
         </widget>	
         <widget w-class="15" w-tag="app_a-widget-pic_other-pic_other" w-sid="15">{"icon":"tips_bottom"} 

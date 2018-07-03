@@ -1,0 +1,7 @@
+{
+    "tpl":"./revenge_tips.tpl",
+    "cfg":"./revenge_tips.cfg",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts",
+    "css":"./revenge_tips.wcss"
+}

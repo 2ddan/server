@@ -3,13 +3,12 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 
 //app
-import { data as localDB, updata, get as getDB, listen, checkTypeof } from "app/mod/db";
-import { Pi, globalSend, cfg } from "app/mod/pi";
+import { get as getDB} from "app/mod/db";
+import { globalSend} from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { function_open } from "cfg/b/function_open";
 import { menu_explore } from "cfg/b/menu_explore";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
-import { funIsOpen } from "app_b/open_fun/open_fun";
 
 
 // =========================== 导出

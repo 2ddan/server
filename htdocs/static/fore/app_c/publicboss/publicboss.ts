@@ -1,44 +1,46 @@
 // widget
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
+import * as root from "pi/ui/root";
 // mod
 import { open,close,piClose,piOpen } from "app/mod/root";
-import { Pi,globalSend,cfg} from "app/mod/pi";
+import { Pi,globalSend} from "app/mod/pi";
 import * as piSample from "app/mod/sample";
 import { updata, get as getDB, listen, checkTypeof,insert } from "app/mod/db";
-import { listenBack } from "app/mod/db_back";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { Util } from "app/mod/util";
 
-import { UiFunTable, initValue,getEffectId } from "app/scene/ui_fun";
+import { UiFunTable, initValue, getEffectId } from "app/scene/ui_fun";
 import { mgr_data, mgr } from "app/scene/scene";
-import { setClickCallback, initAnimFinishCB } from "app/scene/base/scene";
-import { map_cfg } from "app/scene/plan_cfg/map";
-import { Move, setCache, setFrame, frame } from "app/scene/move";
+import { initAnimFinishCB } from "app/scene/base/scene";
+import { Move } from "app/scene/move";
 
-import { mapList, initMapList, handScene, change_status,olFightOrder} from "app_b/fight_ol/handscene";
+import { olFightOrder } from "app_b/fight_ol/handscene";
 
-import { analyseFighter, analyseData } from "fight/a/fore/node_fight";
+import { analyseFighter } from "fight/a/fore/node_fight";
 import { Fight_common } from "fight/a/fore/fight_common";
+import { FMgr } from "fight/a/fight";
 
-import { exitWild,intoWild } from "app_b/wild/wild"
 
 import { showNewRes } from "app_b/bag/bag";
 
+import { SMgr } from "app_b/fight_ol/same";
+
 // 通讯
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request, net_message } from "app_a/connect/main";
 // 功能相关配置文件
 import { publicboss_base } from "cfg/c/publicboss_base";
 import { publicboss_award } from "cfg/c/publicboss_award";
 import { publicboss_config } from "cfg/c/publicboss_config";
+import { publicboss_add } from "cfg/c/publicboss_add";
+import { attribute_config } from "cfg/c/attribute_config";
 import { monster_attribute } from "fight/b/common/monster_attribute";
 import { monster_base } from "fight/b/common/monsterBase";
 
 export const forelet : any = new Forelet();
 
 let initData : any ;
-let fight_r = {"fightEvents": [], now: 0};
 let fm; //切换场景位置
 let boss_base = new Array(); //保存boss的基础信息(总血量,名称)
 let award_info ; //奖励详情
@@ -71,9 +73,12 @@ let award_tip : any = {}; //页面红点提示
 export const globalReceive : any = {
     // 打开荒野降魔主界面
     "gotoPublicBoss" : () => {
-        cur = 0;
-        forelet.paint(getData());
-        open("app_c-publicboss-main");
+        // if (funIsOpen("public_boss")) {
+            cur = 0;
+            forelet.paint(getData());
+            open("app_c-publicboss-main");
+            globalSend("openNewFun", "public_boss");
+        // }
     },
     "publicBossLine" : (arg) => {
         let lineFlag = getDB("publicboss.lineFlag");
@@ -133,6 +138,8 @@ const getData = () => {
     data.player = getDB("player");
     data.boss_base = boss_base;
     data.publicboss_cfg = publicboss_config;
+    data.damageAdd = damageAdd;
+    data.attribute_config = attribute_config;
     data.award_info = award_info;
     data.map = map;
     data.end_time = end_time;
@@ -155,7 +162,10 @@ export class publicboss extends Widget {
     goback = (arg) => {
         close(arg.widget);
     }
-
+    //查看组队伤害加成
+    seeDamage = ()=>{
+        globalSend("peopleNumTips",publicboss_add);
+    }
     //tab切换按钮
     // changeColumns = (msg) => {
         // if(tab_type == msg.type_m) return;
@@ -254,9 +264,26 @@ export class publicboss extends Widget {
         // open("app_c-publicboss-fight-fight_award");
     }
 
-    // 退出战斗
+    // 退出战斗(倒计时到了退出战斗)
     exitFight = (arg) => {
         exitFight(arg);
+    }
+
+    //退出 (手动退出战斗)
+    gobackfight = (arg) => {
+        globalSend("popTip", {
+            title: `是否退出战斗？`,
+            type: "",
+            btn_name: ["确 定", "取消"],
+            cb: [
+                //确认
+                () => {
+                    exitFight(arg);
+                },
+                //取消
+                () => { }
+            ]
+        });
     }
 
     //击杀记录界面
@@ -277,7 +304,7 @@ export class publicboss extends Widget {
             create_node_flag = 1;
         }
         removeNode();
-        rank_type = "big";
+        // rank_type = "big";
         globalSend("intoWild");
     }
     
@@ -415,11 +442,14 @@ export class publicboss extends Widget {
 
     //战斗场景中的排行排收起和展开状态控制
     showRankInfo = () => {
+        //先remove在create为暂时解决方法,不支持该方法(底层BUG有待修复);修复之后直接modify
+        mgr.remove(node_list["rank_num"]);
+
         rank_type = rank_type == "big" ? "small" : "big";
         node_list["rank_num"].image = "images/"+rank_type+"_rank_bg.png";
-        node_list["rank_num"].imgWidth = rank_type == "big" ? 310 : 310;
-        node_list["rank_num"].imgHeight = rank_type == "big" ? 650 : 163;
-        mgr.modify(node_list["rank_num"]);
+        node_list["rank_num"].imgWidth = (rank_type == "big" ? 310 : 310 ) * (mgr_data.scale * (2/2.7) + 0.11);
+        node_list["rank_num"].imgHeight = (rank_type == "big" ? 650 : 163) * (mgr_data.scale * (2/2.7) + 0.11);
+        mgr.create(node_list["rank_num"],"node2d");
     }
 
     //物品详情
@@ -427,7 +457,18 @@ export class publicboss extends Widget {
         globalSend("showOtherInfo", id);
     } 
 }
-
+//加算伤害加成
+const damageAdd = (arg)=>{
+    if(arg == 0){
+        return false;
+    }
+    if(publicboss_add[arg] !== undefined){
+        return publicboss_add[arg];
+    }else{
+        let r = Object.keys(publicboss_add).pop();
+        return publicboss_add[r];
+    }
+}
 //打开排队界面
 const openLineUp = (arg) => {
     if(total_count <= 0){
@@ -493,41 +534,43 @@ const chanllengeBoss = (arg?) => {
 
 // 处理场景上的2D节点
 const nub_node = () => {
+    let _width = root.getWidth() * mgr_data.scale;
+    let _height = root.getHeight() * mgr_data.scale;
     let player = getDB("player.name");
     //我的输出节点
     node_list["my_damage"] = {} ;
-    node_list["my_damage"].x = 270;
-    node_list["my_damage"].y = -460;
+    node_list["my_damage"].x = _width * (20 / 76) + 43.9474;
+    node_list["my_damage"].y = _height * (40 / 98 * (0 - 1)) + 87.6735;
     node_list["my_damage"].z = 5;
     node_list["my_damage"].attachment = "2D",
     //背景图
     node_list["my_damage"].image = "images/my_rank.png";
     //宽高
-    node_list["my_damage"].imgWidth = 600;
-    node_list["my_damage"].imgHeight = 100;
+    node_list["my_damage"].imgWidth = 600 * (mgr_data.scale * (2/2.7) + 0.11);
+    node_list["my_damage"].imgHeight = 100 * (mgr_data.scale * (2/2.7) + 0.11);
     //创建
     mgr.create(node_list["my_damage"],"node2d");
 
     //左侧战斗信息节点
 	node_list["rank_num"] = {};
 	//节点位置
-	node_list["rank_num"].x = 370;
-	node_list["rank_num"].y = 600;
+	node_list["rank_num"].x = _width * (91.8757 / 189.76217) - 1.3408;
+	node_list["rank_num"].y = _height * (83.4694 / 180) + 26.3267;
     node_list["rank_num"].z = 5;
     node_list["rank_num"].attachment = "2D",
 	//背景图
-	node_list["rank_num"].image = "images/big_rank_bg.png";
+	node_list["rank_num"].image = "images/"+rank_type+"_rank_bg.png";
 	//宽高
-	node_list["rank_num"].imgWidth = 310;
-	node_list["rank_num"].imgHeight = 650;
+	node_list["rank_num"].imgWidth = (rank_type == "big" ? 310 : 310 ) * (mgr_data.scale * (2/2.7) + 0.11);
+	node_list["rank_num"].imgHeight = (rank_type == "big" ? 650 : 163) * (mgr_data.scale * (2/2.7) + 0.11);
 	//创建
-    mgr.create(node_list["rank_num"],"node2d");
+    mgr.create(node_list["rank_num"],"node2d"); 
     
     node_list["my_rank"] = {} ;
     node_list["my_rank"].type = "team_damage";
     node_list["my_rank"].text = 0 + "";
-    node_list["my_rank"].x = 100;
-    node_list["my_rank"].y = -395;
+    node_list["my_rank"].x = 20;
+    node_list["my_rank"].y = _height * (32 / 98 * (0 - 1)) + 44.9388;
     node_list["my_rank"].z = 6;
     node_list["my_rank"].horizontalAlign = "center";
     node_list["my_rank"].verticalAlign = "center";
@@ -537,12 +580,18 @@ const nub_node = () => {
 
 // 创建战斗场景中的排行榜节点
 const create_rank_node = (arg,text,name,num,textcfg?) => {
+    let _width = root.getWidth() * mgr_data.scale;
+    let _height = root.getHeight() * mgr_data.scale;
+    let _top = _height * (44.9184 / 180) + 20.7039;
+    let __top = _height * (52.9184 / 180) + 5.7039;
+    let _interval = _height * (3 / 180) + 13;
     let _index = arg-0+1;
+
     node_list[_index] = {};
     node_list[_index].type = "team_damage";
-    node_list[_index].text = text || 0 + "";
-    node_list[_index].x = 125;
-    node_list[_index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
+    node_list[_index].text = String(text || 0);
+    node_list[_index].x = _width * (49.9376 / 189.7627) - 86.0528;
+    node_list[_index].y = rank_type == "big" ? _top - arg * _interval : __top;
     node_list[_index].z = 6;
     node_list[_index].visible = true;
     node_list[_index].horizontalAlign = "center";
@@ -553,9 +602,9 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
     let __index = arg-0+11;
     node_list[__index] = {};
     node_list[__index].type = "team_damage";
-    node_list[__index].text = name || 0 + "";
-    node_list[__index].x = 190;
-    node_list[__index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
+    node_list[__index].text = String(name || 0);
+    node_list[__index].x = _width * (54.9376 / 189.7627) - 40.2811;
+    node_list[__index].y = rank_type == "big" ? _top - arg * _interval : __top;
     node_list[__index].z = 6;
     node_list[__index].visible = true;
     node_list[__index].horizontalAlign = "center";
@@ -566,9 +615,9 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
     let ___index = arg-0+111;
     node_list[___index] = {};
     node_list[___index].type = "team_damage";
-    node_list[___index].text = num || 0 + "";
-    node_list[___index].x = 255;
-    node_list[___index].y = (rank_type == "big" ? 347 : 380) - arg * 30;
+    node_list[___index].text = String(num || 0);
+    node_list[___index].x = _width * (54.9376 / 189.7627) + 19.7189;
+    node_list[___index].y = rank_type == "big" ? _top - arg * _interval : __top;
     node_list[___index].z = 6;
     node_list[___index].visible = true;
     node_list[___index].horizontalAlign = "center";
@@ -579,18 +628,24 @@ const create_rank_node = (arg,text,name,num,textcfg?) => {
 
 const removeNode = () =>{
     for(let i in node_list){
+        if(i == "rank_num"){
+            node_list["rank_num"].image == "images/big_rank_bg.png";
+            mgr.modify(node_list["rank_num"])
+        }
         mgr.remove(node_list[i]);
         node_list[i] = undefined;
     }
 }
 //清除场景数据
 const clearData = () => {
-    initMapList();
-    UiFunTable.clearTO();
-    initValue();
+    // initMapList();
+    // UiFunTable.clearTO();
+    // initValue();
 }
 
-// 取消排队 
+/**
+ * @description 取消排队
+ */
 const unlineUp = (msg ?) =>{
     let arg = {
         "param": {},
@@ -619,7 +674,10 @@ const unlineUp = (msg ?) =>{
     });
 }
 
-// 排队 
+/**
+ * @description 开始排队
+ * @param 需要排队的房间ID(boss的id)
+ */
 const lineUp = (msg) =>{
     let arg = {
         "param": {"boss_id" : msg},
@@ -650,9 +708,12 @@ const lineUp = (msg) =>{
         
     });
 }
-// 战斗相关
+
+/**
+ * @description 开始战斗
+ * @param msg 需要挑战的BOSS的ID
+ */
 const startFight = (msg) =>{
-    
     let arg = {
         "param": {
             "boss_id" : msg - 0
@@ -673,12 +734,9 @@ const startFight = (msg) =>{
         // change_status(1,()=>{})
         let _data:any = Common.changeArrToJson(data.ok);
         let events:any = analyseFighter(_data);
-        fight_r.fightEvents = events.event;
-        fight_r.now = events.now;
         updata("publicboss.lineFlag",0);
         updata("publicboss.time",_data.time);
-        //处理伤害事件
-        dealFightEvents(fight_r);
+        SMgr.start("public_boss",events,[null,dealFightEvents],FMgr.createNavMesh(mgr.getSceneBuffer(map, ".nav")));
         nub_node();
         line_time1 = 0;
         clearInterval(linTime);
@@ -702,9 +760,9 @@ const initScene = () => {
         }
     });
     //设置点击监听
-    setClickCallback(function (result) {
-        clickScene(result);
-    });
+    // setClickCallback(function (result) {
+    //     clickScene(result);
+    // });
 }
 // 场景的点击事件
 const clickScene = (result) => {
@@ -732,9 +790,8 @@ const clickScene = (result) => {
     })
 }
 
-//退出战斗
 /**
- * 
+ * 退出战斗
  * @param type 是否需要打开奖励界面
  */
 const exitFight = (type) => {
@@ -748,6 +805,7 @@ const exitFight = (type) => {
             console.log(data.why);
             return;
         }
+        SMgr.leave();        
         let result = Common.changeArrToJson(data.ok);
         fight_award = Common_m.mixAward(result);
         fight_award.own_rank = own_rank;
@@ -771,7 +829,7 @@ const exitFight = (type) => {
                 }
                 removeNode();
                 create_node_flag = 1;
-                rank_type = "big";
+                // rank_type = "big";
                 globalSend("intoWild");
             }
         });
@@ -780,7 +838,9 @@ const exitFight = (type) => {
     })
 }
 
-// 购买挑战次数
+/**
+ * @description 购买挑战次数
+ */
 const buyCount = () => {
     net_request({"param":{},"type":"app/pve/wilderness_boss@buy"},(data)=>{
         if(data.error){
@@ -798,8 +858,10 @@ const buyCount = () => {
     })
 }
 
-// 索要归属奖励
-// Index 索要物品的ID 
+/**
+ * @description 索要归属奖励
+ * @param index:索要物品的ID(或者下标) 
+ */
 const applyAward = (arg) => {
     net_request({"param":{"index" : arg},"type":"app/pve/wilderness_boss@apply_distribute"},(data)=>{
         if(data.error){
@@ -836,6 +898,12 @@ const applyAward = (arg) => {
 }
 
 //分配奖励
+/**
+ * @description 分配奖励
+ * @param  index:"被分配的装备的下标"
+ * @param  type:"自己收下还是分配给别人"
+ * @param  distribute_id:"被分配人的role_id",如果是分配给自己可不传
+ */
 const sendAward = (arg) => {
     let _data : any = {
         "param":{
@@ -854,12 +922,23 @@ const sendAward = (arg) => {
             return;
         }
         let prop : any = Common.changeArrToJson(data.ok);
-        let result = Common_m.mixAward(prop);
-        if(arg[1] - 0 == 1){
-            result.auto = 1;
-            showNewRes(result, function (result) {
-                result.open();
-            });
+        let flag = Common_m.bagIsFull();
+        let role_id = getDB("player.role_id");
+        if(prop.award){
+            let result = Common_m.mixAward(prop);
+            if(arg[1] - 0 == 1){
+                result.auto = 1;
+                showNewRes(result, function (result) {
+                    result.open();
+                });
+            }
+        }else if(!prop.award && flag){
+            //判断是否分配给自己 或者被分配者的ID是否等于玩家自己的role_ID
+            if (!_data.param.distribute_id || (_data.param.distribute_id && _data.param.distribute_id == role_id)) {
+                globalSend("screenTipFun", {
+                    words: `背包已满，装备已发送到邮件`
+                })
+            }
         }
 
         let w = forelet.getWidget("app_c-publicboss-send-list");
@@ -869,7 +948,9 @@ const sendAward = (arg) => {
     })
 }
 
-//一键分配
+/**
+ * @description 一键分配
+ */
 const oneKeyAward = () => {
     let _data : any = {
         "param":{},
@@ -898,6 +979,11 @@ const oneKeyAward = () => {
     })
 }
 
+/**
+ * @description 初始化数据
+ * @param callback 
+ * @param type 
+ */
 const read = ( callback?,type? ) => {
     net_request({"param":{},"type":"app/pve/wilderness_boss@read"}, (data) => {
         if (data.error) {
@@ -988,7 +1074,7 @@ const oneDistributeAward = (msg) => {
 
 //处理boss的血量和名称
 const dealBoss = () =>{
-    let index;
+    // let index;
     let boss = initData.boss_info;
     boss_base = new Array();
     for(let i=0;i<boss.length;i++){
@@ -997,13 +1083,14 @@ const dealBoss = () =>{
         let info = monster_attribute[level];
         monster.maxHp = info.attr.max_hp;
         monster.name = Common.fromCharCode(monster_base[boss[i][0]].name);
-        boss_base.push(monster);
+        // boss_base.push(monster);
+        boss_base[boss[i][4]] = monster;
     }
 }
 
 //计算次数
 const refreshCount = () => {
-    let player = getDB("player");
+    // let player = getDB("player");
     let cd = publicboss_config["cd"] * 60;
     let data = getDB("publicboss");
     let now =  Util.serverTime(true);    
@@ -1059,32 +1146,34 @@ const sortBoss = (a,b) => {
 
 //处理接收到的战斗事件
 const dealFightEvents = (events) => {
-    Move.setRender(true);
+    // Move.setRender(true);
     if(Move.pause)
         Move.pause = false;
-    if (fight_r.fightEvents.length > 0) {
+    if (events.event.length > 0) {
         let i = 0,
-            len = fight_r.fightEvents.length;
+            len = events.event.length;
         for ( ; i < len; i++) {
-            let e = fight_r.fightEvents[i],
+            let e = events.event[i],
                 type;
-            type = e.type || e[0];            
-            Move.filter(type,e);
-            handScene[e.type] && handScene[e.type](e, fight_r.now);
+            // type = e.type || e[0];            
+            // Move.filter(type,e);
             if (e.type === "damage" || e.type === "effect") {
+                
+            // handScene[e.type] && handScene[e.type](e, events.now);
                 damageFun(e);
             }
         }
     }
-    UiFunTable.runCuurUi(fight_r);
-    return true;
+    // UiFunTable.runCuurUi(events,events.now);
+    // UiFunTable.runCuurUi();
+    // return true;
 }
 
 // 伤害事件
 const damageFun = (e) => {
     let role_id = getDB("player.role_id"),
-        target = mapList[e.target.mapId],
-        _fighter = mapList[e.fighter.mapId],
+        target = FMgr.scenes.fighters.get(e.target),
+        _fighter = FMgr.scenes.fighters.get(e.fighter),
         r = e.r,
         d;
     //自己死亡
@@ -1116,16 +1205,60 @@ const initRankData = (arr : any) => {
     return rank;
 }
 
-//接收后台推送战斗指令
-net_message("order", (msg) => {
-    if (mgr_data.name !== "public_boss") {
-        return;
+const s_clone = function (obj) {
+    /* 深度克隆
+    * @param  {object} obj 待克隆的对象
+    * @return {object}     生成的对象
+    */
+    let o, i = 0,
+        len = 0,
+        k;
+    switch (typeof obj) {
+        case 'undefined':
+            break;
+        case 'string':
+            o = obj.toString();
+            break;
+        case 'number':
+            o = obj - 0;
+            break;
+        case 'boolean':
+            o = obj;
+            break;
+        case 'object':
+            if (obj === null) {
+                o = null;
+            } else {
+                if (isArray(obj)) {
+                    o = [];
+                    for (i = 0, len = obj.length; i < len; i++) {
+                        o.push(s_clone(obj[i]));
+                    }
+                } else {
+                    o = {};
+                    for (k in obj) {
+                        if (obj.hasOwnProperty(k)) {
+                            o[k] = s_clone(obj[k]);
+                        }
+                    }
+                }
+            }
+            break;
+        default:
+            o = obj;
+            break;
     }
-    let events:any = analyseData(msg);
-    fight_r.fightEvents = events.event;
-    fight_r.now = events.now;
-    dealFightEvents(fight_r);
-});
+    return o;
+}
+
+/**
+ * 判断value是否为Array
+ * @param  {js value} value 合法的js值
+ * @return {boolean} value是否为Array
+ */
+const isArray = function (value) {
+    return Object.prototype.toString.apply(value) === "[object Array]";
+}
 
 //战斗的排行榜
 net_message("publicboss_rank_info", (msg) => {
@@ -1134,10 +1267,10 @@ net_message("publicboss_rank_info", (msg) => {
     }
     let player = getDB("player");
     let own_damage : any = 0;
-    let fight_rank_clone = JSON.parse(JSON.stringify(fight_rank));//fight_rank;
+    let fight_rank_clone = s_clone(fight_rank);//fight_rank;
     fight_rank[msg.index - 1] = initRankData(msg.rank_info[1]);
     let rank = fight_rank[msg.index - 1];
-
+    if(rank.length == 0)return;
     node_list["my_rank"].text ="归属: " + rank[0].name + Common.numberCarry(rank[0].damage || 0,10000);
     mgr.modify(node_list["my_rank"]);
 
@@ -1158,7 +1291,7 @@ net_message("publicboss_rank_info", (msg) => {
     }
     
     for(let i=0;i<rank.length;i++){
-        if(!fight_rank_clone[msg.index - 1][i] || create_node_flag || !node_list[i - 0 + 1]){
+        if(rank_type != "small" && (!fight_rank[msg.index - 1][i] || create_node_flag || !node_list[i - 0 + 1] || node_list[i - 0 + 1].visible == false)){
             create_rank_node(i,Common.numberCarry(rank[i].damage,10000) + "",rank[i].name,i+1);
             create_node_flag = 0;
         }else{
@@ -1169,13 +1302,19 @@ net_message("publicboss_rank_info", (msg) => {
                 node_list[_index].visible = false;
                 node_list[__index].visible = false;
                 node_list[___index].visible = false;
+                mgr.remove(node_list[_index]);
+                mgr.remove(node_list[__index]);
+                mgr.remove(node_list[___index]);
+                continue;
             }else{
                 node_list[_index].visible = true;
+                node_list[_index].text = String(Common.numberCarry(rank[i].damage,10000));
+                
                 node_list[__index].visible = true;
+                node_list[__index].text = String(rank[i].name);
+                
                 node_list[___index].visible = true;
-                node_list[_index].text = Common.numberCarry(rank[i].damage,10000) + "";
-                node_list[__index].text = rank[i].name;
-                node_list[___index].text = i + 1 ;
+                node_list[___index].text = String(i + 1);
             }
             mgr.modify(node_list[_index]);
             mgr.modify(node_list[__index]);
@@ -1183,19 +1322,22 @@ net_message("publicboss_rank_info", (msg) => {
         }
     }
 
+    let _height = root.getHeight() * mgr_data.scale;
+    let _top = _height * (23.9898 / 180) - 9.6531;
+    let __top = _height * (52.9184 / 180) + 5.7039;
     if(!node_list[6]){
         create_rank_node(5,own_damage + "",player.name,own_rank,(rank_type == "small" ? 1 : 0))
     }else{
-        node_list[6].y = rank_type == "small" ? 380 : 190;
-        node_list[6].text = own_damage + "";        
+        node_list[6].y = rank_type == "small" ? __top : _top;
+        node_list[6].text = String(own_damage + "");        
         mgr.modify(node_list[6]);
         
-        node_list[16].y = rank_type == "small" ? 380 : 190;
-        node_list[16].text = player.name;
+        node_list[16].y = rank_type == "small" ? __top : _top;
+        node_list[16].text = String(player.name);
         mgr.modify(node_list[16]);
         
-        node_list[116].y = rank_type == "small" ? 380 : 190;
-        node_list[116].text = own_rank;
+        node_list[116].y = rank_type == "small" ? __top : _top;
+        node_list[116].text = String(own_rank);
         mgr.modify(node_list[116]);
     }
 });
@@ -1244,9 +1386,12 @@ net_message("publicboss_exit",(msg)=>{
 net_message("publicboss_refresh",(msg)=>{
     // console.log("publicboss_refresh",msg);
     let data = initData.boss_info;
-    let index = 0;
+    let index = undefined;
     let boss_id = 0;
     for(let n = 0;n<data.length;n++){
+        if(index !== undefined){
+            break;
+        }
         for(let m=0;m<msg.boss_info.length;m++){
             if(msg.boss_info[m][2] !== data[n][2] && data[n][2] == 0){
                 index = data[n][4];
@@ -1301,7 +1446,7 @@ net_message("publicboss_distribute_award",(msg)=>{
     let _award_tip = getDB("publicboss.award_tip");
     for(let i=0;i<msg.distribute_info.length;i++){
         let data = distributeAward([msg.distribute_info[i]]);
-        initData.distribute_award_info.unshift(data[i]);
+        initData.distribute_award_info.unshift(data[0]);
         _award_tip[msg.distribute_info[i][3]] = _award_tip[msg.distribute_info[i][3]] ? _award_tip[msg.distribute_info[i][3]]+1 : 1;
     }
     updata("publicboss.award_tip",_award_tip);
@@ -1334,10 +1479,12 @@ net_message("publicboss_apply_refresh",(msg)=>{
     name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(role.career_id)] : prop.name;
     attribution_name = checkTypeof(attribution_name,"Array") ? Common.fromCharCode(attribution_name) : attribution_name;
     let player_Id = getDB("player.role_id");
-    let _name = player_Id == role.role_id ? "你" : (checkTypeof(role.name,"Array") ? Common.fromCharCode(role.name) : role.name);
-    globalSend("screenTipFun", { 
-        words: (player_Id == role.role_id ? attribution_name : "") + "已将" + name + "分配给" + _name
-    });
+    if(player_Id != role.role_id){
+        let _name = checkTypeof(role.name,"Array") ? Common.fromCharCode(role.name) : role.name;
+        globalSend("screenTipFun", { 
+            words: (player_Id == role.role_id ? attribution_name : "") + "已将" + name + "分配给" + _name
+        });
+    }
     updata("publicboss.award_tip",_award_tip);
 });
 

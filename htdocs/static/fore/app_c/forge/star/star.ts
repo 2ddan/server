@@ -1,24 +1,22 @@
-import * as piSample from "app/mod/sample";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 import { Common } from "app/mod/common";
 import { close,open } from "app/mod/root";
 import { updata, get as getDB, listen } from "app/mod/db";
-import { Pi,cfg, globalSend,findGlobalReceive } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { equip_star_promote } from "cfg/c/equip_star_promote_fore";
 import { Common_m } from "app_b/mod/common";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { attribute_config } from "cfg/c/attribute_config";
 import { getRealNode } from "pi/widget/painter";
 import { findNodeByAttr } from "pi/widget/virtual_node";
 import { StarAchievement } from "cfg/c/equip_star_achievement";
 import { equip_star_achieve } from "cfg/c/equip_star_achieve";
 import { Music } from "app/mod/music";
-import { mgr } from "app/scene/scene";
 //fight
 import { role_base } from "fight/b/common/role_base";
 
-import { openUiEffect, effectcallback, updateUiEffect, destoryUiEffect } from "app/scene/anim/scene";
+import { destoryUiEffect } from "app/scene/anim/scene";
 
 
 export const forelet = new Forelet();
@@ -72,7 +70,6 @@ const getStarHtmlData=function(){
     _data.stars = StarAchievement;//星宿表
     _data.soul = soul;//星宿点数
     _data.leftX = leftX;
-    _data.starFlog = starFlog;
     _data.soltIndex = soltIndex;
     _data.isOkStar = isOkStar;//升星成功标识
     _data.role_base = role_base;
@@ -85,12 +82,13 @@ const getStarHtmlData=function(){
 //升星接口
 const star = () => {
     if(!starFlog) return;
+    starFlog = false;
     net_request({"param":{"index":index-0},"type":"app/prop/equip@star_up"}, function (data) {
+        starFlog = true;
         if (data.error) {
             console.log(data.why);
             return;
         }
-        starFlog = false;
         globalSend("ui_anim",{name:"starup",time:550});
         isOkStar = true;
         let prop:any = Common.changeArrToJson(data.ok);
@@ -115,7 +113,6 @@ const star = () => {
         });
         setTimeout(function(){
             isOkStar = false;
-            starFlog = true;
             forelet.paint(getStarHtmlData())
         },600);
 

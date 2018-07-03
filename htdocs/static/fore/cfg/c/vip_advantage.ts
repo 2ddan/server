@@ -2,7 +2,7 @@ export const vip_advantage = {
     
     
     "0": {
-        "daily_money_treeTimes": 6,
+        "daily_money_treeTimes": 5,
         "equip_count": 120,
         "equip_wash_times": 10,
         "daily_instance_times": 1,
@@ -16,10 +16,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 2,
         "gest_free_refresh_times": 5,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 0,
         "chat_color": "#fde7ca",
         "discount": 100,
-        "lv_frame": null
+        "lv_frame": null,
+        "buy_exp_fb_times": 1
     },
     
     "1": {
@@ -37,10 +37,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 3,
         "gest_free_refresh_times": 5,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 1,
         "chat_color": "#fde7ca",
         "discount": 100,
-        "lv_frame": 1
+        "lv_frame": 1,
+        "buy_exp_fb_times": 3
     },
     
     "2": {
@@ -58,10 +58,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 4,
         "gest_free_refresh_times": 5,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 2,
         "chat_color": "#fde7ca",
         "discount": 80,
-        "lv_frame": 2
+        "lv_frame": 2,
+        "buy_exp_fb_times": 4
     },
     
     "3": {
@@ -79,10 +79,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 5,
         "gest_free_refresh_times": 5,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 3,
         "chat_color": "#fde7ca",
         "discount": 80,
-        "lv_frame": 2
+        "lv_frame": 2,
+        "buy_exp_fb_times": 5
     },
     
     "4": {
@@ -100,10 +100,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 6,
         "gest_free_refresh_times": 6,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 4,
         "chat_color": "#fde7ca",
         "discount": 80,
-        "lv_frame": 2
+        "lv_frame": 2,
+        "buy_exp_fb_times": 6
     },
     
     "5": {
@@ -121,10 +121,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 7,
         "gest_free_refresh_times": 6,
         "gest_free_challenge_times": 3,
-        "world_boss_free_resurgence_times": 5,
         "chat_color": "#fde7ca",
         "discount": 70,
-        "lv_frame": 3
+        "lv_frame": 3,
+        "buy_exp_fb_times": 8
     },
     
     "6": {
@@ -142,10 +142,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 8,
         "gest_free_refresh_times": 6,
         "gest_free_challenge_times": 4,
-        "world_boss_free_resurgence_times": 6,
         "chat_color": "#ffe380",
         "discount": 70,
-        "lv_frame": 3
+        "lv_frame": 3,
+        "buy_exp_fb_times": 9
     },
     
     "7": {
@@ -163,10 +163,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 9,
         "gest_free_refresh_times": 6,
         "gest_free_challenge_times": 4,
-        "world_boss_free_resurgence_times": 7,
         "chat_color": "#ffe380",
         "discount": 70,
-        "lv_frame": 3
+        "lv_frame": 3,
+        "buy_exp_fb_times": 10
     },
     
     "8": {
@@ -184,10 +184,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 10,
         "gest_free_refresh_times": 7,
         "gest_free_challenge_times": 4,
-        "world_boss_free_resurgence_times": 8,
         "chat_color": "#ffe380",
         "discount": 70,
-        "lv_frame": 3
+        "lv_frame": 3,
+        "buy_exp_fb_times": 12
     },
     
     "9": {
@@ -205,10 +205,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 11,
         "gest_free_refresh_times": 7,
         "gest_free_challenge_times": 5,
-        "world_boss_free_resurgence_times": 9,
         "chat_color": "#ffe380",
         "discount": 70,
-        "lv_frame": 3
+        "lv_frame": 3,
+        "buy_exp_fb_times": 13
     },
     
     "10": {
@@ -226,10 +226,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 12,
         "gest_free_refresh_times": 7,
         "gest_free_challenge_times": 5,
-        "world_boss_free_resurgence_times": 10,
         "chat_color": "#ffe380",
         "discount": 60,
-        "lv_frame": 4
+        "lv_frame": 4,
+        "buy_exp_fb_times": 14
     },
     
     "11": {
@@ -247,10 +247,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 13,
         "gest_free_refresh_times": 8,
         "gest_free_challenge_times": 6,
-        "world_boss_free_resurgence_times": 11,
         "chat_color": "#ffe380",
         "discount": 60,
-        "lv_frame": 4
+        "lv_frame": 4,
+        "buy_exp_fb_times": 15
     },
     
     "12": {
@@ -268,10 +268,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 14,
         "gest_free_refresh_times": 8,
         "gest_free_challenge_times": 6,
-        "world_boss_free_resurgence_times": 12,
         "chat_color": "#ffe380",
         "discount": 60,
-        "lv_frame": 4
+        "lv_frame": 4,
+        "buy_exp_fb_times": 16
     },
     
     "13": {
@@ -289,10 +289,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 15,
         "gest_free_refresh_times": 8,
         "gest_free_challenge_times": 6,
-        "world_boss_free_resurgence_times": 13,
         "chat_color": "#ffe380",
         "discount": 60,
-        "lv_frame": 5
+        "lv_frame": 5,
+        "buy_exp_fb_times": 17
     },
     
     "14": {
@@ -310,10 +310,10 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 16,
         "gest_free_refresh_times": 9,
         "gest_free_challenge_times": 6,
-        "world_boss_free_resurgence_times": 14,
         "chat_color": "#ffe380",
         "discount": 60,
-        "lv_frame": 5
+        "lv_frame": 5,
+        "buy_exp_fb_times": 18
     },
     
     "15": {
@@ -331,9 +331,9 @@ export const vip_advantage = {
         "tower_diamond_sweep_times": 17,
         "gest_free_refresh_times": 9,
         "gest_free_challenge_times": 6,
-        "world_boss_free_resurgence_times": 15,
         "chat_color": "#ffe380",
         "discount": 50,
-        "lv_frame": 5
+        "lv_frame": 5,
+        "buy_exp_fb_times": 20
     }
 }

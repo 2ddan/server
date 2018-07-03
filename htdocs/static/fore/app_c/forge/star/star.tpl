@@ -101,11 +101,11 @@
                 <app_c-forge-star-star_anim>{"star":{{it1.getStar}},"effect":{{equip_level_limit[it1.index].stars_effects}},"center":1}</app_c-forge-star-star_anim>
             </div>
 
-            <span style="width:40%;height:40px;line-height:20px;position:absolute;left:13px;font-size:16px;color:#ffd8a6;top:79px;text-align:center;">
+            <span style="width:40%;height:40px;line-height:20px;position:absolute;left:13px;font-size:15px;color:#ffd8a6;top:79px;text-align:center;">
                 {{if attrOBJ}}
                     {{for k, v in attrOBJ}}
                     <div style="text-align: left;padding-left: 5px;white-space: nowrap;">{{"装备"+it1.attriCfg[k]}}+{{Common.numberCarry(v,10000)}}</div>
-                    <div style="text-align: left;padding-left: 5px;">{{"装备全属性"}}+{{Math.floor(it1.star[it1.starGrade].attr_ratio* 100)}}%</div>
+                    <div style="text-align: left;padding-left: 5px;white-space: nowrap;">{{"装备全属性"}}+{{Math.floor(it1.star[it1.starGrade].attr_ratio* 100)}}%</div>
                     {{end}}
                 {{else}}
                     <div style="text-align: center;line-height:40px">当前无任何属性</div>
@@ -114,19 +114,19 @@
 
             <div class="attr_arrow" style="top: 86px;left: 0px;right: 0px;margin: 0 auto;"></div>
 
-            <span style="width:40%;height:40px;line-height:20px;position:absolute;right:13px;font-size:16px;color:#51e650;top:79px;text-align:center;">
+            <span style="width:40%;height:40px;line-height:20px;position:absolute;right:13px;font-size:15px;color:#51e650;top:79px;text-align:center;">
                 {{if it1.star[it1.starGrade-0+1]}}
                     {{let attrOBJAdd = it1.star[it1.starGrade-0+1].attr}}
                     {{if eq }}
                         {{for j, o in attrOBJAdd}}
                             {{if it1.attriCfg[j]}}
                                 <div style="text-align: left;padding-left: 5px;white-space: nowrap;">{{"装备"+it1.attriCfg[j]}}+{{Common.numberCarry(o,10000)}}</div>
-                                <div style="text-align: left;padding-left: 5px;">{{"装备全属性"}}+{{Math.floor(it1.star[it1.starGrade-0+1].attr_ratio* 100)}}%</div>
+                                <div style="text-align: left;padding-left: 5px;white-space: nowrap;">{{"装备全属性"}}+{{Math.floor(it1.star[it1.starGrade-0+1].attr_ratio* 100)}}%</div>
                             {{end}}
                         {{end}}
                     {{end}}
                 {{else}}
-                <div style="text-align:center;line-height:40px">满级</div>
+                <div style="text-align:center;line-height:40px">已升星到最高等级</div>
                 {{end}}
 
             </span>
@@ -152,13 +152,13 @@
                 {{end}}
                 {{let img2 = checkTypeof(p,"Array") ? Pi.pictures[p[1].icon] : Pi.pictures[p.icon] }}
                 {{let sid = checkTypeof(p,"Array") ? p[1].sid : p.sid}}
-                <div style="width:100px;height:100%;position:relative;display:inline-block;">
+                <div style="width:120px;height:100%;position:relative;display:inline-block;white-space: nowrap;">
                     
                     <img src={{img2}} on-tap='gotoGetWay("{{sid}}")' style="position: absolute;z-index: 2;top: 0px;width: 42px;left: 0;right: 0;margin: 0 auto;"/>
                     
                     {{let color = v[1] > ( checkTypeof(p,"Array") ? bag[p[0]].count : 0) ? "#ff0000" : ""}}
                     <div style="width: 100%;height: 18px;position: absolute;text-align: center;line-height: 15px;font-size: 18px;color:#e7e09e;bottom: -5px;z-index:2">
-                        <span style="color:{{color}}">{{checkTypeof(p,"Array") ? bag[p[0]].count : 0}}</span>/{{v[1]}}</div>
+                        <span style="color:{{color}}">{{checkTypeof(p,"Array") ? Common.numberCarry(bag[p[0]].count,10000) : 0}}</span>/{{v[1]}}</div>
                     {{if v[1] > (checkTypeof(p,"Array") ? bag[p[0]].count : 0)}}
                     {{: flag = 0}}
                     {{: lack_id = v[0]}}
@@ -176,7 +176,7 @@
 
         {{ let color1 = it1.star[it1.starGrade].money > player.money  ? "#f00" : "#fff"}}
         <div style="width: 100%;height: 18px;position: absolute;top: 732px;left: -5px;text-align: center;line-height: 15px;font-size: 18px;color:#e7e09e;">
-            <app-widget-coin-coin style="left:3px;display:inline-block;color:{{color1}}">{"icon":"money","text":{{it1.star[it1.starGrade].money || 0}} }</app-widget-coin-coin>
+            <app_a-widget-coin-coin style="left:3px;display:inline-block;color:{{color1}}">{"icon":"money","text":[{{it1.star[it1.starGrade].money || 0}}] }</app_a-widget-coin-coin>
         </div>
     {{elseif eq}}
     <div style="width:100%;height:30px;position:absolute;bottom:35px;left:0;text-align:center;line-height:30px;font-size:18px;color: #e42121;font-family: mnjsh;">已升星到最高等级</div>

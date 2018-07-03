@@ -59,5 +59,10 @@ export let item_usefor = {
         "gotoFun": "gotoSurface,1",
         "btn_name": "培养宠物"
     }
+    ,
+    "13": {
+        "gotoFun": "gotoRune",
+        "btn_name": "装备秘籍"
+    }
     
 }

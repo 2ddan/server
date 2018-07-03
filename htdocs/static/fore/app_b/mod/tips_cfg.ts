@@ -1,6 +1,5 @@
 import * as db from "app/mod/db";
 import { Util } from "app/mod/util";
-import { Common } from "app/mod/common";
 import { TipFun } from "app/mod/tip_fun";
 import { vip_advantage } from "cfg/c/vip_advantage";
 import { function_open } from "cfg/b/function_open";
@@ -26,9 +25,6 @@ import { TreasureRequirement } from "cfg/b/TreasureRequirement";
 import { TreasurePhase } from "cfg/b/TreasurePhase";
 //心法配置
 import { gest_base } from "cfg/c/gest_base";
-import { gest_attribute } from "cfg/c/gest_attribute";
-//离线收益配置
-import { master_off_line } from "cfg/c/master_off_line";
 //排行榜配置
 import { rank_base } from "cfg/c/rank_base";
 //成长基金
@@ -38,12 +34,17 @@ import { weapon_soul_grade } from "cfg/c/weapon_soul_grade";
 import { weapon_soul_base } from "cfg/c/weapon_soul_base";
 //装备副本----关卡宝箱
 import { equip_fb_welfare_box } from "cfg/c/equip_fb_welfare_box";
+import { equip_fb_data } from "cfg/c/equip_fb_data";
 //摇钱树
 import { MoneyTreeBoxAward } from "cfg/c/money_tree_box";
 //九窍
 import { soul_seat } from "cfg/c/soul_seat";
 import { soul_level_up } from "cfg/c/soul_level_up";
 import { soul_resonance_need } from "cfg/c/soul_resonance_need";
+// 竞技场
+import { arena_award_shop } from "cfg/c/arena_award_shop";
+
+
 // ================================= 本地
 //.*
 //* 提示配置表
@@ -90,7 +91,7 @@ let list = [
      * 装备副本----能否挑战
      */
     {
-        depend: ["player.vip", "open_fun.id", "equip_fb.use_times", "equip_fb.vip_buy_times"],
+        depend: ["player.vip", "open_fun.id", "equip_fb.use_times", "equip_fb.vip_buy_times", "player.level", "equip_fb.mission_point"],
         fun: [
             [
                 [">=", { dkey: "open_fun.id" },
@@ -99,7 +100,14 @@ let list = [
                     }
                 ], ["==", function () {
                     let vip = db.get("player.vip") || 0,
-                        useNum = db.get("equip_fb.use_times") || 0,
+                        level = db.get("player.level"),
+                        mission_point = db.get("equip_fb.mission_point") || 0;
+                    let index = Math.floor(mission_point / 5) + 1 || 1;
+                    //能否挑战
+                    if (equip_fb_data[index][0].level_limit > level) {
+                        return 0;
+                    }
+                    let useNum = db.get("equip_fb.use_times") || 0,
                         buyNum = db.get("equip_fb.vip_buy_times") || 0;
                     let freeNum = vip_advantage[vip].equip_instance_times;
                     if ((freeNum + buyNum) > useNum) {
@@ -140,7 +148,7 @@ let list = [
                     let vip = db.get("player.vip") || 0,
                         useNum = db.get("instance_fb.use_times") || 0,
                         buyNum = db.get("instance_fb.vip_buy_times") || 0;
-                    let freeNum = vip_advantage[vip].equip_instance_times;
+                    let freeNum = vip_advantage[vip].instance_times;
                     if ((freeNum + buyNum) > useNum) {
                         return 1;
                     }
@@ -283,6 +291,20 @@ let list = [
             ]
         ],
         tipKey: `explore.tower.sweep`,
+        tipDetail: { "sid": 60040 }
+    },
+    /**
+     * 天庭秘境----扫荡领奖
+     */
+    {
+        depend: ["tower.start_sweep_time", "tower.get_sweep_award"],
+        fun: [
+            [
+                [">", { dkey: "tower.start_sweep_time" }, 0],
+                ["==", { dkey: "tower.get_sweep_award" }, 1]
+            ]
+        ],
+        tipKey: `explore.tower.sweep_award`,
         tipDetail: { "sid": 60040 }
     },
     /**
@@ -491,6 +513,35 @@ let list = [
         tipDetail: { "sid": 60040 }
     },
     /**
+     * 竞技场----成就奖励
+     */
+    {
+        depend: ["player.money", "arena.role_jjc_rank"],
+        fun: [
+            [
+                ["<=", { dkey: "arena.role_jjc_rank" }, 1000],
+                ["==", function () {
+                     let arr = arena_award_shop;
+                     let money = db.get("player.money");
+                     let rank = db.get("arena.role_jjc_rank");
+                     let award = db.get("arena.life_store");
+                     for (let i = 0, len = arr.length; i < len; i++) {
+                         let v = arr[i];
+                        if (award[i] >= v.buy_count_limit) {
+                            continue;
+                        }
+                        if (rank <= v.buy_rank_limit && money >= v.money) {
+                            return 1;
+                        }
+                     }
+                     return 0;
+                }, 1]
+            ]
+        ],
+        tipKey: `explore.arena.award`,
+        tipDetail: { "sid": 60040 }
+    },
+    /**
      * 神兵----激活
      */
     // {
@@ -561,37 +612,23 @@ let list = [
      * 神兵----八卦空位升级
      */
     {
-        depend: ["open_fun.id", "bag*sid=150002", "magic.hexagram_level", "magic.break_info.0"],
+        depend: ["open_fun.id", "bag*sid=150002", "magic.break_info.0", "magic.hexagram_level.7"],
         fun: [
             [
                 [">=", { dkey: "open_fun.id" }, function () {
                     return function_open["magic_activate"].id;
                 }],
                 ["==", function () {
-                    let hexagram = db.get("magic.hexagram_level");
                     let break_info = db.get("magic.break_info");
-                    if (!hexagram || !break_info) {
+                    if (!break_info) {
                         return 0;
                     }
-                    let index = 0; //当前应该升级孔位 [0--表示暂无孔位]
-                    for (let i = 0, len = hexagram.length; i < len; i++) {
-                        if (hexagram[i] < break_info[0]) {
-                            index = i + 1;
-                            break;
-                        }
-                    }
-                    if (index == 0) {
+                    let hexagram_7 = db.get("magic.hexagram_level.7") || 0;
+                    if (break_info[0] == hexagram_7) {
                         return 0;
                     }
                     let prop = db.get("bag*sid=150002").pop();
-
-                    let obj = treasure_up[index][hexagram[index - 1]];
-                    let my_exp = db.get("magic.hexagram_exp"),
-                        need_exp = obj.need_exp,
-                        need_num = (need_exp - my_exp) / obj.per_exp;
-                    need_num = need_num < obj.one_cost_times ? need_num : obj.one_cost_times;
-
-                    if (prop && prop.count >= need_num) {
+                    if (prop && prop.count >= treasure_break[break_info[0]].prop_max) {
                         return 1;
                     }
                     return 0;
@@ -601,6 +638,48 @@ let list = [
         tipKey: `role.magic_activate.bg.hexagram`,
         tipDetail: { "sid": 60040 }
     },
+    // 原来的神兵铸魂红点提升 {上面为现在的铸魂提升}
+    // {
+    //     depend: ["open_fun.id", "bag*sid=150002", "magic.hexagram_level", "magic.break_info.0"],
+    //     fun: [
+    //         [
+    //             [">=", { dkey: "open_fun.id" }, function () {
+    //                 return function_open["magic_activate"].id;
+    //             }],
+    //             ["==", function () {
+    //                 let hexagram = db.get("magic.hexagram_level");
+    //                 let break_info = db.get("magic.break_info");
+    //                 if (!hexagram || !break_info) {
+    //                     return 0;
+    //                 }
+    //                 let index = 0; //当前应该升级孔位 [0--表示暂无孔位]
+    //                 for (let i = 0, len = hexagram.length; i < len; i++) {
+    //                     if (hexagram[i] < break_info[0]) {
+    //                         index = i + 1;
+    //                         break;
+    //                     }
+    //                 }
+    //                 if (index == 0) {
+    //                     return 0;
+    //                 }
+    //                 let prop = db.get("bag*sid=150002").pop();
+
+    //                 let obj = treasure_up[index][hexagram[index - 1]];
+    //                 let my_exp = db.get("magic.hexagram_exp"),
+    //                     need_exp = obj.need_exp,
+    //                     need_num = (need_exp - my_exp) / obj.per_exp;
+    //                 need_num = need_num < obj.one_cost_times ? need_num : obj.one_cost_times;
+
+    //                 if (prop && prop.count >= need_num) {
+    //                     return 1;
+    //                 }
+    //                 return 0;
+    //             }, 1]
+    //         ]
+    //     ],
+    //     tipKey: `role.magic_activate.bg.hexagram`,
+    //     tipDetail: { "sid": 60040 }
+    // },
     /**
      * 神兵----八卦突破
      */
@@ -682,7 +761,7 @@ let list = [
                 [">=", { dkey: "open_fun.id" }, function () {
                     return function_open["random_boss"].id;
                 }],
-                ["==", { dkey: "random_boss.has_box" }, 1],
+                [">", { dkey: "random_boss.has_box" }, 0],
                 ["==", function () {
                     let prop = db.get("bag*sid=100018").pop();
                     if (prop) {
@@ -811,26 +890,13 @@ let list = [
      * 离线收益
      */
     {
-        depend: ["off_line.leave_time", "open_fun.id"],
+        depend: ["off_line.tip"],
         fun: [
             [
-                [">=", { dkey: "open_fun.id" },function () {
-                        return function_open["off_line"].id;
-                    }
-                ], ["==", function () {
-                    let leave_time = (db.get("off_line.leave_time") || 0) / 60;
-                    let vip = db.get("player.vip") || 0;
-                    let time = 0;
-                    if (vip < master_off_line.need_vip) {
-                        time = master_off_line.free_limit_time;
-                    } else {
-                        time = master_off_line.vip_limit_time;
-                    }
-                    return leave_time >= time ? 1 : 0;
-                }, 1]
+                ["==", { dkey: "off_line.tip" }, 1]
             ]
         ],
-        tipKey: `daily_act.off_line`,
+        tipKey: `off_line`,
         tipDetail: { "sid": 60040 }
     },
     /**
@@ -842,20 +908,29 @@ let list = [
             [
                 [">", function () {
                     let arr = db.get("mail") || [];
-                    return arr.length;
+                    for (let v of arr) {
+                        if (v.receive == 0 || v.prop) {
+                            return 1;
+                        }
+                    }
+                    return 0;
                 }, 0]
             ]
         ],
         tipKey: "mail",
         tipDetail: { "sid": 60013 }
-    }
+    },
     /**
      * 排行榜
      */
     {
-        depend: ["player.rank_count"],
+        depend: ["player.rank_count", "rank"],
         fun: [
-            [
+            [   
+                [">", function () {
+                    let rank = db.get("rank") || [];
+                    return rank.length;
+                }, 0],
                 [">=", function () {
                     let rank_count = db.get("player.rank_count");
                     if (rank_count < rank_base.limit) {
@@ -1273,7 +1348,6 @@ achieveTask();
 //     "explore-gest",
 //     "explore-instance",
 //     "explore-randomBox",
-//     "explore-rebel",
 //     "explore-tower",
 //     "gang",
 //     "role-cloth",
@@ -1282,7 +1356,6 @@ achieveTask();
 //     "role-pet",
 //     "role-skill",
 //     "role-soul",
-//     "explore-worldBoss",
 //     "role-weapon_soul"
 // ];
 // const newFunOpen = function () {

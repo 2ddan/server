@@ -9,16 +9,14 @@ import { mgr, mgr_data } from "app/scene/scene";
 import { getRealNode } from "pi/widget/painter";
 import { findNodeByAttr } from "pi/widget/virtual_node";
 import { rotateMove } from "app/scene/camera_move";
-import { Move } from "app/scene/move";
 import { globalSend } from "app/mod/pi";
-import { handScene, mapList } from "app_b/fight_ol/handscene";
+import { handScene } from "app_b/fight_ol/handscene";
 import { initAnimFinishCB } from "app/scene/base/scene";
 import { monster_base } from "fight/b/common/monsterBase";
 import { monster_cfg } from "app/scene/plan_cfg/monster_config";
 import { module_cfg } from "app/scene/plan_cfg/module_config";
 import { role_base } from "fight/b/common/role_base";
-import { bossStart } from "app_b/wild/wild";
-import { openUiEffect, destoryUiEffect } from "app/scene/anim/scene";
+import { openUiEffect } from "app/scene/anim/scene";
 /**
  * 导入配置
  */
@@ -39,24 +37,9 @@ export class DramaEvent extends Widget {
 
 let speakTimer, //说话字幕定时器
     wordsTimer, //文字更新定时器
-    start,
     fightScene,
     boss_module, //记录当前挑战boss的模型
     originRotate = []; //相机初始旋转值
-/**
- * kais
- * @param arg {剧情id, 播放完回调}
- */
-let startDrama = function (arg) {
-    bossStart();
-    if (!start) {
-
-        arg.callback();
-    } else {
-        start(arg);
-    }
-    start = null;
-}
 
 /**
  * 初始化剧情数据 (每场战斗只调用一次)
@@ -65,17 +48,17 @@ const initDrama = function (msg) {
     let thisStory = story[msg.id];
     //如果有剧情, 则初始化剧情函数
     if (thisStory) {
-        start = gotoDrama;
-    }
-    fightScene = msg.fightScene;
-    let fun = function () {
-        let time = setTimeout(function () {
-            clearTimeout(time);
-            startDrama(msg)
-        }, 50)
+        // 角色移动到指定地点
+        msg.fighter.handMove = msg.point;
+        fightScene = msg.fightScene;
+        handScene.setStopMoveBack(() => {
+            gotoDrama(msg);
+        });
+    } else {
+        msg.callback();
     }
     // Move.setStopBack(fun);
-    handScene.setStopMoveBack(fun);
+    //handScene.setStopMoveBack(fun);
 }
 
 /**
@@ -84,11 +67,6 @@ const initDrama = function (msg) {
  */
 let gotoDrama = function (arg) {
     let thisStory = story[arg.id];
-    //直接跳过
-    if (!thisStory) {
-        arg.callback;
-        return;
-    }
     initAnimFinishCB(finishCb);
     let cfg = [];
     let self = handScene.getSelf();
@@ -212,11 +190,11 @@ const textDrama = function (obj, callback) {
         anim_id = 1;
         effect = obj.speaker_effect[db.player.career_id];
     } else if (obj.speaker === "boss") {
-        let arr = Object.keys(mapList);
+        let arr = Object.keys(handScene.mapList);
         for (let i of arr) {
-            if (mapList[i].sid === obj.monster_id) {
-                boss_module = mapList[i];
-                model = mapList[i];
+            if (handScene.mapList[i].sid === obj.monster_id) {
+                boss_module = handScene.mapList[i];
+                model = handScene.mapList[i];
                 action = obj.speaker_action["boss"];
                 anim_id = 2;
                 effect = obj.speaker_effect["boss"];

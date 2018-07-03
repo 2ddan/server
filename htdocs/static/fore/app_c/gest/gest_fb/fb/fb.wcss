@@ -58,9 +58,8 @@
 .12 {
     position: absolute;
     left: 401px;
-    top: 56px;
     font-size: 14px;
-
+    top: 65px;
 }
 .13 {
     position: absolute;

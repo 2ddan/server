@@ -1,0 +1,7 @@
+{
+    "tpl":"./collect.tpl",
+    "css":"./collect.wcss",
+    "js":"../../rune.ts",
+    "forelet":"../../rune.ts",
+    "cfg":"./collect.cfg"
+}

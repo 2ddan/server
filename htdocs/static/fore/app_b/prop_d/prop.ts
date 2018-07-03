@@ -1,9 +1,9 @@
-import { data as localDB, updata, get as getDB, listen } from "app/mod/db";
+import { get as getDB} from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
-import { Common } from "app/mod/common"; import { Common_m } from "app_b/mod/common";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { Common } from "app/mod/common"; 
+import { Common_m } from "app_b/mod/common";
+import { net_request} from "app_a/connect/main";
 import { choose_box } from "./item_box";
-import { remove } from "pi/ui/root";
 import { open, close } from "app/mod/root";
 import { base_cfg } from "cfg/a/base_cfg";
 import { Widget } from "pi/widget/widget";
@@ -106,6 +106,7 @@ export const globalReceive: any = {
             if (goto_id) {
                 obj = item_usefor[goto_id];
             }
+            cb = arg.cb;
             showPropInfo(arg.sid, obj);
         } else {
             if (Pi.sample[arg].type === "equip") {
@@ -201,7 +202,13 @@ export const showPropInfo = (sid, usefor?) => {
     } else {
         if (Common.getBagPropById(sid)) {
             let item: any = Common.getBagPropById(sid);
-            count = item[1].count;
+            count = item[1].count || 1;
+        }else if(prop.type === "rune" && !Common.getBagPropById(sid)){
+            //符文特殊处理
+            let rune = getDB("rune.rune_set");
+            if(rune && rune.join(",").indexOf(sid+"") !== -1){
+                count = 1;
+            }
         }
     }
     
@@ -216,6 +223,9 @@ export const showChooseBox = (sid) => {
 
 }
 
+// 物品功能跳转 [回调]
+let cb = null;
+
 /**
  * 显示可批量使用的物品
  * @param sid 道具ID
@@ -228,6 +238,8 @@ export class prop_m extends Widget {
     gotoFun = (name) => {
         let arg = name.split(",");
         globalSend(arg[0], arg[1]);
+        cb && cb();
+        cb = null;
         let w = forelet.getWidget("app_b-prop_d-prop_info");
         if(w){
             close(w);

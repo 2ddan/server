@@ -44,7 +44,7 @@
     font-size:18px;
     font-family:mnjsh;
     color:#51e650;
-    line-height: 26px;
+    line-height: 24px;
     text-align:center;
     height: 191px;
     width:220px;
@@ -75,7 +75,7 @@
     background-repeat:no-repeat;
     background-position:center center;
     display: inline-block;
-    margin-bottom: 10px;
+    line-height: 25px;
 }
 .c11{
     vertical-align: middle;

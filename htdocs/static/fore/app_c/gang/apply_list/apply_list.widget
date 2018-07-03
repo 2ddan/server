@@ -1,6 +1,7 @@
 {
-    "tpl":"./hall_apply_list.tpl",
+    "tpl":"./apply_list.tpl",
     "js":"../gang.ts",
     "forelet":"../gang.ts",
-    "css":"./hall_apply_list.wcss"
+    "css":"./apply_list.wcss",
+    "cfg":"./apply_list.cfg"
 }

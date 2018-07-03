@@ -1,12 +1,15 @@
-
-import { Widget } from "../../../widget/widget";
-import { Forelet } from "../../../widget/forelet";
-import { translate } from "../../../compile/drust";
+/**
+ * 
+ */
+import { translate } from '../../../compile/drust';
+import { Forelet } from '../../../widget/forelet';
+import { Widget } from '../../../widget/widget';
 
 // 测试初始化
 export const test = () => {
+	/* tslint:disable:no-debugger */
 	debugger;
-	let ss = `
+	const ss = `
 		///同时
 	struct Point<T> {
 		/// x值
@@ -17,19 +20,19 @@ export const test = () => {
 		c: Plane,
 	}
 	`;
-	let r = translate(ss, "");
-	console.log("translate, ", r);
-}
+	const r = translate(ss, '');
+	console.log('translate, ', r);
+};
 
 export const forelet = new Forelet();
 forelet.listener = (cmd: string, w: Widget): void => {
-	if (cmd === "firstPaint") {
-		console.log("ok", w.name);
+	if (cmd === 'firstPaint') {
+		console.log('ok', w.name);
 		setTimeout(test, 1);
 	}
-}
+};
 
-forelet.addHandler("Click", () => {
+forelet.addHandler('Click', () => {
 
 	return 0;
 });

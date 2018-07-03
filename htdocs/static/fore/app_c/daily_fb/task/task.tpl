@@ -10,6 +10,9 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"材料副本","coin":["money","diamond"],"left":12,"top":16,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
     </widget>
+    <app_a-widget-text-text style="position: absolute;top:72px;left: 22px;line-height: 25px;height: 25px;z-index:2">
+        {"text":"{{'我的战力:'+common.numberCarry(parseInt(player.power || 0),1000000)}}","textCfg":"powerNum","fontSize":22}
+    </app_a-widget-text-text>
     {{let initial_count = vip_advantage[player.vip].daily_instance_times }}
     {{let has_count = initial_count + it1.vip_daily_times[it1.fb_id-1] - it1.use_times[it1.fb_id-1] }}
     <div w-class="6" w-sid="6" style="left:50%;margin-left: -246px;">
@@ -63,6 +66,9 @@
                         </widget>
                         {{end}}
                     </div>
+                    <app_a-widget-text-text style="position: absolute;top:76px;right: 35px;height: 25px;white-space: nowrap;">
+                        {"text":"{{'推荐战力:'+common.numberCarry(v.power,10000)}}","textCfg":"powerNum","fontSize":18,"space":-1}
+                    </app_a-widget-text-text>
                     {{else}}
                     <widget w-class="15" w-tag="app_a-widget-text-text" w-sid="15" style="right:32px;">
                         {"text":{{"通过野外"+it1.getWildName(v.open_level)+"可开启"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"lvOpenRed"} 

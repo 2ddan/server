@@ -5,13 +5,14 @@ import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 import { net_request, net_message } from "app_a/connect/main";
 import { Common } from "app/mod/common";
-import { Common_m } from "app_b/mod/common";
 import { insert, updata, get as getDB, checkTypeof } from "app/mod/db";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { globalSend, Pi } from "app/mod/pi";
 import { Util } from "app/mod/util";
 import { open, close } from "app/mod/root";
-
+import { closeBack } from "pi/ui/root";
+import { getRealNode } from "pi/widget/painter";
+import { findNodeByAttr } from "pi/widget/virtual_node";
 /**
  * 配置表
  */
@@ -27,6 +28,7 @@ import { guild_contribution } from "cfg/c/guild_contribution";
 import { guild_collect } from "cfg/c/guild_collect";
 import { guild_charge } from "cfg/c/guild_charge";
 import { guild_build } from "cfg/c/guild_build";
+import { guild_battle_base } from "cfg/c/guild_battle_base";
 
 
 /**
@@ -44,12 +46,16 @@ insert("gang", {
     "gangExpandData": {},
     //其它数据
     "other": {
-        "skill_id": 1 //选择技能
+        "skill_id": 1, //选择技能
+        "is_fighting": 0, //是否正在战斗
+        "is_up_skill": 0
     },
     //门派boss数据
     "gangBoss": {},
     //所有门派
-    "gang_list": []
+    "gang_list": [],
+    //门派boss领奖
+    "tip": {}
 });
 
 /**
@@ -90,6 +96,8 @@ export const getData = function () {
     data.guild_charge = guild_charge;
     data.guild_build = guild_build;
 
+    let gang_contribute = getDB("bag*sid=150005").pop();
+    data.gang_contribute = gang_contribute ? gang_contribute.count : 0;
     data.gangData = getDB("gang.data"); //门派数据
     data.gangExpandData = getDB("gang.gangExpandData"); //门派扩展功能数据
     data.gang_tab = gang_tab; //门派tab切换
@@ -102,6 +110,9 @@ export const getData = function () {
     data.player = getDB("player");
 
     data.other = getDB("gang.other");
+
+    data.guild_battle_base = guild_battle_base;
+    data.Util = Util;
     return data;
 }
 
@@ -111,17 +122,19 @@ export const getData = function () {
  */
 export const globalReceive = {
     //进入门派功能
-    gotoGang: () => {
+    gotoGang: (i?) => {
         if (funIsOpen("gang")) {
-            goIntoGang();
+            goIntoGang(i);
             globalSend("openNewFun", "gang");
         }
     }
 }
 
-const goIntoGang = function () {
+const goIntoGang = function (i?) {
+    i = i || 0;
+    let arr = ["info", "member_list", "build", "event"];
     //tab 页
-    gang_tab = "info";
+    gang_tab = arr[i];
     forelet.paint(getData());
     //玩家是否已经在门派了
     if (gangData) {
@@ -139,6 +152,14 @@ const goIntoGang = function () {
  * 前台操作 [widget]
  */
 export class Gang extends Widget {
+    clearText() {
+        let w:any = forelet.getWidget("app_c-gang-gang_msg-gang_msg");
+        if (!w) {
+            return;
+        }
+        let _listNode : any = getRealNode(findNodeByAttr(w.tree, "data-desc" ,"text"));
+        _listNode.value = '';
+    }
     //查看其它玩家
     seeOther(roleId) {
         globalSend("gotoSeeOther", roleId);
@@ -217,6 +238,8 @@ export class Gang extends Widget {
     //确定创建
     createClick(bol) {
         if (bol) {
+            let w = forelet.getWidget("app_c-gang-create-create");
+            w && close(w);
             gangFun.lackDiamond();
             return;
         }
@@ -242,17 +265,20 @@ export class Gang extends Widget {
         // }
         createGang(name);
     }
-    //打开搜索界面
-    gotoFindClick() {
-        //重置数据
-        find_list = [];
-        input_text.gang_name = '';
-        //调用获取门派列表的函数
-        readGangList(() => {
-            forelet.paint(getData());
-            open("app_c-gang-find_m-find_m");
-        });
-
+    // //打开搜索界面  [此版本取消该功能]
+    // gotoFindClick() {
+    //     //重置数据
+    //     find_list = [];
+    //     input_text.gang_name = '';
+    //     //调用获取门派列表的函数
+    //     readGangList(() => {
+    //         forelet.paint(getData());
+    //         open("app_c-gang-find_m-find_m");
+    //     });
+    // }
+    //快速加入
+    quickJoin() {
+        quickJoin();
     }
     //搜索门派
     findClick() {
@@ -320,7 +346,7 @@ export class Gang extends Widget {
     exitClick() {
         globalSend("popTip", {
             btn_name: ["确定", "取消"],
-            title: "是否退出，和本门派恩断义绝！",
+            title: `是够离开门派?(<span style="color:red">离开门派24小时内不可再加入门派</span>)`,
             cb: [function () {
                 exitGnag();
             }, ""]
@@ -346,6 +372,10 @@ export class Gang extends Widget {
     /**
      * 扩展功能操作
      */
+    //打开一键加入
+    openAutoJoin() {
+        openAutoJoin()
+    }
     //打开每日俸禄
     openDailySalary() {
         globalSend("openDailySalary");
@@ -365,6 +395,18 @@ export class Gang extends Widget {
     //打开门派boss
     openGangBoss() {
         globalSend("openGangBoss");
+    }
+    //打开门派战
+    openGangBattle() {
+        // globalSend("openGangBattle");
+        globalSend("attrTip", { words: `敬请期待....` })
+    }
+    funInfo() {
+        globalSend("funInfo", {
+            width: 235,
+            hieght: 90,
+            text: `<div class="shadow" style="color:#ffd8a6">开启自动通过以后，申请进入门派的玩家会不经过审核直接加进门派。</div>`
+        })
     }
 }
 
@@ -512,6 +554,9 @@ const gangFun = {
         _data.pray_name = _data.pray_name ? (checkTypeof(_data.pray_name, "Array") ? Common.fromCharCode(_data.pray_name) : _data.pray_name) : undefined;
         _data.prop_name = _data.prop_name ? (checkTypeof(_data.prop_name, "Array") ? Common.fromCharCode(_data.prop_name) : _data.prop_name) : undefined;
         _data.gang_name = checkTypeof(_data.gang_name, "Array") ? Common.fromCharCode(_data.gang_name) : _data.gang_name;
+        _data.boss_name = _data.boss_name ? (checkTypeof(_data.boss_name, "Array") ? Common.fromCharCode(_data.boss_name) : _data.boss_name) : undefined;
+
+        
         _data.desc = checkTypeof(_data.desc, "Array") ? Common.fromCharCode(_data.desc) : _data.desc;
         _data.notice = checkTypeof(_data.notice, "Array") ? Common.fromCharCode(_data.notice) : _data.notice;
         for (let k in _data) {
@@ -538,16 +583,22 @@ const gangFun = {
     },
     //关闭所有窗体
     closeAll: function () {
-        gangFun.closeW("app_c-gang-hall-hall_m");
-        gangFun.closeW("app_c-gang-shop-shop_m");
-        gangFun.closeW("app_c-gang-instance-main-chapter");
-        gangFun.closeW("app_c-gang-role-role_m");
-        gangFun.closeW("app_c-gang-gang_list-gang_list");
+        let w = forelet.getWidget("app_c-gang-hall-hall_m");
+        if (w) {
+            closeBack();
+        }
+
+        // gangFun.closeW("app_c-gang-hall-hall_m");
+        // gangFun.closeW("app_c-gang-shop-shop_m");
+        // gangFun.closeW("app_c-gang-instance-main-chapter");
+        // gangFun.closeW("app_c-gang-role-role_m");
+        // gangFun.closeW("app_c-gang-gang_list-gang_list");
     },
     //门主或者副门主处理申请后, 后台推送消息, 重新读取门派成员
     disposeMember: function (sid) {
-        //删除改天申请
+        //删除该条申请
         apply_list = apply_list.filter(function (x) { return sid != x.role_id });
+        updata("gang.data.apply_list", apply_list);
         //新加入的玩家
         if (sid == getDB("player").role_id) {
             readAllData(() => {
@@ -581,7 +632,9 @@ const gangFun = {
                 btn_name: ["确认", "取消"],
                 cb: [function () {
                     gangFun.notifyPlayer();
-                }, ""]
+                }, function () {
+                    gangFun.notifyPlayer();
+                }]
             });
         }
         //将被踢除的玩家删除
@@ -595,7 +648,7 @@ const gangFun = {
     //弹出框通知玩家已被踢出门派
     notifyPlayer: function () {
         gangData = null;
-        updata("gang.data", {});
+        readAllData();
         gangFun.closeAll();
     }
 };
@@ -635,12 +688,6 @@ const read = function (callback?) {
                 updata("gang.data", _data);
                 return;
             }
-            // //读取扩展功能数据
-            // readExpand();
-            // //读取boss数据
-            // readBoss();
-            // //读取门派成员列表
-            // readMemberList();
 
             /**
              * 解析门派数据
@@ -652,10 +699,9 @@ const read = function (callback?) {
             gangData.gang_bulletin = Common.fromCharCode(gangData.gang_bulletin);
             //门派内部公告
             gangData.gang_notice = Common.fromCharCode(gangData.gang_notice);
-            //??????
+            //门派商店[已购买的商品]
             gangData.gang_reward_record = gangData.gang_reward_record ? Common.changeArrToJson(gangData.gang_reward_record) : {};
-            //门派商店
-            gangData.gang_shop_record = gangData.gang_shop_record ? Common.changeArrToJson(gangData.gang_shop_record) : {};
+
             //门派事件
             if (!gangData.gang_event_record) {
                 gangData.gang_event_record = [];
@@ -671,9 +717,10 @@ const read = function (callback?) {
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
+            console.log(data.why);
         })
 };
 /**
@@ -690,14 +737,14 @@ const readExpand = function (callback?) {
             //存入前台数据库
             gangExpandData.liveness_event_info = Common.changeArrToJson(gangExpandData.liveness_event_info);
             updata("gang.gangExpandData", gangExpandData);
-            updata("player.gang_contribute", gangExpandData.gang_contribute);
             console.log(gangExpandData);
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
+            console.log(data.why);
         })
 };
 /**
@@ -710,14 +757,28 @@ export const readBoss = function (callback?) {
     };
     gangNet(arg)
         .then((data: any) => {
-            let _data = Common.changeArrToJson(data.ok);
+            let _data: any = Common.changeArrToJson(data.ok);
+            _data.kill_boss_info.forEach((v, i) => {
+                _data.kill_boss_info[i] = Common.changeArrToJson(v)
+            });
+            
+            _data.boss_award_info.forEach((arr, i) => {
+                if (Array.isArray(arr)) {
+                    arr.forEach((v, j) => {
+                        if (Array.isArray(v[1])) {
+                            v[1] = Common.fromCharCode(v[1])
+                        }
+                    })
+                }
+            });
+            // console.log(_data.boss_award_info);
             updata("gang.gangBoss", _data);
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
         })
 }
 /**
@@ -744,9 +805,9 @@ export const readGangList = function (callback?) {
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
             return;
         })
 };
@@ -777,9 +838,9 @@ export const readMemberList = function (callback?) {
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
             return;
         })
 };
@@ -797,12 +858,22 @@ const applyGang = function (msg) {
     gangNet(arg)
         .then((data: any) => {
             let _data: any = Common.changeArrToJson(data.ok);
-            gang_list[msg[1] - 0].is_apply = 1;
-            forelet.paint(getData());
-            globalSend("screenTipFun", {
-                words: "申请成功！"
-            });
-            updata("gang.data.apply_list", _data.apply_list);
+            if (_data.gang_id > 0) {
+                // 加入门派重新读取数据
+                readAllData(() => {
+                    let w = forelet.getWidget("app_c-gang-main-main");
+                    w && close(w);
+                    forelet.paint(getData());
+                    open("app_c-gang-hall-hall_m")
+                })
+            } else {
+                gang_list[msg[1] - 0].is_apply = 1;
+                forelet.paint(getData());
+                globalSend("screenTipFun", {
+                    words: "申请成功！"
+                });
+                updata("gang.data.apply_list", _data.apply_list);
+            }
         })
         .catch((data) => {
             globalSend("screenTipFun", {
@@ -834,10 +905,13 @@ const readApply = function (callback?) {
             callback && callback();
         })
         .catch((data) => {
-            globalSend("screenTipFun", {
-                words: `${data.why}`
-            });
-            return;
+            // if (data.why == "not have gang") {
+            //     return;
+            // }
+            // globalSend("screenTipFun", {
+            //     words: `${data.why}`
+            // });
+            // return;
         })
 };
 /**
@@ -854,10 +928,6 @@ const disposeApply = function (msg) {
     };
     gangNet(arg)
         .then((data: any) => {
-            let _data = Common.changeArrToJson(data.ok);
-            //将该套申请删除
-            apply_list.splice(msg[2], 1);
-            updata("gang.data.apply_list", apply_list);
             forelet.paint(getData());
             globalSend("attrTip", {
                 words: "已成功处理！"
@@ -1069,6 +1139,8 @@ const sureKickMember = function () {
     };
     gangNet(arg)
         .then((data) => {
+            let w = forelet.getWidget("app_c-gang-tips_tpl-kickmember");
+            w && close(w);
             globalSend("attrTip", {
                 words: `该玩家已踢出门派`
             });
@@ -1077,6 +1149,58 @@ const sureKickMember = function () {
             globalSend("screenTipFun", {
                 words: `${data.why}`
             });
+        })
+};
+/**
+ * 打开一键加入功能
+ */
+const openAutoJoin = function () {
+    let arg = {
+        "param": {},
+        "type": "app/gang/expand@change_gang_open"
+    };
+    gangNet(arg)
+        .then((data: any) => {
+            let obj: any = Common.changeArrToJson(data.ok);
+            updata("gang.gangExpandData.is_auto", obj.is_auto);
+            forelet.paint(getData());
+            globalSend("attrTip", {
+                words: `自动通过已${obj.is_auto == "true" ? '开启' : '关闭'}`
+            })
+        })
+        .catch((data) => {
+            console.log("开启失败")
+        })
+};
+/**
+ * 一键加入
+ */
+const quickJoin = function () {
+    let arg = {
+        "param": {},
+        "type": "app/gang/expand@quick_entry"
+    };
+    gangNet(arg)
+        .then((data: any) => {
+            let _data: any = Common.changeArrToJson(data.ok);
+            if (_data.gang_id == 0) {
+                globalSend("screenTipFun", {
+                    words: `暂无合适门派`
+                });
+                return;
+            }
+            //读取门派数据
+            readAllData(() => {
+                let w = forelet.getWidget("app_c-gang-main-main");
+                w && close(w);
+                forelet.paint(getData());
+                open("app_c-gang-hall-hall_m")
+            })
+        })
+        .catch((data) => {
+            globalSend("screenTipFun", {
+                words: data.why
+            })
         })
 }
 
@@ -1247,4 +1371,29 @@ const readAllData = function (callback?) {
     });
 };
 
-readAllData();
+readAllData(() => {
+    gangTipFun();
+});
+
+export const gangTipFun = function () {
+    let entry_time = getDB("gang.gangExpandData.entry_time") || 0;
+    if (entry_time > 0) {
+        let boss_info = getDB("gang.gangBoss.boss_info"); 
+        let role_boss_award = getDB("gang.gangBoss.role_boss_award");
+        let kill_boss_info = getDB("gang.gangBoss.kill_boss_info");
+        let tip = {};
+        for (let i = 0, len = boss_info.length; i < len; i++) {
+            if (role_boss_award[i] == 1) {
+                tip[i] = 0;
+                continue;
+            }
+            if (boss_info[i][2] <= 0 && entry_time < kill_boss_info[i].kill_boss_time) {
+                tip[i] = 1; //可以领取
+            } else {
+                tip[i] = 0; //不能领取
+            }
+        }
+        updata("gang.tip", tip);
+    }
+}
+

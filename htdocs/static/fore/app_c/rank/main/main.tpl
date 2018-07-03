@@ -22,6 +22,9 @@
         {{let weapon_m = null}}
         {{let w_eff = null}}
         {{let m = null}}
+        {{let type = "fighter"}}
+        {{let position = [0.6,1.5,-0.5]}}
+        {{let rotate = [0,0,0]}}
 
         {{if rankData[0].clothes}}
             {{: _index = clothes_module[rankData[0].clothes].career_id.indexOf(rankData[0].career_id)}}
@@ -62,33 +65,40 @@
         {{let pet = ""}}
         {{let treasure1 = ""}}
         {{let module_info = ""}}
+        {{let double = false}}
         {{if it1.tabSwitch == "treasure_rank"}}
             {{let magic = rankData[0]}}
             {{let treasureId = magic.treasure.treasure[0]}}
             {{let weaponCfg = _get("app/scene/plan_cfg/parts_config").exports.parts_cfg}}
-            {{let Tmodule = weaponCfg[treasureId].module[0][0]}}
+            {{: module = weaponCfg[treasureId].module[0][0]}}
             {{let info = TreasurePhase[treasureId][magic.treasure.treasure[1]]}}
             {{let index = info.career_id.indexOf(rankData[0].career_id)}}
             {{let w_eff1 = info.magic_show ? info.magic_show[index] : null}}
             {{let w_eff2 = info.magic_show ? info.magic_show[index] : null}}
-            {{let double =  rankData[0].career_id == "700002" ? true : false}}
-            {{:treasure1 = {"Teffect":Tmodule,"Tposition":(double ? [0,2.1,-1]:[0,2.1,-1]),"Tscale":[1,1,1],"Trotate":[0.5,-0.28,0],"Tw_eff":[w_eff1,w_eff2],"Tdouble":double} }}
+            {{:w_eff = [w_eff1,w_eff2]}}
+            {{let career_id = rankData[0].career_id}}
+            {{:double = career_id == "700002" ? true : false}}
+            {{:position =  career_id == "700001" ? [0.85,2.5,0] : career_id == "700002" ? [0.9,2.5,0] : [1.2,2.1,0]}}
+
+            {{:type = "weapon"}}
+            {{:rotate = [-3.7,1.57,0]}}
         {{elseif it1.tabSwitch == "pet_rank"}}
             {{: module_info = it1.pet_module[it1.pet_upgrade[rankData[0].pet_class].module]}}
-            {{let pet_module = null}}
-            {{if rankData[0].pet.own_skin[0]}}
-                {{: pet_module = it1.pet_module[rankData[0].pet.own_skin[0]].module}}
+            {{if  rankData[0].pet && rankData[0].pet.own_skin[0]}}
+                {{: module = it1.pet_module[rankData[0].pet.own_skin[0]].module}}
             {{else}}
-                {{: pet_module = module_info.module}}
+                {{: module = module_info.module}}
             {{end}}
-            {{: pet1 = {"position":[0.2,1.2,-1],"monsterModule":pet_module } }}
+            {{:type = "pet"}}
+            {{:rotate = [0,0.7,0]}}
+
         {{end}}
 
         <div style="position: absolute;left: 50%;top: 115px;width: 401px;height: 370px;margin-left: -199px;z-index: 1;">
             <app-scene-base-scene>
                 {
                     "name":"uiscene",
-                    "type":"fighter",
+                    "type":{{type}},
                     "module":{
                         "type":{{it.type}},
                         "module":{{module}},
@@ -96,12 +106,10 @@
                         "w_eff":{{w_eff}},
                         "s_eff":{{s_eff}},
                         "body_eff":{{body_eff}},
-                        "position":[{{it1.tabSwitch == "treasure_rank" || it1.tabSwitch == "pet_rank" ? 1 : 0.6 }},1.5,-0.5],
-                        "scale":1,
-                        "p_scale":{{it1.tabSwitch == "pet_rank" ? module_info.scale : 1}},
-                        "rotate":[0,0,0],
-                        "treasure":{{it1.tabSwitch == "treasure_rank" ? treasure1 : "" }},
-                        "pet":{{it1.tabSwitch == "pet_rank" ? pet1 : ""}},
+                        "double":{{double}},
+                        "position":{{position}},
+                        "scale":{{it1.tabSwitch == "treasure_rank" ? [0.9,0.9,0.9] : 1}},
+                        "rotate":{{rotate}},
                         "sid":{{player.role_id}},
                         "scene_bg":"sce_ui_phb"
                     },
@@ -136,11 +144,8 @@
             <img src="../images/rank_one_info.png" style="position:absolute" />
 
             {{let imgX= ''}}
-            {{if topData.head && topData.head.indexOf("undefined") < 0}}
-                {{: imgX = topData.head}}
-            {{else}}
-                {{: imgX = Pi.pictures['playerhead'+topData.career_id]}}
-            {{end}}
+
+                {{: imgX = Pi.pictures['playerhead'+(topData.head || topData.career_id)]}}
             <img src="../images/rank_head_bg.png" style="position: absolute;left: 4px;right: 0px;margin: 0 auto;top: 24px;" />
             <app_a-widget-head-friend on-tap="seeOther({{topData.role_id}})" style="position: absolute;left: 69px;top: 31px;width: 90px;height: 90px;">
                 {"url":{{imgX}},"top":3.5,"level":{{topData.level}},"width":60,"height":60}    
@@ -217,11 +222,8 @@
                         </app_a-widget-line-line>
 
                         {{let img= ''}}
-                        {{if v.head && v.head.indexOf("undefined") < 0}}
-                            {{: img = v.head}}
-                        {{else}}
-                            {{: img = Pi.pictures['playerhead'+v.career_id]}}
-                        {{end}}
+
+                            {{: img = Pi.pictures['playerhead'+(v.head || v.career_id)]}}
                         <app_a-widget-head-friend on-tap="seeOther({{v.role_id}})" style="position: absolute;left: 114px;top: 3px;width: 85px;height: 85px;">
                             {"url":{{img}},"top":2.5,"level":{{v.level}},"width":60,"height":60}    
                         </app_a-widget-head-friend>

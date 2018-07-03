@@ -1,7 +1,11 @@
+/** 
+ * 
+ */
 export class ExternalForcesModule {
-	multiplier: number;
+	public multiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.multiplier = config.multiplier;
 	}
-};
+}

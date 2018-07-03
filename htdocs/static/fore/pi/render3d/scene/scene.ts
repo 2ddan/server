@@ -4,13 +4,13 @@
 
 // ============================== 导入
 
-import { create as createFrame, setInterval as setFrameInterval } from "../../widget/frame_mgr"
+import { create as createFrame, setInterval as setFrameInterval } from '../../widget/frame_mgr';
 
-import { Widget } from "../../widget/widget";
+import { Widget } from '../../widget/widget';
 
-import { Forelet } from "../../widget/forelet";
+import { Forelet } from '../../widget/forelet';
 
-import { getRealNode, paintCmd3 } from "../../widget/painter";
+import { getRealNode, paintCmd3 } from '../../widget/painter';
 
 // ============================== 导出
 
@@ -20,38 +20,39 @@ import { getRealNode, paintCmd3 } from "../../widget/painter";
  */
 export const forelet = new Forelet();
 
-import { SceneManager } from "../../render3d/scene_mgr";
+import { SceneManager } from '../../render3d/scene_mgr';
 
 export let cfg = {
-  width: 420,
-  height: 700,
-  antialias: false
+	width: 420,
+	height: 700,
+	antialias: false
 };
 
 let frame;
 let isInitMgr = false;
 export const init = () => {
 
-  if (isInitMgr) return;
+	if (isInitMgr) return;
 
-  isInitMgr = true;
+	isInitMgr = true;
 
-  SceneManager.init(cfg.width, cfg.height, cfg.antialias);
+	SceneManager.init(cfg.width, cfg.height, cfg.antialias);
 
-  SceneManager.reset({
-    lights: [{
-      type: "Ambient",
-      color: [1.0, 1.0, 1.0]
-    }]
-  });
+	SceneManager.reset({
+		lights: [{
+			type: 'Ambient',
+			color: [1.0, 1.0, 1.0]
+		}]
+	});
 
-  // 场景的渲染循环
-  let FPS = 31;
-  frame = createFrame();
-  frame.setInterval(1000 / FPS);
-  setFrameInterval(frame);
-  frame.setPermanent(SceneManager.render.bind(SceneManager));
-}
+	// 场景的渲染循环
+	const FPS = 31;
+	frame = createFrame();
+	// tslint:disable-next-line:no-string-based-set-interval
+	frame.setInterval(1000 / FPS);
+	setFrameInterval(frame);
+	frame.setPermanent(SceneManager.render.bind(SceneManager));
+};
 
 // ============================== 本地
 
@@ -61,20 +62,20 @@ export const init = () => {
 
 forelet.listener = (cmd: string, widget: Widget): void => {
 
-  if (cmd === "firstPaint") {
+	if (cmd === 'firstPaint') {
 
-    let canvas = SceneManager.getCanvas();
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    paintCmd3(getRealNode(widget.tree), "appendChild", [canvas]);
-  }
-}
+		const canvas = SceneManager.getCanvas();
+		canvas.style.width = '100%';
+		canvas.style.height = '100%';
+		paintCmd3(getRealNode(widget.tree), 'appendChild', [canvas]);
+	}
+};
 
 let clickCB: Function = null;
 
 // 设置点击回调，主要是场景查询
 export const setClickCallback = (cb: Function) => {
-  clickCB = cb;
+	clickCB = cb;
 };
 
 /**
@@ -84,19 +85,19 @@ export const setClickCallback = (cb: Function) => {
  * 
  */
 export const setFrameStateCallback = (cb: Function, interval) => {
-  frame.setStat(cb, interval);
+	frame.setStat(cb, interval);
 };
 
 export class Scene extends Widget {
-  constructor() {
-    super();
-  }
+	constructor() {
+		super();
+	}
 
-  onRayCast(event: any) {
-    let scale = cfg.width;
-    let x = event.x * (cfg.width / window.innerWidth)
-    let y = event.y * (cfg.height / window.innerHeight);
-    let result = SceneManager.raycast(x, y);
-    clickCB && clickCB(result);
-  }
+	public onRayCast(event: any) {
+		const scale = cfg.width;
+		const x = event.x * (cfg.width / window.innerWidth);
+		const y = event.y * (cfg.height / window.innerHeight);
+		const result = SceneManager.raycast(x, y);
+		clickCB && clickCB(result);
+	}
 }

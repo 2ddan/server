@@ -20,10 +20,20 @@
             </widget>
            
             <div w-class="22" w-sid="22">
+				<widget  w-tag="app_a-widget-bg_frame-bg" style="width:100%;height:95%;left:0;top:4px;">
+					{"bgName":"bg_frame31"} 
+				</widget>
+				<app_a-widget-line-line style="position:absolute;top:0px;left:0px;right:0px;margin:0 auto;width:100%">
+					{"line":"line_16"}
+				</app_a-widget-line-line>
+				<app_a-widget-line-line style="position:absolute;bottom:0px;left:0px;right:0px;margin:0 auto;width:100%">
+					{"line":"line_17"}
+				</app_a-widget-line-line>
+
                 <div w-class="23" w-sid="23"  class="shadow6">
 						{{it1.skill.table[it1.TreasurePhase.skill_id].name }}
                 </div>
-                <div style="overflow:hidden;width: 100%;height: 80px;"> 技能：{{it.describe}}</div>
+                <div style="overflow:hidden;width: 100%;height: 80px;position: relative;"> 技能：{{it.describe}}</div>
             </div>
             <div w-class="18" w-sid="18">
                 <widget w-class="15" w-tag="app_a-widget-title-single" w-sid="15" class="shadow6">

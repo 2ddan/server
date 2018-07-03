@@ -1,26 +1,28 @@
-import {Widget} from "../../../widget/widget";
+/**
+ * 
+ */
+import {Widget} from '../../../widget/widget';
 
-interface Props{
+interface Props {
     clickFunc:string;
 }
 
-export class EventHtml extends Widget{
-    props:Props;
-    constructor(){
+export class EventHtml extends Widget {
+    public props:Props;
+    constructor() {
         super();
         this.props = {
-            clickFunc:"click1",
-        }
+            clickFunc:'click1'
+        };
     }
-    click1(event:any){
+    public click1(event:any) {
         event.preventDefault();
-        alert(" i am click 1");
-        this.props.clickFunc = "click2"
+        alert(' i am click 1');
+        this.props.clickFunc = 'click2';
         this.paint();        
     }
-    click2(event:any){
-        alert(" i am click 2");
+    public click2(event:any) {
+        alert(' i am click 2');
     }
 
 }
-

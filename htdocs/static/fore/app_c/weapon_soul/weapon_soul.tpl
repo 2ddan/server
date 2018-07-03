@@ -16,6 +16,10 @@
                 {"effect":[]}
             </app_c-weapon_soul-weapon_module-weapon_module>
 
+            <app_b-widget-buff-buff style="position: absolute;bottom: 13px;left: 50%;transform:translateX(-50%);z-index:2;white-space:nowrap">
+                {"height":50,"base_width":50,"type":"weapon_soul","level":{{it1.class}}}
+            </app_b-widget-buff-buff>
+
             {{let pos = [[26,104],[361,104],[26,331],[361,331]]}}
             {{for i, v of it1.level_record}}
             <div on-tap="selectType({{i}})" w-class="element_bg" style="left:{{pos[i][0]}}px;top:{{pos[i][1]}}px;">

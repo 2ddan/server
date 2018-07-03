@@ -1,5 +1,4 @@
 import { get } from "app/mod/db";
-import { Common } from "app/mod/common";
 export class TaskProgress {
     //主角等级
     static getPlayerLevel(value) {
@@ -59,7 +58,7 @@ export class TaskProgress {
     //所有装备升星总星数
     static allEquipStar(value) {
         let equip_star = get("friend_battle.equip_star");
-        if (equip_star) {
+        if (!equip_star) {
             return [false, 0];
         }
         let num = 0;
@@ -91,7 +90,7 @@ export class TaskProgress {
         if (arr.length === 0) {
             return [false, 0];
         }
-        return [arr[0] > value, arr[0] >= value ? value : arr[0]];
+        return [arr[0] >= value, arr[0] >= value ? value : arr[0]];
     }
     //收集时装套数
     static getFashionNum(value) {
@@ -145,15 +144,7 @@ export class TaskProgress {
     }
     //九窍总等级
     static allSoulLevel(value) {
-        let soul = get("soul.soul_info") || [];
-        let num = 0;
-        if (soul.length > 0) {
-            for (let arr of soul) {
-                arr.forEach(v => {
-                    num += v[1];
-                });
-            }
-        }
+        let num = get("soul.num") || 0;
         return [num >= value, num >= value ? value : num];
     }
     //野外达到第几关

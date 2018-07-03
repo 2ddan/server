@@ -1,6 +1,9 @@
 <div style="width:100%;height:100%;">
         <div w-class="login_bg"></div>
         <div w-class="logo"></div>
+        <app-widget-btn-menu style="right: 22px;top: 232px;" on-tap="openNotice">
+            {"icon":"menu_notice","text":"仙侠通知","width":60,"height":60,"bottom":"-3","bg":3,"fontSize":16,"space":-6,"position":"absolute" }
+        </app-widget-btn-menu>
         <div style="width:525px;height:300px;position:absolute;left:50%;margin-left:-262px;top:447px;" ev-input-text="listenInputText">
             {{if !it1.uid}}
             <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-15px;left:-8px;">

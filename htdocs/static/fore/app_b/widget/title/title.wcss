@@ -18,7 +18,7 @@
 	position:absolute;
 	background-size: 100% 100%;
 }
-.title_coin_count{
+/* .title_coin_count{
 	color:#e3d8bb;
 	height:26px;
 	position:absolute;
@@ -26,4 +26,4 @@
 	text-align: center;
 	left: 19px;
 	white-space: nowrap;
-}
+} */

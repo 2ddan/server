@@ -1,0 +1,43 @@
+
+{
+  "name" : "Juese_Machao@skin_qiang",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      3.7352106119215E-07,
+      1.78813891693608E-07,
+      2.94872734899181E-14
+    ]
+  },
+  "geometry"  : {
+    "type" : "BufferGeometry",
+    "res"  : "5U7DFQiyCF8iBEJKxwCdBH.geo"
+  },
+  "meshRender" : {
+    "material" : [
+      {
+        "type" : "MeshBasicMaterial",
+        "map"  : {
+          "filter" : [
+            1006,
+            1007
+          ],
+          "generateMipmaps" : true,
+          "image"           : {
+            "name" : "H7DHWC7LJERb2YXYqjZeHi.jpg"
+          }
+        }
+      }
+    ]
+  }
+}

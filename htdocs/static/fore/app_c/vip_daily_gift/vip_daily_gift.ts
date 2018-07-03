@@ -1,11 +1,10 @@
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { data as localDB,get as getDB, updata, listen } from "app/mod/db";
+import { get as getDB, updata, listen } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
-import { listenBack } from "app/mod/db_back";
 
 //导入配置
 
@@ -74,7 +73,7 @@ listen("player.vip", () => {
 /**
  * @description 设置首次打开监听，并设置it1
  */
-forelet.listener = (cmd,w) => {
+forelet.listener = (cmd) => {
     if(cmd !== "add")return;
     forelet.paint(vip_data());
 };

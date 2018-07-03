@@ -1,0 +1,6 @@
+{
+    "tpl":"./top.tpl",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts",
+    "css":"../robres.wcss"
+}

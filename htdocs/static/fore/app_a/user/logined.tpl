@@ -13,12 +13,14 @@
             </app_a-widget-pic_other-pic_other>
         </div>
     </div>
-
+    {{let Pi = _get("app/mod/pi").exports.Pi}}
+    {{let bol = Pi.debug}}
+    {{if bol}}
     <div w-class="create" on-tap="logOut" style="top:85px;left:80px;">
         <div style="position:absolute;width:100%;height:50px;line-height:50px;text-align:center;color:#ffd8a6;top:4px;font-family:mnjsh;font-size:24px;">切换账号</div>
     </div>
-
-    <div w-class="create" on-tap="goIntoGame" style="top:85px;left:310px;">
+    {{end}}
+    <div w-class="create" on-tap="goIntoGame" style="top:85px;left:{{bol ? '310px' : '50%'}};">
         <div style="position:absolute;width:100%;height:50px;line-height:50px;text-align:center;color:#ffd8a6;top:4px;font-family:mnjsh;font-size:24px;">进入游戏</div>
     </div>
 </div>

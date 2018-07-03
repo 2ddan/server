@@ -27,11 +27,12 @@
         {{let award = it1.guild_boss[it1.index].award_info}}
         <div style="position:absolute;width:420px;height:214px;left:50%;margin-left:-210px;top:20px;">
             {{for i, v of award}}
+            {{if v[2] > 0}}
             {{let prop = it1.Pi.sample[v[0]]}}
             {{let url = it1.Pi.pictures[prop.icon]}}
             <div style="position:relative;width:70px;height:70px;margin:0 17px 45px 17px;display:inline-block;">
                 <div style="position:absolute;width:70px;height:70px;">
-                    <widget w-tag="app_a-widget-prop-base" on-tap="showPropInfo({{prop.id || prop.sid}})">
+                    <widget w-tag="app_a-widget-prop-base" on-tap="propInfoShow({{prop.id || prop.sid}})">
                         {"width":70,"height":70,"prop":{{prop}} ,"url":{{url}},"count":{{v[1]}},"name":"none"} 
                     </widget>
                     <app_a-widget-pic_text-pic_text style="position:absolute;top:66px;left:50%;margin-left:-45px;">
@@ -39,6 +40,7 @@
                     </app_a-widget-pic_text-pic_text>
                 </div>
             </div>
+            {{end}}
             {{end}}
         </div>
     </div>

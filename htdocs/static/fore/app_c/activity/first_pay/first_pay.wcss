@@ -19,7 +19,7 @@
 .bg_3 {
     position: absolute;
     width: 50px;
-    height: 208px;
+    height: 276px;
     background-image: url(./images/bg_3.png);
     background-repeat: no-repeat;
     left: 30px;
@@ -80,15 +80,17 @@
 }
 .text_1 {
     position: absolute;
-    width: 429px;
-    height: 40px;
+    width: 326px;
+    height: 43px;
     background-image: url(./images/text_1.png);
     background-repeat: no-repeat;
+    left: 40px;
 }
 .text_2 {
     position: absolute;
-    width: 328px;
-    height: 38px;
+    width: 237px;
+    height: 40px;
     background-image: url(./images/text_2.png);
     background-repeat: no-repeat;
+    left: 50px;
 }

@@ -4,8722 +4,19376 @@ export const time_limit_gift = {
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值6元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100007,10],[100008,10],[100009,10],[100010,10],
+			[101301,10],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},2:{
 		"prop_id":2,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值6元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100007,10],[100008,10],[100009,10],[100010,10],
+			[101301,8],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},3:{
 		"prop_id":3,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值30元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100007,20],[100008,20],[100009,20],[100010,20],
+			[101301,12],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},4:{
 		"prop_id":4,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值30元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100007,20],[100008,20],[100009,20],[100010,20],
+			[101301,24],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},5:{
 		"prop_id":5,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值50元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100007,30],[100008,30],[100009,30],[100010,30],
+			[101301,36],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66010,
+		"rechargeID":66204,
 		"rmb": 50
 	},6:{
 		"prop_id":6,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值50元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100007,30],[100008,30],[100009,30],[100010,30],
+			[101301,48],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66205,
+		"rmb": 98
 	},7:{
 		"prop_id":7,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值98元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100007,60],[100008,60],[100009,60],[100010,60],
+			[101301,90],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},8:{
 		"prop_id":8,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值98元，宝石爆仓"],
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100007,60],[100008,60],[100009,60],[100010,60],
+			[101301,150],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},9:{
 		"prop_id":9,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"40",
-		"limit_time":1200,
-		"desc":["充值288元，宝石爆仓"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100007,180],[100008,180],[100009,180],[100010,180],
+			[101301,10],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},10:{
 		"prop_id":10,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值6元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100056,2],
-			[100001,100000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},11:{
 		"prop_id":11,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值6元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100056,2],
-			[100001,100000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66202,
+		"rmb": 12
 	},12:{
 		"prop_id":12,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值30元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100056,10],
-			[100001,200000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},13:{
 		"prop_id":13,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值30元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100056,10],
-			[100001,200000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66204,
+		"rmb": 50
 	},14:{
 		"prop_id":14,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值50元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100056,15],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66205,
+		"rmb": 98
 	},15:{
 		"prop_id":15,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值50元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100056,15],
-			[100001,500000]
+			[101301,90],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66207,
+		"rmb": 288
 	},16:{
 		"prop_id":16,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值98元，疯狂试炼场"],
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100056,30],
-			[100001,500000]
+			[101301,150],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},17:{
 		"prop_id":17,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值98元，疯狂试炼场"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100056,30],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},18:{
 		"prop_id":18,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"50",
-		"limit_time":1200,
-		"desc":["充值288元，疯狂试炼场"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100056,88],
-			[100001,1000000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},19:{
 		"prop_id":19,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值6元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100019,5],[100020,5],[100021,5],[100022,5],
+			[101301,12],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66202,
+		"rmb": 12
 	},20:{
 		"prop_id":20,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值6元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100019,5],[100020,5],[100021,5],[100022,5],
+			[101301,24],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66203,
+		"rmb": 30
 	},21:{
 		"prop_id":21,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值30元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100019,20],[100020,20],[100021,20],[100022,20],
+			[101301,36],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66204,
+		"rmb": 50
 	},22:{
 		"prop_id":22,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值30元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100019,20],[100020,20],[100021,20],[100022,20],
+			[101301,48],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66205,
+		"rmb": 98
 	},23:{
 		"prop_id":23,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值50元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100019,40],[100020,40],[100021,40],[100022,40],
+			[101301,90],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66207,
+		"rmb": 288
 	},24:{
 		"prop_id":24,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值50元，龙魂爆仓"],
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100019,40],[100020,40],[100021,40],[100022,40],
+			[101301,150],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66209,
+		"rmb": 648
 	},25:{
 		"prop_id":25,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值98元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100019,80],[100020,80],[100021,80],[100022,80],
+			[102101,5],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},26:{
 		"prop_id":26,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值98元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100019,80],[100020,80],[100021,80],[100022,80],
+			[102101,4],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},27:{
 		"prop_id":27,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值288元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100019,200],[100020,200],[100021,200],[100022,200],
+			[102101,6],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},28:{
 		"prop_id":28,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值288元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100019,200],[100020,200],[100021,200],[100022,200],
+			[102101,12],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},29:{
 		"prop_id":29,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"60",
-		"limit_time":1200,
-		"desc":["充值648元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100019,500],[100020,500],[100021,500],[100022,500],
+			[102101,18],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},30:{
 		"prop_id":30,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值6元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100019,5],[100020,5],[100021,5],[100022,5],
+			[102101,24],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66205,
+		"rmb": 98
 	},31:{
 		"prop_id":31,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值6元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100019,5],[100020,5],[100021,5],[100022,5],
+			[102101,45],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66207,
+		"rmb": 288
 	},32:{
 		"prop_id":32,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值30元，龙魂爆仓"],
+		"appear_condition":"140",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100019,20],[100020,20],[100021,20],[100022,20],
+			[102101,75],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},33:{
 		"prop_id":33,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值30元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100019,20],[100020,20],[100021,20],[100022,20],
+			[102101,5],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},34:{
 		"prop_id":34,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值50元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100019,40],[100020,40],[100021,40],[100022,40],
+			[102101,4],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66201,
+		"rmb": 6
 	},35:{
 		"prop_id":35,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值50元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100019,40],[100020,40],[100021,40],[100022,40],
+			[102101,6],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},36:{
 		"prop_id":36,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值98元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100019,80],[100020,80],[100021,80],[100022,80],
+			[102101,12],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66203,
+		"rmb": 30
 	},37:{
 		"prop_id":37,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值98元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100019,80],[100020,80],[100021,80],[100022,80],
+			[102101,18],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},38:{
 		"prop_id":38,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值288元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100019,200],[100020,200],[100021,200],[100022,200],
+			[102101,24],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},39:{
 		"prop_id":39,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值288元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100019,200],[100020,200],[100021,200],[100022,200],
+			[102101,45],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},40:{
 		"prop_id":40,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"70",
-		"limit_time":1200,
-		"desc":["充值648元，龙魂爆仓"],
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100019,500],[100020,500],[100021,500],[100022,500],
+			[102101,75],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},41:{
 		"prop_id":41,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},42:{
 		"prop_id":42,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},43:{
 		"prop_id":43,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},44:{
 		"prop_id":44,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},45:{
 		"prop_id":45,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66204,
+		"rmb": 50
 	},46:{
 		"prop_id":46,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},47:{
 		"prop_id":47,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},48:{
 		"prop_id":48,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"180",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},49:{
 		"prop_id":49,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},50:{
 		"prop_id":50,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},51:{
 		"prop_id":51,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},52:{
 		"prop_id":52,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},53:{
 		"prop_id":53,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"80",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},54:{
 		"prop_id":54,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66205,
+		"rmb": 98
 	},55:{
 		"prop_id":55,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66207,
+		"rmb": 288
 	},56:{
 		"prop_id":56,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"200",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},57:{
 		"prop_id":57,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},58:{
 		"prop_id":58,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},59:{
 		"prop_id":59,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66202,
+		"rmb": 12
 	},60:{
 		"prop_id":60,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66203,
+		"rmb": 30
 	},61:{
 		"prop_id":61,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},62:{
 		"prop_id":62,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},63:{
 		"prop_id":63,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},64:{
 		"prop_id":64,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"220",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},65:{
 		"prop_id":65,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},66:{
 		"prop_id":66,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"99",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},67:{
 		"prop_id":67,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},68:{
 		"prop_id":68,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},69:{
 		"prop_id":69,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66204,
+		"rmb": 50
 	},70:{
 		"prop_id":70,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66205,
+		"rmb": 98
 	},71:{
 		"prop_id":71,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66207,
+		"rmb": 288
 	},72:{
 		"prop_id":72,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"240",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},73:{
 		"prop_id":73,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},74:{
 		"prop_id":74,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},75:{
 		"prop_id":75,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},76:{
 		"prop_id":76,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},77:{
 		"prop_id":77,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},78:{
 		"prop_id":78,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},79:{
 		"prop_id":79,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"100",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},80:{
 		"prop_id":80,
 		"name":"冲级礼包",
 		"appear_comment":"角色等级",
 		"appear_type":"level",
-		"appear_condition":"119",
+		"appear_condition":"260",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},81:{
 		"prop_id":81,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},82:{
 		"prop_id":82,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},83:{
 		"prop_id":83,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},84:{
 		"prop_id":84,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},85:{
 		"prop_id":85,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},86:{
 		"prop_id":86,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},87:{
 		"prop_id":87,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},88:{
 		"prop_id":88,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"2",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},89:{
 		"prop_id":89,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},90:{
 		"prop_id":90,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},91:{
 		"prop_id":91,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},92:{
 		"prop_id":92,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},93:{
 		"prop_id":93,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},94:{
 		"prop_id":94,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},95:{
 		"prop_id":95,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"119",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},96:{
 		"prop_id":96,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},97:{
 		"prop_id":97,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},98:{
 		"prop_id":98,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},99:{
 		"prop_id":99,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},100:{
 		"prop_id":100,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},101:{
 		"prop_id":101,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},102:{
 		"prop_id":102,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},103:{
 		"prop_id":103,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},104:{
 		"prop_id":104,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"4",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},105:{
 		"prop_id":105,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},106:{
 		"prop_id":106,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},107:{
 		"prop_id":107,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},108:{
 		"prop_id":108,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},109:{
 		"prop_id":109,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},110:{
 		"prop_id":110,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},111:{
 		"prop_id":111,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"120",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},112:{
 		"prop_id":112,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},113:{
 		"prop_id":113,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},114:{
 		"prop_id":114,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},115:{
 		"prop_id":115,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},116:{
 		"prop_id":116,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},117:{
 		"prop_id":117,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},118:{
 		"prop_id":118,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},119:{
 		"prop_id":119,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},120:{
 		"prop_id":120,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"6",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},121:{
 		"prop_id":121,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},122:{
 		"prop_id":122,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},123:{
 		"prop_id":123,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},124:{
 		"prop_id":124,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},125:{
 		"prop_id":125,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},126:{
 		"prop_id":126,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},127:{
 		"prop_id":127,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"139",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},128:{
 		"prop_id":128,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},129:{
 		"prop_id":129,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},130:{
 		"prop_id":130,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},131:{
 		"prop_id":131,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},132:{
 		"prop_id":132,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},133:{
 		"prop_id":133,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},134:{
 		"prop_id":134,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},135:{
 		"prop_id":135,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},136:{
 		"prop_id":136,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"8",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},137:{
 		"prop_id":137,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},138:{
 		"prop_id":138,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},139:{
 		"prop_id":139,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},140:{
 		"prop_id":140,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},141:{
 		"prop_id":141,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},142:{
 		"prop_id":142,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},143:{
 		"prop_id":143,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"140",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},144:{
 		"prop_id":144,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},145:{
 		"prop_id":145,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},146:{
 		"prop_id":146,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},147:{
 		"prop_id":147,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},148:{
 		"prop_id":148,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},149:{
 		"prop_id":149,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},150:{
 		"prop_id":150,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},151:{
 		"prop_id":151,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},152:{
 		"prop_id":152,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"10",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},153:{
 		"prop_id":153,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},154:{
 		"prop_id":154,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},155:{
 		"prop_id":155,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},156:{
 		"prop_id":156,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},157:{
 		"prop_id":157,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},158:{
 		"prop_id":158,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},159:{
 		"prop_id":159,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"159",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},160:{
 		"prop_id":160,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"11",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},161:{
 		"prop_id":161,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},162:{
 		"prop_id":162,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},163:{
 		"prop_id":163,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},164:{
 		"prop_id":164,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},165:{
 		"prop_id":165,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},166:{
 		"prop_id":166,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},167:{
 		"prop_id":167,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},168:{
 		"prop_id":168,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"12",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},169:{
 		"prop_id":169,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},170:{
 		"prop_id":170,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},171:{
 		"prop_id":171,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},172:{
 		"prop_id":172,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},173:{
 		"prop_id":173,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},174:{
 		"prop_id":174,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},175:{
 		"prop_id":175,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"160",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},176:{
 		"prop_id":176,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"13",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},177:{
 		"prop_id":177,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},178:{
 		"prop_id":178,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},179:{
 		"prop_id":179,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},180:{
 		"prop_id":180,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值50元，红装相送"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100027,25],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},181:{
 		"prop_id":181,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},182:{
 		"prop_id":182,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},183:{
 		"prop_id":183,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100027,75],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},184:{
 		"prop_id":184,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"14",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},185:{
 		"prop_id":185,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},186:{
 		"prop_id":186,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},187:{
 		"prop_id":187,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},188:{
 		"prop_id":188,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},189:{
 		"prop_id":189,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},190:{
 		"prop_id":190,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},191:{
 		"prop_id":191,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"179",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,100],[100027,100],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},192:{
 		"prop_id":192,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"17",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},193:{
 		"prop_id":193,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},194:{
 		"prop_id":194,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},195:{
 		"prop_id":195,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},196:{
 		"prop_id":196,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},197:{
 		"prop_id":197,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},198:{
 		"prop_id":198,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},199:{
 		"prop_id":199,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},200:{
 		"prop_id":200,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"20",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},201:{
 		"prop_id":201,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},202:{
 		"prop_id":202,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},203:{
 		"prop_id":203,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},204:{
 		"prop_id":204,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},205:{
 		"prop_id":205,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},206:{
 		"prop_id":206,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},207:{
 		"prop_id":207,
-		"name":"冲级礼包",
-		"appear_comment":"角色等级",
-		"appear_type":"level",
-		"appear_condition":"180",
+		"name":"登录豪礼",
+		"appear_comment":"第几天登录触发",
+		"appear_type":"role_time_login",
+		"appear_condition":"23",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},208:{
 		"prop_id":208,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值6元，攻击爆炸"],
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100008,20],[100020,50],
-			[100001,100000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},209:{
 		"prop_id":209,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值6元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100008,20],[100020,50],
-			[100001,100000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},210:{
 		"prop_id":210,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值30元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100008,30],[100020,60],
-			[100001,200000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},211:{
 		"prop_id":211,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值30元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100008,30],[100020,60],
-			[100001,200000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},212:{
 		"prop_id":212,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值50元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100008,50],[100020,100],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},213:{
 		"prop_id":213,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值50元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100008,50],[100020,100],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66010,
+		"rechargeID":66204,
 		"rmb": 50
 	},214:{
 		"prop_id":214,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值98元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100008,100],[100020,100],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},215:{
 		"prop_id":215,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值98元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100008,100],[100020,100],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},216:{
 		"prop_id":216,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值288元，攻击爆炸"],
+		"appear_condition":"26",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100008,200],[100020,500],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66209,
+		"rmb": 648
 	},217:{
 		"prop_id":217,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值288元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100008,200],[100020,500],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},218:{
 		"prop_id":218,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值288元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100008,200],[100020,500],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},219:{
 		"prop_id":219,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值288元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100008,200],[100020,500],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},220:{
 		"prop_id":220,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值649元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100008,400],[100020,800],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},221:{
 		"prop_id":221,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值649元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100008,400],[100020,800],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},222:{
 		"prop_id":222,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值649元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100008,400],[100020,800],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},223:{
 		"prop_id":223,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"2",
-		"limit_time":900,
-		"desc":["充值649元，攻击爆炸"],
+		"appear_condition":"29",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100008,400],[100020,800],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},224:{
 		"prop_id":224,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"29",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[100006,300],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},225:{
 		"prop_id":225,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[101301,10],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},226:{
 		"prop_id":226,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[101301,8],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},227:{
 		"prop_id":227,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[101301,12],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},228:{
 		"prop_id":228,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[101301,24],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},229:{
 		"prop_id":229,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[101301,36],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},230:{
 		"prop_id":230,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[101301,48],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},231:{
 		"prop_id":231,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[102101,45],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},232:{
 		"prop_id":232,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"32",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102101,75],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},233:{
 		"prop_id":233,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,5],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},234:{
 		"prop_id":234,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,4],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},235:{
 		"prop_id":235,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,6],[102102,1],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},236:{
 		"prop_id":236,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,12],[102102,2],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},237:{
 		"prop_id":237,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,18],[102102,3],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},238:{
 		"prop_id":238,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[101701,24],[102102,6],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},239:{
 		"prop_id":239,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"3",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[100006,180],[102102,18],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},240:{
 		"prop_id":240,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"39",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},241:{
 		"prop_id":241,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},242:{
 		"prop_id":242,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},243:{
 		"prop_id":243,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},244:{
 		"prop_id":244,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},245:{
 		"prop_id":245,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},246:{
 		"prop_id":246,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},247:{
 		"prop_id":247,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},248:{
 		"prop_id":248,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"46",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},249:{
 		"prop_id":249,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},250:{
 		"prop_id":250,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},251:{
 		"prop_id":251,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},252:{
 		"prop_id":252,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},253:{
 		"prop_id":253,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},254:{
 		"prop_id":254,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},255:{
 		"prop_id":255,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"4",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},256:{
 		"prop_id":256,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"53",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},257:{
 		"prop_id":257,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},258:{
 		"prop_id":258,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},259:{
 		"prop_id":259,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},260:{
 		"prop_id":260,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值30元，红装相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},261:{
 		"prop_id":261,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},262:{
 		"prop_id":262,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值98元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},263:{
 		"prop_id":263,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},264:{
 		"prop_id":264,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"60",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值648元，红装相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},265:{
 		"prop_id":265,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},266:{
 		"prop_id":266,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},267:{
 		"prop_id":267,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},268:{
 		"prop_id":268,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},269:{
 		"prop_id":269,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},270:{
 		"prop_id":270,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},271:{
 		"prop_id":271,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"6",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},272:{
 		"prop_id":272,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"67",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},273:{
 		"prop_id":273,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,10],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},274:{
 		"prop_id":274,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,8],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},275:{
 		"prop_id":275,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,12],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},276:{
 		"prop_id":276,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
 		"desc":["充值30元，红装相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[101301,24],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},277:{
 		"prop_id":277,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,36],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},278:{
 		"prop_id":278,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
 		"desc":["充值98元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[101301,48],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},279:{
 		"prop_id":279,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，红装相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102101,45],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},280:{
 		"prop_id":280,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"74",
 		"limit_time":1800,
 		"desc":["充值648元，红装相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102101,75],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},281:{
 		"prop_id":281,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,5],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},282:{
 		"prop_id":282,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,4],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},283:{
 		"prop_id":283,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,6],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},284:{
 		"prop_id":284,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,12],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},285:{
 		"prop_id":285,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,18],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},286:{
 		"prop_id":286,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，赋灵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[101701,24],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},287:{
 		"prop_id":287,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"7",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},288:{
 		"prop_id":288,
-		"name":"登录好礼",
+		"name":"登录豪礼",
 		"appear_comment":"第几天登录触发",
 		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"appear_condition":"81",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[100006,300],[102102,40],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},289:{
 		"prop_id":289,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[102103,8],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},290:{
 		"prop_id":290,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值6元，赋灵达人"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[102103,8],
 			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},291:{
 		"prop_id":291,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[102103,10],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},292:{
 		"prop_id":292,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值50元，赋灵达人"],
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100052,5],[100053,5],[100054,5],[100055,5],
+			[102103,24],
 			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},293:{
 		"prop_id":293,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[102103,36],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},294:{
 		"prop_id":294,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[102103,48],
 			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},295:{
 		"prop_id":295,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值98元，赋灵达人"],
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100052,10],[100053,10],[100054,10],[100055,10],
+			[102103,90],
 			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},296:{
 		"prop_id":296,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"3",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,150],
 			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},297:{
 		"prop_id":297,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,8],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},298:{
 		"prop_id":298,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,8],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},299:{
 		"prop_id":299,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,10],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},300:{
 		"prop_id":300,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,24],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},301:{
 		"prop_id":301,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,36],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},302:{
 		"prop_id":302,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,48],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},303:{
 		"prop_id":303,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"10",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值648元，赋灵达人"],
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100052,66],[100053,66],[100054,66],[100055,66],
+			[102103,90],
 			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},304:{
 		"prop_id":304,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"5",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66209,
+		"rmb": 648
 	},305:{
 		"prop_id":305,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},306:{
 		"prop_id":306,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},307:{
 		"prop_id":307,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66202,
+		"rmb": 12
 	},308:{
 		"prop_id":308,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值30元，红装相送"],
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100029,10],
-			[100001,500000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66009,
+		"rechargeID":66203,
 		"rmb": 30
 	},309:{
 		"prop_id":309,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},310:{
 		"prop_id":310,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},311:{
 		"prop_id":311,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值98元，红装相送"],
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100029,30],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},312:{
 		"prop_id":312,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"7",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},313:{
 		"prop_id":313,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},314:{
 		"prop_id":314,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},315:{
 		"prop_id":315,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},316:{
 		"prop_id":316,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},317:{
 		"prop_id":317,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},318:{
 		"prop_id":318,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},319:{
 		"prop_id":319,
-		"name":"登录好礼",
-		"appear_comment":"第几天登录触发",
-		"appear_type":"role_time_login",
-		"appear_condition":"12",
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"9",
 		"limit_time":1800,
-		"desc":["充值648元，红装相送"],
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100029,200],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},320:{
 		"prop_id":320,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值6元，神兵相送"],
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,100],[150002,1000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},321:{
 		"prop_id":321,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,100],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},322:{
 		"prop_id":322,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,100],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},323:{
 		"prop_id":323,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,150],[150002,1500],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},324:{
 		"prop_id":324,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,150],[150002,1500],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},325:{
 		"prop_id":325,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值98元，神兵相送"],
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},326:{
 		"prop_id":326,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
+		"appear_condition":"10",
+		"limit_time":1800,
 		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},327:{
 		"prop_id":327,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
+		"appear_condition":"10",
+		"limit_time":1800,
 		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,400],[150002,3000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},328:{
 		"prop_id":328,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
+		"appear_condition":"10",
+		"limit_time":1800,
 		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},329:{
 		"prop_id":329,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},330:{
 		"prop_id":330,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},331:{
 		"prop_id":331,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},332:{
 		"prop_id":332,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},333:{
 		"prop_id":333,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},334:{
 		"prop_id":334,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},335:{
 		"prop_id":335,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"4",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},336:{
 		"prop_id":336,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值6元，神兵相送"],
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},337:{
 		"prop_id":337,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},338:{
 		"prop_id":338,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,100],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},339:{
 		"prop_id":339,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,150],[150002,1500],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},340:{
 		"prop_id":340,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,150],[150002,1500],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},341:{
 		"prop_id":341,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值98元，神兵相送"],
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},342:{
 		"prop_id":342,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
+		"appear_condition":"12",
+		"limit_time":1800,
 		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},343:{
 		"prop_id":343,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
+		"appear_condition":"12",
+		"limit_time":1800,
 		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,500],[150002,3000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},344:{
 		"prop_id":344,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
+		"appear_condition":"12",
+		"limit_time":1800,
 		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},345:{
 		"prop_id":345,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},346:{
 		"prop_id":346,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},347:{
 		"prop_id":347,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},348:{
 		"prop_id":348,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},349:{
 		"prop_id":349,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},350:{
 		"prop_id":350,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},351:{
 		"prop_id":351,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"5",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},352:{
 		"prop_id":352,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值6元，神兵相送"],
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},353:{
 		"prop_id":353,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},354:{
 		"prop_id":354,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},355:{
 		"prop_id":355,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},356:{
 		"prop_id":356,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},357:{
 		"prop_id":357,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值98元，神兵相送"],
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},358:{
 		"prop_id":358,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
+		"appear_condition":"14",
+		"limit_time":1800,
 		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},359:{
 		"prop_id":359,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
+		"appear_condition":"14",
+		"limit_time":1800,
 		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,500],[150002,3000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},360:{
 		"prop_id":360,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
+		"appear_condition":"14",
+		"limit_time":1800,
 		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},361:{
 		"prop_id":361,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},362:{
 		"prop_id":362,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},363:{
 		"prop_id":363,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},364:{
 		"prop_id":364,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},365:{
 		"prop_id":365,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},366:{
 		"prop_id":366,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},367:{
 		"prop_id":367,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"6",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},368:{
 		"prop_id":368,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值6元，神兵相送"],
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},369:{
 		"prop_id":369,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"16",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},370:{
 		"prop_id":370,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"16",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},371:{
 		"prop_id":371,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"16",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},372:{
 		"prop_id":372,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"16",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},373:{
 		"prop_id":373,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值98元，神兵相送"],
+		"appear_condition":"16",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},374:{
 		"prop_id":374,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
+		"appear_condition":"16",
+		"limit_time":1800,
 		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,200],[150002,2000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},375:{
 		"prop_id":375,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
+		"appear_condition":"16",
+		"limit_time":1800,
 		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,500],[150002,3000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},376:{
 		"prop_id":376,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
+		"appear_condition":"16",
+		"limit_time":1800,
 		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},377:{
 		"prop_id":377,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},378:{
 		"prop_id":378,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},379:{
 		"prop_id":379,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},380:{
 		"prop_id":380,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},381:{
 		"prop_id":381,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},382:{
 		"prop_id":382,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},383:{
 		"prop_id":383,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"7",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},384:{
 		"prop_id":384,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值6元，神兵相送"],
+		"appear_condition":"17",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},385:{
 		"prop_id":385,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"18",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},386:{
 		"prop_id":386,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值30元，神兵相送"],
+		"appear_condition":"18",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},387:{
 		"prop_id":387,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"18",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},388:{
 		"prop_id":388,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值50元，神兵相送"],
+		"appear_condition":"18",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,200],[150002,1500],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},389:{
 		"prop_id":389,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值98元，神兵相送"],
+		"appear_condition":"18",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,400],[150002,2000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},390:{
 		"prop_id":390,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
+		"appear_condition":"18",
+		"limit_time":1800,
 		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,400],[150002,2000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},391:{
 		"prop_id":391,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
+		"appear_condition":"18",
+		"limit_time":1800,
 		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,600],[150002,3000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},392:{
 		"prop_id":392,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
+		"appear_condition":"18",
+		"limit_time":1800,
 		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66015,
+		"rechargeID":66209,
 		"rmb": 648
 	},393:{
 		"prop_id":393,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},394:{
 		"prop_id":394,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66201,
+		"rmb": 6
 	},395:{
 		"prop_id":395,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66202,
+		"rmb": 12
 	},396:{
 		"prop_id":396,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66203,
+		"rmb": 30
 	},397:{
 		"prop_id":397,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66204,
+		"rmb": 50
 	},398:{
 		"prop_id":398,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66205,
+		"rmb": 98
 	},399:{
 		"prop_id":399,
 		"name":"神兵天降",
 		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
 		"appear_type":"hexagram_level",
-		"appear_condition":"8",
-		"limit_time":600,
-		"desc":["充值648元，神兵相送"],
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100017,1500],[150002,5000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66015,
-		"rmb": 648
+		"rechargeID":66207,
+		"rmb": 288
 	},400:{
 		"prop_id":400,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"19",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},401:{
 		"prop_id":401,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},402:{
 		"prop_id":402,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},403:{
 		"prop_id":403,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},404:{
 		"prop_id":404,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},405:{
 		"prop_id":405,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},406:{
 		"prop_id":406,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},407:{
 		"prop_id":407,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},408:{
 		"prop_id":408,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},409:{
 		"prop_id":409,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},410:{
 		"prop_id":410,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},411:{
 		"prop_id":411,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66202,
+		"rmb": 12
 	},412:{
 		"prop_id":412,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66203,
+		"rmb": 30
 	},413:{
 		"prop_id":413,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},414:{
 		"prop_id":414,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},415:{
 		"prop_id":415,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"250",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},416:{
 		"prop_id":416,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"21",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},417:{
 		"prop_id":417,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},418:{
 		"prop_id":418,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},419:{
 		"prop_id":419,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},420:{
 		"prop_id":420,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},421:{
 		"prop_id":421,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},422:{
 		"prop_id":422,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},423:{
 		"prop_id":423,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},424:{
 		"prop_id":424,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"22",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},425:{
 		"prop_id":425,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},426:{
 		"prop_id":426,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},427:{
 		"prop_id":427,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},428:{
 		"prop_id":428,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},429:{
 		"prop_id":429,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},430:{
 		"prop_id":430,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},431:{
 		"prop_id":431,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"300",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},432:{
 		"prop_id":432,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"23",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},433:{
 		"prop_id":433,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},434:{
 		"prop_id":434,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值6元，神兵相送"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102103,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},435:{
 		"prop_id":435,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值12元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},436:{
 		"prop_id":436,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值30元，神兵相送"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102103,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},437:{
 		"prop_id":437,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值50元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},438:{
 		"prop_id":438,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值98元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},439:{
 		"prop_id":439,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值288元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},440:{
 		"prop_id":440,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"神兵天降",
+		"appear_comment":"神兵铸魂第8个孔位完成，第N次",
+		"appear_type":"hexagram_level",
+		"appear_condition":"24",
+		"limit_time":1800,
+		"desc":["充值648元，神兵相送"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102103,150],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},441:{
 		"prop_id":441,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},442:{
 		"prop_id":442,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},443:{
 		"prop_id":443,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值12元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,10],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},444:{
 		"prop_id":444,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值30元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,24],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},445:{
 		"prop_id":445,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值50元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,36],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},446:{
 		"prop_id":446,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值98元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,48],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},447:{
 		"prop_id":447,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"400",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值288元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},448:{
 		"prop_id":448,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值648元，疯狂强化"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[102104,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},449:{
 		"prop_id":449,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},450:{
 		"prop_id":450,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},451:{
 		"prop_id":451,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值12元，疯狂强化"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102104,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},452:{
 		"prop_id":452,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值30元，疯狂强化"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102104,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},453:{
 		"prop_id":453,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值50元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},454:{
 		"prop_id":454,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值98元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},455:{
 		"prop_id":455,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值288元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},456:{
 		"prop_id":456,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"appear_condition":"400",
+		"limit_time":1800,
+		"desc":["充值648元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,150],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},457:{
 		"prop_id":457,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},458:{
 		"prop_id":458,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},459:{
 		"prop_id":459,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值12元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,10],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},460:{
 		"prop_id":460,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值30元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,24],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},461:{
 		"prop_id":461,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值50元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,36],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},462:{
 		"prop_id":462,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值98元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,48],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},463:{
 		"prop_id":463,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"500",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值288元，疯狂强化"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[102104,90],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},464:{
 		"prop_id":464,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"appear_condition":"500",
+		"limit_time":1800,
+		"desc":["充值648元，疯狂强化"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[102104,150],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},465:{
 		"prop_id":465,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},466:{
 		"prop_id":466,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值6元，疯狂强化"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[102104,8],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},467:{
 		"prop_id":467,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值12元，疯狂强化"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102104,10],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},468:{
 		"prop_id":468,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值30元，疯狂强化"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[102104,24],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},469:{
 		"prop_id":469,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值50元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,36],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},470:{
 		"prop_id":470,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值98元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,48],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},471:{
 		"prop_id":471,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值288元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,90],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},472:{
 		"prop_id":472,
-		"name":"武装自己",
+		"name":"装备强化",
 		"appear_comment":"装备强化总等级到N级",
 		"appear_type":"equip_total_level",
 		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"limit_time":1800,
+		"desc":["充值648元，疯狂强化"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[102104,150],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},473:{
 		"prop_id":473,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},474:{
 		"prop_id":474,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},475:{
 		"prop_id":475,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},476:{
 		"prop_id":476,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},477:{
 		"prop_id":477,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},478:{
 		"prop_id":478,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},479:{
 		"prop_id":479,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"600",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},480:{
 		"prop_id":480,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"32",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},481:{
 		"prop_id":481,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},482:{
 		"prop_id":482,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},483:{
 		"prop_id":483,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},484:{
 		"prop_id":484,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},485:{
 		"prop_id":485,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},486:{
 		"prop_id":486,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},487:{
 		"prop_id":487,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},488:{
 		"prop_id":488,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},489:{
 		"prop_id":489,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},490:{
 		"prop_id":490,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},491:{
 		"prop_id":491,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},492:{
 		"prop_id":492,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},493:{
 		"prop_id":493,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},494:{
 		"prop_id":494,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},495:{
 		"prop_id":495,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"700",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},496:{
 		"prop_id":496,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"72",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},497:{
 		"prop_id":497,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},498:{
 		"prop_id":498,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},499:{
 		"prop_id":499,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},500:{
 		"prop_id":500,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},501:{
 		"prop_id":501,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},502:{
 		"prop_id":502,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},503:{
 		"prop_id":503,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},504:{
 		"prop_id":504,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"76",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},505:{
 		"prop_id":505,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},506:{
 		"prop_id":506,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},507:{
 		"prop_id":507,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},508:{
 		"prop_id":508,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},509:{
 		"prop_id":509,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},510:{
 		"prop_id":510,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},511:{
 		"prop_id":511,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"800",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},512:{
 		"prop_id":512,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},513:{
 		"prop_id":513,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},514:{
 		"prop_id":514,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},515:{
 		"prop_id":515,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},516:{
 		"prop_id":516,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},517:{
 		"prop_id":517,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},518:{
 		"prop_id":518,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},519:{
 		"prop_id":519,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},520:{
 		"prop_id":520,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"112",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},521:{
 		"prop_id":521,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},522:{
 		"prop_id":522,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},523:{
 		"prop_id":523,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},524:{
 		"prop_id":524,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},525:{
 		"prop_id":525,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},526:{
 		"prop_id":526,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},527:{
 		"prop_id":527,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"900",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},528:{
 		"prop_id":528,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"116",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},529:{
 		"prop_id":529,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},530:{
 		"prop_id":530,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},531:{
 		"prop_id":531,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},532:{
 		"prop_id":532,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},533:{
 		"prop_id":533,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},534:{
 		"prop_id":534,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},535:{
 		"prop_id":535,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},536:{
 		"prop_id":536,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},537:{
 		"prop_id":537,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},538:{
 		"prop_id":538,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},539:{
 		"prop_id":539,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},540:{
 		"prop_id":540,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},541:{
 		"prop_id":541,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},542:{
 		"prop_id":542,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},543:{
 		"prop_id":543,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1000",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},544:{
 		"prop_id":544,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点6元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"148",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,3000],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},545:{
 		"prop_id":545,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},546:{
 		"prop_id":546,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点30元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,15000],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},547:{
 		"prop_id":547,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},548:{
 		"prop_id":548,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点50元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,25000],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},549:{
 		"prop_id":549,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},550:{
 		"prop_id":550,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},551:{
 		"prop_id":551,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66207,
+		"rmb": 288
 	},552:{
 		"prop_id":552,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"152",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66209,
+		"rmb": 648
 	},553:{
 		"prop_id":553,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点98元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,50000],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66201,
+		"rmb": 6
 	},554:{
 		"prop_id":554,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},555:{
 		"prop_id":555,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},556:{
 		"prop_id":556,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},557:{
 		"prop_id":557,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},558:{
 		"prop_id":558,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},559:{
 		"prop_id":559,
-		"name":"武装自己",
-		"appear_comment":"装备强化总等级到N级",
-		"appear_type":"equip_total_level",
-		"appear_condition":"1100",
-		"limit_time":360,
-		"desc":["充点288元，疯狂强化"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[100004,150000],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},560:{
 		"prop_id":560,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到2",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点6元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"156",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,20],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},561:{
 		"prop_id":561,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,60],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},562:{
 		"prop_id":562,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,60],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},563:{
 		"prop_id":563,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},564:{
 		"prop_id":564,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},565:{
 		"prop_id":565,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},566:{
 		"prop_id":566,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},567:{
 		"prop_id":567,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},568:{
 		"prop_id":568,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"160",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66209,
+		"rmb": 648
 	},569:{
 		"prop_id":569,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},570:{
 		"prop_id":570,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},571:{
 		"prop_id":571,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},572:{
 		"prop_id":572,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},573:{
 		"prop_id":573,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},574:{
 		"prop_id":574,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},575:{
 		"prop_id":575,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"30",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},576:{
 		"prop_id":576,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到2",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点6元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"184",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,40],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},577:{
 		"prop_id":577,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,60],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},578:{
 		"prop_id":578,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,60],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},579:{
 		"prop_id":579,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},580:{
 		"prop_id":580,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},581:{
 		"prop_id":581,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},582:{
 		"prop_id":582,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},583:{
 		"prop_id":583,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},584:{
 		"prop_id":584,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"188",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66209,
+		"rmb": 648
 	},585:{
 		"prop_id":585,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},586:{
 		"prop_id":586,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},587:{
 		"prop_id":587,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},588:{
 		"prop_id":588,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},589:{
 		"prop_id":589,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},590:{
 		"prop_id":590,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},591:{
 		"prop_id":591,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"40",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},592:{
 		"prop_id":592,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到2",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点6元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"192",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,50],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},593:{
 		"prop_id":593,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,80],
-			[100001,200000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},594:{
 		"prop_id":594,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点30元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,80],
-			[100001,200000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66009,
-		"rmb": 30
+		"rechargeID":66201,
+		"rmb": 6
 	},595:{
 		"prop_id":595,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66202,
+		"rmb": 12
 	},596:{
 		"prop_id":596,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点50元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,100],
-			[100001,200000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66010,
-		"rmb": 50
+		"rechargeID":66203,
+		"rmb": 30
 	},597:{
 		"prop_id":597,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66011,
-		"rmb": 98
+		"rechargeID":66204,
+		"rmb": 50
 	},598:{
 		"prop_id":598,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点98元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,198],
-			[100001,500000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66011,
+		"rechargeID":66205,
 		"rmb": 98
 	},599:{
 		"prop_id":599,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},600:{
 		"prop_id":600,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"196",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66209,
+		"rmb": 648
 	},601:{
 		"prop_id":601,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,500000]
+			[101701,25],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},602:{
 		"prop_id":602,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值6元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66201,
+		"rmb": 6
 	},603:{
 		"prop_id":603,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值12元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,30],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66202,
+		"rmb": 12
 	},604:{
 		"prop_id":604,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值30元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,60],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66203,
+		"rmb": 30
 	},605:{
 		"prop_id":605,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值50元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,90],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66204,
+		"rmb": 50
 	},606:{
 		"prop_id":606,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值98元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,120],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66013,
-		"rmb": 288
+		"rechargeID":66205,
+		"rmb": 98
 	},607:{
 		"prop_id":607,
-		"name":"宝石豪礼",
-		"appear_comment":"宝石总等级达到4",
-		"appear_type":"equip_total_diamond",
-		"appear_condition":"50",
-		"limit_time":900,
-		"desc":["充点288元，宝石亮晶晶"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值288元，赋灵不停"],
 		"award":[
-			[101201,588],
-			[100001,1000000]
+			[101701,225],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66013,
+		"rechargeID":66207,
 		"rmb": 288
 	},608:{
 		"prop_id":608,
-		"name":"礼包16",
-		"appear_comment":"升星总星级达到2",
-		"appear_type":"equip_total_star",
-		"appear_condition":"2",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"赋灵礼包",
+		"appear_comment":"赋灵元素总等级2",
+		"appear_type":"ensoul_total_level",
+		"appear_condition":"200",
+		"limit_time":1800,
+		"desc":["充值648元，赋灵不停"],
 		"award":[
-			[100015,57],
-			[100001,100000]
+			[101701,375],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},609:{
 		"prop_id":609,
-		"name":"礼包17",
-		"appear_comment":"升星总星级达到3",
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
 		"appear_type":"equip_total_star",
-		"appear_condition":"3",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
 		"award":[
-			[100015,58],
-			[100001,100000]
+			[100006,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},610:{
 		"prop_id":610,
-		"name":"礼包18",
-		"appear_comment":"红装激活1件",
-		"appear_type":"forge_red_equip",
-		"appear_condition":"1",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
 		"award":[
-			[100015,59],
-			[100001,100000]
+			[100006,16],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},611:{
 		"prop_id":611,
-		"name":"礼包19",
-		"appear_comment":"红装激活5件",
-		"appear_type":"forge_red_equip",
-		"appear_condition":"5",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
 		"award":[
-			[100015,60],
-			[100001,100000]
+			[100006,24],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66202,
+		"rmb": 12
 	},612:{
 		"prop_id":612,
-		"name":"礼包20",
-		"appear_comment":"红装升级次数1",
-		"appear_type":"red_equip_level",
-		"appear_condition":"1",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
 		"award":[
-			[100015,61],
-			[100001,100000]
+			[100006,48],[102102,2],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66203,
+		"rmb": 30
 	},613:{
 		"prop_id":613,
-		"name":"礼包21",
-		"appear_comment":"红装升级次数3",
-		"appear_type":"red_equip_level",
-		"appear_condition":"3",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
 		"award":[
-			[100015,62],
-			[100001,100000]
+			[100006,72],[102102,3],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66204,
+		"rmb": 50
 	},614:{
 		"prop_id":614,
-		"name":"礼包22",
-		"appear_comment":"九窍总等级达到2级",
-		"appear_type":"soul_total_level",
-		"appear_condition":"2",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
 		"award":[
-			[100015,63],
-			[100001,100000]
+			[100006,96],[102102,6],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66205,
+		"rmb": 98
 	},615:{
 		"prop_id":615,
-		"name":"礼包23",
-		"appear_comment":"九窍总等级达到5级",
-		"appear_type":"soul_total_level",
-		"appear_condition":"5",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
 		"award":[
-			[100015,64],
-			[100001,100000]
+			[100006,180],[102102,18],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66207,
+		"rmb": 288
 	},616:{
 		"prop_id":616,
-		"name":"礼包24",
-		"appear_comment":"激活1个阵法",
-		"appear_type":"activate_gest",
-		"appear_condition":"1",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
 		"award":[
-			[100015,65],
-			[100001,100000]
+			[100006,300],[102102,40],
+			[100001,0]
 		],
-		"rechargeID":66008,
-		"rmb": 6
+		"rechargeID":66209,
+		"rmb": 648
 	},617:{
 		"prop_id":617,
-		"name":"礼包25",
-		"appear_comment":"激活5个阵法",
-		"appear_type":"activate_gest",
-		"appear_condition":"5",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
 		"award":[
-			[100015,66],
-			[100001,100000]
+			[100006,20],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},618:{
 		"prop_id":618,
-		"name":"礼包26",
-		"appear_comment":"宠物阶级1",
-		"appear_type":"pet_calss",
-		"appear_condition":"1",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
 		"award":[
-			[100015,67],
-			[100001,100000]
+			[100006,16],[102102,1],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
 	},619:{
 		"prop_id":619,
-		"name":"礼包27",
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},620:{
+		"prop_id":620,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},621:{
+		"prop_id":621,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},622:{
+		"prop_id":622,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},623:{
+		"prop_id":623,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},624:{
+		"prop_id":624,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},625:{
+		"prop_id":625,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},626:{
+		"prop_id":626,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},627:{
+		"prop_id":627,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},628:{
+		"prop_id":628,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},629:{
+		"prop_id":629,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},630:{
+		"prop_id":630,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},631:{
+		"prop_id":631,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},632:{
+		"prop_id":632,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},633:{
+		"prop_id":633,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},634:{
+		"prop_id":634,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},635:{
+		"prop_id":635,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},636:{
+		"prop_id":636,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},637:{
+		"prop_id":637,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},638:{
+		"prop_id":638,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},639:{
+		"prop_id":639,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},640:{
+		"prop_id":640,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},641:{
+		"prop_id":641,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},642:{
+		"prop_id":642,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},643:{
+		"prop_id":643,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},644:{
+		"prop_id":644,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},645:{
+		"prop_id":645,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},646:{
+		"prop_id":646,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},647:{
+		"prop_id":647,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},648:{
+		"prop_id":648,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},649:{
+		"prop_id":649,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},650:{
+		"prop_id":650,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},651:{
+		"prop_id":651,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},652:{
+		"prop_id":652,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},653:{
+		"prop_id":653,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},654:{
+		"prop_id":654,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},655:{
+		"prop_id":655,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},656:{
+		"prop_id":656,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},657:{
+		"prop_id":657,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},658:{
+		"prop_id":658,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},659:{
+		"prop_id":659,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},660:{
+		"prop_id":660,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},661:{
+		"prop_id":661,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},662:{
+		"prop_id":662,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},663:{
+		"prop_id":663,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},664:{
+		"prop_id":664,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"85",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},665:{
+		"prop_id":665,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},666:{
+		"prop_id":666,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},667:{
+		"prop_id":667,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},668:{
+		"prop_id":668,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},669:{
+		"prop_id":669,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},670:{
+		"prop_id":670,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},671:{
+		"prop_id":671,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},672:{
+		"prop_id":672,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},673:{
+		"prop_id":673,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},674:{
+		"prop_id":674,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},675:{
+		"prop_id":675,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},676:{
+		"prop_id":676,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},677:{
+		"prop_id":677,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},678:{
+		"prop_id":678,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},679:{
+		"prop_id":679,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},680:{
+		"prop_id":680,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"95",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},681:{
+		"prop_id":681,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},682:{
+		"prop_id":682,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},683:{
+		"prop_id":683,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},684:{
+		"prop_id":684,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},685:{
+		"prop_id":685,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},686:{
+		"prop_id":686,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},687:{
+		"prop_id":687,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},688:{
+		"prop_id":688,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"100",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},689:{
+		"prop_id":689,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},690:{
+		"prop_id":690,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},691:{
+		"prop_id":691,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},692:{
+		"prop_id":692,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},693:{
+		"prop_id":693,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},694:{
+		"prop_id":694,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},695:{
+		"prop_id":695,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},696:{
+		"prop_id":696,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"105",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},697:{
+		"prop_id":697,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},698:{
+		"prop_id":698,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},699:{
+		"prop_id":699,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},700:{
+		"prop_id":700,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},701:{
+		"prop_id":701,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},702:{
+		"prop_id":702,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},703:{
+		"prop_id":703,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},704:{
+		"prop_id":704,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"110",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},705:{
+		"prop_id":705,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},706:{
+		"prop_id":706,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},707:{
+		"prop_id":707,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},708:{
+		"prop_id":708,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},709:{
+		"prop_id":709,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},710:{
+		"prop_id":710,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},711:{
+		"prop_id":711,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},712:{
+		"prop_id":712,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"115",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},713:{
+		"prop_id":713,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},714:{
+		"prop_id":714,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},715:{
+		"prop_id":715,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},716:{
+		"prop_id":716,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},717:{
+		"prop_id":717,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},718:{
+		"prop_id":718,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},719:{
+		"prop_id":719,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},720:{
+		"prop_id":720,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},721:{
+		"prop_id":721,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},722:{
+		"prop_id":722,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},723:{
+		"prop_id":723,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},724:{
+		"prop_id":724,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},725:{
+		"prop_id":725,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},726:{
+		"prop_id":726,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},727:{
+		"prop_id":727,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},728:{
+		"prop_id":728,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"125",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},729:{
+		"prop_id":729,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},730:{
+		"prop_id":730,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},731:{
+		"prop_id":731,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},732:{
+		"prop_id":732,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},733:{
+		"prop_id":733,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},734:{
+		"prop_id":734,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},735:{
+		"prop_id":735,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},736:{
+		"prop_id":736,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"130",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},737:{
+		"prop_id":737,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},738:{
+		"prop_id":738,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},739:{
+		"prop_id":739,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},740:{
+		"prop_id":740,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},741:{
+		"prop_id":741,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},742:{
+		"prop_id":742,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},743:{
+		"prop_id":743,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},744:{
+		"prop_id":744,
+		"name":"升星达人",
+		"appear_comment":"升星总星级达到2",
+		"appear_type":"equip_total_star",
+		"appear_condition":"135",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},745:{
+		"prop_id":745,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到10万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},746:{
+		"prop_id":746,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},747:{
+		"prop_id":747,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},748:{
+		"prop_id":748,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},749:{
+		"prop_id":749,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},750:{
+		"prop_id":750,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},751:{
+		"prop_id":751,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},752:{
+		"prop_id":752,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"5000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},753:{
+		"prop_id":753,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},754:{
+		"prop_id":754,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},755:{
+		"prop_id":755,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},756:{
+		"prop_id":756,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},757:{
+		"prop_id":757,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},758:{
+		"prop_id":758,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},759:{
+		"prop_id":759,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},760:{
+		"prop_id":760,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"10000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},761:{
+		"prop_id":761,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},762:{
+		"prop_id":762,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},763:{
+		"prop_id":763,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},764:{
+		"prop_id":764,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},765:{
+		"prop_id":765,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},766:{
+		"prop_id":766,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},767:{
+		"prop_id":767,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},768:{
+		"prop_id":768,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"15000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},769:{
+		"prop_id":769,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到10万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},770:{
+		"prop_id":770,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},771:{
+		"prop_id":771,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},772:{
+		"prop_id":772,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},773:{
+		"prop_id":773,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},774:{
+		"prop_id":774,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},775:{
+		"prop_id":775,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},776:{
+		"prop_id":776,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"20000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},777:{
+		"prop_id":777,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},778:{
+		"prop_id":778,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},779:{
+		"prop_id":779,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},780:{
+		"prop_id":780,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},781:{
+		"prop_id":781,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},782:{
+		"prop_id":782,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},783:{
+		"prop_id":783,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},784:{
+		"prop_id":784,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"25000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},785:{
+		"prop_id":785,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},786:{
+		"prop_id":786,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},787:{
+		"prop_id":787,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},788:{
+		"prop_id":788,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},789:{
+		"prop_id":789,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},790:{
+		"prop_id":790,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},791:{
+		"prop_id":791,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},792:{
+		"prop_id":792,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"30000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},793:{
+		"prop_id":793,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},794:{
+		"prop_id":794,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},795:{
+		"prop_id":795,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},796:{
+		"prop_id":796,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},797:{
+		"prop_id":797,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},798:{
+		"prop_id":798,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},799:{
+		"prop_id":799,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},800:{
+		"prop_id":800,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"40000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},801:{
+		"prop_id":801,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,20],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},802:{
+		"prop_id":802,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值6元，星泪相送"],
+		"award":[
+			[100006,16],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},803:{
+		"prop_id":803,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值12元，星泪相送"],
+		"award":[
+			[100006,24],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},804:{
+		"prop_id":804,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值30元，星泪相送"],
+		"award":[
+			[100006,48],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},805:{
+		"prop_id":805,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值50元，星泪相送"],
+		"award":[
+			[100006,72],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},806:{
+		"prop_id":806,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值98元，星泪相送"],
+		"award":[
+			[100006,96],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},807:{
+		"prop_id":807,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值288元，星泪相送"],
+		"award":[
+			[100006,180],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},808:{
+		"prop_id":808,
+		"name":"战力提升",
+		"appear_comment":"战斗力达到20万",
+		"appear_type":"max_power",
+		"appear_condition":"50000000",
+		"limit_time":1800,
+		"desc":["充值648元，星泪相送"],
+		"award":[
+			[100006,300],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},809:{
+		"prop_id":809,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},810:{
+		"prop_id":810,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},811:{
+		"prop_id":811,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},812:{
+		"prop_id":812,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},813:{
+		"prop_id":813,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},814:{
+		"prop_id":814,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},815:{
+		"prop_id":815,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},816:{
+		"prop_id":816,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"1",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},817:{
+		"prop_id":817,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},818:{
+		"prop_id":818,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},819:{
+		"prop_id":819,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},820:{
+		"prop_id":820,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},821:{
+		"prop_id":821,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},822:{
+		"prop_id":822,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},823:{
+		"prop_id":823,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},824:{
+		"prop_id":824,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},825:{
+		"prop_id":825,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},826:{
+		"prop_id":826,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},827:{
+		"prop_id":827,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},828:{
+		"prop_id":828,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},829:{
+		"prop_id":829,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},830:{
+		"prop_id":830,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},831:{
+		"prop_id":831,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},832:{
+		"prop_id":832,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},833:{
+		"prop_id":833,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},834:{
+		"prop_id":834,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},835:{
+		"prop_id":835,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},836:{
+		"prop_id":836,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},837:{
+		"prop_id":837,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},838:{
+		"prop_id":838,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},839:{
+		"prop_id":839,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},840:{
+		"prop_id":840,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},841:{
+		"prop_id":841,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},842:{
+		"prop_id":842,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},843:{
+		"prop_id":843,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},844:{
+		"prop_id":844,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},845:{
+		"prop_id":845,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},846:{
+		"prop_id":846,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},847:{
+		"prop_id":847,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},848:{
+		"prop_id":848,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},849:{
+		"prop_id":849,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},850:{
+		"prop_id":850,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},851:{
+		"prop_id":851,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},852:{
+		"prop_id":852,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},853:{
+		"prop_id":853,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},854:{
+		"prop_id":854,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},855:{
+		"prop_id":855,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},856:{
+		"prop_id":856,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},857:{
+		"prop_id":857,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},858:{
+		"prop_id":858,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},859:{
+		"prop_id":859,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},860:{
+		"prop_id":860,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},861:{
+		"prop_id":861,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},862:{
+		"prop_id":862,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},863:{
+		"prop_id":863,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},864:{
+		"prop_id":864,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},865:{
+		"prop_id":865,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},866:{
+		"prop_id":866,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},867:{
+		"prop_id":867,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},868:{
+		"prop_id":868,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},869:{
+		"prop_id":869,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},870:{
+		"prop_id":870,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},871:{
+		"prop_id":871,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},872:{
+		"prop_id":872,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},873:{
+		"prop_id":873,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},874:{
+		"prop_id":874,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},875:{
+		"prop_id":875,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},876:{
+		"prop_id":876,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},877:{
+		"prop_id":877,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},878:{
+		"prop_id":878,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},879:{
+		"prop_id":879,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},880:{
+		"prop_id":880,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},881:{
+		"prop_id":881,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},882:{
+		"prop_id":882,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},883:{
+		"prop_id":883,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},884:{
+		"prop_id":884,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},885:{
+		"prop_id":885,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},886:{
+		"prop_id":886,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},887:{
+		"prop_id":887,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},888:{
+		"prop_id":888,
+		"name":"红装急送",
+		"appear_comment":"红装激活1件",
+		"appear_type":"forge_red_equip",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},889:{
+		"prop_id":889,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},890:{
+		"prop_id":890,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},891:{
+		"prop_id":891,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},892:{
+		"prop_id":892,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},893:{
+		"prop_id":893,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},894:{
+		"prop_id":894,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},895:{
+		"prop_id":895,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},896:{
+		"prop_id":896,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},897:{
+		"prop_id":897,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},898:{
+		"prop_id":898,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},899:{
+		"prop_id":899,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},900:{
+		"prop_id":900,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},901:{
+		"prop_id":901,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},902:{
+		"prop_id":902,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},903:{
+		"prop_id":903,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},904:{
+		"prop_id":904,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},905:{
+		"prop_id":905,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},906:{
+		"prop_id":906,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},907:{
+		"prop_id":907,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},908:{
+		"prop_id":908,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},909:{
+		"prop_id":909,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},910:{
+		"prop_id":910,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},911:{
+		"prop_id":911,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},912:{
+		"prop_id":912,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},913:{
+		"prop_id":913,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},914:{
+		"prop_id":914,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},915:{
+		"prop_id":915,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},916:{
+		"prop_id":916,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},917:{
+		"prop_id":917,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},918:{
+		"prop_id":918,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},919:{
+		"prop_id":919,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},920:{
+		"prop_id":920,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},921:{
+		"prop_id":921,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},922:{
+		"prop_id":922,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},923:{
+		"prop_id":923,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},924:{
+		"prop_id":924,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},925:{
+		"prop_id":925,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},926:{
+		"prop_id":926,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},927:{
+		"prop_id":927,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},928:{
+		"prop_id":928,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},929:{
+		"prop_id":929,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},930:{
+		"prop_id":930,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},931:{
+		"prop_id":931,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},932:{
+		"prop_id":932,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},933:{
+		"prop_id":933,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},934:{
+		"prop_id":934,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},935:{
+		"prop_id":935,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},936:{
+		"prop_id":936,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"25",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},937:{
+		"prop_id":937,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},938:{
+		"prop_id":938,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},939:{
+		"prop_id":939,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},940:{
+		"prop_id":940,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},941:{
+		"prop_id":941,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},942:{
+		"prop_id":942,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},943:{
+		"prop_id":943,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},944:{
+		"prop_id":944,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},945:{
+		"prop_id":945,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},946:{
+		"prop_id":946,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},947:{
+		"prop_id":947,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},948:{
+		"prop_id":948,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},949:{
+		"prop_id":949,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},950:{
+		"prop_id":950,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},951:{
+		"prop_id":951,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},952:{
+		"prop_id":952,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"35",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},953:{
+		"prop_id":953,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},954:{
+		"prop_id":954,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},955:{
+		"prop_id":955,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},956:{
+		"prop_id":956,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},957:{
+		"prop_id":957,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},958:{
+		"prop_id":958,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},959:{
+		"prop_id":959,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},960:{
+		"prop_id":960,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},961:{
+		"prop_id":961,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},962:{
+		"prop_id":962,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},963:{
+		"prop_id":963,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},964:{
+		"prop_id":964,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},965:{
+		"prop_id":965,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},966:{
+		"prop_id":966,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},967:{
+		"prop_id":967,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},968:{
+		"prop_id":968,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},969:{
+		"prop_id":969,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},970:{
+		"prop_id":970,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},971:{
+		"prop_id":971,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},972:{
+		"prop_id":972,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},973:{
+		"prop_id":973,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},974:{
+		"prop_id":974,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},975:{
+		"prop_id":975,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},976:{
+		"prop_id":976,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},977:{
+		"prop_id":977,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},978:{
+		"prop_id":978,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},979:{
+		"prop_id":979,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},980:{
+		"prop_id":980,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},981:{
+		"prop_id":981,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},982:{
+		"prop_id":982,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},983:{
+		"prop_id":983,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},984:{
+		"prop_id":984,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},985:{
+		"prop_id":985,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},986:{
+		"prop_id":986,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},987:{
+		"prop_id":987,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},988:{
+		"prop_id":988,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},989:{
+		"prop_id":989,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},990:{
+		"prop_id":990,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},991:{
+		"prop_id":991,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},992:{
+		"prop_id":992,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},993:{
+		"prop_id":993,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},994:{
+		"prop_id":994,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},995:{
+		"prop_id":995,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},996:{
+		"prop_id":996,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},997:{
+		"prop_id":997,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},998:{
+		"prop_id":998,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},999:{
+		"prop_id":999,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1000:{
+		"prop_id":1000,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1001:{
+		"prop_id":1001,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1002:{
+		"prop_id":1002,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1003:{
+		"prop_id":1003,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1004:{
+		"prop_id":1004,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1005:{
+		"prop_id":1005,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1006:{
+		"prop_id":1006,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1007:{
+		"prop_id":1007,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1008:{
+		"prop_id":1008,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1009:{
+		"prop_id":1009,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1010:{
+		"prop_id":1010,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1011:{
+		"prop_id":1011,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1012:{
+		"prop_id":1012,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1013:{
+		"prop_id":1013,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1014:{
+		"prop_id":1014,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1015:{
+		"prop_id":1015,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1016:{
+		"prop_id":1016,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1017:{
+		"prop_id":1017,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,10],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1018:{
+		"prop_id":1018,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，红装相送"],
+		"award":[
+			[101301,8],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1019:{
+		"prop_id":1019,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值12元，红装相送"],
+		"award":[
+			[101301,12],[102102,1],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1020:{
+		"prop_id":1020,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值30元，红装相送"],
+		"award":[
+			[101301,24],[102102,2],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1021:{
+		"prop_id":1021,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值50元，红装相送"],
+		"award":[
+			[101301,36],[102102,3],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1022:{
+		"prop_id":1022,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值98元，红装相送"],
+		"award":[
+			[101301,48],[102102,6],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1023:{
+		"prop_id":1023,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值288元，红装相送"],
+		"award":[
+			[101301,90],[102102,18],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1024:{
+		"prop_id":1024,
+		"name":"红装急送",
+		"appear_comment":"红装升级次数1",
+		"appear_type":"red_equip_level",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值648元，红装相送"],
+		"award":[
+			[101301,150],[102102,40],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1025:{
+		"prop_id":1025,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1026:{
+		"prop_id":1026,
+		"name":"宠物培养",
 		"appear_comment":"宠物阶级2",
 		"appear_type":"pet_calss",
 		"appear_condition":"2",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
 		"award":[
-			[100015,68],
-			[100001,100000]
+			[102105,8],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
-	},620:{
-		"prop_id":620,
-		"name":"礼包28",
-		"appear_comment":"赋灵元素总等级2",
-		"appear_type":"ensoul_total_level",
+	},1027:{
+		"prop_id":1027,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级3",
+		"appear_type":"pet_calss",
 		"appear_condition":"2",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
 		"award":[
-			[100015,69],
-			[100001,100000]
+			[102105,10],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66202,
+		"rmb": 12
+	},1028:{
+		"prop_id":1028,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级4",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1029:{
+		"prop_id":1029,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级5",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1030:{
+		"prop_id":1030,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级6",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1031:{
+		"prop_id":1031,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级7",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1032:{
+		"prop_id":1032,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级8",
+		"appear_type":"pet_calss",
+		"appear_condition":"2",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1033:{
+		"prop_id":1033,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
 		"rmb": 6
-	},621:{
-		"prop_id":621,
-		"name":"礼包29",
-		"appear_comment":"赋灵元素总等级11",
-		"appear_type":"ensoul_total_level",
+	},1034:{
+		"prop_id":1034,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1035:{
+		"prop_id":1035,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1036:{
+		"prop_id":1036,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1037:{
+		"prop_id":1037,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1038:{
+		"prop_id":1038,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1039:{
+		"prop_id":1039,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1040:{
+		"prop_id":1040,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"3",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1041:{
+		"prop_id":1041,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1042:{
+		"prop_id":1042,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1043:{
+		"prop_id":1043,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1044:{
+		"prop_id":1044,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1045:{
+		"prop_id":1045,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1046:{
+		"prop_id":1046,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1047:{
+		"prop_id":1047,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1048:{
+		"prop_id":1048,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"4",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1049:{
+		"prop_id":1049,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1050:{
+		"prop_id":1050,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1051:{
+		"prop_id":1051,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1052:{
+		"prop_id":1052,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1053:{
+		"prop_id":1053,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1054:{
+		"prop_id":1054,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1055:{
+		"prop_id":1055,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1056:{
+		"prop_id":1056,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"5",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1057:{
+		"prop_id":1057,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1058:{
+		"prop_id":1058,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1059:{
+		"prop_id":1059,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1060:{
+		"prop_id":1060,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1061:{
+		"prop_id":1061,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1062:{
+		"prop_id":1062,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1063:{
+		"prop_id":1063,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1064:{
+		"prop_id":1064,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"6",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1065:{
+		"prop_id":1065,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1066:{
+		"prop_id":1066,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1067:{
+		"prop_id":1067,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1068:{
+		"prop_id":1068,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1069:{
+		"prop_id":1069,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1070:{
+		"prop_id":1070,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1071:{
+		"prop_id":1071,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1072:{
+		"prop_id":1072,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"7",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1073:{
+		"prop_id":1073,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1074:{
+		"prop_id":1074,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1075:{
+		"prop_id":1075,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1076:{
+		"prop_id":1076,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1077:{
+		"prop_id":1077,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1078:{
+		"prop_id":1078,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1079:{
+		"prop_id":1079,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1080:{
+		"prop_id":1080,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"8",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1081:{
+		"prop_id":1081,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1082:{
+		"prop_id":1082,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1083:{
+		"prop_id":1083,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1084:{
+		"prop_id":1084,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1085:{
+		"prop_id":1085,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1086:{
+		"prop_id":1086,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1087:{
+		"prop_id":1087,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1088:{
+		"prop_id":1088,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"9",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1089:{
+		"prop_id":1089,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1090:{
+		"prop_id":1090,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1091:{
+		"prop_id":1091,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1092:{
+		"prop_id":1092,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1093:{
+		"prop_id":1093,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1094:{
+		"prop_id":1094,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1095:{
+		"prop_id":1095,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1096:{
+		"prop_id":1096,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"10",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1097:{
+		"prop_id":1097,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
 		"appear_condition":"11",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
 		"award":[
-			[100015,70],
-			[100001,100000]
+			[102105,8],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
-	},622:{
-		"prop_id":622,
-		"name":"礼包30",
-		"appear_comment":"战斗力达到10万",
-		"appear_type":"max_power",
-		"appear_condition":"100000",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+	},1098:{
+		"prop_id":1098,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
 		"award":[
-			[100015,71],
-			[100001,100000]
+			[102105,8],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66201,
 		"rmb": 6
-	},623:{
-		"prop_id":623,
-		"name":"礼包31",
-		"appear_comment":"战斗力达到20万",
-		"appear_type":"max_power",
-		"appear_condition":"200000",
-		"limit_time":120,
-		"desc":["充值6元，豪礼相送"],
+	},1099:{
+		"prop_id":1099,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
 		"award":[
-			[100015,72],
-			[100001,100000]
+			[102105,10],
+			[100001,0]
 		],
-		"rechargeID":66008,
+		"rechargeID":66202,
+		"rmb": 12
+	},1100:{
+		"prop_id":1100,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1101:{
+		"prop_id":1101,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1102:{
+		"prop_id":1102,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1103:{
+		"prop_id":1103,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1104:{
+		"prop_id":1104,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"11",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1105:{
+		"prop_id":1105,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
 		"rmb": 6
+	},1106:{
+		"prop_id":1106,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1107:{
+		"prop_id":1107,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1108:{
+		"prop_id":1108,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1109:{
+		"prop_id":1109,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1110:{
+		"prop_id":1110,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1111:{
+		"prop_id":1111,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1112:{
+		"prop_id":1112,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"12",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1113:{
+		"prop_id":1113,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1114:{
+		"prop_id":1114,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1115:{
+		"prop_id":1115,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1116:{
+		"prop_id":1116,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1117:{
+		"prop_id":1117,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1118:{
+		"prop_id":1118,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1119:{
+		"prop_id":1119,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1120:{
+		"prop_id":1120,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"13",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1121:{
+		"prop_id":1121,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1122:{
+		"prop_id":1122,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1123:{
+		"prop_id":1123,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1124:{
+		"prop_id":1124,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1125:{
+		"prop_id":1125,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1126:{
+		"prop_id":1126,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1127:{
+		"prop_id":1127,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1128:{
+		"prop_id":1128,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"14",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1129:{
+		"prop_id":1129,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1130:{
+		"prop_id":1130,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值6元，内丹大礼"],
+		"award":[
+			[102105,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1131:{
+		"prop_id":1131,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值12元，内丹大礼"],
+		"award":[
+			[102105,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1132:{
+		"prop_id":1132,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值30元，内丹大礼"],
+		"award":[
+			[102105,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1133:{
+		"prop_id":1133,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值50元，内丹大礼"],
+		"award":[
+			[102105,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1134:{
+		"prop_id":1134,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值98元，内丹大礼"],
+		"award":[
+			[102105,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1135:{
+		"prop_id":1135,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值288元，内丹大礼"],
+		"award":[
+			[102105,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1136:{
+		"prop_id":1136,
+		"name":"宠物培养",
+		"appear_comment":"宠物阶级1",
+		"appear_type":"pet_calss",
+		"appear_condition":"15",
+		"limit_time":1800,
+		"desc":["充值648元，内丹大礼"],
+		"award":[
+			[102105,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1137:{
+		"prop_id":1137,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1138:{
+		"prop_id":1138,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1139:{
+		"prop_id":1139,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1140:{
+		"prop_id":1140,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1141:{
+		"prop_id":1141,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1142:{
+		"prop_id":1142,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1143:{
+		"prop_id":1143,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1144:{
+		"prop_id":1144,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"20",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1145:{
+		"prop_id":1145,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1146:{
+		"prop_id":1146,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1147:{
+		"prop_id":1147,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1148:{
+		"prop_id":1148,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1149:{
+		"prop_id":1149,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1150:{
+		"prop_id":1150,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1151:{
+		"prop_id":1151,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1152:{
+		"prop_id":1152,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1153:{
+		"prop_id":1153,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1154:{
+		"prop_id":1154,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1155:{
+		"prop_id":1155,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1156:{
+		"prop_id":1156,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1157:{
+		"prop_id":1157,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1158:{
+		"prop_id":1158,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1159:{
+		"prop_id":1159,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1160:{
+		"prop_id":1160,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"40",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1161:{
+		"prop_id":1161,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1162:{
+		"prop_id":1162,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1163:{
+		"prop_id":1163,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1164:{
+		"prop_id":1164,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1165:{
+		"prop_id":1165,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1166:{
+		"prop_id":1166,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1167:{
+		"prop_id":1167,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1168:{
+		"prop_id":1168,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"45",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1169:{
+		"prop_id":1169,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1170:{
+		"prop_id":1170,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1171:{
+		"prop_id":1171,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1172:{
+		"prop_id":1172,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1173:{
+		"prop_id":1173,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1174:{
+		"prop_id":1174,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1175:{
+		"prop_id":1175,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1176:{
+		"prop_id":1176,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"50",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1177:{
+		"prop_id":1177,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1178:{
+		"prop_id":1178,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1179:{
+		"prop_id":1179,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1180:{
+		"prop_id":1180,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1181:{
+		"prop_id":1181,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1182:{
+		"prop_id":1182,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1183:{
+		"prop_id":1183,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1184:{
+		"prop_id":1184,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"55",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1185:{
+		"prop_id":1185,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1186:{
+		"prop_id":1186,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1187:{
+		"prop_id":1187,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1188:{
+		"prop_id":1188,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1189:{
+		"prop_id":1189,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1190:{
+		"prop_id":1190,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1191:{
+		"prop_id":1191,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1192:{
+		"prop_id":1192,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1193:{
+		"prop_id":1193,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1194:{
+		"prop_id":1194,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1195:{
+		"prop_id":1195,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1196:{
+		"prop_id":1196,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1197:{
+		"prop_id":1197,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1198:{
+		"prop_id":1198,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1199:{
+		"prop_id":1199,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1200:{
+		"prop_id":1200,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"65",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1201:{
+		"prop_id":1201,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1202:{
+		"prop_id":1202,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1203:{
+		"prop_id":1203,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1204:{
+		"prop_id":1204,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1205:{
+		"prop_id":1205,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1206:{
+		"prop_id":1206,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1207:{
+		"prop_id":1207,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1208:{
+		"prop_id":1208,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"70",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1209:{
+		"prop_id":1209,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1210:{
+		"prop_id":1210,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1211:{
+		"prop_id":1211,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1212:{
+		"prop_id":1212,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1213:{
+		"prop_id":1213,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1214:{
+		"prop_id":1214,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1215:{
+		"prop_id":1215,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1216:{
+		"prop_id":1216,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"75",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1217:{
+		"prop_id":1217,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1218:{
+		"prop_id":1218,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值6元，心法大礼"],
+		"award":[
+			[102106,2],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1219:{
+		"prop_id":1219,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值12元，心法大礼"],
+		"award":[
+			[102106,3],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1220:{
+		"prop_id":1220,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值30元，心法大礼"],
+		"award":[
+			[102106,5],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1221:{
+		"prop_id":1221,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值50元，心法大礼"],
+		"award":[
+			[102106,8],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1222:{
+		"prop_id":1222,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值98元，心法大礼"],
+		"award":[
+			[102106,10],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1223:{
+		"prop_id":1223,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值288元，心法大礼"],
+		"award":[
+			[102106,20],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1224:{
+		"prop_id":1224,
+		"name":"极品心法",
+		"appear_comment":"激活1个阵法",
+		"appear_type":"activate_gest",
+		"appear_condition":"80",
+		"limit_time":1800,
+		"desc":["充值648元，心法大礼"],
+		"award":[
+			[102106,30],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1225:{
+		"prop_id":1225,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1226:{
+		"prop_id":1226,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1227:{
+		"prop_id":1227,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1228:{
+		"prop_id":1228,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1229:{
+		"prop_id":1229,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1230:{
+		"prop_id":1230,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1231:{
+		"prop_id":1231,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1232:{
+		"prop_id":1232,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1233:{
+		"prop_id":1233,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1234:{
+		"prop_id":1234,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1235:{
+		"prop_id":1235,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1236:{
+		"prop_id":1236,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1237:{
+		"prop_id":1237,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1238:{
+		"prop_id":1238,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1239:{
+		"prop_id":1239,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1240:{
+		"prop_id":1240,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1241:{
+		"prop_id":1241,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1242:{
+		"prop_id":1242,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1243:{
+		"prop_id":1243,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1244:{
+		"prop_id":1244,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1245:{
+		"prop_id":1245,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1246:{
+		"prop_id":1246,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1247:{
+		"prop_id":1247,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1248:{
+		"prop_id":1248,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1249:{
+		"prop_id":1249,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1250:{
+		"prop_id":1250,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1251:{
+		"prop_id":1251,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1252:{
+		"prop_id":1252,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1253:{
+		"prop_id":1253,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1254:{
+		"prop_id":1254,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1255:{
+		"prop_id":1255,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1256:{
+		"prop_id":1256,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1257:{
+		"prop_id":1257,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1258:{
+		"prop_id":1258,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1259:{
+		"prop_id":1259,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1260:{
+		"prop_id":1260,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1261:{
+		"prop_id":1261,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1262:{
+		"prop_id":1262,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1263:{
+		"prop_id":1263,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1264:{
+		"prop_id":1264,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1265:{
+		"prop_id":1265,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1266:{
+		"prop_id":1266,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1267:{
+		"prop_id":1267,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1268:{
+		"prop_id":1268,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1269:{
+		"prop_id":1269,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1270:{
+		"prop_id":1270,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1271:{
+		"prop_id":1271,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1272:{
+		"prop_id":1272,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1273:{
+		"prop_id":1273,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1274:{
+		"prop_id":1274,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1275:{
+		"prop_id":1275,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1276:{
+		"prop_id":1276,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1277:{
+		"prop_id":1277,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1278:{
+		"prop_id":1278,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1279:{
+		"prop_id":1279,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1280:{
+		"prop_id":1280,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1281:{
+		"prop_id":1281,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1282:{
+		"prop_id":1282,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1283:{
+		"prop_id":1283,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1284:{
+		"prop_id":1284,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1285:{
+		"prop_id":1285,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1286:{
+		"prop_id":1286,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1287:{
+		"prop_id":1287,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1288:{
+		"prop_id":1288,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1289:{
+		"prop_id":1289,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1290:{
+		"prop_id":1290,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1291:{
+		"prop_id":1291,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1292:{
+		"prop_id":1292,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1293:{
+		"prop_id":1293,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1294:{
+		"prop_id":1294,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1295:{
+		"prop_id":1295,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1296:{
+		"prop_id":1296,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1297:{
+		"prop_id":1297,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1298:{
+		"prop_id":1298,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，宝石爆仓"],
+		"award":[
+			[101202,8],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1299:{
+		"prop_id":1299,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值12元，宝石爆仓"],
+		"award":[
+			[101202,10],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1300:{
+		"prop_id":1300,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值30元，宝石爆仓"],
+		"award":[
+			[101202,24],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1301:{
+		"prop_id":1301,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值50元，宝石爆仓"],
+		"award":[
+			[101202,36],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1302:{
+		"prop_id":1302,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值98元，宝石爆仓"],
+		"award":[
+			[101202,48],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1303:{
+		"prop_id":1303,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值288元，宝石爆仓"],
+		"award":[
+			[101202,90],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1304:{
+		"prop_id":1304,
+		"name":"宝石豪礼",
+		"appear_comment":"宝石总等级达到4",
+		"appear_type":"equip_total_diamond",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值648元，宝石爆仓"],
+		"award":[
+			[101202,150],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1305:{
+		"prop_id":1305,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1306:{
+		"prop_id":1306,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1307:{
+		"prop_id":1307,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1308:{
+		"prop_id":1308,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1309:{
+		"prop_id":1309,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1310:{
+		"prop_id":1310,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1311:{
+		"prop_id":1311,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1312:{
+		"prop_id":1312,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"30",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1313:{
+		"prop_id":1313,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1314:{
+		"prop_id":1314,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1315:{
+		"prop_id":1315,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1316:{
+		"prop_id":1316,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1317:{
+		"prop_id":1317,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1318:{
+		"prop_id":1318,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1319:{
+		"prop_id":1319,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1320:{
+		"prop_id":1320,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"60",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1321:{
+		"prop_id":1321,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1322:{
+		"prop_id":1322,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1323:{
+		"prop_id":1323,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1324:{
+		"prop_id":1324,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1325:{
+		"prop_id":1325,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1326:{
+		"prop_id":1326,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1327:{
+		"prop_id":1327,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1328:{
+		"prop_id":1328,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"90",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1329:{
+		"prop_id":1329,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1330:{
+		"prop_id":1330,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1331:{
+		"prop_id":1331,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1332:{
+		"prop_id":1332,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1333:{
+		"prop_id":1333,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1334:{
+		"prop_id":1334,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1335:{
+		"prop_id":1335,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1336:{
+		"prop_id":1336,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"120",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1337:{
+		"prop_id":1337,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1338:{
+		"prop_id":1338,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1339:{
+		"prop_id":1339,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1340:{
+		"prop_id":1340,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1341:{
+		"prop_id":1341,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1342:{
+		"prop_id":1342,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1343:{
+		"prop_id":1343,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1344:{
+		"prop_id":1344,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"150",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1345:{
+		"prop_id":1345,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1346:{
+		"prop_id":1346,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1347:{
+		"prop_id":1347,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1348:{
+		"prop_id":1348,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1349:{
+		"prop_id":1349,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1350:{
+		"prop_id":1350,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1351:{
+		"prop_id":1351,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1352:{
+		"prop_id":1352,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"180",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1353:{
+		"prop_id":1353,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1354:{
+		"prop_id":1354,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1355:{
+		"prop_id":1355,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1356:{
+		"prop_id":1356,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1357:{
+		"prop_id":1357,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1358:{
+		"prop_id":1358,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1359:{
+		"prop_id":1359,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1360:{
+		"prop_id":1360,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"210",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1361:{
+		"prop_id":1361,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1362:{
+		"prop_id":1362,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1363:{
+		"prop_id":1363,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1364:{
+		"prop_id":1364,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1365:{
+		"prop_id":1365,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1366:{
+		"prop_id":1366,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1367:{
+		"prop_id":1367,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1368:{
+		"prop_id":1368,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"240",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1369:{
+		"prop_id":1369,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1370:{
+		"prop_id":1370,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1371:{
+		"prop_id":1371,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1372:{
+		"prop_id":1372,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1373:{
+		"prop_id":1373,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1374:{
+		"prop_id":1374,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1375:{
+		"prop_id":1375,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1376:{
+		"prop_id":1376,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"270",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
+	},1377:{
+		"prop_id":1377,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1378:{
+		"prop_id":1378,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值6元，龙魂爆仓"],
+		"award":[
+			[101102,16],
+			[100001,0]
+		],
+		"rechargeID":66201,
+		"rmb": 6
+	},1379:{
+		"prop_id":1379,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值12元，龙魂爆仓"],
+		"award":[
+			[101102,20],
+			[100001,0]
+		],
+		"rechargeID":66202,
+		"rmb": 12
+	},1380:{
+		"prop_id":1380,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值30元，龙魂爆仓"],
+		"award":[
+			[101102,48],
+			[100001,0]
+		],
+		"rechargeID":66203,
+		"rmb": 30
+	},1381:{
+		"prop_id":1381,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值50元，龙魂爆仓"],
+		"award":[
+			[101102,72],
+			[100001,0]
+		],
+		"rechargeID":66204,
+		"rmb": 50
+	},1382:{
+		"prop_id":1382,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值98元，龙魂爆仓"],
+		"award":[
+			[101102,96],
+			[100001,0]
+		],
+		"rechargeID":66205,
+		"rmb": 98
+	},1383:{
+		"prop_id":1383,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值288元，龙魂爆仓"],
+		"award":[
+			[101102,180],
+			[100001,0]
+		],
+		"rechargeID":66207,
+		"rmb": 288
+	},1384:{
+		"prop_id":1384,
+		"name":"龙魂腾飞",
+		"appear_comment":"九窍总等级达到2级",
+		"appear_type":"soul_total_level",
+		"appear_condition":"300",
+		"limit_time":1800,
+		"desc":["充值648元，龙魂爆仓"],
+		"award":[
+			[101102,300],
+			[100001,0]
+		],
+		"rechargeID":66209,
+		"rmb": 648
 	}
 };

@@ -15,7 +15,7 @@
     width: 325px;
     height: 100%;
     left: 26px;
-    top: 0px;
+    top: 10px;
     line-height: 40px;
 }
 .7 {

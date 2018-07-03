@@ -1,0 +1,7 @@
+{
+    "tpl":"./review.tpl",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts",
+    "css":"./review.wcss",
+    "cfg": "./review.cfg"
+}

@@ -15,5 +15,5 @@
 {{let r = it.needIndex ? {"index":i,"value":v,"length":it.arr.length } : v }}
 <widget w-tag={{v.widget||it.widget}}>{{r}}</widget>
 {{end}}
-
+<div style="width: 50%;height: 10px;"></div>
 </div>

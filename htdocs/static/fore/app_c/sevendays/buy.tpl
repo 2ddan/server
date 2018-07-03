@@ -23,13 +23,13 @@
         <div w-class="change_map_bg ">
             <div w-class="map_tips_left" style="position:absolute;left:0px;top:-15px"></div>
             <div w-class="map_tips_left" style="position:absolute;right:0px;transform:scale(-1,1);top:-15px"></div>
-
-            {{let prop = Pi.sample[act[0].goods[0]]}}
+            {{let arr = act[0].goods[0]}}
+            {{let prop = Pi.sample[arr[0]]}}
             {{let icon = prop.module ? prop.module[prop.career_id.indexOf(player.career_id)][0] : prop.icon}}
             {{let url = Pi.pictures[icon]}}
-            {{let count = prop.type !== "equip" ? act[0].goods[1] : "none"}}
+            {{let count = prop.type !== "equip" ? arr[1] : "none"}}
             <div class="shadow1 center_h" style="width:84px;height:84px;position:absolute;top:20px;color: #fff;">
-                <app_a-widget-prop-base  on-tap="propInfoShow({{act[0].goods[0]}})">
+                <app_a-widget-prop-base  on-tap="propInfoShow({{arr[0]}})">
                     {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{count}},"name":"none","bg":0}
                 </app_a-widget-prop-base>
                 {{if count == "none"}}

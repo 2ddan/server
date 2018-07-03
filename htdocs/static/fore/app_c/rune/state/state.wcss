@@ -98,12 +98,7 @@
     width: 494px;
 }
 
-.4 {
-    position: absolute;
-    right: 7px;
-    top: 7px;
-    z-index: 2;
-}
+
 
 
 .6 {
@@ -126,9 +121,10 @@
 }
 .8{
     color:#51e650;
-    font-size:20px;
-    line-height: 34px;
-    margin-top: 16px;
+    width: 405px;
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 20px;
 }
 .9{
     margin: 0 5px;
@@ -172,7 +168,7 @@
 .42 {
     position: absolute;
     left: 105px;
-    top: 116px;
+    top: 90px;
 }
 .43 {
     position: absolute;

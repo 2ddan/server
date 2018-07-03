@@ -3,15 +3,19 @@
 		{"bgName":"bg_frame21"} 
 	</widget>
 	
-	<div w-class="3" w-sid="3" style="color:#fff">
-		<div style="width:100%;height:550px;position:absolute;top:0;left:0;">
-			<app-widget-step style="position: absolute;width:105%;height: inherit;top:0;bottom: 10px;">
+	<div w-class="3" w-sid="3">
+		<div style="width:100%;height:653px;position:absolute;top:0;left:0;">
+			<app-widget-step style="position: absolute;width:105%;height: 642px;top:10px;bottom: 10px;left: 6px;">
 				{"widget":"app_c-lottery-shop-frame","arr":{{it1.luck_draw_shop}},"initCount":12,"addCount":4 }
 			</app-widget-step>
 		</div>
-		<div style="width:100%;height:550px;position:absolute;top:560px;left:0;">
-			当前积分：{{it1.score_num}} <u>如何获取</u>
-		</div>
 	</div>
-
+	<div w-class="4">
+		<widget class="shadow7"  w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 0;width:150px;left: 0;">
+			{"icon":"little_tips_bg","text":"当前积分：{{it1.score_num}}","width":150,"height":23,"top":2,"align":"left","marginLeft":18} 
+		</widget>
+		<widget  w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;width:21px;top:1px;left:-6px;">
+			{"icon":"remind"} 
+		</widget>
+	</div>
 </div>

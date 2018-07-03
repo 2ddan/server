@@ -1,4 +1,6 @@
-<div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%" w-sid="2">
+<div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%;z-index: 2;" w-sid="2">
+    {{let appCfg = _get("app/mod/db").exports.data}}
+    {{let player = appCfg.player}}
     <div w-class="3" w-sid="3">
         <div w-class="7" w-sid="7">
             <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">{"icon":"tips_top"} 
@@ -20,11 +22,9 @@
         </div>
         <div w-class="16">
             {{if it.to_time}}
-            <span ev-countdownend="timeEnd" style="display:inline-block;margin-top:20px;color:#fff;text-align:center;line-height:30px;">
-                <app-widget-cdtime style="display:inline-block;">
-                    {cd_time:{{it.to_time}},cd_not_zerofill:true}
-                </app-widget-cdtime>
-            </span>
+            <app-widget-cdTime1 ev-countdownend="timeEnd" style="display:inline-block;margin-top:20px;color:#fff;text-align:center;line-height:30px;">
+            {"cd_time":{{it.to_time}},"cd_type":"x" }
+            </app-widget-cdTime1>
             {{end}}
             <pi-ui-html style="display:inline-block">{{it.title}}</pi-ui-html>
         </div>
@@ -48,17 +48,19 @@
             </widget>
             {{end}}
             {{if it.btn_name[0]}}
-            <div w-class="14" style="{{if !it.btn_name[1]}}right:185px;{{end}}">
-                <widget  on-tap="ok" w-tag="app_a-widget-btn-rect" >
-                    {"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{it.btn_name[0]}},"width":116,"height":45} 
-                </widget>
+            <div w-class="13" style="text-align: center;">
+                {{let bol = false}}
                 {{if it.icon}}
-                    {{for k,v in it.icon}}
-                    <div class={{k}} style="position:absolute;left:90px;top:10px;white-space:nowrap;">
-                         <span style="margin-left:30px;color:#fff;">{{v}}</span>
-                    </div>
-                    {{end}}
+                {{:bol = it.icon[1]>player.diamond}}
+                {{let col = bol ? "#f00" :"#ffd8a6"}}
+                <widget w-tag="app_a-widget-coin-coin" style="bottom: 50px;position: absolute;left: 50%;transform: translateX(-50%);color:{{col}}">
+                    {"icon":{{it.icon[0]}},"width":25,"height":21,"left":3,"text":[{{it.icon[1]}}]} 
+                </widget>
                 {{end}}
+                <widget  on-tap={{!bol ? "ok" : "limit_coin('"+ it.icon[0] +"')"}} w-tag="app_a-widget-btn-rect" >
+                    {"class":{{!bol ? "hl" : "disabled"}},"fontsize":24,"color":"#fdedd7;","text":{{it.btn_name[0]}},"width":116,"height":45} 
+                </widget>
+               
             </div>
             {{end}}
         </div>

@@ -1,0 +1,7 @@
+{
+    "tpl":"./buff_tips.tpl",
+    "js":"../buff.ts",
+    "forelet":"../buff.ts",
+    "cfg":"./buff_tips.cfg",
+    "css":"./buff_tips.wcss"
+}

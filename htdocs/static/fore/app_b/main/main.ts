@@ -1,10 +1,7 @@
 //pi
 import { Widget } from "pi/widget/widget";
-import { Forelet } from "pi/widget/forelet";
 import { Json } from 'pi/lang/type';
 import { listenerList, open } from "pi/ui/root";
-//mod
-import { data as db } from "app/mod/db";
 
 
 
@@ -62,6 +59,3 @@ let mainWidget : Widget;
         mainWidget.paint();
 })
 
-
-// =========================== 测试代码
-//openMenu();

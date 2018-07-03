@@ -1,0 +1,197 @@
+.4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    width: 540px;
+    height: 106px;
+}
+.5 {
+    position: absolute;
+    left: -23px;
+    top: -14px;
+    z-index: 1;
+}
+.6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.8 {
+    position: absolute;
+    width: 492px;
+    height: 612px;
+    left: 50%;
+    top: 113px;
+    margin-left: -246px;
+}
+.9 {
+    position: absolute;
+    width: 99%;
+    height: 665px;
+    top: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.10 {
+    position: relative;
+    width: 100%;
+    height: 136px;
+    display: inline-block;
+    margin-bottom: 9px;
+}
+.11 {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 452px;
+    height: 127px;
+}
+.15 {
+    position: absolute;
+    width: 104%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.17 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: courier;
+    font-size: 16px;
+    left: 126px;
+    top: 45px;
+    width: 214px;
+    height: 56px;
+}
+.18 {
+    color: #FCE6C9;
+    font-size: 16px;
+    width: 100%;
+}
+.23 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    top: 10px;
+    left: 6px;
+}
+.24 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    top: 32px;
+    left: 6px;
+}
+.26 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    left: 93px;
+    top: 12px;
+}
+.27 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    top: 10px;
+    left: 6px;
+}
+.28 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    top: 32px;
+    left: 6px;
+}
+.29 {
+    position: absolute;
+    color: #FCE6C9;
+    font-family: mnjsh;
+    font-size: 19px;
+    left: 93px;
+    top: 12px;
+}
+.30 {
+    position: absolute;
+    left: 36px;
+    top: 16px;
+    color: #FFD7A8;
+}
+.32 {
+    position: absolute;
+    left: 92px;
+    top: 32px;
+}
+.33 {
+    position: absolute;
+    left: 142px;
+    top: 32px;
+}
+.34 {
+    position: absolute;
+    left: 142px;
+    top: 31px;
+}
+.35 {
+    position: absolute;
+    left: 92px;
+    top: 31px;
+}
+.37 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.38 {
+    position: absolute;
+    left: -7px;
+    top: 1px;
+}
+.39 {
+    position: absolute;
+    color: #FFD7A8;
+    font-family: mnjsh;
+    font-size: 18px;
+    left: 15px;
+    width: 100%;
+}
+.40 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    color: #FFD7A8;
+}
+.41 {
+    position: absolute;
+    width: 110px;
+    height: 25px;
+    left: 21px;
+    top: 90px;
+}
+.42 {
+    position: absolute;
+    top: 50px;
+    right: 49px;
+    width: 83px;
+    height: 31px;
+}
+.43 {
+    position: absolute;
+    width: 135px;
+    height: 25px;
+    top: 21px;
+    right: 40px;
+    text-align: center;
+}
+.44 {
+    position: absolute;
+    left: 122px;
+    top: 14px;
+}

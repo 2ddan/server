@@ -1,0 +1,7 @@
+{
+    "tpl":"./details.tpl",
+    "forelet":"../off_line.ts",
+    "js":"../off_line.ts",
+    "cfg":"./details.cfg",
+    "css":"./details.wcss"
+}

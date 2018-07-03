@@ -13,6 +13,14 @@
     background-size: 100% 100%;
     background-image:url(./images/lose_text.png);
 }
+.end_title{
+    width: 498px;
+    height: 223px;
+    margin: 0 auto;
+    background-size: 100% 100%;
+    background-image:url(./images/win_end.png);
+    margin-top: -15px;
+}
 
 
 

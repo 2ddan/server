@@ -146,19 +146,6 @@ tab[90011][1] = {
 tab[90012] = tab[90012] ? tab[90012] : {};
 tab[90012][1] = {
     "speaker": "boss",
-    "monster_id": 610101,
-    "name": "牛魔首领",
-    "camera_look": {"x":-15.75,"y":9.3,"z":8.3,"rx":0.5,"ry":3.14,"rz":0},
-    "camera_pos": 0,
-    "camera_sport": "0",
-    "camera_sport_time": 0,
-    "words": undefined,
-    "speaker_action": {"boss":"act_boss01_sk1"},
-    "speaker_effect": {"boss":"eff_boss01_sk1"}
-}
-tab[90013] = tab[90013] ? tab[90013] : {};
-tab[90013][1] = {
-    "speaker": "boss",
     "monster_id": 610102,
     "name": "金刚巨像",
     "camera_look": {"x":-6.67,"y":21.21,"z":6.94,"rx":0.5,"ry":3.14,"rz":0},
@@ -169,12 +156,25 @@ tab[90013][1] = {
     "speaker_action": {"boss":"act_boss02_sk1"},
     "speaker_effect": {"boss":"eff_boss02_sk1"}
 }
+tab[90013] = tab[90013] ? tab[90013] : {};
+tab[90013][1] = {
+    "speaker": "boss",
+    "monster_id": 610101,
+    "name": "牛魔首领",
+    "camera_look": {"x":-2.92,"y":19.36,"z":6.94,"rx":0.5,"ry":3.14,"rz":0},
+    "camera_pos": 0,
+    "camera_sport": "0",
+    "camera_sport_time": 0,
+    "words": undefined,
+    "speaker_action": {"boss":"act_boss01_sk1"},
+    "speaker_effect": {"boss":"eff_boss01_sk1"}
+}
 tab[90014] = tab[90014] ? tab[90014] : {};
 tab[90014][1] = {
     "speaker": "boss",
     "monster_id": 610103,
     "name": "三界邪王",
-    "camera_look": {"x":-15.75,"y":9.3,"z":8.3,"rx":0.5,"ry":3.14,"rz":0},
+    "camera_look": {"x":11,"y":3.89,"z":6.94,"rx":0.5,"ry":3.14,"rz":0},
     "camera_pos": 0,
     "camera_sport": "0",
     "camera_sport_time": 0,
@@ -187,7 +187,7 @@ tab[90015][1] = {
     "speaker": "boss",
     "monster_id": 610104,
     "name": "魔蝎领主",
-    "camera_look": {"x":-2.92,"y":19.36,"z":6.94,"rx":0.5,"ry":3.14,"rz":0},
+    "camera_look": {"x":-15.75,"y":9.3,"z":8.3,"rx":0.5,"ry":3.14,"rz":0},
     "camera_pos": 0,
     "camera_sport": "0",
     "camera_sport_time": 0,
@@ -200,7 +200,7 @@ tab[90016][1] = {
     "speaker": "boss",
     "monster_id": 610105,
     "name": "青铜古兽",
-    "camera_look": {"x":-15.75,"y":9.3,"z":8.3,"rx":0.5,"ry":3.14,"rz":0},
+    "camera_look": {"x":-7.72,"y":18,"z":8.3,"rx":0.5,"ry":4.11,"rz":0},
     "camera_pos": 0,
     "camera_sport": "0",
     "camera_sport_time": 0,

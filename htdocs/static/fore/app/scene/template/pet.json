@@ -1,4 +1,4 @@
-{{let monster = _get("app/scene/art_cfg/monster").exports.default}}
+{{let monster = _get("app/scene/art_cfg/monster").exports["default"]}}
 {{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
 {{let module_cfg = _get("app/scene/plan_cfg/monster_config").exports.monster_cfg}}
 {{let m2d = _get("app/scene/plan_cfg/config_m2d").exports.config_m2d}}
@@ -10,7 +10,7 @@
 {{let lookat = it.lookat || {value:[0,0,0]} }}
 {{let scale = it.scale || 1}}
 {{let parent = it.parent || {} }}
-
+ 
 {{let scene2d = "" }}
 {{if it.scene_bg}}
 {{: scene2d = mgr.getSceneFile(it.scene_bg)}}
@@ -19,6 +19,20 @@
 {{let pet_eff = null}}
 {{if it.pet_eff}}
 {{: pet_eff = mgr.getSceneFile(it.pet_eff)}}
+{{end}}
+
+{{let _name = null}}
+{{if parent.name}}
+{{: _name = {
+    "type": "prefab",
+    "tpl": "2dtext",
+    "horizontalAlign": "center",
+    "verticalAlign": "center",
+    "visible":it.n_visible !== undefined ? it.n_visible : true ,
+    "textcfg": parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"],
+    "show": parent.name,
+    "position": [3, m2d.name-50, 0]
+} }}
 {{end}}
 
 {
@@ -49,15 +63,12 @@
             "bounds":{{monster[module_name].bounds}},
             "rotate":{{it.rotate || [0,0,0]}},
             "rayID":0,
-            "controller":{{monster.ainMod[monster[module_name].aniControl]}}
-            {{if it.lookat}},
-            "lookatOnce":{
-                "value":[{{lookat.value[0]-(it.x || 0)}},{{lookat.value[2]-(it.z || 0)}},{{lookat.value[1]-(it.y || 0)}}],
-                "sign":{{lookat.sign || 0}}
-            }
-            {{end}}
-            {{if pet_eff}},
-            "headeff":{
+            "controller":{{monster.ainMod[monster[module_name].aniControl]}},
+            "lookatOnce":{{it.lookat?{
+                "value":[it.lookat.value[0]-it.x,(it.lookat.value[2] || 0)-(it.z || 0),it.lookat.value[1]-it.y],
+                "sign":it.lookat.sign || 0
+            }:null}},
+            "headeff":{{pet_eff ? {
                 "type":"node",
                 "transform":{
                     "position":[0,0,0],
@@ -65,44 +76,35 @@
                     "rotate":[0,0,0]
                 },
                 "children":[
-                    {{pet_eff}}
+                    pet_eff
                 ]
-            }
-            {{end}}
-        }{{if it.name}},
+            } : null}}
+
+        },
+        {{it.name ?
         {
             "type":"node",
             "transform":{
-                "position":[0,{{scale*2}},0],
+                "position":[0,scale*2,0],
                 "scale":[1,1,1],
                 "rotate":[0,0,0]
             },
-            "visible":{{!parent.hidden}},
+            "visible":!parent.hidden,
             "children":[
-                {{if parent.name}}
+                _name,
                 {
                     "type": "prefab",
                     "tpl": "2dtext",
                     "horizontalAlign": "center",
                     "verticalAlign": "center",
-                    "visible":{{it.n_visible !== undefined ? it.n_visible : true }},
-                    "textcfg": {{parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"]}},
-                    "show": "{{parent.name}}",
-                    "position": [3, {{m2d.name-50}}, 0]
-                },
-                {{end}}
-                {
-                    "type": "prefab",
-                    "tpl": "2dtext",
-                    "horizontalAlign": "center",
-                    "verticalAlign": "center",
-                    "visible":{{it.n_visible !== undefined ? it.n_visible : true }},
-                    "textcfg": {{parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"]}},
-                    "show": "{{it.name}}",
-                    "position": [3, {{m2d.name-65}}, 0]
+                    "visible":it.n_visible !== undefined ? it.n_visible : true ,
+                    "textcfg": parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"],
+                    "show": it.name,
+                    "position": [3, m2d.name-65, 0]
                 }
             ]
-        }{{end}},
+        }
+        : null}},
         {
             "type":"prefab",
             "tpl":"yingzi",

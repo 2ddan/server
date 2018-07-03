@@ -47,7 +47,7 @@
                                 {{let icon = Pi.pictures[_icon]}}
                                 {{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(it1.player.career_id)] : prop.name}}
                                 <app_a-widget-prop-base on-tap="showPropInfo({{v}})" style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;">
-                                    {"prop":{{prop}},"url":{{icon}},"width":84,"height":84,"count":"none","name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(v) > -1 ? 1 : 0}} }
+                                    {"prop":{{prop}},"url":{{icon}},"width":84,"height":84,"count":"none","name":{{name}},"bg":1,"effect":{{prop.effect}} }
                                 </app_a-widget-prop-base>
                             {{end}}
                         </div>
@@ -86,7 +86,7 @@
                                 {{let icon = Pi.pictures[_icon]}}
                                 {{let name = checkTypeof(v.name,"Array") ? v.name[v.career_id.indexOf(it1.player.career_id)] : v.name}}
                                 <app_a-widget-prop-base on-tap="showPropInfo({{v.sid ? v.sid : v.id}})" style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;">
-                                    {"prop":{{v}},"url":{{icon}},"width":80,"height":80,"count":{{v.count}},"name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(v.sid ? v.sid : v.id) > -1 ? 1 : 0}} }
+                                    {"prop":{{v}},"url":{{icon}},"width":80,"height":80,"count":{{v.count}},"name":{{name}},"bg":1,"effect":{{v.effect}} }
                                 </app_a-widget-prop-base>
                             {{end}}
                             {{for k ,m in it1.fight_award.player}}
@@ -95,7 +95,7 @@
                                 {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
                                 {{let url = Pi.pictures[icon]}}
                                 <app_a-widget-prop-base on-tap='showPropInfo("{{id}}")' style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;">
-                                    {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{it1.fight_award.player[k]}},"name":"none","bg":0,"effect":{{publicboss_config.equip_light.indexOf(id) > -1 ? 1 : 0}} }
+                                    {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{it1.fight_award.player[k]}},"name":"none","bg":0,"effect":{{prop.effect}} }
                                 </app_a-widget-prop-base>
                             {{end}}
                         </div>
@@ -104,7 +104,7 @@
 
                 <a on-tap="closeFightAward" style="position: absolute;left: 0px;right: 0px;margin: 0px auto;bottom: -115px;color: rgb(253, 231, 202);font-size: 20px;z-index: 1;border-bottom: 2px solid rgb(253, 231, 202);width: 125px;font-family: mnjsh;" >点击这里退出</a>
             {{else}}
-                <span style="position: absolute;left: 95px;top: 35px;font-size: 23px;color: #fde7ca;font-family: mnjsh;">{{"我的排名: " + it1.fight_award.own_rank}}</span>
+                <span style="position: absolute;left: 95px;top: 35px;font-size: 23px;color: #fde7ca;font-family: mnjsh;">{{"我的排名: " + (checkTypeof(it1.fight_award.own_rank,"Number") ? it1.fight_award.own_rank : "无")}}</span>
 
                 <a on-tap="lookRank" style="position: absolute;left: 245px;top: 31px;color: rgb(81, 230, 80);font-size: 18px;z-index: 1;border-bottom: 2px solid rgb(81, 230, 80);" >查看详细</a>
 
@@ -121,7 +121,7 @@
                             {{let icon = Pi.pictures[_icon]}}
                             {{let name = checkTypeof(v.name,"Array") ? v.name[v.career_id.indexOf(it1.player.career_id)] : v.name}}
                             <app_a-widget-prop-base on-tap="showPropInfo({{v.sid ? v.sid : v.id}})" style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;margin-bottom:20px">
-                                {"prop":{{v}},"url":{{icon}},"width":84,"height":84,"count":{{v.count}},"name":{{name}},"bg":1,"effect":{{publicboss_config.equip_light.indexOf(v.sid ? v.sid : v.id) > -1 ? 1 : 0}} }
+                                {"prop":{{v}},"url":{{icon}},"width":84,"height":84,"count":{{v.count}},"name":{{name}},"bg":1,"effect":{{v.effect}} }
                             </app_a-widget-prop-base>
                         {{end}}
                         {{for k ,m in it1.fight_award.player}}
@@ -130,7 +130,7 @@
                             {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
                             {{let url = Pi.pictures[icon]}}
                             <app_a-widget-prop-base on-tap='showPropInfo("{{id}}")' style="position:relative;display:inline-block;margin-right:10px;font-size: 18px;margin-bottom:20px">
-                                {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{it1.fight_award.player[k]}},"name":"none","bg":0,"effect":{{publicboss_config.equip_light.indexOf(id) > -1 ? 1 : 0}} }
+                                {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{it1.fight_award.player[k]}},"name":"none","bg":0,"effect":{{prop.effect}} }
                             </app_a-widget-prop-base>
                         {{end}}
                     </div>

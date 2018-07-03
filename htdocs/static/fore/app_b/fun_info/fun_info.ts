@@ -11,6 +11,7 @@ export class FunInfo extends Widget {
     setProps(props) {
         props.width = props.width || 265;
         props.height = props.height || 265;
+        props.top = props.top || 0;
         this.props = props;
     }
     goback(arg) {

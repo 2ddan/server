@@ -3,12 +3,11 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { close, open } from "app/mod/root";
 import { Common } from "app/mod/common";
-import { updata, get as getDB, data as db, listen } from "app/mod/db";
+import { updata, get as getDB, listen } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { fight, showAccount } from "app_b/fight/fight";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { Music } from "app/mod/music";
 import { mgr } from "app/scene/scene";
@@ -127,6 +126,7 @@ export class Instance extends Widget {
         forelet.paint(getData())
         open("app_c-soul-bag_soul-bag_soul");
     }
+
     //打开转换
     openPropChange() {
         let w = forelet.getWidget("app_c-soul-bag_soul-bag_soul");
@@ -227,6 +227,7 @@ let soul_data: any = {
 
 const getData = function () {
     soul_data.soul_info = getDB("soul.soul_info");
+    soul_data.total_level = getDB("soul.num");
     soul_data.acupoint = acupoint;
     soul_data.soul_index = soul_index;
     soul_data.soulArr = soulArr;
@@ -541,6 +542,8 @@ const soulUp = function (index, soul_index, status) {
             }
 
             updata(`soul.soul_info.${index - 1}`, prop.index_soul_info);
+            let num = getDB("soul.num") - 0 + 1;
+            updata("soul.num", num);
             Music.skillSound("other_two");
 
             //soul特效
@@ -648,7 +651,14 @@ listen("player.money", () =>{
 });
 //读取基本数据
 listenBack("app/prop/soul@read", (data) => {
+    let num = 0;
+    for (let arr of data.soul_info) {
+        arr.forEach(v => {
+            num += v[1];
+        });
+    }
     updata("soul", data);
+    updata("soul.num", num);
     //forelet.paint(getData());
 })
 

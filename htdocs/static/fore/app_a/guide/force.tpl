@@ -5,7 +5,6 @@
     {{: __d.gw = root.getWidth()}}
     {{: __d.gh = root.getHeight()}}
     <app_a-guide-force-cover style="display:{{b?'block':'none'}};">{{__d}}</app_a-guide-force-cover>
-    <app_a-guide-force-text style="display:{{(__d.show.text || __d.show.name == 'function_open')?'block':'none'}};">{{__d}}</app_a-guide-force-text>
 
     {{if !b}}
     <div style="position: absolute;top:0px;left:0px;width:{{it?root.getWidth():0}}px;height:{{it?root.getHeight():0}}px;">

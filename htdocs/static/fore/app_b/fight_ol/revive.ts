@@ -9,6 +9,7 @@ import { Common } from "app/mod/common";
 //app
 import { net_request } from "app_a/connect/main";
 import { Common_m } from "app_b/mod/common";
+import { SMgr } from "app_b/fight_ol/same";
 
 // ========================================= 导出
 /**
@@ -22,7 +23,7 @@ export const globalReceive: any = {
             globalSend("popTip",{
                 title:"s 后自动复活!",
                 btn_name:["立即复活"],
-                icon:{"diamond":50},
+                icon:["diamond",50],
                 to_time:t,
                 cb:[
                     //确认
@@ -83,8 +84,12 @@ const revive = (flag) => {
         }
         globalSend("screenTipFun",{words:"您已复活！！"})
         let d = Common.changeArrToJson(data.ok);
-        Common_m.mixAward(d);
+        Common_m.deductfrom(d);
+        // Common_m.mixAward(d);
         failMgr.revive.count = 0;
+        let max_hp = getDB("player.allAttr.max_hp") || 10000;
+        SMgr.getSelf().hp = max_hp;
+        SMgr.getSelf().show_hp = max_hp;
     });
 };
 /**

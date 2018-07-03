@@ -16,12 +16,12 @@
 
 // ============================== 导入
 import { Json } from '../lang/type';
-import { createHandlerList } from "../util/event";
-import { offsetPos } from "../util/html";
-import { Widget } from "../widget/widget";
-import { addNativeEventListener } from "../widget/event";
-import { Forelet } from "../widget/forelet";
-import { open, destory, setForbidBack, getRoot } from "./root";
+import { createHandlerList } from '../util/event';
+import { offsetPos } from '../util/html';
+import { addNativeEventListener } from '../widget/event';
+import { Forelet } from '../widget/forelet';
+import { Widget } from '../widget/widget';
+import { destory, getRoot, open, setForbidBack } from './root';
 
 // ============================== 导出
 /**
@@ -35,13 +35,13 @@ export const listenerList = createHandlerList();
  * @example
  */
 export class Guide extends Widget {
-	id: number = maxID++;
-	painted: boolean = false;
+	public id: number = maxID++;
+	public painted: boolean = false;
 	/**
 	 * @description 第一次计算后调用，此时创建了真实的dom，但并没有加入到dom树上，一般在渲染循环外调用
 	 * @example
 	 */
-	firstPaint(): void {
+	public firstPaint(): void {
 		super.firstPaint();
 		widgetMap.set(this.id, this);
 	}
@@ -49,22 +49,24 @@ export class Guide extends Widget {
 	 * @description 添加到dom树后调用，在渲染循环内调用
 	 * @example
 	 */
-	attach(): void {
-		if (!cur)
+	public attach(): void {
+		if (!cur) {
 			return;
-		let show = stateTable[cur][step];
-		if (this.props === show.name)
+		}
+		const show = stateTable[cur][step];
+		if (this.props === show.name) {
 			guideForce(this, show);
-			
+		}
 	}
 	/**
 	 * @description 绘制方法，
 	 * @param reset表示新旧数据差异很大，不做差异计算，直接生成dom
 	 * @example
 	 */
-	paint(reset?: boolean): void {
-		if (this.painted)
+	public paint(reset?: boolean): void {
+		if (this.painted) {
 			return;
+		}
 		this.painted = true;
 		super.paint(reset);
 	}
@@ -72,21 +74,24 @@ export class Guide extends Widget {
 	 * @description 销毁时调用，一般在渲染循环外调用
 	 * @example
 	 */
-	destroy(): boolean {
-		if (!super.destroy())
+	public destroy(): boolean {
+		if (!super.destroy()) {
 			return;
+		}
 		widgetMap.delete(this.id);
 	}
 	/**
 	 * @description 销毁时调用，一般在渲染循环外调用
 	 * @example
 	 */
-	guide() {
-		if (!cur)
+	public guide() {
+		if (!cur) {
 			return;
-		let steps = stateTable[cur];
-		if (this.props !== steps[step].name)
+		}
+		const steps = stateTable[cur];
+		if (this.props !== steps[step].name) {
 			return;
+		}
 		if (step < steps.length - 1) {
 			step++;
 			if (!guideFind()) {
@@ -97,13 +102,13 @@ export class Guide extends Widget {
 		} else {
 			// 引导结束
 			// setForbidBack(false);
-			// if (guideForceWidget)
+			// if (guideForceWidget) {
 			// 	destory(guideForceWidget);
+			// }
 			// guideForceWidget = null;
-			
-			end();
-			listenerList({ type: "guideOver", state: cur });
-			cur = "";
+			end()
+			listenerList({ type: 'guideOver', state: cur });
+			cur = '';
 		}
 	}
 
@@ -111,27 +116,28 @@ export class Guide extends Widget {
 
 /**
  * @description 初始化引导状态表
- * @param stateTab {json} 引导状态表
+ * @param stateTab 引导状态表
  * @example
  */
 export const init = (stateTab: Json) => {
 	stateTable = stateTab;
-}
+};
 
 /**
  * @description 开始指定的引导状态
- * @param state {string} 引导状态
+ * @param state 引导状态
  * @example
  */
 export const start = (state: string) => {
 	cur = state;
 	step = 0;
 	setForbidBack(true);
-	if (!guideForceWidget)
+	if (!guideForceWidget) {
 		guideForceWidget = open(guideForceWidgetName, { height: 0, left: 0, top: 0, width: 0 });
+	}
 	guideFind();
-	listenerList({ type: "guideStart", state: cur });
-}
+	listenerList({ type: 'guideStart', state: cur });
+};
 /**
  * @description 结束引导状态
  */
@@ -141,22 +147,20 @@ export const end = () => {
 		destory(guideForceWidget);
 	guideForceWidget = null;
 }
-
 /**
  * @description 获得引导强制组件的名称
- * @return {string}
  */
 export const getGuideForceWidgetName = (): string => {
 	return guideForceWidgetName;
-}
+};
 
 /**
  * @description 设置引导强制组件的名称
- * @param widgetName {string} "app-ui-guide-force"
+ * @param widgetName  "app-ui-guideforce"
  */
 export const setGuideForceWidgetName = (widgetName: string): void => {
 	guideForceWidgetName = widgetName;
-}
+};
 
 // ============================== 本地
 /**
@@ -166,7 +170,7 @@ let stateTable: Json = {};
 /**
  * @description 当前状态
  */
-let cur: string = "";
+let cur: string = '';
 /**
  * @description 当前状态的步数
  */
@@ -179,12 +183,12 @@ let maxID = 1;
 /**
  * @description 引导强制组件的名称
  */
-let widgetMap: Map<number, Widget> = new Map;
+const widgetMap: Map<number, Widget> = new Map();
 
 /**
  * @description 引导强制组件的名称
  */
-let guideForceWidgetName = "";
+let guideForceWidgetName = '';
 /**
  * @description 引导强制组件
  */
@@ -196,8 +200,8 @@ let guideForceWidget: Widget = null;
 export const guideFind = (arg?): boolean => {
 	if (!cur)
 			return false;
-	let show = stateTable[cur][step];
-	for (let w of widgetMap.values()) {
+	const show = stateTable[cur][step];
+	for (const w of widgetMap.values()) {
 		if (w.props === show.name) {
 			if(!arg){
 				guideForce(w, show);
@@ -205,19 +209,21 @@ export const guideFind = (arg?): boolean => {
 			return show;
 		}
 	}
+	
 	return false;
-}
+};
 /**
  * @description 刷新强制引导组件
  */
 const guideForce = (w: Widget, show: any): void => {
-	let el = w.tree.link as HTMLElement;
-	let pos = { x: 0, y: 0, w: el.offsetWidth, h: el.offsetHeight, show: show };
-	let p = offsetPos(el, getRoot(), pos);
-	if (!p)
+	const el = w.tree.link as HTMLElement;
+	const pos = { x: 0, y: 0, w: el.offsetWidth, h: el.offsetHeight, show: show };
+	const p = offsetPos(el, getRoot(), pos);
+	if (!p) {
 		pos.x = pos.y = pos.w = pos.h = 0;
+	}
 	guideForceWidget.setProps(pos);
 	guideForceWidget.paint();
-}
+};
 
 // ============================== 立即执行

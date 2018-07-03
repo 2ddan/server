@@ -97,7 +97,8 @@
 
                 {{for m_add, n_add of prop_1.addition_attr}}
                 {{if m_add !== "erl_type"}}
-                {{let open = ((+m_add) >= evolution.wash_num)}}
+                {{let lev = it1.equip_wash_num[prop_1.id][m_add - 0 + 1]}}
+                {{let open = prop_1.level < lev}}
                 <div on-tap="{{if !open}}selectAttr({{m_add}}){{end}}" style="position:relative;width:284px;height:30px;left:0px;right:0px;line-height:32px;margin-bottom:2px;z-index:3;margin:0 auto;">
                     {{%%let add = 0}}
                     {{if addArr[0] == n_add[0]}}
@@ -110,7 +111,7 @@
                     {{if !open}}
                     <div style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;color:{{addArr[0] == n_add[0] ? '#51e650' : '#e8dfb2'}}">最大值:{{addArr[0] == n_add[0] ? Math.ceil(max * (1+addArr[1])) : max}}</div>
                     {{else}}
-                    <app_a-widget-text-text style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;top:5px">{"text":{{"("+(50 - 0 + m_add*10 - 0) + "级可洗练)"}},"textCfg":"heroEquipGray","fontSize":16,"fontFamily":"MNNNNN","space":"0"}</app_a-widget-text-text>
+                    <app_a-widget-text-text style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;top:5px">{"text":{{"("+ lev + "级可洗练)"}},"textCfg":"heroEquipGray","fontSize":16,"fontFamily":"MNNNNN","space":"0"}</app_a-widget-text-text>
                     {{end}}
                 </div>
                 {{end}}
@@ -166,10 +167,10 @@
         {{if num < 0}}
         <div style="width: 113px;position: absolute;bottom: -60px;right: 3px;font-size: 16px;text-align: center;color: rgb(255, 216, 166);">免费次数:{{-num}}</div>
         {{else}}
-
-        <app-widget-coin-coin style="width: 113px;text-align: center;bottom: -60px;right: 3px;position: absolute; white-space: nowrap;font-size: 16px;color: rgb(255, 216, 166);">
-            {"icon":"money","text":{{equip_wash_cost.cost_money[num]}} }
-        </app-widget-coin-coin>
+        {{let color = equip_wash_cost.cost_money[num] > player.money ? "#ff0f0f" : "#ffd8a6"}}
+        <app_a-widget-coin-coin style="width: 113px;text-align: center;bottom: -60px;right: 3px;position: absolute; white-space: nowrap;font-size: 16px;color: {{color}};">
+            {"icon":"money","text":[{{equip_wash_cost.cost_money[num]}}] }
+        </app_a-widget-coin-coin>
 
         {{let prop = Common.getBagPropById(equip_wash_cost.cost_prop_id)}}
         {{if !prop}}

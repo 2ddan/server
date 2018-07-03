@@ -1,4 +1,4 @@
-{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let effect = _get("app/scene/art_cfg/effect").exports["default"]}}
 {{let index = it.index || 0}}
 {
     "type":"Node",
@@ -19,4 +19,4 @@
             "id":{{it.id || 0}}
         }
     }]
-}
+} 

@@ -60,23 +60,19 @@
     position: absolute;
     left:45px;
 	top: 203px;
-	width:450px;
+    width:450px;
+    text-align:center;
 }
 
 .13 {
-    position: absolute;
-    left: 60px;
-    top: 0;
+    position: relative;
     width: 116px;
     height: 45px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 53px;
 }
-.14 {
-    position: absolute;
-    right: 60px;
-	top: 0;
-	width: 116px;
-    height: 45px;
-}
+
 .15 {
     position: absolute;
     left: 3%;

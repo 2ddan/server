@@ -9,14 +9,14 @@
 // =================================导入
 //pi
 import * as util from "pi/widget/util";
-import { open, remove, getWidth, getHeight } from "pi/ui/root";
+import { open, getWidth, getHeight } from "pi/ui/root";
 import { loadCssRes } from "pi/widget/util";
 import { addSceneRes } from "pi/render3d/load";
 import { depend } from "pi/lang/mod";
 import { BlobType } from "pi/util/res_mgr";
 //mod
 import { Common } from "app/mod/common";
-import { Pi, findGlobalReceive, markFilesLoad, getSuffix, globalSend } from "app/mod/pi";
+import { Pi, findGlobalReceive, markFilesLoad, globalSend } from "app/mod/pi";
 
 // ================================导出
 
@@ -30,17 +30,16 @@ export const loadSlow = (oldUser,list:Array<String>,callback?:Function) => {
 	//console.log("load slow ===========================");
 	//TODO..
 	//获取慢下载文件目录列表
-	let arr = wait.slow.list,
-		empty = [];
+	let arr = wait.slow.list;
 	for(var i=0,len = list.length;i<len;i++){
-		let dst = depend.get(list[i]);
-		if(!dst){
-			continue;
-		}
-		arr.push(dst);
+		// let dst = depend.get(list[i]);
+		// if(!dst){
+		// 	continue;
+		// }
+		if(arr.indexOf(list[i])<0)arr.push(list[i]);
 	}
 	//console.error("空文件：",empty.join(","));
-	wait.slow.list = arr;
+	// wait.slow.list = arr;
 	if(callback)wait.slow.loadback = callback;
 	//如果当前没有加载任务，则开始慢下载
 	loadNext();
@@ -54,6 +53,7 @@ export const loadSlow = (oldUser,list:Array<String>,callback?:Function) => {
 export const loadNow = (list:Array<String>,callback?:Function,foreback?:Function) => {
 	//console.log("load now ===========================");
 	//console.log("loadnow start !!!");
+	// alert("loadNow");
 	wait.now.list = wait.now.list.concat(list);
 	if(callback)wait.now.loadback = callback;
 	if(foreback)wait.now.foreback = foreback;
@@ -75,17 +75,17 @@ export const splitDir = (dir) => {
 	let list = wait.slow.list,
 		arr = [];
 	for(var i=0,len = list.length;i<len;i++){
-		let dst = list[i];
+		let dst = depend.get(list[i]);
 		//是app..类第一层目录，则寻找子目录
 		if(dir === dst.path && !dst.path.match(/\//g)){
 			arr = arr.concat(json_arr(dst.children));
 		//否则直接添加到队列
-		}else arr.push(dst);
+		}else arr.push(list[i]);
 	}
 	//从小到大排序
-	arr.sort((a,b):number => {
-		return a.size - b.size;
-	});
+	// arr.sort((a,b):number => {
+	// 	return a.size - b.size;
+	// });
 	//console.error("空文件：",empty.join(","));
 	wait.slow.list = arr;
 };
@@ -152,9 +152,10 @@ const clearWait = (type) => {
  * @description json对象转数组
  */
 const json_arr = (_json) => {
-	let arr = [];
+	let arr = [],p="";
 	for(let k in _json){
-		arr.push(_json[k]);
+		p = _json[k].children?_json[k].path+"/":_json[k].path;
+		arr.push(p);
 	}
 	return arr;
 }
@@ -266,7 +267,7 @@ const openDownload = () => {
  * }
  */
 const creatLoad = (type,list) => {
-	console.log(type,list);
+	// console.log(type,list);
 	let pro = (window as any).pi_modules.commonjs.exports.getProcess();
 	pro.type = type;
 	pro.loaded = 0;
@@ -318,13 +319,19 @@ const findFilesList = (list) => {
 const getSlowList = (_list) => {
 	//console.log(_list);
 	let arr = [],
-		add = (dir) => {
-			if(dir.loaded && _list.length)
-				add(_list.shift());
-			else if(!dir.loaded){
-				arr.push(dir.path+"/");
+		p = "",
+		m = 1024*1024,
+		s = 0,
+		add = (path) => {
+			const dir = depend.get(path);
+			if(!dir.loaded){
+				p = dir.children?dir.path+"/":dir.path;
+				arr.push(p);
 				dir.loaded = 1;
+				s += dir.size;
 			}
+			if(_list.length && s < m)
+				add(_list.shift());
 		};
 	add(_list.shift());
 	return arr;
@@ -337,11 +344,29 @@ const getSlowList = (_list) => {
 const getNowList = (_list) => {
 	//console.log(_list);
 	let arr = [],
+		p = "",
+		idx ,
 		add = (dir) => {
 			let f = depend.get(dir);
 			if(!f.loaded){
-				arr.push(dir);
 				f.loaded = 1;
+				idx = wait.slow.list.indexOf(f.path);
+				if(idx >= 0){
+					arr.push(f.path);
+					wait.slow.list.splice(idx,1);
+				}else if(f.children){
+					for(let k in f.children){
+						if(f.children[k].loaded){
+							continue;
+						}
+						p = f.children[k].children?f.children[k].path+"/":f.children[k].path;
+						idx = wait.slow.list.indexOf(p);
+						arr.push(p);
+						if(idx>=0){
+							wait.slow.list.splice(idx,1);
+						}
+					}
+				}
 				//测试代码
 				for(let k in wait.slow.list){
 					let item = wait.slow.list[k];
@@ -379,11 +404,22 @@ const loadDir = (__process) => {
 		func();
 		return;
 	}
+	console.log(__process.files);
+	let t = Date.now();
 	//console.log("loadDir start : "+__process.files.join(","),__process);
 	//下载开始
-	util.loadDir(__process.files, Pi.flags,{},{png:"download", jpg:"download", jpeg:"download", webp:"download", gif:"download", svg:"download", mp3:"download", ogg:"download", aac:"download"}, function(fileMap,mods) {
-		func(fileMap);
-		globalSend("loadover");
+	util.loadDir(
+		__process.files, 
+		Pi.flags,
+		{},
+		{png:"download", jpg:"download", jpeg:"download", webp:"download", gif:"download", svg:"download", mp3:"download", ogg:"download", aac:"download"}, 
+		function(fileMap,mods) {
+			let t1 = Date.now()-t;
+			// setTimeout(()=>{
+				func(fileMap);
+			// },10);
+			console.log(t1+","+(Date.now()-t)+","+JSON.stringify(__process.files));
+			globalSend("loadover");
 	}, function(r) {
 		if(!Pi.wxLogin)alert("加载目录失败, "+__process.files.join(",") + r.error + ":" + r.reason);
 	},__process.handler);
@@ -438,7 +474,7 @@ const nextTimer = (() => {
 			//当前如果是立即下载任务，则必须等待进度回调进入
 			if(process && process.type=="now" && process.loaded == 1)return;
 			loadNext();
-		},0);
+		},1);
 	};
 })();
 

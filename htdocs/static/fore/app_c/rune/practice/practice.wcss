@@ -129,10 +129,11 @@
 }
 .19 {
     position: relative;
-    width: 173px;
+    width: 136px;
     height: 115px;
     font-size:20px;
     display: inline-block;
+    text-align: left;
 }
 .20{
     color:#fff;
@@ -150,7 +151,6 @@
     height: 100%;
     left: 0px;
     top: 0px;
-    text-align: center;
     color: #51e650;
 }
 

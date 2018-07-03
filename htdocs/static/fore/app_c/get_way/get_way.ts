@@ -1,10 +1,9 @@
-import { Common } from "app/mod/common";
 import { Forelet } from "pi/widget/forelet";
 import { open, close,closeAll} from "app/mod/root";
 import { Widget } from "pi/widget/widget";
 import { Pi, globalSend } from "app/mod/pi";
 import { item_getWay } from "cfg/b/item_getWay";
-import { updata, get as getDB,get } from "app/mod/db";
+import { get as getDB,get } from "app/mod/db";
 
 import { isOpen } from "app_c/activity/activity";
 import { config_shortcut } from "cfg/c/config_shortcut";

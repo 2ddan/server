@@ -1,8 +1,6 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
-import { data as db, updata, get as getDB } from "app/mod/db";
 import { attribute_config } from "cfg/c/attribute_config";
 
 /**
@@ -47,12 +45,12 @@ export const getAttrData = function(msg){
             let val = msg.attr[key];
             if (key == "damage_multiple" || key == "un_damage_multiple" || key == "attr_rate") {
                 if(key == "attr_rate"){
-                    data.add.push(["全属性", parseInt( val * 100)+"%"]);
+                    data.add.push(["全属性", Math.floor( val * 100)+"%"]);
                     continue;
                 }
-                data.add.push([attribute_config[key], parseInt(val * 100)+"%"]);
-            } else {
-                data.add.unshift([attribute_config[key], val<1?parseInt(val * 100)+"%":val]);
+                data.add.push([attribute_config[key], Math.floor(val * 100)+"%"]);
+            }else if(key != "buff_attr"){
+                data.add.unshift([attribute_config[key], val<1?Math.floor(val * 100)+"%":val]);
             }
         }
     }

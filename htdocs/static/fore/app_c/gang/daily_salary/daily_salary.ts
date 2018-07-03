@@ -40,12 +40,12 @@ const getDailySalary = function () {
             let _data:any = Common.changeArrToJson(data.ok);
             let result = Common_m.mixAward(_data);
             let gangExpandData = getDB("gang.gangExpandData");
-            //可用贡献
-            gangExpandData.gang_contribute = gangExpandData.gang_contribute - 0 +  result.player["gang_contribute"];
+            let num = Common_m.awardFindProp(150005, result.bag);
+
             //历史总贡献
-            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 +  result.player["gang_contribute"];
+            gangExpandData.role_history_contribute = gangExpandData.role_history_contribute - 0 + num;
             //今日贡献
-            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 +  result.player["gang_contribute"];
+            gangExpandData.role_today_contribute = gangExpandData.role_today_contribute - 0 + num;
             //今日已领取
             gangExpandData.gang_salary = 1;
             updata("gang.gangExpandData", gangExpandData);

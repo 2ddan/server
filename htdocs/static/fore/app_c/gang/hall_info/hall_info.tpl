@@ -72,8 +72,8 @@
 					</app_a-widget-box-box>
 					<div style="position: absolute;width:100px;text-align: center;line-height: 24px;font-family: mnjsh;color:#ffb675;left:47px;top:24px;font-size: 19px;">每日俸禄</div>
 					{{if it1.gangExpandData.gang_salary}}
-					<app_a-widget-pic_text-pic_text style="top:0px;right:30px;position: absolute;z-index: 3;">
-						{"icon":"text_get_1","width":94,"height":60,"align":"center","marginLeft":3,"textCfg":""}
+					<app_a-widget-pic_text-pic_text style="top:7px;left: -8px;position: absolute;z-index: 3;">
+						{"icon":"text_get_1","width":75,"height":48,"align":"center","marginLeft":3,"textCfg":""}
 					</app_a-widget-pic_text-pic_text>
 					{{end}}
 					<app-widget-tip-tip style="left: 44px;">
@@ -127,7 +127,13 @@
 		</widget>
 		<img on-tap="gotoRankClick" w-class="72" src="app_c/gang/images/rank.png" w-sid="72"/>
 		<div w-class="70" w-sid="70" style="text-align: center;">
-			{{let text = [["hall_skill","藏经阁", "openGangSkill","gang.info.skill"],["hall_shop","藏宝阁","openGangShop"],["hall_boss","门派Boss", "openGangBoss"],["hall_fight","门派战"]]}}
+			{{let text = [
+					["hall_skill", "藏经阁", "openGangSkill", "gang.info.skill"],
+					["hall_shop", "藏宝阁", "openGangShop"],
+					["hall_boss", "门派试炼", "openGangBoss", "gang.info.boss"],
+					["hall_fight", "门派战", "openGangBattle"]
+				]
+			}}
 			{{for i,v of text}}
 			<div on-tap="{{v[2]}}" style="position:relative;display:inline-block;width:86px;height:124px;margin: 0px 10px 0px 10px;background-image:url(../images/{{v[0]}}.png);">
 				<div style="overflow: hidden;width:80px;height:124px;margin:0 auto;position: relative;">
@@ -144,7 +150,30 @@
 				{{end}}
 			</div>
 			{{end}}
+			{{if 1 == 2}}
+			{{let base = it1.guild_battle_base}}
+			{{let time = it1.Util.serverTime()}}
+			{{let date = new Date(time)}}
+			{{let day = date.getDay()}}
+			{{let hours = date.getHours()}}
+			{{let minutes = date.getMinutes()}}
+			{{let total_minutes = hours * 60 + minutes}}
+			<div style="position: absolute;right: 5px;top: -17px;width: 74px;height: 52px;">
+				{{if (day == base.application_day) && (total_minutes > base.application_time[0]) && (total_minutes < base.application_time[1])}}
+				<app_a-widget-pic_text-pic_text>
+					{"icon":"appling","width":74,"height":52}
+				</app_a-widget-pic_text-pic_text>
+				{{elseif (base.fight_day.indexOf(day) >= 0) && (total_minutes > base.fight_time[0]) && total_minutes < base.fight_time[1]}}
+				<app_a-widget-pic_text-pic_text>
+					{"icon":"fighting","width":74,"height":52}
+				</app_a-widget-pic_text-pic_text>
+				{{else}}
+				<app_a-widget-pic_text-pic_text>
+					{"icon":"preparing","width":74,"height":52}
+				</app_a-widget-pic_text-pic_text>
+				{{end}}
+			</div>
+			{{end}}
 		</div>
-		
 	</div>
 </div>

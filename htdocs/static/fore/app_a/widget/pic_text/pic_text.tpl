@@ -15,6 +15,6 @@
     
     <app_a-widget-text-text style="position:absolute;left:{{it.left || 0}}px;right:0px;margin:0 auto;top:{{it.top || 0 }}px">{"text":{{it.text}},"textCfg":{{it.textCfg || ''}},"space":{{it.space || 0}},"fontSize":{{it.fontSize || 12}}}</app_a-widget-text-text>
     {{else}}
-    <span style="margin-left:{{it.marginLeft || ''}};position: absolute;width: 100%;height: 100%;left: 0px;line-height:{{it.height}}px">{{it.text === 0 ? 0 : (it.text ? it.text : '')}}</span>
+    <span style="margin-left:{{it.marginLeft || 0}}px;position: absolute;width: 100%;height: 100%;left: 0px;line-height:{{it.height}}px">{{it.text === 0 ? 0 : (it.text ? it.text : '')}}</span>
     {{end}}
 </div>

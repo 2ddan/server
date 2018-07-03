@@ -1,38 +1,12 @@
 /**
- * 帧同屏，状态同步
- * 
- * 请求层：客户端，AI
- * ---- 通过scene
- *    ↓
- * 响应请求：判断请求是否合理，并生成战斗事件
- * ---- 决策判断（policy）
- *    |
- *    | 决策合理，更新信息池
- *    ↓
- * 信息池：包含场景内所有逻辑数据（玩家）
- *    |
- *    | 按照固定帧率(50sm)，分发事件到显示层
- *    ↓
- * 显示层：演播技能特效、动作、伤害，模拟移动
- * 
- * 
- * //保障流畅度
- * 1.释放技能，由客户端发起，不论成功与否，前端都播放技能，cd照样更新；
- *   服务端接收到消息后按照正常技能逻辑走，反馈前端是否释放成功
- *   成功之后更新技能cd，防止后台技能cd没好之前，又请求释放
- * 
- * 2.移动前端按照正常移动走，同时通知后台移动，不等后台回调
- *   每次发起新的移动，会把前端当前位置同时推给后台，保证前后台位置同步
- * 
- * 3.自身伤害进入显示队列，正常情况下伤害都会后于技能释放，不会造成不流畅
- *
+ * 战斗单场景及前台场景管理
+ * 后台不需要此场景管理，而是由erlang端+v8协同管理
  * 
  */
 
  // ================================ 导入
 //pi
 import { NavMesh } from "pi/ecs/navmesh";
-
 //fight
 import { Fighter , Skill, Buff } from "./class";
 import { EType, blend } from "./analyze";
@@ -130,6 +104,7 @@ export class Scene {
         //移动，当前技能释放 
         Policy.run(this);
         let evs = this.listenEvent;
+        // console.log("events list length:: ",evs.length);
         this.listenEvent = [];
         this.listener && this.listener({now:this.now,events:evs});
     }
@@ -156,12 +131,12 @@ export class Scene {
     /**
      * @description 添加事件
      * @param {Json}evs 推向前端的场景事件
-     *  {
-     *     type：string, *必须
+     *  [
+     *     string, *type必须
      *     参数：..., 【全部参数可选】
      *     .
      *     .
-     *  }
+     *  ]
      * @param {EType}type
      **/  
     public addEvents(evs: any[]): void{
@@ -180,10 +155,6 @@ export class Scene {
  **/  
 export class FMgr{
     /**
-     * @description 场景的数量
-     */
-    static scenesId = 1
-    /**
      * @description 帧率20,50sm/f
      */
     static FPS = 20
@@ -196,35 +167,23 @@ export class FMgr{
      */
     static server:any
     /**
-     * @description 场景表
+     * @description 场景
      */
-    static scenes = new Map<number,Scene>()
+    static scenes: Scene
     /**
      * @description 创建场景
      */
     static create(type:any,level?:number,server?:any){
         let s: Scene = new Scene(type,level);
-        s.id = this.scenesId++;
         this.server = server;
-        this.scenes.set(s.id,s);
+        this.scenes = s;
         return s;
-    }
-    /**
-     * @description 创建场景
-     * @param type
-     */
-    static getByType(type: any){
-        const arr = [];
-        this.scenes.forEach(v => {
-            arr.push(v);
-        });
-        return arr;
     }
     /**
      * @description 销毁场景
      */
     static destroy(s:Scene){
-        this.scenes.delete(s.id);
+        this.scenes = null;
         s.destroy();
     }
     /**
@@ -232,22 +191,26 @@ export class FMgr{
      * @param now 当前时间戳
      */
     static loop(){
-        this.scenes.forEach((v: Scene,k: any)=>{
-            let evs = v.loop(),
-                r = Policy.check(v);
-            if(v.level > 1 && r>0 && v.overCallback && v.overCallback(r,v)){
-                // v.setPause(true);
-                v.overCallback = null;
-            }
-        })
+        if(!this.scenes)
+            return;
+        let v = this.scenes,
+            evs = v.loop(),
+            r = Policy.check(v);
+        if(v.level > 1 && r>0 && v.overCallback && v.overCallback(r,v)){
+            v.overCallback = null;
+        }
     }
+    static time = 0
     /**
-     * @description 设置战斗主循环到帧管理器，每16ms进一次
+     * @description 设置战斗主循环到帧管理器
      */
     static startFrame(frame):void{
+        this.time = Date.now();
         this.frame = frame;
         this.frame.setInterval(1000/this.FPS);
         this.frame.setPermanent(()=>{
+            // console.log(Date.now()-this.time);
+            // this.time = Date.now();
             this.loop();
         })
     }
@@ -283,8 +246,4 @@ export class FMgr{
  // ================================ 本地
 
  // ================================ 立即执行
- /**
-  * @description 开始循环
-  */
-//  FMgr.startFrame();
 

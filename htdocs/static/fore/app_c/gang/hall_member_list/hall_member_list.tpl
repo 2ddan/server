@@ -18,11 +18,8 @@
 				</widget>
 
 				{{let img = ""}}
-				{{if v.head && v.head.indexOf("undefined") < 0}}
-				{{: img = v.head}}
-				{{else}}
-				{{: img = (Pi.pictures['playerhead'+v.career_id])}}
-				{{end}}
+
+				{{: img = (Pi.pictures['playerhead'+(v.head || v.career_id)])}}
 				<widget on-tap="{{if v.role_id!=player.role_id}}roleInfoClick({{i}}){{end}}" w-class="84" w-tag="app_a-widget-head-friend" w-sid="84">
 					{"url":{{img}},"quality":{{v.role_quality}},"type":"player","prop":{{v?v:0}},"level":{{v.level}},"color":"#b5e8ff"}
 				</widget>

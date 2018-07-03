@@ -1,20 +1,18 @@
 import { data as localDB, updata, get as getDB, listen } from "app/mod/db";
-import * as Fight from "fight/a/common/fight";
 import { mgr, mgr_data } from "app/scene/scene";
+import { Effect } from "app/scene/class";
 
 export class Fight_common {
 	//创建目标点特效
 	static createDest(x, y, fightScene, id?) {
 		id = id || 0;
-		let fm = Fight.createOtherEffect("eff_sce_dianji", id, true);
+		let fm:any = new Effect("eff_sce_dianji", id, true);
 		fm.x = x;
 		fm.y = y;
 		fm.z = 0;
 		mgr.create(fm, "effect");
-
 		return fm;
-	};
-
+	}
    	/**
 	 * @description 该模型的动作对象
 	 * @param anim ：动作名字
@@ -29,12 +27,12 @@ export class Fight_common {
 			"speed": speed || 1,
 			"time" : new Date().getTime()
 		}
-	};
+	}
 	//获取剩余血量
 	static getLeftHp(fightScene) {
 		let arr = { own: [], enemy: [] };
-		for (let i = 0, len = fightScene.fighters.length; i < len; i++) {
-			let f = fightScene.fighters[i];
+		[...fightScene.fighters.keys()].forEach((v, i) => {
+			let f = fightScene.fighters.get(v);
 			if (f.type != "treasure") {
 				arr[f.camp == 1 ? "own" : "enemy"].push({
 					sid: f.sid,
@@ -42,7 +40,7 @@ export class Fight_common {
 					maxHp: f.max_hpCount
 				});
 			}
-		}
+		});
 		return arr;
 	};
 	/**

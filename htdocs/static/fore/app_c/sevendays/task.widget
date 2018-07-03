@@ -1,5 +1,6 @@
 {
     "tpl":"./task.tpl",
     "js":"./sevendays.ts",
-    "forelet":"./sevendays.ts"
+    "forelet":"./sevendays.ts",
+    "css": "./sevendays.wcss"
 }

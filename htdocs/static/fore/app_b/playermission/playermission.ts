@@ -1,14 +1,10 @@
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { data as localDB, updata, get as getDB, listen, insert } from "app/mod/db";
+import { net_request, net_message } from "app_a/connect/main";
+import { updata, get as getDB, listen, insert } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { Forelet } from "pi/widget/forelet";
-import { open } from "app/mod/root";
-import { closeBack } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
-import { showAccount, fight } from "app_b/fight/fight";
-import { tips_back } from "app_b/tips/tips_back_cfg";
-import { Pi, globalSend, findGlobalReceive } from "app/mod/pi";
+import {  globalSend } from "app/mod/pi";
 import { listenBack } from "app/mod/db_back";
 import { Util } from "app/mod/util";
 import { getGlobal } from "pi/widget/frame_mgr";
@@ -27,7 +23,7 @@ let currTask,
 	lastTask,
 	submitState = false,//提交任务状态
 	timeOut = 2*60*1000,//触发引导提交任务间隔
-	guideTimer = Util.serverTime(),//记录上一个任务提交时的时间
+	guideTimer = (new Date()).getTime(),//记录上一个任务提交时的时间
 	is_frame = 0;//创建全局渲染帧永久调用函数和参数
 
 
@@ -66,7 +62,7 @@ export class playermission_m extends Widget {
 	}
 
 	gotoMission = function(fun) {
-		guideTimer = Util.serverTime();
+		guideTimer = (new Date()).getTime();
 		updata("playermission.guide",0);
 		if(fun != "undefined"){
 			if(fun.indexOf(",") > -1){
@@ -81,7 +77,7 @@ export class playermission_m extends Widget {
 // 领奖
 export const getAward = function () {
 	updata("playermission.guide",0);
-	guideTimer = Util.serverTime();
+	guideTimer = (new Date()).getTime();
 	let currList = playermission[currTask];
 	if (!!currList) {
 		if (currList.type != "jjc_rank") {
@@ -191,6 +187,9 @@ const listenFun = function () {
 		listen("equip_fb.equip_fb_star.0.0", function () {
 			checkTask();
 		})
+		listen("instance_fb.instance_point", function () {
+			checkTask();
+		})
 	}
 }
 
@@ -218,8 +217,8 @@ const checkTask = function () {
 				progress = max_lv;
 			} else if (currList.type == "treasure") {				//激活神兵
 				let _treasure = getDB("magic.treasure");
-				if (!_treasure) {
-					progress = 0;
+				if (_treasure.length == 0) {
+					progress = -1;
 					return;
 				}
 				progress = _treasure.length > 0 ? 1 : 0;
@@ -242,6 +241,9 @@ const checkTask = function () {
 				let rank = getDB("arena.jjc_top_rank");
 				let max_rank = rank || 5000;
 				progress = max_rank;
+			} else if (currList.type == "instance") {   //九幽幻境第一章第五关
+				let mission = getDB("instance_fb.instance_point");
+				progress = mission || 0;
 			} else if (currList.type == "mission") {   //装备副本第一关第一章
 				let mission = getDB("equip_fb.equip_fb_star.0.0");
 				progress = mission || 0;
@@ -340,7 +342,7 @@ const setPlayermissionGuide = function(){
 	// 	timeOut = null;
 	// }
 	let guide = getDB("playermission.guide");
-	if(Util.serverTime() - guideTimer > timeOut && !guide){
+	if((new Date()).getTime() - guideTimer > timeOut && !guide){
 		updata("playermission.guide",1);
 	}
 }

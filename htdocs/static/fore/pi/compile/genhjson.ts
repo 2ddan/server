@@ -20,13 +20,13 @@ import {Syntax} from "../compile/parser";
 import * as hash from '../util/hash';
 import {calTextHash} from '../util/tpl';
 import { logLevel, warn } from '../util/log';
+import { commonjs } from '../lang/mod';
 
 // ====================================== 导出
 export let level = logLevel;
 
 const setParent = (syntax: Syntax, parent: Syntax) => {
     syntax.parent = parent;
-    
     let right = syntax.right;
     if(!right)
         return;
@@ -39,7 +39,7 @@ const setParent = (syntax: Syntax, parent: Syntax) => {
 export const gen = (syntax:Syntax) => {
 	nodeIndex = 0;
 	sid = 0;
-	funcStrArr = [`let _$temp, node;`];
+	funcStrArr = [`let _$temp, node; let _set = new Set();`];
 	funcStrIndex = 1;
 	setParent(syntax, null);
 	preorder(syntax, null);
@@ -165,6 +165,21 @@ const jstringFunc = (syntax:Syntax)=>{
 			}
 			node.hash = hash.anyHash(node.str);
 			return node;
+		},
+		"pre":(node:ParserNode):String=>{
+			let p = findJsonContainer(syntax.parent);
+			if(p){
+				let str = ``;
+				let ps = findSJpairJarr(syntax.parent);;
+				if(p.type != "jpair" || p.right[0] !== syntax){
+					str = getJarrJpair(p, node.str);
+					
+				}
+				if(ps.type === "script"){
+					str += `node["_$hash"] = _nextHash(node["_$hash"], ${node.hash});`
+				}
+				return str;
+			}
 		}
 	})
 }
@@ -323,7 +338,7 @@ const jsExprFunc = (syntax:Syntax, parent:Syntax) => {
 			}else{//script
 				str = getJarrJpair(p, node.str);
 			}
-			str += `node["_$hash"] = _nextHash(node["_$hash"], _anyHash(${node.str}));`;//计算script的hash
+			str += `_set.clear();node["_$hash"] = _nextHash(node["_$hash"],_anyHash(${node.str}, 0,_set));`;//计算script的hash
 			return str;
 		}
 	})
@@ -1512,7 +1527,7 @@ const getJarrJpair = (p:Syntax, value: any): string => {
  */
 export const toFun = (s: string, path?: string) => {
 	try{
-	return (new Function("_nextHash", "_anyHash","return" + s))(hash.nextHash, hash.anyHash);
+	return (new Function("_nextHash", "_anyHash","_get","return" + s.slice(0, s.length-1)))(hash.nextHash, hash.anyHash, commonjs ? commonjs.relativeGet:null);
 	}catch(e) {
 		warn(level, "tpl toFun, path: "+path+", s: ", s, e);
 		throw(e);

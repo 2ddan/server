@@ -19,7 +19,7 @@
 				"top":"-1",
 				"margin":2,
 				"arr":[
-                    {"tab":"app_c-play_card-tab_award", "btn":{"text":"积分奖励","type_m":"award"}},
+                    {"tab":"app_c-play_card-tab_award", "btn":{"text":"积分奖励","type_m":"award"},"tip_keys":["play_card.award.score_award"]},
                     {"tab":"app_c-play_card-tab_view", "btn":{"text":"物品查询","type_m":"view"}}
 				],
 				"type":0}

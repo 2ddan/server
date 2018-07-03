@@ -38,7 +38,7 @@ export let Pi: any = {
 /**
  * @description 导出配置 "cfg/"目录下，忽略所有子目录，以文件名为key
  */
-export let cfg:any = {};
+export const cfg:any = {};
 
 /**
  * @description 获取文件名后缀
@@ -57,14 +57,19 @@ export const getPerfix = (path,num) => {
 	switch (num) {
 		case 1:
 			r = path.match(/([^\.\/]+\/){1}/);
+			break;
 		case 2:
 			r = path.match(/([^\.\/]+\/){2}/);
+			break;
 		case 3:
 			r = path.match(/([^\.\/]+\/){3}/);
+			break;
 		case 4:
 			r = path.match(/([^\.\/]+\/){4}/);
+			break;
 		case 5:
 			r = path.match(/([^\.\/]+\/){5}/);
+			break;
 		default:
 			let b = `return path.match(/([^\\.\\/]+\\/){${num}}/)`;
 			r = (new Function("path",b))(path);
@@ -204,6 +209,37 @@ export const refresh = (url?) => {
 	timer = setTimeout(refresh, 50);
 }
 
+/**
+ * @description 上传角色信息到对接平台
+ */
+export class InfoToPt{
+	static isCreate = false
+	static upload(type,localDB){
+		const b = type === 2?true:false;
+		if(!Pi.ptUpload || this.isCreate !== b){
+			return;
+		}
+		
+		Pi.ptUpload(new Player(type,localDB),(response)=>{
+			if(response.status){
+				globalSend("screenTipFun", {
+					words: "更新平台信息成功！"
+				});
+			}else{
+				globalSend("screenTipFun", {
+					words: "更新平台信息失败！"
+				});
+				if(this.isCreate){
+					this.upload(type,localDB);
+				}
+			}
+		})
+		if(this.isCreate){
+			this.isCreate = false;
+		}
+	}
+}
+
 // ===================================本地
 /**
  * 广播模块
@@ -245,4 +281,96 @@ const addCfg = (name) => {
 		return console.error(`Has the same cfg ${n}`);
 	cfg[n] = m;
 };
+const gangRoleType = {
+	"1":"会长",
+	"2":"副会长",
+	"3":"成员"
+}
+/**
+ * @description 上传玩家信息
+ */
+class Player{
+	constructor(type,localDB){
+		this.rolelevelmtime = Date.now();
+		this.isCreateRole = type == 2 ? true:false;
+		this.datatype = type;
+		this.uid = localDB.user.uid;
+		
+		this.username = localDB.user.username;
+		this.serverid = localDB.user.country.defaulteServer;
+		this.servername = localDB.user.country.areas[localDB.user.country.defaulteServer].name;
+
+		//角色数据
+		if(!localDB.player || !localDB.player.area_time){
+			return;
+		}
+		this.roleid = localDB.player.role_id;
+		this.rolename = localDB.player.name;
+		this.rolelevel = localDB.player.level;
+		this.power = localDB.player.power;
+		this.money = localDB.player.money;
+		this.diamond = localDB.player.diamond;
+		this.rolecreatetime = localDB.player.role_time;
+		this.professionid = localDB.player.career_id;
+		this.profession = localDB.player.career_name;
+		this.gender = localDB.player.sex?"男":"女";
+
+		//工会数据
+		if(!localDB.gang || !localDB.gang.data.gang_id){
+			return;
+		}
+		this.partyname = localDB.gang.data.gang_name;
+		this.partyid = localDB.gang.data.gang_id;
+		this.partyroleid = localDB.gang.data.post;
+		this.partyrolename = gangRoleType[localDB.gang.data.gang_id];
+	}
+	//角色升级时间
+	rolelevelmtime = 0
+	//是否第一次创建角色
+	isCreateRole = true
+	//必填 1.选择服务器 2.创建角色 3.进入游戏 4.等级提升 5.退出游戏
+	datatype = 1
+	//用户id
+	uid = 0
+
+	//用户名
+	username = ""
+	//服务器id
+	serverid = 1
+	//服务器名称
+	servername = ""
+	//角色id
+	roleid = 0
+	//游戏角色昵称
+	rolename = ""
+	//角色等级
+	rolelevel = 0
+	//vip等级
+	vip = 0
+	//战斗力
+	power = 0
+	//金币
+	money = 0
+	//钻石
+	diamond = 0
+	//角色创建时间
+	rolecreatetime = 0
+	//男 女
+	gender = "男"
+	//职业id
+	professionid = 0
+	//职业名称
+	profession = ""
+	
+	//工会名
+	partyname = ""
+	//工会id
+	partyid = 0
+	//自己在工会里的称号id
+	partyroleid = 0
+	//自己在工会里的称号名称
+	partyrolename = ""
+	//好友列表
+	friendlist = []
+}
  

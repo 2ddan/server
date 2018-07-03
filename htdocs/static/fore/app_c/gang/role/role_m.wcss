@@ -111,7 +111,8 @@
   width: 84px;
   height: 32px;
   top:0;
-  left:104px;
+  left: 50%;
+  margin-left: -55px;
 }
 .20{
   position: absolute;

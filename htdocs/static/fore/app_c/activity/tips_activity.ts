@@ -1,7 +1,5 @@
 
 import { get } from "app/mod/db";
-import { Pi } from "app/mod/pi";
-import { Util } from "app/mod/util";
 import { act_progress } from "app_b/mod/act_progress";
 import { Common_m } from "app_b/mod/common";
 //累计登录
@@ -100,60 +98,6 @@ export const initActTipsList = (today_act) => {
             }
             list.push(total);
         }
-        /**
-         * 宝石迷阵
-         */
-        // else if (act.img == "lantern") {
-        //     list.push({
-        //         depend: ["activities.gem_data.score"],
-        //         fun:
-        //         [
-        //             [
-        //                 ["==", function () {
-        //                     let wanfa = (window as any).pi_modules["cfg/c/activity_special"].exports.activity_wanfa;
-        //                     let gemData = get("activities.gem_data");
-        //                     if (gemData && wanfa[101]) {
-        //                         let _limit = wanfa[101].award_limit;
-        //                         for (let i = 0; i < _limit.length; i++) {
-        //                             if (gemData.score >= _limit[i] && !gemData.score_once_award[i]) {
-        //                                 return 1;
-        //                             }
-        //                         }
-        //                         return 0;
-        //                     }
-        //                 }, 1]
-        //             ]
-        //         ],
-        //         tipKey: "activities.101",
-        //         tipDetail: { "sid": 60134 }
-        //     })
-        // }
-        /**
-         * 翻翻乐
-         */
-        // else if (act.img == "cloth") {
-        //     list.push({
-        //         depend: ["activities.play_card"],
-        //         fun:
-        //         [
-        //             [
-        //                 ["==", function () {
-        //                     let card_data = get("activities.play_card");
-        //                     if (!card_data) return 0;
-        //                     let limit = (window as any).pi_modules["cfg/c/activity_special"].exports.activity_wanfa[102].award_limit;
-        //                     for (let i = 0; i < limit.length; i++) {
-        //                         if (card_data.score >= limit[i] && !card_data.score_once_award[i]) {
-        //                             return 1;
-        //                         }
-        //                     }
-        //                     return 0;
-        //                 }, 1]
-        //             ]
-        //         ],
-        //         tipKey: "activities.102",
-        //         tipDetail: { "sid": 60135 }
-        //     })
-        // }
         /**
         * 微信分享
         */

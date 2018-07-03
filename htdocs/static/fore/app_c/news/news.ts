@@ -1,6 +1,5 @@
 //pi
 import { Forelet } from "pi/widget/forelet";
-import { remove, destory } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
 //mod
 import { Pi, globalSend } from "app/mod/pi";
@@ -20,15 +19,17 @@ export const forelet = new Forelet();
 
 export const globalReceive = {
     gotoNews: () => {
-        if (count) {
-            updateSate();
-        }
         forelet.paint(getData());
         open("app_c-news-news");
         count = 1;
     }
 }
 export class Mail extends Widget {
+    detach(){
+        if(count){
+            updateSate();
+        }
+    }
     goback = function (msg) {
         let w = newsWidget;
         newsWidget = null;
@@ -234,6 +235,7 @@ const receiveAll = () => {
 * @param {Number}index mail index
 */
 const updateSate = () => {
+    count = 0;
     let mail = getDB("mail");
     let arr = [];
     let str = "";
@@ -241,7 +243,6 @@ const updateSate = () => {
         (!v.receive) && (arr.push(v.index))
     }
     if (!arr.length) {
-        count = 0;
         return;
     }
     str = arr.join(",");
@@ -261,9 +262,6 @@ const updateSate = () => {
             }
 
         }
-        count = 0;
-
-        // forelet.paint(getData());
     });
 };
 /**

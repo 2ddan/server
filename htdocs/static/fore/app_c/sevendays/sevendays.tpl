@@ -4,7 +4,7 @@
 	{{let data = it1.sevenday_title[it1.currDay]}}
 	{{let act = it1.list[1] }}
 	
-	<widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
+	<widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 65px;">
 		{"text":"七日活动","coin":["money","diamond"],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
 	</widget>
 	<div style="width:540px;height:276px;position: absolute;top:40px;left:50%;margin-left:-270px;text-align:center;z-index: 1;">

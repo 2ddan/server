@@ -7,9 +7,14 @@
 		<widget w-class="4" w-tag="app_a-widget-btn-ling" w-sid="4" on-tap="booksAttr" >
 			{"class":"default","fontsize":20,"color":"#49312E","text":" 效果 总览","width":77,"height":77,"textCfg":"lingBtn"} 
 		</widget>
+		<widget w-class="4" w-tag="app_a-widget-btn-ling" w-sid="4" on-tap="booksCollect"  style="left:7px;right: 0;">
+			{"class":"default","fontsize":20,"color":"#49312E","text":" 符文 收集","width":77,"height":77,"textCfg":"lingBtn"} 
+		</widget>
 		<div class="shadow7" w-class="39" w-sid="39">
 			<img w-class="40" src="app_c/rune/images/book_bg.jpg" w-sid="40"/>
-			<img w-class="42" src="app_c/rune/images/book.png" w-sid="42"/>
+			<div style="position: absolute;left: 102px;top: 38px;animation:lottery_float 2.5s infinite">
+				<div class="anim_rune_flag"></div>
+			</div>
 			{{for i,v in it1.rune}}
 			<div w-class="43 index_{{i-1}}" w-sid="43" on-tap="selectPore({{i}})">
 				<div w-class="44" w-sid="44">
@@ -18,8 +23,11 @@
 				{{let sid = it1.rune_data.rune_set[i-1]}}
 				{{if sid}}
 					{{let prop = it1.Pi.sample[sid]}}
-					{{if prop.quality>4}}
-					<img w-class="45" src="app_c/rune/images/book_1.png" w-sid="45"/>
+					{{if prop.effect}}
+					<div w-class="45">
+						<img src="app_c/rune/images/book_1.png" w-sid="45"/>
+						<div class="anim_rune_high" style="position: absolute;top:-15px;left:-14px;"></div>
+					</div>
 					{{else}}
 					<img w-class="45" src="app_c/rune/images/state_1.png" w-sid="45"/>
 					{{end}}
@@ -33,6 +41,9 @@
 					{"select":"double_circle"} 
 				</app_a-widget-select-select>
 				{{end}}
+				<app-widget-tip-tip style="right: 0;">
+					{"tip_keys":[{{"role.rune.book." + (i - 1)}}] }
+				</app-widget-tip-tip>
 			</div>
 			{{end}}
 		</div>
@@ -61,7 +72,7 @@
 								{"type":2,"width":15,"height":15} 
 							</app_a-widget-img_stitch-stitch>
 							<app_a-widget-prop-base w-class="76" w-sid="76">
-								{"effect":{{prop.quality>4}},"width":76,"height":76,"prop":{{prop}},"url":{{url}},"count":"none","name":{{prop.name}},"bg":1,"bottom":20,"top":25,"right":25} 
+								{"effect":{{prop.effect}},"width":76,"height":76,"prop":{{prop}},"url":{{url}},"count":"none","name":{{prop.name}},"bg":1,"bottom":20,"top":25,"right":25} 
 							</app_a-widget-prop-base>
 							
 							{{if it1.rune_data.rune_set[it1.index-1] == v.prop_id}}
@@ -73,18 +84,26 @@
 							</div>
 							{{end}}
 						</div>
-						
+						{{if !has && i == 0}}
+						<app-widget-tip-tip style="right: 0;top: 0">
+							{"tip_keys":[{{"role.rune.book." + (it1.index - 1)}}] }
+						</app-widget-tip-tip>
+						{{end}}
 					</div>
 					{{end}}
 				</div>
 			</div>
 			<div class="cost_bg" w-class="79" >
 				{{let curr = it1.rune[it1.index][it1.index_book]}}
-				<div w-class="81" style="{{if !curr.buff}}line-height:50px;{{end}}">
-					<div w-class="80">经验收益+{{curr.add_exp}}%</div>
-					<div w-class="80">{{it1.attribute_config[curr.attr[0]]}}+{{curr.attr[1]+"%"}}</div>
-					{{if curr.buff}}
-					<div>{{it1.buff[curr.buff]}}</div>
+				<div w-class="81" style="{{if !curr.buff_id}}line-height:50px;{{end}}">
+					{{if curr.add_exp}}
+					<div>经验收益+{{curr.add_exp*100}}%</div>
+					{{end}}
+					{{if curr.attr[0] != "undefined"}}
+					<div >{{it1.attribute_config[curr.attr[0]]}}+{{curr.attr[1]<1?(curr.attr[1]*100+"%"):curr.attr[1]}}</div>
+					{{end}}
+					{{if curr.buff_id}}
+					<div>{{it1.buff[curr.buff_id].desc}}</div>
 					{{end}}
 				</div>
 				

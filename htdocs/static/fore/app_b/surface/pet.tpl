@@ -5,7 +5,6 @@
 	</app_b-widget-title-title>
 
 	{{let Common = _get("app/mod/common").exports.Common}}
-	{{let currCloth = it1.Pi.sample[it1.pet_id]}}
 	{{let module_info = it1.pet_module[it1.pet_upgrade[it1.pet.pet_star_info[0]].module]}}
 	
 	{{let w = root.getWidth()}}
@@ -26,7 +25,9 @@
 				<app_a-widget-line-line w-class="8" w-sid="8" style="z-index: 1;">
 					{"line":"line_7"} 
 				</app_a-widget-line-line>
-
+				<app_b-widget-buff-buff style="position: absolute;top:103px;right:18px;width:70px;height:auto;z-index:2;">
+					{"width":60,"height":296,"type":"pet","level":{{it1.pet.pet_star_info[0]}},"top":25}
+				</app_b-widget-buff-buff>
 				<div on-tap="openPetShow" w-class="11" w-sid="11" style="z-index: 1;">
 					<img w-class="10" src="app_b/surface/image/pet_show.png" w-sid="10"/>
 					<app_a-widget-text-text w-class="12" w-sid="12">
@@ -44,7 +45,7 @@
 					{"padding":4,"type":11,"width":94,"text":{{it1.pet.pet_star_info[0]+"阶"+it1.pet.pet_star_info[1]+"星"}},"textCfg":"singleTitle","fontSize":20,"space":-4,"color":"#b27d5c","wear":0,"class":0} 
 				</app_a-widget-title-single>
 
-				<div w-class="95" w-sid="95" on-tap="lookPetAttr" style="position:absolute;z-index:1;">
+				<div w-class="95" w-sid="95" on-tap="lookPetAttr" style="position:absolute;z-index:1;left:409px;top:16px;">
 					<app_a-widget-btn-ling w-class="96" w-sid="96">
 						{"class":"default","fontsize":12,"color":"#fdedd7;","text":"","width":70,"height":70} 
 					</app_a-widget-btn-ling>
@@ -126,7 +127,7 @@
 					<div style="height:20px;position: absolute;color:#3cff00;width: 100%;text-align:center;top: 10px;z-index:3;{{if it1.move}}transition:top 0.6s;top:-40px;{{end}}">+{{it1.s_exp}}</div>
 					{{end}}
 					<app_a-widget-bar-bar2 style="position: absolute;width: 400px;height: 18px;left: 10px;top:22px;">
-						{"anima":{{it1.bar_anim}},"progress":{{percent}},"text":{{text}},"lineHeight":18,"fontSize":14,"split":[]} 
+						{"anima":{{it1.bar_anim}},"progress":{{percent}},"text":{{text=="0/0" ? "": text}},"lineHeight":18,"fontSize":14,"split":[]} 
 					</app_a-widget-bar-bar2>
 
 				</div>
@@ -136,7 +137,7 @@
 			
 			{{if it1.pet.pet_star_info.length}}
 			{{if it1.pet.pet_star_info[1] < 10 }}
-				<div style="position:absolute;width:130px;height:34px;top:66px;left:50%;margin-left:-65px;">
+				<div style="position:absolute;width:130px;height:34px;bottom:0;left:50%;margin-left:-65px;">
 					<widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;left:0px;">
 						{"icon":"text_bg_1","width":128,"height":34,"align":"center","marginLeft":3,"text":" ","textCfg":"singleTitle","space":0,"fontSize":22,"top":0,"left":0} 
 					</widget>

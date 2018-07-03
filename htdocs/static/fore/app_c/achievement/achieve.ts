@@ -3,7 +3,6 @@
  */
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { close, open } from "app/mod/root";
 import { Common } from "app/mod/common";
 import { updata, get as getDB, insert, listen, data as db } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";

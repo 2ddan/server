@@ -3,12 +3,12 @@
  */
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { close, open } from "app/mod/root";
+import { open } from "app/mod/root";
 import { Common } from "app/mod/common";
 import { updata, get as getDB, insert, listen } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
-import { net_request, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
 import { function_open } from "cfg/b/function_open";
 
@@ -153,7 +153,14 @@ const logic = {
     //任务完成情况
     task_progress(key, value) {
         let arr = getDB(`data_record.${key}`);
-        let num = arr[0].length > 0 ? arr[0].length : 0;
+        let num = 0;
+        if (key == "equip_melt") {
+            arr[0].forEach(v => {
+                num += v.length;
+            });
+        } else {
+            num = arr[0].length > 0 ? arr[0].length : 0;
+        }
         return [num >= value, num >= value ? value : num];
     },
     //任务 [领取 || 前往]
@@ -226,7 +233,7 @@ const taskAward = function (index) {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                "words": `通讯失败`
+                "words": data.why
             })
             console.log(data);
         })

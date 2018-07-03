@@ -1,0 +1,66 @@
+
+{
+  "name" : "juma",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.779776573181152,
+      -3.96281337738037,
+      15.503454208374
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "complet",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          3.14159274101257,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "GoLCqRuNSA3ye2NKgQVvhD.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "RDPErNiD9X3icTt5t6CF59.jpg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

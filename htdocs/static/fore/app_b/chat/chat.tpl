@@ -3,10 +3,11 @@
     {{let chatShow = appCfg.chat.show}}
     {{let cfg = _get("app/mod/pi").exports.cfg}}
     {{let player = appCfg.player}}
+    {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
     {{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
     {{let talk_base = cfg.talk_base.talk_Base}}
     {{let vip_advantage = cfg.vip_advantage.vip_advantage}}
-    {{let chat_color = {"world_chat":["#51e650","世界"],"current_chat":["#fde7ca","当前"],"gang_chat":["#ffea01","公会"], "system":["#ff6600","系统"]} }}
+    {{let chat_color = {"world_chat":["#51e650","世界"],"current_chat":["#fde7ca","当前"],"gang_chat":["#ffea01","门派"], "system":["#ff6600","系统"]} }}
     <div maxId="7" test="test" style="position: absolute;width: 100%;height: 100%;display:{{ chatShow ? 'block' : 'none'}};    pointer-events: none;" w-sid="2">
         <div class="shadow" w-class="3" w-sid="3" on-tap="showChat" style="pointer-events: all;bottom: {{scenename == 'wild' ? 87 : 0}}px;">
             {{let new_chat = it1.all_chat[it1.all_chat.length - 1]}}
@@ -29,12 +30,22 @@
                     </widget>
                     {{end}}
                 {{else}}
-                <div style="width:42px;height:20px;position:relative;display:inline-block;margin-right: 7px;background-color:#4d342a;border-radius:5px;color:#ff6600;font-family:mnjsh;line-height: 20px;text-align: center;border-color: #684833;">
+                <div style="width:42px;height:20px;position:relative;display:inline-block;margin-right: 7px;background-color:#4d342a;border-radius:5px;color:#ff6600;font-family:mnjsh;line-height: 23px;text-align: center;border-color: #684833;vertical-align: top;top: 13px;">
                     系统
                 </div>
                 {{end}}
-                
-                <div style="position:relative;color:{{new_chat[1].role_info.name !== 'system' ? color : '#ff6600'}};    display:inline-block;width: {{new_chat[1].role_info.name !== 'system' ? '58%' : '89%'}};text-overflow: ellipsis;white-space: nowrap;overflow: hidden;vertical-align: {{new_chat[1].role_info.name !== 'system' ? 'text-top' : 'bottom'}};">{{new_chat[1].chat}}</div>
+                {{let msg = it1.strChange(new_chat[1].chat)}}
+                <div style="word-wrap: break-word;position:relative;color:{{new_chat[1].role_info.name !== 'system' ? color : '#ff6600'}};    display:inline-block;width: {{new_chat[1].role_info.name !== 'system' ? '58%' : '89%'}};text-overflow: ellipsis;white-space: nowrap;overflow: hidden;vertical-align: {{new_chat[1].role_info.name !== 'system' ? 'text-top' : 'bottom'}};">
+                    {{if checkTypeof(msg,"Array")}}
+                        {{if msg[0]}}
+                        <widget w-tag="{{msg[0]}}" >{{msg}}</widget>
+                        {{else}} 
+                        {{msg[1]}}
+                        {{end}}
+                    {{else}} 
+                        {{msg}}
+                    {{end}}
+                </div>
             </div>
             {{end}}
             
@@ -90,7 +101,7 @@
                                     {{else}}
                                         <img src="./images/chat_content_bg.png" style="position:absolute;left:0px;top:0px;height: 100%;width: 432px;" />
                                     {{end}}
-
+                                    {{let msg = it1.strChange(list[i].chat)}}
                                     {{if list[i].role_info.name !== "system"}}
                                     {{let vip_lv = list[i].role_info.vip || 0}}
                                     {{let color = it1.vip_advantage[vip_lv].chat_color}}
@@ -109,13 +120,33 @@
                                         </widget>
                                         {{end}}
                                     </div>
-                                    <div style="width:96%;position:relative;color:{{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">{{list[i].chat}}</div>
+                                    <div style="word-wrap: break-word;width:96%;position:relative;color:{{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">
+                                        {{if checkTypeof(msg,"Array")}}
+                                            {{if msg[0]}}
+                                            <widget w-tag="{{msg[0]}}" >{{msg}}</widget>
+                                            {{else}} 
+                                            {{msg[1]}}
+                                            {{end}}
+                                        {{else}} 
+                                            {{msg}}
+                                        {{end}}
+                                    </div>
                                     {{else}}
                                     
-                                    <div style="width:42px;height:20px;position:relative;display:inline-block;margin-right: 7px;background-color:#4d342a;border-radius:5px;color:#ff6600;font-family:mnjsh;line-height: 20px;text-align: center;border-color: #684833;left: 10px;">
+                                    <div style="width:42px;height:20px;position:relative;display:inline-block;margin-right: 7px;background-color:#4d342a;border-radius:5px;color:#ff6600;font-family:mnjsh;line-height: 20px;text-align: center;border-color: #684833;left: 10px;vertical-align: top;top: 7px;">
                                         系统
                                     </div>
-                                    <div style="width:86%;position:relative;display:inline-block;color: #ff6600;font-size: 16px;padding-left: 10px;line-height: 22px;padding-bottom: 8px;padding-top: 5px;">{{list[i].chat}}</div>
+                                    <div style="word-wrap: break-word;width:86%;position:relative;display:inline-block;color: #ff6600;font-size: 16px;padding-left: 10px;line-height: 22px;padding-bottom: 8px;padding-top: 5px;">
+                                        {{if checkTypeof(msg,"Array")}}
+                                            {{if msg[0]}}
+                                            <widget w-tag="{{msg[0]}}" >{{msg}}</widget>
+                                            {{else}} 
+                                            {{msg[1]}}
+                                            {{end}}
+                                        {{else}} 
+                                            {{msg}}
+                                        {{end}}
+                                    </div>
                                     {{end}}
                                 </div>
                             {{end}}
@@ -150,7 +181,18 @@
                                         {{end}}
                                     </div>
 
-                                    <div style="width:96%;position:relative;color:{{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">{{list[i].chat}}</div>
+                                    {{let msg = it1.strChange(list[i].chat)}}
+                                    <div style="word-wrap: break-word;width:96%;position:relative;color:{{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">
+                                        {{if checkTypeof(msg,"Array")}}
+                                            {{if msg[0]}}
+                                            <widget w-tag="{{msg[0]}}" >{{msg}}</widget>
+                                            {{else}} 
+                                            {{msg[1]}}
+                                            {{end}}
+                                        {{else}} 
+                                            {{msg}}
+                                        {{end}}
+                                    </div>
                                 </div>
                                 {{end}}
                             {{end}}
@@ -182,8 +224,18 @@
                                             </widget>
                                         {{end}}
                                     </div>
-
-                                    <div style="width:96%;position:relative;color: {{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">{{list[i].chat}}</div>
+                                    {{let msg = it1.strChange(list[i].chat)}}
+                                    <div style="word-wrap: break-word;width:96%;position:relative;color: {{color}};font-size: 16px;padding-left: 10px;display:inline-block;line-height: 22px;padding-bottom: 12px;">
+                                        {{if checkTypeof(msg,"Array")}}
+                                            {{if msg[0]}}
+                                            <widget w-tag="{{msg[0]}}" >{{msg}}</widget>
+                                            {{else}} 
+                                            {{msg[1]}}
+                                            {{end}}
+                                        {{else}} 
+                                            {{msg}}
+                                        {{end}}
+                                    </div>
                                 </div>
                                 {{end}}
                             {{end}}

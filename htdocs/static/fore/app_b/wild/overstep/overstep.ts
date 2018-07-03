@@ -4,9 +4,6 @@ import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 
 //mod
-import { data as db, updata, get, insert, listen } from "app/mod/db";
-import { Pi, globalSend } from "app/mod/pi";
-import { Util } from "app/mod/util";
 import { open, close } from "app/mod/root";
 
 
@@ -45,7 +42,7 @@ export const globalReceive: any = {
 //更新百分比数字变化
 const updatePercent = function(){
     let timer = setInterval(()=>{
-        _data.text += 1;
+        _data.text += 4;
         if(_data.text >　max_percent){
             _data.text = max_percent;
 
@@ -67,5 +64,5 @@ const updatePercent = function(){
             timer = null;
         }
         forelet.paint(_data);
-    },10)
+    },40)
 }

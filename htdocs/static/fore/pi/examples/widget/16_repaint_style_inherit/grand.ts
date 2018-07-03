@@ -1,14 +1,17 @@
-import {Widget} from "../../../widget/widget";
+/**
+ * 
+ */
+import {Widget} from '../../../widget/widget';
 
-interface Props{
+interface Props {
     style:string;
 }
 
-export class Grand extends Widget{
-    constructor(){
+export class Grand extends Widget {
+    constructor() {
         super();
         this.props = {
-            style: "b"
-        }
+            style: 'b'
+        };
     }
 }  

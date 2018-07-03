@@ -1,5 +1,5 @@
 
-<div maxId="34" test="test" style="position: absolute;width: 100%;height: 100%" w-sid="2">
+<div maxId="34" test="test" style="position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,0.5);" w-sid="2">
     <div w-class="3" w-sid="3">
         <div w-class="4" w-sid="4">
             <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">{"icon":"tips_top"} 
@@ -18,10 +18,13 @@
             </widget>
             {{let curr = it1.wild_mission_key.slice(0,it1.wild.wild_max_mission)}}
             <div w-class="6">
+                <widget  w-tag="app_a-widget-bg_frame-bg" style="position: absolute;top:0;left:0;width:100%;height:100%">
+                    {"bgName":"select_map_bg"} 
+                </widget>
                 <widget w-class="7" w-tag="app_a-widget-line-line" >
                     {"line":"line_14"} 
                 </widget>
-                <div style="width:105%;height:653px;position:absolute;top:12px;left:9px;overflow-x: hidden;overflow-y: auto;text-align: left;">
+                <div style="width:105%;height:625px;position:absolute;top:12px;left:9px;overflow-x: hidden;overflow-y: auto;text-align: left;">
                     {{let i = 0}}
                     {{let len = Math.ceil(curr.length/10)}}
                     {{while i < len}}
@@ -50,7 +53,7 @@
                     </app_a-widget-text-text>
                     {{end}}
                     <widget style="position:absolute;top:0;left:0;" w-tag="app_a-widget-pic_text-pic_text" >
-                        {"icon":"area_bg","width":338,"height":42,"top":12,"left":-44,"text":" ","textCfg":"wildMission","space":-2,"fontSize":18} 
+                        {"icon":{{it1.mission == v ? "area_bg" : "area_bg_1"}},"width":338,"height":42,"top":12,"left":-44,"text":" ","textCfg":"wildMission","space":-2,"fontSize":18} 
                     </widget>
                     <app_a-widget-text-text style="position:absolute;left:56px;top:12px;">
                         {"text":{{"第"+ v +"关"+" " + guide.guard_name.replace(",","")}},"textCfg":"wildMission","space":-2,"fontSize":18}
@@ -67,6 +70,9 @@
                 </div>
                 
                 {{end}}
+                <app_a-widget-btn-rect on-tap="gotoGuide" style="position:absolute;bottom:20px;right:7px;">
+                    {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"传 送","width":116,"height":45,"marginLeft":0} 
+                </app_a-widget-btn-rect>
             </div>
                
             

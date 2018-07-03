@@ -1,4 +1,3 @@
-import { checkNoMod } from "app/mod/pi";
 import * as db from "app/mod/db";
 import { TipFun } from "app/mod/tip_fun";
 import { function_open } from "cfg/b/function_open";
@@ -261,6 +260,9 @@ const equipRed = function () {
                         //如果有红装(升级)
                         if (equip) {
                             let next_level = equip_evolution[redId[i]][equip.level].next_level;
+                            if (next_level == 0) {
+                                return 0;
+                            }
                             if (next_level > playerLevel) {
                                 return 0;
                             }

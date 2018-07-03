@@ -1,15 +1,18 @@
-
-import { IMinMaxCurve, buildMinMaxCurve } from "./curve"
+/**
+ * 
+ */
+import { buildMinMaxCurve, IMinMaxCurve } from './curve';
 
 export class RotationOverLifetimeModule {
-	separateAxes: boolean;
-	x: IMinMaxCurve;
-	xMultiplier: number;
-	y: IMinMaxCurve;
-	yMultiplier: number;
-	z: IMinMaxCurve;
-	zMultiplier: number;
+	public separateAxes: boolean;
+	public x: IMinMaxCurve;
+	public xMultiplier: number;
+	public y: IMinMaxCurve;
+	public yMultiplier: number;
+	public z: IMinMaxCurve;
+	public zMultiplier: number;
 
+	// tslint:disable-next-line:typedef
 	constructor(config) {
 		this.separateAxes = config.separateAxes;
 		this.x = buildMinMaxCurve(config.x);
@@ -19,4 +22,4 @@ export class RotationOverLifetimeModule {
 		this.z = buildMinMaxCurve(config.z);
 		this.zMultiplier = config.zMultiplier;
 	}
-};
+}

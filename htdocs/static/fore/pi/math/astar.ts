@@ -3,13 +3,13 @@
  */
 
 // ============================== 导入
-import { Heap } from "../util/heap"
+import { Heap } from '../util/heap';
 
 // ============================== 导出
 export interface Node {
-	g: (last: Node) => number;    // 上一点到该点的代价函数，为Infinity代表不可走
-	h: (finish: Node) => number;  // 估值函数，值是从该点到终点的估计价值
 	cost?: number;
+	g(last: Node): number;    // 上一点到该点的代价函数，为Infinity代表不可走
+	h(finish: Node): number;  // 估值函数，值是从该点到终点的估计价值
 	[Symbol.iterator]();          // 迭代器，迭代其相邻节点
 }
 
@@ -24,12 +24,12 @@ export interface Node {
 export const astar = (paths: Node[], start: Node, end: Node, maxNodes = 4096) => {
 
 	// Open表，存即将计算的节点，每次取f最小值的节点
-	let open = cache.open;
+	const open = cache.open;
 
 	// 总表，存所有的ANode节点
-	let all = cache.all;
+	const all = cache.all;
 
-	let s = cache.get(start);
+	const s = cache.get(start);
 	open.insert(s);  // 将开始点扔到open表
 	all.set(start, s);
 
@@ -37,26 +37,28 @@ export const astar = (paths: Node[], start: Node, end: Node, maxNodes = 4096) =>
 	let distanceToEnd = nearest.h = nearest.src.h(end); // 距离目标的最近距离
 
 	while (!open.empty()) {
-		let curr = open.pop(); // 取最小的f的节点出来
+		const curr = open.pop(); // 取最小的f的节点出来
 
 		// 已经找到目标点，退出循环
-		if (curr.src === end)
+		if (curr.src === end) {
 			break;
+		}
 		// 如果当前点离终点更近，则记住当前点
-		let distance = curr.h;
+		const distance = curr.h;
 		if (distance < distanceToEnd) {
 			distanceToEnd = distance;
 			nearest = curr;
 		}
 
 		// 如果已找的点太多，则退出循环
-		if (all.size >= maxNodes)
+		if (all.size >= maxNodes) {
 			break;
+		}
 		curr.isClose = true;
 
 		// 遍历邻居
-		for (let n of curr.src) {
-			let neighbor = <Node>n;
+		for (const n of curr.src) {
+			const neighbor = <Node>n;
 			let anode = all.get(neighbor);
 			if (!anode) {
 				anode = cache.get(
@@ -67,8 +69,8 @@ export const astar = (paths: Node[], start: Node, end: Node, maxNodes = 4096) =>
 				);
 			} else {
 				// 如果是原来就有，查看当前路径是否比原来的好
-				let g = curr.g + neighbor.g(curr.src);
-				let h = neighbor.h(end);
+				const g = curr.g + neighbor.g(curr.src);
+				const h = neighbor.h(end);
 
 				if (anode.f <= g + h) {
 					continue;
@@ -88,29 +90,32 @@ export const astar = (paths: Node[], start: Node, end: Node, maxNodes = 4096) =>
 	let n = all.get(end) || nearest;
 
 	paths.length = 0;
-	for (; n !== undefined; n = n.parent)
+	for (; n !== undefined; n = n.parent) {
 		paths.push(n.src);
+	}
 
 	paths.reverse();
 	cache.collate();
+
 	return end !== nearest.src;
-}
+};
 
 // ============================== 本地
 /**
  * 接口：A*算法的节点
  */
 class ANode {
-	g: number;   // 起点到该点的真实代价      
-	h: number;   // 该点到终点的估算
-	f: number;   // 永远是g + h
+	public g: number;   // 起点到该点的真实代价      
+	public h: number;   // 该点到终点的估算
+	public f: number;   // 永远是g + h
 
-	isClose: boolean; // 是否已查过
+	public isClose: boolean; // 是否已查过
 
-	src: Node;
-	parent: ANode;
+	public src: Node;
+	public parent: ANode;
 
-	set(src: Node, g = 0, h = 0, parent: ANode = undefined) {
+	/* tslint:disable:no-reserved-keywords typedef no-unnecessary-initializer*/
+	public set(src: Node, g = 0, h = 0, parent: ANode = undefined) {
 		this.g = g;
 		this.h = h;
 		this.f = g + h;
@@ -132,13 +137,15 @@ const cache = {
 
 	get(src: Node, g = 0, h = 0, parent: ANode = undefined): ANode {
 		let r;
+		/* tslint:disable:no-invalid-this */
 		if (this.unused.length === 0) {
 			r = new ANode();
 		} else {
-			r = this.unused.pop() as ANode;
+			r = <ANode>this.unused.pop();
 		}
 		r.set(src, g, h, parent);
 		this.used.push(r);
+
 		return r;
 	},
 
@@ -149,7 +156,8 @@ const cache = {
 			this.unused = this.used;
 			this.used = [];
 		}
-		if (this.unused.length > size)
+		if (this.unused.length > size) {
 			this.unused.length = size;
+		}
 	}
-}
+};

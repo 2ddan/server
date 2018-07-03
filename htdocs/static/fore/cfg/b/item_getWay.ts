@@ -33,7 +33,7 @@ export let item_getWay = {
         "activity": null
     },
     "106": {
-        "fun": "gotoArena",
+        "fun": "gotoArenaShop",
         "name": "战勋商店",
         "activity": null
     },
@@ -70,6 +70,16 @@ export let item_getWay = {
     "113": {
         "fun": "gotoGestExchange,5",
         "name": "心法兑换",
+        "activity": null
+    },
+    "114": {
+        "fun": "gotoGang,2",
+        "name": "门派捐献",
+        "activity": null
+    },
+    "115": {
+        "fun": "gotoSacrifice",
+        "name": "门派祈福",
         "activity": null
     },
     "200": {

@@ -1,16 +1,14 @@
 
 // ============================== 导入
 
-import { THREE } from './three';
-import { RES_TYPE_FILE, RES_TYPE_BLOB, loadOK, loadError, Res, ResTab, BlobType, register } from '../util/res_mgr'
 import { butil, depend, load } from '../lang/mod';
-import { toJson } from "../util/util";
-import { info, warn, LogLevel } from "../util/log";
 import { Json } from '../lang/type';
-import { request, create } from '../worker/client';
 import * as _CANVAS from '../util/canvas';
-
-
+import { info, LogLevel, warn } from '../util/log';
+import { BlobType, loadError, loadOK, register, Res, RES_TYPE_BLOB, RES_TYPE_FILE, ResTab } from '../util/res_mgr';
+import { toJson } from '../util/util';
+import { create, request } from '../worker/client';
+import { THREE } from './three';
 
 // const parseAnimation = (animationPath) => {
 //     let path = SKELETON_PATH + animationPath;
@@ -131,14 +129,11 @@ import * as _CANVAS from '../util/canvas';
 //     return result;
 // }
 
-
-
 /**
  * 添加场景相关文件
  * @param fileArray: {路径: ArrayBuffer}
  * @param resPrexfix: 场景文件所在路径
  */
-
 
 // /**
 //  * 加载地形
@@ -170,11 +165,6 @@ import * as _CANVAS from '../util/canvas';
 // 	}
 //  */
 
-
-
-
-
-
 // export const createCircle = (resTab: ResTab, radius) => {
 //     let key = RES_TYPE_GEOMETRY + "-Circle:" + radius;
 //     let res = resTab.get(key);
@@ -195,8 +185,6 @@ import * as _CANVAS from '../util/canvas';
 
 //     return plane;
 // }
-
-
 
 // const updateCubeTextureImage = (image, texture, index) => {
 //     texture.images[index] = image;
@@ -248,11 +236,6 @@ import * as _CANVAS from '../util/canvas';
 //     });
 // }
 
-
-
-
-
-
 // /**
 //  * 加载网格纹理
 //  */
@@ -265,7 +248,3 @@ import * as _CANVAS from '../util/canvas';
 
 //     parseTextures(urlPath, json.mesh, resTab, mesh, filter);
 // }
-
-
-
-

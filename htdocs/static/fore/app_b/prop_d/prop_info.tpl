@@ -22,7 +22,7 @@
             <app_a-widget-text-text style="position: absolute;left: 85px;top: 5px">{"text":{{prop.name}},"show":"","space":0,"fontSize":22,"lineHeight":20,"color":"","textCfg":"heroEquip"}
             </app_a-widget-text-text>
             {{if it[0] != 100003}}
-            <span class="shadow" style="position: absolute;left: 85px;top: 33px;color: #ffd8a6;font-size: 18px;">拥有：{{it[1]}}</span>
+            <span class="shadow" style="position: absolute;left: 85px;top: 33px;color: #ffd8a6;font-size: 18px;white-space: nowrap;">拥有：{{Common.numberCarry(it[1],10000)}}</span>
             {{end}}
         </div>
         <div style="position: relative;width: 282px;height: 81px;margin-bottom: 5px;">
@@ -32,7 +32,7 @@
                 {{prop.describe}}
             </div>
         </div>
-        {{if it[3]}}
+        {{if it[3] && (prop.type !== "rune" || !!Common.getBagPropById(it[0]))}}
         <app_a-widget-btn-rect on-tap='gotoFun("{{it[3].gotoFun}}")' style="position:relative;left: 88px;top: -10px;">
 			{"text":{{it[3].btn_name}},"class":"hl","fontSize":24,"width":116,"height":45}
 		</app_a-widget-btn-rect>

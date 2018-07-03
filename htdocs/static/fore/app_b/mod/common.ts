@@ -164,7 +164,7 @@ export class Common_m {
             _cfg = cfg.player_exp.player_exp,
             r = 0;
         for(old_level;old_level<level;old_level++){
-            r = r + _cfg[old_level];
+            r = r + _cfg[old_level].exp;
         }
         return r-old_exp+exp;
     }
@@ -194,6 +194,10 @@ export class Common_m {
             }else if(k === "level"){
                 updata("player.level", award[k]);
             }else if(k === "vip_level"){
+                let oldVip = getDB("player.vip") || 0;
+                if(award[k] > oldVip){
+                    globalSend("vipUp",award[k]);
+                }
                 updata("player.vip", award[k]);
             }else if(k === "vip_exp"){
                 updata("player.vip_exp", award[k]);
@@ -288,5 +292,19 @@ export class Common_m {
      */
     static decimalToPercent (num) {
         return num < 1 ? `${num * 100}%` : num;
+    }
+
+    /**
+     * 查找奖励中是否有对应的道具
+     * @param sid 查找的道具sid
+     * @param award mixAward方法处理的背包奖励
+     */
+    static awardFindProp (sid, award) {
+        for (let v of award) {
+            if (v.sid == sid) {
+                return v.count;
+            }
+        }
+        return 0;
     }
 }

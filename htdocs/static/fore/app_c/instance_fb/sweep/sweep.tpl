@@ -4,11 +4,11 @@
 {{let career_id = it1.player.career_id}}
 
 <div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%;z-index: 2;">
-    <div w-class="s8" >
+    <div w-class="s8" style="margin:0;transform: translate(-50%,-50%);height:auto;">
         <div w-class="s12" >
             <widget w-class="s10" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"tips_top"} 
             </widget>
-            <widget on-tap='goback' w-class="s11" w-tag="app_a-widget-btn_pic-btn_pic" >{"icon":"close"} 
+            <widget on-tap='cancel' w-class="s11" w-tag="app_a-widget-btn_pic-btn_pic" >{"icon":"close"} 
             </widget>
             <widget w-class="s9" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"pendant"} 
             </widget>
@@ -16,7 +16,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"扫荡结果","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
-        <div style="width: 450px;height: auto;position: absolute; top: 26px;left: 45px;padding-bottom: 87px;padding-top: 27px;">
+        <div style="width: 450px;height: auto;position: relative; top: 26px;left: 45px;padding-bottom: 110px;padding-top: 27px;">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" style="opacity: 0.95;">
                 {"bgName":"bg_frame26"} 
             </widget>
@@ -48,10 +48,14 @@
                 {{end}}
             </div>
             {{let count = it1.vip_advantage[it1.player.vip].instance_times + it1.vip_buy_times - it1.use_times }}
-            <widget on-tap="sweep({{it1.chapter_id}},{{it1.guard_id}})" w-tag="app_a-widget-btn-rect" style="position: absolute;left: 50%;bottom: 24px; margin-left: -58px;">
-                {"class":{{count>0 ? "hl" : "disabled"  }},"fontsize":24,"color":"","text":"扫 荡","width":116,"height":45} 
+            <widget on-tap="sweep({{it1.chapter_id}},{{it1.guard_id}})" w-tag="app_a-widget-btn-rect" style="position: absolute;left: 40px;bottom: 45px">
+                {"class":{{count>0 ? "hl" : "disabled"  }},"fontsize":24,"color":"","text":"再扫一次","width":116,"height":45} 
             </widget>
-                
+            <widget on-tap="cancel" w-tag="app_a-widget-btn-rect" style="position: absolute;right: 40px;bottom: 45px;">
+                {"class":"default","fontsize":24,"color":"","text":"返  回","width":116,"height":45} 
+            </widget>
+            <div class="shadow7" style="position: absolute;left:0;bottom: 20px;text-align:center;width:100%;font-size:18px;color:#ffd8a6;font-family:mnjsh;">剩余次数：<span style="color:{{count>0?'#ffd8a6':'#f00'}}">{{count}}</span></div>   
+            
             <widget  w-tag="app_a-widget-pic_other-pic_other" style="position: absolute;left: -4.7%;bottom: -20px;width: 109%;">
                 {"icon":"tips_bottom"} 
             </widget>

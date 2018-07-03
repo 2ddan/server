@@ -21,4 +21,6 @@ table["daily_mission"] = "scene_fb01";
 
 table["gest"] = "scene_fb03";
 
+table["gang_boss"] = "scene_fb01";
+
 export const map_cfg:any = table;

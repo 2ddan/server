@@ -1,7 +1,8 @@
 <div maxId="34" test="test" style="position: absolute;width: 100%;height: 100%;z-index:5" w-sid="2">
     {{let appCfg = _get("app/mod/db").exports.data}}
     {{let player = appCfg.player}}
-    {{let Pi = _get("app/mod/pi").exports.Pi}}
+	{{let Pi = _get("app/mod/pi").exports.Pi}}
+	{{let Common = _get("app/mod/common").exports.Common}}
 	<div w-class="3" w-sid="3">
 		<div w-class="4" w-sid="4">
 			<widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">
@@ -30,6 +31,7 @@
 			<app_a-widget-prop-base w-class="12" w-sid="12">
                 {"prop":{{prop}},"url":{{Pi.pictures[prop.icon]}},"width":78,"height":78,"count":{{it.config_buy_money.money}},"name":"none","bg":0}
             </app_a-widget-prop-base>
+			<div class="shadow6" w-class="21">获得银两:{{Common.numberCarry(it.config_buy_money.money*it.count,10000)}}</div>
 
             {{let _obj = {"default":1,"step":[1,10],"minCount":1,"maxCount":it.maxCount} }}
             <app_a-widget-number-number ev-selectcount="selectcount" style="position: absolute;left: 0;top: 194px;height: 42px;padding:0 5px;">

@@ -1,6 +1,6 @@
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { data as localDB,get as getDB, updata, listen } from "app/mod/db";
+import { get as getDB, updata } from "app/mod/db";
 import { Pi, globalSend } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
@@ -35,12 +35,8 @@ export class investment extends Widget {
         buyAward();
     }
     //购买
-    buy(goodsId,rechargeId) {
-        // let msg = { "param": {}, "type": "app/pay@test" };
-        // net_request(msg, (data) => {
-           
-        // })
-        pay(goodsId,rechargeId,1);
+    buy(goodsId) {
+        pay(goodsId, "investment", 1);
     }
 }
 //==========================本地

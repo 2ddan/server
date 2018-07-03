@@ -1,7 +1,5 @@
 import { data as localDB, get } from "app/mod/db";
-import { Pi } from "app/mod/pi";
 import { gest_attribute } from "cfg/c/gest_attribute";
-import { TaskProgress } from "app_b/mod/task_progress";
 
 export class act_progress {
     /**
@@ -163,7 +161,7 @@ export class act_progress {
         //竞技场排名
         else if (type === "jjc_rank") {
             let rank = get("arena.role_jjc_rank") || 4999;
-            return [rank <= params, rank <= params ? params : rank];
+            return [rank <= params, rank <= params ? 1 : 0];
         }
         //天庭秘境层数
         else if (type === "tower") {
@@ -172,7 +170,6 @@ export class act_progress {
         }
         //装备强化总等级
         else if (type == "equip_level") {
-            // TaskProgress.allEquipStrongLevel(params);
             let arr = get("friend_battle.equip_level");
             let totalLevel = 0;
             if (!arr) {
@@ -197,24 +194,19 @@ export class act_progress {
         }
         //装备星级最高等级
         else if (type == "equip_star_max") {
-            let arr = get("soul.soul_info");
+            let arr = get("friend_battle.equip_star");
             let level = 0;
             if (!arr) {
                 return [false, level >= params ? params : level];
             }
             for (let v of arr) {
-                if (v[0] === 0) {
+                if (v === 0) {
                     continue;
                 }
-                for (let i of v) {
-                    if (i === 0) {
-                        break;
-                    }
-                    if(v[1] > level){
-                        level = v[1];
-                    }
-                    
+                if(v > level){
+                    level = v;
                 }
+                    
             }
             return [level >= params, level >= params ? params : level];
         }   
@@ -253,8 +245,8 @@ export class act_progress {
                     if (i === 0) {
                         break;
                     }
-                    if(v[1] > level){
-                        level = v[1];
+                    if(i[1] > level){
+                        level = i[1];
                     }
                     
                 }
@@ -287,11 +279,11 @@ export class act_progress {
                     continue;
                 }
                 for (let i of v) {
-                    if (i === 0) {
+                    if (i[1] === 0) {
                         break;
                     }
-                    if(v[1] > level){
-                        level = v[1];
+                    if(i[1] > level){
+                        level = i[1];
                     }
                     
                 }

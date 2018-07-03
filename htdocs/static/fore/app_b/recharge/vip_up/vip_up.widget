@@ -1,0 +1,6 @@
+{
+    "tpl":"./vip_up.tpl",
+    "js":"./vip_up.ts",
+    "forelet":"./vip_up.ts",
+    "cfg":"./vip_up.cfg"
+}

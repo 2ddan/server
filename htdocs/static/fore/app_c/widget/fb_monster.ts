@@ -7,7 +7,7 @@ import { monster_base } from "fight/b/common/monsterBase";
 // 怪物模型配置
 import { monster_cfg } from "app/scene/plan_cfg/monster_config";
 //scene
-import { mgr_data, mgr } from "app/scene/scene";
+import {  mgr } from "app/scene/scene";
 
 
 // let fb_position = [
@@ -21,7 +21,6 @@ let instance_position = [
 ];
 let fb_position:any;
 let equip_fb_node : any = {};
-
 /**
  * 全局广播
  */
@@ -65,7 +64,7 @@ const getEequipFBMonster = ( index ) => {
     let module_id = [];
     for(let i=0;i<monster.length;i++){
         let boss_id = monster[i].moster_id[2][0]; //获得BOSS id
-        module_id.push(monster_base[boss_id].module); //获得怪物的模型ID
+        module_id.push([monster_base[boss_id].module,monster[i].scale]); //获得怪物的模型ID
     }
     //获得怪物的模型
     createModule(module_id,"equip");
@@ -80,7 +79,7 @@ const getInstanceFBMonster = ( index ) => {
     let module_id = [];
     for(let i=0;i<monster.length;i++){
         let boss_id = monster[i].moster_id[0][0]; //获得BOSS id
-        module_id.push(monster_base[boss_id].module); //获得怪物的模型ID
+        module_id.push([monster_base[boss_id].module,monster[i].scale]); //获得怪物的模型ID
     }
     //获得怪物的模型
     createModule(module_id,"instance");
@@ -93,11 +92,11 @@ const getInstanceFBMonster = ( index ) => {
 const createModule = ( arg,type ) => {
     for(let i=0;i<arg.length;i++){
         equip_fb_node[type+"_fb_"+(i+1)] = {};
-        equip_fb_node[type+"_fb_"+(i+1)].module = monster_cfg[arg[i]].id;
+        equip_fb_node[type+"_fb_"+(i+1)].module = monster_cfg[arg[i][0]].id;
         equip_fb_node[type+"_fb_"+(i+1)].x = fb_position[i][0];
         equip_fb_node[type+"_fb_"+(i+1)].y = fb_position[i][1];
         equip_fb_node[type+"_fb_"+(i+1)].z = fb_position[i][2];
-        equip_fb_node[type+"_fb_"+(i+1)].scale = 0.28;
+        equip_fb_node[type+"_fb_"+(i+1)].scale = arg[i][1];
         mgr.create(equip_fb_node[type+"_fb_"+(i+1)],"monster");
     }
 }
@@ -109,18 +108,27 @@ const modify_node = (arr,type,index) => {
         let monster = instance_drop[index];
         for(let i=0;i<monster.length;i++){
             let boss_id = monster[i].moster_id[0][0]; //获得BOSS id
-            module_id.push(monster_base[boss_id].module); //获得怪物的模型ID
+            module_id.push([monster_base[boss_id].module,monster[i].scale]); //获得怪物的模型ID
         }
     }
     if(type == "equip"){
         let monster = equip_fb_data[index];
         for(let i=0;i<monster.length;i++){
             let boss_id = monster[i].moster_id[2][0]; //获得BOSS id
-            module_id.push(monster_base[boss_id].module); //获得怪物的模型ID
+            module_id.push([monster_base[boss_id].module,monster[i].scale]); //获得怪物的模型ID
         }
     }
     for(let i = 0;i<arr.length;i++){
-        equip_fb_node[type+"_fb_"+(i+1)].module = monster_cfg[module_id[i]].id;
+        if(equip_fb_node[type+"_fb_"+(i+1)].module != monster_cfg[module_id[i][0]].id){
+            mgr.remove(equip_fb_node[type+"_fb_"+(i+1)]);
+            equip_fb_node[type+"_fb_"+(i+1)].module = monster_cfg[module_id[i][0]].id;
+            equip_fb_node[type+"_fb_"+(i+1)].scale = module_id[i][1];
+            //更新
+            mgr.create(equip_fb_node[type+"_fb_"+(i+1)],"monster");
+            continue;
+        }
+        equip_fb_node[type+"_fb_"+(i+1)].module = monster_cfg[module_id[i][0]].id;
+        equip_fb_node[type+"_fb_"+(i+1)].scale = module_id[i][1];
         //更新
         mgr.modify(equip_fb_node[type+"_fb_"+(i+1)]);
     }

@@ -1,0 +1,5 @@
+{
+    "tpl":"./buff.tpl",
+    "js":"./buff.ts",
+    "forelet":"./buff.ts"
+}

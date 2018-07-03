@@ -1,9 +1,4 @@
-.3 {
-    position: absolute;
-    left: 108px;
-    width: 284px;
-    height: 100%;
-}
+
 .4 {
     position: absolute;
     width: 540px;
@@ -16,7 +11,7 @@
 }
 .6 {
     position: absolute;
-    left: 351px;
+    left: 255px;
     top: -25px;
     z-index:1
 }
@@ -120,42 +115,36 @@
     position: relative;
     width: 282px;
     height: 45px;
-    left: 108px;
     margin-bottom: 5px;
 }
 .37 {
     position: relative;
     width: 282px;
     height: auto;
-    left: 108px;
     margin-bottom: 5px;
 }
 .38 {
     position: relative;
     width: 282px;
     height: 45px;
-    left: 108px;
     margin-bottom: 5px;
 }
 .39 {
     position: relative;
     width: 282px;
     height: 70px;
-    left: 108px;
     margin-bottom: 5px;
 }
 .40 {
     position: relative;
     width: 282px;
     height: 115px;
-    left: 108px;
     margin-bottom: 5px;
 }
 .41 {
     position: relative;
     width: 282px;
     height: 93px;
-    left: 108px;
     margin-top: 10px;
 }
 .42 {

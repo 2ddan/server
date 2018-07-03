@@ -1,0 +1,268 @@
+
+{
+  "name" : "Ma",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "attack" : "LTb5pz7C4kdyiKkCJsRQp9.ai",
+      "attack02" : "W15KmoJhsuBAPLe5KKJzJN.ai",
+      "die"      : "SsabcqJCTdq2KS6E7WnsMR.ai",
+      "hit"      : "5K8C8whaCZmUBxUDMtfXi4.ai",
+      "run"      : "Wd8qNi51WuJNtHdtYUuMBi.ai",
+      "skill"    : "R9LSLMtLkVe7NBHbuvH59h.ai",
+      "skin"     : "A8UqR6cgfur6BCW56m7Zhj.ai",
+      "wait"     : "WwcMPvTdJWEQYNwSJ2bqki.ai"
+    },
+    "aniBox"     : {
+      "attack" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "attack02" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "die"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "hit"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "run"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "skill"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "skin"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "wait"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "playAnim"   : {
+      "name" : "wait"
+    }
+  },
+  "children"  : [
+    {
+      "name" : "Bip002 L Toe0",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          -0.26462385058403,
+          0.00217792741023004,
+          -0.491444200277328
+        ],
+        "scale"    : [
+          0.99999988079071,
+          0.999999940395355,
+          0.999999940395355
+        ],
+        "rotate"   : [
+          6.28308439254761,
+          1.55642116069794,
+          6.27609539031982
+        ]
+      }
+    },
+    {
+      "name" : "Bip002 R Toe0",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.264622211456299,
+          0.00217874720692635,
+          -0.921410322189331
+        ],
+        "scale"    : [
+          0.99999988079071,
+          0.999999940395355,
+          0.99999988079071
+        ],
+        "rotate"   : [
+          0.00010129018482985,
+          1.58517122268677,
+          6.27609634399414
+        ]
+      }
+    },
+    {
+      "name" : "ma_jingfan",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          2.18477680391516E-09
+        ],
+        "scale"    : [
+          0.811640381813049,
+          0.811640381813049,
+          0.811640381813049
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : [
+          4,
+          2,
+          5,
+          3,
+          12,
+          14,
+          13,
+          17,
+          19,
+          26,
+          18,
+          15,
+          16,
+          7,
+          6,
+          8,
+          9,
+          24,
+          25,
+          20,
+          21,
+          23,
+          22,
+          11,
+          10,
+          29,
+          27,
+          28
+        ],
+        "bounds" : [
+          [
+            0.857646226882935,
+            1.44048130512238,
+            0.457471996545792
+          ],
+          [
+            -2.4196469783783,
+            -1.39262306690216,
+            -0.4482242166996
+          ]
+        ],
+        "rootbone" : "Bip002 Pelvis",
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "Hck9sUHtVaQNfoEYuiabRB.jpg"
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "Qj3boj2rPXf1noDYbdCUGS.geo"
+        }
+      }
+    },
+    {
+      "type" : "Skeleton",
+      "res"  : "7wnrxXYyFavwJkBjGsMWcp.skl"
+    }
+  ]
+}

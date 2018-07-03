@@ -19,7 +19,7 @@
         {{it.text||""}}
     </div>
     <div style="position:absolute;width:100%;height:14px;top:1px;left:0;padding:0 6px;box-sizing: border-box;">
-        <div style="position:relative;width: {{it.progress}}%;height:100%;overflow:hidden;z-index: 1;transform:skewX(-28deg);">
+        <div style="transform-origin: left center;position:relative;width: {{it.progress}}%;height:100%;overflow:hidden;z-index: 1;transform:skewX(-28deg);{{if it.collect}}animation:collectBarAnima 2s forwards{{end}}">
             <img style="position:absolute;right:-2px;top: 2px;transform:skewX(28deg);z-index: 1;display:none" src="./images/bar_light_0.png"/>
             <div style="height:100%;position:absolute;left:-3px;top:0px;width: 100%;transform:skewX(28deg)">
                 <img style="position:absolute;left:0;top:2px;" src="./images/bar_fg_left_0.png"/>

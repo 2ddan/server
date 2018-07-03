@@ -6,13 +6,11 @@ import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { updata, get as getDB, insert, listen } from "app/mod/db";
 import { globalSend, Pi } from "app/mod/pi";
-import { net_request } from "app_a/connect/main";
+import { net_request,net_message } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { resetcanvas } from "app/scene/base/scene";
 import { fight, showAccount } from "app_b/fight/fight";
 import { Util } from "app/mod/util";
-import { pay } from "app_b/recharge/pay"
-
+import { UiFunTable } from "app/scene/ui_fun";
 //导入配置
 import { exp_fb_base } from "cfg/c/exp_fb_base";
 import { exp_fb_condition } from "cfg/c/exp_fb_condition";
@@ -20,13 +18,7 @@ import { exp_fb_map } from "cfg/c/exp_fb_map";
 import { exp_fb_mission } from "cfg/c/exp_fb_mission";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { TaskProgress } from "app_b/mod/task_progress";
-import { vipcard } from "cfg/c/recharge_buy_robolet";
-//掉落效果
-import { node_fun, drop_outFun } from "app_b/widget/drop_out";
-// 所有怪物配置
-import { monster_base } from "fight/b/common/monsterBase";
-// 怪物模型配置
-import { monster_cfg } from "app/scene/plan_cfg/monster_config";
+import { vip_advantage } from "cfg/c/vip_advantage";
 
 insert("exp_fb", {
     "total_count":0
@@ -47,11 +39,9 @@ export let globalReceive = {
     monsterDied: (msg) => {
         str = (str && str+",") + msg;
     },
-    exitFB:()=>{
-        if(openExpFb){
-            openExpFb = false;
-            globalSend("openExpFb",false);
-        }            
+    //怪物死亡时坐标
+    expFBI: (msg) => {
+        position = msg;
     }
 }
 
@@ -64,7 +54,11 @@ let fb_data: any = {},
     curr_id = 1,//试炼副本当前级别id
     str = "",//怪物死亡id字符串
     end_time = 0,//本次副本结束时间.ms
-    index = 0//第几波;
+    total_count = 0,//存活怪物数量
+    position = null,
+    drop_list = [],
+    fightEnd = true,
+    refresh_timer = null;//刷怪timer
 
 //数据更新
 const getData = function () {
@@ -72,6 +66,7 @@ const getData = function () {
     fb_data.exp_fb_condition = exp_fb_condition;
     fb_data.exp_fb_mission = exp_fb_mission[curr_id];
     fb_data.task = logic.getTask;
+    fb_data.max = vip_advantage[getDB("player.vip")||0].buy_exp_fb_times;
     //令牌
     let sid = exp_fb_base["cost"][0]
     let prop = getDB("bag*sid="+ sid).pop();
@@ -90,6 +85,51 @@ export class exp_fb extends Widget {
     goback(arg) {
         close(arg.widget);   
     }
+    //购买次数
+    buyCount(bol) {
+        if(!bol){
+            globalSend("screenTipFun", {
+                words: `购买次数已用完`
+            });
+            return;
+        }
+        let diamond = getDB("player.diamond"),
+            costArr = exp_fb_base["buy_spend"],
+            max = fb_data.max;
+
+        let now_buy = fb_data.buy_count;
+        //元宝是否足够
+        if (diamond < (costArr[now_buy] || costArr[costArr.length - 1])) {
+            globalSend("popTip", {
+                title: "<div>元宝不足</div><div>是否前往充值</div>",
+                btn_name: ["充值", "取消"],
+                cb: [
+                    //确认
+                    () => {
+                        let w = forelet.getWidget("app_c-exp_fb-get_count-get_count");
+                        if(w)close(w);
+                        globalSend("gotoRecharge");
+                        
+                    },
+                    //取消
+                    () => { }
+                ]
+            })
+            return;
+        }
+        globalSend("popTip", {
+            title: "<div>是否花费<span style='color:#ff9600'>" + (costArr[now_buy] || costArr[costArr.length - 1]) + "</span>元宝购买一次进入次数</div>",
+            btn_name: ["确 定", "取 消"],
+            cb: [
+                //确认
+                () => {
+                    fb.buyCount(1);
+                },
+                () => { }
+            ]
+        })
+       
+    }
     //获取次数
     getCount() {
         forelet.paint(getData());
@@ -105,8 +145,6 @@ export class exp_fb extends Widget {
     }
     //购买月卡
     buyCard(){
-        // let id = vipcard[0].prop_id;
-        // pay(id,id,1);
         globalSend("gotoCard");
     }
     //挑战
@@ -147,6 +185,7 @@ let logic = {
         let init_count = exp_fb_base["init_count"];
         count = count < 0 ? 0 : count > init_count  ? init_count : count;
         fb_data.count = count + data.count;//总次数
+        fb_data.buy_count = data.buy_count;//已购买几次
         fb_data.end_time = 0;
         if(fb_data.count < init_count){//计算恢复时间点
             let sec = cd - seconds%cd;//sec后恢复次数            
@@ -185,23 +224,50 @@ let logic = {
         })
         return task;
     },
-    //每波战斗打完数据处理
-    setFight(fightData,id,msg,monster_total){
-        if (fightData.r === 1 && exp_fb_mission[id].monster.length > index) {
-            let timer = setTimeout(()=>{
-                fb.nextFight(fightData,id,msg,monster_total);                                                                   
-                clearTimeout(timer);
-                timer = null;
-            },exp_fb_base["refresh_cd"]*1000) ;
-        } else {
-            let time = end_time - Util.serverTime();
-            fb.closeFight(time,fightData);
+    //真正结算
+    resultFight(){
+        fightEnd = true;
+        clearInterval(refresh_timer);
+        refresh_timer = null;
+        let time = end_time - (new Date()).getTime();
+        fb.closeFight(time);
+    },
+    //刷怪
+    refresh(monster_total,count_str){
+        let m: any = {};
+        //第几波怪
+        m.enemy_fight = [monster_total.splice(0,exp_fb_base["refresh_num"])];
+        total_count += exp_fb_base["refresh_num"];
+         //显示文字第几波
+         m.count = [count_str[1]-(monster_total.length||0),count_str[1]];
+        //怪物地点
+        let info  = exp_fb_map[map_id];
+        m.cfg =  {
+            "scene": info.scene,
+            "enemy_pos":[logic.refreshPosition(exp_fb_base["refresh_num"],m.count[0])]
+        };
+       
+        fight(m);
+    },
+    //获得怪物出生点
+    refreshPosition(count,total){
+        // let i = 0,
+        //     p = exp_fb_map[map_id]["enemy_pos"],
+        //     arr = [];
+        // for(let i = 0,len = p.length;i<count;i++){
+        //     arr.push(p[Math.floor(Math.random()*len)]);
+        // }
+        let p = exp_fb_map[map_id]["enemy_pos"],
+            arr = [];
+        for(let i = 0,len = p.length;i<count;i++){
+            arr.push(p[total%len]);
         }
+        return arr;
     }
 }
 /**
  * 后台通讯
- */
+ */ 
 
 /**
  * @param param : 通讯参数对象
@@ -220,6 +286,30 @@ const achieveNet = function (param) {
 };
 //网络通讯
 let fb = {
+    //购买次数
+    buyCount: function (count) {
+        let arg = {
+            "param": { "count": count},
+            "type": "app/pve/exp_instance@buy_count"
+        };
+        achieveNet(arg)
+            .then((data: any) => {
+                let prop: any = Common.changeArrToJson(data.ok);
+                Common_m.deductfrom(prop);  
+                updata("exp_fb.count", prop.count);
+                updata("exp_fb.time", prop.time);
+                updata("exp_fb.buy_count", prop.buy_count);
+                forelet.paint(getData());
+                updata("exp_fb.total_count",fb_data.count);                
+                
+            })
+            .catch((data) => {
+                globalSend("screenTipFun", {
+                    "words": `通讯失败`
+                })
+                console.log(data);
+            })
+    },
     //领取次数奖励
     award: function (obj) {
         let arg = {
@@ -251,7 +341,6 @@ let fb = {
     },
     //开始挑战
     challenge: function (id,type) {//0次数，1道具
-        index = 0;
         let arg = {
             "param": {
                 "index": id,
@@ -262,30 +351,40 @@ let fb = {
         net_request(arg, function (data) {
             if (data.error) {
                 console.log(data.why);
-            } else {    
+            } else {  
+                //获得经验处理  
+                globalSend("enterLevel", getDB("player"));
+                fightEnd = false;
                 //进入战斗场景
                 let msg: any = Common.changeArrToJson(data.ok);
-                let monster_total = msg.enemy_fight;
+                // let monster_total = msg.enemy_fight;
+                let monster_total = [];//所有怪物列表
+                msg.enemy_fight.forEach((v)=>{
+                    monster_total = [...monster_total, ...v];
+                });
                 Common_m.deductfrom(msg);                
                 updata("exp_fb.count", msg.count);
                 updata("exp_fb.time", msg.time);
-                end_time = Util.serverTime() + exp_fb_base["fight_time"]*1000;                
-                msg.time = end_time;                
-                msg.limitTime = exp_fb_base["fight_time"];                
-                msg.type = "exp_mission";
-                msg.enemy_fight = [monster_total[index]];
+
                 //地图信息
                 let arr = exp_fb_mission[id].map_id;
                 map_id = arr[Math.floor(Math.random()*arr.length)];
                 let info = exp_fb_map[map_id];
+                total_count = info.enemy_pos.length || 6;
                 msg.cfg =  {
                     "scene": info.scene,
                     "role_pos": info.role_pos,
-                    "enemy_pos":[info.enemy_pos[info.refresh_order[index]-1]]
+                    "enemy_pos":[info.enemy_pos]
                 };
+                let count_str = [total_count,monster_total.length];//怪物数量
+                msg.count = count_str;
 
-                index++; 
-                msg.index = index;
+                end_time = (new Date()).getTime() + exp_fb_base["fight_time"]*1000;                
+                msg.time = end_time;                
+                msg.limitTime = exp_fb_base["fight_time"];                
+                msg.type = "exp_mission";
+                msg.enemy_fight = [monster_total.splice(0,total_count)];
+               
                 str = "";
                 openExpFb =  true;
                 let timer = setInterval(()=>{
@@ -296,47 +395,57 @@ let fb = {
                     }
                     if(str){
                         fb.getExp(str);
-                        str = "";                        
+                        str = "";  
                     }
-                },300)
+                },300);
                 globalSend("openExpFb",openExpFb);     
-                fight(msg, function (fightData) {
-                    logic.setFight(fightData,id,msg,monster_total);
-                })
+                fight(msg,(fightData)=>{
+                    if (fightData.r === 1) {
+                        if( monster_total.length && end_time > (new Date()).getTime()){  
+                            return false;
+                        }else{
+                            logic.resultFight();
+                            return true;
+                        }
+                    }else{
+                        logic.resultFight();
+                        return true;
+                    }
+                },()=>{
+                    fightEnd = true;
+                    clearInterval(refresh_timer);
+                    refresh_timer = null;
+                    openExpFb = false;
+                    globalSend("openExpFb",false);
+                },(msg)=>{
+                    if(msg.type==="remove" && !fightEnd){
+                        total_count--;
+                        //当前已在刷新或未满足条件不刷新
+                        if(refresh_timer || total_count > exp_fb_base["refresh_limit"]){
+                            return;
+                        }
+                        //立即刷新一次
+                        if(monster_total.length && total_count < exp_fb_map[map_id]["enemy_pos"].length){
+                            logic.refresh(monster_total,count_str);
+                        }
+                        //刷新队列
+                        refresh_timer = setInterval(()=>{
+                            if(monster_total.length && total_count < exp_fb_map[map_id]["enemy_pos"].length && !fightEnd){
+                                logic.refresh(monster_total,count_str);
+                            }else{
+                                clearInterval(refresh_timer);
+                                refresh_timer = null;
+                            }
+                        },exp_fb_base["cd"]*1000)
+                    }
+                });
                 forelet.paint(getData());                   
                 updata("exp_fb.total_count",fb_data.count);                
             }
         })
     },
-    //放入下一波
-    nextFight: function (result,id,msg,monster_total) {
-        let hasTime = (end_time - Util.serverTime())/1000;
-        if(Util.serverTime() >= end_time){
-            fb.closeFight(hasTime,result);
-            return;
-        }
-        msg.enemy_fight = [monster_total[index]];
-        let info  = exp_fb_map[map_id];
-        msg.cfg =  {
-            "scene": info.scene,
-            "enemy_pos":[info.enemy_pos[info.refresh_order[index]-1]]
-        };
-        msg.limitTime = hasTime;                                
-        index++;
-        msg.index = index;  
-        let ti = setTimeout(()=>{
-            openExpFb =  3;                    
-            globalSend("openExpFb",openExpFb); //重置怪物map_id记录   
-            clearTimeout(ti);
-            ti = null;
-        },1) ;
-                                
-        fight(msg, function (fightData) {
-            logic.setFight(fightData,id,msg,monster_total); 
-        })
-    },
     //战斗结算
-    closeFight: function (time,result?) {
+    closeFight: function (time) {
         openExpFb = false;
         globalSend("openExpFb",openExpFb);             
         let arg = {
@@ -398,7 +507,6 @@ let fb = {
     },
     //杀怪领取经验
     getExp: function (str) {//str=>"id-level,id-level"
-    console.log(str);
         let arg = {
             "param": {
                 "monster_info":str
@@ -406,17 +514,28 @@ let fb = {
             "type": "app/pve/exp_instance@award_exp"
         };
         net_request(arg, function (data) {
-            console.log(data);
             if (data.error) {
                 console.log(data)
             } else {
                 let prop: any = Common.changeArrToJson(data.ok);
-                let award = Common_m.mixAward(prop);
-                if(award.player && award.player.exp){
-                    globalSend("goodsTip", {
-                        words: [ 100003, award.player.exp ]
+                let _prop: any = Common.changeArrToJson(prop.award.slice(0));
+                if(_prop.prop && _prop.prop.length > 0){
+                    drop_list = _prop.prop;
+                }
+                if(drop_list.length !== 0){
+                    UiFunTable.drop_outFun(drop_list,position.tp,position.fp,()=>{
+                        drop_list = [];
+                        position = null;
                     });
                 }
+                //经验条显示
+                if(_prop && _prop.exp){
+                    let exp = Common_m.calcExp(_prop.level,_prop.exp);
+                    if(exp){
+                        globalSend("showExp", [exp, str.split(",").length||1]);
+                    }
+                }
+                let award = Common_m.mixAward(prop);
             }
         })
     }
@@ -443,6 +562,11 @@ listen("player.level", () => {
             }
         }
     }
+});
+
+//买了铂金卡刷新页面
+listen("player.month_card_due_time", () => {
+    forelet.paint(getData());
 });
 /**
  * 监听任务完成情况刷新页面
@@ -486,3 +610,7 @@ listen("wild.wild_max_mission,exp_fb.record.wild", () => {
     }
 });
 
+//买月卡时推送更新次数
+net_message("exp_instance",(data)=>{
+    updata("exp_fb.time",data.time);                
+});

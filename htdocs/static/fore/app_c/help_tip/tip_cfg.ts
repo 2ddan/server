@@ -6,13 +6,13 @@ export const helpTips = {
 		"fontSize":"16px",
 		"fontFamily":"kaiti_bold",
 		"fontWeight":"normal",
-		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、规则</span><br/><br/>1.&nbsp;&nbsp;每次翻牌将花费一定元宝。<br/><br/>2.&nbsp;&nbsp;牌面分为数字和物品。<br/><br/>3.&nbsp;&nbsp;翻到数字，则在下方倍数处+或*该数字使得倍数翻倍。<br/><br/>4.&nbsp;&nbsp;翻到物品，则可获得的物品数量将会乘以下方倍数。同时初始化下方倍数。<br/><br/>5.&nbsp;&nbsp;玩家点击重置，可开启新的一局翻翻乐。","<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、如何获得幸运值或积分</span><br/><br/>1.&nbsp;&nbsp;翻到物品，可获得一定幸运值，当幸运值满后，下局将开启福利局。福利局中数字和物品将会成倍增长。<br/><br/>2.&nbsp;&nbsp;翻到物品，可获得一定积分，在活动开启期间，积分越高，活动结束后获得的奖品越好。"]
+		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、规则</span><br/><br/>1.&nbsp;&nbsp;每次翻牌将花费一定元宝。<br/><br/>2.&nbsp;&nbsp;牌面分为数字和物品。<br/><br/>3.&nbsp;&nbsp;翻到数字，则在下方倍数处+或*该数字使得倍数翻倍。<br/><br/>4.&nbsp;&nbsp;翻到物品，则可获得的物品数量将会乘以下方倍数。同时初始化下方倍数。<br/><br/>5.&nbsp;&nbsp;玩家点击重置，可开启新的一局翻翻乐。<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'><br/><br/>二、如何获得幸运值或积分</span><br/><br/>1.&nbsp;&nbsp;翻到物品，可获得一定幸运值，当幸运值满后，下局将开启福利局。福利局中数字和物品将会成倍增长。<br/><br/>2.&nbsp;&nbsp;翻到物品，可获得一定积分，在活动开启期间，积分越高，活动结束后获得的奖品越好。"]
 	},"gem":{
 		"color":"#fff",
 		"fontSize":"16px",
 		"fontFamily":"kaiti_bold",
 		"fontWeight":"normal",
-		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、规则</span><br/><br/>1.&nbsp;&nbsp;每局可获得7个初始宝石，玩家可将其填入宝石孔中，连成直线以可获得直线两头的物品。<br/><br/>2.&nbsp;&nbsp;在中间区域会有分散的小宝石，若玩家用宝石将该区域围住，则可获得该区域中的宝石。<br/><br/>3.&nbsp;&nbsp;宝石用完后，需重置才可开启新的宝石迷阵，重置将会花费一定元宝。","<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、如何获得积分</span><br/><br/>1.&nbsp;&nbsp;获得物品时，可获得一定积分，在活动开启期间，积分越高，活动结束后获得的奖品越好。"]
+		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、规则</span><br/><br/>1.&nbsp;&nbsp;每局可获得7个初始宝石，玩家可将其填入宝石孔中，连成直线以可获得直线两头的物品。<br/><br/>2.&nbsp;&nbsp;在中间区域会有分散的小宝石，若玩家用宝石将该区域围住，则可获得该区域中的宝石。<br/><br/>3.&nbsp;&nbsp;宝石用完后，需重置才可开启新的宝石迷阵，重置将会花费一定元宝。<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'><br/><br/>二、如何获得积分</span><br/><br/>1.&nbsp;&nbsp;获得物品时，可获得一定积分，在活动开启期间，积分越高，活动结束后获得的奖品越好。"]
 	},"team":{
 		"color":"#fff",
 		"fontSize":"16px",
@@ -79,5 +79,11 @@ export const helpTips = {
 		"fontFamily":"kaiti_bold",
 		"fontWeight":"normal",
 		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、门派战准备阶段</span><br/><br/>1.&nbsp;&nbsp;每周一至每周五为帮派战报名时间。<br/><br/>2.&nbsp;&nbsp;只有门派管理可进行门派战报名。<br/><br/>3.&nbsp;&nbsp;每周六20:00将会进行门派匹配，门派成员可在门派战界面查看对手。<br/><br/>4.&nbsp;&nbsp;每周日20：00-20:20为门派战时间。","<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、门派战玩法</span><br/><br/>1.&nbsp;&nbsp;门派战中分为4个战场，双方门派通过占领战场增加获得战场积分。<br/><br/>2.&nbsp;&nbsp;成功击杀对方门派成员，也将获得一定积分。<br/><br/>3.&nbsp;&nbsp;在战场内，将会随机刷新加成道具，合理利用道具将会有更好的战绩。<br/><br/>4.&nbsp;&nbsp;在工会战期间，将会有随机挑选某各战场开启多倍积分，多倍积分的战场中所获得积分均会翻倍。<br/><br/>5.&nbsp;&nbsp;公会战时间结束后，积分高的门派获得胜利。","<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>三、门派战奖励</span><br/><br/>1.&nbsp;&nbsp;门派战的奖励将在门派战结束后，通过邮件发放。"]
+	},"festivalActivity":{
+		"color":"#fff",
+		"fontSize":"16px",
+		"fontFamily":"kaiti_bold",
+		"fontWeight":"normal",
+		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、如何获取活动道具？</span><br/><br/>&nbsp;&nbsp;1.&nbsp;&nbsp;竞技场，装备副本，材料副本，九幽幻境，野外挂机有低几率获取。<br/><br/>&nbsp;&nbsp;2.&nbsp;&nbsp;通过参加挑战领奖获取。（在挑战领奖中，针对金卡，铂金卡有额外的福利哦。<span style='color:#f00'>金卡玩家可获得2倍的活动道具奖励，铂金卡玩家获得2倍的活动道具奖励，同时拥有金卡和铂金卡的玩家可获得3倍的活动道具奖励。</span>）<br/><br/>&nbsp;&nbsp;3.&nbsp;&nbsp;通过充值送礼获取。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、活动道具可以用来做什么？</span><br/><br/>&nbsp;&nbsp;在【节日兑换】中可花费对应数量的活动道具兑换材料。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>三、活动道具的兑换期限？</span><br/><br/>&nbsp;&nbsp;具体期限见活动内，超出期限后会消失，所以请注意截止时间哦。"]
 	}
 };

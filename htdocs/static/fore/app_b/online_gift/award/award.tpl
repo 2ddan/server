@@ -85,8 +85,13 @@
         </widget>
         <div w-class="title_light"></div>
         <div w-class="title"></div>
-        <div w-class="hd_1"></div>
-        <div w-class="hd_2"></div>
+        <app_a-widget-pic_other-pic_other style="position: absolute;width: 35px;height: 36px;left: 122px; top: -4px;">
+            {"icon":"butterfly_1"}
+        </app_a-widget-pic_other-pic_other>
+
+        <app_a-widget-pic_other-pic_other style="position: absolute;width: 35px;height: 36px;left: 290px;top: -50px;">
+            {"icon":"butterfly"}
+        </app_a-widget-pic_other-pic_other>
         <div w-class="dl_1"></div>
         <div w-class="dl_2"></div>
     </div>

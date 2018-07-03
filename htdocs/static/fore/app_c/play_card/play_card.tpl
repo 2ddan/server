@@ -53,8 +53,8 @@
             </div>
             <div  data-desc="卡牌" w-class="51">
                 {{let list = it1.cardData.record}}
-                {{:console.log(list)}}
-                {{:console.log(it1.cardList)}}
+                {{%%console.log(list)}}
+                {{%%console.log(it1.cardList)}}
                 {{for i, v of list}}
                 {{if i < 16}}
                 {{let _v = it1.cardList[i]}}
@@ -80,8 +80,9 @@
                                 <img  w-class="53" src="./images/card_2.png"/>
                                 {{let prop = Pi.sample[v[0]]}}
                                 <app-widget-image-quality style="position:absolute;width:68px;height:68px;top:8px;left: 2px;">
-                                    {"url":{{Pi.pictures[prop.icon]}} }
+                                    {"url":{{Pi.pictures[prop.icon]}}}
                                 </app-widget-image-quality>
+                                <div style="position: absolute;width: 50px;height: 20px;line-height: 20px;text-align: right;color: #ffffff;bottom: 4px;right: 8px;">{{v[1]}}</div>
                             </div>
                         {{end}}
                     {{else}}  
@@ -96,10 +97,15 @@
                     <widget w-class="55" w-tag="app_a-widget-title-single">
                         {"padding":10,"type":9,"width":124,"text":"立即使当前倍数翻倍","textCfg":"singleTitle","fontSize":20,"space":-2,"color":"#b27d5c","wear":0} 
                     </widget>
-                   
-                    <app_a-widget-btn-rect  on-tap="{{if it1.isCover || it1.cardData.use_count}}doubleClick{{end}}" style="position:relative;left: 315px;top: 19px;">
+                   {{if it1.cardData.use_double == 1}}
+                   <app_a-widget-btn-rect style="position:absolute;left: 50%;margin-left: -58px;top: 19px;">
+                        {"text":"已翻倍","class":"disabled","fontSize":24,"width":116,"height":45}
+                    </app_a-widget-btn-rect>
+                   {{else}}
+                    <app_a-widget-btn-rect on-tap="doubleClick" style="position:absolute;left: 50%;margin-left: -58px;top: 19px;">
                         {"text":"翻 倍","class":"hl","fontSize":24,"width":116,"height":45}
                     </app_a-widget-btn-rect>
+                    {{end}}
                 {{else}}
                     <widget w-class="55" w-tag="app_a-widget-title-single">
                         {"padding":10,"type":9,"width":124,"text":"幸运值数","textCfg":"singleTitle","fontSize":20,"space":-2,"color":"#b27d5c","wear":0} 
@@ -129,18 +135,19 @@
         </div>  
     </div>
 
-    <div w-class="21">
+    <div w-class="21" style="height: 90px;">
         <div  w-class="22" on-tap="openAward" >
-            <img src="app_b/widget/icons/menu_shop_icon.png"/>
-            <widget w-class="23" w-tag="app_a-widget-text-text" >
+            <app_a-widget-box-box style="-9px;">
+                {"type":"1","tip_keys":["play_card.award"]}
+            </app_a-widget-box-box>
+            <widget w-tag="app_a-widget-text-text" style="position: absolute;bottom: 0;z-index: 2;left: 8px;">
                 {"text":"领 奖","textCfg":"gangCoverTitle","space":0,"fontSize":20} 
             </widget>
         </div>
         <div  w-class="22" on-tap="rankClick" style="left:87px" >
-            <img src="app_b/widget/icons/menu_shop_icon.png"/>
-            <widget w-class="23" w-tag="app_a-widget-text-text" >
-                {"text":"排行榜","textCfg":"gangCoverTitle","space":0,"fontSize":20} 
-            </widget>
+            <app-widget-btn-menu style="position: absolute;left: 0;top: 11px;">
+                {"icon":"pic_ranking","text":"排行榜","width":70,"height":70,"top":-8,"bottom":0,"fontSize":20,"space":-6,"position":"absolute","bg":4}
+            </app-widget-btn-menu>
         </div>
 
         <app_a-widget-btn-rect  on-tap="resetClick" style="position:relative;left: 315px;top: 19px;">

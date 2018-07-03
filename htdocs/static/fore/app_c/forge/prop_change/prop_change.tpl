@@ -44,7 +44,7 @@
                 {{let prop_2 = it1.Pi.sample[it1.target_materials[0]]}}
                 {{let url_2 = it1.Pi.pictures[prop_2.icon]}}
             <app_a-widget-prop-base style="z-index:2;position:absolute;">
-                {"prop":{{prop_2}},"url":{{url_2}},"width":98,"height":98,"count":"none"}
+                {"prop":{{prop_2}},"url":{{url_2}},"width":98,"height":98,"count":{{it1.change_ratio ? it1.change_ratio : "none"}}}
             </app_a-widget-prop-base>
             <app_a-widget-pic_text-pic_text style="position:absolute;top:120px;left:50%;margin-left:-65px;">
                 {"icon":"gest_star","text":{{'当前拥有:' + it1.target_materials[1]}},"width":130,"height":24 }

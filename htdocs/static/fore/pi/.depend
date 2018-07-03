@@ -1,0 +1,1 @@
+winit.deps=[{"path":"examples/struct/buy_ten.ts","sign":"UDhfdCQEgHwAM7NuZfMQG","time":1515639607075,"size":4961,"depend":[]},{"path":"examples/testrpc/player.ts","sign":"C8ZMndf1L9YbsMkcxCQAng","time":1515639627753,"size":2490,"depend":[]},{"path":"net/rpc_r.ts","sign":"R1wvP3WSJ7vYNtzYGpWWNC","time":1515639627904,"size":4941,"depend":[]}];winit.init();

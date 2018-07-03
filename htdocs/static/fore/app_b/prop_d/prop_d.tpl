@@ -27,10 +27,10 @@
 					</widget>
 					
 					{{if count && count[1].count}}
-					<span w-class="20 20 " class="shadow" w-sid="20">拥有: {{count[1].count}}</span>
+					<span w-class="20" class="shadow" w-sid="20">拥有: {{count[1].count}}</span>
 					{{end}}
 				</div>
-				<span w-class="22 22 " class="shadow" w-sid="22">{{it.describe ||it.description || ""}}</span>
+				<span w-class="22" class="shadow" w-sid="22">{{it.describe ||it.description || ""}}</span>
 			</div>
 
 			{{if it.use_mode != "recharge"}}

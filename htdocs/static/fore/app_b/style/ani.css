@@ -24,13 +24,24 @@
 @-webkit-keyframes attrTip
 {
 	0% {
-		top:0;
-		opacity:1;}
+		-webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+		opacity:1;
+	}
 	60% {
-		top:-100px;
-		opacity:1;}
+		-webkit-transform: translate3d(0,-100px,0);
+        -moz-transform: translate3d(0,-100px,0);
+        -o-transform: translate3d(0,-100px,0);
+        transform: translate3d(0,-100px,0);
+		opacity:1;
+	}
 	100% {
-		top:-120px;
+		-webkit-transform: translate3d(0,-120px,0);
+        -moz-transform: translate3d(0,-120px,0);
+        -o-transform: translate3d(0,-120px,0);
+        transform: translate3d(0,-120px,0);
 		opacity:0;
 		dispaly:none;
 	}
@@ -38,15 +49,24 @@
 @-webkit-keyframes barTip
 {
 	0% {
-		margin-top:0;
+		-webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
 		opacity:1;
 	}
 	60% {
-		margin-top:-100px;
+		-webkit-transform: translate3d(0,-100px,0);
+        -moz-transform: translate3d(0,-100px,0);
+        -o-transform: translate3d(0,-100px,0);
+        transform: translate3d(0,-100px,0);
 		opacity:1;
 	}
 	100% {
-		margin-top:-120px;
+		-webkit-transform: translate3d(0,-120px,0);
+        -moz-transform: translate3d(0,-120px,0);
+        -o-transform: translate3d(0,-120px,0);
+        transform: translate3d(0,-120px,0);
 		opacity:0;
 		dispaly:none;
 	}
@@ -74,19 +94,31 @@
 @-webkit-keyframes errTip
 {
 	0% {
-		transform: scale(0);
+		-webkit-transform: scale3d(0,0,0);
+        -moz-transform: scale3d(0,0,0);
+        -o-transform: scale3d(0,0,0);
+        transform: scale3d(0,0,0);
 		opacity: 1
 	}
 	20% {
-		transform: scale(1.2);
+		-webkit-transform: scale3d(1.2,1.2,1.2);
+        -moz-transform: scale3d(1.2,1.2,1.2);
+        -o-transform: scale3d(1.2,1.2,1.2);
+        transform: scale3d(1.2,1.2,1.2);
 		opacity: 1
 	}
 	70% {
-		transform: scale(1.2);
+		-webkit-transform: scale3d(1.2,1.2,1.2);
+        -moz-transform: scale3d(1.2,1.2,1.2);
+        -o-transform: scale3d(1.2,1.2,1.2);
+        transform: scale3d(1.2,1.2,1.2);
 		opacity: 1
 	}
 	100% {
-		transform: scale(1.2);
+		-webkit-transform: scale3d(1.2,1.2,1.2);
+        -moz-transform: scale3d(1.2,1.2,1.2);
+        -o-transform: scale3d(1.2,1.2,1.2);
+        transform: scale3d(1.2,1.2,1.2);
 		opacity: 0;
 	}
 	
@@ -97,15 +129,38 @@
 @-webkit-keyframes showNewRes
 {
 	0% {
-		top: 220px;
+		-webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
 		opacity:1;
 	} 
 	50%{
 		opacity:.8;
 	}
 	100% {
-		top: 100px;
+		-webkit-transform: translate3d(0,-120px,0);
+        -moz-transform: translate3d(0,-120px,0);
+        -o-transform: translate3d(0,-120px,0);
+        transform: translate3d(0,-120px,0);
 		opacity:0;
 	}
 	
+}
+
+/* 采集类型，100%进度条动画 */
+@-webkit-keyframes collectBarAnima
+{
+	0% {
+		-webkit-transform: scale3d(0,1,1) skewX(-28deg);;
+        -moz-transform: scale3d(0,1,1) skewX(-28deg);;
+        -o-transform: scale3d(0,1,1) skewX(-28deg);;
+        transform: scale3d(0,1,1) skewX(-28deg);;
+	} 
+	100% {
+		-webkit-transform: scale3d(1,1,1 )  skewX(-28deg);;
+        -moz-transform: scale3d(1,1,1) skewX(-28deg);; 
+        -o-transform: scale3d(1,1,1) skewX(-28deg);;
+        transform: scale3d(1,1,1) skewX(-28deg);;
+	}
 }

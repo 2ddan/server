@@ -9,23 +9,30 @@
         <div w-class="title_right" style="position:absolute;right:0px;top:0px;"></div>
     </div>
 
-    <div class="shadow2" style="position:absolute;left:{{it.left || '30'}}px;top:{{it.top || 0}}px;font-family:mnjsh;color:#ffefc9;font-size:{{it.fontSize || 30}}px;">{{it.text}}</div>
+    <app_a-widget-text-text style="position:absolute;left:{{it.left || '30'}}px;top:{{it.top || 0}}px;display:inline-block;">
+        {"text":{{it.text}},"textCfg":"gangCoverTitle","fontSize":30}
+    </app_a-widget-text-text>
+
     <div on-tap="gotoBug(0)" class="resource_bar" style="left: 173px;top: 6px;font-size:16px;line-height:24px;z-index:2;width:96px">
-        <div class="money" style="left: 5px;top: 2px;"></div>
-        <div w-class="title_coin_count">{{common.numberCarry(parseInt(it.r[0][1] || 0),10000)}}</div>
+        <widget w-tag="app_a-widget-coin-coin" style="left: 5px;top: 2px;color: #e3d8bb;">
+			{"icon":"money", "text":[{{common.numberCarry(parseInt(it.r[0][1] || 0),10000)}}]} 
+		</widget>
         <div  class="add_btn" style="right: -13px;top: 0px;"></div>
         <div class="resource_light" style="bottom: -7px;left: 13px;"></div>
     </div>
     <div on-tap="gotoBug(1)" class="resource_bar" style="left: 285px;top: 6px;font-size:16px;line-height:24px;z-index:2;width:96px">
-        <div class="diamond" style="left: 5px;top: 2px;"></div>
-        <div w-class="title_coin_count">{{common.numberCarry(parseInt(it.r[1][1] || 0),10000)}}</div>
+        <widget w-tag="app_a-widget-coin-coin" style="left: 5px;top: 2px;color: #e3d8bb;">
+			{"icon":"diamond", "text":[{{common.numberCarry(parseInt(it.r[1][1] || 0),10000)}}]} 
+		</widget>
         <div class="add_btn" style="right: -13px;top: 0px;"></div>
         <div class="resource_light" style="bottom: -7px;left: 13px;"></div>
     </div>
     {{if it.type}}
-    <div on-tap="gotoGetWay({{it.r[2][0]}})" class="resource_bar" style="left:398px;top:5px;font-size:16px;line-height:24px;z-index:4;width:80px">
-        <div class={{it.type}} style="left: -2px;top: 2px;"></div>
-        <div w-class="title_coin_count" style="left:6px">{{common.numberCarry(parseInt(it.r[2][1] || 0),10000)}}</div>
+    {{let s = it.r[2][0]}}
+    <div on-tap='gotoGetWay("{{s}}")' class="resource_bar" style="left:398px;top:5px;font-size:16px;line-height:24px;z-index:4;width:80px">
+        <widget w-tag="app_a-widget-coin-coin" style="left: -2px;top: 2px;color: #e3d8bb;">
+			{"icon":{{it.type}}, "text":[{{common.numberCarry(parseInt(it.r[2][1] || 0),10000)}}]} 
+		</widget>
         <div class="add_btn" style="right: -13px;top: 0px;"></div>
     </div>
     {{end}}

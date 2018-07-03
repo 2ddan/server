@@ -1,14 +1,12 @@
 //导入模块
-import { listenBack } from "app/mod/db_back";
-import { net_request, net_message } from "app_a/connect/main";
-import { data as localDB, updata, get as getDB, listen } from "app/mod/db";
+import { net_request} from "app_a/connect/main";
+import { updata, get as getDB, listen } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
 import { Forelet } from "pi/widget/forelet";
 import { Util } from "app/mod/util";
-import { open,close } from "app/mod/root";
 import { Widget } from "pi/widget/widget";
-import { Pi, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { pay } from "app_b/recharge/pay"
 
 //购买周卡，月卡
@@ -18,8 +16,7 @@ import { vipcard } from "cfg/c/recharge_buy_robolet";
 export const forelet = new Forelet();
 
 
-let cardPrefix = ["month_card", "annual_card"],
-    args;
+let cardPrefix = ["month_card", "annual_card"];
 
 
 const getData = () => {
@@ -54,9 +51,7 @@ export class recharge extends Widget {
 
     //购买周卡或者月卡
     buy_vipcard = (arg) => {//arg=>0:月卡,1:周卡
-        args = arg;
-        let //data: any = {},
-            _item = vipcard[arg],
+        let _item = vipcard[arg],
             money = _item.price,
             player = getDB("player"),
             due_time = player[cardPrefix[arg] + "_due_time"];
@@ -70,17 +65,8 @@ export class recharge extends Widget {
             globalSend("screenTipFun", {  words: "不能重复购买!" })
             return;
         }
-        if (player.rmb < money) {
-            
-           pay(_item.prop_id,_item.prop_id,1);
-            //暂时注释
-            // pay(data, function (r) {
-            //     if (r) {
-            //         Common_m.payAward(r);
-            //     }
-            // });
-            // globalSend("screenTipFun", {  words: "您的RMB不足" })
-            // return;
+        if (player.rmb < money) {      
+           pay(_item.prop_id, "card", 1);
         } else { 
             vipCard_conect(arg);
         }
@@ -127,7 +113,7 @@ const vipCard_conect = (arg, receive?) => {
             updata("player.vip_exp", _data.award.vip_exp);
             updata("player.rmb", rmb - money);
             updata("player." + cardPrefix[arg] + "_due_time", Util.serverTime(true) + _days[arg] * 24 * 60 * 60);
-            globalSend("screenTipFun", { words: `购买${arg?"月卡":"周卡"}成功` });
+            globalSend("screenTipFun", { words: `购买成功` });
         } else {
             updata("recharge." + cardPrefix[arg] + "_receive_diamond", 1);
             // globalSend("screenTipFun", { words: `获得元宝${vipcard[arg]["diamond_count"]}` });
@@ -169,3 +155,11 @@ forelet.listener = (cmd: string, widget: Widget): void => {
         forelet.paint(getData());
     }
 }
+
+listen("player.annual_card_due_time", () => {
+    forelet.paint(getData());
+});
+
+listen("player.month_card_due_time", () => {
+    forelet.paint(getData());
+})

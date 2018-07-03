@@ -1,0 +1,139 @@
+
+{
+  "name" : "muma",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.779776573181152,
+      -3.96281337738037,
+      8.10345458984375
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "complet",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "run" : "NgWPbmgP8S46HCcpRbs6Jw.ai"
+        },
+        "aniBox"     : {
+          "run" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "playAnim"   : {
+          "name" : "run"
+        }
+      },
+      "children"  : [
+        {
+          "type" : "Skeleton",
+          "res"  : "QNFBbUQFCZn6chy1gn5mYy.skl"
+        },
+        {
+          "name" : "Muniu_001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              3,
+              1,
+              9,
+              2,
+              5,
+              6,
+              4,
+              7,
+              8
+            ],
+            "bounds" : [
+              [
+                1.87424397468567,
+                4.87701225280762,
+                1.60836660861969
+              ],
+              [
+                -1.88097941875458,
+                -4.06854438781738,
+                -2.89817500114441
+              ]
+            ],
+            "rootbone" : "Dummy001",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "5NUj1qx5AUntuFrS5cqfAe.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "N47mfHGF6wt3wLRFKnViou.geo"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

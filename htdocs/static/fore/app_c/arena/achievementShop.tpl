@@ -52,7 +52,7 @@
                     </div>
 
                     {{if v.buy_count_limit <= it1.shopData.arenaRead.life_store[v.index] || v.buy_count_limit <= it1.getData.arenaRead.life_store[v.index]}}
-                        <app_a-widget-pic_text-pic_text style="position:absolute;right: 60px;top: 45px;">
+                        <app_a-widget-pic_text-pic_text style="position:absolute;right: 42px;top: 45px;">
                             {"icon":"sell_over","width":93,"height":60,"align":"center","marginLeft":3,"textCfg":"","space":0,"fontSize":12,"top":0,"left":0}
                         </app_a-widget-pic_text-pic_text>
                     {{else}}

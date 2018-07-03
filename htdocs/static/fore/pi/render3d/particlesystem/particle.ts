@@ -1,8 +1,10 @@
-
-import { THREE } from "../three"
-import { ParticleSystem } from "./ps"
-import { PSSimulationSpace } from "./util"
-import { PSAnimationType } from "./texture_sheet_animation"
+/**
+ * 
+ */
+import { THREE } from '../three';
+import { ParticleSystem } from './ps';
+import { PSAnimationType } from './texture_sheet_animation';
+import { PSSimulationSpace } from './util';
 
 let tmpVec: THREE.Vector4;
 
@@ -17,34 +19,35 @@ let tmpMatrix: THREE.Matrix4;
 
 export class Particle {
 
-	mesh: THREE.Mesh;
-	material: THREE.MeshParticlesMaterial;
+	public mesh: THREE.Mesh;
+	public material: THREE.MeshParticlesMaterial;
 
-	createTime: number;
-	lifeTime: number;
+	public createTime: number;
+	public lifeTime: number;
 
-	uvRow: number;
-	startUVFrame: number;
+	public uvRow: number;
+	public startUVFrame: number;
 
-	startTintColor: THREE.Color;
-	startColor: THREE.Color;
-	startSize: THREE.Vector3;
-	startForce: THREE.Vector3;
-	startVelocity: THREE.Vector3;
+	public startTintColor: THREE.Color;
+	public startColor: THREE.Color;
+	public startSize: THREE.Vector3;
+	public startForce: THREE.Vector3;
+	public startVelocity: THREE.Vector3;
 
-	vRand: THREE.Vector3;
-	fRand: THREE.Vector3;
-	limitVRand: number;
-	sizeTimeRand: THREE.Vector3;
-	sizeSpeedRand: THREE.Vector3;
-	rTimeRand: THREE.Vector3;
-	rSpeedRand: THREE.Vector3;
-	fTimeRand: number;
-	cTimeRand: number[];
-	cSpeedRand: number[];
+	public vRand: THREE.Vector3;
+	public fRand: THREE.Vector3;
+	public limitVRand: number;
+	public sizeTimeRand: THREE.Vector3;
+	public sizeSpeedRand: THREE.Vector3;
+	public rTimeRand: THREE.Vector3;
+	public rSpeedRand: THREE.Vector3;
+	public fTimeRand: number;
+	public cTimeRand: number[];
+	public cSpeedRand: number[];
 
-	ps: ParticleSystem;
+	public ps: ParticleSystem;
 
+	// tslint:disable-next-line:typedef
 	constructor(ps) {
 
 		if (tmpVec1 === undefined) {
@@ -70,16 +73,17 @@ export class Particle {
 	/**
 	 * 释放
 	 */
-	dispose() {
+	public dispose() {
 		this.material.dispose();
 	}
 
 	/**
 	 * @description 初始化
 	 */
-	init(time: number) {
-		let ps = this.ps;
-		let playTime = time % ps.main.duration;
+	// tslint:disable-next-line:cyclomatic-complexity
+	public init(time: number) {
+		const ps = this.ps;
+		const playTime = time % ps.main.duration;
 
 		this.mesh.visible = false;
 
@@ -160,7 +164,7 @@ export class Particle {
 			this.cSpeedRand[3] = Math.random();
 		}
 
-		let speed = ps.main.startSpeed.getValue(playTime);
+		const speed = ps.main.startSpeed.getValue(playTime);
 		if (ps.shape) {
 			ps.shape.get(this.mesh.position, this.startVelocity);
 		} else {
@@ -169,7 +173,7 @@ export class Particle {
 		}
 		this.startVelocity.multiplyScalar(speed);
 
-		let g = 9.8 * ps.main.gravityModifier.getValue(playTime);
+		const g = ps.main.gravityModifier.getValue(playTime) * 9.8;
 		this.startForce = new THREE.Vector3(0, -g, 0);
 
 		this.createTime = time;
@@ -182,7 +186,7 @@ export class Particle {
 				ps.main.startSizeY.getValue(playTime),
 				ps.main.startSizeZ.getValue(playTime));
 		} else {
-			let s = ps.main.startSize.getValue(playTime);
+			const s = ps.main.startSize.getValue(playTime);
 			this.startSize.set(s, s, s);
 		}
 
@@ -192,7 +196,7 @@ export class Particle {
 				ps.main.startRotationY.getValue(playTime),
 				ps.main.startRotationZ.getValue(playTime));
 		} else {
-			let r = ps.main.startRotation.getValue(playTime);
+			const r = ps.main.startRotation.getValue(playTime);
 			this.mesh.rotation.set(0, 0, r);
 		}
 
@@ -203,8 +207,9 @@ export class Particle {
 		this.startColor.a *= this.startTintColor.a;
 
 		this.uvRow = -1;
+
 		this.startUVFrame = 0;
-		let uvAnim = ps.textureSheetAnimation;
+		const uvAnim = ps.textureSheetAnimation;
 		if (uvAnim) {
 			this.startUVFrame = uvAnim.startFrame.getValue(playTime);
 			if (uvAnim.animation === PSAnimationType.SingleRow) {
@@ -214,16 +219,17 @@ export class Particle {
 		}
 	}
 
-	updatePosition(time, deltaTime, factor) {
+	// tslint:disable-next-line:typedef
+	public updatePosition(time, deltaTime, factor) {
 
 		// 速度
-		let v = tmpVec1;
-		let vMod = this.ps.velocityOverLifetime;
+		const v = tmpVec1;
+		const vMod = this.ps.velocityOverLifetime;
 
 		v.set(
 			vMod ? vMod.x.getValue(factor, this.vRand.x) : 0.0,
 			vMod ? vMod.y.getValue(factor, this.vRand.y) : 0.0,
-			vMod ? vMod.z.getValue(factor, this.vRand.z) : 0.0,
+			vMod ? vMod.z.getValue(factor, this.vRand.z) : 0.0
 		);
 
 		if (vMod && vMod.space === PSSimulationSpace.World) {
@@ -237,12 +243,12 @@ export class Particle {
 		v.add(this.startVelocity);
 
 		// 力
-		let force = tmpVec2;
-		let fMod = this.ps.forceOverLifetime;
+		const force = tmpVec2;
+		const fMod = this.ps.forceOverLifetime;
 		force.set(
 			fMod ? fMod.x.getValue(factor, this.fRand.x) : 0.0,
 			fMod ? fMod.y.getValue(factor, this.fRand.y) : 0.0,
-			fMod ? fMod.z.getValue(factor, this.fRand.z) : 0.0,
+			fMod ? fMod.z.getValue(factor, this.fRand.z) : 0.0
 		);
 
 		if (fMod && fMod.space === PSSimulationSpace.World) {
@@ -263,7 +269,7 @@ export class Particle {
 		let limit = v.length();
 		let speed = limit;
 
-		let lMod = this.ps.limitVelocityOverLifetime;
+		const lMod = this.ps.limitVelocityOverLifetime;
 		if (lMod) {
 			dampen = lMod.dampen;
 			if (!lMod.separateAxes) {
@@ -286,13 +292,13 @@ export class Particle {
 		return speed;
 	}
 
-	updateColor(time: number, factor: number, speed: number) {
+	public updateColor(time: number, factor: number, speed: number) {
 
-		let mat = <THREE.MeshParticlesMaterial>this.mesh.material;
+		const mat = <THREE.MeshParticlesMaterial>this.mesh.material;
 
 		tmpColor.setRGBA(1, 1, 1, 1);
 
-		let modC = this.ps.colorOverLifetime;
+		const modC = this.ps.colorOverLifetime;
 		if (modC) {
 			modC.color.getValue(tmpColor, factor, this.cTimeRand);
 		}
@@ -302,7 +308,7 @@ export class Particle {
 		tmpColor.b *= this.startColor.b;
 		tmpColor.a *= this.startColor.a;
 
-		let modCS = this.ps.colorBySpeed;
+		const modCS = this.ps.colorBySpeed;
 		if (modCS) {
 			let f = (speed - modCS.range.x) / (modCS.range.y - modCS.range.x);
 			if (f < 0) f = 0.0;
@@ -319,10 +325,12 @@ export class Particle {
 		mat.tintOpacity = tmpColor.a;
 	}
 
-	updateSize(time: number, factor: number, speed: number) {
-		let x = 1.0, y = 1.0, z = 1.0;
+	public updateSize(time: number, factor: number, speed: number) {
+		let x = 1.0;
+		let y = 1.0;
+		let z = 1.0;
 
-		let modS = this.ps.sizeOverLifetime;
+		const modS = this.ps.sizeOverLifetime;
 		if (modS) {
 			if (!modS.separateAxes) {
 				x = y = modS.size.getValue(factor, this.sizeTimeRand.x);
@@ -333,14 +341,14 @@ export class Particle {
 			}
 		}
 
-		let modSS = this.ps.sizeBySpeed;
+		const modSS = this.ps.sizeBySpeed;
 		if (modSS) {
 			let f = (speed - modSS.range.x) / (modSS.range.y - modSS.range.x);
 			if (f < 0) f = 0.0;
 			if (f > 1) f = 1.0;
 
 			if (!modSS.separateAxes) {
-				let s = modSS.size.getValue(f, this.sizeSpeedRand.x);
+				const s = modSS.size.getValue(f, this.sizeSpeedRand.x);
 				x *= s; y *= s; z *= s;
 			} else {
 				x *= modSS.x.getValue(f, this.sizeSpeedRand.x);
@@ -364,23 +372,23 @@ export class Particle {
 		}
 	}
 
-	updateRotate(time: number, deltaTime: number, factor: number, speed: number) {
+	public updateRotate(time: number, deltaTime: number, factor: number, speed: number) {
 		let x = 0;
 		let y = 0;
 		let z = 0;
 
-		let modR = this.ps.rotationOverLifetime;
+		const modR = this.ps.rotationOverLifetime;
 		if (modR) {
 			if (!modR.separateAxes) {
 				z += deltaTime * modR.z.getValue(factor, this.rTimeRand.x);
 			} else {
-				x += deltaTime  * modR.x.getValue(factor, this.rTimeRand.x);
-				y += deltaTime  * modR.y.getValue(factor, this.rTimeRand.y);
-				z += deltaTime  * modR.z.getValue(factor, this.rTimeRand.z);
+				x += deltaTime * modR.x.getValue(factor, this.rTimeRand.x);
+				y += deltaTime * modR.y.getValue(factor, this.rTimeRand.y);
+				z += deltaTime * modR.z.getValue(factor, this.rTimeRand.z);
 			}
 		}
 
-		let modRS = this.ps.rotationBySpeed;
+		const modRS = this.ps.rotationBySpeed;
 		if (modRS) {
 			let f = (speed - modRS.range.x) / (modRS.range.y - modRS.range.x);
 			if (f < 0) f = 0.0;
@@ -394,12 +402,12 @@ export class Particle {
 				z += deltaTime * modRS.z.getValue(f, this.rSpeedRand.z);
 			}
 		}
-		let r = this.mesh.rotation;
+		const r = this.mesh.rotation;
 		this.mesh.rotation.set(r.x + x, r.y + y, r.z + z);
 	}
 
-	updateTextureAnimation(playTime: number, factor: number) {
-		let anim = this.ps.textureSheetAnimation;
+	public updateTextureAnimation(playTime: number, factor: number) {
+		const anim = this.ps.textureSheetAnimation;
 		if (!anim) return;
 
 		let num = 0;
@@ -410,6 +418,7 @@ export class Particle {
 			case PSAnimationType.SingleRow:
 				num = anim.numTilesX;
 				break;
+			default:
 		}
 
 		factor = factor * anim.cycleCount % 1;
@@ -421,8 +430,8 @@ export class Particle {
 			frame += this.uvRow;
 		}
 
-		let tx = 1 / anim.numTilesX;
-		let ty = 1 / anim.numTilesY;
+		const tx = 1 / anim.numTilesX;
+		const ty = 1 / anim.numTilesY;
 		let ox = frame % anim.numTilesX;
 		let oy = Math.floor(frame / anim.numTilesX);
 		ox /= anim.numTilesX;
@@ -435,22 +444,22 @@ export class Particle {
 	 * 更新粒子状态，返回该粒子是否存活
 	 * @param time 总时间，单位：秒
 	 */
-	update(time: number, deltaTime: number) {
+	public update(time: number, deltaTime: number) {
 
 		if (!this.mesh.visible) {
 			this.mesh.visible = true;
 		}
 
-		let playTime = time - this.createTime;
+		const playTime = time - this.createTime;
 		if (playTime > this.lifeTime) {
 			// 超出生命周期
 			return false;
 		}
 
 		// 声明周期的比例关系
-		let factor = playTime / this.lifeTime;
+		const factor = playTime / this.lifeTime;
 
-		let speed = this.updatePosition(playTime, deltaTime, factor);
+		const speed = this.updatePosition(playTime, deltaTime, factor);
 
 		this.updateColor(playTime, factor, speed);
 
@@ -461,5 +470,7 @@ export class Particle {
 		this.updateTextureAnimation(playTime, factor);
 
 		return true;
+
 	}
+
 }

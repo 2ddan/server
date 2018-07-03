@@ -1,4 +1,3 @@
-// 模块描述
 /*
 负责进行业务逻辑处理，是数据库和显示组件间的桥梁， 输入->逻辑计算->输出
 输入：
@@ -15,10 +14,10 @@
 */
 
 // ============================== 导入
-import { Widget } from "./widget";
 import { Json } from '../lang/type';
+import { HandlerTable } from '../util/event';
 import { set as task } from '../util/task_mgr';
-import { HandlerTable } from "../util/event";
+import { Widget } from './widget';
 
 // ============================== 导出
 /**
@@ -27,18 +26,19 @@ import { HandlerTable } from "../util/event";
  */
 export class Forelet extends HandlerTable {
 	// 必须要赋初值，不然new出来的实例里面是没有这些属性的
-	widgets: Array<Widget> = [];// 关联的组件
-	listener: Function = null; // 监听器
+	public widgets: Widget[] = [];// 关联的组件
+	public listener: Function = null; // 监听器
+	// tslint:disable:variable-name
 	private _data: Json = null; // 延迟渲染的数据
 	private _dataState: DataState = DataState.init; // 延迟渲染的状态
-	private _args: Array<Forelet> = [this];
+	private _args: Forelet[] = [this];
 
 	/**
 	 * @description 添加widget，自动在widget创建时调用
 	 * @example
 	 */
-	addWidget(w: Widget): void {
-		this.listener && this.listener("add", w);
+	public addWidget(w: Widget): void {
+		this.listener && this.listener('add', w);
 		w.setState(this._data);
 		this.widgets.push(w);
 	}
@@ -46,32 +46,36 @@ export class Forelet extends HandlerTable {
 	 * @description widget事件
 	 * @example
 	 */
-	eventWidget(w: Widget, type: string): void {
+	// tslint:disable:no-reserved-keywords
+	public eventWidget(w: Widget, type: string): void {
 		this.listener && this.listener(type, w);
 	}
 	/**
 	 * @description widget被移除，自动在widget销毁时调用
 	 * @example
 	 */
-	removeWidget(w: Widget): void {
-		let arr = this.widgets;
-		let i = arr.indexOf(w);
-		if (i < 0)
+	public removeWidget(w: Widget): void {
+		const arr = this.widgets;
+		const i = arr.indexOf(w);
+		if (i < 0) {
 			return;
-		if (i < arr.length - 1)
+		}
+		if (i < arr.length - 1) {
 			arr[i] = arr[arr.length - 1];
+		}
 		arr.length--;
-		this.listener && this.listener("remove", w);
+		this.listener && this.listener('remove', w);
 	}
 	/**
 	 * @description 获取指定名称的widget
 	 * @example
 	 */
-	getWidget(name: string): Widget {
-		let arr = this.widgets;
-		for (let w of arr) {
-			if (w.name === name)
+	public getWidget(name: string): Widget {
+		const arr = this.widgets;
+		for (const w of arr) {
+			if (w.name === name) {
 				return w;
+			}
 		}
 	}
 	/**
@@ -80,17 +84,20 @@ export class Forelet extends HandlerTable {
 	 * @parms immediately，表示同步计算dom，不延迟到系统空闲时
 	 * @example
 	 */
-	paint(data: Json, reset?: boolean, immediately?: boolean): void {
-		let s = this._dataState;
+	public paint(data: Json, reset?: boolean, immediately?: boolean): void {
+		const s = this._dataState;
+		// tslint:disable:no-constant-condition
 		this._dataState = (reset || s === DataState.reset_true) ? DataState.reset_true : DataState.reset_false;
 		this._data = data;
-		if (immediately)
+		if (immediately) {
 			return paint1(this);
+		}
 		if (s === DataState.init) {
-			if (this.widgets.length > 0)
+			if (this.widgets.length > 0) {
 				task(paint1, this._args, 900000, 1);
-			else
+			} else {
 				this._dataState = DataState.init;
+			}
 		}
 	}
 
@@ -103,7 +110,7 @@ export class Forelet extends HandlerTable {
 enum DataState {
 	init = 0,
 	reset_false,
-	reset_true,
+	reset_true
 }
 
 /**
@@ -111,14 +118,13 @@ enum DataState {
  * @example
  */
 const paint1 = (f: Forelet): void => {
-	let data = (f as any)._data;
-	let r = (f as any)._dataState === DataState.reset_true;
+	const data = (f as any)._data;
+	const r = (f as any)._dataState === DataState.reset_true;
 	(f as any)._dataState = DataState.init;
-	for (let w of f.widgets) {
+	for (const w of f.widgets) {
 		w.setState(data);
 		w.paint(r);
 	}
-}
+};
 
 // ============================== 立即执行
-

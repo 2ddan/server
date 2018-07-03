@@ -1,0 +1,7 @@
+{
+    "tpl":"./notice.tpl",
+    "js":"./notice.ts",
+    "forelet":"./notice.ts",
+    "cfg":"./notice.cfg",
+    "css":"./notice.wcss"
+}

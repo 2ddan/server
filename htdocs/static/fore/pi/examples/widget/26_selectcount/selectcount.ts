@@ -1,26 +1,29 @@
-import {Widget} from "../../../widget/widget";
-import {notify} from "../../../widget/event";
-import {Json} from "../../../lang/type";
+/**
+ * 
+ */
+import { Json } from '../../../lang/type';
+import { notify } from '../../../widget/event';
+import { Widget } from '../../../widget/widget';
 
-interface Props{
-    count: number;
+interface Props {
+	count: number;
 }
 
-export class Count extends Widget{
+export class Count extends Widget {
 
-    props:Props;
-    constructor(){
-        super();
-        this.props = {
-            count:1
-        }
-    }
+	public props: Props;
+	constructor() {
+		super();
+		this.props = {
+			count: 1
+		};
+	}
 
-    changeCount(count){
-        this.props.count = count;
-        this.paint();
-        return true;
-    };
+	public changeCount(count: number) {
+		this.props.count = count;
+		this.paint();
+
+		return true;
+	}
 
 } 
-

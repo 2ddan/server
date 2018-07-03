@@ -58,11 +58,11 @@
         {{end}}
         <div w-class="box_bg" on-tap="openGemBox">
             {{if checkDay < 3}}
-            <app_a-widget-box-box>
+            <app_a-widget-box-box style="-9px;">
                 {"type":"1"}
             </app_a-widget-box-box>
             {{else}}
-            <app_a-widget-box-box>
+            <app_a-widget-box-box style="-9px;">
                 {"type":"1","state":"open","tip_keys":["daily_act.checkin.box"]}
             </app_a-widget-box-box>
             {{end}}

@@ -10,17 +10,14 @@ import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
 import { fight, showAccount } from "app_b/fight/fight";
 import { Util } from "app/mod/util";
-import { function_open } from "cfg/b/function_open";
 import { map_cfg } from "app/scene/plan_cfg/map";
 import { getWildName } from "app_b/open_fun/open_fun";
 //导入配置
 import { daily_fb_base } from "cfg/c/daily_fb_base";
 import { daily_fb_act } from "cfg/c/daily_fb_act";
+import { daily_fb_star } from "cfg/c/daily_fb_star";
 import { vip_advantage } from "cfg/c/vip_advantage";
 import { funIsOpen } from "app_b/open_fun/open_fun";
-
-//掉落效果
-import { node_fun, drop_outFun } from "app_b/widget/drop_out";
 
 export const forelet = new Forelet();
 //外部打开此页面
@@ -35,7 +32,6 @@ export let globalReceive = {
 }
 //定义变量
 let fb_data: any = {},
-    buyData: any = {},
     fb_id;//要挑战的副本id
 //逻辑处理
 let logic = {
@@ -72,43 +68,18 @@ let logic = {
         }
         // fb.buyCount();
         //购买的数据
-        buyData = {
+        let buyData = {
             "title": "购买次数",
             "type": "每日副本",
             "coin": "diamond",
             "btn_name": "购 买",
-            "cost": costArr[num] || costArr[costArr.length - 1],
-            "max": max,
-            "now": num,
-            "hasCount": vip_advantage[vip].daily_instance_times + num - fb_data.use_times[fb_id - 1],
-            "num": 1,//购买数量初始值默认为1
+            "price": costArr,
+            "max_buy": max,
+            "already_buy": num,
+            "has_count": vip_advantage[vip].daily_instance_times + num - fb_data.use_times[fb_id - 1],
+            "buy_count": 1,//购买数量初始值默认为1
             "callBack": (r) => {
                 fb.buyCount(r);
-            },
-            "costCoin": (r) => {
-                let d = buyData,
-                    arr: any = {
-                        "num": r,
-                        "cost": 0
-                    },//能购买的数量,花费
-                    money = getDB("player." + d.coin);
-                if (r > d.max - d.now) arr.num = d.max - d.now;
-                if (r <= 0) {
-                    arr.num = d.max - d.now ? 1 : 0;
-                }
-                let len = costArr.length;
-                //计算总价
-                for (var i = d.now; i < (arr.num - 0 + d.now); i++) {
-                    let costNow = arr.cost;
-                    if (costArr[i]) arr.cost += costArr[i];
-                    else arr.cost += costArr[len - 1];
-                    if (arr.cost > money) {
-                        arr.num = i - d.now;
-                        arr.cost = costNow;
-                        break;
-                    }
-                }
-                return arr;
             }
         };
         //发送消息购买
@@ -235,11 +206,35 @@ let fb = {
                 prop.scene = map_cfg["daily_mission"];
                 msg.type = "daily_mission";
                 msg.cfg = prop;
+                msg.star = 1;
+                let _show_award = Common.shallowClone(msg.show_award);
+                for(let i= 0; i<msg.enemy_fight.length; i++){
+                    for(let j=0; j<msg.enemy_fight[i].length; j++){
+                        msg.enemy_fight[i][j].push(_show_award[0]);
+                        _show_award.splice(0,1);
+                    }
+                }
+                let count = 1;
+                globalSend("fbStar", 1);
                 fight(msg, function (fightData) {
                     //战斗胜利
                     if (fightData.r === 1) {
-                        fb.winFight(chapter_id, fightData);
-                        // node_fun();
+                        if (msg.enemy[count]) {
+                            let m: any = {};
+                            //第几波怪
+                            m.enemy_fight = [msg.enemy[count]];
+                            //怪物地点
+                            m.cfg = { "enemy_pos": [prop.enemy_pos[count]] };
+                            count++;
+                            fight(m);
+                            return false;
+                        } else {
+                            count = 1;
+                            globalSend("fbStar", 0);
+                            //判断还有没怪物
+                            fb.winFight(chapter_id, fightData);
+                            return true;
+                        }
                     } else {
                         prop.result = fightData;
                         prop.extra = {
@@ -247,8 +242,10 @@ let fb = {
                             "star": 0
                         };
                         showAccount(prop, () => { });
+                        globalSend("fbStar", 0);
+                        return true;
                     }
-                    globalSend("popBack");
+                    // globalSend("popBack");
                 })
                 forelet.paint(getData());
             }

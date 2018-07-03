@@ -6,11 +6,12 @@ import { Pi, globalSend } from "app/mod/pi";
 import { mgr_data, mgr } from "app/scene/scene";
 import { Util } from "app/mod/util";
 import * as root from "pi/ui/root";
-import * as Fight from "fight/a/common/fight";
 import { Common } from "app/mod/common";
 import { forelet } from "app_b/wild/wild";
+import { SMgr } from "app_b/fight_ol/same";
 import { data as localDB, get as getDB } from "app/mod/db";
 import { role_base } from "fight/b/common/role_base";
+import { FMgr } from "fight/a/fight";
 import { cuurShow } from "app/scene/ui_fun";
 
 import { base_cfg } from "cfg/a/base_cfg";
@@ -38,78 +39,13 @@ let quality = {1:"",2:"eff_ui_guangzhu_lv",3:"eff_ui_guangzhu_lan",4:"eff_ui_gua
 //场景表现事件列表
 
 export const globalReceive :any = {
-	/**
-	 * @description 进入主城
-	 */
-	fighter_position:(msg)=>{
-        let w : any = forelet.getWidget("app_b/wild/wild");
-        if(!flag && !w) return;
-        fighterPosition = [];
-        fighterPosition.push(msg[0],msg[1],msg[2]);
-        if(star_position.length == 0){
-            star_position = [fighterPosition[0],fighterPosition[2]];
-        }
-        let empty = 0;
-        newPosition = [];
-        let speed = 0.25;
-        let _dist;
-        // console.log('fighter的位置++++',fighterPosition)
-        for(let i=0;i<circleArr.length;i++){
-            //控制模型飞到人物的胸口
-            let high = fightStartPosition[3];
-            //两点之间的直线距离
-            let dist =  Math.sqrt(Math.pow((fighterPosition[2] - circleArr[i][1]),2) + Math.pow((fighterPosition[0] - circleArr[i][0]),2));
-            
-            if(star_position.length !== 0 && star_position[0] !== fighterPosition[0] && star_position[1] !== fighterPosition[2]){
-                speed = speed+0.05;
-                // console.log("速度的变化+++++++++",speed)            
-            }
-            //每一步的跨度
-            dist = (speed / dist);
-            // console.log("两点之间的直线距离+++++++++",i,dist)
-            
-            high = high+0.05;
-            if(high >= fightStartPosition[3]){
-                high = fightStartPosition[3];
-            }
-            // console.log('模型的飞行高度++++',high,fightStartPosition[3])
-            if(dist >= 1){
-                newPosition[i] = [fighterPosition[0],fighterPosition[2],high];
-                circleArr[i] = 0;
-                remove_node_fun(newPosition);
-                continue;
-            }
-            if(circleArr[i] != 0){ 
-            //移动之后的坐标 = 原点坐标 + 跨度
-                circleArr[i][0] += (fighterPosition[0] - circleArr[i][0]) * dist;
-                circleArr[i][1] += (fighterPosition[2] - circleArr[i][1]) * dist;
-                // console.log("移动之后的坐标+++++++++"+i,circleArr[i][0],circleArr[i][1])
-                newPosition[i] = [circleArr[i][0],circleArr[i][1],high];
-            }
-        }
-        if(mgr_data.name !== "wild" && mgr_data.name !== "fight"){
-            remove_node_fun(newPosition);
-        }
-        for(let n=0;n<circleArr.length;n++){
-            if(circleArr[n] == 0){
-                empty++;
-            }
-            if(empty == circleArr.length){
-                
-                drop_funarr = [];
-                flag = false;
-                return;
-            }
-        }
-        drop_out_effect(propArr,newPosition);
-
-    },
+	
     /**
      * 切换场景时直接移除
      */
     removeProp:()=>{
         if(propArr){
-            remove_node_fun(propArr);
+            remove_nodes_fun(propArr);
         }
     }
 }
@@ -120,7 +56,7 @@ const perform = () => {
     let timer = Date.now();
     frame.setPermanent(()=>{
         let time = Date.now();
-        if(time - timer < 48)
+        if(time - timer < 38 || SMgr.pause)
             return;
         timer = time;
         // let nullObj = 0;
@@ -137,6 +73,7 @@ const perform = () => {
             // }
             if(Date.now()-timer < 10){
                 for(let i =0,leng = cuurShow.length;i<leng;i++){
+                    
                     if(!cuurShow[i]){
                         cuurShow.splice(i,1);
                         i--;
@@ -178,13 +115,20 @@ export const node_fun = () => {
         mgr.create(node_list["drop_out_"+i],"drop_out");
     }
 }
+//remove单个节点
+let remove_node_fun = (num : number) => {
+    mgr.remove(node_list["drop_out_"+num]);
+}
 
-//remove节点
-let remove_node_fun = (arr) => {
+//remove所有节点
+let remove_nodes_fun = (arr) => {
     for(let i = 0;i<arr.length;i++){
         if(arr[i] !== "104"){
             //移除
+            let time1 = Date.now();
             mgr.remove(node_list["drop_out_"+i]);
+            let time2 = Date.now();
+            // console.log("掉落飞行的modify的时间" + i + " + "+  (time2 - time1))
         }
     }
 }
@@ -199,7 +143,11 @@ let drop_out_effect = (arr,msg) => {
             node_list["drop_out_"+i].z = msg[i][2];
             node_list["drop_out_"+i].Gscale = 0.1;
             //更新
-            mgr.modify(node_list["drop_out_"+i]);
+            mgr.setOnlyPos(node_list["drop_out_"+i],[msg[i][0],msg[i][2],msg[i][1]]); //更新模型position
+            if(node_list["drop_out_"+i]._show && node_list["drop_out_"+i]._show.old.children[1].ref){
+                mgr.setDamage(node_list["drop_out_"+i],0.1,1); //更新模型的缩放
+            }
+            // mgr.modify(node_list["drop_out_"+i]);
         }
     }
     
@@ -255,9 +203,10 @@ let Circel = {
 };
 
 export const drop_outFun = (arg,msg,fighter,callback ?) => {
-    let w : any = forelet.getWidget("app_b-wild-wild");
-    
-    if (drop_funarr.length == 0 && w) {
+    // if(!false){
+    //     return;
+    // }    
+    if (drop_funarr.length == 0) {
         // console.log("开始展示掉落效果~~~~~~！在此计算需不需要出现掉落效果")
         if (arg && arg[0]) {
             let award = arg,
@@ -281,7 +230,8 @@ export const drop_outFun = (arg,msg,fighter,callback ?) => {
                 if((sample.id || sample.sid) == 150002) continue;
                 propArr.push(sample);
                 globalSend("goodsTip", {
-                    words: [ sample.id || sample.sid, count ]
+                    words: [ sample.id || sample.sid, count ],
+                    "timeOut":1200
                 });
             }
 
@@ -322,6 +272,81 @@ export const drop_outFun = (arg,msg,fighter,callback ?) => {
 
 export class ShowFunTable {
     /**
+	 * @description 掉落效果
+	 */
+	static fighter_position (msg,index){
+        if(!flag) return;
+        fighterPosition = [];
+        fighterPosition.push(msg.msg[0],msg.msg[1],msg.msg[2]);
+        if(star_position.length == 0){
+            star_position = [fighterPosition[0],fighterPosition[2]];
+        }
+        let empty = 0;
+        newPosition = [];
+        let speed = 0.55;
+        let mark = false;
+        // console.log('fighter的位置++++',fighterPosition)
+        for(let i=0;i<circleArr.length;i++){
+            //控制模型飞到人物的胸口
+            let high = fightStartPosition[3];
+            //两点之间的直线距离
+            let dist =  Math.sqrt(Math.pow((fighterPosition[2] - circleArr[i][1]),2) + Math.pow((fighterPosition[0] - circleArr[i][0]),2));
+            
+            if(star_position.length !== 0 && star_position[0] !== fighterPosition[0] && star_position[1] !== fighterPosition[2]){
+                speed = speed+0.1;
+                // console.log("速度的变化+++++++++",speed)            
+            }
+            //每一步的跨度
+            dist = (speed / dist);
+            // console.log("两点之间的直线距离+++++++++",i,dist)
+            
+            high = high+0.05;
+            if(high >= fightStartPosition[3]){
+                high = fightStartPosition[3];
+            }
+            // console.log('模型的飞行高度++++',high,fightStartPosition[3])
+            if(dist >= 1){
+                newPosition[i] = [fighterPosition[0],fighterPosition[2],high];
+                circleArr[i] = 0;
+                remove_node_fun(i);
+                continue;
+            }
+            if(circleArr[i] != 0){ 
+            //移动之后的坐标 = 原点坐标 + 跨度
+                circleArr[i][0] += (fighterPosition[0] - circleArr[i][0]) * dist;
+                circleArr[i][1] += (fighterPosition[2] - circleArr[i][1]) * dist;
+                // console.log("移动之后的坐标+++++++++"+i,circleArr[i][0],circleArr[i][1],fighterPosition,star_position)
+                newPosition[i] = [circleArr[i][0],circleArr[i][1],high];
+            }
+        }
+
+        if(mgr_data.name !== "wild" && mgr_data.name !== "fight"){
+            remove_nodes_fun(newPosition);
+            delete cuurShow[index]
+        }
+        for(let i=0;i<circleArr.length;i++){
+            if(circleArr[i] != 0){
+                mark = true;
+            }
+        }
+        if(!mark){
+            delete cuurShow[index];
+        }
+        for(let n=0;n<circleArr.length;n++){
+            if(circleArr[n] == 0){
+                empty++;
+            }
+            if(empty == circleArr.length){
+                
+                drop_funarr = [];
+                flag = false;
+                return;
+            } 
+        }
+        drop_out_effect(propArr,newPosition);
+    }
+
+    /**
      * 
      * @param node 
      */
@@ -356,21 +381,32 @@ export class ShowFunTable {
                     let Rand = Math.random();
                     random[index] = 1 + Math.round(Rand * 3); //四舍五入
                 }
+                
                 p = cfg.damage_type[random[index] - 1].damagePZ; //高度
                 x = cfg.damage_type[random[index] - 1].damagePX; //左右偏移量
                 s = cfg.damage_type[random[index] - 1].scale; //缩放
                 o = cfg.damage_type[random[index] - 1].opacity //透明度
                 a = {"value":[254,254]};
-            }else if(arg.node.type == "damageM" || arg.node.type == "critical" || arg.node.type == "stealHP"){ 
-                p = cfg[arg.node.type+"_type"][0].damagePZ //高度
-                x = cfg[arg.node.type+"_type"][0].damagePX //左右偏移量
-                s = cfg[arg.node.type+"_type"][0].scale //缩放
-                o = cfg[arg.node.type+"_type"][0].opacity //透明度
+            }else if(arg.node.type == "damageM"){  //怪物对人物的伤害冒字
+                p = cfg.damageM_type[0].damagePZ //高度
+                x = cfg.damageM_type[0].damagePX //左右偏移量
+                s = cfg.damageM_type[0].scale //缩放
+                o = cfg.damageM_type[0].opacity //透明度
                 a = {"value":[254,254]};
+            }else if(arg.node.type == "critical"){ //暴击的伤害冒字
+                p = cfg.critical_type[0].damagePZ //高度
+                x = cfg.critical_type[0].damagePX //左右偏移量
+                s = cfg.critical_type[0].scale //缩放
+                o = cfg.critical_type[0].opacity //透明度
+                a = {"value":[254,254]};
+            }else if(arg.node.type == "stealHP"){ //其他的伤害冒字
+                p = {"value":[40,5,5,5,0,0,0,10,15,15,15,20,20,20]};
+                s = {"value":[ 0.5, 0.6, 0.7, 0.7, 2, 2, 2, 2, 2, 1.1, 1.05, 0.95, 0.85, 0.75]};
+                a = {"value":[254,254]};
+                o = {"value":[ 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]};
             }else{
-                console.log(1111111111,arg.node.type)
-                p = {"value":[40,5,5,5,0,0,0,0,10,15,15,15,15,20,20,20,20,20,20,20,20]};
-                s = {"value":[ 0.5, 0.6, 0.7, 0.7, 2, 2, 2, 2, 2, 1.1, 1.05, 0.95, 0.85, 0.75,0.75, 0.75,0.75, 0.75,0.75, 0.75,0.75]};
+                p = {"value":[40,5,5,5,0,0,0,10,15,15,15,20,20,20]};
+                s = {"value":[ 0.5, 0.6, 0.7, 0.7, 2, 2, 2, 2, 2, 1.1, 1.05, 0.95, 0.85, 0.75]};
                 a = {"value":[254,254]};
                 o = {"value":[ 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]}
             }
@@ -378,34 +414,29 @@ export class ShowFunTable {
 
         let node = arg.node;
         if (!node.frameIndex) {
-            node.frameIndex = 1;
+            node.frameIndex = 0;
         }
         let frameIndex = node.frameIndex;
-
-        if(x){node.x = node.x + x.value[frameIndex - 1];}
-        node.z = node.z + p.value[frameIndex - 1];
-        node.transp = a.value[frameIndex - 1];
-        node.scale = s.value[frameIndex - 1];
-        if(o) {node.opacity = o.value[frameIndex - 1];}
-        if (frameIndex >= p.value.length) {
-            delete cuurShow[index];
-            delete damageTef[index];
-            delete random[index];
+        // frameIndex = Math.floor(frameIndex * cuurShow[index].delta);
+        if(x){node.x = node.x + x.value[frameIndex];}
+        node.z = node.z + p.value[frameIndex];
+        node.scale = s.value[frameIndex];
+        node.transp = a.value[frameIndex];
+        if(o) {node.opacity = o.value[frameIndex];}
+        // if(frameIndex >= p.value.length-1){
+        //     console.log(111111111111111,frameIndex,p.value.length-1);
+        // }
+        if (frameIndex >= p.value.length-1) {
+            delete cuurShow[index - 0];
+            delete random[index - 0];
             
             mgr.remove(arg.node,node.scene);
-            return ;
+            return
         }
-        // mgr.modify(node);
-        mgr.setDamage(node, node.scale, 0, node.opacity);
-        mgr.setPos(node, [node.x, node.transp, node.z]);
+        mgr.modify(node);
+        // mgr.setDamage(node, node.scale);
+        // mgr.setPos(node, [node.x / 100, node.y / 100, node.z / 100]);
         node.frameIndex++;
-        
-        if(!damageTef[index]){
-            damageTef[index];
-        }
-        // damageTef[index] = setTimeout(()=>{
-        //     UiFunTable.damageCartoon(arg,index);
-        // },35)
         
     }
 
@@ -414,29 +445,31 @@ export class ShowFunTable {
         let headMesh = arg.head,
             fighter,
             target;
+        fighter = typeof(arg.f.fighter) == "number" ? FMgr.scenes.fighters.get(arg.f.fighter) : arg.f.fighter;
+        target = arg.f.curTarget ? FMgr.scenes.fighters.get(arg.f.curTarget) : arg.f.target;
         
-        if (mgr_data.name == "rebel" || mgr_data.name == "gang_fight") {
-            fighter = arg.mapList[arg.f.mapId];
-            target = arg.mapList[arg.f.curTarget];
-        } else {
-            fighter = arg.mapList[arg.f.mapId];
-            target = arg.mapList[arg.f.curTarget];
-        }
         if(target && fighter){
-            if (target.show_type == 1 && (target.hp <= 0 || fighter.hp <= 0)) {
+            if (target.hp <= 0 || fighter.hp <= 0 ) {
                 mgr.remove(headMesh);
                 delete cuurShow[index];
                 return;
             }
         }
 
-        if (!headMesh) {
-            if (fighter && fighter._show && fighter._show.old.ref && target && target._show && target._show.old && target._show.old.ref && target.show_type == 1) {
+        if(arg.f.curTarget == -1 && headMesh ){
+            // console.log(" targethead",headMesh,arg.f);
+            mgr.remove(headMesh);
+            delete cuurShow[index];
+            return;
+        }
+
+        if (!headMesh && target) {
+            if (fighter && fighter._show && fighter._show.old.ref && typeof target != "number" && target._show && target._show.old && target._show.old.ref && target.show_type == 1) {
                 headMesh = {};
                 let width = mgr_data["div"][mgr_data.name]["width"],
                     height = mgr_data["div"][mgr_data.name]["height"];
-                headMesh.x = mgr_data.name == "wild" ? width * 0.2 - 40.5 :  width * 0.2 - 70.5;
-                headMesh.y = mgr_data.name == "wild" ? 10 : height * ((0 - 1) * 193/247) + 93.8866;
+                headMesh.x = mgr_data.name == "wild" ? width * 0.2 - 40.5 :  width * 0.2 - 80.5;
+                headMesh.y = mgr_data.name == "wild" ? 10 : height * ((0 - 1) * 173/266) + 36.9586;
                 headMesh.z = 0;
                 headMesh.scale = mgr_data.name == "wild" ? (mgr_data.scale * (2/3)) : (mgr_data.scale * (2/2.7) + 0.11);
                 headMesh.level = target.level;
@@ -447,44 +480,22 @@ export class ShowFunTable {
                 //     headMesh.time = Util.getDuration(Math.floor((mgr_data.limitTime - now) / 1000));
                 mgr.create(headMesh, "target_head");
                 arg.head = headMesh;
-
             }
             return;
         }
 
-        if (!target) {
-            headMesh.head = "";
-            headMesh.level = 0;
-            headMesh.name = "";
-            headMesh.hp = 0;
-            if (mgr_data.limitTime) {
-                headMesh.time = Util.getDuration(Math.floor((mgr_data.limitTime - now) / 1000));
-            }
-            mgr.modify(headMesh);
-        } else {
+        if(target){
             // headMesh.head = target.head;
             headMesh.level = target.level;
             headMesh.name = target.name;
             headMesh.hp = target.hp > 0 ? parseInt(target.hp) : 0;
             headMesh.max_hpCount = target.max_hpCount;
             let h = Common.numberCarry(parseInt(headMesh.hp), 1000000) + "/" + Common.numberCarry(parseInt(headMesh.max_hpCount), 1000000);
-            // if (mgr_data.limitTime) {
-            //     headMesh.time = Util.getDuration(Math.floor((mgr_data.limitTime - now) / 1000));
-            //     // mgr.setText(headMesh, headMesh.time + "后结束战斗", 9, 0)
-            //     mgr.modify(headMesh);
-            // }
-            // if (headMesh._show.old.children[8].textCon.show !== target.name) {
-            //     headMesh.name = target.name;
-            //     headMesh.level = target.level;
-            //     // mgr.setText(headMesh, headMesh.name, 8);
-            //     // mgr.setText(headMesh, "Lv" + headMesh.level, 7);
-            //     // mgr.setImage(headMesh, headMesh.head, 0);
-            //     mgr.modify(headMesh);
-            // }
             let visible = (headMesh.hp / headMesh.max_hpCount <= 0) ? false : true;
             mgr.setDamage(headMesh, [headMesh.hp / headMesh.max_hpCount, 1, 1], 1)
             mgr.setText(headMesh,h,5);
-
+            // mgr.modify(headMesh);
         }
+        
     }
 }

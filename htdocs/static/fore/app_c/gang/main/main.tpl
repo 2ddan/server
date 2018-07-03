@@ -6,7 +6,7 @@
 	{{let root = _get("pi/ui/root").exports}}
     
     <widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
-        {"text":"门 派","coin":["money","diamond",150005],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"contribute","width":{{root.getWidth()}} } 
+        {"text":"门 派","coin":["money","diamond",150005],"left":33,"top":16,"width":540,"type":"contribute","width":{{root.getWidth()}} } 
     </widget>
     <div class="line_6" style="position: absolute; top: 96px; left:50%;margin-left:-270px;width:540px;z-index: 2;"></div>
     <div style="width:540px;position:absolute;left:50%;top:110px;bottom:83px;margin-left:-270px;">
@@ -46,7 +46,7 @@
                             </widget>
                         </div>
                         <div w-class="52" w-sid="52" style="height: 30px;display: flex;justify-content: start;">
-                            <span w-class="53" w-sid="53" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">成员数</span>
+                            <span w-class="53" w-sid="53" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;width: 60px;">成员数</span>
                             <span w-class="54" w-sid="54" style="height: 30px;line-height: 30px;display: inline-block;font-size: 20px;">{{v.gang_count+"/"+it1.guild_upgrade[v.gang_level].max_person}}</span>
                         </div>
                         {{if !v.is_apply}}
@@ -70,8 +70,8 @@
         </div>
 
         <div style="position:absolute;top:720px;left:25px;width:490px;">
-            <widget on-tap='gotoFindClick' w-class="61" w-tag="app_a-widget-btn-rect" w-sid="61">
-                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"搜索门派","width":116,"height":45} 
+            <widget on-tap='quickJoin' w-class="61" w-tag="app_a-widget-btn-rect" w-sid="61">
+                {"class":"default","fontsize":24,"color":"#fdedd7;","text":"快速加入","width":116,"height":45} 
             </widget>
             <widget on-tap='gotoCreateClick' w-class="62" w-tag="app_a-widget-btn-rect" w-sid="62">
                 {"class":"default","fontsize":24,"color":"#fdedd7;","text":"创建门派","width":116,"height":45} 

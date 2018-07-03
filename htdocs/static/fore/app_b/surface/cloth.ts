@@ -1,14 +1,13 @@
-import * as piSample from "app/mod/sample";
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { updata, get as getDB, listen, checkTypeof } from "app/mod/db";
+import { updata, get as getDB, listen } from "app/mod/db";
 import { listenBack } from "app/mod/db_back";
 
-import { Pi, globalSend, cfg } from "app/mod/pi";
+import { Pi, globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { net_request, net_send, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { attribute_config } from "cfg/c/attribute_config";
 
@@ -22,14 +21,12 @@ import { pet_module } from "cfg/b/pet_module";
 import { pet_upgrade } from "cfg/b/pet_upgrade";
 import { pet_skin } from "cfg/b/pet_skin_show";
 
-import { handScene, updatePet } from "app_b/fight_ol/handscene";
+import { updatePet } from "app_b/fight_ol/handscene";
 import { resetcanvas } from "app/scene/base/scene";
 
-import { forelet as _forelet } from "app_b/role/role";
 import { Music } from "app/mod/music";
-import { mgr } from "app/scene/scene";
 import { config_shortcut } from "cfg/c/config_shortcut";
-import { openUiEffect, effectcallback, destoryUiEffect } from "app/scene/anim/scene";
+import { openUiEffect, effectcallback } from "app/scene/anim/scene";
 
 export const forelet: any = new Forelet();
 let cloth_id = 10001,//人物时装id
@@ -62,7 +59,7 @@ export const globalReceive: any = {
     },
     "gotoSurface": (arg) => {
         let key = (arg == 0) ? "cloth" : "pet";
-        if(!arg){
+        if(!arg || arg === "0"){
             index = 0;
             let skin = getDB("cloth.wear_skin");
             cloth_id = skin ? skin : 1,//时装id        
@@ -77,7 +74,8 @@ export const globalReceive: any = {
             new_star = -1;
             uping = null;
             one_key = "";
-            pet_id = pet_skin[0];//时装id
+            let skin = getDB("pet.wear_skin");
+            pet_id = skin ? skin : 1;//时装id
             updata("player.pet_rotate", 0);
             pet_coin_id = pet_change_coin[Object.keys(pet_change_coin)[0]].award[0][0];
             forelet.paint(getData());
@@ -199,10 +197,17 @@ export class cloth extends Widget {
         if ((!index && cloth_id - 0 === arg) || (index && pet_id - 0 === arg)) {
             return;
         }
-        !index && (cloth_id = arg);
-        index && (pet_id = arg);
+        if(index){
+            pet_id = arg;
+            pose_show = "";
+            clearInterval(pose_show_timer);
+            petShowState();
+        }else{
+            cloth_id = arg;
+        }
         forelet.paint(getData());
     }
+
     //打开一键回收
     gotoRecovery() {
         let data = getCoinCount();
@@ -395,7 +400,7 @@ const changeState = () => {
 //更新宠物动作
 const petShowState = () => {
     let i = 0;
-    let time = getMondule(1);
+    let time = getMondule(pet_id!=1 ? 1 : 0);
     pose_show_timer = setInterval(() => {
         i++;
         if (i / 100 == (time[0] * 5)) {
@@ -566,7 +571,7 @@ let logic: any = {
             let prop: any = Common.changeArrToJson(data.ok);
             updata("pet.wear_skin", prop.wear_skin);
             globalSend("screenTipFun", {
-                words: `脱衣服成功`
+                words: `穿戴成功`
             });
             forelet.paint(getData());
         })

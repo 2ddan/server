@@ -2,7 +2,7 @@
 <div style="position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;">
     {{let t = b?"心法背包":"心法兑换"}}
     <app_b-widget-title-title style="z-index:2;top:0;left:0">
-         {"text":{{t}},"coin":["money","diamond",150002],"top":"7","left":"19","type":"gest" }
+         {"text":{{t}},"coin":["money","diamond",150001],"top":"7","left":"19","type":"gest_coin" }
     </app_b-widget-title-title>
     <div style="width:100%;position:absolute;height:720px;left:50%;top:100px;margin-left:-273px;overflow:hidden;z-index:2">
         <div style="position:absolute;top:3px;left:30px;z-index:3">

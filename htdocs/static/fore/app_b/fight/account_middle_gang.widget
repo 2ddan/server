@@ -1,0 +1,6 @@
+{
+    "tpl":"./account_middle_gang.tpl",
+    "js":"./fight.ts",
+    "forelet":"./fight.ts",
+    "cfg":"./account_middle.cfg"
+}

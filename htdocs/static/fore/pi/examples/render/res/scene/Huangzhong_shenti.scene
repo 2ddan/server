@@ -1,0 +1,235 @@
+
+{
+  "name" : "Huangzhong_shenti",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "animator"  : {
+    "controller" : {
+      "attack" : "6Vx1pU8ruieJ6pNcwj1BGA.ai",
+      "attack02" : "AWtDU6bjgbtdXisac5H1Xm.ai",
+      "die"      : "MpFjb2iUiXtaiqtBx7sjWA.ai",
+      "hit"      : "Kche1Qum4Ey5fpb6t7phzt.ai",
+      "run"      : "ibibooosvAXpZioXM847m.ai",
+      "show"     : "MrwExtT3yStxFTFXy71joX.ai",
+      "skill"    : "XoNYLETckYubvMaavjCJWN.ai",
+      "stand"    : "HerSroqTAoeh5EjVdJdDES.ai",
+      "wait"     : "6gRH5EFCgwtGT2KteivQoN.ai"
+    },
+    "aniBox"     : {
+      "attack" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "attack02" : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "die"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "hit"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "run"      : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "show"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "skill"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "stand"    : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "wait"     : {
+        "center" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "size"   : [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "playAnim"   : {
+      "name" : "wait"
+    }
+  },
+  "children"  : [
+    {
+      "type" : "Skeleton",
+      "res"  : "ET466tWuiYgZdthQKkHnvN.skl"
+    },
+    {
+      "name" : "Juese_Huanggai_Body_001",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "skinnedMeshRender" : {
+        "bones" : [
+          9,
+          12,
+          11,
+          1,
+          2,
+          6,
+          3,
+          4,
+          16,
+          15,
+          7,
+          10,
+          13,
+          17,
+          18,
+          14,
+          5,
+          8,
+          20,
+          19,
+          22,
+          21,
+          23,
+          24
+        ],
+        "bounds" : [
+          [
+            1.00645792484283,
+            0.320417582988739,
+            0.737438857555389
+          ],
+          [
+            -0.919600367546082,
+            -0.525327920913696,
+            -0.736616432666779
+          ]
+        ],
+        "rootbone" : "Bip001 Pelvis",
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "D6rXKaczReu3HNATfsfS1y.png"
+              }
+            }
+          }
+        ],
+        "geometry" : {
+          "type" : "BufferGeometry",
+          "res"  : "Jog1a76sMn9k3qhb6Rcz1m.geo"
+        }
+      }
+    }
+  ]
+}

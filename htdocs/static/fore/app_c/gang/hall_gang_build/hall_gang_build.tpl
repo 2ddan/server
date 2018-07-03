@@ -5,8 +5,11 @@
 
     <div style="position:absolute;left: 26px;top: 0;width:487px;height:322px;font-family: mnjsh;font-size: 22px;overflow: hidden;">
         <img src="../images/gang_build_bg.png" alt="" style="position: absolute;width: 540px;height: 322px;top: 2px;left: 50%;margin-left: -270px;" />
+        {{if it1.gangData.gang_level < 5}}
         <img src="../images/flag_one.png" alt="" style="position: absolute;left: 50%;margin-left: -101px;top: 23px;" />
-
+        {{else}}
+        <img src="../images/flag_two.png" alt="" style="position: absolute;left: 50%;margin-left: -101px;top: 23px;" />
+        {{end}}
         <div style="position: absolute;width: 492px;height: 36px;bottom: 0px;left: 50%;margin-left: -246px;">
             <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:36px;left:50%;margin-left:-246px;">
                 {"bgName":"bg_frame47"} 
@@ -22,15 +25,15 @@
             {{end}}
         </div>
         <app-widget-btn-menu on-tap="openFlag" style="left: 6px;top: 15px;width:80px;height:80px;">
-            {"icon":"pic_common_bag","text":"旗帜属性","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4}
+            {"icon":"gang_flag_icon","text":"旗帜属性","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4}
         </app-widget-btn-menu>
 
         <app-widget-btn-menu on-tap="openBuild" style="left: 6px;top: 95px;width:80px;height:80px;">
-            {"icon":"pic_common_bag","text":"建筑升级","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4,"tip_keys":["gang.build.building"]}
+            {"icon":"build_icon","text":"建筑升级","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4,"tip_keys":["gang.build.building"]}
         </app-widget-btn-menu>
 
         <app-widget-btn-menu on-tap="openSacrifice" style="right: 6px;top: 15px;width:80px;height:80px;">
-            {"icon":"pic_common_bag","text":"祈福","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4}
+            {"icon":"sacrifice_icon","text":"祈福","width":80,"height":80,"top":-8,"bottom":5,"fontSize":18,"space":-6,"position":"absolute","bg":4,"tip_keys":["gang.build.pray"]}
         </app-widget-btn-menu>
     </div>
 
@@ -92,14 +95,14 @@
         {{let collect_info = it1.gangExpandData.collect_info}}
         <div style="position: absolute;width: 430px;height: 23px;top: 274px;left: 50%;margin-left: -215px;display: flex;justify-content: space-evenly;">
             {{let collect = it1.guild_collect[collect_info[0]]}}
-            {{if collect}}
+            {{if collect.count}}
             <app_a-widget-pic_other-pic_other on-tap="funInfo_two">
                 {"icon":"help"}
             </app_a-widget-pic_other-pic_other>
             <div style="top: 150px;height: 23px;line-height: 23px;color: #ffd8a6;font-size: 18px;text-align:center;z-index: 2;font-family: MNJSH;">搜索等级(LV{{collect_info[0]}})</div>
-            {{let p = ((collect_info[1] / collect) * 100).toFixed(0) - 0}}
+            {{let p = ((collect_info[1] / collect.count) * 100).toFixed(0) - 0}}
             <app_a-widget-bar-bar2 style="width: 256px;height: 18px;position: relative;">
-                {"progress":{{p}},"text":{{collect_info[1] + "/" + collect}},"lineHeight":18,"fontSize":14,"split":[]} 
+                {"progress":{{p}},"text":{{collect_info[1] + "/" + collect.count}},"lineHeight":18,"fontSize":14,"split":[]} 
             </app_a-widget-bar-bar2>
             {{else}}
             <div style="position:absolute;width:430px;height:40px;text-align:center;line-height:40px;color:#51e650;top: 50%;margin-top: -20px;left: 50%;margin-left: -120px;font-size: 24px;">采集已升至最高级</div>

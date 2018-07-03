@@ -2,12 +2,16 @@
  * 战斗决策
  */
  // ================================ 导入
+//pi
+import { Vector3 } from "pi/math/vector3";
+//fight
 import { Result, Skill, Fighter, Pos } from "./class"
 import { Scene, FMgr } from "./fight";
 import { Util } from "./util";
 import { Request } from "./request";
 import { EType } from "./analyze";
 import { Fight_formula } from "./common/fight_formula";
+
 
  // ================================ 导出
 export class Policy{
@@ -16,7 +20,7 @@ export class Policy{
      */
     static run(s: Scene):void{
         s.fighters.forEach((v,k)=>{
-            if(v.remove){
+            if(v.remove && s.now >= v.remove){
                 s.addEvents([EType.remove,v.mapId]);
                 s.fighters.delete(v.mapId);
                 return;
@@ -34,6 +38,9 @@ export class Policy{
      */
     static check(scene: Scene){
         //console.log((new Date()).getTime()-scene.singleNow);
+        if(scene.level < 2){
+            return 0;
+        }
         var limitTime = scene.limitTime || Infinity;
         if (scene.fightTime >= limitTime) return 3;
         var left = 0, right = 0;
@@ -42,9 +49,8 @@ export class Policy{
                 left++;
             if ((f.camp === 2 && f.hp > 0) || (f.camp === 0 && f.hp > 0))
                 right++;
-            //移除fighter
-            if (f.hp <= 0 && f.max_hpCount > 0) {
-                f.remove = true;
+            if(!f.remove && f.hp <= 0 && f.max_hpCount > 0) {
+                f.remove = scene.now + 2250;
             }
         });
         if (left > 0 && right > 0)
@@ -72,9 +78,12 @@ export class Policy{
  * @description 执行单个fighter决策
  */
 const single = (f: Fighter,s: Scene): void => {
+    if(s.level < 2){
+        //检查移动状态是否需要重置，解决怪物即将死亡前原地踏步的现象
+        chcekMove(f,s);
+    }
     // 死亡不计算，不受攻击的战斗者（如神器）的最大血量为0
     if (f.hp <= 0 && f.max_hpCount > 0) {
-        
         return ;
     }
     //如果是眩晕状态，不能释放技能,不能移动
@@ -86,7 +95,7 @@ const single = (f: Fighter,s: Scene): void => {
         if (move(f,s)) {
             f.moveto = undefined;
             //每次移动完，接下一段移动
-            linkMovePath(f,s);
+            // linkMovePath(f,s);
         }
         return;
     }
@@ -112,11 +121,11 @@ const single = (f: Fighter,s: Scene): void => {
 /**
  * @description 清除移动状态
  */
-// const clearMoveStatus = (f: Fighter) => {
-//     f.moving = false;
-//     f.path = undefined;
-//     f.moveto = undefined;
-// }
+const clearMoveStatus = (f: Fighter) => {
+    f.path = undefined;
+    f.moveto = undefined;
+    f.moving = 0;
+}
 /**
  * @description 检查fighter是否需要ai，否则就等待手动操作
  *  false:技能计算；移动路径衔接
@@ -140,23 +149,25 @@ const isAi = (f: Fighter, s: Scene) => {
         //使用技能
         us = ():boolean => {
             if(f.curTarget && f.curSkill && caclPath(f,s.fighters.get(f.curTarget),s,f.curSkill.distance)){
-                Request.useSkill({type:EType.useSkill,mapId:f.mapId,skill_id:f.curSkill.id,curTarget:f.curTarget,pos:[f.x,f.y]},s);
+                Request.useSkill({type:EType.useSkill,mapId:f.mapId,skill_id:f.curSkill.id,curTarget:f.curTarget,pos:[f.x,f.y],pk:f.pk},s);
                 return true;
-            }
+            //没有目标则按原路线继续跑动
+            }else if(!f.curTarget)
+                linkMovePath(f,s);
             return false;
         };
     //目标还在,继续移动
     if(!target || target.hp <= 0){
         f.curTarget = undefined;
-        // stopMove(f,s);
     }
-    if(f.moveto || f.passive === true || (f.spreadSkill && s.level >= 2))
+    if(f.passive === true || (f.spreadSkill && s.level >= 2))
         return;
     //到达目标，使用技能（有可能当前目标已经远离之前的位置，做位置修正，朝新的目标点移动）
-    r = us();
-    if(r || f.path){
+    if(f.curTarget && f.curSkill){
+        us();
         return;
     }
+    
     //技能选择
     if(!f.curSkill){
         f.curSkill = Util.selectSkill(f,s);
@@ -172,16 +183,16 @@ const isAi = (f: Fighter, s: Scene) => {
   * @description 非ai运算
   */
 const notAi = (f: Fighter, s: Scene) => {
-    
-}
-/**
- * @description 停止移动
- */
-const stopMove = (f: Fighter,s: Scene) => {
-    delete f.moveto;
-    delete f.path;
-    f.moving = false;
-    Request.move({type:EType.move,mapId:f.mapId,pos:{x:f.x,z:f.y,y:f.z,status:1},old:{x:f.x,y:f.y}},s);
+    let t,mt;
+    if(s.level < 2 && f.moveto && f.moveto.status && f.moveto.curTarget){
+        t = s.fighters.get(f.curTarget);
+        if(t && f.moveto.near && Util.getPPDistance(f,t).d <= f.moveto.near){
+            mt = {x:f.x,y:f.z||0,z:f.y,status:1};
+            checkEventRepeat(s,EType.move,[1,"fighter"]);
+            s.addEvents([EType.move,f.mapId,mt,0]);
+            clearMoveStatus(f);
+        }
+    }
 }
 /**
  * @description 计算路径
@@ -189,18 +200,19 @@ const stopMove = (f: Fighter,s: Scene) => {
  * @returns true: 接近目标; false: 寻找新的路径
  */
 const caclPath = (f: Fighter, t: Fighter, s: Scene, d?: number): boolean => {
-    let lastest:any = {x:t.x,y:t.y},dis = Util.getPPDistance(f,t);
+    let last:any = new Vector3(t.x,0,t.y),dis = Util.getPPDistance(f,t);
     d = d || 0;
-    if(dis.d <= d)
+    if(dis.d <= d){
+        clearMoveStatus(f);
         return true;
-    // stopMove(f,s);
+    }
     //计算最终目标点，在目标周围以九宫格算法找到最合适的点
-    // lastest = Util.getNearPos(d/.5,d,f,t);
-    f.path = Util.getMovePath(s.navMesh,f,lastest,2);
-    lastest = f.path[f.path.length-1];
-    if(d>0 && lastest.x == t.x && lastest.z == t.y)
+    // last = Util.getNearPos(d/.5,d,f,t);
+    f.path = Util.getMovePath(s.navMesh, new Vector3(f.x,0,f.y),last,2);
+    last = f.path[f.path.length-1];
+    if(d>0)
         Util.getFinalPos(f,d);
-    // if(f.sid == 17002){
+    // if(f.sid == 10000){
     //     console.log("path :: ",f.path.length,dis.d);
     // }
     linkMovePath(f,s);
@@ -222,6 +234,9 @@ const handMove = (f: Fighter,s :Scene) => {
         delete f.handMove;
         return false
     }else{
+        if(!f.handMove.time && !f.moveto){
+            linkMovePath(f,s);
+        }
         return true;
     }
 }
@@ -230,17 +245,27 @@ const handMove = (f: Fighter,s :Scene) => {
   * @returns true: 正在移动; false: 到达目标点
   */
 const linkMovePath = (f: Fighter,s: Scene): void => {
+    if(f.path && f.path.length == 0){
+        console.error("the path is error!!");
+        return clearMoveStatus(f);
+    }
     if(!f.moveto && f.path){
         f.moveto = f.path.shift();
-        // if(f.sid == 17002){
-        //     console.log("moveto :: ",f.moveto);
-        // }
         if(f.path.length == 0){
             f.path = undefined;
             f.moveto.status = 1;
+            //发送目标点以及靠近距离，缓解移动过程中进入可放技能范围时，前后台位置不一致
+            if(f.curTarget){
+                f.moveto.curTarget = f.curTarget;
+                if(f.curSkill){
+                    f.moveto.near = f.curSkill.distance;
+                }
+            }
         }
-        
-        Request.move({type:EType.move,mapId:f.mapId,pos:f.moveto,old:{x:f.x,y:f.y}},s);
+        // if(f.sid == 10000){
+        //     console.log("moveto :: ",f.moveto);
+        // }
+        Request.moveto({type:EType.moveto,mapId:f.mapId,pos:f.moveto,old:{x:f.x,y:f.y}},s);
     }
 }
 /**
@@ -253,9 +278,9 @@ const move = (f: Fighter,s: Scene):boolean => {
         if(f.moveto.status){
             if(f.handMove && f.handMove.init)
                 f.handMove.time = s.now + 2000;
-            f.moving = false;
+            f.moving = 0;
         }
-        // if(f.sid == 13000){
+        // if(f.sid == 10000){
         //     console.log("move end");
         // }
         s.addEvents([EType.move,f.mapId,f.moveto,0]);
@@ -274,12 +299,48 @@ const move = (f: Fighter,s: Scene):boolean => {
     }
     f.x += (x - f.x) * dist;
     f.y += (y - f.y) * dist;
+    checkEventRepeat(s,EType.move,[1,"fighter"]);
     s.addEvents([EType.move,f.mapId,f.moveto,1]);
-    f.moving = true;
-    // if(f.sid == 13000){
-    //     console.log("moving");
+    f.moving = s.now;
+    // if(f.sid == 10000){
+    //     console.log("moving",f.moveto);
     // }
     return false;
+}
+/**
+ * @description 检查事件是否重复，重复事件覆盖
+ * @param s 场景
+ * @param type 事件类型，同 EType
+ * @param condition [index,value] index:事件数组的索引，value: 事件数组的值
+ */
+const checkEventRepeat = (s,type,condition) => {
+    for(let i = s.listenEvent.length-1;i>=0;i--){
+        let e = s.listenEvent[i];
+        if(!e){
+            return console.log(`The element is ${e} at ${i} of listenEvent`);
+        }
+        if(e[0] == type && e[condition[0]] == condition[1]){
+            s.listenEvent.splice(i,1);
+            return console.log(`The element is exist same type ${type}`);
+        }
+    }
+}
+/**
+ * @description 检查移动状态是否超过2帧，超时则重置为非移动状态
+ * @param f 
+ * @param s 
+ */
+const chcekMove =  (f: Fighter,s: Scene):void => {
+    const mt = {x:f.x,y:f.z||0,z:f.y,status:1};
+    // if(f.moving && !f.moveto)console.log(f.mapId,s.now - f.moving);
+    if(f.show_hp > 0 && f.actionTime <= s.now && f.moving && (s.now - f.moving)/(1000/FMgr.FPS) >= 3){
+        // console.log("stop moving ~~~~~",f.mapId);
+        // if(f.sid == 10000){
+        //     console.log("stop moving");
+        // }
+        s.addEvents([EType.move,f.mapId,mt,0]);
+        f.moving = 0;
+    }
 }
 /**
  * @description 战斗自动释放技能，没有全局冷却。可以是战斗开始的被动技能，也可以是定时释放的光环技能
@@ -304,9 +365,10 @@ const releaseSkill = (f,type, scene: Scene) => {
     var s = type+"Skill",
         nextTime = type+"NextTime",
         targets = type+"Targets",
-        tl = Util.skillTarget(f,f[s], scene);
+        tl;
     if (f[nextTime] > scene.now)
             return;
+    tl = Util.skillTarget(f,f[s], scene);
     f[s].delaySpreadSkillTime =  scene.now;
     spreadSkill(f, tl, f[s], scene);
     //连招技能
@@ -352,16 +414,16 @@ const spreadSkill = function (f: Fighter, t: Array<Fighter>, s: Skill, scene: Sc
     //继承目标
     t = Util.inheritTargets(f,t,s,scene);
     ts = Util.getMapId(t,scene);
-    if(f.sid == 10000){
-        console.log(t);
-    }
+    // if(f.sid == 10000){
+    //     console.log(t);
+    // }
     scene.addEvents([EType.spreadSkill,f.mapId,ts,s.id]);
     // 根据技能的作用范围和目标类型，修正目标数组
     //圆形范围
     if (s.isRangeSkill === 1)
-        t = Util.rangeTargets(t, s.targetType, s.range, f.camp,scene);
+        t = Util.rangeTargets(t, s.targetType, s.range, f.camp, f,scene);
     //矩形范围
-    else if(s.isRangeSkill === 2 && curTarget){
+    else if(s.isRangeSkill === 2){
         t = Util.polygonTargets(t, s.targetType , s.range, f.camp, f, scene);
     }
     addSkillBuff(f, t, s, 1, scene);
@@ -487,13 +549,6 @@ const addBuff = (fighter, target, skill, buff, s: Scene) => {
             return false
         }
         s.addEvents([EType.addBuff,fighter.mapId,target.mapId,skill.id,buff.id]);
-        // scene.listener && scene.listenEvent.push({
-        //     type: "addBuff",
-        //     fighter: fighter,
-        //     target: target,
-        //     skill: skill,
-        //     buff: buff
-        // });
     }
     buff.startTime = s.now;//buff添加时间
     if (buff.eventType === 1 && buff.timerInterval >= 0) {
@@ -535,17 +590,17 @@ const calcAction = (f, t, s, arg, action, scene: Scene) => {
 };
 // 计算技能的伤害
 const calcDamage = (f, t, s, arg,scene: Scene) => {
-    var probability, damage, hp, steal, critical,isPvp = (t.type == "fighter");
+    var probability, damage, hp, steal, critical,isPvp = (f.type == "fighter" && t.type == "fighter"),pvp = isPvp?"pvp_":"";
     //debugger;
     // 计算防御减免
     Fight_formula.skillCalc("defenceReduceFormula", arg);
     // 计算伤害
-    damage = Fight_formula.skillCalc(isPvp ? "pvp_damageFormula" : "damageFormula", arg) | 0;
+    damage = Fight_formula.skillCalc(`${pvp}damageFormula`, arg) | 0;
     // 计算是否暴击
     probability = Fight_formula.skillCalc("criticalFormula", arg);
     if (Util.checkProbability(probability,scene)) {
         critical = true;
-        damage = Fight_formula.skillCalc(isPvp ? "pvp_criticalDamageFormula" : "criticalDamageFormula", arg) | 0;
+        damage = Fight_formula.skillCalc(`${pvp}criticalDamageFormula`, arg) | 0;
     }
     // console.log("damage:"+damage+",seed:"+scene.seed+",id="+f._id);
     // console.log("s.cdNextTime = "+s.cdNextTime+",now = "+scene.now+",f.publicCDNextTime = "+f.publicCDNextTime+",s.id = " +s.id);
@@ -561,20 +616,13 @@ const calcDamage = (f, t, s, arg,scene: Scene) => {
         damage = Util.useShield(t.shield, damage);
         // 如果是物理伤害，要计算吸血
         if (!t.god)
-            steal = Fight_formula.skillCalc(critical ? (isPvp ? "pvp_criticalStealHPFormula" : "criticalStealHPFormula") : (isPvp ? "pvp_stealHPFormula" : "stealHPFormula"), arg) | 0;
+            steal = Fight_formula.skillCalc(critical ? `${pvp}criticalStealHPFormula` : `${pvp}stealHPFormula`, arg) | 0;
     }
     hp = t.hp;
     if (t.god) {
         //无敌状态 免疫伤害 将伤害至为0 不抛出伤害效果
         damage = 0;
         scene.addEvents([EType.effect,f.mapId,t.mapId,"god",damage]);
-        // scene.listener && scene.listenEvent.push({
-        //     type: "effect",
-        //     fighter: f,
-        //     target: t,
-        //     effect: "god",
-        //     value: damage
-        // });
     } else {
         if (damage) {
             t.hp -= damage;
@@ -583,13 +631,6 @@ const calcDamage = (f, t, s, arg,scene: Scene) => {
         } else {
             //抛吸收
             scene.addEvents([EType.effect,f.mapId,t.mapId,"shield",damage]);
-            // scene.listener && scene.listenEvent.push({
-            //     type: "effect",
-            //     fighter: f,
-            //     target: t,
-            //     effect: "shield",
-            //     value: damage
-            // });
         }
     }
     hp = t.hp - hp;
@@ -675,15 +716,7 @@ const excitationBuff = (f, t, b, scene: Scene) => {
             e.addValue += r;
             t[e.type] += r;
         }
-        scene.addEvents([EType.effect,f.mapId,t.mapId,scene.fighters.get(b.F).sid,e.type,r]);
-        // scene.listener && scene.listenEvent.push({
-        //     type: "effect",
-        //     fighter: f,
-        //     target: t,
-        //     proto: scene.mapList[b.F].sid,
-        //     effect: e.type,
-        //     value: r
-        // });
+        scene.addEvents([EType.effect,f.mapId,t.mapId,e.type,r]);
     }
 };
 // 清除buff

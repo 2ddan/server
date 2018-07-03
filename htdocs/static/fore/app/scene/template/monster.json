@@ -1,7 +1,7 @@
-{{let monster = _get("app/scene/art_cfg/monster").exports.default}}
+{{let monster = _get("app/scene/art_cfg/monster").exports["default"]}}
 {{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
 {{let module_cfg = _get("app/scene/plan_cfg/monster_config").exports.monster_cfg}}
-{{let weapon = _get("app/scene/art_cfg/weapon").exports.default}}
+{{let weapon = _get("app/scene/art_cfg/weapon").exports["default"]}}
 {{let m2d = _get("app/scene/plan_cfg/config_m2d").exports.config_m2d}}
 {{let _m = module_cfg[it.module]}}
 {{let module_name = _m.name}}
@@ -9,11 +9,12 @@
 {{let anim = it.state || "standby"}}
 {{let playAnim = it.playAnim || {"name":_m[anim]} }}
 {{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
-{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let effect = _get("app/scene/art_cfg/effect").exports["default"]}}
 {{let mgr = _get("app/scene/scene").exports.mgr}}
 
-{{if weapond}}
 {{let weapons = [{},{},{}]}}
+{{if weapond}}
+
 {{for k, v of weapond}}
 {{: weapons[k] = {"type":"prefab","tpl":"weapon","res":weapon[v[0]].res,"bindBone":v[1]} }}
 {{end}}
@@ -27,6 +28,44 @@
 {{let scale = it.scale || _m.scale || 1}}
 {{let boold_visible = it.hidden?false:it.boold_visible}}
 {{: boold_visible = boold_visible === false?false:true}}
+
+{{let uis = null}}
+{{let image = (it.camp === 1)?"role_blood":"boss_blood"}}
+{{let p = it.show_hp/it.max_hpCount}}
+{{let v = false}}
+{{if boold_visible && it.show_hp>0}}
+{{: v = true}}
+{{else}}
+{{: v = false}}
+{{end}}
+
+{{let blood = null}}
+{{if scenename !== "city" && scenename !=="gang"}}
+{{: blood = {
+    "type" : "prefab",
+    "tpl":"skill_image",
+    "width": 60,
+    "height": 6,
+    "position": [3,m2d.blood,0],
+    "image": "images/blood_bg.jpg",
+    "horizontalAlign":"center",
+    "verticalAlign":"bottom",
+    "visible":v,
+    "children":[{
+        "type" : "prefab",
+        "tpl":"skill_image",
+        "width":57.2,
+        "height":4,
+        "visible":v,
+        "image":"images/"+image+".jpg",
+        "position":[28.5,5,1],
+        "horizontalAlign":"left",
+        "scale":[it.show_hp>0?p:1,1,1]
+    }]
+} }}
+{{end}}
+
+
 {
     "type":"Node",
     "name":"{{it.module}}",
@@ -49,28 +88,25 @@
             "bones":{{monster[module_name].bones}},
             "bounds":{{monster[module_name].bounds}},
             "rotate":{{it.rotate || [0,0,0]}},
-            "rayID":{{if scenename == "rebel" || scenename == "team_fight" || scenename =="gang_fight" || scenename == "fight" || scenename == "wild"}}{{it.mapId}}{{else}}{{it.sid || it.id || 0}}{{end}},
+            "rayID":{{scenename == "rebel" || scenename == "team_fight" || scenename =="gang_fight" || scenename == "fight" || scenename == "wild" ? it.mapId : it.sid || it.id || 0}},
             "controller":{{monster.ainMod[monster[module_name].aniControl]}},
-            {{if it.lookat}}
-            "lookatOnce":{
-                "value":[{{it.lookat.value[0]-it.x}},{{(it.lookat.value[2] || 0)-(it.z || 0)}},{{it.lookat.value[1]-it.y}}],
-                "sign":{{it.lookat.sign || 0}}
-            },
-            {{end}}
+            "lookatOnce":{{it.lookat?{
+                "value":[it.lookat.value[0]-it.x,(it.lookat.value[2] || 0)-(it.z || 0),it.lookat.value[1]-it.y],
+                "sign":it.lookat.sign || 0
+            }:null}},
             "filtercolor": {{it.filtercolor ? [["gray"]] : null}},
             "sternum" : {"type":"node","transform":{
                 "position":[0,0,0],
                 "scale":[1,1,1],
                 "rotate":[0,0,0]
-            },"bindBone":"Bip001 Spine1","children":[null]}
-            {{if weapond}},
-            "weapon":{{weapons}}
-            {{end}}
-        }{{if (scenename !=="uiscene" &&　scenename !=="loginscene" && scenename != "normal_ui_scene")}},
+            },"bindBone":"Bip001","children":[null]},
+            "weapon":{{weapond ? weapons : null}}
+        },
+        {{scenename !=="uiscene" && scenename !=="loginscene" && scenename != "normal_ui_scene" ? 
         {
             "type":"node",
             "transform":{
-                "position":[0,{{scale*_m.high}},0],
+                "position":[0,scale*_m.high,0],
                 "scale":[1,1,1],
                 "rotate":[0,0,0]
             },
@@ -80,80 +116,38 @@
                     "tpl": "2dtext",
                     "horizontalAlign": "center",
                     "verticalAlign": "center",
-                    "visible":{{it.n_visible !== undefined ? it.n_visible : true }},
-                    "textcfg": {{it.passive ? textcfg["fight_noactive_enemy"] : textcfg["fight_active_enemy"]}},
-                    "show": "{{it.name}}",
-                    "position": [3, {{m2d.name}}, 0]
+                    "visible":it.n_visible !== undefined ? it.n_visible : true ,
+                    "textcfg": it.passive ? textcfg["fight_noactive_enemy"] : textcfg["fight_active_enemy"],
+                    "show": it.name,
+                    "position": [3, m2d.name, 0]
                 }
                 ,
-                {{if it.show_type === 3}}
-                {
-                    "type" : "prefab",
-                    "tpl":"skill_image",
-                    "width": 128,
-                    "height": 64,
-                    "position": [3,{{m2d.jingying}},0],
-                    "image": "{{"images/fighter_show_"+it.show_type+".png"}}",
-                    "horizontalAlign":"center",
-                    "verticalAlign":"bottom"
-                }
-                {{else}}
-                null
-                {{end}}
-
-                {{if scenename !== "city" && scenename !=="gang"}},
-                {{let image = (it.camp === 1)?"role_blood":"boss_blood"}}
-                {{let p = it.show_hp/it.max_hpCount}}
-                {{let v = false}}
-                {{if boold_visible && it.show_hp>0}}
-                {{: v = true}}
-                {{else}}
-                {{: v = false}}
-                {{end}}
-                {
-                    "type" : "prefab",
-                    "tpl":"skill_image",
-                    "width": 60,
-                    "height": 6,
-                    "position": [3,{{m2d.blood}},0],
-                    "image": "images/blood_bg.jpg",
-                    "horizontalAlign":"center",
-                    "verticalAlign":"bottom",
-                    "visible":{{v}},
-                    "children":[{
-                        "type" : "prefab",
-                        "tpl":"skill_image",
-                        "width":57.2,
-                        "height":4,
-                        "image":"images/{{image}}.jpg",
-                        "position":[28.5,5,1],
-                        "horizontalAlign":"left",
-                        "scale":[{{it.show_hp>0?p:1}},1,1]
-                    }]
-                }
-                {{end}}
+                blood
+                
             ]
         }
-        {{end}}{{if it.iscurr}},
+        : null}},
+        {{it.iscurr ?
         {
             "type":"prefab",
             "tpl":"eff_selected01",
-            "rayID":{{it.rayID || 0}},
+            "rayID":it.rayID || 0,
             "playAnim":{
-                "isOnce":{{it.isOnce || false}},
-                "name":"{{effect["eff_selected01"][0]}}",
-                "id":{{it.id || 0}}
+                "isOnce":it.isOnce || false,
+                "name":effect["eff_selected01"][0],
+                "id":it.id || 0
             }
-        }{{else}},null{{end}}
-        {{if scenename !=="loginscene"}},
+        }
+        : null}},
+        {{scenename !=="loginscene" ?
         {
             "type":"prefab",
             "tpl":"yingzi",
             "res":["DfrHPKoi1F3as85e1t6QgL.geo","255a3HGzcN6nD5L4xxpVLU.png"],
-            "position":{{it.position || [0,0,0]}}
+            "position":it.position || [0,0,0]
         }
-        {{end}}
-        {{if scene_eff}},
+        : null}},
+        {{scene_eff ? 
         {
             "type":"node",
             "transform":{
@@ -162,9 +156,11 @@
                 "rotate":[0,0,0]
             },
             "children":[
-                {{scene_eff}}
+                scene_eff
             ]
-        },
+        }
+        : null}},
+        {{scene_eff ? 
         {
             "type":"node",
             "transform":{
@@ -173,9 +169,9 @@
                 "rotate":[0,0,0]
             },
             "children":[
-                {{scene_eff}}
+                scene_eff
             ]
         }
-        {{end}}
+        : null}}
     ]
 }

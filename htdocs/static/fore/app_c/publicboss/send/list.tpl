@@ -27,7 +27,6 @@
 
         <widget w-class="10" w-tag="app_a-widget-pic_text-pic_text" w-sid="10">{"icon":"cover_title","width":187,"height":33,"align":"center","marginLeft":3,"text":"分配奖励","textCfg":"gangCoverTitle","space":0,"fontSize":21,"top":4,"left":0} 
         </widget>
-        
         <div style="position: absolute;width: 450px;height: 75%;left: 0px;top: 30px;color: rgb(255, 255, 255);overflow: hidden;">
             <widget w-tag="app_a-widget-line-line" style="position: absolute;top: 1px;z-index: 1;width: 104%;">
                 {"line":"line_13"} 
@@ -48,10 +47,10 @@
                         {{if _award[3] == n}}
                             {{: kill_gang_name = checkTypeof(list_info[k].gang_name,"Array") ? Common.fromCharCode(list_info[k].gang_name) : list_info[k].gang_name}}
                         {{end}}
+                        {{if k - 0 == n && n != _award[3]}}
                         
-                        {{if k == n && n != _award[3]}}
                             {{: _index = _index + 1}}
-                            {{let info = list_info[k]}}
+                            {{let info = list_info[k - 0]}}
                             <div style="width:100%;height:123px;position:relative;">
                                 {{let imgX= Pi.pictures['playerhead'+info.career_id]}}
                                 {{let name = checkTypeof(info.name,"Array") ? Common.fromCharCode(info.name) : info.name}}
@@ -63,7 +62,7 @@
                                 <span style="font-family:mnjsh;font-size:22px;color:#fde7ca;position:absolute;left: 135px;top: 25px;">{{"S"+info.area+" "+name}}</span>
                                 
                                 <span style="width:auto;height:24px;position:absolute;left:126px;top:64px;">
-                                    {{if _award[5].indexOf(k) > -1}}
+                                    {{if _award[5].indexOf(k - 0) > -1}}
                                         <app_a-widget-pic_text-pic_text style="position:relative;color: #fff;font-family:mnjsh;width: 67px;height: 24px;display:inline-block;margin-right: 8px;">
                                             {"icon":"want_bg","width":67,"height":24,"align":"center","marginLeft":3,"text":"想 要","textCfg":"","space":2,"fontSize":22,"top":0,"left":0} 
                                         </app_a-widget-pic_text-pic_text>
@@ -77,7 +76,7 @@
                                 <app_a-widget-btn-rect style="position:absolute;right: 20px;top: 35px;" on-tap='sendAward("{{_award[0]}},2,{{n}}")'>
                                     {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"赠  送","width":116,"height":45,"marginLeft":0} 
                                 </app_a-widget-btn-rect>
-                                {{elseif _award[6] == k}}
+                                {{elseif _award[6] == k - 0}}
                                 <span style="width:100px;height:20px;right:20px;text-align:center;">已赠送</span>
                                 {{end}}
 

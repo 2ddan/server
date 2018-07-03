@@ -1,0 +1,2 @@
+- 这是父组件自定义事件重绘的示例
+- father页面点击child,执行father组件的自定义事件，此自定义事件重新绑定了响应函数并通过this.paint()重绘，可以看到两次点击分别弹出【i am click1 from father】和【i am click2 from father】

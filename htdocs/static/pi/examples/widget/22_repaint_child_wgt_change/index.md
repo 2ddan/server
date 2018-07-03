@@ -1,0 +1,2 @@
+- 这是动态移除和添加dom的示例
+- father组件设置初始显示child2组件，并通过定时器将要显示的组件改为child3，然后通过this.paint()重绘，可以看到页面首先展示child1和child2，一段时间后child2移除，child3添加进来

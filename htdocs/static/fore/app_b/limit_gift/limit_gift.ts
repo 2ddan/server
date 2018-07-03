@@ -11,7 +11,6 @@ import { listenBack } from "app/mod/db_back";
 import { Util } from "app/mod/util";
 //配置表
 import { time_limit_gift } from "cfg/c/time_limit_gift";
-import { currency } from "cfg/c/recharge_diamond";
 import { pay } from "app_b/recharge/pay"
 
 export const forelet = new Forelet();
@@ -94,8 +93,8 @@ const hasLimitGift = function (data) {
  * 礼包充值
  */
 const recharge = function () {
-    let id = time_limit_gift[gift_data.limit_gift_record[0]].rechargeID;
-    pay(id,id,1);
+    let id = time_limit_gift[gift_data.limit_gift_record[0]].prop_id;
+    pay(id, "limit_gift", 1);
 };
 
 /**

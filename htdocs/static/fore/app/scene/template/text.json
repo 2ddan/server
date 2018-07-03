@@ -10,4 +10,4 @@
     "horizontalAlign":"{{it.horizontalAlign ? it.horizontalAlign : 'center'}}",
     "verticalAlign":"{{it.verticalAlign || 'center'}}",
     "visible":{{it.visible !== undefined ? it.visible : true }}
-} 
+}  

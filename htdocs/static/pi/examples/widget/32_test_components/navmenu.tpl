@@ -1,0 +1,31 @@
+<div style="height: 500px; padding: 10px; background-color: white;">
+	<components-navmenu-navmenu>
+		{
+			mod:"vertical",				
+			arr:[
+				{index:"1",title:"选项111111",isActivated:true}, 
+				{index:"2",title:"选项222222"}, 
+				{
+					index:"3",
+					submenu:true,
+					subtitle:"选项33333",					
+					arr:[
+						{index:"3-1",title:"选项3-1"}, 
+						{index:"3-2",title:"选项3-2"}, 
+						{index:"3-2",title:"选项3-2",isdisabled:true}, 
+						{
+							index:"3-3",
+							submenu:true,
+							subtitle:"选项3-3",							
+							arr:[
+								{index:"3-3-1",title:"选项3-3-1"},
+								{index:"3-3-2",title:"选项3-3-2"}
+							]
+						}
+					]
+				},
+				{index:"4",title:"选项444444"}
+			]
+		}
+	</components-navmenu-navmenu>
+</div>

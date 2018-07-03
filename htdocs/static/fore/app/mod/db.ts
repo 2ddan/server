@@ -6,7 +6,7 @@
  * @namespace
  * @description 游戏前台数据库
  */
-import { set as task, getTask, clear,getPrioritySize } from "pi/util/task_mgr";
+import { set as task, clear } from "pi/util/task_mgr";
 import { getGlobal } from "pi/widget/frame_mgr"
     let //数据库表
 		table = {},
@@ -181,6 +181,7 @@ import { getGlobal } from "pi/widget/frame_mgr"
 								taskCount--;
 								//抛出监听列表跑完的事件
 								if(taskCount == 0){
+									all = 0;
 									_notify("listenerOver");
 								}
 								let time = Date.now();
@@ -190,10 +191,9 @@ import { getGlobal } from "pi/widget/frame_mgr"
 									console && console.error("db listen function hang up : ",a,e);
 								}
 								let time1 = Date.now();
-								if(time1 - time > 4){
+								if(time1 - time > 1){
 									console.log("slow db listen function : "+(time1 - time),a);
 								}
-								
 							};
 						})(waitPaths.func[j]);
 						taskCount ++;
@@ -314,22 +314,6 @@ export const insert = (key,table) => {
 			listenTable[_arr[k]+subDiff].push(callback);
 		}
 		////console.log(listen);
-	};
-	/**
-	 * @description 清空已经丢进任务池子，还未执行的任务
-	 */
-	export const clearTask = () => {
-		let tp = getTask();
-
-		waitPaths.func = [];
-		waitPaths.path = [];
-		pushTimer = null;
-		all= 0;
-		taskCount = 0;
-		//清除任务池
-		tp.asyncZero.head = undefined;
-		tp.asyncZero.tail = undefined;
-		tp.asyncZero.size = 0;
 	};
 
 	//获取本地数据库

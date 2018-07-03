@@ -1,0 +1,1503 @@
+export const treasury_act = {
+    1:{
+        "exp":6000,
+        "money":4000,
+        "equip_count":0,
+        "high_box_count":0
+    },2:{
+        "exp":6200,
+        "money":4300,
+        "equip_count":0,
+        "high_box_count":0
+    },3:{
+        "exp":6400,
+        "money":4600,
+        "equip_count":0,
+        "high_box_count":0
+    },4:{
+        "exp":6600,
+        "money":4900,
+        "equip_count":0,
+        "high_box_count":0
+    },5:{
+        "exp":6800,
+        "money":5200,
+        "equip_count":0,
+        "high_box_count":0
+    },6:{
+        "exp":7000,
+        "money":5500,
+        "equip_count":0,
+        "high_box_count":0
+    },7:{
+        "exp":7200,
+        "money":5800,
+        "equip_count":0,
+        "high_box_count":0
+    },8:{
+        "exp":7400,
+        "money":6100,
+        "equip_count":0,
+        "high_box_count":0
+    },9:{
+        "exp":7600,
+        "money":6400,
+        "equip_count":0,
+        "high_box_count":0
+    },10:{
+        "exp":7800,
+        "money":6700,
+        "equip_count":0,
+        "high_box_count":0
+    },11:{
+        "exp":8000,
+        "money":7000,
+        "equip_count":0,
+        "high_box_count":0
+    },12:{
+        "exp":8200,
+        "money":7300,
+        "equip_count":0,
+        "high_box_count":0
+    },13:{
+        "exp":8400,
+        "money":7600,
+        "equip_count":0,
+        "high_box_count":0
+    },14:{
+        "exp":8600,
+        "money":7900,
+        "equip_count":0,
+        "high_box_count":0
+    },15:{
+        "exp":8800,
+        "money":8200,
+        "equip_count":0,
+        "high_box_count":0
+    },16:{
+        "exp":9000,
+        "money":8500,
+        "equip_count":0,
+        "high_box_count":0
+    },17:{
+        "exp":9200,
+        "money":8800,
+        "equip_count":0,
+        "high_box_count":0
+    },18:{
+        "exp":9400,
+        "money":9100,
+        "equip_count":0,
+        "high_box_count":0
+    },19:{
+        "exp":9600,
+        "money":9400,
+        "equip_count":0,
+        "high_box_count":0
+    },20:{
+        "exp":10800,
+        "money":10000,
+        "equip_count":0,
+        "high_box_count":0
+    },21:{
+        "exp":11160,
+        "money":10100,
+        "equip_count":0,
+        "high_box_count":0
+    },22:{
+        "exp":11520,
+        "money":10200,
+        "equip_count":0,
+        "high_box_count":0
+    },23:{
+        "exp":11880,
+        "money":10300,
+        "equip_count":0,
+        "high_box_count":0
+    },24:{
+        "exp":12240,
+        "money":10400,
+        "equip_count":0,
+        "high_box_count":0
+    },25:{
+        "exp":12600,
+        "money":10500,
+        "equip_count":0,
+        "high_box_count":0
+    },26:{
+        "exp":13080,
+        "money":10600,
+        "equip_count":0,
+        "high_box_count":0
+    },27:{
+        "exp":13560,
+        "money":10700,
+        "equip_count":0,
+        "high_box_count":0
+    },28:{
+        "exp":14040,
+        "money":10800,
+        "equip_count":0,
+        "high_box_count":0
+    },29:{
+        "exp":14520,
+        "money":10900,
+        "equip_count":0,
+        "high_box_count":0
+    },30:{
+        "exp":15000,
+        "money":11020,
+        "equip_count":0,
+        "high_box_count":0
+    },31:{
+        "exp":15840,
+        "money":11060,
+        "equip_count":0,
+        "high_box_count":0
+    },32:{
+        "exp":16680,
+        "money":11100,
+        "equip_count":0,
+        "high_box_count":0
+    },33:{
+        "exp":17520,
+        "money":11140,
+        "equip_count":0,
+        "high_box_count":0
+    },34:{
+        "exp":18360,
+        "money":11180,
+        "equip_count":0,
+        "high_box_count":0
+    },35:{
+        "exp":19200,
+        "money":11230,
+        "equip_count":0,
+        "high_box_count":0
+    },36:{
+        "exp":20280,
+        "money":11290,
+        "equip_count":0,
+        "high_box_count":0
+    },37:{
+        "exp":21360,
+        "money":11350,
+        "equip_count":0,
+        "high_box_count":0
+    },38:{
+        "exp":22440,
+        "money":11410,
+        "equip_count":0,
+        "high_box_count":0
+    },39:{
+        "exp":23520,
+        "money":11470,
+        "equip_count":0,
+        "high_box_count":0
+    },40:{
+        "exp":24600,
+        "money":11540,
+        "equip_count":0,
+        "high_box_count":0
+    },41:{
+        "exp":25900,
+        "money":11620,
+        "equip_count":0,
+        "high_box_count":0
+    },42:{
+        "exp":27200,
+        "money":11700,
+        "equip_count":0,
+        "high_box_count":0
+    },43:{
+        "exp":28500,
+        "money":11780,
+        "equip_count":0,
+        "high_box_count":0
+    },44:{
+        "exp":29800,
+        "money":11860,
+        "equip_count":0,
+        "high_box_count":0
+    },45:{
+        "exp":31100,
+        "money":11900,
+        "equip_count":0,
+        "high_box_count":0
+    },46:{
+        "exp":32400,
+        "money":11950,
+        "equip_count":0,
+        "high_box_count":0
+    },47:{
+        "exp":34080,
+        "money":12050,
+        "equip_count":0,
+        "high_box_count":0
+    },48:{
+        "exp":35760,
+        "money":12150,
+        "equip_count":0,
+        "high_box_count":0
+    },49:{
+        "exp":37440,
+        "money":12250,
+        "equip_count":0,
+        "high_box_count":0
+    },50:{
+        "exp":39120,
+        "money":12350,
+        "equip_count":0,
+        "high_box_count":0
+    },51:{
+        "exp":40805,
+        "money":12400,
+        "equip_count":0,
+        "high_box_count":0
+    },52:{
+        "exp":42525,
+        "money":12460,
+        "equip_count":0,
+        "high_box_count":0
+    },53:{
+        "exp":44145,
+        "money":12580,
+        "equip_count":0,
+        "high_box_count":0
+    },54:{
+        "exp":45765,
+        "money":12640,
+        "equip_count":0,
+        "high_box_count":0
+    },55:{
+        "exp":47385,
+        "money":12700,
+        "equip_count":0,
+        "high_box_count":0
+    },56:{
+        "exp":49005,
+        "money":12820,
+        "equip_count":0,
+        "high_box_count":0
+    },57:{
+        "exp":50625,
+        "money":12940,
+        "equip_count":0,
+        "high_box_count":0
+    },58:{
+        "exp":52245,
+        "money":13000,
+        "equip_count":0,
+        "high_box_count":0
+    },59:{
+        "exp":53865,
+        "money":13070,
+        "equip_count":0,
+        "high_box_count":0
+    },60:{
+        "exp":55885,
+        "money":13210,
+        "equip_count":0,
+        "high_box_count":0
+    },61:{
+        "exp":57905,
+        "money":13280,
+        "equip_count":0,
+        "high_box_count":0
+    },62:{
+        "exp":59925,
+        "money":13420,
+        "equip_count":0,
+        "high_box_count":0
+    },63:{
+        "exp":61945,
+        "money":13560,
+        "equip_count":0,
+        "high_box_count":0
+    },64:{
+        "exp":63965,
+        "money":13630,
+        "equip_count":0,
+        "high_box_count":0
+    },65:{
+        "exp":65985,
+        "money":13700,
+        "equip_count":0,
+        "high_box_count":0
+    },66:{
+        "exp":68040,
+        "money":13780,
+        "equip_count":0,
+        "high_box_count":0
+    },67:{
+        "exp":70140,
+        "money":13940,
+        "equip_count":0,
+        "high_box_count":0
+    },68:{
+        "exp":72260,
+        "money":14020,
+        "equip_count":0,
+        "high_box_count":0
+    },69:{
+        "exp":74360,
+        "money":14180,
+        "equip_count":0,
+        "high_box_count":0
+    },70:{
+        "exp":76485,
+        "money":14260,
+        "equip_count":0,
+        "high_box_count":0
+    },71:{
+        "exp":78610,
+        "money":14340,
+        "equip_count":0,
+        "high_box_count":0
+    },72:{
+        "exp":80735,
+        "money":14420,
+        "equip_count":0,
+        "high_box_count":0
+    },73:{
+        "exp":82860,
+        "money":14500,
+        "equip_count":0,
+        "high_box_count":0
+    },74:{
+        "exp":85050,
+        "money":14590,
+        "equip_count":0,
+        "high_box_count":0
+    },75:{
+        "exp":87350,
+        "money":14770,
+        "equip_count":0,
+        "high_box_count":0
+    },76:{
+        "exp":89650,
+        "money":14860,
+        "equip_count":0,
+        "high_box_count":0
+    },77:{
+        "exp":91980,
+        "money":15040,
+        "equip_count":0,
+        "high_box_count":0
+    },78:{
+        "exp":94320,
+        "money":15130,
+        "equip_count":0,
+        "high_box_count":0
+    },79:{
+        "exp":96660,
+        "money":15220,
+        "equip_count":0,
+        "high_box_count":0
+    },80:{
+        "exp":99000,
+        "money":15310,
+        "equip_count":0,
+        "high_box_count":0
+    },81:{
+        "exp":101340,
+        "money":15400,
+        "equip_count":0,
+        "high_box_count":0
+    },82:{
+        "exp":103800,
+        "money":15500,
+        "equip_count":0,
+        "high_box_count":0
+    },83:{
+        "exp":106430,
+        "money":15700,
+        "equip_count":0,
+        "high_box_count":0
+    },84:{
+        "exp":109070,
+        "money":15800,
+        "equip_count":0,
+        "high_box_count":0
+    },85:{
+        "exp":111710,
+        "money":15900,
+        "equip_count":0,
+        "high_box_count":0
+    },86:{
+        "exp":114350,
+        "money":16000,
+        "equip_count":0,
+        "high_box_count":0
+    },87:{
+        "exp":116990,
+        "money":16100,
+        "equip_count":0,
+        "high_box_count":0
+    },88:{
+        "exp":119630,
+        "money":16200,
+        "equip_count":0,
+        "high_box_count":0
+    },89:{
+        "exp":122270,
+        "money":16300,
+        "equip_count":0,
+        "high_box_count":0
+    },90:{
+        "exp":124910,
+        "money":16400,
+        "equip_count":0,
+        "high_box_count":0
+    },91:{
+        "exp":127575,
+        "money":16510,
+        "equip_count":0,
+        "high_box_count":0
+    },92:{
+        "exp":130405,
+        "money":16730,
+        "equip_count":0,
+        "high_box_count":0
+    },93:{
+        "exp":133235,
+        "money":16840,
+        "equip_count":0,
+        "high_box_count":0
+    },94:{
+        "exp":136065,
+        "money":16950,
+        "equip_count":0,
+        "high_box_count":0
+    },95:{
+        "exp":138895,
+        "money":17060,
+        "equip_count":0,
+        "high_box_count":0
+    },96:{
+        "exp":141725,
+        "money":17170,
+        "equip_count":0,
+        "high_box_count":0
+    },97:{
+        "exp":144555,
+        "money":17280,
+        "equip_count":0,
+        "high_box_count":0
+    },98:{
+        "exp":147385,
+        "money":17390,
+        "equip_count":0,
+        "high_box_count":0
+    },99:{
+        "exp":150215,
+        "money":17500,
+        "equip_count":0,
+        "high_box_count":0
+    },100:{
+        "exp":153090,
+        "money":17620,
+        "equip_count":0,
+        "high_box_count":0
+    },101:{
+        "exp":155920,
+        "money":17740,
+        "equip_count":0,
+        "high_box_count":0
+    },102:{
+        "exp":158750,
+        "money":17860,
+        "equip_count":0,
+        "high_box_count":0
+    },103:{
+        "exp":161580,
+        "money":17980,
+        "equip_count":0,
+        "high_box_count":0
+    },104:{
+        "exp":164410,
+        "money":18100,
+        "equip_count":0,
+        "high_box_count":0
+    },105:{
+        "exp":167240,
+        "money":18220,
+        "equip_count":0,
+        "high_box_count":0
+    },106:{
+        "exp":170070,
+        "money":18340,
+        "equip_count":0,
+        "high_box_count":0
+    },107:{
+        "exp":172900,
+        "money":18460,
+        "equip_count":0,
+        "high_box_count":0
+    },108:{
+        "exp":175730,
+        "money":18580,
+        "equip_count":0,
+        "high_box_count":0
+    },109:{
+        "exp":178560,
+        "money":18700,
+        "equip_count":0,
+        "high_box_count":0
+    },110:{
+        "exp":181440,
+        "money":18830,
+        "equip_count":0,
+        "high_box_count":0
+    },111:{
+        "exp":184550,
+        "money":18960,
+        "equip_count":0,
+        "high_box_count":0
+    },112:{
+        "exp":187660,
+        "money":19090,
+        "equip_count":0,
+        "high_box_count":0
+    },113:{
+        "exp":190770,
+        "money":19220,
+        "equip_count":0,
+        "high_box_count":0
+    },114:{
+        "exp":193880,
+        "money":19350,
+        "equip_count":0,
+        "high_box_count":0
+    },115:{
+        "exp":196990,
+        "money":19480,
+        "equip_count":0,
+        "high_box_count":0
+    },116:{
+        "exp":200100,
+        "money":19610,
+        "equip_count":0,
+        "high_box_count":0
+    },117:{
+        "exp":203210,
+        "money":19740,
+        "equip_count":0,
+        "high_box_count":0
+    },118:{
+        "exp":206320,
+        "money":19870,
+        "equip_count":0,
+        "high_box_count":0
+    },119:{
+        "exp":209430,
+        "money":20000,
+        "equip_count":0,
+        "high_box_count":0
+    },120:{
+        "exp":212625,
+        "money":20140,
+        "equip_count":0,
+        "high_box_count":0
+    },121:{
+        "exp":218525,
+        "money":20280,
+        "equip_count":0,
+        "high_box_count":0
+    },122:{
+        "exp":224425,
+        "money":20420,
+        "equip_count":0,
+        "high_box_count":0
+    },123:{
+        "exp":227541,
+        "money":20518,
+        "equip_count":0,
+        "high_box_count":0
+    },124:{
+        "exp":230325,
+        "money":20560,
+        "equip_count":0,
+        "high_box_count":0
+    },125:{
+        "exp":236225,
+        "money":20700,
+        "equip_count":0,
+        "high_box_count":0
+    },126:{
+        "exp":248063,
+        "money":20840,
+        "equip_count":0,
+        "high_box_count":0
+    },127:{
+        "exp":253968,
+        "money":20980,
+        "equip_count":0,
+        "high_box_count":0
+    },128:{
+        "exp":259873,
+        "money":21120,
+        "equip_count":0,
+        "high_box_count":0
+    },129:{
+        "exp":262541,
+        "money":21184,
+        "equip_count":0,
+        "high_box_count":0
+    },130:{
+        "exp":265778,
+        "money":21260,
+        "equip_count":0,
+        "high_box_count":0
+    },131:{
+        "exp":271683,
+        "money":21400,
+        "equip_count":0,
+        "high_box_count":0
+    },132:{
+        "exp":283500,
+        "money":21550,
+        "equip_count":0,
+        "high_box_count":0
+    },133:{
+        "exp":290100,
+        "money":21700,
+        "equip_count":0,
+        "high_box_count":0
+    },134:{
+        "exp":296700,
+        "money":21850,
+        "equip_count":0,
+        "high_box_count":0
+    },135:{
+        "exp":300000,
+        "money":21925,
+        "equip_count":0,
+        "high_box_count":0
+    },136:{
+        "exp":303300,
+        "money":22000,
+        "equip_count":0,
+        "high_box_count":0
+    },137:{
+        "exp":309900,
+        "money":22150,
+        "equip_count":0,
+        "high_box_count":0
+    },138:{
+        "exp":323190,
+        "money":22300,
+        "equip_count":0,
+        "high_box_count":0
+    },139:{
+        "exp":330750,
+        "money":22450,
+        "equip_count":0,
+        "high_box_count":0
+    },140:{
+        "exp":338310,
+        "money":22600,
+        "equip_count":0,
+        "high_box_count":0
+    },141:{
+        "exp":341450,
+        "money":22666,
+        "equip_count":0,
+        "high_box_count":0
+    },142:{
+        "exp":345870,
+        "money":22750,
+        "equip_count":0,
+        "high_box_count":0
+    },143:{
+        "exp":353430,
+        "money":22900,
+        "equip_count":0,
+        "high_box_count":0
+    },144:{
+        "exp":368550,
+        "money":23060,
+        "equip_count":0,
+        "high_box_count":0
+    },145:{
+        "exp":376800,
+        "money":23220,
+        "equip_count":0,
+        "high_box_count":0
+    },146:{
+        "exp":385050,
+        "money":23380,
+        "equip_count":0,
+        "high_box_count":0
+    },147:{
+        "exp":390000,
+        "money":23407,
+        "equip_count":0,
+        "high_box_count":0
+    },148:{
+        "exp":393300,
+        "money":23540,
+        "equip_count":0,
+        "high_box_count":0
+    },149:{
+        "exp":401550,
+        "money":23700,
+        "equip_count":0,
+        "high_box_count":0
+    },150:{
+        "exp":418163,
+        "money":23860,
+        "equip_count":0,
+        "high_box_count":0
+    },151:{
+        "exp":420000,
+        "money":23918,
+        "equip_count":0,
+        "high_box_count":0
+    },152:{
+        "exp":426433,
+        "money":24020,
+        "equip_count":0,
+        "high_box_count":0
+    },153:{
+        "exp":434703,
+        "money":24180,
+        "equip_count":0,
+        "high_box_count":0
+    },154:{
+        "exp":438952,
+        "money":24296,
+        "equip_count":0,
+        "high_box_count":0
+    },155:{
+        "exp":442973,
+        "money":24340,
+        "equip_count":0,
+        "high_box_count":0
+    },156:{
+        "exp":451243,
+        "money":24500,
+        "equip_count":0,
+        "high_box_count":0
+    },157:{
+        "exp":467775,
+        "money":24670,
+        "equip_count":0,
+        "high_box_count":0
+    },158:{
+        "exp":470000,
+        "money":24740,
+        "equip_count":0,
+        "high_box_count":0
+    },159:{
+        "exp":479775,
+        "money":24840,
+        "equip_count":0,
+        "high_box_count":0
+    },160:{
+        "exp":485975,
+        "money":25010,
+        "equip_count":0,
+        "high_box_count":0
+    },161:{
+        "exp":490000,
+        "money":25066,
+        "equip_count":0,
+        "high_box_count":0
+    },162:{
+        "exp":497975,
+        "money":25180,
+        "equip_count":0,
+        "high_box_count":0
+    },163:{
+        "exp":502000,
+        "money":25258,
+        "equip_count":0,
+        "high_box_count":0
+    },164:{
+        "exp":509975,
+        "money":25350,
+        "equip_count":0,
+        "high_box_count":0
+    },165:{
+        "exp":517388,
+        "money":25520,
+        "equip_count":0,
+        "high_box_count":0
+    },166:{
+        "exp":522000,
+        "money":25569,
+        "equip_count":0,
+        "high_box_count":0
+    },167:{
+        "exp":531388,
+        "money":25690,
+        "equip_count":0,
+        "high_box_count":0
+    },168:{
+        "exp":538000,
+        "money":25775,
+        "equip_count":0,
+        "high_box_count":0
+    },169:{
+        "exp":545388,
+        "money":25860,
+        "equip_count":0,
+        "high_box_count":0
+    },170:{
+        "exp":552468,
+        "money":26030,
+        "equip_count":0,
+        "high_box_count":0
+    },171:{
+        "exp":559548,
+        "money":26200,
+        "equip_count":0,
+        "high_box_count":0
+    },172:{
+        "exp":567000,
+        "money":26380,
+        "equip_count":0,
+        "high_box_count":0
+    },173:{
+        "exp":572459,
+        "money":26480,
+        "equip_count":0,
+        "high_box_count":0
+    },174:{
+        "exp":582000,
+        "money":26580,
+        "equip_count":0,
+        "high_box_count":0
+    },175:{
+        "exp":590000,
+        "money":26690,
+        "equip_count":0,
+        "high_box_count":0
+    },176:{
+        "exp":597000,
+        "money":26800,
+        "equip_count":0,
+        "high_box_count":0
+    },177:{
+        "exp":604870,
+        "money":27040,
+        "equip_count":0,
+        "high_box_count":0
+    },178:{
+        "exp":610000,
+        "money":27170,
+        "equip_count":0,
+        "high_box_count":0
+    },179:{
+        "exp":619870,
+        "money":27300,
+        "equip_count":0,
+        "high_box_count":0
+    },180:{
+        "exp":624854,
+        "money":27440,
+        "equip_count":0,
+        "high_box_count":0
+    },181:{
+        "exp":637875,
+        "money":27580,
+        "equip_count":0,
+        "high_box_count":0
+    },182:{
+        "exp":645745,
+        "money":27880,
+        "equip_count":0,
+        "high_box_count":0
+    },183:{
+        "exp":651455,
+        "money":28040,
+        "equip_count":0,
+        "high_box_count":0
+    },184:{
+        "exp":661345,
+        "money":28200,
+        "equip_count":0,
+        "high_box_count":0
+    },185:{
+        "exp":668541,
+        "money":28370,
+        "equip_count":0,
+        "high_box_count":0
+    },186:{
+        "exp":676945,
+        "money":28540,
+        "equip_count":0,
+        "high_box_count":0
+    },187:{
+        "exp":684515,
+        "money":28720,
+        "equip_count":0,
+        "high_box_count":0
+    },188:{
+        "exp":692545,
+        "money":28900,
+        "equip_count":0,
+        "high_box_count":0
+    },189:{
+        "exp":700000,
+        "money":29090,
+        "equip_count":0,
+        "high_box_count":0
+    },190:{
+        "exp":708750,
+        "money":29280,
+        "equip_count":0,
+        "high_box_count":0
+    },191:{
+        "exp":714555,
+        "money":29480,
+        "equip_count":0,
+        "high_box_count":0
+    },192:{
+        "exp":728980,
+        "money":29680,
+        "equip_count":0,
+        "high_box_count":0
+    },193:{
+        "exp":734588,
+        "money":29890,
+        "equip_count":0,
+        "high_box_count":0
+    },194:{
+        "exp":749210,
+        "money":30100,
+        "equip_count":0,
+        "high_box_count":0
+    },195:{
+        "exp":754585,
+        "money":30320,
+        "equip_count":0,
+        "high_box_count":0
+    },196:{
+        "exp":769440,
+        "money":30540,
+        "equip_count":0,
+        "high_box_count":0
+    },197:{
+        "exp":779854,
+        "money":30770,
+        "equip_count":0,
+        "high_box_count":0
+    },198:{
+        "exp":789670,
+        "money":31000,
+        "equip_count":0,
+        "high_box_count":0
+    },199:{
+        "exp":800888,
+        "money":31480,
+        "equip_count":0,
+        "high_box_count":0
+    },200:{
+        "exp":810000,
+        "money":31730,
+        "equip_count":0,
+        "high_box_count":0
+    },201:{
+        "exp":827248,
+        "money":31980,
+        "equip_count":0,
+        "high_box_count":0
+    },202:{
+        "exp":839844,
+        "money":32240,
+        "equip_count":0,
+        "high_box_count":0
+    },203:{
+        "exp":853608,
+        "money":32500,
+        "equip_count":0,
+        "high_box_count":0
+    },204:{
+        "exp":868541,
+        "money":32770,
+        "equip_count":0,
+        "high_box_count":0
+    },205:{
+        "exp":879968,
+        "money":33040,
+        "equip_count":0,
+        "high_box_count":0
+    },206:{
+        "exp":889999,
+        "money":33320,
+        "equip_count":0,
+        "high_box_count":0
+    },207:{
+        "exp":906328,
+        "money":33600,
+        "equip_count":0,
+        "high_box_count":0
+    },208:{
+        "exp":921375,
+        "money":34180,
+        "equip_count":0,
+        "high_box_count":0
+    },209:{
+        "exp":936584,
+        "money":34480,
+        "equip_count":0,
+        "high_box_count":0
+    },210:{
+        "exp":951375,
+        "money":34780,
+        "equip_count":0,
+        "high_box_count":0
+    },211:{
+        "exp":965844,
+        "money":35090,
+        "equip_count":0,
+        "high_box_count":0
+    },212:{
+        "exp":981375,
+        "money":35400,
+        "equip_count":0,
+        "high_box_count":0
+    },213:{
+        "exp":991584,
+        "money":35720,
+        "equip_count":0,
+        "high_box_count":0
+    },214:{
+        "exp":1011375,
+        "money":36040,
+        "equip_count":0,
+        "high_box_count":0
+    },215:{
+        "exp":1028888,
+        "money":36370,
+        "equip_count":0,
+        "high_box_count":0
+    },216:{
+        "exp":1041375,
+        "money":36700,
+        "equip_count":0,
+        "high_box_count":0
+    },217:{
+        "exp":1063125,
+        "money":37380,
+        "equip_count":0,
+        "high_box_count":0
+    },218:{
+        "exp":1079999,
+        "money":37730,
+        "equip_count":0,
+        "high_box_count":0
+    },219:{
+        "exp":1093125,
+        "money":38080,
+        "equip_count":0,
+        "high_box_count":0
+    },220:{
+        "exp":1100000,
+        "money":38440,
+        "equip_count":0,
+        "high_box_count":0
+    },221:{
+        "exp":1123125,
+        "money":38800,
+        "equip_count":0,
+        "high_box_count":0
+    },222:{
+        "exp":1135845,
+        "money":39170,
+        "equip_count":0,
+        "high_box_count":0
+    },223:{
+        "exp":1153125,
+        "money":39540,
+        "equip_count":0,
+        "high_box_count":0
+    },224:{
+        "exp":1170000,
+        "money":39920,
+        "equip_count":0,
+        "high_box_count":0
+    },225:{
+        "exp":1183125,
+        "money":40300,
+        "equip_count":0,
+        "high_box_count":0
+    },226:{
+        "exp":1204875,
+        "money":41080,
+        "equip_count":0,
+        "high_box_count":0
+    },227:{
+        "exp":1220000,
+        "money":41480,
+        "equip_count":0,
+        "high_box_count":0
+    },228:{
+        "exp":1239595,
+        "money":41880,
+        "equip_count":0,
+        "high_box_count":0
+    },229:{
+        "exp":1250000,
+        "money":42290,
+        "equip_count":0,
+        "high_box_count":0
+    },230:{
+        "exp":1274315,
+        "money":42700,
+        "equip_count":0,
+        "high_box_count":0
+    },231:{
+        "exp":1288888,
+        "money":43120,
+        "equip_count":0,
+        "high_box_count":0
+    },232:{
+        "exp":1309035,
+        "money":43540,
+        "equip_count":0,
+        "high_box_count":0
+    },233:{
+        "exp":1320000,
+        "money":43970,
+        "equip_count":0,
+        "high_box_count":0
+    },234:{
+        "exp":1343755,
+        "money":44400,
+        "equip_count":0,
+        "high_box_count":0
+    },235:{
+        "exp":1362555,
+        "money":44840,
+        "equip_count":0,
+        "high_box_count":0
+    },236:{
+        "exp":1382063,
+        "money":45280,
+        "equip_count":0,
+        "high_box_count":0
+    },237:{
+        "exp":1400000,
+        "money":45730,
+        "equip_count":0,
+        "high_box_count":0
+    },238:{
+        "exp":1422613,
+        "money":46180,
+        "equip_count":0,
+        "high_box_count":0
+    },239:{
+        "exp":1440000,
+        "money":46640,
+        "equip_count":0,
+        "high_box_count":0
+    },240:{
+        "exp":1463163,
+        "money":47100,
+        "equip_count":0,
+        "high_box_count":0
+    },241:{
+        "exp":1480000,
+        "money":47570,
+        "equip_count":0,
+        "high_box_count":0
+    },242:{
+        "exp":1503713,
+        "money":48040,
+        "equip_count":0,
+        "high_box_count":0
+    },243:{
+        "exp":1520000,
+        "money":48520,
+        "equip_count":0,
+        "high_box_count":0
+    },244:{
+        "exp":1544263,
+        "money":49000,
+        "equip_count":0,
+        "high_box_count":0
+    },245:{
+        "exp":1562222,
+        "money":49490,
+        "equip_count":0,
+        "high_box_count":0
+    },246:{
+        "exp":1587600,
+        "money":49980,
+        "equip_count":0,
+        "high_box_count":0
+    },247:{
+        "exp":1600000,
+        "money":50480,
+        "equip_count":0,
+        "high_box_count":0
+    },248:{
+        "exp":1632600,
+        "money":50980,
+        "equip_count":0,
+        "high_box_count":0
+    },249:{
+        "exp":1658888,
+        "money":51490,
+        "equip_count":0,
+        "high_box_count":0
+    },250:{
+        "exp":1677600,
+        "money":52000,
+        "equip_count":0,
+        "high_box_count":0
+    },251:{
+        "exp":1700000,
+        "money":52520,
+        "equip_count":0,
+        "high_box_count":0
+    },252:{
+        "exp":1722600,
+        "money":53040,
+        "equip_count":0,
+        "high_box_count":0
+    },253:{
+        "exp":1745888,
+        "money":53570,
+        "equip_count":0,
+        "high_box_count":0
+    },254:{
+        "exp":1767600,
+        "money":54100,
+        "equip_count":0,
+        "high_box_count":0
+    },255:{
+        "exp":1788888,
+        "money":54640,
+        "equip_count":0,
+        "high_box_count":0
+    },256:{
+        "exp":1814400,
+        "money":55180,
+        "equip_count":0,
+        "high_box_count":0
+    },257:{
+        "exp":1840000,
+        "money":55730,
+        "equip_count":0,
+        "high_box_count":0
+    },258:{
+        "exp":1862400,
+        "money":56280,
+        "equip_count":0,
+        "high_box_count":0
+    },259:{
+        "exp":1888888,
+        "money":56840,
+        "equip_count":0,
+        "high_box_count":0
+    },260:{
+        "exp":1910400,
+        "money":57400,
+        "equip_count":0,
+        "high_box_count":0
+    },261:{
+        "exp":1932222,
+        "money":57970,
+        "equip_count":0,
+        "high_box_count":0
+    },262:{
+        "exp":1958400,
+        "money":58540,
+        "equip_count":0,
+        "high_box_count":0
+    },263:{
+        "exp":1980000,
+        "money":59120,
+        "equip_count":0,
+        "high_box_count":0
+    },264:{
+        "exp":2006400,
+        "money":59700,
+        "equip_count":0,
+        "high_box_count":0
+    },265:{
+        "exp":2033333,
+        "money":60290,
+        "equip_count":0,
+        "high_box_count":0
+    },266:{
+        "exp":2055375,
+        "money":60880,
+        "equip_count":0,
+        "high_box_count":0
+    },267:{
+        "exp":2089999,
+        "money":61480,
+        "equip_count":0,
+        "high_box_count":0
+    },268:{
+        "exp":2111375,
+        "money":62080,
+        "equip_count":0,
+        "high_box_count":0
+    },269:{
+        "exp":2142555,
+        "money":62690,
+        "equip_count":0,
+        "high_box_count":0
+    },270:{
+        "exp":2167375,
+        "money":63300,
+        "equip_count":0,
+        "high_box_count":0
+    },271:{
+        "exp":2190000,
+        "money":63920,
+        "equip_count":0,
+        "high_box_count":0
+    },272:{
+        "exp":2223375,
+        "money":64540,
+        "equip_count":0,
+        "high_box_count":0
+    },273:{
+        "exp":2245555,
+        "money":65170,
+        "equip_count":0,
+        "high_box_count":0
+    },274:{
+        "exp":2279375,
+        "money":65800,
+        "equip_count":0,
+        "high_box_count":0
+    },275:{
+        "exp":2300000,
+        "money":66440,
+        "equip_count":0,
+        "high_box_count":0
+    },276:{
+        "exp":2338875,
+        "money":67080,
+        "equip_count":0,
+        "high_box_count":0
+    },277:{
+        "exp":2350000,
+        "money":67730,
+        "equip_count":0,
+        "high_box_count":0
+    },278:{
+        "exp":2398875,
+        "money":68380,
+        "equip_count":0,
+        "high_box_count":0
+    },279:{
+        "exp":2420000,
+        "money":69040,
+        "equip_count":0,
+        "high_box_count":0
+    },280:{
+        "exp":2458875,
+        "money":69700,
+        "equip_count":0,
+        "high_box_count":0
+    },281:{
+        "exp":2490000,
+        "money":70370,
+        "equip_count":0,
+        "high_box_count":0
+    },282:{
+        "exp":2518875,
+        "money":71040,
+        "equip_count":0,
+        "high_box_count":0
+    },283:{
+        "exp":2555555,
+        "money":71720,
+        "equip_count":0,
+        "high_box_count":0
+    },284:{
+        "exp":2578875,
+        "money":72400,
+        "equip_count":0,
+        "high_box_count":0
+    },285:{
+        "exp":2600000,
+        "money":73090,
+        "equip_count":0,
+        "high_box_count":0
+    },286:{
+        "exp":2638875,
+        "money":73780,
+        "equip_count":0,
+        "high_box_count":0
+    },287:{
+        "exp":2650000,
+        "money":74533,
+        "equip_count":0,
+        "high_box_count":0
+    },288:{
+        "exp":2670000,
+        "money":75333,
+        "equip_count":0,
+        "high_box_count":0
+    },289:{
+        "exp":2690000,
+        "money":76133,
+        "equip_count":0,
+        "high_box_count":0
+    },290:{
+        "exp":2710000,
+        "money":76933,
+        "equip_count":0,
+        "high_box_count":0
+    },291:{
+        "exp":2730000,
+        "money":77733,
+        "equip_count":0,
+        "high_box_count":0
+    },292:{
+        "exp":2750000,
+        "money":78533,
+        "equip_count":0,
+        "high_box_count":0
+    },293:{
+        "exp":2770000,
+        "money":79333,
+        "equip_count":0,
+        "high_box_count":0
+    },294:{
+        "exp":2790000,
+        "money":80133,
+        "equip_count":0,
+        "high_box_count":0
+    },295:{
+        "exp":2810000,
+        "money":80933,
+        "equip_count":0,
+        "high_box_count":0
+    },296:{
+        "exp":2830000,
+        "money":81733,
+        "equip_count":0,
+        "high_box_count":0
+    },297:{
+        "exp":2850000,
+        "money":82533,
+        "equip_count":0,
+        "high_box_count":0
+    },298:{
+        "exp":2870000,
+        "money":83333,
+        "equip_count":0,
+        "high_box_count":0
+    },299:{
+        "exp":2890000,
+        "money":84133,
+        "equip_count":0,
+        "high_box_count":0
+    },300:{
+        "exp":2910000,
+        "money":84933,
+        "equip_count":0,
+        "high_box_count":0
+    }
+}

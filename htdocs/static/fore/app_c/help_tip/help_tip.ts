@@ -1,6 +1,5 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { destory } from "pi/ui/root";
 import { open } from "app/mod/root";
 import { helpTips } from "./tip_cfg"
 

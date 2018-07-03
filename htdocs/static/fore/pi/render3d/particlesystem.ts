@@ -1,85 +1,77 @@
-
+/** 
+ * 
+ */
 enum TangentMode {
 	Free = 0,
 	Auto = 1,
 	Linear = 2,
 	Constant = 3,
-	ClampedAuto = 4,
-};
+	ClampedAuto = 4
+}
 
-interface Keyframe
-{
+interface Keyframe {
 	inTangent: number;
 	outTangent: number;
 	tangentMode: TangentMode;
 	time: number;
 	value: number;
-};
+}
 
-interface AnimationCurve
-{
+interface AnimationCurve {
 	keys: Keyframe[];
-};
+}
 
 interface Vector2 {
 	x: number;
 	y: number;
-};
+}
 
 interface Vector3 {
 	x: number;
 	y: number;
 	z: number;
-};
+}
 
 interface Color32 {
 	rgba: number;
-};
+}
 
 interface Color {
 	a: number;
 	r: number;
 	g: number;
 	b: number;
-};
+}
 
-interface Burst
-{
+interface Burst {
 	maxCount: number;
 	minCount: number;
 	time: number;
-};
+}
 
-enum ParticleSystemCollisionMode
-{
+enum ParticleSystemCollisionMode {
 	Collision3D = 0,
 	Collision2D = 1
-};
+}
 
-enum ParticleSystemCollisionQuality
-{
+enum ParticleSystemCollisionQuality {
 	High = 0,
 	Medium = 1,
 	Low = 2
-};
+}
 
-enum ParticleSystemCollisionType
-{
+enum ParticleSystemCollisionType {
 	Planes = 0,
 	World = 1
-};
+}
 
-enum ParticleSystemSimulationSpace
-{
+enum ParticleSystemSimulationSpace {
 	Local = 0,
 	World = 1,
 	Custom = 2
-};
+}
 
-
-
-interface CollisionModule
-{
+interface CollisionModule {
 	bounce: MinMaxCurve;
 	bounceMultiplier: number;
 	collidesWith: number;
@@ -98,35 +90,32 @@ interface CollisionModule
 	quality: ParticleSystemCollisionQuality;
 	radiusScale: number;
 	sendCollisionMessages: boolean;
+	// tslint:disable-next-line:no-reserved-keywords
 	type: ParticleSystemCollisionType;
 	voxelSize: number;
-};
+}
 
-interface ColorBySpeedModule
-{
+interface ColorBySpeedModule {
 	color: MinMaxGradient;
 	enabled: boolean;
 	range: Vector2;
-};
+}
 
-interface ColorOverLifetimeModule
-{
+interface ColorOverLifetimeModule {
 	color: MinMaxGradient;
 	enabled: boolean;
-};
+}
 
-interface EmissionModule
-{
+interface EmissionModule {
 	burstCount: number;
 	enabled: boolean;
 	rateOverDistance: MinMaxCurve;
 	rateOverDistanceMultiplier: number;
 	rateOverTime: MinMaxCurve;
 	rateOverTimeMultiplier: number;
-};
+}
 
-interface EmitParams
-{
+interface EmitParams {
 	angularVelocity: number;
 	angularVelocity3D: Vector3;
 	applyShapeToPosition: boolean;
@@ -140,16 +129,14 @@ interface EmitParams
 	startSize: number;
 	startSize3D: Vector3;
 	velocity: Vector3;
-};
+}
 
-interface ExternalForcesModule
-{
+interface ExternalForcesModule {
 	enabled: boolean;
 	multiplier: number;
-};
+}
 
-interface ForceOverLifetimeModule
-{
+interface ForceOverLifetimeModule {
 	enabled: boolean;
 	randomized: boolean;
 	space: ParticleSystemSimulationSpace;
@@ -159,24 +146,21 @@ interface ForceOverLifetimeModule
 	yMultiplier: number;
 	z: MinMaxCurve;
 	zMultiplier: number;
-};
+}
 
-enum ParticleSystemInheritVelocityMode
-{
+enum ParticleSystemInheritVelocityMode {
 	Initial = 0,
 	Current = 1
-};
+}
 
-interface InheritVelocityModule
-{
+interface InheritVelocityModule {
 	curve: MinMaxCurve;
 	curveMultiplier: number;
 	enabled: boolean;
 	mode: ParticleSystemInheritVelocityMode;
-};
+}
 
-interface LightsModule
-{
+interface LightsModule {
 	alphaAffectsnumberensity: boolean;
 	enabled: boolean;
 	numberensity: MinMaxCurve;
@@ -189,11 +173,9 @@ interface LightsModule
 	sizeAffectsRange: boolean;
 	useParticleColor: boolean;
 	useRandomDistribution: boolean;
-};
+}
 
-
-interface LimitVelocityOverLifetimeModule
-{
+interface LimitVelocityOverLifetimeModule {
 	dampen: number;
 	enabled: boolean;
 	limit: MinMaxCurve;
@@ -206,23 +188,21 @@ interface LimitVelocityOverLifetimeModule
 	limitZMultiplier: number;
 	separateAxes: boolean;
 	space: ParticleSystemSimulationSpace;
-};
+}
 
-enum ParticleSystemScalingMode
-{
+enum ParticleSystemScalingMode {
 	Hierarchy = 0,
 	Local = 1,
 	Shape = 2
-};
+}
 
 interface Transform {
 	position: Vector3;
 	rotation: Vector3;
 	scale: Vector3;
-};
+}
 
-interface MainModule
-{
+interface MainModule {
 	customSimulationSpace: Transform;
 	duration: number;
 	gravityModifier: MinMaxCurve;
@@ -260,44 +240,38 @@ interface MainModule
 	startSizeZMultiplier: number;
 	startSpeed: MinMaxCurve;
 	startSpeedMultiplier: number;
-};
+}
 
-enum ParticleSystemGradientMode
-{
+enum ParticleSystemGradientMode {
 	Color = 0,
 	Gradient = 1,
 	TwoColors = 2,
 	TwoGradients = 3,
 	RandomColor = 4
-};
+}
 
-interface Gradient
-{
+interface Gradient {
 	alphaKeys: GradientAlphaKey[];
 	colorKeys: GradientColorKey[];
 	mode: GradientMode;
-};
+}
 
-enum GradientMode
-{
+enum GradientMode {
 	Blend = 0,
 	Fixed = 1
-};
+}
 
-interface GradientColorKey
-{
+interface GradientColorKey {
 	color: Color;
 	time: number;
-};
+}
 
-interface GradientAlphaKey
-{
+interface GradientAlphaKey {
 	alpha: number;
 	time: number;
-};
+}
 
-interface MinMaxGradient
-{
+interface MinMaxGradient {
 	color: Color;
 	colorMax: Color;
 	colorMin: Color;
@@ -305,17 +279,15 @@ interface MinMaxGradient
 	gradientMax: Gradient;
 	gradientMin: Gradient;
 	mode: ParticleSystemGradientMode;
-};
+}
 
-enum ParticleSystemNoiseQuality
-{
+enum ParticleSystemNoiseQuality {
 	Low = 0,
 	Medium = 1,
 	High = 2
-};
+}
 
-interface NoiseModule
-{
+interface NoiseModule {
 	damping: boolean;
 	enabled: boolean;
 	frequency: number;
@@ -343,10 +315,9 @@ interface NoiseModule
 	strengthYMultiplier: number;
 	strengthZ: MinMaxCurve;
 	strengthZMultiplier: number;
-};
+}
 
-interface Particle
-{
+interface Particle {
 	angularVelocity: number;
 	angularVelocity3D: Vector3;
 	axisOfRotation: Vector3;
@@ -360,10 +331,9 @@ interface Particle
 	startSize: number;
 	startSize3D: Vector3;
 	velocity: Vector3;
-};
+}
 
-interface RotationBySpeedModule
-{
+interface RotationBySpeedModule {
 	enabled: boolean;
 	range: Vector2;
 	separateAxes: boolean;
@@ -373,10 +343,9 @@ interface RotationBySpeedModule
 	yMultiplier: number;
 	z: MinMaxCurve;
 	zMultiplier: number;
-};
+}
 
-interface RotationOverLifetimeModule
-{
+interface RotationOverLifetimeModule {
 	enabled: boolean;
 	separateAxes: boolean;
 	x: MinMaxCurve;
@@ -385,10 +354,9 @@ interface RotationOverLifetimeModule
 	yMultiplier: number;
 	z: MinMaxCurve;
 	zMultiplier: number;
-};
+}
 
-enum ParticleSystemShapeType
-{
+enum ParticleSystemShapeType {
 	Sphere = 0,
 	SphereShell = 1,
 	Hemisphere = 2,
@@ -406,17 +374,15 @@ enum ParticleSystemShapeType
 	SkinnedMeshRenderer = 14,
 	BoxShell = 15,
 	BoxEdge = 16
-};
+}
 
-enum ParticleSystemMeshShapeType
-{
+enum ParticleSystemMeshShapeType {
 	Vertex = 0,
 	Edge = 1,
 	Triangle = 2
-};
+}
 
-interface ShapeModule
-{
+interface ShapeModule {
 	alignToDirection: boolean;
 	angle: number;
 	arc: number;
@@ -436,11 +402,9 @@ interface ShapeModule
 	sphericalDirectionAmount: number;
 	useMeshColors: boolean;
 	useMeshMaterialIndex: boolean;
-};
+}
 
-
-interface SizeOverLifetimeModule
-{
+interface SizeOverLifetimeModule {
 	enabled: boolean;
 	separateAxes: boolean;
 	size: MinMaxCurve;
@@ -451,30 +415,26 @@ interface SizeOverLifetimeModule
 	yMultiplier: number;
 	z: MinMaxCurve;
 	zMultiplier: number;
-};
+}
 
-interface SubEmittersModule
-{
+interface SubEmittersModule {
 	enabled: boolean;
 	subEmittersCount: number;
-};
+}
 
-enum UVChannelFlags
-{
+enum UVChannelFlags {
 	UV0 = 1,
 	UV1 = 2,
 	UV2 = 4,
 	UV3 = 8
-};
+}
 
-enum ParticleSystemAnimationType
-{
+enum ParticleSystemAnimationType {
 	WholeSheet = 0,
 	SingleRow = 1
-};
+}
 
-interface TextureSheetAnimationModule
-{
+interface TextureSheetAnimationModule {
 	animation: ParticleSystemAnimationType;
 	cycleCount: number;
 	enabled: boolean;
@@ -489,16 +449,14 @@ interface TextureSheetAnimationModule
 	startFrameMultiplier: number;
 	useRandomRow: boolean;
 	uvChannelMask: UVChannelFlags;
-};
+}
 
-enum ParticleSystemTrailTextureMode
-{
+enum ParticleSystemTrailTextureMode {
 	Stretch = 0,
 	Tile = 1
-};
+}
 
-interface TrailModule
-{
+interface TrailModule {
 	colorOverLifetime: MinMaxGradient;
 	colorOverTrail: MinMaxGradient;
 	dieWithParticles: boolean;
@@ -514,17 +472,15 @@ interface TrailModule
 	widthOverTrail: MinMaxCurve;
 	widthOverTrailMultiplier: number;
 	worldSpace: boolean;
-};
+}
 
-enum ParticleSystemOverlapAction
-{
+enum ParticleSystemOverlapAction {
 	Ignore = 0,
 	Kill = 1,
 	Callback = 2
-};
+}
 
-interface TriggerModule
-{
+interface TriggerModule {
 	enabled: boolean;
 	enter: ParticleSystemOverlapAction;
 	exit: ParticleSystemOverlapAction;
@@ -532,10 +488,9 @@ interface TriggerModule
 	maxColliderCount: number;
 	outside: ParticleSystemOverlapAction;
 	radiusScale: number;
-};
+}
 
-interface VelocityOverLifetimeModule
-{
+interface VelocityOverLifetimeModule {
 	enabled: boolean;
 	space: ParticleSystemSimulationSpace;
 	x: MinMaxCurve;
@@ -544,10 +499,9 @@ interface VelocityOverLifetimeModule
 	yMultiplier: number;
 	z: MinMaxCurve;
 	zMultiplier: number;
-};
+}
 
-interface ParticleSystemConfig
-{
+interface ParticleSystemConfig {
 	main: MainModule;
 	emission?: EmissionModule;
 	shape?: ShapeModule;
@@ -576,10 +530,9 @@ interface ParticleSystemConfig
 	trigger?: TriggerModule;
 	randomSeed?: number;
 	useAutoRandomSeed: boolean;
-};
+}
 
-interface MinMaxCurve
-{
+interface MinMaxCurve {
 	constant: number;
 	constantMax: number;
 	constantMin: number;
@@ -588,29 +541,29 @@ interface MinMaxCurve
 	curveMin: AnimationCurve;
 	curveMultiplier: number;
 	mode: ParticleSystemCurveMode;
-};
+}
 
-enum ParticleSystemCurveMode
-{
+enum ParticleSystemCurveMode {
 	Constant = 0,
 	Curve = 1,
 	TwoCurves = 2,
 	TwoConstants = 3
-};
+}
 
 /**
  * @description 取值器
  */
 const getValue = (param: MinMaxCurve) => {
-	let func = undefined;
-	switch(param.mode) {
+	let func;
+	switch (param.mode) {
 	case ParticleSystemCurveMode.Constant:
+		// tslint:disable:typedef only-arrow-functions no-function-expression
 		func = (function (value) {
 			return () => value;
 		}(param.constant));
 		break;
 	case ParticleSystemCurveMode.TwoConstants:
-		var v = param.constantMin + Math.random() * (param.constantMax - param.constantMin);
+		const v = param.constantMin + Math.random() * (param.constantMax - param.constantMin);
 		func = (function (value) {
 			return () => value;
 		}(v));
@@ -620,39 +573,39 @@ const getValue = (param: MinMaxCurve) => {
 	case ParticleSystemCurveMode.TwoCurves:
 		break;
 	default:
-		break;
 	}
 
 	return func;
 };
 
 class Particle {
-	time: number;
-	spin: number;
-	velocity: Vector3;
-	position: Vector3;
-};
+	public time: number;
+	public spin: number;
+	public velocity: Vector3;
+	public position: Vector3;
+}
 
 class ParticleSystem {
-	startTime: number;
-	playTime: number;
-	particles: Particle[];
-	config: ParticleSystemConfig;
+	public startTime: number;
+	public playTime: number;
+	public particles: Particle[];
+	public config: ParticleSystemConfig;
 
 	constructor(config: ParticleSystemConfig) {
 		this.startTime = 0;
 		this.config = config;
 	}
 
-	play(time: number) {
-		var main = this.config.main;
+	public play(time: number) {
+		const main = this.config.main;
 		this.playTime = time;
 		if (this.startTime === 0) {
 			this.startTime = time;
 		}
 
+		// tslint:disable-next-line:no-empty
 		if (this.particles.length > main.maxParticles) {
 
 		}
 	}
-};
+}

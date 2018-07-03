@@ -1,6 +1,6 @@
 <div style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:2;">
     <app_b-widget-title-title style="top:0;z-index:9;">
-    {"text":"阵 法","coin":["money","diamond",150002],"left":35,"top":12,"type":"gest"}
+    {"text":"阵 法","coin":["money","diamond",150001],"left":35,"top":12,"type":"gest_coin"}
     </app_b-widget-title-title>
     <div  style="position:absolute;top:100px;width:100%;height:720px;left:50%;margin-left:-273px;">        
         <div style="position:absolute;top:5px;left:30px;z-index:3">

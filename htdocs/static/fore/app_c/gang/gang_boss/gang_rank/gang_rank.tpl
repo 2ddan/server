@@ -46,7 +46,7 @@
 
                     <span style="width:24%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;">
                         <app_a-widget-coin-coin style="width: 100%;text-align: center;">
-                            {"icon":"contribute","text":[{{it1.Common.numberCarry(it1.guild_rank[q + 1].contribute, 10000)}}],"height":24,"width":24}
+                            {"icon":"contribute","text":[{{it1.Common.numberCarry(it1.guild_rank[q + 1].contribute[1], 10000)}}],"height":24,"width":24}
                         </app_a-widget-coin-coin>
                     </span>
                     

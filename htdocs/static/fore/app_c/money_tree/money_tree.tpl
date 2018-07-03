@@ -70,7 +70,7 @@
                     <span style="color:#fde7ca">消耗</span>
                     {{let url = it1.Pi.pictures[it1.Pi.sample[100002].icon]}}
                     <img style="width: 18px;vertical-align: middle; margin-top: -3px;" src={{url}}/>
-                    {{p}}({{info.buy_count}}/{{can_buy}})
+                    {{p}}({{can_buy-info.buy_count}}/{{can_buy}})
                 </div>
                 {{else}}
                     {{let c = info.free_config[0]-info.surplus}}
@@ -86,5 +86,8 @@
             </div>
             {{end}}
         </div> 
-    </div>   
+    </div> 
+    <div style="position: absolute;bottom: 210px;;left:0;white-space:nowrap;font-size:18px;font-family:mnjsh;color:#fde7ca;width: 100%;text-align: center;">
+        已摇次数：{{info.count || 0}}
+    </div>  
 </div>

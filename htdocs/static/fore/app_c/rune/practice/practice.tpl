@@ -28,13 +28,18 @@
 						<div w-class="line line_{{i}}"></div>
 					{{else}}
 						{{if n2 == i}}
-						<app_a-widget-select-select w-class="47" w-sid="47">
-							{"select":"double_circle","width":60} 
-						</app_a-widget-select-select>
+							<app_a-widget-select-select w-class="47" w-sid="47">
+								{"select":"double_circle","width":60} 
+							</app_a-widget-select-select>
+							{{if it1.anima }}
+							<div class="anim_practice_light" style="position: absolute;top: -33px;left: -26px;"></div>
+							{{end}}
 						{{end}}
+						{{if !it1.anima || it1.anima && i != n2 }}
 						<app_a-widget-pic_other-pic_other  w-class="46">
 							{"icon":"closed"}
 						</app_a-widget-pic_other-pic_other>
+						{{end}}
 					{{end}}
 				</div>
 				{{end}}
@@ -60,7 +65,7 @@
 									<div style="color:#f00;margin-top:28px;">未获得属性</div>	
 									{{else}}
 									{{for n,h of curr.attr}}
-									<div>
+									<div style="white-space:nowrap">
 										{{it1.attribute_config[h[0]]+"+"+(h[1]<1?Math.floor(h[1]*100)+"%":h[1])}}
 									</div>
 									{{end}}
@@ -68,7 +73,7 @@
 								</div>
 							</div>
 						</div>
-						<div style="position: relative;margin: 0px 5px -16px;display: inline-block;vertical-align: middle;width: 40px;">
+						<div style="position: relative;margin: 0px 40px -16px;display: inline-block;vertical-align: middle;width: 40px;">
 							<app_a-widget-btn_pic-btn_pic >
 								{"icon":"light_arraw","width":40}
 							</app_a-widget-btn_pic-btn_pic>
@@ -79,7 +84,7 @@
 							<div w-class="31" w-sid="31">
 								<div w-class="32" class="scroll_box_v" layout="scroll" w-sid="32">
 									{{for o,p of it1.rune_practice[n1][n2].attr}}
-									<div>{{it1.attribute_config[p[0]]+"+"+(p[1]<1?Math.floor(p[1]*100)+"%":p[1])}}</div>
+									<div style="white-space:nowrap">{{it1.attribute_config[p[0]]+"+"+(p[1]<1?Math.floor(p[1]*100)+"%":p[1])}}</div>
 									{{end}}
 								</div>
 							</div>
@@ -106,12 +111,12 @@
 							{"icon":{{100001 || "money"}},"width":23,"height":18,"left":4,"text":[{{Common.numberCarry(curr.cost_money,10000)}}],"color":"#FFD7A8"} 
 						</widget>
 						<widget w-tag="app_a-widget-btn-rect" on-tap="practiceUp({{bol}})" style="position:relative;display:inline-block">
-							{"class":{{bol ? "disabled" : "hl"}},"fontsize":24,"color":"#fdedd7","text":"打 通","width":116,"height":45} 
+							{"class":{{bol ? "disabled" : "hl"}},"fontsize":24,"color":"#fdedd7","text":"打 通","width":116,"height":45,"tip_keys":["role.rune.practice"]} 
 						</widget>
 					</div>
 					
 					{{else}}
-					<div w-class="18"  w-sid="18" style="font-size:20px;top:16px;">
+					<div w-class="18"  w-sid="18" style="font-size:20px;top:16px;position: relative;text-align: left;width: auto;display: inline-block;">
 						<div w-class="20">满级经脉属性</div>
 						<div w-class="31" w-sid="31">
 							<div w-class="32" class="scroll_box_v" layout="scroll" w-sid="32">
@@ -123,7 +128,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="cost_bg shadow7" w-class="7">已达到最高等级</div>
+					<div class="cost_bg shadow7" w-class="7" style="left:-10px;">已达到最高等级</div>
 					{{end}}
 				</div>	
 			</div>

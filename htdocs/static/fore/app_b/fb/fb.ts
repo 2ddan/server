@@ -1,14 +1,12 @@
 //pi
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { remove, add, destory } from "pi/ui/root";
 
 //app
-import { data as localDB, updata, get as getDB, listen, checkTypeof } from "app/mod/db";
-import { Pi, globalSend, cfg } from "app/mod/pi";
+import {  get as getDB} from "app/mod/db";
+import { globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { function_open } from "cfg/b/function_open";
-import { menu_parent } from "cfg/b/menu_parent";
 import { menu_discover } from "cfg/b/menu_discover";
 import { wild_mission } from "fight/b/common/wild_mission_cfg";
 

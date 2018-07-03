@@ -23,11 +23,8 @@
     
     
                 {{let img = ''}}
-                {{if v.head && v.head.indexOf("undefined") < 0}}
-                {{: img = v.head}}
-                {{else}}
-                {{: img = (Pi.pictures['playerhead'+v.career_id])}}
-                {{end}}
+
+                {{: img = (Pi.pictures['playerhead'+(v.head || v.career_id)])}}
                 <div w-class="81" w-sid="81">
                     <widget w-class="82" w-tag="app_a-widget-bg_frame-bg" w-sid="82">
                         {"bgName":"bg_frame19"} 
@@ -62,5 +59,22 @@
                 {{end}}
                 {{end}}
             </div>
+
+            {{if it1.gangData.post == 1}}
+            <div style="position:absolute;width:130px;height:34px;bottom:17px;right: 30px;">
+                <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;left:0px;">
+                    {"icon":"text_bg_1","width":128,"height":34,"align":"center","marginLeft":3,"text":" ","textCfg":"singleTitle","space":0,"fontSize":22,"top":0,"left":0} 
+                </widget>
+                <widget w-tag="app_a-widget-chosen-chosen" style="position:absolute;width:32px;height:32px;">
+                    {"index":"true","index1":{{it1.gangExpandData.is_auto}}}
+                </widget>
+                <div style="position:absolute;left:40px;height:34px;width:90px;line-height:34px;font-family:mnjsh;color:#f3d6af;font-size:18px;">自动通过</div>
+                <div style="position:absolute;width:130px;height:34px;left:0;top:0;" on-tap="openAutoJoin"></div>
+            </div>
+            <app_a-widget-pic_other-pic_other on-tap="funInfo" style="position: absolute;right: 6px;bottom: 24px;">
+                {"icon":"help"}
+            </app_a-widget-pic_other-pic_other>
+            {{end}}
         </div>
+
     </div>

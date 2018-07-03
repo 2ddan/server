@@ -147,11 +147,7 @@
     width:80px;
     height:80px;
 }
-.23{
-	position: absolute;
-    left: 10px;
-    top: 54px;
-}
+
 .24{
 	position: absolute;
     left: 0px;
@@ -286,7 +282,7 @@
 .40 {
     position: relative;
     width: 424px;
-    height:112px;
+    height:138px;
 }
 /* .41 {
     position: absolute;
@@ -302,13 +298,9 @@
 }
 .43 {
     position: absolute;
-    top:21px;
-    left:98px;
 }
 .44{
     position: absolute;
-    top:46px;
-    left:99px;
     color:#fde7ca;
     font-size:18px;
 }
@@ -364,9 +356,6 @@
     width:63px;
     height:62px;
     position: absolute;
-    background-image:url(./images/gem_hole.png);
-    background-position:center center;
-    background-repeat:no-repeat;
     z-index: 1;
 }
 .51{
@@ -375,6 +364,7 @@
     position: absolute;
     left: -10px;
     top: -3px;
+    z-index: 2;
 }
 
 .52{

@@ -15,7 +15,7 @@
             {{let n =  prop.name}}
                 <div on-tap="gotoGetWay({{k[0]}})" style="display:inline-block; text-align:center;color:#c8c8c9;margin:5px 6px;position:relative;width:55px;height:75px">
                     <app_a-widget-prop-base style="width:58px;height:58px;position:relative;display:inline-block">
-                        {"prop":{{prop}},"url":{{url}},"width":55,"height":55,"count":"none","hidden_name":1}
+                        {"prop":{{prop}},"url":{{url}},"width":55,"height":55,"count":"none","hidden_name":1,"type":{{prop.type}}}
                     </app_a-widget-prop-base>
                     <img src="./image/gest_list_bg2.png" alt="" style="position:absolute;top:-10px;left:-12px;width:20px;height:90px;z-index:4" />
                     <div style="position:absolute;top:-6px;left:-10px;z-index:5;width:18px;height:60px;font-size:15px;font-family: mnjsh;color: #f3eba9;line-height:15px;text-shadow: #000 1px 0px 0px, #000 0px 1px 0px, #000 -1px 0px 0px, #000 0px -1px 0px;">{{n}}</div>

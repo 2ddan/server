@@ -1,0 +1,98 @@
+
+{
+  "name" : "BattleScene1",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      20.0,
+      1.0,
+      10.0
+    ],
+    "rotate"   : [
+      1.18682420253754,
+      5.48033380508423,
+      6.2552604675293
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "Far",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          -281.899993896484,
+          -0.569999992847443
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "12aK1Sw1TJWejaXCHvJeKF.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "SLUXd8YHeGz7QdgiFqWhtn.jpg"
+              }
+            },
+            "transparent" : true,
+            "layer"       : 3000
+          }
+        ]
+      }
+    },
+    {
+      "name" : "Camera",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          1.33409249782562,
+          -16.3585147857666,
+          0.635828673839569
+        ],
+        "scale"    : [
+          0.0619333907961845,
+          0.101089969277382,
+          -0.986977398395538
+        ],
+        "rotate"   : [
+          1.45308303833008,
+          1.22353887557983,
+          4.40133285522461
+        ]
+      },
+      "camera"    : {
+        "type" : "Camera",
+        "perspective" : [
+          20.0,
+          0.600000023841858,
+          0.300000011920929,
+          1000.0
+        ]
+      }
+    }
+  ]
+}

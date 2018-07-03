@@ -6,10 +6,15 @@
     width: 494px;
 }
 
-.4 {
-    position: absolute;
-    left: 430px;
-    top: 7px;
-    z-index: 2;
-}
 
+.4{
+    position:absolute;
+    bottom:40px;
+    width:150px;
+    height: 23px;
+    left:50%;
+    color: #ffd8a6;
+    font-family: mnjsh;
+     font-size: 18px;
+     margin-left: -75px;
+}

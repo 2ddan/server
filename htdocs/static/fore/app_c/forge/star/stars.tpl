@@ -20,7 +20,7 @@
             {"icon":"tips_bottom"} 
         </widget>
         <widget w-class="7" w-tag="app_a-widget-pic_text-pic_text" w-sid="7" w-sid="7">
-            {"icon":"cover_title","width":184,"height":33,"align":"center","marginLeft":3,"text":"星宿成就","textCfg":"gangCoverTitle","space":0,"fontSize":21.87,"top":4,"left":0} 
+            {"icon":"cover_title","width":184,"height":33,"align":"center","marginLeft":3,"text":"星宿加成","textCfg":"gangCoverTitle","space":0,"fontSize":21.87,"top":4,"left":0} 
         </widget>
         <widget w-class="8"  w-tag="app_a-widget-pic_other-pic_other" w-sid="8" w-sid="8">
             {"icon":"pendant"} 
@@ -81,8 +81,9 @@
                     {{end}}
                     {{if color == "#919191"}}
                     <div style="width:100%;height:28px;position:absolute;top:25px;line-height:28px;color:#ffd8a6;font-size:18px;z-index:1;">
-                        <div class="weapon_coin" style="width:28px;height:28px;position:relative;display:inline-block;margin-right: 4px;top: 1px;"></div>
-                        <span style="vertical-align:super;">{{it1.stars[it1.starsIndex][inindex].sour}}</span>
+                        <widget w-tag="app_a-widget-coin-coin">
+                            {"icon":"weapon_coin","width":28,"height":28,"left":3,"text":[{{it1.stars[it1.starsIndex][inindex].sour}}]} 
+                        </widget>
                     </div>
                     {{end}}
                 </div>
@@ -92,8 +93,10 @@
 
             <widget w-class="20" w-tag="app_a-widget-pic_text-pic_text" w-sid="20">{"icon":"resource_bar","width":142,"height":28,"align":"center","marginLeft":"-31px","text":"拥有起灵","textCfg":"","space":0,"fontSize":16,"top":0,"left":0} 
             </widget>
-            <div style="width:19%;height:28px;position:absolute;bottom:20px;line-height:28px;color:rgb(255, 216, 166);font-size:16px;z-index:1;left: 235px;">
-                <div class="weapon_coin" style="width:28px;height:28px;position:relative;display:inline-block;margin-right: 4px;top: 1px;"></div>
+            <div style="width:19%;height:28px;position:absolute;bottom:20px;line-height:28px;color:rgb(255, 216, 166);font-size:16px;z-index:1;left: 265px;">
+                <widget w-tag="app_a-widget-coin-coin"  style="position: absolute;left: -100px;">
+                    {"icon":"weapon_coin","width":28,"height":28,"left":3,"text":[" "]} 
+                </widget>
                 <span style="vertical-align:super;">{{it1.soul}}</span>
             </div>
             <widget on-tap="attrAdd" w-class="26" w-tag="app_a-widget-btn-sq" w-sid="26">{"class":"hl","fontsize":16,"color":"#fdedd7;","text":"属性加成","width":49,"height":49,"textCfg":"gangCoverTitle","space":2}

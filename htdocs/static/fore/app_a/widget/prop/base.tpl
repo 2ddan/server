@@ -2,12 +2,14 @@
 
 {{let Common = _get("app/mod/common").exports.Common }}
 {{let filter = (it.prop.quality&&it.prop.quality[1]) || it.prop.quality || it.quality || "gray" }}
-{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 
 <div style="width:{{it.width||80}}px;height:{{it.height||80}}px;">
     <div style="width:100%;height:100%;position:absolute;z-index:2">
         {{if filter !== "gray"}}
         <img src="app_a/widget/prop/images/prop_border_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;z-index:1"/>
+            {{if it.type === "gest" && filter===6}}
+            <img src="app_a/widget/prop/images/gest_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;z-index:1"/>
+            {{end}}
             {{if it.prop}}
             <img src="app_a/widget/prop/images/prop_bg_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;" />
             {{else}}

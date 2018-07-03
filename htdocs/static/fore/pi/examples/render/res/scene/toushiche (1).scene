@@ -1,0 +1,191 @@
+
+{
+  "name" : "toushiche (1)",
+  "type" : "node",
+  "transform" : {
+    "position" : [
+      -7.44000005722046,
+      0.0,
+      0.0
+    ],
+    "scale"    : [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotate"   : [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "children"  : [
+    {
+      "name" : "break",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "KRwKMEVkZqu9u8VVnqRtSy.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "filter" : [
+                1006,
+                1007
+              ],
+              "generateMipmaps" : true,
+              "image"           : {
+                "name" : "KF49fFDwyy5wMVmecesL1k.jpg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name" : "complet",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rotate"   : [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "animator"  : {
+        "controller" : {
+          "run" : "U46DW8K53rcXeJrHPczFau.ai",
+          "attack" : "77NGvwBoyQh4at95fVRJN6.ai"
+        },
+        "aniBox"     : {
+          "run" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "attack" : {
+            "center" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "size"   : [
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "playAnim"   : {
+          "name" : "attack"
+        }
+      },
+      "children"  : [
+        {
+          "type" : "Skeleton",
+          "res"  : "FiKvT8RaqbqTP6VfrohZUw.skl"
+        },
+        {
+          "name" : "Toushiche_001",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "scale"    : [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              0.0,
+              0.0
+            ]
+          },
+          "skinnedMeshRender" : {
+            "bones" : [
+              5,
+              1,
+              2,
+              4,
+              3,
+              7
+            ],
+            "bounds" : [
+              [
+                2.68065142631531,
+                5.63363599777222,
+                5.72344589233398
+              ],
+              [
+                -2.68065190315247,
+                -2.66380572319031,
+                -1.26675093173981
+              ]
+            ],
+            "rootbone" : "Dummy001",
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "filter" : [
+                    1006,
+                    1007
+                  ],
+                  "generateMipmaps" : true,
+                  "image"           : {
+                    "name" : "WVhJe5pT19xLYy7fRTr5RA.jpg"
+                  }
+                }
+              }
+            ],
+            "geometry" : {
+              "type" : "BufferGeometry",
+              "res"  : "bTJdUBLhj2uFVK1sAFaT3.geo"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ var str = "";
 var totalStr = "";
 var time = new Date().getTime();
 export const analyseData = function (data,check?) {
-    // console.log("======================================",data.status);
+    // console.log("======================================",data.status,data.data);
     if (data.status == 1 || (!data.status && data.status != 0) || data.status < 0) {
         str = data.data;
         totalStr += data.data;

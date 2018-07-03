@@ -92,11 +92,21 @@
     transform:translateX(-50%);
     white-space: nowrap;
     top: 46px;
+    font-family:mnjsh;
+    line-height: 25px;
 }
 .13{
     position:absolute;
     right:20px;
     top: 88px;
 }
-
-
+.14{
+    transform:translateX(-50%);
+    padding:0 17px 0 6px;
+    z-index: 2;
+}
+.20 {
+    position: absolute;
+    right: -13px;
+    top: 0px;
+}

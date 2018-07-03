@@ -1,14 +1,16 @@
+/**
+ * 
+ */
+import { Forelet } from '../../../widget/forelet';
+import { Widget } from '../../../widget/widget';
 
-import { Widget } from "../../../widget/widget";
-import { Forelet } from "../../../widget/forelet";
-
-import { createByStr } from "../../../compile/reader";
-import { Parser } from "../../../compile/parser";
-import { Scanner } from "../../../compile/scanner";
-import { createRuleReader } from "../../../compile/ebnf";
+import { createRuleReader } from '../../../compile/ebnf';
+import { Parser } from '../../../compile/parser';
+import { createByStr } from '../../../compile/reader';
+import { Scanner } from '../../../compile/scanner';
 
 // C#的词法规则
-let lex = `
+const lex = `
 	(* comment *)
 	commentLine = "//", [{?notbreakline?}] ;
 	commentBlock = "/*", [ { & !"*/"!, ?all? & } ], "*/" ;
@@ -123,7 +125,7 @@ let lex = `
 `;
 
 // C#的语法规则
-let syntax = `
+const syntax = `
 
 	namespace = "namespace"?, qualified_identifier, namespace_body, [";"?];
 	
@@ -142,32 +144,32 @@ let syntax = `
 	enum_base = [integral_type] ;
 	integral_type = |"sbyte", "byte", "short", "ushort", "int", "uint", "long", "ulong", "char"| ;
  
-`
+`;
 
 // C#的算符优先级及绑定函数
-let cfgs = [
+const cfgs = [
 
 	// 忽略空白
-	{type: "whitespace", ignore : true},
-	
-	// 注释
-	{type: "commentBlock", comment : 1},
-	{type: "commentLine", comment : 2},
-	{type: "commentRegion", comment : 2},
-	{type: "commentUsing", comment : 2},
+	{ type: 'whitespace', ignore: true },
 
-	{type: "{", nud: "object"},
-	{type: "[", nud: "array"},
+	// 注释
+	{ type: 'commentBlock', comment: 1 },
+	{ type: 'commentLine', comment: 2 },
+	{ type: 'commentRegion', comment: 2 },
+	{ type: 'commentUsing', comment: 2 },
+
+	{ type: '{', nud: 'object' },
+	{ type: '[', nud: 'array' }
 ];
 
 const parserRun = () => {
-	const scanner: Scanner = new Scanner;
+	const scanner: Scanner = new Scanner();
 	scanner.setRule(lex);
 
-	const parser: Parser = new Parser;
+	const parser: Parser = new Parser();
 	parser.setRule(syntax, cfgs);
 
-	let source = `
+	const source = `
 		namespace A {
 
 		};
@@ -177,18 +179,18 @@ const parserRun = () => {
 		};
 	`;
 
-	let reader = createByStr(source);
+	const reader = createByStr(source);
 	scanner.initReader(reader);
 
 	parser.initScanner(scanner);
-	let r = parser.parseRule("namespace, enum");
-	console.log("parse rule, ", r);
-	
-}
+	const r = parser.parseRule('namespace, enum');
+	console.log('parse rule, ', r);
+
+};
 
 export const forelet = new Forelet();
 forelet.listener = (cmd: string, w: Widget): void => {
-	if (cmd === "firstPaint") {
+	if (cmd === 'firstPaint') {
 		setTimeout(parserRun, 1);
 	}
-}
+};

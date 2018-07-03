@@ -24,7 +24,7 @@
             </widget>
 
 			<div class="center_h" style="position: absolute;width:100%;height:380px;overflow: hidden;top: 60px;bottom:15px;z-index: 1;">
-                <div scroller="1" style="position: absolute;width: 110%;height:100%;overflow-y: auto;overflow-x: hidden;">
+                <div scroller="1" style="position: absolute;width: 110%;height:100%;overflow-y: auto;overflow-x: hidden;text-align: justify;">
                     <div style="position:relative;width:430px;color:{{it.color || '#b27d5c'}};font-size:{{it.fontSize || 15}}px;font-family:{{it.fontFamily}};font-weight:{{it.fontWeight}};padding-left:9px;text-align:left">
                         <pi-ui-html>{{it.content}}</pi-ui-html>
                     </div>

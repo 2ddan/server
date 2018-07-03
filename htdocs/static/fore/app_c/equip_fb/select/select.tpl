@@ -38,7 +38,7 @@
                     {{if len}}
                         {{for i, v of it1.selectArr}}
                         <widget w-class="s33" w-tag="app_a-widget-btn-rect" on-tap="selectThis({{v}})" style="{{if i == len -1}}margin-bottom: 0; {{end}}">
-                            {"class":"default","fontsize":24,"color":"#fdedd7;","text":{{equip_fb_data[v][0].level_limit+" 级装备副本"}},"width":238,"height":52} 
+                            {"class":"default","fontsize":24,"color":"#fdedd7;","text":{{equip_fb_data[v][0].chapter_name+" 级装备副本"}},"width":238,"height":52} 
                         </widget>
                         {{end}}
                     {{else}}

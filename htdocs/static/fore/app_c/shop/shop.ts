@@ -1,10 +1,9 @@
 //pi
 import { Forelet } from "pi/widget/forelet";
-import { remove, destory } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
 //mod
 import { Pi, globalSend, cfg } from "app/mod/pi";
-import { data as localDB, get as getDB, updata, insert, listen } from "app/mod/db";
+import { data as localDB,  updata, insert, listen } from "app/mod/db";
 import { listenBack } from "app/mod/db_back";
 import { Common } from "app/mod/common"; 
 import { open, close } from "app/mod/root";
@@ -12,11 +11,9 @@ import { Util } from "app/mod/util";
 //app
 import { net_request, net_message } from "app_a/connect/main";
 import { Common_m } from "app_b/mod/common";
-import { showNewRes } from "app_b/bag/bag";
 import { shop_price } from "cfg/c/shop_price";
 import { shop_base } from "cfg/c/shop_base";
 import { vip_advantage } from "cfg/c/vip_advantage";
-import { funIsOpen } from "app_b/open_fun/open_fun";
 
 /**
  * @description 导出forelet
@@ -27,10 +24,10 @@ export const forelet = new Forelet();
  */
 export const globalReceive = {
     gotoStore: () => {
-        if (funIsOpen("store")) {
+        // if (funIsOpen("store")) {
             open("app_c-shop-type_1","1");
             globalSend("openNewFun", "store");
-        }
+        // }
     }
 }
 /**
@@ -131,15 +128,15 @@ let remind = [];
  * @description 获取页面显示数据
  */
 const getShowData = () => {
-    if(!cfg.shop_price || !cfg.shop_base){
+    if(!shop_price || !shop_base){
         return {};
     }
     let data:any = {};
     data.shopType = shopType;
     data.shopList = localDB.shop.all_shop_goods[shopType];
-    data.cfg_price = cfg.shop_price.shop_price;
-    data.cfg_base = cfg.shop_base.shop_base;
-    data.free = Common.leastLast(cfg.shop_base.shop_base[shopType].free,localDB.player.vip)||0;
+    data.cfg_price = shop_price;
+    data.cfg_base = shop_base;
+    data.free = Common.leastLast(shop_base[shopType].free,localDB.player.vip)||0;
     data.cost = getCost(data.free);
     data.pi = Pi;
     data.vip_advantage = vip_advantage;
@@ -153,7 +150,7 @@ const getShowData = () => {
  */
 const getCost = (free) => {
     let _refresh = localDB.shop.all_refresh_times[parseInt(shopType)-1],
-        _cfg = cfg.shop_base.shop_base[shopType],
+        _cfg = shop_base[shopType],
         _diff = free - _refresh,
         k,
         count;
@@ -195,8 +192,8 @@ const mergeVipDiscount = ()=>{
 
 //计算下次刷新时间
 const refreshTime = () =>{
-    let shop_base = cfg.shop_base.shop_base[shopType];
-    let refresh_time = shop_base.refresh_time;
+    let _shop_base = shop_base[shopType];
+    let refresh_time = _shop_base.refresh_time;
     let time = Util.serverTime();
 	let server = new Date(time);
 	let beforetime = 0;

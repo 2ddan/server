@@ -29,7 +29,7 @@
             {{if it.star}}
             <div style="width:100%;height:15%;position:absolute;top: 65px;left: 17px;">
                 <app_c-forge-star-star_anim>
-                    {"star":{{it.star}},"effect":{{it1.equip_level_limit[it.prop.slot].stars_effects}},"center":0}
+                    {"star":[{{it.star}},15],"effect":{{it1.equip_level_limit[it.prop.slot].stars_effects}},"center":0}
                 </app_c-forge-star-star_anim>
             </div>
             {{end}}

@@ -5,15 +5,11 @@
     width: 494px;
     height: 664px;
 }
-.4 {
-    position: absolute;
-    left: 24px;
-    top: 0px;
-}
+
 .5 {
     position: absolute;
-    left: 430px;
-    top: 7px;
+    left: 28px;
+    top: 16px;
     z-index: 4;
 }
 .6 {
@@ -134,47 +130,9 @@
     left: 25px;
     top: 0;
     overflow: hidden;
+    pointer-events: none;
 }
-.27 {
-    position: absolute;
-    left: 235px;
-    top: 75px;
-}
-.28 {
-    position: absolute;
-    left: 125px;
-    top: 66px;
-}
-.29 {
-    position: absolute;
-    left: 53px;
-    top: 42px;
-}
-.30 {
-    position: absolute;
-    left: 116px;
-    top: 11px;
-}
-.31 {
-    position: absolute;
-    left: 205px;
-    top: -1px;
-}
-.32 {
-    position: absolute;
-    left: 308px;
-    top: 9px;
-}
-.33 {
-    position: absolute;
-    left: 382px;
-    top: 30px;
-}
-.34 {
-    position: absolute;
-    left: 325px;
-    top: 64px;
-}
+
 .35 {
     position: absolute;
     width: 164px;

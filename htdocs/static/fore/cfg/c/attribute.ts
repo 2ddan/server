@@ -30,28 +30,28 @@ export const attribute = {
     ,
     "critical": {
         "name": "暴击",
-        "prower_ratio": 11,
+        "prower_ratio": 30,
         "init_value": 0,
         "simple_name": "undefined"
     }
     ,
     "un_critical": {
         "name": "抗暴",
-        "prower_ratio": 11,
+        "prower_ratio": 30,
         "init_value": 0,
         "simple_name": "undefined"
     }
     ,
     "dodge": {
         "name": "闪避",
-        "prower_ratio": 11,
+        "prower_ratio": 30,
         "init_value": 0,
         "simple_name": "undefined"
     }
     ,
     "un_dodge": {
         "name": "命中",
-        "prower_ratio": 11,
+        "prower_ratio": 30,
         "init_value": 0,
         "simple_name": "undefined"
     }
@@ -105,13 +105,6 @@ export const attribute = {
         "simple_name": "破甲增加百分比"
     }
     ,
-    "skill_level_attr": {
-        "name": "技能等级战斗力",
-        "prower_ratio": 100,
-        "init_value": 0,
-        "simple_name": "undefined"
-    }
-    ,
     "damage_multiple": {
         "name": "伤害加成",
         "prower_ratio": 0,
@@ -135,6 +128,20 @@ export const attribute = {
     ,
     "pvp_un_damage_multiple": {
         "name": "pvp免伤",
+        "prower_ratio": 0,
+        "init_value": 0,
+        "simple_name": "undefined"
+    }
+    ,
+    "skill_level_attr": {
+        "name": "技能等级战斗力",
+        "prower_ratio": 100,
+        "init_value": 0,
+        "simple_name": "undefined"
+    }
+    ,
+    "buff_attr": {
+        "name": "buff增益战斗力",
         "prower_ratio": 0,
         "init_value": 0,
         "simple_name": "undefined"

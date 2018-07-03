@@ -1,7 +1,5 @@
 import { Util } from "app/mod/util";
-import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
-import { globalSend, Pi } from "app/mod/pi";
 
 
 
@@ -16,6 +14,10 @@ export let globalReceive = {
             data.startTime = Util.serverTime(true);
             data.str = "00:00";
             forelet.paint(data);
+            if(timer){
+                clearInterval(timer);
+                timer = null;
+            }
             timer = setInterval(function(){
                 let t = Math.floor(Util.serverTime(true) - data.startTime);
                 let s = t%60;
@@ -35,5 +37,11 @@ export let globalReceive = {
        }
        clearInterval(timer);
        timer = null;
+    },
+    "exitFb": ()=>{
+        if(timer){
+            clearInterval(timer);
+            timer = null;
+        }
     }
 }

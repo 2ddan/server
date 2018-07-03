@@ -2,7 +2,7 @@
  * 此模块用于监听和战斗力相关模块属性的变化
  */
 import { listen, get } from "app/mod/db"
-import { gestAttr, instanceAttr, skillAttr, treasure, equip, soul, countFightPower, roleLevel, pet, cloth, weapon_soul, gang } from "./fight_power"
+import { gestAttr, instanceAttr, skillAttr, treasure, equip, soul, countFightPower, roleLevel, pet, cloth, weapon_soul, gang, runeModule } from "./fight_power"
 import { formula } from "fight/b/common/formula";
 
  /**
@@ -210,7 +210,7 @@ listen("soul.soul_info.8", () => {
 /**
  * 监听人物等级
  */
-let oldLevel = get("player.level");
+let oldLevel = get("player.level") || 0;
 listen("player.level", () => {
     let level = get("player.level");
     if (level > oldLevel) {
@@ -267,52 +267,37 @@ listen("gang.data.role_gang_skill", () => {
 listen("gang.data.gang_level", () => {
     gang.flagAttr();
     gang.allAttr();
+});
+
+/**
+ * 监听秘籍
+ */
+listen("rune.rune_set", () => {
+    runeModule.runeBook();
+    runeModule.runeAllAttr();
+});
+listen("rune.rune_state", () => {
+    runeModule.runeState();
+    runeModule.runeAllAttr();
+});
+listen("rune.rune_practice", () => {
+    runeModule.runePractice();
+    runeModule.runeAllAttr();
+});
+listen("bag*type=rune,rune.rune_set", () => {
+    runeModule.runeCollect();
+    runeModule.runeAllAttr();
 })
 
 /**
  * 监听模块属性, 计算战斗力
  */
-listen("attr.A", () => {
+listen("attr.A,attr.B,attr.C,attr.D,attr.E,attr.F", () => {
     let attr = get("attr");
     countFightPower.singleAttrTotal(attr, formula);
 });
-listen("attr.B", () => {
+listen("attr.G,attr.H,attr.I,attr.J,attr.K,attr.L", () => {
     let attr = get("attr");
     countFightPower.singleAttrTotal(attr, formula);
 });
-listen("attr.C", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.D", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.E", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.F", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.G", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.H", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.I", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.J", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula);
-});
-listen("attr.K", () => {
-    let attr = get("attr");
-    countFightPower.singleAttrTotal(attr, formula); 
-})
+

@@ -8,8 +8,7 @@ import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 import { net_request } from "app_a/connect/main";
 import { listenBack } from "app/mod/db_back";
-import { fight, showAccount } from "app_b/fight/fight";
-import { Util } from "app/mod/util";
+import { fight} from "app_b/fight/fight";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { resetcanvas } from "app/scene/base/scene";
 //导入配置
@@ -21,8 +20,7 @@ import { instance_star } from "cfg/c/instance_star";
 import { instance_base } from "cfg/c/instance_base";
 import { attribute_config } from "cfg/c/attribute_config";
 
-//掉落效果
-import { node_fun, drop_outFun } from "app_b/widget/drop_out";
+
 // 所有怪物配置
 import { monster_base } from "fight/b/common/monsterBase";
 
@@ -57,7 +55,6 @@ export const globalReceive = {
 
 //******************************************test*********************************/
 let fb_data: any = {}, //副本购台基础数据
-    buyData: any = {},//购买页面数据
     chapter_id, //当前挑战的章节id
     guard_id, //关卡id
     boss_id, //挑战魔王的id
@@ -114,7 +111,14 @@ export class Instance extends Widget {
         if(!w)
             globalSend("remove_node","instance");
     }
+    firstPaint() {
+        if (opacity) return;
+        opacity = true;
+        forelet.paint(getData());
+    }
     afterUpdate() {
+        let w = forelet.getWidget("app_c-instance_fb-sweep-sweep");
+        if(!w){return;}
         if (opacity) return;
         opacity = true;
         forelet.paint(getData());
@@ -140,6 +144,11 @@ export class Instance extends Widget {
         let len = Object.keys(instance_drop).length;
         if (chapter_id > len) chapter_id = len;
         forelet.paint(getData());
+        globalSend("modify_node",{
+            "type":"instance",
+            "index":chapter_id
+        });
+
     }
     //打开星阵图谱
     openStarArr() {
@@ -180,7 +189,7 @@ export class Instance extends Widget {
         let _module = monster.module;
         let name = monster.des;
         globalSend("remove_node","instance");
-        open("app_c-instance_fb-mission-mission",{"module":_module,"name":name});       
+        open("app_c-instance_fb-mission-mission",{"module":_module,"name":name,"scale":instance_drop[chapter_id][(guard_id-1)%5].scale});       
     }
     //挑战关卡
     challenge(chapter_id, guard_id) {
@@ -226,9 +235,9 @@ export class Instance extends Widget {
         chapter_id = arg;
         selectArr = [];
         let w1 = forelet.getWidget("app_c-instance_fb-select-select");
-        close(w1);
+        w1 && close(w1);
         let w2 = forelet.getWidget("app_c-instance_fb-star_arr-star_arr");
-        close(w2);
+        w2 && close(w2);
         forelet.paint(getData());
     }
     //物品详情
@@ -253,10 +262,14 @@ export let logic = {
             }
         }
         resetcanvas(data);
-        globalSend("get_fbmonster",{
-            "type":"instance_fb",
-            "index":chapter_id
-        });
+        let timer = setTimeout(()=>{
+            globalSend("get_fbmonster",{
+                "type":"instance_fb",
+                "index":chapter_id
+            });
+            clearTimeout(timer);
+            timer = null;
+        },50); 
     },
     //判断是否可以购买次数
     canBuyCount: function () {
@@ -287,44 +300,18 @@ export let logic = {
             // globalSend("screenTipFun", { words: `元宝不足,购买需${costArr[num]}元宝` });
             return false;
         }
-        //购买的数据
-        buyData = {
-            "title":"购买次数",
-            "type":"九幽幻境",
-            "coin":"diamond",
-            "btn_name":"购 买",
-            "cost":costArr[num] || costArr[costArr.length-1],
-            "max":max,
-            "now":num,
-            "hasCount":vip_advantage[vip].instance_times + num - getDB("instance_fb.use_times"),
-            "num":1,//购买数量初始值默认为1
+        let buyData = {
+            "title": "购买次数",
+            "type": "九幽幻境",
+            "coin": "diamond",
+            "btn_name": "购 买",
+            "price": costArr,
+            "max_buy": max,
+            "already_buy": num,
+            "has_count": vip_advantage[vip].instance_times + num - getDB("instance_fb.use_times"),
+            "buy_count": 1,
             "callBack": (r) => {
                 buyCount(r);
-            },
-            "costCoin": (r) => {
-                let d = buyData,
-                    arr: any = {
-                        "num": r,
-                        "cost": 0
-                    },//能购买的数量,花费
-                    money = getDB("player." + d.coin);
-                if (r > d.max - d.now) arr.num = d.max - d.now;
-                if (r <= 0) {
-                    arr.num = d.max - d.now ? 1 : 0;
-                }
-                let len = costArr.length;
-                //计算总价
-                for (var i = d.now; i < (arr.num - 0 + d.now); i++) {
-                    let costNow = arr.cost;
-                    if (costArr[i]) arr.cost += costArr[i];
-                    else arr.cost += costArr[len - 1];
-                    if (arr.cost > money) {
-                        arr.num = i - d.now;
-                        arr.cost = costNow;
-                        break;
-                    }
-                }
-                return arr;
             }
         };
         //发送消息购买
@@ -469,7 +456,7 @@ export let buyCount = function (num) {
             updata("instance_fb.vip_buy_times", prop.vip_buy_times);
             fb_data.vip_buy_times = getDB("instance_fb.vip_buy_times");
             forelet.paint(fb_data);
-            //console.log(data)
+            logic.resetScene();
         }, (data) => {
             console.log(data);
         })
@@ -492,6 +479,13 @@ export let challenge = function (chapter_id, guard_id) {
         .then((data: any) => {
             let prop = instance_drop[chapter_id][(guard_id - 1) % 5];
             let msg: any = Common.changeArrToJson(data.ok);
+            let _show_award = Common.shallowClone(msg.show_award);
+            for(let i= 0; i<msg.enemy_fight.length; i++){
+                for(let j=0; j<msg.enemy_fight[i].length; j++){
+                    msg.enemy_fight[i][j].push(_show_award[0]);
+                    _show_award.splice(0,1);
+                }
+            }
             msg.type = "instance_mission";
             msg.cfg = prop;
             msg.star = 1;
@@ -506,14 +500,13 @@ export let challenge = function (chapter_id, guard_id) {
                 //战斗胜利
                 if (fightData.r === 1) {
                     winFight(guard_id, fightData);
-                    // node_fun();
                 } else {
                     Common_m.openAccount(fightData, "instance_fb",{},0,()=>{
                         logic.resetScene();
                     });
                 }
                 globalSend("popBack");
-
+                return true;
             })
         })
 };
@@ -727,6 +720,8 @@ export let starUp = function () {
                 star_up_index++;
             }
             forelet.paint(getData());
+            logic.resetScene();
+
         })
         .catch((data) => {
             console.log(data);

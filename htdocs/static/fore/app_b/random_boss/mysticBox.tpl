@@ -28,8 +28,10 @@
         </div>
         <div data-desc="宝箱列表" style="position:absolute;width:484px;height:445px;left:23px;top:325px;z-index:2;padding:6px 6px 0;overflow:hidden">
             <div scroller="1" style="box-sizing:border-box;width:108%;height:445px;overflow-y: auto; overflow-x: hidden;">
+                {{let limit = it1.box_base.box_exsit_time*60*1000}}
+                {{let now = Util.serverTime()}}
                 {{for i,v in it1.mySort(it1.box_data)}}
-                    {{if v.end_time > Util.serverTime() }}
+                    {{if v.end_time > now && (now + limit - v.end_time > 5*60*1000)}}
                     {{let state = v.opened}}
                     <div w-class="box_item">
                         <app_a-widget-img_stitch-stitch style="position: absolute;width: 138px;height: 186px;">

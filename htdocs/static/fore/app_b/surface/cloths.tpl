@@ -179,20 +179,20 @@
                 </div>
                 {{if id != 1}}
                     {{if !has && currCloth.act_condition}}
-                    {{let prop = it1.Pi.sample[currCloth.act_condition[0]]}}
-                    {{let url = it1.Pi.pictures[prop.icon]}}
-                    
-                    <div w-class="102" w-sid="102" style="top: 140px;">
-                        <app_a-widget-prop-base w-class="103" w-sid="103" on-tap="showPropInfo({{currCloth.act_condition[0]}})">
-                                {"width":80,"height":80,"prop":{{prop}},"url":{{url}},"count":"none","name":"none","bg":"","quality":1,"bottom":20,"top":25,"right":25} 
-                        </app_a-widget-prop-base>
-                        <app_a-widget-pic_text-pic_text w-class="104" w-sid="104">
-                                {"icon":"equip_txt_bg","width":73,"height":22,"align":"center","marginLeft":3,"text":{{it1.getFragCount(id)+"/"+currCloth["act_condition"][1]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
-                        </app_a-widget-pic_text-pic_text>
-                    </div>
-                    <app_a-widget-btn-rect w-class="92" w-sid="92" on-tap="change({{id}})" style="top: 165px;">
-                        {"class":"default","fontsize":24,"color":"#fdedd7;","text":"兑    换","width":112,"height":41,"marginLeft":0}
-                    </app_a-widget-btn-rect>
+                        {{let prop = it1.Pi.sample[currCloth.act_condition[0]]}}
+                        {{let url = it1.Pi.pictures[prop.icon]}}
+                        
+                        <div w-class="102" w-sid="102" style="top: 140px;">
+                            <app_a-widget-prop-base w-class="103" w-sid="103" on-tap="showPropInfo({{currCloth.act_condition[0]}})">
+                                    {"width":80,"height":80,"prop":{{prop}},"url":{{url}},"count":"none","name":"none","bg":"","quality":1,"bottom":20,"top":25,"right":25} 
+                            </app_a-widget-prop-base>
+                            <app_a-widget-pic_text-pic_text w-class="104" w-sid="104">
+                                    {"icon":"equip_txt_bg","width":73,"height":22,"align":"center","marginLeft":3,"text":{{it1.getFragCount(id)+"/"+currCloth["act_condition"][1]}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":0} 
+                            </app_a-widget-pic_text-pic_text>
+                        </div>
+                        <app_a-widget-btn-rect w-class="92" w-sid="92" on-tap="change({{id}})" style="top: 165px;">
+                            {"class":"default","fontsize":24,"color":"#fdedd7;","text":"兑    换","width":112,"height":41,"marginLeft":0}
+                        </app_a-widget-btn-rect>
                     {{else}}
                         {{let obj = it1.cloth}}
             

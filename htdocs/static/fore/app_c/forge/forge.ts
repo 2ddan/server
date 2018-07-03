@@ -1,17 +1,15 @@
 import * as piSample from "app/mod/sample";
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
-import { remove, destory, getRoot } from "pi/ui/root";
+import {  destory} from "pi/ui/root";
 import { open, close } from "app/mod/root";
 
 import { Common } from "app/mod/common";
 import { updata, get as getDB, listen } from "app/mod/db";
-import { Pi, cfg, globalSend } from "app/mod/pi";
+import { Pi, globalSend } from "app/mod/pi";
 import { Common_m } from "app_b/mod/common";
 
-import { net_request, net_send, net_message } from "app_a/connect/main";
-
-import { UiFunTable } from "app/scene/ui_fun";
+import { net_request } from "app_a/connect/main";
 
 import { equip_level_limit } from "cfg/b/equip_level_limit";
 import { equip_level_up } from "cfg/c/equip_level_up";
@@ -28,8 +26,10 @@ import { attr_add } from "cfg/c/attr_add";
 import { equip_materials_shift } from "cfg/c/equip_materials_shift";
 import { Music } from "app/mod/music";
 import { config_shortcut } from "cfg/c/config_shortcut";
-/************  ***********/
+import { equip_wash_num } from "cfg/c/equip_wash_num";
+import { equip_level_up_fixed } from "cfg/c/equip_level_up_fixed_fore";
 
+/************  ***********/
 const redId = Object.keys(equip_evolution).sort(function (a, b) {
     return (equip_evolution[a].solt - equip_evolution[b].solt);
 });
@@ -44,7 +44,6 @@ let equip: any = {}, //所有装备
     minLevel = 0, //保存筛选出的最低等级
     costType = 0,
     costPropId = 0,
-    bagCostPropIndex = 0,
     diamarr = [], //记录装备宝石中的装备位,宝石位
     diamprop = 0,
     diampropcount = 0,
@@ -62,7 +61,7 @@ let equip: any = {}, //所有装备
     // levelFlog = true,//防止连续点击升级
     level_ok = true,//强化成功标识
 
-    gemFlog = true,//防止连续点击宝石升级
+    // gemFlog = true,//防止连续点击宝石升级
 
     redIndex = 0, //记录当前所点击的红装的位置
     forge_cost: any = {}, //红装花费物品
@@ -127,6 +126,7 @@ export const globalReceive: any = {
 const getData = () => {
     let data: any = {};
     data.Pi = Pi;
+    data.equip_wash_num = equip_wash_num;
     data.levelUpCost = levelUpCost; //一键升级消耗总道具
     data.levelUpMoney = levelUpMoney; //一键升级消耗总银子
     data.minLevel = minLevel; //已穿戴装备中的最低强化等级以及其位置
@@ -169,8 +169,12 @@ const getData = () => {
     data.this_materials = this_materials;
     data.target_materials = target_materials;
     data.change_num = change_num;
+    data.change_ratio = equip_materials_shift[1][1];
 
     data.attr_distance = attr_distance;
+    let lev = getDB(`friend_battle.equip_level.${clickequipindex}`)
+    data.fixed_pre = equipUpFixed(clickequipindex, lev);
+    data.fixed_next = equipUpFixed(clickequipindex, lev + 1);
     return data;
 }
 
@@ -368,8 +372,7 @@ const getOnekeyupCost = () => {
     costPropId = equip_level_up[min][0][0];
     //addmultiple = [equip_level_up[min][2],equip_level_up[min+1][2]];
 
-    //bagCostPropIndex = getPropIndex();
-
+ 
     let p = Common.getBagPropById(equip_level_up[min][0][0]),
         bagProp = p ? p[1].count : 0,
         bagMoney = getDB("player.money");
@@ -478,7 +481,7 @@ const getOnekeyup = () => {
             Common_m.deductfrom(result);
             //重新计算消耗
             once_strong_cost = countOnceCost(clickequipindex);
-            getOnekeyupCost();
+            
             forelet.paint(getData());
             let attrObj = {};
             //属性提示
@@ -495,7 +498,8 @@ const getOnekeyup = () => {
                 globalSend("attrTip", {
                     words: `${attribute_config[k]} +${Common_m.decimalToPercent(attrObj[k])}`
                 })
-            })
+            });
+            getOnekeyupCost();
             setTimeout(function () {
                 attrObj = null;
                 level_up_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -592,7 +596,7 @@ const diamActiv = (arg) => {
 
 //装备宝石升级
 const diamlevelup = (arg) => {
-    if (!gemFlog) return;
+    // if (!gemFlog) return;
     let equip_diam = getDB("friend_battle.equip_diam")[arg[0] - 1];
     let diam_index = equip_diam[arg[1]];
     if (!diam_promote[diam_index[0]][diam_index[1]]) {
@@ -606,7 +610,7 @@ const diamlevelup = (arg) => {
         } else {
             let result: any = Common.changeArrToJson(data.ok);
             Common_m.deductfrom(result);
-            gemFlog = false;
+            // gemFlog = false;
             Music.skillSound("other_two");
             globalSend("ui_anim", { name: "levelup", time: 1050 });
             let bag = getDB("bag");
@@ -625,7 +629,7 @@ const diamlevelup = (arg) => {
             })
             setTimeout(function () {
                 gem_up_ok = false;
-                gemFlog = true;
+                // gemFlog = true;
                 forelet.paint(getData())
             }, 500);
         }
@@ -734,9 +738,9 @@ const gradeUpRed = function () {
     redCanUp = true;
     let msg = { "param": { "index": p.index - 0 + 1, "bag_type": p.bag_type - 0 }, "type": "app/prop/equip@evolution" };
     net_request(msg, function (data) {
+        redCanUp = false;
         if (data.error) {
             console.log(data.error);
-            redCanUp = false;
         } else {
             globalSend("ui_anim", { name: "levelup", time: 1050 });
             let prop: any = Common.changeArrToJson(data.ok);
@@ -754,7 +758,6 @@ const gradeUpRed = function () {
             forelet.paint(getData());
             setTimeout(function () {
                 level_up_arr[index] = 0;
-                redCanUp = false;
                 forelet.paint(getData());
             }, 600);
         }
@@ -915,6 +918,9 @@ export class forge extends Widget {
             globalSend("openNewFun", "equip_star");
         }
         else if (arg.type_m === "equip_level") {
+            getOnekeyupCost();
+            countOnceCost(clickequipindex);
+            forelet.paint(getData());
             globalSend("openNewFun", "equip_level");
         }
         forelet.paint(getData());
@@ -983,6 +989,10 @@ export class forge extends Widget {
     clickdiam = (arg) => {
         diamarr = selectdiam(arg);
         forelet.paint(getData());
+    }
+    //点击未激活宝石给提示
+    clickTip = (index) => {
+        globalSend("screenTipFun", { words: `此装备宝石总等级达到${levelarr1[index]}级开放` });
     }
     //装备宝石装备切换
     diamEquip = (arg) => {
@@ -1144,3 +1154,17 @@ listen("friend_battle.equip_set",function(){
     diamarr = isdiamlevel();
     forelet.paint(getData());
 });
+
+// 装备强化附加值
+equip_level_up_fixed
+const equipUpFixed = function (index, ep_level) {
+    ep_level = ep_level < 0 ? 0 : ep_level;
+    let up_arr = equip_level_up_fixed[index + 1];
+    let j = 0;
+    for (let i = 0, len = up_arr.length; i < len; i++) {
+        if (ep_level >= up_arr[i].level) {
+            j = i;
+        }
+    }
+    return eval('('+ up_arr[j].val +')');
+}

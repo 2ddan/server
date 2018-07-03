@@ -1,0 +1,3 @@
+- 这是一个同时改变点击事件和自定义事件重绘的示例
+- father页面点击child,弹出【i am click 1】，并且触发父组件自定义事件弹出【i am click1 from father】，同时改变child点击事件的响应函数，this.paint()重绘
+- 第二次点击，执行新的响应函数，弹出【i am click 2】，同时触发父组件新的自定义事件弹出【i am click2 from father】

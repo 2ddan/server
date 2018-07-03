@@ -1,14 +1,11 @@
-import { net_request, net_send, net_message } from "app_a/connect/main";
-import { data as localDB,insert, updata, get as getDB, listen } from "app/mod/db";
+import { net_request } from "app_a/connect/main";
+import { insert, updata, get as getDB, listen } from "app/mod/db";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import * as piSample from "app/mod/sample";
 import { Forelet } from "pi/widget/forelet";
-import { remove, destory } from "pi/ui/root";
 import { open, close } from "app/mod/root";
 import { Widget } from "pi/widget/widget";
-import { Pi, globalSend, findGlobalReceive } from "app/mod/pi";
-import { showNewRes } from "app_b/bag/bag";
+import {  globalSend } from "app/mod/pi";
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { Music } from "app/mod/music";
 import { config_shortcut } from "cfg/c/config_shortcut";
@@ -16,8 +13,7 @@ import { config_shortcut } from "cfg/c/config_shortcut";
 
 export const forelet = new Forelet();
 
-let tab_switch = "friend_f",
-	curr_prop_list,//装备列表
+let curr_prop_list,//装备列表
 	// reclaim_flag = false,//单次分解间隔
 	choose_return: any = {},
 	reclaim_ok = false,//熔炼成功标识
@@ -255,7 +251,7 @@ const propResolved = function () {
 		choose_return = {};
 		one_choose();
 		updatahtml();
-		
+		globalSend("reclaimEnd");
 		let timer = setTimeout(function () {
 			reclaim_ok = false;
 			// reclaim_flag = false;

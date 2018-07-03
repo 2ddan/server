@@ -3,6 +3,9 @@
  */
 
  // ================================ 导入
+ //pi
+import { Vector3 } from "pi/math/vector3";
+//fight
  import { Policy } from "./policy"
 
  // ================================ 导出
@@ -47,10 +50,14 @@
      max_hpCount = 0
      //显示血量
      show_hp = 0
+     //血量为0的时间点，用来判断移除场景的时间点
+     die_time = 0
      // 能量
      energy = 0
      // 阵营， 1为己方，2为对方
      camp = 1
+     //pk状态，0为和平,1为被动（反击2），2为主动（被1围攻）
+     pk = 0
      // 出场次序， 1是主角，以后为伙伴
      loc = 1
      // fighters列表位置
@@ -69,8 +76,11 @@
      x: number = 0
      y: number = 0
      z: number = 0
-     // 移动状态
-     moving = false
+     // 移动状态,0为没移动 >0则为移动中
+     moving = 0
+     //动作状态
+     state = "standby"
+
      // 无敌状态
      god = 0
      // 晕眩状态
@@ -85,8 +95,9 @@
      shield = { length: 0 }
      //系统属性
      A: any = undefined
-
-     // buff
+     //buff原始数据列表
+     buffList = []
+     // buff触发列表
      buff: Buff[] = []
      // 正在释放的技能
      spreadSkill: Skill = undefined
@@ -101,7 +112,7 @@
      // 正在释放的神兵类技能
      godSkill: Skill = undefined
      // 移动的目的地
-     moveto: Pos = undefined
+     moveto: any = undefined
      //移动速度,m/50sm
      speed: number = 0
      // 当前选择的技能
@@ -112,7 +123,7 @@
      damageList: any = {}
      //队伍id
      groupId: number = -1
-     //状态 1:手动选怪 1000:不参与战斗计算，最高限制状态
+     //状态 1:手动选怪 1000:不参与战斗计算，最高限制状态```
      status: number = 0
      //战斗者显示类型 0-普通怪，1-boss，2-机器人，3-精英怪
      show_type: number = 0
@@ -122,12 +133,12 @@
      hidden: boolean = false
      // 临时记录用：随机数 || 记录选择目标是，目标到自身的距离平方
      rand: number = 0
-     //是否需要移除
-     remove: boolean = false
+     //移除的时间点，0不需要移除
+     remove: number = 0
      //是否ai,true: 自动选怪，自动移动，false：计算伤害等最后决策
      ai: boolean = true
      //移动路径Array<Pos>
-     path: Pos[] = undefined
+     path: Vector3[] = undefined
      //主动寻怪范围
      round: number = Infinity
      //额外选择目标的条件like： [['hp', '>', 0]] => Fighter.hp > 0  ||  [['hp', 0]] => Fighter.hp == 0
@@ -378,6 +389,7 @@ export class Result{
         return `{"ok":${des||"ok"}}`;
     }
 }
+
  // ================================ 本地
 
  

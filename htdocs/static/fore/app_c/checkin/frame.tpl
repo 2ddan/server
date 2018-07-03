@@ -14,8 +14,13 @@
 
 
     {{if it.value.vip}}
-    <div w-class="discount_bg"></div>
-    <div class="shadow" w-class="text">vip{{it.value.vip}}双倍</div>
+
+    <div w-class="discount_bg">
+        <app_a-widget-pic_text-pic_text style="transform: scale(-1,1);">
+            {"icon":"shop_vip_discount","width":42,"height":51,"align":"center","text":" "} 
+        </app_a-widget-pic_text-pic_text>
+        <div class="shadow" w-class="text">vip{{it.value.vip}}双倍</div>
+    </div>
     {{end}}
 
     {{let g = it.value.prop}}
@@ -25,7 +30,7 @@
     {{let url = it1.Pi.pictures[icon]}}
     {{%% let fun = (it.index-0 == day && it1.checkInData.checkin_state==0)?'checkIn':'propInfoShow('+sid+')'}}
     <widget w-tag="app_a-widget-prop-base" class="shadow" style="position:absolute;width:76px;height:76px;left:10px;top:20px;color:#fff;" on-tap="propInfoShow({{sid}})">
-        {"width":76,"height":76,"prop":{{prop}} ,"url":{{url}},"count":{{g[1]}},"hidden_name":1,"top":23,"right":7,"effect":{{g[2] ? 1 : 0}}}
+        {"width":76,"height":76,"prop":{{prop}} ,"url":{{url}},"count":{{g[1]}},"hidden_name":1,"top":23,"right":7,"effect":{{prop.effect}}}
     </widget>
     
     {{if (it.index < day)}}

@@ -595,14 +595,10 @@
 	background-size: 100%;
 }
 .discount_bg {
-	position: absolute;
-	width: 42px;
-	height: 51px;
-	background-image: url(./images/discount_bg.png);
-	background-repeat: no-repeat;
-	left: 0px;
-	top: 0px;
-	z-index: 3;
+    position: absolute;
+    left: -2px;
+    top: -1px;
+    z-index: 3;
 }
 .text {
 	color: #ffffff;
@@ -614,6 +610,7 @@
 	top: 33px;
 	transform: rotate(-45deg);
 	left: -12px;
+	white-space: nowrap;
 }
 .bar_bg {
 	position: absolute;

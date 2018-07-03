@@ -302,7 +302,7 @@
     position: absolute;
     top: -18px;
     left: 50%;
-    margin-left: -45px;
+    margin-left: -100px;
     z-index: 1;
 }
 .56 {

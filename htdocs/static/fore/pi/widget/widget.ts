@@ -11,16 +11,18 @@
 */
 
 // ============================== 导入
-import { HandlerTable } from "../util/event";
-import { Sheet } from "./style";
-import { VirtualWidgetNode, VWNode } from "./virtual_node";
-import { Forelet } from "./forelet";
+import { butil, commonjs, depend, load, Mod } from '../lang/mod';
+import * as hash from '../util/hash';
 import { Json } from '../lang/type';
-import { paintWidget } from "./painter";
-import { Mod } from '../lang/mod';
+import { HandlerTable } from '../util/event';
 import { logLevel, warn } from '../util/log';
-import { ResTab } from "../util/res_mgr";
-import { setValue } from "../util/util";
+import { ResTab } from '../util/res_mgr';
+import { setValue } from '../util/util';
+import { Forelet } from './forelet';
+import { paintWidget } from './painter';
+import { Sheet } from './style';
+import { VirtualWidgetNode, VWNode } from './virtual_node';
+import { convertEntity, calAttrHash, calTextHash, addJson, installText, addText, chFunc } from "pi/util/tpl";
 
 // ============================== 导出
 export let level = logLevel;
@@ -30,8 +32,8 @@ export let level = logLevel;
  */
 export interface Tpl {
 	value: Function;
-	path: string; //路径
-	wpath: string; //组件路径
+	path: string; // 路径
+	wpath: string; // 组件路径
 }
 
 /**
@@ -43,111 +45,115 @@ export interface Tpl {
  */
 export class Widget extends HandlerTable {
 	// 必须要赋初值，不然new出来的实例里面是没有这些属性的
-	name: string = null; // 组件的名称
-	tpl: Tpl = null; // 组件的模板
-	sheet: {value: Sheet} = null; // 组件的样式
-	config: {value: Json} = null; // 所对应的配置
-	forelet: Forelet = null; // 所对应的forelet
-	props: Json = null; // 由父组件设置的组件属性
-	state: Json = null; // 由forelet设置的组件状态
-	tree: VWNode = null; // 组件所对应的节点树
-	parentNode: VirtualWidgetNode = null; // 父节点，parentNode.link的对象就是widget
-	children: Array<Widget> = []; // 所有的子组件
-	inDomTree: boolean = false; // 是否在dom树中
-	resTab: ResTab = null; // 资源表
-	resTimeout: number = 3000; // 资源缓冲时间，默认3秒
-	private styleCache: Sheet = new Map; // 样式查询缓存
+	public name: string = null; // 组件的名称
+	public tpl: Tpl = null; // 组件的模板
+	public sheet: {value: Sheet} = null; // 组件的样式
+	public config: {value: Json} = null; // 所对应的配置
+	public forelet: Forelet = null; // 所对应的forelet
+	public props: Json = null; // 由父组件设置的组件属性
+	public state: Json = null; // 由forelet设置的组件状态
+	public tree: VWNode = null; // 组件所对应的节点树
+	public parentNode: VirtualWidgetNode = null; // 父节点，parentNode.link的对象就是widget
+	public children: Widget[] = []; // 所有的子组件
+	public inDomTree: boolean = false; // 是否在dom树中
+	public resTab: ResTab = null; // 资源表
+	public resTimeout: number = 3000; // 资源缓冲时间，默认3秒
+	private styleCache: Sheet = new Map(); // 样式查询缓存
 
 	/**
 	 * @description 创建后调用，一般在渲染循环外调用
 	 * @example
 	 */
-	create(): void {
+	public create(): void {
 		this.forelet && this.forelet.addWidget(this);
 	}
 	/**
 	 * @description 第一次计算后调用，此时创建了真实的dom，但并没有加入到dom树上，一般在渲染循环外调用
 	 * @example
 	 */
-	firstPaint(): void {
-		this.forelet && this.forelet.eventWidget(this, "firstPaint");
+	public firstPaint(): void {
+		this.forelet && this.forelet.eventWidget(this, 'firstPaint');
 	}
 	/**
 	 * @description 销毁时调用，一般在渲染循环外调用
 	 * @example
 	 */
-	destroy(): boolean {
-		if (!this.tpl)
+	public destroy(): boolean {
+		if (!this.tpl) {
 			return false;
+		}
 		this.tpl = undefined;
 		if (this.resTab) {
 			this.resTab.timeout = this.resTimeout;
 			this.resTab.release();
 		}
 		this.forelet && this.forelet.removeWidget(this);
+		
 		return true;
 	}
 	/**
 	 * @description 添加到dom树后调用，在渲染循环内调用
 	 * @example
 	 */
-	attach(): void {
+	// tslint:disable:no-empty
+	public attach(): void {
 	}
 	/**
 	 * @description 更新到dom树前调用，一般在渲染循环外调用
 	 * @example
 	 */
-	beforeUpdate(): void {
-		this.forelet && this.forelet.eventWidget(this, "update");
+	public beforeUpdate(): void {
+		this.forelet && this.forelet.eventWidget(this, 'update');
 	}
 	/**
 	 * @description 更新到dom树后调用，在渲染循环内调用
 	 * @example
 	 */
-	afterUpdate(): void {
+	public afterUpdate(): void {
 	}
 	/**
 	 * @description 从dom树上移除前调用，一般在渲染循环内调用
 	 * @example
 	 */
-	detach(): void {
+	public detach(): void {
 	}
 	/**
 	 * @description 获得样式数据
 	 * @example
 	 */
-	getSheet(): Sheet {
+	public getSheet(): Sheet {
 		return this.sheet && this.sheet.value;
 	}
 	/**
 	 * @description 获得配置数据
 	 * @example
 	 */
-	getConfig(): Json {
+	public getConfig(): Json {
 		return this.config && this.config.value;
 	}
 	/**
 	 * @description 获得渲染数据
 	 * @example
 	 */
-	getProps(): Json {
+	public getProps(): Json {
 		return this.props;
 	}
 	/**
 	 * @description 设置属性，默认外部传入的props是完整的props，重载可改变行为
 	 * @example
 	 */
-	setProps(props: Json, oldProps?: Json): void {
+	public setProps(props: Json, oldProps?: Json): void {
 		this.props = props;
 	}
 	/**
 	 * @description 更新属性，默认外部传入的props是更新命令，必须为Json对象，键的结构类似"a.b.c"，重载可改变行为
 	 * @example
 	 */
-	updateProps(props: Json, oldProps?: Json): void {
-		if(!props)
+	public updateProps(props: Json, oldProps?: Json): void {
+		if (!props) {
 			return;
-		for (let k in props) {
+		}
+		for (const k in props) {
 			setValue(this.props, k, props[k]);
 		}
 	}
@@ -155,14 +161,14 @@ export class Widget extends HandlerTable {
 	 * @description 获得渲染数据
 	 * @example
 	 */
-	getState(): Json {
+	public getState(): Json {
 		return this.state;
 	}
 	/**
 	 * @description 设置状态
 	 * @example
 	 */
-	setState(state: Json): void {
+	public setState(state: Json): void {
 		this.state = state;
 	}
 	/**
@@ -170,7 +176,7 @@ export class Widget extends HandlerTable {
 	 * @param reset表示新旧数据差异很大，不做差异计算，直接生成dom
 	 * @example
 	 */
-	paint(reset?: boolean): void {
+	public paint(reset?: boolean): void {
 		paintWidget(this, reset);
 	}
 
@@ -180,15 +186,17 @@ export class Widget extends HandlerTable {
  * @description 注册组件
  * @example
  */
-export const register = (name: string, widget: Function, tpl: Tpl, sheet?: {value: Sheet}, config?: {value: Json}, forelet?: Function) => { // {name, construct, tpl, sheet, config, forelet} | undefined
-	let old = widgetMap.get(name);
+export const register = (name: string, widget: Function, tpl: Tpl, sheet?: {value: Sheet}, 
+	config?: {value: Json}, forelet?: Function) => { // {name, construct, tpl, sheet, config, forelet} | undefined
+	const old = widgetMap.get(name);
 	if (old) {
-		warn(level, "widget already register, name:", name);
+		warn(level, 'widget already register, name:', name);
 	}
 	widget = widget || getWidget;
 	widgetMap.set(name, {name, widget, tpl, sheet, config, forelet });
+
 	return old;
-}
+};
 
 /**
  * @description 查询组件
@@ -196,14 +204,14 @@ export const register = (name: string, widget: Function, tpl: Tpl, sheet?: {valu
  */
 export const lookup = (name: string): Json => { // {name, widget, tpl, sheet, config, forelet} | undefined
 	return widgetMap.get(name);
-}
+};
 /**
  * @description 列出所有的组件
  * @example
  */
-export const list = (): Array<any> => {
+export const list = (): any[] => {
 	return [...widgetMap.values()];
-}
+};
 
 /**
  * @description 取消注册组件
@@ -211,71 +219,93 @@ export const list = (): Array<any> => {
  */
 export const unregister = (name: string): Json => {
 	return widgetMap.delete(name);
-}
+};
 
 /**
  * @description 创建组件
  * @example
  */
 export const factory = (name: string): Widget => {
-	let creator = widgetMap.get(name);
-	if (!creator)
+	const creator = widgetMap.get(name);
+	if (!creator) {
 		return;
-	let c = creator.widget();
-	let w = new c();
+	}
+	const c = creator.widget();
+	const w = new c();
 	w.name = name;
-	if (creator.sheet)
+	if (creator.sheet) {
 		w.sheet = creator.sheet;
-	if (creator.tpl)
+	}
+	if (creator.tpl) {
+		if(creator.tpl.compile === 0){
+			creator.tpl.init(); 
+		}
 		w.tpl = creator.tpl;
-	if (creator.config)
+	}
+	if (creator.config) {
 		w.config = creator.config;
-	if (creator.forelet)
+	}
+	if (creator.forelet) {
 		w.forelet = creator.forelet();
+	}
 	w.create();
+
 	return w;
-}
+};
 /**
  * @description 计算相对组件路径
  * @example
  */
 export const relative = (name: string, dir: string): string => {
-	let j, i = name.length - 1;
-	if (name.charCodeAt(i) !== 36)
+	let j;
+	let i = name.length - 1;
+	if (name.charCodeAt(i) !== 36) {
 		return name;
+	}
 	j = dir.length - 1;
 	if (dir.charCodeAt(j) !== 47) {
-		j = dir.lastIndexOf("-");
+		j = dir.lastIndexOf('-');
 	}
 	while (i >= 0) {
-		if (name.charCodeAt(i - 1) !== 36)
+		if (name.charCodeAt(i - 1) !== 36) {
 			break;
+		}
 		i--;
-		j = dir.lastIndexOf("-", j - 1);
+		j = dir.lastIndexOf('-', j - 1);
 	}
-	if (i < 0)
-		return "";
+	if (i < 0) {
+		return '';
+	}
 	name = name.slice(0, i);
-	if (j < 0)
+	if (j < 0) {
 		return name;
-	if (j < dir.length - 1)
+	}
+	if (j < dir.length - 1) {
 		dir = dir.slice(0, j + 1);
+	}
+	
 	return dir + name;
-}
+};
 /**
  * @description 获取tpl、css和cfg缓冲
  * @example
  */
 export const getCache = (file: string): Json => {
-	return cacheMap.get(file);
-}
+	let r = cacheMap.get(file);
+	if(r && file.indexOf(".tpl")>0 && r.value && r.compile == 0){
+		r.value = r.value(toString, commonjs ?
+			commonjs.relativeGet : null, hash, file, convertEntity, calAttrHash, calTextHash, addJson, installText, addText, chFunc);
+		r.compile = 1;
+	}
+	return r;
+};
 /**
  * @description 设置tpl、css和cfg缓冲
  * @example
  */
 export const setCache = (file: string, data: Json): void => {
 	cacheMap.set(file, data);
-}
+};
 
 /**
  * @description 清除tpl、css和cfg缓冲
@@ -283,17 +313,16 @@ export const setCache = (file: string, data: Json): void => {
  */
 export const deleteCache = (file: string): void => {
 	cacheMap.delete(file);
-}
+};
 
 // ============================== 本地
 // 组件模板表
-let widgetMap = new Map();
+const widgetMap = new Map();
 
 // tpl、css和cfg缓冲
-let cacheMap = new Map();
+const cacheMap = new Map();
 
 // 获得默认组件
-let getWidget = () => Widget;
+const getWidget = () => Widget;
 
 // ============================== 立即执行
-

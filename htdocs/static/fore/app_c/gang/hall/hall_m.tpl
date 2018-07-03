@@ -2,7 +2,7 @@
 <div style="position:absolute;left:0;top:0;width:100%;z-index:2;bottom:0px;">
 	{{let root = _get("pi/ui/root").exports}}
 	<widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
-		{"text":"门 派","coin":["money","diamond",150005],"left":33,"top":16,"width":540,"type":"contribute","width":{{root.getWidth()}} } 
+		{"text":"门 派","coin":["money","diamond", 150005],"left":33,"top":16,"width":540,"type":"contribute","width":{{root.getWidth()}} } 
 	</widget>
 	<div style="position:absolute;width:540px;height:868px;left:50%;margin-left:-270px">
 		{{let appCfg = _get("app/mod/db").exports.data}}

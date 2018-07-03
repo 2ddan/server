@@ -22,7 +22,7 @@
                         {{let icon = prop.module ? prop.module[prop.career_id.indexOf(it1.player.career_id)][0] : prop.icon}}
                         {{let url = it1.Pi.pictures[icon]}}
                         <app_a-widget-prop-base on-tap='showPropInfo("{{n[0]}}")' style="position:relative;margin:0 2px;display:inline-block;width:51px;height:51px">
-                            {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{n[1]}},"name":"none","bg":0,"effect":{{n[2] ? 1 : 0}}}
+                            {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{n[1]}},"name":"none","bg":0,"effect":{{prop.effect}}}
                         </app_a-widget-prop-base>
                         {{end}}
                     {{end}}
@@ -41,7 +41,7 @@
                 </div>
             {{end}}           
         {{else}}
-            <div style=" position: absolute;width:84px;height:30px;right:96px;bottom: 26px;background: url(./images/01.png)" on-tap="buy({{it1.investment_base.id}},{{it1.investment_base.rechargeID}})">                
+            <div style=" position: absolute;width:84px;height:30px;right:96px;bottom: 26px;background: url(./images/01.png)" on-tap='buy({{it1.investment_base.id}})'>                
             </div>
         {{end}}
         <widget w-tag="app_a-widget-line-line" style="position:absolute;top:166px;right:-17px;">

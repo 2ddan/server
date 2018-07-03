@@ -3,22 +3,18 @@ import { open, close } from "app/mod/root";
 import { Forelet } from "pi/widget/forelet";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { net_request, net_message } from "app_a/connect/main";
+import { net_request } from "app_a/connect/main";
 import { TipFun } from "app/mod/tip_fun";
 import { Pi, globalSend } from "app/mod/pi";
 import { data as localDB, updata, get, checkTypeof, listen } from "app/mod/db";
 import { fa_base } from "cfg/c/fa_base";
 import { fa_acttype } from "cfg/c/fa_acttype";
 import { fa_actlist } from "cfg/c/fa_actlist";
-import { function_open } from "cfg/b/function_open";
 import { Util } from "app/mod/util";
 import { act_progress } from "app_b/mod/act_progress";
-import { toChooseCount } from "app_b/prop_d/prop";
-import { currency } from "cfg/c/recharge_diamond";
 import { tipsFestival, getTipsList } from "./tips_festivalactivity";
 
 //导入充值
-import { pay } from "app_b/recharge/pay"
 
 
 export const forelet = new Forelet();
@@ -68,6 +64,10 @@ export class fest_act_w extends Widget {
     // //物品详情
     propInfoShow = (sid) => {
         globalSend("showOtherInfo", sid);
+    }
+     //帮助详情
+     getHelp = () => {
+        globalSend("showHelp", "festivalActivity")
     }
     //切换活动页面（活动一，活动二，活动三……）
     changePage = (arg) => {
@@ -218,6 +218,7 @@ const getData = () => {
     _data.act_progress = act_progress;
     _data.checkTypeof = checkTypeof;
     _data.Util = Util;
+    _data.getCard = getCard();
     _data.fa_acttype = fa_acttype;
     _data.fa_actlist = fa_actlist;
     _data.fa_base = fa_base;
@@ -454,6 +455,23 @@ const buy = (act, limitCount, func) => {
     func(act.id, 1);
 }
 
+//判断角色购买金卡及白金卡，0无，1金卡，2白金卡，3金卡白金卡
+let getCard = function(){
+    let player = get("player");
+    if(!player){
+        return 0;
+    }
+    if(player.annual_card_due_time && player.month_card_due_time){
+        return 3;
+    }else if(player.annual_card_due_time ){
+        return 2;
+    }else if(player.month_card_due_time){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 //兑换  act--act_list中的一个活动，  func购买方法
 const exchange = (act, limitCount, func) => {
     const maxCount = () => {
@@ -462,7 +480,7 @@ const exchange = (act, limitCount, func) => {
         for (let i = 0; i < act.award_condition.length; i++) {
             for (let j = 0; j < bag.length; j++) {
                 if (bag[j] && bag[j].sid == act.award_condition[i][0] && bag[j].count >= act.award_condition[i][1]) {
-                    let c = Math.round(bag[j].count / act.award_condition[i][1]);
+                    let c = Math.floor(bag[j].count / act.award_condition[i][1]);
                     if (count == -1 || c < count)
                         count = c;
                     continue;
@@ -517,7 +535,7 @@ const exchange = (act, limitCount, func) => {
     globalSend("gotoBuy", buyData);
 }
 
-listen("data_record.recharge,data_record.dailyCopy,data_record.money_tree", () => {
+listen("data_record.recharge,data_record.dailyCopy,data_record.money_tree,data_record.pet", () => {
     if (todayAct.length > 0) {
         forelet.paint(getData());
     }

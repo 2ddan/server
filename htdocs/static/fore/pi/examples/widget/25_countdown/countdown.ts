@@ -1,27 +1,29 @@
-import {Widget} from "../../../widget/widget";
-import {notify} from "../../../widget/event";
-import {Json} from "../../../lang/type";
+/**
+ * 
+ */
+import { Json } from '../../../lang/type';
+import { notify } from '../../../widget/event';
+import { Widget } from '../../../widget/widget';
 
-interface Props{
-    count: number;
-    isend:boolean;
+interface Props {
+	count: number;
+	isend: boolean;
 }
 
-export class CountDownDemo extends Widget{
+export class CountDownDemo extends Widget {
 
-    props:Props;
-    constructor(){
-        super();
-        this.props = {
-            count:1,
-            isend:false
-        }
-    }
+	public props: Props;
+	constructor() {
+		super();
+		this.props = {
+			count: 1,
+			isend: false
+		};
+	}
 
-    end(){
-        this.props.isend = true;
-        this.paint();
-    };
+	public end() {
+		this.props.isend = true;
+		this.paint();
+	}
 
 } 
-

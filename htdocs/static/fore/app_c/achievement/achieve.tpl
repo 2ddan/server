@@ -50,7 +50,7 @@
                 {{end}}
                 {{end}}							
             </div>
-            <div class="shadow" style="position:absolute;top:15px;right:0px;font-size:16px;width:140px;text-align:center;color:#e2cdb3;">
+            <div class="shadow" style="position:absolute;top:15px;right:0px;font-size:16px;width:140px;text-align:center;color:#e2cdb3;white-space: nowrap;">
                 进度:&nbsp;&nbsp;<span style="color:rgb(255,255,255);">{{Common.numberCarry(parseInt(v.value[1]),10000)+"/"+Common.numberCarry(parseInt(task.params),10000)}}</span>
             </div>
             {{if v.value[0]}}

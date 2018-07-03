@@ -34,6 +34,15 @@
             </widget>
             {{end}}
             <div w-class="s15">
+                <widget  w-tag="app_a-widget-bg_frame-bg" style="width:100%;height:95%;left:0;top:4px;">
+                    {"bgName":"bg_frame31"} 
+                </widget>
+                <app_a-widget-line-line style="position:absolute;top:0px;left:0px;right:0px;margin:0 auto;width:100%">
+                    {"line":"line_16"}
+                </app_a-widget-line-line>
+                <app_a-widget-line-line style="position:absolute;bottom:0px;left:0px;right:0px;margin:0 auto;width:100%">
+                    {"line":"line_17"}
+                </app_a-widget-line-line>
                 {{let now = it1.vip_exp}}
                 {{let next = it1.vipUpNeed[it1.vip_level].exp}}
                 {{let percent = (now/next)*100}}
@@ -75,7 +84,9 @@
                     <div scroller="1" style="position: absolute;width:110%;top: 0; bottom: 5px;overflow-y: auto; overflow-x: hidden;">
                         {{let index = 1}}
                         {{for i,v in it1.vip_advantage[it1.vipNum]}}
+                        {{if _cfg[i]}}
                         <div>{{index + "、"+_cfg[i]+"提升至"+v+"次"}}</div>
+                        {{end}}
                         {{:index++}}
                         {{end}}
                     </div>
@@ -109,6 +120,9 @@
                 </div>
 
                 <div data-desc="物品"  w-class="s41" class="shadow">
+                    <widget  w-tag="app_a-widget-bg_frame-bg" style="width: 100%;height: 67px;left: 0;top: 5px;">
+                        {"bgName":"bg_frame30"} 
+                    </widget>
                     <div w-class="s42">
                         {{for i,v in it1.superData[it1.vipNum]['goods'] }}
                         {{let prop = Pi.sample[v[0]]}}

@@ -24,17 +24,6 @@ let s:any = {};
 };
     s["2"]  = {
     "index" : "2",
-    "id" : "111",
-    "name" : "离线收益",
-    "icon" : "menu_offLine_icon",
-    "level_limit" : 29,
-    "desc" : null,
-    "type" : "off_line",
-    "path" : "app_c-off_line-off_line",
-    "tips" : ["daily_act.off_line"]
-};
-    s["3"]  = {
-    "index" : "3",
     "id" : "undefined",
     "name" : "周活动",
     "icon" : "menu_sevenday_icon",

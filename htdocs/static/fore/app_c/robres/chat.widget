@@ -1,0 +1,4 @@
+{
+    "tpl":"./chat.tpl",
+    "js":"app_b/chat/chat.ts"    
+}

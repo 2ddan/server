@@ -1,59 +1,87 @@
 export const arena_award_shop = [
     
     {
-        "prop":[450401,1],
-        "money":10000,
+        "prop":[100029,50],
+        "money":20000,
         "buy_count_limit":1,
         "buy_rank_limit":1,
         "index":0
     },
     {
-        "prop":[450409,1],
-        "money":10000,
+        "prop":[100027,50],
+        "money":20000,
         "buy_count_limit":1,
-        "buy_rank_limit":3,
+        "buy_rank_limit":2,
         "index":1
     },
     {
-        "prop":[100005,100],
-        "money":2000,
+        "prop":[100056,5],
+        "money":20000,
         "buy_count_limit":1,
-        "buy_rank_limit":5,
+        "buy_rank_limit":3,
         "index":2
     },
     {
-        "prop":[100017,150],
-        "money":2000,
+        "prop":[101208,20],
+        "money":20000,
         "buy_count_limit":1,
-        "buy_rank_limit":10,
+        "buy_rank_limit":5,
         "index":3
     },
     {
-        "prop":[100008,20],
-        "money":2000,
+        "prop":[100001,1000000],
+        "money":10000,
         "buy_count_limit":1,
-        "buy_rank_limit":50,
+        "buy_rank_limit":10,
         "index":4
     },
     {
-        "prop":[100016,300],
-        "money":2000,
+        "prop":[200106,1],
+        "money":10000,
         "buy_count_limit":1,
-        "buy_rank_limit":100,
+        "buy_rank_limit":20,
         "index":5
     },
     {
-        "prop":[100004,2000],
-        "money":2000,
+        "prop":[100005,500],
+        "money":10000,
         "buy_count_limit":1,
-        "buy_rank_limit":200,
+        "buy_rank_limit":50,
         "index":6
     },
     {
-        "prop":[150004,2000],
-        "money":1000,
+        "prop":[100025,50],
+        "money":10000,
+        "buy_count_limit":1,
+        "buy_rank_limit":200,
+        "index":7
+    },
+    {
+        "prop":[100001,500000],
+        "money":5000,
+        "buy_count_limit":1,
+        "buy_rank_limit":500,
+        "index":8
+    },
+    {
+        "prop":[100028,10],
+        "money":5000,
         "buy_count_limit":1,
         "buy_rank_limit":1000,
-        "index":7
+        "index":9
+    },
+    {
+        "prop":[100008,10],
+        "money":5000,
+        "buy_count_limit":1,
+        "buy_rank_limit":2000,
+        "index":10
+    },
+    {
+        "prop":[150004,5000],
+        "money":5000,
+        "buy_count_limit":1,
+        "buy_rank_limit":3000,
+        "index":11
     }
 ]

@@ -1,0 +1,6 @@
+{
+    "tpl":"./buff_detail.tpl",
+    "js":"../buff.ts",
+    "forelet":"../buff.ts",
+    "cfg":"./buff_detail.cfg"
+}

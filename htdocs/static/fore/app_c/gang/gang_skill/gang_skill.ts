@@ -1,11 +1,8 @@
-import { gangNet } from "../gang";
-import { guild_upgrade } from "cfg/c/guild_upgrade"; //门派等级相关
-import { guild_shop } from "cfg/c/guild_shop"; //门派商店
 import { updata, get as getDB } from "app/mod/db";
 import { globalSend } from "app/mod/pi";
 import { Common } from "app/mod/common";
 import { Common_m } from "app_b/mod/common";
-import { forelet, getData } from "../gang";
+import { forelet, getData, gangNet } from "../gang";
 import { Widget } from "pi/widget/widget";
 import { open, close } from "app/mod/root";
 import { guild_skill } from "cfg/c/guild_skill";
@@ -17,6 +14,8 @@ export let globalReceive = {
     "openGangSkill": () => {
         skill_id = defaultSelect();
         updata("gang.other.skill_id", skill_id);
+        updata("gang.other.is_up_skill", 0);
+
         forelet.paint(getData());
         open("app_c-gang-gang_skill-gang_skill");
     }
@@ -48,13 +47,13 @@ export class GangSkill extends Widget {
  */
 const defaultSelect = function () {
     let money = getDB("player.money");
-    let gang_contribute = getDB("gang.gangExpandData.gang_contribute");
+    let gang_contribute = getDB("bag*sid=150005").pop();
     let build = getDB("gang.gangExpandData.build_level_info");
     let role_gang_skill = getDB("gang.data.role_gang_skill");
 
     for (let i = 0, len = role_gang_skill.length; i < len; i++) {
         let skill = guild_skill[i + 1][role_gang_skill[i]];
-        if (build[0] >= skill.limit.guild_level && money >= skill.cost.cost_money && gang_contribute >= skill.cost.cost_contribute) {
+        if (build[0] >= skill.limit.guild_level && money >= skill.cost.cost_money && gang_contribute && gang_contribute.count >= skill.cost.cost_contribute[1]) {
             return i + 1;
         }
     }
@@ -68,13 +67,15 @@ const defaultSelect = function () {
 const canStudySkill = function () {
     let skill_level = getDB(`gang.data.role_gang_skill.${skill_id - 1}`);
     let skill = guild_skill[skill_id][skill_level];
+    let gang_contribute = getDB("bag*sid=150005").pop();
+    gang_contribute = gang_contribute ? gang_contribute.count : 0;
     if (getDB("gang.gangExpandData.build_level_info")[0] < skill.limit.guild_level) {
         globalSend("screenTipFun", {
             words: `请先升级藏经阁`
         });
         return;
     }
-    if (getDB("gang.gangExpandData.gang_contribute") < skill.cost.cost_contribute) {
+    if (gang_contribute < skill.cost.cost_contribute[1]) {
         globalSend("screenTipFun", {
             words: `贡献不足`
         });
@@ -104,19 +105,27 @@ export const studySkill = function (skill_id) {
             let _data: any = Common.changeArrToJson(data.ok);
             //扣除花费
             let cost = Common_m.deductfrom(_data);
-            let gang_contribute = getDB("gang.gangExpandData.gang_contribute") - (cost["gang_contribute"] || 0);
-            updata("gang.gangExpandData.gang_contribute", gang_contribute);
+
             let level = _data.gang_skill[skill_id - 1];
             updata(`gang.data.role_gang_skill.${skill_id - 1}`,level);
+            updata("gang.other.is_up_skill", 1);
             forelet.paint(getData());
 
             //增加属性
             let pre_attr = guild_skill[skill_id][level - 1].attr
             let now_attr = guild_skill[skill_id][level].attr;
-            globalSend("attrTip", {
-                words: `${attribute_config[now_attr[0]]} +${Common_m.decimalToPercent(now_attr[1] - pre_attr[1])}`
+            now_attr.forEach((v, i) => {
+                globalSend("attrTip", {
+                    words: `${attribute_config[v[0]]} +${Common_m.decimalToPercent(v[1] - pre_attr[i][1])}`
+                });    
             });
             console.log(_data);
+            let t = setTimeout(() => {
+                clearTimeout(t);
+                t = null;
+                updata("gang.other.is_up_skill", 0);
+                forelet.paint(getData());
+            }, 700)
         })
         .catch((data) => {
             globalSend("screenTipFun", {

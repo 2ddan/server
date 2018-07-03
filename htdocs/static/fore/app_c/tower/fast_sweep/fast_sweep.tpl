@@ -27,22 +27,19 @@
             {"icon":"cover_title","width":181,"height":31,"textCfg":"gangCoverTitle","text":"扫 荡","fontSize":22} 
         </widget>
             
-        <widget on-tap='goback' w-tag="app_a-widget-btn_pic-btn_pic" style="top:-26px;right: -22px" >
+        <widget on-tap='goback' w-tag="app_a-widget-btn_pic-btn_pic" style="top:-26px;right: -22px;z-index: 2;">
             {"icon":"close"} 
         </widget>
 		<div style="position: absolute;left:50%;width:450px;height:620px;margin-left: -225px;z-index:1; overflow:hidden">
 			
-            
+            {{if it1.sweep_total_time >= Util.serverTime(1)}}
             <div style="position:absolute;top:35px;left:155px">
                 <span style="position:relative;display:inline-block;font-family: mnjsh;font-size:18px;letter-spacing:1px;color:#f6e1c5">剩余总时间:</span>
-                {{if it1.sweep_total_time >= Util.serverTime(1)}}
-                    <app-widget-cdtime ev-countdownend="cdEnd" style="position:relative;display:inline-block;color:#2eeb9d;font-size:16px;font-weight:600">
-                        {"cd_time":{{(it1.sweep_total_time - 0)*1000}},"now_time":{{Util.serverTime()}} }
-                    </app-widget-cdtime>
-                {{else}}
-                00
-                {{end}}
+                <app-widget-cdtime ev-countdownend="cdEnd" style="position:relative;display:inline-block;color:#2eeb9d;font-size:16px;font-weight:600">
+                    {"cd_time":{{(it1.sweep_total_time - 0)*1000}},"now_time":{{Util.serverTime()}} }
+                </app-widget-cdtime>
             </div>
+            {{end}}
 
             <div w-class="faset_sweep_bg" style="position:absolute;top: 80px;left: -5px;">
                 <div style="position:absolute;top:75px;left:-15px;height:71px;width:458px;background:url(../images/attr_bg5.png)"></div>
@@ -74,7 +71,7 @@
                                 {{if thisFloor==i && (it1.fastSweepTime[i-1]*1000 + it1.start_sweep_time*1000) > Util.serverTime()}}
                                 
                                 <div style="position:absolute;top:82px;left:-5px;width:94px;height:23px;background:url(../images/attr_bg4.png) no-repeat center"></div>
-                                <app-widget-cdtime style="position: absolute;top: 82px;font-size: 17px;left: 20px;color:#d63d28">
+                                <app-widget-cdtime ev-countdownend="cdEnd" style="position: absolute;top: 82px;font-size: 17px;left: 20px;color:#d63d28">
                                     {"cd_time":{{ it1.fastSweepTime[i-1]*1000 + it1.start_sweep_time*1000 }},"now_time":{{Util.serverTime()}} }
                                 </app-widget-cdtime>
                                 {{end}}
@@ -84,26 +81,38 @@
                 </div>
             </div>
 
-            <div style="width:130px;height:20px;position:absolute;left:47px;bottom:95px;">
-                <app-widget-text-text style="vertical-align: text-bottom;margin-left:2px;position:relative;display: inline-block;">{"text":{{"VIP"+tower_base.free_sweep_limit}},"textCfg":"leaderVip"}</app-widget-text-text>
-                <div style="display: inline-block;vertical-align: middle;position:relative;color:#f5ce9c;font-family:mnjsh;font-size:16px;">免费快速扫荡</div>
-            </div>
-            <app_a-widget-btn-rect on-tap="fastSweep" style="width:110px;height:40px;position:absolute;left:56px;bottom:46px;line-height: 24px;">
-                {"text":"快速扫荡","class":"hl"}
+           
+            {{let limit = tower_base.free_sweep_limit > player.vip}}
+
+            {{if limit || !limit && !it1.cost_diamond}}
+            <app_a-widget-btn-rect {{if flag}}on-tap="getSweepAward"{{end}} style="width:115px;height:45px;position:absolute;right:{{ it1.cost_diamond ? 65 : 167}}px;bottom:40px;line-height: 24px;">
+                {"text":{{it1.start_sweep_time ? "领 取" : "已领取"}},"class":{{flag ? "hl" : "disabled"}}}
             </app_a-widget-btn-rect>
 
-            {{if flag}}
-            <app_a-widget-coin-coin style="left: 80px;bottom: 24px;position: absolute;font-size: 16px;width: 100px;">{"icon":"diamond","text":{{[Math.ceil(it1.cost_diamond)]}},"color":"#e92525","left":7}</app_a-widget-coin-coin>
-            <app_a-widget-btn-rect on-tap="getSweepAward" style="width:61px;height:27px;position:absolute;right:65px;bottom:46px;line-height: 24px;">
-                {"text":"领 取","class":"hl"}
-            </app_a-widget-btn-rect>
-            {{else}}
-            <app_a-widget-btn-rect style="width:61px;height:27px;position:absolute;right:65px;bottom:46px;line-height: 24px;">
-                {"text":"领 取","class":"disabled"}
-            </app_a-widget-btn-rect>
             {{end}}
+            
+            {{if it1.cost_diamond}}
+            <div data-desc="快速领取" style="width:116px;height:45px;position:absolute;left:{{limit ? 56 : 167}}px;bottom:40px;line-height: 24px;text-align:center">
+                <div style="width:130px;height:20px;position:absolute;left:-7px;bottom:55px;">
+                    <app-widget-text-text style="vertical-align: text-bottom;margin-left:2px;position:relative;display: inline-block;">{"text":{{"VIP"+tower_base.free_sweep_limit}},"textCfg":"leaderVip"}</app-widget-text-text>
+                    <div style="display: inline-block;vertical-align: middle;position:relative;color:#f5ce9c;font-family:mnjsh;font-size:16px;">免费快速领取</div>
+                </div>
+                <app_a-widget-btn-rect on-tap="fastSweep" style="position:relative;left:0;top:0;line-height: 24px;">
+                    {"text":{{it1.start_sweep_time ? "立即领取" : "已领取"}},"class":{{it1.start_sweep_time ? "hl" : "disabled"}}}
+                </app_a-widget-btn-rect>
+                {{if it1.cost_diamond}}
+                <app_a-widget-coin-coin style="display:inline-block;margin-top: -3px;vertical-align: middle;">
+                    {"icon":"diamond","text":[{{Math.ceil(it1.cost_diamond)}}],"color":"#e92525","left":7}
+                </app_a-widget-coin-coin>
 
-
+                {{if !limit}}
+                <widget w-tag="app_a-widget-line-line" style="left: 0;top:57px;left: 8px;width:100px;height:3px;">
+                    {"line":"line_15"} 
+                </widget>
+                {{end}}
+                {{end}}
+            </div>
+            {{end}}
 		</div>
 	</div>
 </div>

@@ -4,12 +4,12 @@
         {{let career_id = player.career_id}}
         {{let cfg = _get("app/mod/pi").exports.cfg}}
         {{let equip_level_limit = cfg.equip_level_limit.equip_level_limit}}
-        <div w-class="4" w-sid="4" style="width: 284px;height: auto;left: 50%;top: 50%;margin-left: -260px;margin-top: -355px;">
+        <div w-class="4" w-sid="4" style="width: 284px;height: auto;left: 50%;top: 50%;margin-left: -142px;margin-top: -355px;">
             
-            <app_a-widget-img_stitch-stitch style="position: absolute;left: 108px;width: 284px;height: 100%;">{"type":1,"height":15,"width":15}</app_a-widget-img_stitch-stitch>
+            <app_a-widget-img_stitch-stitch style="position: absolute;width: 284px;height: 100%;">{"type":1,"height":15,"width":15}</app_a-widget-img_stitch-stitch>
 
             <widget w-class="6" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="6">
-                {"icon":"close"} 
+                {"icon":"close"}  
             </widget>
             <div w-class="41" w-sid="41">
                 <widget w-class="5" w-tag="app_a-widget-prop-base" w-sid="5">{"width":68,"height":68,"prop":{{it1.prop}} ,"url":{{it1.url}},"count":"none","name":"none","bg":0} 
@@ -20,16 +20,17 @@
                 </widget>
                 <widget w-class="9" w-tag="app_a-widget-text-text" w-sid="9">{"text":{{it1.prop.level+"级"}},"show":"","space":2,"fontSize":20,"lineHeight":20,"color":"","textCfg":"heroEquip"} 
                 </widget>
+
                 <widget w-class="11" w-tag="app_a-widget-pic_text-pic_text" w-sid="11">{"icon":"fire_bg","width":121,"height":50,"align":"center","marginLeft":0,"text":{{"评分"+it1.prop.grade}},"textCfg":"scoring","space":0,"fontSize":20,"top":19} 
                 </widget>
-
+ 
                 <div style="width:100%;height:15%;position:absolute;top: 65px;left: 17px;">
                     <app_c-forge-star-star_anim>{"star":{{it1.getStar}},"effect":{{equip_level_limit[it1.prop.slot].stars_effects}},"center":0}</app_c-forge-star-star_anim>
                 </div>
             </div>
             <div w-class="36" w-sid="36">
                 <widget w-class="13" w-tag="app_a-widget-line-line" w-sid="13">{"line":"line_8"} 
-                </widget>
+                </widget>  
                 <div w-class="12" w-sid="12">基础属性</div>
                 <div w-class="42" w-sid="42">
                     {{for i,v of it1.attr}}

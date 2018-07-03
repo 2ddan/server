@@ -30,7 +30,7 @@
     {{for i,v of equip_diam[index[0]]}}
         {{if i != "erl_type"}}
         {{if type[index[0]]}}
-        <div w-class="diam_bg" style="top:{{posi[i][0]}}px;left:{{posi[i][1]}}px;z-index:1" {{if it1.levelarr[i] >= it1.levelarr1[i]}}on-tap="clickdiam([{{type[index[0]].slot}},{{i}},{{index[1]}}])"{{end}}>
+        <div w-class="diam_bg" style="top:{{posi[i][0]}}px;left:{{posi[i][1]}}px;z-index:1" {{if it1.levelarr[i] >= it1.levelarr1[i]}}on-tap="clickdiam([{{type[index[0]].slot}},{{i}},{{index[1]}}])"{{else}}on-tap="clickTip({{i}})"{{end}}>
             {{if index[1] == i}}
                 <div class="circle_select" style="top: -7px;left: -5px;"></div>
                 {{if it1.gem_up_ok}}
@@ -41,7 +41,7 @@
                 {{: diam_icon = Pi.pictures[equipIcon[equip_diam[index[0]][i][0]][0]]}}
                 <img src={{diam_icon}} style="position:absolute;top: 4px;left: 6px;width: 45px;height: 45px;"/>
             {{else}}
-                <img src="app_a/widget/prop/images/lock_icon.png" style="width:23px;height:28px;position:absolute;top:15px;left:17px;z-index:3"/>
+                <img  src="app_a/widget/prop/images/lock_icon.png" style="width:23px;height:28px;position:absolute;top:15px;left:17px;z-index:3"/>
             {{end}}
             <div class="border_bg1" style="line-height:21px;text-align:center;color:#fff;font-size:13px;bottom:-25px;left: 0px;position: absolute;">
                 <app-widget-text-text style="margin-top: 3px;">
@@ -155,7 +155,7 @@
         {{let notUp = it1.diammoney > appCfg.player.money ? 1 : 0}}
         {{let color1 = notUp  ? "#ff0000" : ""}}
         <div style="width: 100%;height: 18px;position: absolute;top: 732px;left: -5px;text-align: center;line-height: 15px;font-size: 18px;color:#e7e09e">
-            <app-widget-coin-coin style="left:3px;color:{{color1}};display: inline-block;">{"icon":"money","text":{{!equip_diam[type[index[0]].slot - 1][index[1]] ? 0 : it1.diammoney}} }</app-widget-coin-coin>
+            <app_a-widget-coin-coin style="left:3px;color:{{color1}};display: inline-block;">{"icon":"money","text":[{{!equip_diam[type[index[0]].slot - 1][index[1]] ? 0 : it1.diammoney}}] }</app_a-widget-coin-coin>
         </div>
         {{if !equip_diam[type[index[0]].slot - 1][index[1]]}}
             <app_a-widget-btn-rect on-tap='diamActiv([{{type[index[0]].slot}},{{index[1]}}])' style="position: absolute;top: 682px;left: 0;right: 0;margin: 0 auto;">{"text":"激 活","class":"hl","fontSize":24,"tip_keys":[{{"equip.diam."+index[0]+"."+index[1]}}],"width":113,"height":46}</app_a-widget-btn-rect>

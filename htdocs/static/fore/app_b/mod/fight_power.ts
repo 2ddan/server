@@ -15,29 +15,39 @@ import { skill_level } from "cfg/b/skill_upgrade";
 import { treasure_up } from "cfg/b/treasure_up";
 import { treasure_break } from "cfg/b/treasure_break";
 import { TreasurePhase } from "cfg/b/TreasurePhase";
+import { treasure_buff } from "cfg/b/Treasure_buff";
 import { equip_level_up } from "cfg/c/equip_level_up";
 import { equip_diam_promote as diam_promote } from "cfg/c/equip_diam_promote";
 import { equip_star_promote } from "cfg/c/equip_star_promote_fore";
 import { StarAchievement } from "cfg/c/equip_star_achievement";
 import { equip_star_achieve } from "cfg/c/equip_star_achieve";
-//玩家等级属性
+import { equip_level_up_fixed } from "cfg/c/equip_level_up_fixed_fore";
+// 玩家等级属性
 import { player_exp } from "cfg/b/player_exp";
-//灵宠等级属性
+// 灵宠等级属性
 import { pet_upgrade } from "cfg/b/pet_upgrade";
-//九窍属性
+import { pet_buff } from "cfg/b/pet_buff";
+// 龙魂属性
 import { soul_level_up } from "cfg/c/soul_level_up";
 import { soul_resonance } from "cfg/c/soul_resonance";
 import { soul_seat } from "cfg/c/soul_seat";
-//赋灵
+import { soul_buff } from "cfg/c/soul_buff";
+// 赋灵
 import { weapon_soul_base } from "cfg/c/weapon_soul_base";
 import { weapon_soul_grade } from "cfg/c/weapon_soul_grade";
 import { guild_upgrade } from "cfg/c/guild_upgrade";
 import { guild_skill } from "cfg/c/guild_skill";
+// 符文系统
+import { rune_state } from "cfg/c/rune_state";
+import { rune_practice } from "cfg/c/rune_practice";
+import { rune } from "cfg/c/rune";
+import { rune_collect } from "cfg/c/rune_collect";
+import { single_power_formula } from "cfg/b/single_power_formula";
 
 
 
 insert("attr", {});
-let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I","J", "K"];
+let arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I","J", "K", "L"];
 //阵法属性
 let gest_attr = {};
 //九幽幻境星图属性
@@ -77,7 +87,7 @@ let equip_attr = {
     "equip_star": [],  //升星总星数加成
     "all": {} //装备系统总属性
 };
-//九窍属性
+//龙魂属性
 let soul_attr = {
     //[0-8]各窍属性
     "0": {},
@@ -89,7 +99,7 @@ let soul_attr = {
     "6": {},
     "7": {},
     "8": {},
-    "all_attr": {} //九窍总属性
+    "all_attr": {} //龙魂总属性
 };
 //灵宠属性
 let pet_attr = {};
@@ -111,6 +121,19 @@ let gang_attr = {
     //技能属性
     "skill_attr": [],
     //门派总属性
+    "all_attr": {}
+}
+//符文模块
+let rune_attr = {
+    // 密集镶嵌
+    "book_attr": [],
+    // 修行
+    "state_attr": [],
+    // 筋脉
+    "practice_attr": [],
+    // 收集
+    "collect_attr": [],
+    // 符文总属性
     "all_attr": {}
 }
 /**
@@ -138,13 +161,22 @@ export const equip = {
     },
     //单装备强化属性  [基础*强化比例+强化固定值]
     equipStrong: function (index) {
+        
         let attr_obj = {};
-        let equip_level = get(`friend_battle.equip_level.${index}`);
-        if (equip_level > 0) {
+        let eq_level = get(`friend_battle.equip_level.${index}`);
+        if (eq_level > 0) {
             let base = get(`friend_battle.equip_set.${index}`).base_attr[0];
-            let arr = equip_level_up[equip_level];
+            let arr = equip_level_up[eq_level];
+            let up_arr = equip_level_up_fixed[index + 1];
+            let j = 0;
+            for (let i = 0, len = up_arr.length; i < len; i++) {
+                if (eq_level >= up_arr[i].level) {
+                    j = i;
+                }
+            }
+            let ep_level = eq_level;
             //attr_obj[base[0]] = Math.ceil(base[1] * arr[2]) + arr[3];
-            attr_obj[base[0]] = myMathCeil(base[0], base[1] * arr[2]) + arr[3];
+            attr_obj[base[0]] = myMathCeil(base[0], base[1] * arr[2]) + eval('('+ up_arr[j].val +')');
         }
         equip_attr[index].strong = attr_obj;
         attr_obj = null;
@@ -287,7 +319,7 @@ export const treasure = {
             for (let v of attr) {
                 attr_obj[v[0]] = attr_obj[v[0]] ? (attr_obj[v[0]] + v[1]) : v[1];
             }
-        }
+        }        
         treasure_attr.bg_break = attr_obj;
         attr_obj = null;
     },
@@ -329,7 +361,19 @@ export const treasure = {
         });
         Object.keys(treasure_attr.treasure_level).forEach((k) => {
             attr_obj[k] = attr_obj[k] ? (attr_obj[k] + treasure_attr.treasure_level[k]) : treasure_attr.treasure_level[k];
-        })
+        });
+        let break_info = get("magic.break_info");
+        // 神兵突破 buff 计算
+        let index = -1; 
+        for (let i = 0, len = treasure_buff.length; i < len; i++) {
+            if (break_info[0] >= treasure_buff[i].break_level) {
+                index = i;
+            }
+        }
+        if (index >= 0) {
+            let buff = treasure_buff[index].buff_value;
+            attr_obj[buff[0]] = attr_obj[buff[0]] ? attr_obj[buff[0]] + buff[1] : buff[1];
+        }
         treasure_attr.all = attr_obj;
         attr_obj = null;
         updata("attr.B", treasure_attr.all);
@@ -346,10 +390,10 @@ export const gestAttr = function () {
 };
 
 /**
- * 九窍模块属性 D
+ * 龙魂模块属性 D
  */
 export const soul = {
-    //单个九窍属性
+    //单个精元属性
     singleSoulAttr: function (index) {
         let level = get("player.level");
         if (level < soul_seat[index].open_level) {
@@ -375,7 +419,7 @@ export const soul = {
         soul_attr[index] = attr_obj;
         attr_obj = null;
     },
-    //计算九窍模块总属性
+    //计算龙魂模块总属性
     soulAllAttr: function () {
         let attr_obj = {};
         let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -385,6 +429,18 @@ export const soul = {
                 attr_obj[k] = attr_obj[k] ? (attr_obj[k] + obj[k]) : obj[k];
             });
         });
+        // 计算龙魂buff
+        let num = get("soul.num") || 0;
+        let index = -1;
+        for (let i = 0, len = soul_buff.length; i < len; i++) {
+            if (num >= soul_buff[i].num) {
+                index = i;
+            }
+        }
+        if (index >= 0) {
+            let buff = soul_buff[index].buff_value;
+            attr_obj[buff[0]] = buff[1];
+        }
         soul_attr.all_attr = attr_obj;
         updata("attr.D", soul_attr.all_attr);
         attr_obj = null;
@@ -472,6 +528,18 @@ export const pet = {
                 attr_obj[v[0]] = attr_obj[v[0]] ? (attr_obj[v[0]] + v[1]) : v[1];
             });
         }
+        // buff 属性
+        let index = -1;
+        for (let i = 0, len = pet_buff.length; i < len; i++) {
+            if (pet_info[0] >= pet_buff[i].grade) {
+                index = i;
+            }
+        }
+        if (index >= 0) {
+            let buff = pet_buff[index].buff_value;
+            attr_obj[buff[0]] = buff[1];
+        }
+
         pet_attr = attr_obj;
         updata("attr.H", pet_attr);
         attr_obj = null;
@@ -515,6 +583,10 @@ export const weapon_soul = {
     gradeAttr: function () {
         let grade = get("weapon_soul.class");
         let arr = weapon_soul_base[grade].attr;
+        //计算buff属性
+        if (grade > 0) {
+            arr.push(weapon_soul_base[grade].buff_value);
+        }
         weapon_soul_attr["grade_attr"] = arr;
         arr = null;
     },
@@ -524,8 +596,8 @@ export const weapon_soul = {
         let arr = [];
         arr = [...weapon_soul_attr[0],...weapon_soul_attr[1],...weapon_soul_attr[2],...weapon_soul_attr[3],...weapon_soul_attr["grade_attr"]];
         if (arr.length == 0) {
-            weapon_soul_attr.all_attr = attr_obj;
             attr_obj = null;
+            updata("attr.J", {});
             return;
         }
         arr.forEach((v) => {
@@ -539,7 +611,7 @@ export const weapon_soul = {
 }
 
 /**
- * 门派属性 [旗帜 + 门派技能]
+ * 门派属性 [旗帜 + 门派技能] K
  */
 export const gang = {
     //旗帜属性
@@ -558,7 +630,8 @@ export const gang = {
         let all_skill = get("gang.data.role_gang_skill") || [];
         if (all_skill.length > 0) {
             all_skill.forEach((lv, i) => {
-                arr.push(guild_skill[i + 1][lv].attr);
+                // arr.push(guild_skill[i + 1][lv].attr);
+                arr = [...arr, ...guild_skill[i + 1][lv].attr];
             })
         }
         gang_attr["skill_attr"] = arr;
@@ -579,6 +652,103 @@ export const gang = {
     }
 }
 
+/**
+ * 符文系统 L
+ */
+export const runeModule = {
+    // 秘籍镶嵌属性 + buff
+    runeBook: function () {
+        let arr = [];
+        let rune_set = get("rune.rune_set") || [];
+        rune_set.forEach((v, i) => {
+            if (v) {
+                let book = rune[i + 1];
+                let obj = book[0].prop_id == v ? book[0] : book[1];
+                if (obj.attr[0] !== "undefined") {
+                    arr.push(obj.attr);
+                }
+                if (obj.buff_id) {
+                    arr.push(obj.buff_value);
+                }
+            }
+        });
+        rune_attr["book_attr"] = arr;
+        arr = null;
+    },
+    // 修行属性 + buff
+    runeState: function () {
+        let arr = [];
+        let s = get("rune.rune_state");
+        if (!s) {
+            return;
+        }
+        let obj = rune_state[s[0]][s[1]];
+        // buff
+        if (obj.buff_value) {
+            arr.push(obj.buff_value);
+        }
+
+        if (obj.attr) {   
+            arr = [...arr, ...obj.attr];
+        }
+
+        rune_attr["state_attr"] = arr;
+        arr = null;
+    },
+    // 筋脉属性
+    runePractice: function () {
+        let p = get("rune.rune_practice");
+        if (!p) {
+            return;
+        }
+        let obj = rune_practice[p[0]][p[1]];
+        if (obj.attr) {
+            rune_attr["practice_attr"] = obj.attr;
+        }
+    },
+    // 搜集秘籍数量
+    runeCollect: function () {
+        let num = 0;
+        let rune_set = get("rune.rune_set") || [];
+        rune_set.forEach((v) => {
+            if (v) {
+                num++
+            }
+        });
+        let bag = get("bag") || [];
+        bag.forEach(v => {
+            if (v && v.type == "rune") {
+                num++;
+            }
+        });
+        let index = -1;
+        rune_collect.forEach((v, i) => {
+            if (num >= v.num) {
+                index = i;
+            }
+        });
+        if (index >= 0) {
+            rune_attr.collect_attr = rune_collect[index].attr;
+        }
+    },
+    // 符文总属性
+    runeAllAttr: function () {
+        let attr_obj = {};
+        let arr = [...rune_attr["book_attr"], ...rune_attr["state_attr"], ...rune_attr["practice_attr"], ...rune_attr["collect_attr"]];
+        if (arr.length == 0) {
+            attr_obj = null;
+            updata("attr.L", {});
+            return;
+        }
+        arr.forEach((v) => {
+            attr_obj[v[0]] = attr_obj[v[0]] ? (attr_obj[v[0]] + v[1]) : v[1];
+        });
+        rune_attr.all_attr = attr_obj;
+        updata("attr.L", rune_attr.all_attr);
+        attr_obj = null;
+        arr = null;
+    }
+}
 
 export const countFightPower = {
     /**
@@ -590,21 +760,27 @@ export const countFightPower = {
         let power = 0;
         let obj: any = { "attr": {}, "power": 0 };
         //需要取整的属性名
-        if (moduelAttr && moduelAttr.A && moduelAttr.B && moduelAttr.C && moduelAttr.D && moduelAttr.E && moduelAttr.F) {
+        if (moduelAttr && moduelAttr.A && moduelAttr.B && moduelAttr.C && moduelAttr.D && moduelAttr.E && moduelAttr.F && moduelAttr.G && moduelAttr.H && moduelAttr.I && moduelAttr.J && moduelAttr.K && moduelAttr.L) {
             for (let i in attribute) {
                 if ((i + '').indexOf("per_") > -1) continue;
                 let attr = countFightPower.singleAttr(i, moduelAttr, formula);
-
                 if (attr) {
                     attr = myMathCeil(i, attr);
                     let val = attr - attribute[i].init_value;
-                    power += (val > 0 ? attr : 0) * attribute[i].prower_ratio;
+                    power += (val > 0 ? val : 0) * attribute[i].prower_ratio;
+                    // 过滤skill_level_attr
                     if ((i + '').indexOf("skill_") < 0) obj.attr[i] = attr;
                 }
+
             }
             if (power) {
-                let other = (obj.attr.damage_multiple || 0) + (obj.attr.un_damage_multiple || 0) + (obj.attr.pvp_damage_multiple || 0) + (obj.attr.pvp_un_damage_multiple || 0);
-                power = power * (1 + other);
+                let damage_multiple = obj.attr.damage_multiple || 0;
+                let un_damage_multiple = obj.attr.un_damage_multiple || 0;
+                let pvp_damage_multiple = obj.attr.pvp_damage_multiple || 0;
+                let pvp_un_damage_multiple = obj.attr.pvp_un_damage_multiple || 0;
+                let buff_attr = obj.attr.buff_attr || 0;
+                let f = single_power_formula;
+                power = power * eval('(' + f + ')');
                 power = Math.floor(power);
                 obj.power = power;
             }
@@ -656,7 +832,7 @@ listen("$listenerOver", function () {
 });
 
 
-let notCeilKey = ['damage_multiple', 'un_damage_multiple', 'criticalDamage', 'pvp_damage_multiple', 'pvp_un_damage_multiple'];
+let notCeilKey = ['damage_multiple', 'un_damage_multiple', 'criticalDamage', 'pvp_damage_multiple', 'pvp_un_damage_multiple', 'buff_attr'];
 const myMathCeil = function (key, num) {
     return (notCeilKey.indexOf(key) >= 0) ? num : Math.ceil(num);
 }

@@ -3,9 +3,9 @@
  */
 
 // ============================== 导入
-import { Widget } from "../widget/widget";
-import { getRealNode, paintCmd3 } from "../widget/painter";
-import { notify } from "../widget/event";
+import { notify } from '../widget/event';
+import { getRealNode, paintCmd3 } from '../widget/painter';
+import { Widget } from '../widget/widget';
 
 // ============================== 导出
 /**
@@ -13,83 +13,87 @@ import { notify } from "../widget/event";
  * @example
  */
 export class Input extends Widget {
-	lastSign: number = 0;
-	lastText: string = undefined;
-	readOnly: string = undefined;
+	public lastSign: number = 0;
+	public lastText: string = undefined;
+	public readOnly: string = undefined;
 
 	/**
 	 * @description 绘制方法，
 	 * @param reset 表示新旧数据差异很大，不做差异计算，直接生成dom
 	 * @example
 	 */
-	paint(reset: boolean): void {
+	public paint(reset: boolean): void {
 		if (!this.tree) {
 			super.paint(reset);
 		}
-		if(!this.props)
+		if (!this.props) {
 			this.props = {};
-		if (this.lastSign === this.props.sign)
+		}
+		if (this.lastSign === this.props.sign) {
 			return;
+		}
 		this.lastSign = this.props.sign;
 		if (this.props.text !== undefined) {
 			this.lastText = this.props.text;
-			paintCmd3(this.getInput(), "value", this.lastText);
+			paintCmd3(this.getInput(), 'value', this.lastText);
 		}
 		let r = this.props.readOnly;
-		if(r === null)
+		if (r === null) {
 			r = undefined;
+		}
 		if (this.readOnly !== r) {
 			this.readOnly = r;
-			paintCmd3(this.getInput(), "readOnly", r || "false");
+			paintCmd3(this.getInput(), 'readOnly', r || 'false');
 		}
 	}
 	/**
 	 * @description 添加到dom树后调用，在渲染循环内调用
 	 * @example
 	 */
-	attach(): void {
+	public attach(): void {
 		this.props.focus && focus();
 	}
 	/**
 	 * @description 失焦
 	 * @example
 	 */
-	getInput() {
+	public getInput() {
 		return getRealNode(this.tree);
 	}
 	/**
 	 * @description 输入事件
 	 * @example
 	 */
-	onInput(e) {
-		notify(this.parentNode, "ev-input-text", { native: e, "id": this.props.id, "text": e.target.value });
+	// tslint:disable:typedef
+	public onInput(e) {
+		notify(this.parentNode, 'ev-input-text', { native: e, id: this.props.id, text: e.target.value });
 	}
 	/**
 	 * @description 失焦事件
 	 * @example
 	 */
-	onBlur(e) {
-		notify(this.parentNode, "ev-input-blur", { native: e, "id": this.props.id, "text": e.target.value });
+	public onBlur(e) {
+		notify(this.parentNode, 'ev-input-blur', { native: e, id: this.props.id, text: e.target.value });
 	}
 	/**
 	 * @description 聚焦事件
 	 * @example
 	 */
-	onFocus(e) {
-		notify(this.parentNode, "ev-input-focus", { native: e, "id": this.props.id, "text": e.target.value });
+	public onFocus(e) {
+		notify(this.parentNode, 'ev-input-focus', { native: e, id: this.props.id, text: e.target.value });
 	}
 	/**
 	 * @description 失焦
 	 * @example
 	 */
-	blur() {
+	public blur() {
 		this.getInput().blur();
 	}
 	/**
 	 * @description 聚焦
 	 * @example
 	 */
-	focus() {
+	public focus() {
 		this.getInput().focus();
 	}
 }
@@ -97,4 +101,3 @@ export class Input extends Widget {
 // ============================== 本地
 
 // ============================== 立即执行
-

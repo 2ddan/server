@@ -6,9 +6,9 @@ tab[0].module = "2222221";
 tab[0][0] = {
     "attr": [
         ["max_hp",2000],
-        ["attack",50],
-        ["defence",25],
-        ["un_defence",25]
+        ["attack",60],
+        ["defence",30],
+        ["un_defence",30]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
@@ -20,145 +20,145 @@ tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][1] = {
     "attr": [
-        ["max_hp",2670],
-        ["attack",66],
-        ["defence",33],
-        ["un_defence",33]
+        ["max_hp",3879],
+        ["attack",105],
+        ["defence",53],
+        ["un_defence",53]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":29
+    "exp":30
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][2] = {
     "attr": [
-        ["max_hp",3370],
-        ["attack",83],
-        ["defence",41],
-        ["un_defence",41]
+        ["max_hp",5852],
+        ["attack",152],
+        ["defence",77],
+        ["un_defence",77]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":41
+    "exp":40
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][3] = {
     "attr": [
-        ["max_hp",4110],
-        ["attack",101],
-        ["defence",50],
-        ["un_defence",50]
+        ["max_hp",7924],
+        ["attack",202],
+        ["defence",102],
+        ["un_defence",102]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":56
+    "exp":52
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][4] = {
     "attr": [
-        ["max_hp",4880],
-        ["attack",120],
-        ["defence",59],
-        ["un_defence",59]
+        ["max_hp",10099],
+        ["attack",254],
+        ["defence",128],
+        ["un_defence",128]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":73
+    "exp":68
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][5] = {
     "attr": [
-        ["max_hp",5690],
-        ["attack",139],
-        ["defence",69],
-        ["un_defence",69]
+        ["max_hp",12383],
+        ["attack",309],
+        ["defence",155],
+        ["un_defence",155]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":94
+    "exp":88
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][6] = {
     "attr": [
-        ["max_hp",6540],
-        ["attack",159],
-        ["defence",79],
-        ["un_defence",79]
+        ["max_hp",14781],
+        ["attack",367],
+        ["defence",184],
+        ["un_defence",184]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":117
+    "exp":108
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][7] = {
     "attr": [
-        ["max_hp",7440],
-        ["attack",180],
-        ["defence",90],
-        ["un_defence",90]
+        ["max_hp",17299],
+        ["attack",427],
+        ["defence",214],
+        ["un_defence",214]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":144
+    "exp":135
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][8] = {
     "attr": [
-        ["max_hp",8380],
-        ["attack",203],
-        ["defence",101],
-        ["un_defence",101]
+        ["max_hp",19943],
+        ["attack",490],
+        ["defence",246],
+        ["un_defence",246]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":173
+    "exp":160
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][9] = {
     "attr": [
-        ["max_hp",9370],
-        ["attack",227],
-        ["defence",113],
-        ["un_defence",113]
+        ["max_hp",22719],
+        ["attack",557],
+        ["defence",279],
+        ["un_defence",279]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":205
+    "exp":190
 }
 tab[0] = tab[0]?tab[0]:{};
 tab[0].name = "火麒麟之魂";
 tab[0].module = "2222221";
 tab[0][10] = {
     "attr": [
-        ["max_hp",10410],
-        ["attack",252],
-        ["defence",125],
-        ["un_defence",125]
+        ["max_hp",25634],
+        ["attack",627],
+        ["defence",314],
+        ["un_defence",314]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -170,160 +170,160 @@ tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][0] = {
     "attr": [
-        ["max_hp",11600],
-        ["attack",281],
-        ["defence",139],
-        ["un_defence",139]
+        ["max_hp",29132],
+        ["attack",711],
+        ["defence",356],
+        ["un_defence",356]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":21
+    "exp":25
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][1] = {
     "attr": [
-        ["max_hp",12440],
-        ["attack",301],
-        ["defence",149],
-        ["un_defence",149]
+        ["max_hp",31512],
+        ["attack",768],
+        ["defence",385],
+        ["un_defence",385]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":35
+    "exp":40
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][2] = {
     "attr": [
-        ["max_hp",13320],
-        ["attack",322],
-        ["defence",160],
-        ["un_defence",160]
+        ["max_hp",34011],
+        ["attack",828],
+        ["defence",415],
+        ["un_defence",415]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":53
+    "exp":60
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][3] = {
     "attr": [
-        ["max_hp",14240],
-        ["attack",344],
-        ["defence",171],
-        ["un_defence",171]
+        ["max_hp",36635],
+        ["attack",891],
+        ["defence",446],
+        ["un_defence",446]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":76
+    "exp":85
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][4] = {
     "attr": [
-        ["max_hp",15210],
-        ["attack",367],
-        ["defence",183],
-        ["un_defence",183]
+        ["max_hp",39391],
+        ["attack",957],
+        ["defence",479],
+        ["un_defence",479]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":102
+    "exp":115
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][5] = {
     "attr": [
-        ["max_hp",16230],
-        ["attack",391],
-        ["defence",195],
-        ["un_defence",195]
+        ["max_hp",42284],
+        ["attack",1026],
+        ["defence",514],
+        ["un_defence",514]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":133
+    "exp":150
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][6] = {
     "attr": [
-        ["max_hp",17300],
-        ["attack",417],
-        ["defence",208],
-        ["un_defence",208]
+        ["max_hp",45322],
+        ["attack",1099],
+        ["defence",550],
+        ["un_defence",550]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":168
+    "exp":190
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][7] = {
     "attr": [
-        ["max_hp",18420],
-        ["attack",444],
-        ["defence",221],
-        ["un_defence",221]
+        ["max_hp",48512],
+        ["attack",1176],
+        ["defence",588],
+        ["un_defence",588]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":207
+    "exp":235
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][8] = {
     "attr": [
-        ["max_hp",19600],
-        ["attack",472],
-        ["defence",235],
-        ["un_defence",235]
+        ["max_hp",51861],
+        ["attack",1256],
+        ["defence",628],
+        ["un_defence",628]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":251
+    "exp":285
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][9] = {
     "attr": [
-        ["max_hp",20830],
-        ["attack",502],
-        ["defence",250],
-        ["un_defence",250]
+        ["max_hp",55378],
+        ["attack",1340],
+        ["defence",670],
+        ["un_defence",670]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":299
+    "exp":340
 }
 tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "火麒麟幼体";
 tab[1].module = "2222221";
 tab[1][10] = {
     "attr": [
-        ["max_hp",22130],
-        ["attack",533],
-        ["defence",266],
-        ["un_defence",266]
+        ["max_hp",59071],
+        ["attack",1429],
+        ["defence",714],
+        ["un_defence",714]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -335,160 +335,160 @@ tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][0] = {
     "attr": [
-        ["max_hp",23620],
-        ["attack",569],
-        ["defence",284],
-        ["un_defence",284]
+        ["max_hp",63502],
+        ["attack",1535],
+        ["defence",767],
+        ["un_defence",767]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":24
+    "exp":30
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][1] = {
     "attr": [
-        ["max_hp",24620],
-        ["attack",593],
-        ["defence",296],
-        ["un_defence",296]
+        ["max_hp",66383],
+        ["attack",1604],
+        ["defence",802],
+        ["un_defence",802]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":45
+    "exp":55
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][2] = {
     "attr": [
-        ["max_hp",25670],
-        ["attack",618],
-        ["defence",309],
-        ["un_defence",309]
+        ["max_hp",69409],
+        ["attack",1677],
+        ["defence",838],
+        ["un_defence",838]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":72
+    "exp":90
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][3] = {
     "attr": [
-        ["max_hp",26770],
-        ["attack",645],
-        ["defence",322],
-        ["un_defence",322]
+        ["max_hp",72586],
+        ["attack",1753],
+        ["defence",876],
+        ["un_defence",876]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":105
+    "exp":135
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][4] = {
     "attr": [
-        ["max_hp",27930],
-        ["attack",673],
-        ["defence",336],
-        ["un_defence",336]
+        ["max_hp",75922],
+        ["attack",1833],
+        ["defence",916],
+        ["un_defence",916]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":145
+    "exp":186
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][5] = {
     "attr": [
-        ["max_hp",29150],
-        ["attack",702],
-        ["defence",351],
-        ["un_defence",351]
+        ["max_hp",79424],
+        ["attack",1917],
+        ["defence",958],
+        ["un_defence",958]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":192
+    "exp":246
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][6] = {
     "attr": [
-        ["max_hp",30430],
-        ["attack",733],
-        ["defence",366],
-        ["un_defence",366]
+        ["max_hp",83102],
+        ["attack",2005],
+        ["defence",1002],
+        ["un_defence",1002]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":244
+    "exp":316
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][7] = {
     "attr": [
-        ["max_hp",31770],
-        ["attack",765],
-        ["defence",382],
-        ["un_defence",382]
+        ["max_hp",86963],
+        ["attack",2098],
+        ["defence",1048],
+        ["un_defence",1048]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":303
+    "exp":392
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][8] = {
     "attr": [
-        ["max_hp",33180],
-        ["attack",799],
-        ["defence",399],
-        ["un_defence",399]
+        ["max_hp",91017],
+        ["attack",2195],
+        ["defence",1097],
+        ["un_defence",1097]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":368
+    "exp":478
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][9] = {
     "attr": [
-        ["max_hp",34660],
-        ["attack",835],
-        ["defence",417],
-        ["un_defence",417]
+        ["max_hp",95274],
+        ["attack",2297],
+        ["defence",1148],
+        ["un_defence",1148]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":440
+    "exp":572
 }
 tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "火麒麟初阶";
 tab[2].module = "2222221";
 tab[2][10] = {
     "attr": [
-        ["max_hp",36210],
-        ["attack",872],
-        ["defence",436],
-        ["un_defence",436]
+        ["max_hp",99744],
+        ["attack",2404],
+        ["defence",1202],
+        ["un_defence",1202]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -500,160 +500,160 @@ tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][0] = {
     "attr": [
-        ["max_hp",38000],
-        ["attack",915],
-        ["defence",457],
-        ["un_defence",457]
+        ["max_hp",105108],
+        ["attack",2533],
+        ["defence",1266],
+        ["un_defence",1266]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":47
+    "exp":55
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][1] = {
     "attr": [
-        ["max_hp",39500],
-        ["attack",951],
-        ["defence",475],
-        ["un_defence",475]
+        ["max_hp",108616],
+        ["attack",2617],
+        ["defence",1308],
+        ["un_defence",1308]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":114
+    "exp":130
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][2] = {
     "attr": [
-        ["max_hp",41080],
-        ["attack",989],
-        ["defence",494],
-        ["un_defence",494]
+        ["max_hp",112299],
+        ["attack",2705],
+        ["defence",1352],
+        ["un_defence",1352]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":189
+    "exp":218
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][3] = {
     "attr": [
-        ["max_hp",42740],
-        ["attack",1029],
-        ["defence",514],
-        ["un_defence",514]
+        ["max_hp",116166],
+        ["attack",2798],
+        ["defence",1398],
+        ["un_defence",1398]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":272
+    "exp":314
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][4] = {
     "attr": [
-        ["max_hp",44480],
-        ["attack",1071],
-        ["defence",535],
-        ["un_defence",535]
+        ["max_hp",120227],
+        ["attack",2895],
+        ["defence",1447],
+        ["un_defence",1447]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":363
+    "exp":420
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][5] = {
     "attr": [
-        ["max_hp",46310],
-        ["attack",1115],
-        ["defence",557],
-        ["un_defence",557]
+        ["max_hp",124491],
+        ["attack",2997],
+        ["defence",1498],
+        ["un_defence",1498]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":461
+    "exp":532
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][6] = {
     "attr": [
-        ["max_hp",48230],
-        ["attack",1161],
-        ["defence",580],
-        ["un_defence",580]
+        ["max_hp",128968],
+        ["attack",3104],
+        ["defence",1552],
+        ["un_defence",1552]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":567
+    "exp":656
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][7] = {
     "attr": [
-        ["max_hp",50240],
-        ["attack",1209],
-        ["defence",604],
-        ["un_defence",604]
+        ["max_hp",133669],
+        ["attack",3217],
+        ["defence",1608],
+        ["un_defence",1608]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":681
+    "exp":788
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][8] = {
     "attr": [
-        ["max_hp",52360],
-        ["attack",1260],
-        ["defence",629],
-        ["un_defence",629]
+        ["max_hp",138605],
+        ["attack",3336],
+        ["defence",1667],
+        ["un_defence",1667]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":802
+    "exp":928
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][9] = {
     "attr": [
-        ["max_hp",54580],
-        ["attack",1313],
-        ["defence",656],
-        ["un_defence",656]
+        ["max_hp",143788],
+        ["attack",3460],
+        ["defence",1729],
+        ["un_defence",1729]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":932
+    "exp":1078
 }
 tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "火麒麟中阶";
 tab[3].module = "2222222";
 tab[3][10] = {
     "attr": [
-        ["max_hp",56910],
-        ["attack",1369],
-        ["defence",684],
-        ["un_defence",684]
+        ["max_hp",149230],
+        ["attack",3591],
+        ["defence",1794],
+        ["un_defence",1794]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -665,160 +665,160 @@ tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][0] = {
     "attr": [
-        ["max_hp",59590],
-        ["attack",1433],
-        ["defence",716],
-        ["un_defence",716]
+        ["max_hp",155760],
+        ["attack",3748],
+        ["defence",1872],
+        ["un_defence",1872]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":54
+    "exp":85
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][1] = {
     "attr": [
-        ["max_hp",61430],
-        ["attack",1477],
-        ["defence",738],
-        ["un_defence",738]
+        ["max_hp",159894],
+        ["attack",3847],
+        ["defence",1922],
+        ["un_defence",1922]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":136
+    "exp":230
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][2] = {
     "attr": [
-        ["max_hp",63360],
-        ["attack",1523],
-        ["defence",761],
-        ["un_defence",761]
+        ["max_hp",164235],
+        ["attack",3951],
+        ["defence",1974],
+        ["un_defence",1974]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":228
+    "exp":395
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][3] = {
     "attr": [
-        ["max_hp",65390],
-        ["attack",1572],
-        ["defence",785],
-        ["un_defence",785]
+        ["max_hp",168793],
+        ["attack",4060],
+        ["defence",2029],
+        ["un_defence",2029]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":329
+    "exp":578
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][4] = {
     "attr": [
-        ["max_hp",67520],
-        ["attack",1623],
-        ["defence",811],
-        ["un_defence",811]
+        ["max_hp",173579],
+        ["attack",4175],
+        ["defence",2086],
+        ["un_defence",2086]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":440
+    "exp":774
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][5] = {
     "attr": [
-        ["max_hp",69750],
-        ["attack",1677],
-        ["defence",838],
-        ["un_defence",838]
+        ["max_hp",178604],
+        ["attack",4296],
+        ["defence",2146],
+        ["un_defence",2146]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":560
+    "exp":990
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][6] = {
     "attr": [
-        ["max_hp",72100],
-        ["attack",1733],
-        ["defence",866],
-        ["un_defence",866]
+        ["max_hp",183880],
+        ["attack",4423],
+        ["defence",2209],
+        ["un_defence",2209]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":690
+    "exp":1220
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][7] = {
     "attr": [
-        ["max_hp",74560],
-        ["attack",1792],
-        ["defence",896],
-        ["un_defence",896]
+        ["max_hp",189420],
+        ["attack",4556],
+        ["defence",2276],
+        ["un_defence",2276]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":829
+    "exp":1470
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][8] = {
     "attr": [
-        ["max_hp",77150],
-        ["attack",1854],
-        ["defence",927],
-        ["un_defence",927]
+        ["max_hp",195237],
+        ["attack",4696],
+        ["defence",2346],
+        ["un_defence",2346]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":977
+    "exp":1734
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][9] = {
     "attr": [
-        ["max_hp",79860],
-        ["attack",1919],
-        ["defence",960],
-        ["un_defence",960]
+        ["max_hp",201345],
+        ["attack",4843],
+        ["defence",2419],
+        ["un_defence",2419]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1135
+    "exp":2016
 }
 tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "火麒麟高阶";
 tab[4].module = "2222222";
 tab[4][10] = {
     "attr": [
-        ["max_hp",82710],
-        ["attack",1987],
-        ["defence",994],
-        ["un_defence",994]
+        ["max_hp",207759],
+        ["attack",4997],
+        ["defence",2496],
+        ["un_defence",2496]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -830,160 +830,160 @@ tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][0] = {
     "attr": [
-        ["max_hp",85990],
-        ["attack",2066],
-        ["defence",1033],
-        ["un_defence",1033]
+        ["max_hp",215455],
+        ["attack",5182],
+        ["defence",2588],
+        ["un_defence",2588]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":61
+    "exp":146
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][1] = {
     "attr": [
-        ["max_hp",88160],
-        ["attack",2118],
-        ["defence",1059],
-        ["un_defence",1059]
+        ["max_hp",220216],
+        ["attack",5296],
+        ["defence",2645],
+        ["un_defence",2645]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":158
+    "exp":430
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][2] = {
     "attr": [
-        ["max_hp",90440],
-        ["attack",2173],
-        ["defence",1086],
-        ["un_defence",1086]
+        ["max_hp",225215],
+        ["attack",5416],
+        ["defence",2705],
+        ["un_defence",2705]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":267
+    "exp":744
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][3] = {
     "attr": [
-        ["max_hp",92830],
-        ["attack",2230],
-        ["defence",1115],
-        ["un_defence",1115]
+        ["max_hp",230464],
+        ["attack",5542],
+        ["defence",2768],
+        ["un_defence",2768]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":386
+    "exp":1092
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][4] = {
     "attr": [
-        ["max_hp",95340],
-        ["attack",2290],
-        ["defence",1145],
-        ["un_defence",1145]
+        ["max_hp",235975],
+        ["attack",5674],
+        ["defence",2834],
+        ["un_defence",2834]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":517
+    "exp":1472
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][5] = {
     "attr": [
-        ["max_hp",97980],
-        ["attack",2353],
-        ["defence",1177],
-        ["un_defence",1177]
+        ["max_hp",241762],
+        ["attack",5813],
+        ["defence",2903],
+        ["un_defence",2903]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":659
+    "exp":1882
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][6] = {
     "attr": [
-        ["max_hp",100750],
-        ["attack",2420],
-        ["defence",1210],
-        ["un_defence",1210]
+        ["max_hp",247838],
+        ["attack",5959],
+        ["defence",2976],
+        ["un_defence",2976]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":812
+    "exp":2328
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][7] = {
     "attr": [
-        ["max_hp",103660],
-        ["attack",2490],
-        ["defence",1245],
-        ["un_defence",1245]
+        ["max_hp",254218],
+        ["attack",6112],
+        ["defence",3053],
+        ["un_defence",3053]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":977
+    "exp":2804
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][8] = {
     "attr": [
-        ["max_hp",106720],
-        ["attack",2563],
-        ["defence",1282],
-        ["un_defence",1282]
+        ["max_hp",260917],
+        ["attack",6273],
+        ["defence",3133],
+        ["un_defence",3133]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1152
+    "exp":3312
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][9] = {
     "attr": [
-        ["max_hp",109930],
-        ["attack",2640],
-        ["defence",1320],
-        ["un_defence",1320]
+        ["max_hp",267951],
+        ["attack",6442],
+        ["defence",3217],
+        ["un_defence",3217]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1338
+    "exp":3854
 }
 tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "赤火麒麟";
 tab[5].module = "2222222";
 tab[5][10] = {
     "attr": [
-        ["max_hp",113300],
-        ["attack",2721],
-        ["defence",1360],
-        ["un_defence",1360]
+        ["max_hp",275336],
+        ["attack",6619],
+        ["defence",3306],
+        ["un_defence",3306]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -995,160 +995,160 @@ tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][0] = {
     "attr": [
-        ["max_hp",117170],
-        ["attack",2814],
-        ["defence",1406],
-        ["un_defence",1406]
+        ["max_hp",284198],
+        ["attack",6832],
+        ["defence",3412],
+        ["un_defence",3412]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":137
+    "exp":270
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][1] = {
     "attr": [
-        ["max_hp",119680],
-        ["attack",2874],
-        ["defence",1436],
-        ["un_defence",1436]
+        ["max_hp",289710],
+        ["attack",6964],
+        ["defence",3478],
+        ["un_defence",3478]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":392
+    "exp":804
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][2] = {
     "attr": [
-        ["max_hp",122310],
-        ["attack",2937],
-        ["defence",1468],
-        ["un_defence",1468]
+        ["max_hp",295498],
+        ["attack",7103],
+        ["defence",3547],
+        ["un_defence",3547]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":664
+    "exp":1376
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][3] = {
     "attr": [
-        ["max_hp",125070],
-        ["attack",3003],
-        ["defence",1501],
-        ["un_defence",1501]
+        ["max_hp",301575],
+        ["attack",7249],
+        ["defence",3620],
+        ["un_defence",3620]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":955
+    "exp":1986
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][4] = {
     "attr": [
-        ["max_hp",127970],
-        ["attack",3073],
-        ["defence",1536],
-        ["un_defence",1536]
+        ["max_hp",307956],
+        ["attack",7402],
+        ["defence",3697],
+        ["un_defence",3697]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1264
+    "exp":2632
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][5] = {
     "attr": [
-        ["max_hp",131020],
-        ["attack",3146],
-        ["defence",1573],
-        ["un_defence",1573]
+        ["max_hp",314656],
+        ["attack",7563],
+        ["defence",3777],
+        ["un_defence",3777]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1590
+    "exp":3316
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][6] = {
     "attr": [
-        ["max_hp",134220],
-        ["attack",3223],
-        ["defence",1611],
-        ["un_defence",1611]
+        ["max_hp",321691],
+        ["attack",7732],
+        ["defence",3861],
+        ["un_defence",3861]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1934
+    "exp":4038
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][7] = {
     "attr": [
-        ["max_hp",137580],
-        ["attack",3304],
-        ["defence",1651],
-        ["un_defence",1651]
+        ["max_hp",329078],
+        ["attack",7909],
+        ["defence",3950],
+        ["un_defence",3950]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2297
+    "exp":4796
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][8] = {
     "attr": [
-        ["max_hp",141110],
-        ["attack",3389],
-        ["defence",1693],
-        ["un_defence",1693]
+        ["max_hp",336834],
+        ["attack",8095],
+        ["defence",4043],
+        ["un_defence",4043]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2677
+    "exp":5594
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][9] = {
     "attr": [
-        ["max_hp",144810],
-        ["attack",3478],
-        ["defence",1737],
-        ["un_defence",1737]
+        ["max_hp",344978],
+        ["attack",8290],
+        ["defence",4141],
+        ["un_defence",4141]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3075
+    "exp":6428
 }
 tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "赤火麒麟";
 tab[6].module = "2222223";
 tab[6][10] = {
     "attr": [
-        ["max_hp",148700],
-        ["attack",3571],
-        ["defence",1784],
-        ["un_defence",1784]
+        ["max_hp",353529],
+        ["attack",8495],
+        ["defence",4244],
+        ["un_defence",4244]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1160,160 +1160,160 @@ tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][0] = {
     "attr": [
-        ["max_hp",153170],
-        ["attack",3678],
-        ["defence",1838],
-        ["un_defence",1838]
+        ["max_hp",363791],
+        ["attack",8741],
+        ["defence",4367],
+        ["un_defence",4367]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":157
+    "exp":336
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][1] = {
     "attr": [
-        ["max_hp",156090],
-        ["attack",3748],
-        ["defence",1873],
-        ["un_defence",1873]
+        ["max_hp",370055],
+        ["attack",8891],
+        ["defence",4442],
+        ["un_defence",4442]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":454
+    "exp":1012
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][2] = {
     "attr": [
-        ["max_hp",159160],
-        ["attack",3822],
-        ["defence",1910],
-        ["un_defence",1910]
+        ["max_hp",376632],
+        ["attack",9049],
+        ["defence",4521],
+        ["un_defence",4521]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":772
+    "exp":1734
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][3] = {
     "attr": [
-        ["max_hp",162380],
-        ["attack",3899],
-        ["defence",1949],
-        ["un_defence",1949]
+        ["max_hp",383538],
+        ["attack",9215],
+        ["defence",4604],
+        ["un_defence",4604]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1112
+    "exp":2502
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][4] = {
     "attr": [
-        ["max_hp",165760],
-        ["attack",3980],
-        ["defence",1990],
-        ["un_defence",1990]
+        ["max_hp",390789],
+        ["attack",9389],
+        ["defence",4691],
+        ["un_defence",4691]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1472
+    "exp":3318
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][5] = {
     "attr": [
-        ["max_hp",169310],
-        ["attack",4065],
-        ["defence",2033],
-        ["un_defence",2033]
+        ["max_hp",398403],
+        ["attack",9572],
+        ["defence",4782],
+        ["un_defence",4782]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1852
+    "exp":4182
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][6] = {
     "attr": [
-        ["max_hp",173040],
-        ["attack",4155],
-        ["defence",2078],
-        ["un_defence",2078]
+        ["max_hp",406398],
+        ["attack",9764],
+        ["defence",4878],
+        ["un_defence",4878]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2254
+    "exp":5094
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][7] = {
     "attr": [
-        ["max_hp",176960],
-        ["attack",4249],
-        ["defence",2125],
-        ["un_defence",2125]
+        ["max_hp",414792],
+        ["attack",9965],
+        ["defence",4979],
+        ["un_defence",4979]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2677
+    "exp":6052
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][8] = {
     "attr": [
-        ["max_hp",181070],
-        ["attack",4348],
-        ["defence",2174],
-        ["un_defence",2174]
+        ["max_hp",423606],
+        ["attack",10177],
+        ["defence",5085],
+        ["un_defence",5085]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3120
+    "exp":7058
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][9] = {
     "attr": [
-        ["max_hp",185390],
-        ["attack",4452],
-        ["defence",2226],
-        ["un_defence",2226]
+        ["max_hp",432861],
+        ["attack",10399],
+        ["defence",5196],
+        ["un_defence",5196]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3585
+    "exp":8110
 }
 tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "赤火麒麟";
 tab[7].module = "2222223";
 tab[7][10] = {
     "attr": [
-        ["max_hp",189920],
-        ["attack",4561],
-        ["defence",2280],
-        ["un_defence",2280]
+        ["max_hp",442579],
+        ["attack",10632],
+        ["defence",5313],
+        ["un_defence",5313]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1325,160 +1325,160 @@ tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][0] = {
     "attr": [
-        ["max_hp",195140],
-        ["attack",4686],
-        ["defence",2343],
-        ["un_defence",2343]
+        ["max_hp",454240],
+        ["attack",10912],
+        ["defence",5453],
+        ["un_defence",5453]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":177
+    "exp":420
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][1] = {
     "attr": [
-        ["max_hp",198480],
-        ["attack",4766],
-        ["defence",2383],
-        ["un_defence",2383]
+        ["max_hp",461256],
+        ["attack",11080],
+        ["defence",5537],
+        ["un_defence",5537]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":517
+    "exp":1270
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][2] = {
     "attr": [
-        ["max_hp",201990],
-        ["attack",4850],
-        ["defence",2425],
-        ["un_defence",2425]
+        ["max_hp",468622],
+        ["attack",11257],
+        ["defence",5625],
+        ["un_defence",5625]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":881
+    "exp":2180
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][3] = {
     "attr": [
-        ["max_hp",205670],
-        ["attack",4938],
-        ["defence",2469],
-        ["un_defence",2469]
+        ["max_hp",476357],
+        ["attack",11443],
+        ["defence",5718],
+        ["un_defence",5718]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1268
+    "exp":3148
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][4] = {
     "attr": [
-        ["max_hp",209540],
-        ["attack",5031],
-        ["defence",2515],
-        ["un_defence",2515]
+        ["max_hp",484479],
+        ["attack",11638],
+        ["defence",5815],
+        ["un_defence",5815]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1680
+    "exp":4178
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][5] = {
     "attr": [
-        ["max_hp",213600],
-        ["attack",5128],
-        ["defence",2564],
-        ["un_defence",2564]
+        ["max_hp",493007],
+        ["attack",11843],
+        ["defence",5917],
+        ["un_defence",5917]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2115
+    "exp":5266
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][6] = {
     "attr": [
-        ["max_hp",217860],
-        ["attack",5230],
-        ["defence",2615],
-        ["un_defence",2615]
+        ["max_hp",501961],
+        ["attack",12058],
+        ["defence",6024],
+        ["un_defence",6024]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2574
+    "exp":6414
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][7] = {
     "attr": [
-        ["max_hp",222340],
-        ["attack",5337],
-        ["defence",2669],
-        ["un_defence",2669]
+        ["max_hp",511363],
+        ["attack",12284],
+        ["defence",6137],
+        ["un_defence",6137]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3057
+    "exp":7622
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][8] = {
     "attr": [
-        ["max_hp",227040],
-        ["attack",5450],
-        ["defence",2725],
-        ["un_defence",2725]
+        ["max_hp",521235],
+        ["attack",12521],
+        ["defence",6256],
+        ["un_defence",6256]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3564
+    "exp":8888
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][9] = {
     "attr": [
-        ["max_hp",231980],
-        ["attack",5568],
-        ["defence",2784],
-        ["un_defence",2784]
+        ["max_hp",531600],
+        ["attack",12770],
+        ["defence",6380],
+        ["un_defence",6380]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4094
+    "exp":10216
 }
 tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "赤火麒麟";
 tab[8].module = "2222223";
 tab[8][10] = {
     "attr": [
-        ["max_hp",237160],
-        ["attack",5692],
-        ["defence",2846],
-        ["un_defence",2846]
+        ["max_hp",542484],
+        ["attack",13031],
+        ["defence",6511],
+        ["un_defence",6511]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1490,160 +1490,160 @@ tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][0] = {
     "attr": [
-        ["max_hp",243120],
-        ["attack",5835],
-        ["defence",2918],
-        ["un_defence",2918]
+        ["max_hp",555544],
+        ["attack",13344],
+        ["defence",6668],
+        ["un_defence",6668]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":309
+    "exp":564
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][1] = {
     "attr": [
-        ["max_hp",246960],
-        ["attack",5927],
-        ["defence",2964],
-        ["un_defence",2964]
+        ["max_hp",563437],
+        ["attack",13533],
+        ["defence",6763],
+        ["un_defence",6763]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":920
+    "exp":1702
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][2] = {
     "attr": [
-        ["max_hp",250990],
-        ["attack",6024],
-        ["defence",3012],
-        ["un_defence",3012]
+        ["max_hp",571724],
+        ["attack",13732],
+        ["defence",6862],
+        ["un_defence",6862]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1561
+    "exp":2896
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][3] = {
     "attr": [
-        ["max_hp",255230],
-        ["attack",6126],
-        ["defence",3063],
-        ["un_defence",3063]
+        ["max_hp",580426],
+        ["attack",13941],
+        ["defence",6966],
+        ["un_defence",6966]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2232
+    "exp":4148
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][4] = {
     "attr": [
-        ["max_hp",259680],
-        ["attack",6233],
-        ["defence",3116],
-        ["un_defence",3116]
+        ["max_hp",589563],
+        ["attack",14160],
+        ["defence",7076],
+        ["un_defence",7076]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2935
+    "exp":5458
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][5] = {
     "attr": [
-        ["max_hp",264350],
-        ["attack",6345],
-        ["defence",3172],
-        ["un_defence",3172]
+        ["max_hp",599157],
+        ["attack",14390],
+        ["defence",7191],
+        ["un_defence",7191]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3669
+    "exp":6826
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][6] = {
     "attr": [
-        ["max_hp",269250],
-        ["attack",6463],
-        ["defence",3231],
-        ["un_defence",3231]
+        ["max_hp",609230],
+        ["attack",14632],
+        ["defence",7312],
+        ["un_defence",7312]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4433
+    "exp":8250
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][7] = {
     "attr": [
-        ["max_hp",274400],
-        ["attack",6587],
-        ["defence",3293],
-        ["un_defence",3293]
+        ["max_hp",619807],
+        ["attack",14886],
+        ["defence",7439],
+        ["un_defence",7439]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":5229
+    "exp":9732
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][8] = {
     "attr": [
-        ["max_hp",279810],
-        ["attack",6717],
-        ["defence",3358],
-        ["un_defence",3358]
+        ["max_hp",630913],
+        ["attack",15153],
+        ["defence",7572],
+        ["un_defence",7572]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6055
+    "exp":11272
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][9] = {
     "attr": [
-        ["max_hp",285490],
-        ["attack",6853],
-        ["defence",3426],
-        ["un_defence",3426]
+        ["max_hp",642574],
+        ["attack",15433],
+        ["defence",7712],
+        ["un_defence",7712]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6912
+    "exp":12870
 }
 tab[9] = tab[9]?tab[9]:{};
 tab[9].name = "赤火麒麟";
 tab[9].module = "2222224";
 tab[9][10] = {
     "attr": [
-        ["max_hp",291450],
-        ["attack",6996],
-        ["defence",3497],
-        ["un_defence",3497]
+        ["max_hp",654818],
+        ["attack",15727],
+        ["defence",7859],
+        ["un_defence",7859]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1655,160 +1655,160 @@ tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][0] = {
     "attr": [
-        ["max_hp",298300],
-        ["attack",7161],
-        ["defence",3579],
-        ["un_defence",3579]
+        ["max_hp",669511],
+        ["attack",16080],
+        ["defence",8035],
+        ["un_defence",8035]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":348
+    "exp":726
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][1] = {
     "attr": [
-        ["max_hp",302640],
-        ["attack",7265],
-        ["defence",3631],
-        ["un_defence",3631]
+        ["max_hp",678281],
+        ["attack",16290],
+        ["defence",8140],
+        ["un_defence",8140]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1037
+    "exp":2200
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][2] = {
     "attr": [
-        ["max_hp",307200],
-        ["attack",7374],
-        ["defence",3686],
-        ["un_defence",3686]
+        ["max_hp",687489],
+        ["attack",16511],
+        ["defence",8250],
+        ["un_defence",8250]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1762
+    "exp":3748
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][3] = {
     "attr": [
-        ["max_hp",311990],
-        ["attack",7489],
-        ["defence",3743],
-        ["un_defence",3743]
+        ["max_hp",697157],
+        ["attack",16743],
+        ["defence",8366],
+        ["un_defence",8366]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2521
+    "exp":5372
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][4] = {
     "attr": [
-        ["max_hp",317020],
-        ["attack",7610],
-        ["defence",3803],
-        ["un_defence",3803]
+        ["max_hp",707309],
+        ["attack",16987],
+        ["defence",8488],
+        ["un_defence",8488]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3316
+    "exp":7070
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][5] = {
     "attr": [
-        ["max_hp",322300],
-        ["attack",7737],
-        ["defence",3866],
-        ["un_defence",3866]
+        ["max_hp",717969],
+        ["attack",17243],
+        ["defence",8616],
+        ["un_defence",8616]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4145
+    "exp":8842
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][6] = {
     "attr": [
-        ["max_hp",327840],
-        ["attack",7870],
-        ["defence",3933],
-        ["un_defence",3933]
+        ["max_hp",729161],
+        ["attack",17512],
+        ["defence",8750],
+        ["un_defence",8750]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":5009
+    "exp":10690
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][7] = {
     "attr": [
-        ["max_hp",333660],
-        ["attack",8010],
-        ["defence",4003],
-        ["un_defence",4003]
+        ["max_hp",740913],
+        ["attack",17794],
+        ["defence",8891],
+        ["un_defence",8891]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":5909
+    "exp":12612
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][8] = {
     "attr": [
-        ["max_hp",339770],
-        ["attack",8157],
-        ["defence",4076],
-        ["un_defence",4076]
+        ["max_hp",753253],
+        ["attack",18090],
+        ["defence",9039],
+        ["un_defence",9039]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6843
+    "exp":14608
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][9] = {
     "attr": [
-        ["max_hp",346190],
-        ["attack",8311],
-        ["defence",4153],
-        ["un_defence",4153]
+        ["max_hp",766210],
+        ["attack",18401],
+        ["defence",9194],
+        ["un_defence",9194]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":7812
+    "exp":16678
 }
 tab[10] = tab[10]?tab[10]:{};
 tab[10].name = "赤火麒麟";
 tab[10].module = "2222224";
 tab[10][10] = {
     "attr": [
-        ["max_hp",352930],
-        ["attack",8473],
-        ["defence",4234],
-        ["un_defence",4234]
+        ["max_hp",779815],
+        ["attack",18728],
+        ["defence",9357],
+        ["un_defence",9357]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1820,160 +1820,160 @@ tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][0] = {
     "attr": [
-        ["max_hp",360680],
-        ["attack",8659],
-        ["defence",4327],
-        ["un_defence",4327]
+        ["max_hp",796140],
+        ["attack",19120],
+        ["defence",9553],
+        ["un_defence",9553]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":399
+    "exp":966
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][1] = {
     "attr": [
-        ["max_hp",365690],
-        ["attack",8779],
-        ["defence",4387],
-        ["un_defence",4387]
+        ["max_hp",805912],
+        ["attack",19355],
+        ["defence",9670],
+        ["un_defence",9670]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":1195
+    "exp":2936
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][2] = {
     "attr": [
-        ["max_hp",370950],
-        ["attack",8905],
-        ["defence",4450],
-        ["un_defence",4450]
+        ["max_hp",816172],
+        ["attack",19601],
+        ["defence",9793],
+        ["un_defence",9793]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2031
+    "exp":5008
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][3] = {
     "attr": [
-        ["max_hp",376470],
-        ["attack",9038],
-        ["defence",4516],
-        ["un_defence",4516]
+        ["max_hp",826945],
+        ["attack",19860],
+        ["defence",9922],
+        ["un_defence",9922]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2907
+    "exp":7178
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][4] = {
     "attr": [
-        ["max_hp",382270],
-        ["attack",9177],
-        ["defence",4586],
-        ["un_defence",4586]
+        ["max_hp",838257],
+        ["attack",20132],
+        ["defence",10058],
+        ["un_defence",10058]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3824
+    "exp":9448
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][5] = {
     "attr": [
-        ["max_hp",388360],
-        ["attack",9323],
-        ["defence",4659],
-        ["un_defence",4659]
+        ["max_hp",850135],
+        ["attack",20417],
+        ["defence",10201],
+        ["un_defence",10201]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4781
+    "exp":11818
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][6] = {
     "attr": [
-        ["max_hp",394760],
-        ["attack",9476],
-        ["defence",4736],
-        ["un_defence",4736]
+        ["max_hp",862607],
+        ["attack",20716],
+        ["defence",10351],
+        ["un_defence",10351]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":5778
+    "exp":14288
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][7] = {
     "attr": [
-        ["max_hp",401480],
-        ["attack",9637],
-        ["defence",4817],
-        ["un_defence",4817]
+        ["max_hp",875702],
+        ["attack",21030],
+        ["defence",10508],
+        ["un_defence",10508]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6815
+    "exp":16858
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][8] = {
     "attr": [
-        ["max_hp",408530],
-        ["attack",9806],
-        ["defence",4902],
-        ["un_defence",4902]
+        ["max_hp",889452],
+        ["attack",21360],
+        ["defence",10673],
+        ["un_defence",10673]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":7893
+    "exp":19526
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][9] = {
     "attr": [
-        ["max_hp",415930],
-        ["attack",9984],
-        ["defence",4991],
-        ["un_defence",4991]
+        ["max_hp",903889],
+        ["attack",21707],
+        ["defence",10846],
+        ["un_defence",10846]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":9011
+    "exp":22296
 }
 tab[11] = tab[11]?tab[11]:{};
 tab[11].name = "赤火麒麟";
 tab[11].module = "2222224";
 tab[11][10] = {
     "attr": [
-        ["max_hp",423700],
-        ["attack",10171],
-        ["defence",5084],
-        ["un_defence",5084]
+        ["max_hp",919048],
+        ["attack",22071],
+        ["defence",11028],
+        ["un_defence",11028]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -1985,160 +1985,160 @@ tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][0] = {
     "attr": [
-        ["max_hp",432640],
-        ["attack",10386],
-        ["defence",5191],
-        ["un_defence",5191]
+        ["max_hp",937239],
+        ["attack",22508],
+        ["defence",11246],
+        ["un_defence",11246]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":754
+    "exp":1382
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][1] = {
     "attr": [
-        ["max_hp",438490],
-        ["attack",10526],
-        ["defence",5261],
-        ["un_defence",5261]
+        ["max_hp",948138],
+        ["attack",22770],
+        ["defence",11377],
+        ["un_defence",11377]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2274
+    "exp":4194
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][2] = {
     "attr": [
-        ["max_hp",444630],
-        ["attack",10673],
-        ["defence",5335],
-        ["un_defence",5335]
+        ["max_hp",959582],
+        ["attack",23045],
+        ["defence",11514],
+        ["un_defence",11514]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3854
+    "exp":7118
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][3] = {
     "attr": [
-        ["max_hp",451080],
-        ["attack",10828],
-        ["defence",5412],
-        ["un_defence",5412]
+        ["max_hp",971599],
+        ["attack",23333],
+        ["defence",11658],
+        ["un_defence",11658]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":5495
+    "exp":10154
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][4] = {
     "attr": [
-        ["max_hp",457850],
-        ["attack",10990],
-        ["defence",5493],
-        ["un_defence",5493]
+        ["max_hp",984216],
+        ["attack",23636],
+        ["defence",11809],
+        ["un_defence",11809]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":7196
+    "exp":13300
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][5] = {
     "attr": [
-        ["max_hp",464960],
-        ["attack",11161],
-        ["defence",5578],
-        ["un_defence",5578]
+        ["max_hp",997464],
+        ["attack",23954],
+        ["defence",11968],
+        ["un_defence",11968]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":8957
+    "exp":16558
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][6] = {
     "attr": [
-        ["max_hp",472420],
-        ["attack",11340],
-        ["defence",5668],
-        ["un_defence",5668]
+        ["max_hp",1011375],
+        ["attack",24288],
+        ["defence",12135],
+        ["un_defence",12135]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":10779
+    "exp":19926
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][7] = {
     "attr": [
-        ["max_hp",480250],
-        ["attack",11528],
-        ["defence",5762],
-        ["un_defence",5762]
+        ["max_hp",1025981],
+        ["attack",24639],
+        ["defence",12310],
+        ["un_defence",12310]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":12660
+    "exp":23408
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][8] = {
     "attr": [
-        ["max_hp",488480],
-        ["attack",11725],
-        ["defence",5861],
-        ["un_defence",5861]
+        ["max_hp",1041317],
+        ["attack",25007],
+        ["defence",12494],
+        ["un_defence",12494]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":14602
+    "exp":27000
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][9] = {
     "attr": [
-        ["max_hp",497120],
-        ["attack",11932],
-        ["defence",5965],
-        ["un_defence",5965]
+        ["max_hp",1057420],
+        ["attack",25393],
+        ["defence",12687],
+        ["un_defence",12687]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":16604
+    "exp":30702
 }
 tab[12] = tab[12]?tab[12]:{};
 tab[12].name = "赤火麒麟";
 tab[12].module = "2222225";
 tab[12][10] = {
     "attr": [
-        ["max_hp",506190],
-        ["attack",12150],
-        ["defence",6074],
-        ["un_defence",6074]
+        ["max_hp",1074328],
+        ["attack",25799],
+        ["defence",12890],
+        ["un_defence",12890]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2150,160 +2150,160 @@ tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][0] = {
     "attr": [
-        ["max_hp",516620],
-        ["attack",12400],
-        ["defence",6199],
-        ["un_defence",6199]
+        ["max_hp",1094618],
+        ["attack",26286],
+        ["defence",13133],
+        ["un_defence",13133]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":859
+    "exp":2046
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][1] = {
     "attr": [
-        ["max_hp",523300],
-        ["attack",12560],
-        ["defence",6279],
-        ["un_defence",6279]
+        ["max_hp",1106770],
+        ["attack",26578],
+        ["defence",13279],
+        ["un_defence",13279]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2596
+    "exp":6226
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][2] = {
     "attr": [
-        ["max_hp",530320],
-        ["attack",12728],
-        ["defence",6363],
-        ["un_defence",6363]
+        ["max_hp",1119530],
+        ["attack",26884],
+        ["defence",13432],
+        ["un_defence",13432]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4403
+    "exp":10574
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][3] = {
     "attr": [
-        ["max_hp",537690],
-        ["attack",12905],
-        ["defence",6451],
-        ["un_defence",6451]
+        ["max_hp",1132928],
+        ["attack",27206],
+        ["defence",13593],
+        ["un_defence",13593]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6278
+    "exp":15086
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][4] = {
     "attr": [
-        ["max_hp",545420],
-        ["attack",13091],
-        ["defence",6544],
-        ["un_defence",6544]
+        ["max_hp",1146996],
+        ["attack",27544],
+        ["defence",13762],
+        ["un_defence",13762]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":8222
+    "exp":19762
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][5] = {
     "attr": [
-        ["max_hp",553540],
-        ["attack",13286],
-        ["defence",6641],
-        ["un_defence",6641]
+        ["max_hp",1161767],
+        ["attack",27898],
+        ["defence",13939],
+        ["un_defence",13939]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":10235
+    "exp":24606
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][6] = {
     "attr": [
-        ["max_hp",562070],
-        ["attack",13491],
-        ["defence",6743],
-        ["un_defence",6743]
+        ["max_hp",1177277],
+        ["attack",28270],
+        ["defence",14125],
+        ["un_defence",14125]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":12316
+    "exp":29614
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][7] = {
     "attr": [
-        ["max_hp",571020],
-        ["attack",13706],
-        ["defence",6850],
-        ["un_defence",6850]
+        ["max_hp",1193562],
+        ["attack",28661],
+        ["defence",14320],
+        ["un_defence",14320]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":14466
+    "exp":34788
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][8] = {
     "attr": [
-        ["max_hp",580420],
-        ["attack",13932],
-        ["defence",6963],
-        ["un_defence",6963]
+        ["max_hp",1210661],
+        ["attack",29071],
+        ["defence",14525],
+        ["un_defence",14525]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":16686
+    "exp":40128
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][9] = {
     "attr": [
-        ["max_hp",590290],
-        ["attack",14169],
-        ["defence",7081],
-        ["un_defence",7081]
+        ["max_hp",1228615],
+        ["attack",29502],
+        ["defence",14740],
+        ["un_defence",14740]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":18974
+    "exp":45634
 }
 tab[13] = tab[13]?tab[13]:{};
 tab[13].name = "赤火麒麟";
 tab[13].module = "2222225";
 tab[13][10] = {
     "attr": [
-        ["max_hp",600660],
-        ["attack",14418],
-        ["defence",7205],
-        ["un_defence",7205]
+        ["max_hp",1247467],
+        ["attack",29954],
+        ["defence",14966],
+        ["un_defence",14966]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2315,160 +2315,160 @@ tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][0] = {
     "attr": [
-        ["max_hp",612580],
-        ["attack",14704],
-        ["defence",7348],
-        ["un_defence",7348]
+        ["max_hp",1270089],
+        ["attack",30497],
+        ["defence",15237],
+        ["un_defence",15237]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":964
+    "exp":2728
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][1] = {
     "attr": [
-        ["max_hp",620100],
-        ["attack",14884],
-        ["defence",7438],
-        ["un_defence",7438]
+        ["max_hp",1283619],
+        ["attack",30822],
+        ["defence",15399],
+        ["un_defence",15399]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2919
+    "exp":8314
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][2] = {
     "attr": [
-        ["max_hp",627990],
-        ["attack",15073],
-        ["defence",7533],
-        ["un_defence",7533]
+        ["max_hp",1297826],
+        ["attack",31163],
+        ["defence",15569],
+        ["un_defence",15569]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":4951
+    "exp":14120
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][3] = {
     "attr": [
-        ["max_hp",636280],
-        ["attack",15272],
-        ["defence",7632],
-        ["un_defence",7632]
+        ["max_hp",1312743],
+        ["attack",31521],
+        ["defence",15748],
+        ["un_defence",15748]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":7061
+    "exp":20148
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][4] = {
     "attr": [
-        ["max_hp",644980],
-        ["attack",15481],
-        ["defence",7736],
-        ["un_defence",7736]
+        ["max_hp",1328406],
+        ["attack",31897],
+        ["defence",15936],
+        ["un_defence",15936]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":9247
+    "exp":26398
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][5] = {
     "attr": [
-        ["max_hp",654120],
-        ["attack",15700],
-        ["defence",7846],
-        ["un_defence",7846]
+        ["max_hp",1344852],
+        ["attack",32292],
+        ["defence",16133],
+        ["un_defence",16133]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":11512
+    "exp":32870
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][6] = {
     "attr": [
-        ["max_hp",663710],
-        ["attack",15930],
-        ["defence",7961],
-        ["un_defence",7961]
+        ["max_hp",1362120],
+        ["attack",32706],
+        ["defence",16340],
+        ["un_defence",16340]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":13854
+    "exp":39562
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][7] = {
     "attr": [
-        ["max_hp",673780],
-        ["attack",16172],
-        ["defence",8082],
-        ["un_defence",8082]
+        ["max_hp",1380252],
+        ["attack",33141],
+        ["defence",16558],
+        ["un_defence",16558]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":16273
+    "exp":46474
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][8] = {
     "attr": [
-        ["max_hp",684360],
-        ["attack",16426],
-        ["defence",8209],
-        ["un_defence",8209]
+        ["max_hp",1399290],
+        ["attack",33598],
+        ["defence",16786],
+        ["un_defence",16786]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":18769
+    "exp":53610
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][9] = {
     "attr": [
-        ["max_hp",695470],
-        ["attack",16693],
-        ["defence",8342],
-        ["un_defence",8342]
+        ["max_hp",1419280],
+        ["attack",34078],
+        ["defence",17026],
+        ["un_defence",17026]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":21343
+    "exp":60964
 }
 tab[14] = tab[14]?tab[14]:{};
 tab[14].name = "赤火麒麟";
 tab[14].module = "2222225";
 tab[14][10] = {
     "attr": [
-        ["max_hp",707130],
-        ["attack",16973],
-        ["defence",8482],
-        ["un_defence",8482]
+        ["max_hp",1440270],
+        ["attack",34582],
+        ["defence",17278],
+        ["un_defence",17278]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2480,160 +2480,160 @@ tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][0] = {
     "attr": [
-        ["max_hp",720540],
-        ["attack",17295],
-        ["defence",8643],
-        ["un_defence",8643]
+        ["max_hp",1465458],
+        ["attack",35187],
+        ["defence",17580],
+        ["un_defence",17580]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":2840
+    "exp":3876
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][1] = {
     "attr": [
-        ["max_hp",729310],
-        ["attack",17505],
-        ["defence",8748],
-        ["un_defence",8748]
+        ["max_hp",1480554],
+        ["attack",35549],
+        ["defence",17761],
+        ["un_defence",17761]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":8628
+    "exp":11786
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][2] = {
     "attr": [
-        ["max_hp",738520],
-        ["attack",17726],
-        ["defence",8858],
-        ["un_defence",8858]
+        ["max_hp",1496405],
+        ["attack",35929],
+        ["defence",17951],
+        ["un_defence",17951]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":14605
+    "exp":19952
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][3] = {
     "attr": [
-        ["max_hp",748190],
-        ["attack",17958],
-        ["defence",8974],
-        ["un_defence",8974]
+        ["max_hp",1513049],
+        ["attack",36328],
+        ["defence",18151],
+        ["un_defence",18151]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":20770
+    "exp":28378
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][4] = {
     "attr": [
-        ["max_hp",758340],
-        ["attack",18202],
-        ["defence",9096],
-        ["un_defence",9096]
+        ["max_hp",1530525],
+        ["attack",36747],
+        ["defence",18361],
+        ["un_defence",18361]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":27123
+    "exp":37058
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][5] = {
     "attr": [
-        ["max_hp",769000],
-        ["attack",18458],
-        ["defence",9224],
-        ["un_defence",9224]
+        ["max_hp",1548875],
+        ["attack",37187],
+        ["defence",18581],
+        ["un_defence",18581]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":33664
+    "exp":45998
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][6] = {
     "attr": [
-        ["max_hp",780190],
-        ["attack",18727],
-        ["defence",9358],
-        ["un_defence",9358]
+        ["max_hp",1568142],
+        ["attack",37649],
+        ["defence",18812],
+        ["un_defence",18812]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":40394
+    "exp":55194
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][7] = {
     "attr": [
-        ["max_hp",791940],
-        ["attack",19009],
-        ["defence",9499],
-        ["un_defence",9499]
+        ["max_hp",1588372],
+        ["attack",38135],
+        ["defence",19055],
+        ["un_defence",19055]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":47312
+    "exp":64646
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][8] = {
     "attr": [
-        ["max_hp",804280],
-        ["attack",19305],
-        ["defence",9647],
-        ["un_defence",9647]
+        ["max_hp",1609614],
+        ["attack",38645],
+        ["defence",19310],
+        ["un_defence",19310]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":54418
+    "exp":74358
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][9] = {
     "attr": [
-        ["max_hp",817240],
-        ["attack",19616],
-        ["defence",9802],
-        ["un_defence",9802]
+        ["max_hp",1631918],
+        ["attack",39180],
+        ["defence",19578],
+        ["un_defence",19578]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":61712
+    "exp":84324
 }
 tab[15] = tab[15]?tab[15]:{};
 tab[15].name = "赤火麒麟";
 tab[15].module = "2222226";
 tab[15][10] = {
     "attr": [
-        ["max_hp",830840],
-        ["attack",19943],
-        ["defence",9965],
-        ["un_defence",9965]
+        ["max_hp",1655337],
+        ["attack",39742],
+        ["defence",19859],
+        ["un_defence",19859]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2645,160 +2645,160 @@ tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][0] = {
     "attr": [
-        ["max_hp",846490],
-        ["attack",20318],
-        ["defence",10153],
-        ["un_defence",10153]
+        ["max_hp",1683440],
+        ["attack",40417],
+        ["defence",20196],
+        ["un_defence",20196]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3109
+    "exp":5782
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][1] = {
     "attr": [
-        ["max_hp",856090],
-        ["attack",20549],
-        ["defence",10268],
-        ["un_defence",10268]
+        ["max_hp",1700353],
+        ["attack",40823],
+        ["defence",20399],
+        ["un_defence",20399]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":9448
+    "exp":17596
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][2] = {
     "attr": [
-        ["max_hp",866180],
-        ["attack",20791],
-        ["defence",10389],
-        ["un_defence",10389]
+        ["max_hp",1718111],
+        ["attack",41249],
+        ["defence",20612],
+        ["un_defence",20612]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":15994
+    "exp":29796
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][3] = {
     "attr": [
-        ["max_hp",876770],
-        ["attack",21045],
-        ["defence",10516],
-        ["un_defence",10516]
+        ["max_hp",1736757],
+        ["attack",41697],
+        ["defence",20836],
+        ["un_defence",20836]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":22746
+    "exp":42380
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][4] = {
     "attr": [
-        ["max_hp",887890],
-        ["attack",21312],
-        ["defence",10649],
-        ["un_defence",10649]
+        ["max_hp",1756336],
+        ["attack",42167],
+        ["defence",21071],
+        ["un_defence",21071]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":29704
+    "exp":55348
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][5] = {
     "attr": [
-        ["max_hp",899560],
-        ["attack",21592],
-        ["defence",10789],
-        ["un_defence",10789]
+        ["max_hp",1776894],
+        ["attack",42660],
+        ["defence",21318],
+        ["un_defence",21318]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":36869
+    "exp":68702
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][6] = {
     "attr": [
-        ["max_hp",911820],
-        ["attack",21886],
-        ["defence",10936],
-        ["un_defence",10936]
+        ["max_hp",1798479],
+        ["attack",43178],
+        ["defence",21577],
+        ["un_defence",21577]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":44239
+    "exp":82438
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][7] = {
     "attr": [
-        ["max_hp",924690],
-        ["attack",22195],
-        ["defence",11090],
-        ["un_defence",11090]
+        ["max_hp",1821144],
+        ["attack",43722],
+        ["defence",21849],
+        ["un_defence",21849]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":51816
+    "exp":96558
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][8] = {
     "attr": [
-        ["max_hp",938200],
-        ["attack",22519],
-        ["defence",11252],
-        ["un_defence",11252]
+        ["max_hp",1844942],
+        ["attack",44293],
+        ["defence",22135],
+        ["un_defence",22135]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":59599
+    "exp":111064
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][9] = {
     "attr": [
-        ["max_hp",952390],
-        ["attack",22860],
-        ["defence",11422],
-        ["un_defence",11422]
+        ["max_hp",1869930],
+        ["attack",44893],
+        ["defence",22435],
+        ["un_defence",22435]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":67588
+    "exp":125954
 }
 tab[16] = tab[16]?tab[16]:{};
 tab[16].name = "赤火麒麟";
 tab[16].module = "2222226";
 tab[16][10] = {
     "attr": [
-        ["max_hp",967290],
-        ["attack",23218],
-        ["defence",11601],
-        ["un_defence",11601]
+        ["max_hp",1896167],
+        ["attack",45523],
+        ["defence",22750],
+        ["un_defence",22750]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2810,160 +2810,160 @@ tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][0] = {
     "attr": [
-        ["max_hp",984430],
-        ["attack",23629],
-        ["defence",11807],
-        ["un_defence",11807]
+        ["max_hp",1927652],
+        ["attack",46279],
+        ["defence",23128],
+        ["un_defence",23128]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":3377
+    "exp":7406
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][1] = {
     "attr": [
-        ["max_hp",994870],
-        ["attack",23880],
-        ["defence",11932],
-        ["un_defence",11932]
+        ["max_hp",1946444],
+        ["attack",46730],
+        ["defence",23354],
+        ["un_defence",23354]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":10268
+    "exp":22554
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][2] = {
     "attr": [
-        ["max_hp",1005830],
-        ["attack",24143],
-        ["defence",12064],
-        ["un_defence",12064]
+        ["max_hp",1966176],
+        ["attack",47204],
+        ["defence",23591],
+        ["un_defence",23591]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":17384
+    "exp":38196
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][3] = {
     "attr": [
-        ["max_hp",1017340],
-        ["attack",24419],
-        ["defence",12202],
-        ["un_defence",12202]
+        ["max_hp",1986894],
+        ["attack",47701],
+        ["defence",23840],
+        ["un_defence",23840]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":24723
+    "exp":54330
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][4] = {
     "attr": [
-        ["max_hp",1029430],
-        ["attack",24709],
-        ["defence",12347],
-        ["un_defence",12347]
+        ["max_hp",2008648],
+        ["attack",48223],
+        ["defence",24101],
+        ["un_defence",24101]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":32286
+    "exp":70954
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][5] = {
     "attr": [
-        ["max_hp",1042120],
-        ["attack",25014],
-        ["defence",12499],
-        ["un_defence",12499]
+        ["max_hp",2031490],
+        ["attack",48771],
+        ["defence",24375],
+        ["un_defence",24375]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":40073
+    "exp":88074
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][6] = {
     "attr": [
-        ["max_hp",1055440],
-        ["attack",25334],
-        ["defence",12659],
-        ["un_defence",12659]
+        ["max_hp",2055474],
+        ["attack",49347],
+        ["defence",24663],
+        ["un_defence",24663]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":48085
+    "exp":105684
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][7] = {
     "attr": [
-        ["max_hp",1069430],
-        ["attack",25670],
-        ["defence",12827],
-        ["un_defence",12827]
+        ["max_hp",2080657],
+        ["attack",49951],
+        ["defence",24965],
+        ["un_defence",24965]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":56320
+    "exp":123788
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][8] = {
     "attr": [
-        ["max_hp",1084120],
-        ["attack",26023],
-        ["defence",13003],
-        ["un_defence",13003]
+        ["max_hp",2107099],
+        ["attack",50586],
+        ["defence",25282],
+        ["un_defence",25282]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":64780
+    "exp":142386
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][9] = {
     "attr": [
-        ["max_hp",1099540],
-        ["attack",26393],
-        ["defence",13188],
-        ["un_defence",13188]
+        ["max_hp",2134863],
+        ["attack",51252],
+        ["defence",25615],
+        ["un_defence",25615]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":73464
+    "exp":161474
 }
 tab[17] = tab[17]?tab[17]:{};
 tab[17].name = "赤火麒麟";
 tab[17].module = "2222226";
 tab[17][10] = {
     "attr": [
-        ["max_hp",1115740],
-        ["attack",26782],
-        ["defence",13382],
-        ["un_defence",13382]
+        ["max_hp",2164016],
+        ["attack",51952],
+        ["defence",25965],
+        ["un_defence",25965]
     ],
     "diamond":[100002,0],
     "money":[100001,0],
@@ -2975,490 +2975,160 @@ tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][0] = {
     "attr": [
-        ["max_hp",1134370],
-        ["attack",27229],
-        ["defence",13606],
-        ["un_defence",13606]
+        ["max_hp",2198999],
+        ["attack",52792],
+        ["defence",26385],
+        ["un_defence",26385]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":6040
+    "exp":8022
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][1] = {
     "attr": [
-        ["max_hp",1146060],
-        ["attack",27510],
-        ["defence",13746],
-        ["un_defence",13746]
+        ["max_hp",2217791],
+        ["attack",53243],
+        ["defence",26611],
+        ["un_defence",26611]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":18388
+    "exp":24434
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][2] = {
     "attr": [
-        ["max_hp",1158340],
-        ["attack",27805],
-        ["defence",13893],
-        ["un_defence",13893]
+        ["max_hp",2237523],
+        ["attack",53717],
+        ["defence",26848],
+        ["un_defence",26848]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":31139
+    "exp":41378
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][3] = {
     "attr": [
-        ["max_hp",1171230],
-        ["attack",28114],
-        ["defence",14048],
-        ["un_defence",14048]
+        ["max_hp",2258241],
+        ["attack",54214],
+        ["defence",27097],
+        ["un_defence",27097]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":44290
+    "exp":58854
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][4] = {
     "attr": [
-        ["max_hp",1184770],
-        ["attack",28439],
-        ["defence",14210],
-        ["un_defence",14210]
+        ["max_hp",2279995],
+        ["attack",54736],
+        ["defence",27358],
+        ["un_defence",27358]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":57844
+    "exp":76866
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][5] = {
     "attr": [
-        ["max_hp",1198980],
-        ["attack",28780],
-        ["defence",14381],
-        ["un_defence",14381]
+        ["max_hp",2302837],
+        ["attack",55284],
+        ["defence",27632],
+        ["un_defence",27632]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":71799
+    "exp":95412
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][6] = {
     "attr": [
-        ["max_hp",1213900],
-        ["attack",29138],
-        ["defence",14560],
-        ["un_defence",14560]
+        ["max_hp",2326821],
+        ["attack",55860],
+        ["defence",27920],
+        ["un_defence",27920]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":86155
+    "exp":114490
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][7] = {
     "attr": [
-        ["max_hp",1229570],
-        ["attack",29514],
-        ["defence",14748],
-        ["un_defence",14748]
+        ["max_hp",2352004],
+        ["attack",56464],
+        ["defence",28222],
+        ["un_defence",28222]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":100914
+    "exp":134102
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][8] = {
     "attr": [
-        ["max_hp",1246020],
-        ["attack",29909],
-        ["defence",14945],
-        ["un_defence",14945]
+        ["max_hp",2378446],
+        ["attack",57099],
+        ["defence",28539],
+        ["un_defence",28539]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":116073
+    "exp":154250
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][9] = {
     "attr": [
-        ["max_hp",1263300],
-        ["attack",30324],
-        ["defence",15152],
-        ["un_defence",15152]
+        ["max_hp",2406210],
+        ["attack",57765],
+        ["defence",28872],
+        ["un_defence",28872]
     ],
     "diamond":[100002,25],
     "money":[100001,20000],
     "prop":[100028,1],
-    "exp":131635
+    "exp":174928
 }
 tab[18] = tab[18]?tab[18]:{};
 tab[18].name = "赤火麒麟";
 tab[18].module = "2222226";
 tab[18][10] = {
     "attr": [
-        ["max_hp",1281440],
-        ["attack",30759],
-        ["defence",15370],
-        ["un_defence",15370]
-    ],
-    "diamond":[100002,0],
-    "money":[100001,0],
-    "prop":[0,0],
-    "exp":0
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][0] = {
-    "attr": [
-        ["max_hp",1302300],
-        ["attack",31260],
-        ["defence",15620],
-        ["un_defence",15620]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":8084
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][1] = {
-    "attr": [
-        ["max_hp",1314830],
-        ["attack",31561],
-        ["defence",15770],
-        ["un_defence",15770]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":24622
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][2] = {
-    "attr": [
-        ["max_hp",1327980],
-        ["attack",31877],
-        ["defence",15928],
-        ["un_defence",15928]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":41698
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][3] = {
-    "attr": [
-        ["max_hp",1341790],
-        ["attack",32208],
-        ["defence",16094],
-        ["un_defence",16094]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":59312
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][4] = {
-    "attr": [
-        ["max_hp",1356290],
-        ["attack",32556],
-        ["defence",16268],
-        ["un_defence",16268]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":77464
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][5] = {
-    "attr": [
-        ["max_hp",1371520],
-        ["attack",32921],
-        ["defence",16451],
-        ["un_defence",16451]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":96154
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][6] = {
-    "attr": [
-        ["max_hp",1387510],
-        ["attack",33305],
-        ["defence",16643],
-        ["un_defence",16643]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":115381
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][7] = {
-    "attr": [
-        ["max_hp",1404300],
-        ["attack",33708],
-        ["defence",16844],
-        ["un_defence",16844]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":135147
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][8] = {
-    "attr": [
-        ["max_hp",1421930],
-        ["attack",34131],
-        ["defence",17056],
-        ["un_defence",17056]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":155450
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][9] = {
-    "attr": [
-        ["max_hp",1440440],
-        ["attack",34575],
-        ["defence",17278],
-        ["un_defence",17278]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":176291
-}
-tab[19] = tab[19]?tab[19]:{};
-tab[19].name = "赤火麒麟";
-tab[19].module = "2222226";
-tab[19][10] = {
-    "attr": [
-        ["max_hp",1459880],
-        ["attack",35041],
-        ["defence",17511],
-        ["un_defence",17511]
-    ],
-    "diamond":[100002,0],
-    "money":[100001,0],
-    "prop":[0,0],
-    "exp":0
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][0] = {
-    "attr": [
-        ["max_hp",1482230],
-        ["attack",35577],
-        ["defence",17779],
-        ["un_defence",17779]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":8621
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][1] = {
-    "attr": [
-        ["max_hp",1497590],
-        ["attack",35946],
-        ["defence",17963],
-        ["un_defence",17963]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":26262
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][2] = {
-    "attr": [
-        ["max_hp",1513720],
-        ["attack",36333],
-        ["defence",18157],
-        ["un_defence",18157]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":44477
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][3] = {
-    "attr": [
-        ["max_hp",1530650],
-        ["attack",36739],
-        ["defence",18360],
-        ["un_defence",18360]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":63265
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][4] = {
-    "attr": [
-        ["max_hp",1548430],
-        ["attack",37166],
-        ["defence",18573],
-        ["un_defence",18573]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":82627
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][5] = {
-    "attr": [
-        ["max_hp",1567100],
-        ["attack",37614],
-        ["defence",18797],
-        ["un_defence",18797]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":102563
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][6] = {
-    "attr": [
-        ["max_hp",1586700],
-        ["attack",38084],
-        ["defence",19032],
-        ["un_defence",19032]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":123072
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][7] = {
-    "attr": [
-        ["max_hp",1607280],
-        ["attack",38578],
-        ["defence",19279],
-        ["un_defence",19279]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":144155
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][8] = {
-    "attr": [
-        ["max_hp",1628890],
-        ["attack",39097],
-        ["defence",19538],
-        ["un_defence",19538]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":165812
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][9] = {
-    "attr": [
-        ["max_hp",1651580],
-        ["attack",39642],
-        ["defence",19810],
-        ["un_defence",19810]
-    ],
-    "diamond":[100002,25],
-    "money":[100001,20000],
-    "prop":[100028,1],
-    "exp":188043
-}
-tab[20] = tab[20]?tab[20]:{};
-tab[20].name = "赤火麒麟";
-tab[20].module = "2222226";
-tab[20][10] = {
-    "attr": [
-        ["max_hp",1675410],
-        ["attack",40214],
-        ["defence",20096],
-        ["un_defence",20096]
+        ["max_hp",2435363],
+        ["attack",58465],
+        ["defence",29222],
+        ["un_defence",29222]
     ],
     "diamond":[100002,0],
     "money":[100001,0],

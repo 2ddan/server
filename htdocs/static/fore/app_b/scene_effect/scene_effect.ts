@@ -1,8 +1,8 @@
 
 import { Forelet } from "pi/widget/forelet"
 import { handScene } from "app_b/fight_ol/handscene";
-import { open, close } from "app/mod/root"
-import { openUiEffect, destoryUiEffect } from "app/scene/anim/scene" 
+import { open, close, } from "app/mod/root"
+import { openUiEffect } from "app/scene/anim/scene" 
 import { getSelf } from "app_b/fight/fight";
 import { get, listen } from "app/mod/db";
 import { Music } from "app/mod/music";
@@ -15,9 +15,6 @@ export const globalReceive = {
         translateEffect(arg.fighter, arg.type, arg.cb, arg.time);
     }
 }
-
-let treasure_effId_1:any;
-let treasure_effId_2:any;
 
 
 //升级特效
@@ -38,10 +35,9 @@ const levelUpEffect = function () {
         open("app_b-scene_effect-level_up");
         openUiEffect(data,null);
         let timer = setTimeout(() => {
-            let w = forelet.getWidget("app_b-scene_effect-level_up");
-            if (w) {
-                close(w);
-            }
+            let w: any = forelet.getWidget("app_b-scene_effect-level_up") || {};
+            w.name = "app_b-scene_effect-level_up";
+            close(w);
             timer = null;
         }, 1000)
     }

@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts"
+}

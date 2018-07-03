@@ -1,14 +1,11 @@
-
-
-import {Bluetooth}  from "../../../browser/bluetooth";
-
-const WIDTH_PIXEL = 384;
-
 /**
  * 蓝牙打印工具类
  * 对应的代码在：http://www.jianshu.com/p/0fe3a7e06f57
  */
 
+import { Bluetooth } from '../../../browser/bluetooth';
+
+const WIDTH_PIXEL = 384;
 
 /**
  * 初始化Pos实例
@@ -20,19 +17,19 @@ const WIDTH_PIXEL = 384;
 // 	initPrinter();
 // }
 
-let bluetooth:Bluetooth;
-export const init = (_bluetooth:Bluetooth)=> {
-	bluetooth = _bluetooth;
-}
+let bluetooth: Bluetooth;
+export const init = (bt: Bluetooth) => {
+	bluetooth = bt;
+};
 
 export const print = (bs: Uint8Array) => {
 	bluetooth.writeBytes(bs);
-}
+};
 
 export const printRawBytes = (bytes: Uint8Array) => {
 	bluetooth.writeBytes(bytes);
 	bluetooth.flush();
-}
+};
 
 /**
  * 初始化打印机
@@ -43,7 +40,7 @@ export const initPrinter = () => {
 	bluetooth.writeInt(0x1B);
 	bluetooth.writeInt(0x40);
 	bluetooth.flush();
-}
+};
 
 /**
  * 打印换行
@@ -52,10 +49,10 @@ export const initPrinter = () => {
  */
 export const printLine = (lineNum = 1) => {
 	for (let i = 0; i < lineNum; i++) {
-		bluetooth.writeString("\n");
+		bluetooth.writeString('\n');
 	}
 	bluetooth.flush();
-}
+};
 
 /**
  * 打印空白(一个Tab的位置，约4个汉字)
@@ -65,62 +62,63 @@ export const printLine = (lineNum = 1) => {
  */
 export const printTabSpace = (length: number) => {
 	for (let i = 0; i < length; i++) {
-		bluetooth.writeString("\t");
+		bluetooth.writeString('\t');
 	}
 	bluetooth.flush();
-}
+};
 
 /**
  * 绝对打印位置
  *
- * @return
  * @throws IOException
  */
 export const setLocation = (offset: number) => {
-	let bs = new Uint8Array(4);
+	const bs = new Uint8Array(4);
 	bs[0] = 0x1B;
 	bs[1] = 0x24;
 	bs[2] = (offset % 256);
 	bs[3] = (offset / 256);
+
 	return bs;
-}
+};
 
 export const getStringPixLength = (str: string) => {
 	let pixLength = 0;
 	for (let i = 0; i < str.length; i++) {
-		let c = str.charCodeAt(i);
+		const c = str.charCodeAt(i);
 		if (c > 127) {
 			pixLength += 24;
 		} else {
 			pixLength += 12;
 		}
 	}
+
 	return pixLength;
-}
+};
 
 export const getOffset = (str: string) => {
 	return WIDTH_PIXEL - getStringPixLength(str);
-}
+};
 
 /**
  * 打印文字
  *
- * @param text
  * @throws IOException
  */
 export const printText = (text: string) => {
 	bluetooth.writeString(text);
 	bluetooth.flush();
-}
+};
 
 /**
  * 对齐0:左对齐，1：居中，2：右对齐
  */
 export const printAlignment = (alignment: number) => {
+	/* tslint:disable:number-literal-format */
 	bluetooth.writeInt(0x1b);
 	bluetooth.writeInt(0x61);
 	bluetooth.writeInt(alignment);
-}
+};
 
 export const printLargeText = (text: string) => {
 
@@ -135,18 +133,18 @@ export const printLargeText = (text: string) => {
 	bluetooth.writeInt(0);
 
 	bluetooth.flush();
-}
+};
 
 // 需要实现
 export const arraycopy = (src: any, srcPos: number, dest: any, destPos: number, length: number) => {
 	for (let i = 0; i < length; ++i) {
 		dest[destPos + i] = src[srcPos + i];
 	}
-}
+};
 
 export const printTwoColumn = (title: string, content: string) => {
 	let iNum = 0;
-	let byteBuffer = new Uint8Array(1000);
+	const byteBuffer = new Uint8Array(1000);
 	let tmp = bluetooth.getGbk(title);
 
 	arraycopy(tmp, 0, byteBuffer, iNum, tmp.length);
@@ -159,11 +157,11 @@ export const printTwoColumn = (title: string, content: string) => {
 	tmp = bluetooth.getGbk(content);
 	arraycopy(tmp, 0, byteBuffer, iNum, tmp.length);
 	print(byteBuffer);
-}
+};
 
 export const printThreeColumn = (left: string, middle: string, right: string) => {
 	let iNum = 0;
-	let byteBuffer = new Uint8Array(200);
+	const byteBuffer = new Uint8Array(200);
 	let tmp = new Uint8Array(1);
 
 	arraycopy(tmp, 0, byteBuffer, iNum, tmp.length);
@@ -173,9 +171,10 @@ export const printThreeColumn = (left: string, middle: string, right: string) =>
 	arraycopy(tmp, 0, byteBuffer, iNum, tmp.length);
 	iNum += tmp.length;
 
-	let pixLength = getStringPixLength(left) % WIDTH_PIXEL;
-	if (pixLength > WIDTH_PIXEL / 2 || pixLength == 0) {
-		middle = "\n\t\t" + middle;
+	const pixLength = getStringPixLength(left) % WIDTH_PIXEL;
+	if (pixLength > WIDTH_PIXEL / 2 || pixLength === 0) {
+		/* tslint:disable:prefer-template */
+		middle = '\n\t\t' + middle;
 	}
 
 	tmp = setLocation(192);
@@ -194,20 +193,20 @@ export const printThreeColumn = (left: string, middle: string, right: string) =>
 	arraycopy(tmp, 0, byteBuffer, iNum, tmp.length);
 
 	print(byteBuffer);
-}
+};
 
 export const printDashLine = () => {
-	printText("--------------------------------");
-}
+	printText('--------------------------------');
+};
 
 /*************************************************************************
  * 假设一个360*360的图片，分辨率设为24, 共分15行打印 每一行,是一个 360 * 24 的点阵,y轴有24个点,存储在3个byte里面。
  * 即每个byte存储8个像素点信息。因为只有黑白两色，所以对应为1的位是黑色，对应为0的位是白色
  **************************************************************************/
 export const draw2PxPoint = (data: ImageData): Uint8Array => {
-	//先设置一个足够大的size，最后在用数组拷贝复制到一个精确大小的byte数组中
-	let size = data.width * data.height / 8 + 1000;
-	let tmp = new Uint8Array(size);
+	// 先设置一个足够大的size，最后在用数组拷贝复制到一个精确大小的byte数组中
+	const size = data.width * data.height / 8 + 1000;
+	const tmp = new Uint8Array(size);
 	for (let i = 0; i < tmp.length; ++i) {
 		tmp[i] = 0;
 	}
@@ -230,7 +229,7 @@ export const draw2PxPoint = (data: ImageData): Uint8Array => {
 		for (let i = 0; i < data.width; i++) {
 			for (let m = 0; m < 3; m++) {
 				for (let n = 0; n < 8; n++) {
-					let b = px2Byte(i, j * 24 + m * 8 + n, data);
+					const b = px2Byte(i, j * 24 + m * 8 + n, data);
 					tmp[k] += tmp[k] + b;
 				}
 				k++;
@@ -242,10 +241,11 @@ export const draw2PxPoint = (data: ImageData): Uint8Array => {
 	tmp[k++] = 0x1B;
 	tmp[k++] = 0x32;
 
-	let result = new Uint8Array(k);
+	const result = new Uint8Array(k);
 	arraycopy(tmp, 0, result, 0, k);
+
 	return result;
-}
+};
 
 /**
  * 图片二值化，黑色是1，白色是0
@@ -253,52 +253,53 @@ export const draw2PxPoint = (data: ImageData): Uint8Array => {
  * @param x   横坐标
  * @param y   纵坐标
  * @param bit 位图
- * @return
  */
 export const px2Byte = (x: number, y: number, bit: ImageData): number => {
 	if (x < bit.width && y < bit.height) {
-		let index = 4 * y * bit.width + 4 * x;
-		let red = bit.data[index];
-		let green = bit.data[index + 1];
-		let blue = bit.data[index + 2];
-		let gray = RGB2Gray(red, green, blue);
+		const index = y * bit.width * 4 + x * 4;
+		const red = bit.data[index];
+		const green = bit.data[index + 1];
+		const blue = bit.data[index + 2];
+		const gray = RGB2Gray(red, green, blue);
+
 		return gray < 128 ? 1 : 0;
 	}
+
 	return 0;
-}
+};
 
 /**
  * 图片灰度的转化
  */
 export const RGB2Gray = (r: number, g: number, b: number): number => {
-	return Math.floor(0.29900 * r + 0.58700 * g + 0.11400 * b); // 灰度转化公式
-}
-
+	return Math.floor(r * 0.29900 + g * 0.58700 + g * 0.11400); // 灰度转化公式
+};
 
 export const getNowFormatDate = () => {
-	var date = new Date();
-	var seperator1 = "-";
-	var seperator2 = ":";
-	var month = date.getMonth() + 1;
-	var strDate = date.getDate();
-	var months;
-	var strDates;
+	const date = new Date();
+	const seperator1 = '-';
+	const seperator2 = ':';
+	const month = date.getMonth() + 1;
+	const strDate = date.getDate();
+	let months;
+	let strDates;
 	if (month >= 1 && month <= 9) {
-		months = "0" + month;
+		months = '0' + month;
 	}
 	if (strDate >= 0 && strDate <= 9) {
-		strDates = "0" + strDate;
+		strDates = '0' + strDate;
 	}
-	var currentdate = date.getFullYear() + seperator1 + months + seperator1 + strDates
-		+ " " + date.getHours() + seperator2 + date.getMinutes()
+	const currentdate = date.getFullYear() + seperator1 + months + seperator1 + strDates
+		+ ' ' + date.getHours() + seperator2 + date.getMinutes()
 		+ seperator2 + date.getSeconds();
+
 	return currentdate;
-}
+};
 
 export const printBitmap = (data: ImageData) => {
-	let bmpByteArray = draw2PxPoint(data);
+	const bmpByteArray = draw2PxPoint(data);
 	printRawBytes(bmpByteArray);
-}
+};
 
 export const printTest = (data?: ImageData) => {
 	initPrinter();
@@ -354,4 +355,4 @@ export const printTest = (data?: ImageData) => {
 
 	// printLine(4);
 	// printDashLine();
-}
+};

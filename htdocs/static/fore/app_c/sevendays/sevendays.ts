@@ -1,7 +1,7 @@
 import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { net_request, net_message } from "app_a/connect/main";
-import { Pi, globalSend } from "app/mod/pi";
+import { globalSend } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { updata, get, insert } from "app/mod/db";
 import { Common } from "app/mod/common";
@@ -9,7 +9,6 @@ import { Common_m } from "app_b/mod/common";
 import { sevendays_list } from "cfg/c/sevendays_act";
 import { listenBack } from "app/mod/db_back";
 
-import { TipFun } from "app/mod/tip_fun";
 
 import { sevenday_title } from "cfg/c/sevenday_title";
 import { act_progress } from "app_b/mod/act_progress";
@@ -105,7 +104,8 @@ export class sevendays_w extends Widget {
         sevendays.award(act);
     }
     goto = (arg) => {
-        globalSend(arg);
+        let arr = arg.split(",");
+        globalSend(arr[0],arr[1]);
     }
     navchange = (e) => {
         curr = e.cmd;

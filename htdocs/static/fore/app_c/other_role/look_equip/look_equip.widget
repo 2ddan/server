@@ -1,6 +1,6 @@
 {
     "tpl":"./look_equip.tpl",
-    "cfg":"../other_role.cfg",
+    "cfg":"./look_equip.cfg",
     "js":"../other_role.ts",
     "forelet":"../other_role.ts",
     "css":"./look_equip.wcss"

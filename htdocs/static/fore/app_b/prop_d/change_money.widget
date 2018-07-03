@@ -1,6 +1,6 @@
 {
     "tpl":"./change_money.tpl",
-    "cfg":"./prop_d.cfg",
+    "cfg":"./change_money.cfg",
     "css":"./change_money.wcss",
     "js":"./prop.ts",
     "forelet":"./prop.ts"

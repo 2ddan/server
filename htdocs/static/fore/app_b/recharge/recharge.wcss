@@ -134,17 +134,15 @@
 }
 .19{
     position: absolute;
-    height: 55px;
-    width: 55px;;
-    right:0;
-    bottom:10px;
+    height: 32px;
+    width: 142px;;
+    left:-6px;
+    bottom:34px;
     font-size:18px;
     font-family:mnjsh;
-    background-image:url(./images/award.png);
-    background-size:100% 100%;
     color:#ffd8a6;
     text-align: center;
-    line-height: 35px;
+    z-index: 3;
 }
 .20{
     position: absolute;
@@ -164,8 +162,8 @@
 .21{
     position: absolute;
     left: 9px;
-    top: 30px;
-    height: 82px;
+    top: 22px;
+    height: 100px;
     width: 117px;
     color:#ffd8a6;
     font-size:16px;
@@ -233,8 +231,6 @@
     height: 140px;
     left:0;
     top:18px;
-    background-image:url(./images/vip_top_bg.png);
-    background-size:100% 100%;
 }
 .s16 {
     position: absolute;
@@ -351,10 +347,8 @@
     height: 87px;
     width:341px;
     overflow: hidden;
-    background-image:url(./images/googs_bg.png);
     text-align: center;
-    color: #fff
-    
+    color: #fff   
 }
 .s42{
     position: absolute;

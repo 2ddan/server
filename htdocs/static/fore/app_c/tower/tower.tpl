@@ -25,7 +25,9 @@
                         {"icon":"fun_name_bg","width":62,"height":124,"text":""}
                     </app_a-widget-pic_text-pic_text>
                     {{:v = v < 10 ? " " + v + " " : v}}
-                    <div class="center_h" style="font-family: mnjsh;color:rgb(86, 72, 66);font-size:20px;top: 60px;left: 16px;width: 30px;transform:translateY(-50%);text-align:center">第{{v}}层</div>
+                    <div class="center_h" style="font-family: mnjsh;color:rgb(86, 72, 66);font-size:20px;top: 60px;left: 16px;width: 30px;transform:translateY(-50%);text-align:center">
+                        第<div>{{v}}</div>层
+                    </div>
                     {{if it1.floor_point + 1 == v}}
                     <div class="towerNowPosAnim" style="position: absolute;top: -3px;left: 6px;"></div>
                     {{end}}
@@ -68,18 +70,24 @@
 
         <div style="width:100%;height:88px;position:absolute;top:735px;left:0px;">
             <app_a-widget-btn-rect on-tap="startSweep" style="width:65px;height:28px;position:absolute;left:105px;top:0px;line-height: 24px;">
-                {"text":"扫   荡","class":"hl","type":{{it1.floor_point < 10 || (it1.use_sweep_count >= vipInfo.tower_sweep_times + vipInfo.tower_diamond_sweep_times) ? "gray" : "orange"}},"tip_keys":["explore.tower.sweep"]}
+                {"text":{{it1.start_sweep_time ? "查  看" : "扫  荡"}},"class":"hl","type":{{it1.floor_point < 10 || (it1.use_sweep_count >= vipInfo.tower_sweep_times + vipInfo.tower_diamond_sweep_times) ? "gray" : "orange"}},"tip_keys":[{{it1.start_sweep_time ? "explore.tower.sweep_award" : "explore.tower.sweep"}}]}
             </app_a-widget-btn-rect>
-            <div class="shadow" style="width:150px;height:20px;position:absolute;color:#e7e09e;font-size:12px;text-align:center;top: 45px;left: 87px;">
-                {{if it1.use_sweep_count < vipInfo.tower_sweep_times}}
-                    免费扫荡次数:{{vipInfo.tower_sweep_times - it1.use_sweep_count}}
-                {{elseif it1.use_sweep_count >= vipInfo.tower_sweep_times && it1.use_sweep_count <= vipInfo.tower_sweep_times + vipInfo.tower_diamond_sweep_times}}
-                    <app_a-widget-coin-coin style="left: 20px;bottom:5px;position: absolute;font-size: 16px;width: 100px;">{"icon":"diamond","text":{{[tower_base.sweep_spend[it1.use_sweep_count-vipInfo.tower_sweep_times >= 3 ? 3 : it1.use_sweep_count-vipInfo.tower_sweep_times]]}},"color":"#e92525","left":7}</app_a-widget-coin-coin>
-                {{else}}
-                    今日扫荡次数:0
-                {{end}}
+            <div class="shadow" style="font-size: 16px;width:150px;height:20px;position:absolute;color:#e7e09e;text-align:center;top: 45px;left: 87px;">
+                
                 {{if it1.start_sweep_time}}
-                    <span style="position: absolute;top: 14px;width: 100%;left: 0;">扫荡中...</span>
+                    <span style="position: absolute;top: 0px;width: 100%;left: 0;">
+                        {{it1.cost_diamond ? "扫荡中..." : "扫荡已完成"}}
+                    </span>
+                {{else}}
+                    {{if it1.use_sweep_count < vipInfo.tower_sweep_times}}
+                        免费扫荡次数:{{vipInfo.tower_sweep_times - it1.use_sweep_count}}
+                    {{elseif it1.use_sweep_count >= vipInfo.tower_sweep_times && it1.use_sweep_count < vipInfo.tower_sweep_times + vipInfo.tower_diamond_sweep_times}}
+                        {{let count = it1.use_sweep_count-vipInfo.tower_sweep_times}}
+                        {{let len = tower_base.sweep_spend.length}}
+                        <app_a-widget-coin-coin style="left: 20px;bottom:5px;position: absolute;width: 100px;">{"icon":"diamond","text":{{[tower_base.sweep_spend[count >= len ? len-1: count]]}},"color":"#e92525","left":7}</app_a-widget-coin-coin>
+                    {{else}}
+                        剩余扫荡次数: <span style="color:#f00;">0</span>
+                    {{end}}
                 {{end}}
             </div>
 

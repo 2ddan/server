@@ -1,4 +1,4 @@
-{{let effect = _get("app/scene/art_cfg/effect").exports.default}}
+{{let effect = _get("app/scene/art_cfg/effect").exports["default"]}}
 {{let index = it.index || 0}}
 {
     "type":"Node",
@@ -11,34 +11,36 @@
         {
             "type":"prefab",
             "tpl":"{{it.model}}",
+            "name":"moxing",
             "rayID":{{it.rayID || 0}},
             "playAnim":{
                 "isOnce":{{it.isOnce || false}},
                 "name":"{{effect[it.model][index]}}",
                 "id":{{it.id || 0}}
             }
-        }
-        {{if it.guangzhu}}
-        ,{
+        },
+        {{it.guangzhu?
+        {
             "type":"Node",
+            "name":"guangzhu",
             "transform":{
                 "position":[0,0,0],
-                "scale":[{{it.Gscale}},{{it.Gscale}},{{it.Gscale}}],
+                "scale":[it.Gscale,it.Gscale,it.Gscale],
                 "rotate":[0,0,0]
             },
             "children":[
                 {
                     "type":"prefab",
-                    "tpl":"{{it.guangzhu}}",
-                    "rayID":{{it.rayID || 0}},
+                    "tpl":it.guangzhu,
+                    "rayID":it.rayID || 0,
                     "playAnim":{
-                        "isOnce":{{it.guangisOnce || false}},
-                        "name":"{{it.guangzhu}}",
+                        "isOnce":it.guangisOnce || false,
+                        "name":it.guangzhu,
                         "id":0
                     }
                 }
             ]
         }
-        {{end}}
+        :null}}
     ]
 }

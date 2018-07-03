@@ -31,7 +31,7 @@
           1.0,
           1.0,
           1.0
-        ],
+        ], 
         "rotate"   : [
           4.71238899230957,
           0.0,
@@ -65,8 +65,11 @@
           "res"  : "{{it.res[1]}}"
         }
       }
-    }
-    {{if it.headeff}},
+    } 
+    {{if it.headeff}}
+    ,
+    {{end}}
+    {{if it.headeff}}
     {{it.headeff}}
     {{end}}
   ]

@@ -8,9 +8,11 @@
         
         {{let scaleNum = 0}}
         {{if r == 1 }}
-        
+       
         <div w-class="max_water" style="left:2px;right:0px;margin:0 auto;top: 49px;z-index:1;"></div>
-        <div class="treasure_full" style="position: absolute;top: -19px;left: -23.5px;z-index: 1;transform: scale(0.8);"></div>
+        <div style="width:170px;height:170px;position: absolute;top: -19px;left: -23.5px;z-index: 1;transform: scale(0.8);overflow:hidden">
+            <div class="treasure_full" style="position: absolute;"></div>
+        </div>
         {{else}}
         {{:scaleNum = Math.sqrt(0.25 -Math.pow(Math.abs(0.5-r),2)) * 2 }}
         {{%% :console.log("skill.tpl能量更新+++++",r,scaleNum)}}
@@ -23,12 +25,16 @@
         {{end}}
 
         <div w-class="wild_treasure_bg1" style="left:0px;right:0px;margin:0 auto;"></div>        
-        <div w-class="fg_glass" style="left:2px;right:0px;margin:0 auto;top: 49px;z-index:2;"></div>
-
-        {{let type = it1.magic_id && it1.isAutoRelease ? "autoUse" : "autoUseGray"}}
-        <div on-tap="autoRelease" w-class='{{type}}'  style="position:absolute;bottom:0px;">
+        <div w-class="fg_glass" style="left:2px;right:0px;margin:0 auto;top: 49px;z-index:2;">
             <app_a-widget-guide-guide>
                 {{"magic_release"}}
+            </app_a-widget-guide-guide>
+        </div>
+
+        {{let type = it1.magic_id && it1.isAutoRelease ? "autoUse" : "autoUseGray"}}
+        <div on-tap="autoRelease" w-class='{{type}}'  style="position:absolute;bottom:0px;"> 
+            <app_a-widget-guide-guide>
+                {{"magic_auto"}}
             </app_a-widget-guide-guide>
         </div>
     </div>

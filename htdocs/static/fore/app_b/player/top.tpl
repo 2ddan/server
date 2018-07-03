@@ -44,9 +44,7 @@
     </div> 
 
     {{let img = player.head}}
-    {{if !img || img.indexOf("undefined") >= 0}}
-    {{: img = Pi.pictures['playerhead'+player.career_id]}}
-    {{end}}
+    {{: img = Pi.pictures['playerhead'+ (img || player.career_id)]}}
     <div style="width:93px;height:108px;position:absolute;top:0px;left:0px;" on-tap="showDetail">
         <app_a-widget-guide-guide>
             {{"open_head"}}

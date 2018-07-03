@@ -8,7 +8,7 @@
 
 
 <div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%;z-index:2;">
-    <div w-class="s8" style="height:710px;margin-top:-355px;">
+    <div w-class="s8" style="height:710px;margin-top:-370px;">
         <div w-class="s12" >
             <widget w-class="s10" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"tips_top"} 
             </widget>
@@ -20,8 +20,6 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":{{mission.name.replace(/,/g,"/")}},"textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
-
-        
 
         <div w-class="s13" style="height:676px;opacity:1">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" >
@@ -64,9 +62,9 @@
                             "name":"uiscene",
                             "type":"monster",
                             "module":{
-                                "module":{{it}},
-                                "position":[-0.5,-3,0],
-                                "scale":0.7,
+                                "module":{{it[0]}},
+                                "position":[0,-3,0],
+                                "scale":{{it[1]*2.2}},
                                 "rotate":[0,0,0]
                             },
                             "width":450,

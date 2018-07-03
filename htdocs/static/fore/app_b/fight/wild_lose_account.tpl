@@ -15,7 +15,7 @@
         <div style="position:relative;margin:0 auto;width:390px;height:auto;min-height:117px;">
             {{for i, v in it1.config_stronger}}
             {{if !v.fun_key || it1.fun_id >= it1.function_open[v.fun_key].id}}
-            <app-widget-btn-menu on-tap='gotoMenu("{{v.goto}}")' style="position:relative;margin:0 1px">
+            <app-widget-btn-menu on-tap='wildMenu("{{v.goto}}")' style="position:relative;margin:0 1px">
                 {"icon":{{v.icon}},"text":{{v.name}},"width":95,"height":95,"bottom":6,"fontSize":20 ,"bg":5,"imgWidth":90,"space":{{v.name.length>2?-6:-4}}}
             </app-widget-btn-menu>
             {{end}}
