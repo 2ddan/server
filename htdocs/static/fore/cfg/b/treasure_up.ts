@@ -148,7 +148,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][16] = {
     attr: ['attack',9800],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -157,7 +157,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][17] = {
     attr: ['attack',10520],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -166,7 +166,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][18] = {
     attr: ['attack',11240],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -175,7 +175,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][19] = {
     attr: ['attack',11960],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -184,7 +184,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][20] = {
     attr: ['attack',12670],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -193,7 +193,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][21] = {
     attr: ['attack',13390],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -202,7 +202,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][22] = {
     attr: ['attack',14090],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -211,7 +211,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][23] = {
     attr: ['attack',14800],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -220,7 +220,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][24] = {
     attr: ['attack',15500],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -229,7 +229,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][25] = {
     attr: ['attack',16200],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -238,7 +238,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][26] = {
     attr: ['attack',16890],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -247,7 +247,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][27] = {
     attr: ['attack',17580],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -256,7 +256,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][28] = {
     attr: ['attack',18260],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -265,7 +265,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][29] = {
     attr: ['attack',18940],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -274,7 +274,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][30] = {
     attr: ['attack',19610],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -283,7 +283,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][31] = {
     attr: ['attack',20280],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -292,7 +292,7 @@ tab[1] = tab[1]?tab[1]:{};
 tab[1].name = "undefined";
 tab[1][32] = {
     attr: ['attack',20950],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -454,7 +454,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][16] = {
     attr: ['critical',1630],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -463,7 +463,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][17] = {
     attr: ['critical',1750],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -472,7 +472,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][18] = {
     attr: ['critical',1870],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -481,7 +481,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][19] = {
     attr: ['critical',1990],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -490,7 +490,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][20] = {
     attr: ['critical',2110],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -499,7 +499,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][21] = {
     attr: ['critical',2230],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -508,7 +508,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][22] = {
     attr: ['critical',2350],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -517,7 +517,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][23] = {
     attr: ['critical',2470],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -526,7 +526,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][24] = {
     attr: ['critical',2580],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -535,7 +535,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][25] = {
     attr: ['critical',2700],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -544,7 +544,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][26] = {
     attr: ['critical',2810],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -553,7 +553,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][27] = {
     attr: ['critical',2930],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -562,7 +562,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][28] = {
     attr: ['critical',3040],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -571,7 +571,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][29] = {
     attr: ['critical',3160],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -580,7 +580,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][30] = {
     attr: ['critical',3270],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -589,7 +589,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][31] = {
     attr: ['critical',3380],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -598,7 +598,7 @@ tab[2] = tab[2]?tab[2]:{};
 tab[2].name = "undefined";
 tab[2][32] = {
     attr: ['critical',3490],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -760,7 +760,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][16] = {
     attr: ['un_defence',4900],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -769,7 +769,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][17] = {
     attr: ['un_defence',5260],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -778,7 +778,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][18] = {
     attr: ['un_defence',5620],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -787,7 +787,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][19] = {
     attr: ['un_defence',5980],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -796,7 +796,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][20] = {
     attr: ['un_defence',6340],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -805,7 +805,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][21] = {
     attr: ['un_defence',6690],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -814,7 +814,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][22] = {
     attr: ['un_defence',7050],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -823,7 +823,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][23] = {
     attr: ['un_defence',7400],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -832,7 +832,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][24] = {
     attr: ['un_defence',7750],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -841,7 +841,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][25] = {
     attr: ['un_defence',8100],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -850,7 +850,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][26] = {
     attr: ['un_defence',8440],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -859,7 +859,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][27] = {
     attr: ['un_defence',8790],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -868,7 +868,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][28] = {
     attr: ['un_defence',9130],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -877,7 +877,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][29] = {
     attr: ['un_defence',9470],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -886,7 +886,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][30] = {
     attr: ['un_defence',9810],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -895,7 +895,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][31] = {
     attr: ['un_defence',10140],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -904,7 +904,7 @@ tab[3] = tab[3]?tab[3]:{};
 tab[3].name = "undefined";
 tab[3][32] = {
     attr: ['un_defence',10470],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1066,7 +1066,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][16] = {
     attr: ['un_critical',1630],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1075,7 +1075,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][17] = {
     attr: ['un_critical',1750],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1084,7 +1084,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][18] = {
     attr: ['un_critical',1870],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1093,7 +1093,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][19] = {
     attr: ['un_critical',1990],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1102,7 +1102,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][20] = {
     attr: ['un_critical',2110],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1111,7 +1111,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][21] = {
     attr: ['un_critical',2230],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1120,7 +1120,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][22] = {
     attr: ['un_critical',2350],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1129,7 +1129,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][23] = {
     attr: ['un_critical',2470],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1138,7 +1138,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][24] = {
     attr: ['un_critical',2580],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1147,7 +1147,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][25] = {
     attr: ['un_critical',2700],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1156,7 +1156,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][26] = {
     attr: ['un_critical',2810],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1165,7 +1165,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][27] = {
     attr: ['un_critical',2930],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1174,7 +1174,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][28] = {
     attr: ['un_critical',3040],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1183,7 +1183,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][29] = {
     attr: ['un_critical',3160],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1192,7 +1192,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][30] = {
     attr: ['un_critical',3270],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1201,7 +1201,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][31] = {
     attr: ['un_critical',3380],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1210,7 +1210,7 @@ tab[4] = tab[4]?tab[4]:{};
 tab[4].name = "undefined";
 tab[4][32] = {
     attr: ['un_critical',3490],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1372,7 +1372,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][16] = {
     attr: ['dodge',1630],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1381,7 +1381,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][17] = {
     attr: ['dodge',1750],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1390,7 +1390,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][18] = {
     attr: ['dodge',1870],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1399,7 +1399,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][19] = {
     attr: ['dodge',1990],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1408,7 +1408,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][20] = {
     attr: ['dodge',2110],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1417,7 +1417,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][21] = {
     attr: ['dodge',2230],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1426,7 +1426,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][22] = {
     attr: ['dodge',2350],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1435,7 +1435,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][23] = {
     attr: ['dodge',2470],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1444,7 +1444,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][24] = {
     attr: ['dodge',2580],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1453,7 +1453,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][25] = {
     attr: ['dodge',2700],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1462,7 +1462,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][26] = {
     attr: ['dodge',2810],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1471,7 +1471,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][27] = {
     attr: ['dodge',2930],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1480,7 +1480,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][28] = {
     attr: ['dodge',3040],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1489,7 +1489,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][29] = {
     attr: ['dodge',3160],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1498,7 +1498,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][30] = {
     attr: ['dodge',3270],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1507,7 +1507,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][31] = {
     attr: ['dodge',3380],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1516,7 +1516,7 @@ tab[5] = tab[5]?tab[5]:{};
 tab[5].name = "undefined";
 tab[5][32] = {
     attr: ['dodge',3490],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1678,7 +1678,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][16] = {
     attr: ['un_dodge',1630],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1687,7 +1687,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][17] = {
     attr: ['un_dodge',1750],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1696,7 +1696,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][18] = {
     attr: ['un_dodge',1870],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1705,7 +1705,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][19] = {
     attr: ['un_dodge',1990],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1714,7 +1714,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][20] = {
     attr: ['un_dodge',2110],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1723,7 +1723,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][21] = {
     attr: ['un_dodge',2230],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1732,7 +1732,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][22] = {
     attr: ['un_dodge',2350],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1741,7 +1741,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][23] = {
     attr: ['un_dodge',2470],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1750,7 +1750,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][24] = {
     attr: ['un_dodge',2580],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1759,7 +1759,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][25] = {
     attr: ['un_dodge',2700],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1768,7 +1768,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][26] = {
     attr: ['un_dodge',2810],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1777,7 +1777,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][27] = {
     attr: ['un_dodge',2930],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1786,7 +1786,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][28] = {
     attr: ['un_dodge',3040],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1795,7 +1795,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][29] = {
     attr: ['un_dodge',3160],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1804,7 +1804,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][30] = {
     attr: ['un_dodge',3270],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1813,7 +1813,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][31] = {
     attr: ['un_dodge',3380],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1822,7 +1822,7 @@ tab[6] = tab[6]?tab[6]:{};
 tab[6].name = "undefined";
 tab[6][32] = {
     attr: ['un_dodge',3490],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1984,7 +1984,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][16] = {
     attr: ['defence',4900],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -1993,7 +1993,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][17] = {
     attr: ['defence',5260],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2002,7 +2002,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][18] = {
     attr: ['defence',5620],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2011,7 +2011,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][19] = {
     attr: ['defence',5980],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2020,7 +2020,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][20] = {
     attr: ['defence',6340],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2029,7 +2029,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][21] = {
     attr: ['defence',6690],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2038,7 +2038,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][22] = {
     attr: ['defence',7050],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2047,7 +2047,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][23] = {
     attr: ['defence',7400],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2056,7 +2056,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][24] = {
     attr: ['defence',7750],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2065,7 +2065,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][25] = {
     attr: ['defence',8100],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2074,7 +2074,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][26] = {
     attr: ['defence',8440],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2083,7 +2083,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][27] = {
     attr: ['defence',8790],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2092,7 +2092,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][28] = {
     attr: ['defence',9130],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2101,7 +2101,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][29] = {
     attr: ['defence',9470],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2110,7 +2110,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][30] = {
     attr: ['defence',9810],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2119,7 +2119,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][31] = {
     attr: ['defence',10140],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2128,7 +2128,7 @@ tab[7] = tab[7]?tab[7]:{};
 tab[7].name = "undefined";
 tab[7][32] = {
     attr: ['defence',10470],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2290,7 +2290,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][16] = {
     attr: ['max_hp',408280],
-    "need_exp": 6320,
+    "need_exp": 6350,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2299,7 +2299,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][17] = {
     attr: ['max_hp',438330],
-    "need_exp": 7180,
+    "need_exp": 7200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2308,7 +2308,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][18] = {
     attr: ['max_hp',468330],
-    "need_exp": 8120,
+    "need_exp": 8200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2317,7 +2317,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][19] = {
     attr: ['max_hp',498210],
-    "need_exp": 9140,
+    "need_exp": 9200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2326,7 +2326,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][20] = {
     attr: ['max_hp',528050],
-    "need_exp": 10200,
+    "need_exp": 10500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2335,7 +2335,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][21] = {
     attr: ['max_hp',557710],
-    "need_exp": 11340,
+    "need_exp": 11500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2344,7 +2344,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][22] = {
     attr: ['max_hp',587260],
-    "need_exp": 12560,
+    "need_exp": 12800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2353,7 +2353,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][23] = {
     attr: ['max_hp',616590],
-    "need_exp": 13840,
+    "need_exp": 14200,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2362,7 +2362,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][24] = {
     attr: ['max_hp',645830],
-    "need_exp": 15200,
+    "need_exp": 15600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2371,7 +2371,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][25] = {
     attr: ['max_hp',674870],
-    "need_exp": 16620,
+    "need_exp": 17000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2380,7 +2380,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][26] = {
     attr: ['max_hp',703740],
-    "need_exp": 18120,
+    "need_exp": 18500,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2389,7 +2389,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][27] = {
     attr: ['max_hp',732400],
-    "need_exp": 19700,
+    "need_exp": 20000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2398,7 +2398,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][28] = {
     attr: ['max_hp',760890],
-    "need_exp": 21340,
+    "need_exp": 21800,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2407,7 +2407,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][29] = {
     attr: ['max_hp',789170],
-    "need_exp": 23060,
+    "need_exp": 23600,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2416,7 +2416,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][30] = {
     attr: ['max_hp',817240],
-    "need_exp": 24860,
+    "need_exp": 26000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2425,7 +2425,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][31] = {
     attr: ['max_hp',845100],
-    "need_exp": 26740,
+    "need_exp": 29000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1
@@ -2434,7 +2434,7 @@ tab[8] = tab[8]?tab[8]:{};
 tab[8].name = "undefined";
 tab[8][32] = {
     attr: ['max_hp',872790],
-    "need_exp": 28700,
+    "need_exp": 32000,
     "material_id": 150002,
     "one_cost_times": 20,
     "per_exp": 1

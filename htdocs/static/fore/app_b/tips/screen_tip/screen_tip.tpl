@@ -15,7 +15,6 @@
     <div data-desc="属性变化" id="attr" class="shadow" style="width:100%;bottom:48%;text-align:center;font-size:17px;color:#3cff00;position: absolute;">
     </div>
     
-
     <div data-desc="战斗力" id="combat" style="position:absolute;left:0;bottom:80px;width:100%;text-align:center;line-height:30px;color:#fff">
     </div>
     <div data-desc="进度条" class="shadow7" id="bar" style="position:absolute;left:0;top:0;width:100%;height:100%;text-align:center;line-height:20px;color:#3cff00">

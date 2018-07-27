@@ -11,7 +11,6 @@
     </widget>
 
     <div class="shadow" style="position:absolute;top:7px;width:100%; text-align: center;color: #e46d33;font-size: 18px;font-family:mnjsh;height:25px;line-height:25px;">截止时间：{{it1.time[0]}}年{{it1.time[1]}}月{{it1.time[2]}}日24:00</div>
-
     <div w-class="bg" style="top:32px;">
         <app_a-widget-pic_other-pic_other style="position:absolute;left:-17px;">
             {"icon":"remind"}

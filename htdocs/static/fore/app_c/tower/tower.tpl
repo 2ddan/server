@@ -16,7 +16,6 @@
         <widget w-class="78" w-tag="app_a-widget-bg_frame-bg" w-sid="78">
             {"bgName":"bg_frame21"} 
         </widget>
-
         <div w-class="tower_bg" style="left:50%;margin-left:-243px;top:113px;">
             <div style="width:100%;height:399px;position:absolute;top:0px;left:0px;overflow:hidden;">
                 {{for i,v of it1.floorsNum}}
@@ -56,12 +55,10 @@
                 {{for i,v of random_award}}
                     {{let prop = Pi.sample[v]}}
                     {{let url = Pi.pictures[prop.icon]}}
-                    <div style="position:relative;width:70px;height:76px;display:inline-block;margin: 0 10px;">
-                        <app-widget-prop-base_prop-base_prop on-tap='showPropInfo("{{v}}")' style="position: relative;display:inline-block;width: 70px;height: 70px">
-                            {"prop":{{prop}},"url":{{url}} }
-                        </app-widget-prop-base_prop-base_prop>
-                        <div style="position:absolute;top:75px;left:-15px;background:url(./images/attr_bg4.png);width:94px;height:23px"></div>
-                        <div style="position:absolute;font-family: mnjsh;color:#dedbdb;bottom:-20px;font-size:16px;width:140px;left:50%;margin-left:-70px;line-height:18px;height:18px;">{{prop.name}}</div>
+                    <div style="position:relative;width:76px;height:76px;display:inline-block;margin: 0 10px;">
+                        <app_a-widget-prop-base on-tap='showPropInfo("{{v}}")'>
+                            {"prop":{{prop}},"url":{{url}},"width":76,"height":76,"count":"none","name":{{prop.name}},"bg":1}
+                        </app_a-widget-prop-base>
                     </div>
                 {{end}}
             </div>

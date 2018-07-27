@@ -1,5 +1,17 @@
 export const publicboss_base = {
-    618001:{
+    618000:{
+        "map_id":"scene_map03",
+        "player_site":[[-0.25,5.8]],
+        "monster_site":[[18,-5.5]],
+        "level":40,
+        "refresh_time":-1,
+        "revive_time":18,
+        "map_player":4,
+        "challenge_time":120,
+        "bubble":1,
+        "best_boss":0,
+        "boss_head":2
+    },618001:{
         "map_id":"scene_map03",
         "player_site":[[-0.25,5.8]],
         "monster_site":[[18,-5.5]],
@@ -8,7 +20,7 @@ export const publicboss_base = {
         "revive_time":30,
         "map_player":4,
         "challenge_time":120,
-        "bubble":1,
+        "bubble":2,
         "best_boss":0,
         "boss_head":1
     },618002:{
@@ -20,7 +32,7 @@ export const publicboss_base = {
         "revive_time":60,
         "map_player":4,
         "challenge_time":120,
-        "bubble":2,
+        "bubble":3,
         "best_boss":0,
         "boss_head":2
     },618003:{
@@ -32,7 +44,7 @@ export const publicboss_base = {
         "revive_time":120,
         "map_player":4,
         "challenge_time":120,
-        "bubble":3,
+        "bubble":4,
         "best_boss":0,
         "boss_head":3
     },618004:{
@@ -44,7 +56,7 @@ export const publicboss_base = {
         "revive_time":660,
         "map_player":4,
         "challenge_time":120,
-        "bubble":4,
+        "bubble":5,
         "best_boss":1,
         "boss_head":3
     },618005:{
@@ -56,7 +68,7 @@ export const publicboss_base = {
         "revive_time":240,
         "map_player":4,
         "challenge_time":120,
-        "bubble":5,
+        "bubble":6,
         "best_boss":0,
         "boss_head":1
     },618006:{
@@ -68,7 +80,7 @@ export const publicboss_base = {
         "revive_time":360,
         "map_player":4,
         "challenge_time":120,
-        "bubble":6,
+        "bubble":7,
         "best_boss":0,
         "boss_head":2
     },618007:{
@@ -80,7 +92,7 @@ export const publicboss_base = {
         "revive_time":480,
         "map_player":4,
         "challenge_time":120,
-        "bubble":7,
+        "bubble":8,
         "best_boss":0,
         "boss_head":3
     },618008:{
@@ -92,7 +104,7 @@ export const publicboss_base = {
         "revive_time":720,
         "map_player":4,
         "challenge_time":120,
-        "bubble":8,
+        "bubble":9,
         "best_boss":0,
         "boss_head":1
     },618009:{
@@ -104,7 +116,7 @@ export const publicboss_base = {
         "revive_time":1320,
         "map_player":4,
         "challenge_time":120,
-        "bubble":9,
+        "bubble":10,
         "best_boss":1,
         "boss_head":4
     },618010:{
@@ -116,7 +128,7 @@ export const publicboss_base = {
         "revive_time":720,
         "map_player":4,
         "challenge_time":120,
-        "bubble":10,
+        "bubble":11,
         "best_boss":0,
         "boss_head":2
     },618011:{
@@ -128,7 +140,7 @@ export const publicboss_base = {
         "revive_time":780,
         "map_player":4,
         "challenge_time":120,
-        "bubble":11,
+        "bubble":12,
         "best_boss":0,
         "boss_head":3
     },618012:{
@@ -140,7 +152,7 @@ export const publicboss_base = {
         "revive_time":1380,
         "map_player":4,
         "challenge_time":120,
-        "bubble":12,
+        "bubble":13,
         "best_boss":1,
         "boss_head":3
     },618013:{
@@ -152,7 +164,7 @@ export const publicboss_base = {
         "revive_time":1320,
         "map_player":4,
         "challenge_time":120,
-        "bubble":13,
+        "bubble":14,
         "best_boss":0,
         "boss_head":1
     },618014:{
@@ -164,7 +176,7 @@ export const publicboss_base = {
         "revive_time":1440,
         "map_player":4,
         "challenge_time":120,
-        "bubble":14,
+        "bubble":15,
         "best_boss":0,
         "boss_head":2
     },618015:{
@@ -176,7 +188,7 @@ export const publicboss_base = {
         "revive_time":1440,
         "map_player":4,
         "challenge_time":120,
-        "bubble":15,
+        "bubble":16,
         "best_boss":1,
         "boss_head":4
     },618016:{
@@ -188,7 +200,7 @@ export const publicboss_base = {
         "revive_time":2160,
         "map_player":4,
         "challenge_time":120,
-        "bubble":16,
+        "bubble":17,
         "best_boss":0,
         "boss_head":3
     },618017:{
@@ -200,7 +212,7 @@ export const publicboss_base = {
         "revive_time":2880,
         "map_player":4,
         "challenge_time":120,
-        "bubble":17,
+        "bubble":18,
         "best_boss":0,
         "boss_head":1
     }

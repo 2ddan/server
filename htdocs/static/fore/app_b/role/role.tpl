@@ -60,8 +60,7 @@
       </div>
       <div style="width:100%;position:absolute;left:0px;top:78px;bottom:0">
          <div style="width:100%;height:100%;z-index:2">
-            
-            
+               
             <app-widget-power-power style="left: 50%;top:-11px;margin-left: -150px;z-index: 1;">
                   {"type":1,"power":{{player.power}},"fontSize":24}
             </app-widget-power-power>

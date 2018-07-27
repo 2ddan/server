@@ -15,7 +15,8 @@ import {  mgr } from "app/scene/scene";
 import { SMgr } from "app_b/fight_ol/same";
 import { getGlobal } from "pi/widget/frame_mgr";
 import { getPage } from "app_b/playermission/playermission";
-import { UiFunTable, } from "app/scene/ui_fun";
+import { UiFunTable } from "app/scene/ui_fun";
+import { Util } from "app/mod/util";
 
 //======================================本地
 let random_boss_id,
@@ -107,7 +108,7 @@ export const globalReceive: any = {
  * 查询最近的可开启宝箱结束时间
  */
 const findMinTime = function () {
-    let time = (new Date()).getTime();
+    let time = Util.serverTime();
     let arrTime = [];
     let box = getDB("random_boss.box");
     let keys = Object.keys(box);
@@ -134,7 +135,7 @@ const mySetTimeOut = function () {
     if (end_time == 0 || hasCloseBox == 0) {
         return;
     }
-    let t = end_time - (new Date()).getTime();
+    let t = end_time - Util.serverTime();
     timer = setTimeout(() => {
         hasCloseBox -= 1;
         updata("random_boss.has_box", hasCloseBox);
@@ -245,7 +246,7 @@ export let logic = {
         new_box_id = data[0];
         let _data: any = getDB("random_boss.box");
         // updata("random_boss.box", _data);
-        let now = (new Date()).getTime();
+        let now = Util.serverTime();
         for(let key in _data){
             if(now > _data[key].end_time){
                 delete _data[key];
@@ -261,8 +262,9 @@ export let logic = {
     //箱子排序
     mySort(data) {
         let arr = [];
+        let now = Util.serverTime();
         for (var key in data) {
-            if ((data[key].end_time) > (new Date()).getTime()) {
+            if ((data[key].end_time) > now) {
                 arr.push(data[key]);
             }
         }
@@ -380,7 +382,7 @@ export let logic = {
         if (data) {
             let boxArr = data.box_award_record,
                 openedArr = data.open_box_record,
-                nowTime = (new Date()).getTime();
+                nowTime = Util.serverTime();
             for (var i = 0, len = boxArr.length; i < len; i++) {
                 let end_time = (boxArr[i][1] - 0 + baseData.box_base.box_exsit_time * 60) * 1000;
                 if (end_time > nowTime) {

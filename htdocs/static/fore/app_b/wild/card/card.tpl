@@ -15,4 +15,5 @@
         <img style="opacity: 1;animation: opacityAnim 2000ms infinite;position: absolute;top: -7px;left: -8px;" src="../image/card_active.png"/>
     </div>
    {{end}}
+   
 </div>

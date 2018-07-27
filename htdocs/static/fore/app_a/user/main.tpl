@@ -1,10 +1,11 @@
-<div style="width:100%;height:100%;">
-        <div w-class="login_bg"></div>
+{{let root = _get("pi/ui/root").exports}}
+<div style="width:100%;height:{{root.getHeight()}}px;">
+        <div w-class="login_bg" style="height:100%;background-size:100% 100%;"></div>
         <div w-class="logo"></div>
         <app-widget-btn-menu style="right: 22px;top: 232px;" on-tap="openNotice">
             {"icon":"menu_notice","text":"仙侠通知","width":60,"height":60,"bottom":"-3","bg":3,"fontSize":16,"space":-6,"position":"absolute" }
         </app-widget-btn-menu>
-        <div style="width:525px;height:300px;position:absolute;left:50%;margin-left:-262px;top:447px;" ev-input-text="listenInputText">
+        <div style="width:525px;height:300px;position:absolute;left:50%;margin-left:-262px;bottom: 175px;" ev-input-text="listenInputText">
             {{if !it1.uid}}
             <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-15px;left:-8px;">
                 {"line":"line_7"} 
@@ -35,15 +36,17 @@
             {{end}}
             <widget w-tag={{wg}}></widget>
         </div>
-        <div w-class="bg_2" style="font-size:14px;line-height:20px;color:#949494;text-align:center;z-index:1">
+        <div w-class="bg_2" style="font-size:14px;line-height:20px;color:#949494;text-align:center;z-index:1;bottom:0px">
             <div style="position:absolute;width:540px;height:20px;font-family:mnjsh;left:50%;margin-left:-270px;top:30px;">抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。</div>
             <div style="position:absolute;width:540px;height:20px;font-family:mnjsh;left:50%;margin-left:-270px;top:50px;">适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</div>
             <div style="position:absolute;width:540px;height:20px;font-family:mnjsh;left:50%;margin-left:-270px;top:70px;">著作权人：成都感触网络科技有限公司 出版单位：成都盈众九州网络科技有限公司</div>
             <div style="position:absolute;width:540px;height:20px;font-family:mnjsh;left:50%;margin-left:-270px;top:90px;">批准文号：新广出审{{"["+2018+"]"}}&nbsp;421号 出版号ISBN：978-7-498-03893-7 文网游备字：</div>
             <div style="position:absolute;width:540px;height:20px;font-family:mnjsh;left:50%;margin-left:-270px;top:110px;">川网文{{"["+2016+"]"}}&nbsp;5476-188号 本网络游戏适合年满16周岁以上的用户使用</div>
         </div>
-        <div style="width: 100%;height: 30px;position: absolute;font-family: hanyi;font-size: 30px;color: rgb(255, 255, 255);top: 805px;left: 50%;margin-left: -98px;">123456789暴击+-:/</div>
+
+        <div style="width: 100%;height: 30px;position: absolute;font-family: hanyi;font-size: 30px;color: rgb(255, 255, 255);top: 805px;left: 50%;margin-left: -98px; visibility: hidden;">123456789暴击+-:/</div>
 
         <div data-desc="错误提示" id="err" style="width:100%;position:absolute;left:0;top:330px;color:#f5f1df;font-family:mnjsh;font-size:15px;text-align: center;z-index:4;">
         </div>
+        
     </div>

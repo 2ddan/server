@@ -11,12 +11,24 @@
 		<div style="position: absolute;top: -35px;width: 100%;height: 238px;z-index: 2;">
 			<div w-class="new_auto_title"></div>
 		</div>
-		
 		<div w-class="new_auto_bg" style="padding-bottom:{{!bol ? 100:190}}px;">
 			
 			<div scroller="1" style="position: relative;height: auto;width: 100%;min-height: 110px;text-align: center;max-height: 420px;overflow-y: auto;overflow-x: hidden;z-index:2">
 				<div style="position: relative;height: auto; width: 100%;padding: 0 10px;box-sizing: border-box;margin-top:10px;">
 					
+					{{let special = {"money":100001,"diamond":100002,"add_exp":100003,"rmb":100002,"exp":100003,"spirit":100004,"gest_coin":100019,"treasure_coin":100016,"partner_coin":100013,"weapon_coin":100009,"soul_coin":100008,"equip_coin":100005, "diamond_gest_coin":100020,"vip_exp":100255,"gang_contribute":150005} }}
+					
+					{{if it.player}}
+					{{for i in it.player}}
+					{{let _prop = Pi.sample[special[i]]}}
+					<div style="position: relative;display: inline-block;width: 82px;height: 82px;margin:0 10px 25px;text-align: center;">
+						{{let img1 = Pi.pictures[_prop.icon]}}
+						<widget  w-tag="app_a-widget-prop-base" >
+							{"prop":{{_prop}},"url":{{img1}},"color":"#ffeee2","count":{{it.player[i]}},"width":80,"height":80,"name":{{_prop.name}} }
+						</widget>
+					</div>
+					{{end}}
+					{{end}}
 
 					{{if it.bag}}
 					{{for index, cnt of it.bag}}
@@ -35,20 +47,6 @@
 						{{end}}
 					</div>
 					{{end}}
-					{{end}}
-					{{end}}
-
-					{{let special = {"money":100001,"diamond":100002,"add_exp":100003,"rmb":100002,"exp":100003,"spirit":100004,"gest_coin":100019,"treasure_coin":100016,"partner_coin":100013,"weapon_coin":100009,"soul_coin":100008,"equip_coin":100005, "diamond_gest_coin":100020,"vip_exp":100255,"gang_contribute":150005} }}
-					
-					{{if it.player}}
-					{{for i in it.player}}
-					{{let _prop = Pi.sample[special[i]]}}
-					<div style="position: relative;display: inline-block;width: 82px;height: 82px;margin:0 10px 25px;text-align: center;">
-						{{let img1 = Pi.pictures[_prop.icon]}}
-						<widget  w-tag="app_a-widget-prop-base" >
-							{"prop":{{_prop}},"url":{{img1}},"color":"#ffeee2","count":{{it.player[i]}},"width":80,"height":80,"name":{{_prop.name}} }
-						</widget>
-					</div>
 					{{end}}
 					{{end}}
 				</div>

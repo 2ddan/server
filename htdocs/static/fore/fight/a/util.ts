@@ -717,7 +717,11 @@ export class Util{
     // 查找指定键值对应元素的位置
     static indexByAttr(arr, key, value) {
         var i;
-        for (i = arr.length - 1; i >= 0 && arr[i][key] !== value; i--);
+        for (i = arr.length - 1; i >= 0; i--){
+            if(arr[i] && arr[i][key] === value){
+                break;
+            }
+        };
         return i;
     }
     // 复制

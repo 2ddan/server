@@ -8,6 +8,7 @@
 			</widget>
 			<widget w-class="13" w-tag="app_a-widget-pic_other-pic_other" w-sid="13">{"icon":"pendant"} 
 			</widget>
+			
 			<widget w-class="33" w-tag="app_a-widget-pic_text-pic_text" w-sid="33">
 				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"创建门派","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>

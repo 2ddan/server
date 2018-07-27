@@ -284,9 +284,10 @@ const loginBack = (name,password,type,pid,sign,errCallback? , succCallback?) => 
 			updata("user.state",loginState.user_logined);
 			saveUser("u",[locDB.user.uid, name, password,type,pid,sign]);
 			da = dealServer(u.area_detail,1);
-			if(!da || !da.role){
-				InfoToPt.upload(1,locDB);
-			}
+			InfoToPt.upload(1,locDB);
+			// if(!da || !da.role){
+			// 	InfoToPt.upload(1,locDB);
+			// }
 			if(succCallback){
 				succCallback();
 			}

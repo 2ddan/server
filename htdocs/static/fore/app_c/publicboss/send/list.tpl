@@ -13,6 +13,7 @@
     {{end}}
 
     <div w-class="3" w-sid="3">
+        
         <widget w-class="4" w-tag="app_a-widget-bg_frame-bg" w-sid="4">{"bgName":"bg_frame26"} 
         </widget>
         <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">{"icon":"tips_top"} 

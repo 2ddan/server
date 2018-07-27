@@ -28,7 +28,7 @@ export let globalReceive = {
         }
         tabSwtich = "books";
         index = 1;
-        index_book = 0;
+        logic.getIndex(index);
 
         logic.bagBookCount();
         forelet.paint(getData());
@@ -65,6 +65,7 @@ export class rune_main extends Widget {
     selectPore(arg) {
         if (index == arg) return;
         index = arg;
+        logic.getIndex(arg);
         forelet.paint(getData());
     }
     //选择不同秘籍
@@ -179,6 +180,19 @@ const getData = function () {
 
 
 let logic = {
+    //获得当前孔位默认位置
+    getIndex(arg){//孔位
+        let rune_data = getDB("rune");
+        let curr = rune[arg];
+        let str1 = rune_data.rune_set.join("-");
+        let str2 = rune_data.rune_collect.join("-");
+        if(str1.indexOf(curr[1]["prop_id"]+"") > -1 || str2.indexOf(curr[0]["prop_id"]+"") === -1 && str2.indexOf(curr[1]["prop_id"]+"") > -1){
+            index_book = 1;
+        }else{
+            index_book = 0;
+        }
+    },
+
     //秘籍嵌入
     /**
      * @description %通讯参数 index : 1需要镶嵌的位置 , prop_id 200001 镶嵌道具的id

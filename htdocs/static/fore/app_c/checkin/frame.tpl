@@ -12,7 +12,6 @@
     </widget>
     {{end}}
 
-
     {{if it.value.vip}}
 
     <div w-class="discount_bg">

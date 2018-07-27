@@ -269,12 +269,12 @@ export const sendChatMsg = function (msg, mapList, type ? ) {
     }
     if (fighter.chat) {
         mgr.remove(fighter.chat);
-        delete chatlist[fighter.chat.old];
+        delete chatlist[fighter.chat._old];
     }
     chat.width = length > 15 ? 155 : length * width + (length === arg.chat.length ? 20 : 16);
     chat.height = (length > 15 && length * width > 155) ? 80 : 40;
     chat.text = Common.calculate(30, arg.chat);
-    chat.old = time;
+    chat._old = time;
     chat.high = 1.55;//fighter.high;
 
     chat.p = 150;//camera_cfg["chat_position_camera"].value[mgr_data.name];
@@ -282,8 +282,8 @@ export const sendChatMsg = function (msg, mapList, type ? ) {
     fighter.chat = chat;
     mgr.create(fighter.chat, "chat", fighter._show.old);
 
-    chatlist[chat.old] = fighter;
-    if (!timer) timer = setTimeout(timerFun, 100);
+    chatlist[chat._old] = fighter;
+    if (!timer) timer = setTimeout(timerFun, 2000);
 }
 /**
  * @description 获取手指移动位置
@@ -374,7 +374,7 @@ const chatfun = () => {
     let delTime = 3000,
         _now = Date.now() - relative_time;
     for (var k in chatlist) {
-        if (_now - chatlist[k].chat.old >= delTime) {
+        if (_now - chatlist[k].chat._old >= delTime) {
             mgr.remove(chatlist[k].chat)
             delete chatlist[k].chat;
             delete chatlist[k];
@@ -387,7 +387,7 @@ const chatfun = () => {
 
 const timerFun = () => {
     let r = chatfun();
-    if (r) timer = setTimeout(timerFun, 100);
+    if (r) timer = setTimeout(timerFun, 2000);
 };
 
 const runAnimCb = (obj,ani,list) => {

@@ -22,8 +22,6 @@
                     {{end}}
                     
                 </div>
-
-                
                 <widget w-tag="app_a-widget-line-line" style="position:absolute;bottom:0px;left:20px;width:479px;height:4px;">
                     {"line":"line_10"}
                 </widget>

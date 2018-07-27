@@ -445,13 +445,13 @@ let list = [
                     if ((!skill_5) || (skill_5[1] > 0)) {
                         return 0;
                     }
-                    let skill_arr = db.get("skill");
-                    let limit = skill_describe[skill_5[0]].activate_other_level;
-                    for (let i = 0, len = skill_arr.length - 1; i < len; i++) {
-                        if (skill_arr[i][1] < limit[i][1]) {
-                            return 0;
-                        }
-                    }
+                    // let skill_arr = db.get("skill");
+                    // let limit = skill_describe[skill_5[0]].activate_other_level;
+                    // for (let i = 0, len = skill_arr.length - 1; i < len; i++) {
+                    //     if (limit[i] && skill_arr[i][1] < limit[i][1]) {
+                    //         return 0;
+                    //     }
+                    // }
                     return 1;
                 }, 1]
             ]
@@ -1004,7 +1004,13 @@ let list = [
      * 赋灵突破
      */
     {
-        depend: ["weapon_soul.level_record", "weapon_soul.class"],
+        depend: ["weapon_soul.level_record",
+                "weapon_soul.class",
+                `bag*sid=100052`,
+                `bag*sid=100053`,
+                `bag*sid=100054`,
+                `bag*sid=100055`
+            ],
         fun: [
             [
                 ["<", { dkey: "weapon_soul.class" }, function () {
@@ -1016,6 +1022,23 @@ let list = [
                         let len = weapon_soul_grade[grade][i + 1].length;
                         if (arr[i] < (len - 1)) {
                             return 0;
+                        }
+                    }
+                    // 材料消耗是否满足要求
+                    let cost = weapon_soul_base[grade].cost;
+                    for (let v of cost) {
+                        // money || diamond
+                        v[0] == Number(v[0]);
+                        if (v[0] == 100001 || v[0] == 100002) {
+                            let has = db.get("player")[`${v[0] == 100001 ? 'money' : 'diamond'}`];
+                            if (has < v[1]) {
+                                return 0;
+                            }
+                        } else {
+                            let prop = db.get(`bag*sid=${v[0]}`).pop();
+                            if (!prop || prop.count < v[1]) {
+                                return 0;
+                            }
                         }
                     }
                     return 1;

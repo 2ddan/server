@@ -39,4 +39,5 @@
             {"text":"的玩家","textCfg":"funDesc","fontSize":14,"space":-2}
         </app_a-widget-text-text>
     </div>
+    
 </div>

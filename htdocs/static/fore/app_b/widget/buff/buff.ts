@@ -65,9 +65,7 @@ export class buff extends Widget {
         }else if(type == "pet"){
             words = `宠物达到${getLimit(id)[limit_key]}阶解锁`;
         }else if(type == "weapon_soul"){
-            words = `附灵达到${getLimit(id)[limit_key]}阶解锁`;
-        }else if(type == "weapon_soul"){
-            words = `附灵达到${getLimit(id)[limit_key]}阶解锁`;
+            words = `赋灵达到${getLimit(id)[limit_key]}阶解锁`;
         }else if(type == "soul"){
             words = `龙魂总等级达到${getLimit(id)[limit_key]}级解锁`;
         }

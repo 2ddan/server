@@ -25,8 +25,6 @@
     </div>
 
 
-
-
     <div style="width: 100%;height: 100%;position: absolute;z-index: 1;top: 0;bottom: 0;" on-tap="closeLoseAccount"></div>
     <div style="position: absolute;bottom:131px;font-size:20px;width: 100%;color:#ff4830;text-align:center;left:0;">
       <app-widget-cdTime1 ev-countdownend="closeLoseAccount" style="display:inline-block;vertical-align: middle;">

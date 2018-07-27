@@ -9,7 +9,6 @@
         {"progress":{{it1.progress}},"text":" ","width":200} 
     </widget>
     <span class="shadow7" style="background-image:url(app_a/widget/head/images/head_level.png);background-size:100% 100%;height:40px;width:40px;white-space:nowrap;color:#b5e8ff;font-size:15px;top: 194px;position: absolute;left: -12px;line-height: 40px;font-family: mnjsh;">Lv{{it1.level}}</span>
-    
     {{end}}
     <div id="tips" style="position:absolute;bottom:48%;width:100px;height:100px;left:5px;color:#96ff00;font-size:18px;text-align:right"></div>
 </div>

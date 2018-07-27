@@ -85,5 +85,12 @@ export const helpTips = {
 		"fontFamily":"kaiti_bold",
 		"fontWeight":"normal",
 		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、如何获取活动道具？</span><br/><br/>&nbsp;&nbsp;1.&nbsp;&nbsp;竞技场，装备副本，材料副本，九幽幻境，野外挂机有低几率获取。<br/><br/>&nbsp;&nbsp;2.&nbsp;&nbsp;通过参加挑战领奖获取。（在挑战领奖中，针对金卡，铂金卡有额外的福利哦。<span style='color:#f00'>金卡玩家可获得2倍的活动道具奖励，铂金卡玩家获得2倍的活动道具奖励，同时拥有金卡和铂金卡的玩家可获得3倍的活动道具奖励。</span>）<br/><br/>&nbsp;&nbsp;3.&nbsp;&nbsp;通过充值送礼获取。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、活动道具可以用来做什么？</span><br/><br/>&nbsp;&nbsp;在【节日兑换】中可花费对应数量的活动道具兑换材料。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>三、活动道具的兑换期限？</span><br/><br/>&nbsp;&nbsp;具体期限见活动内，超出期限后会消失，所以请注意截止时间哦。"]
+	},"endless_boss":{
+		"color":"#fff",
+		"fontSize":"16px",
+		"fontFamily":"kaiti_bold",
+		"fontWeight":"normal",
+		"content":["<span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>一、活动开放时间</span><br/><br/>&nbsp;&nbsp;1.&nbsp;&nbsp;开放时间为星期三，星期五的12:00-20:00<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>二、BOSS刷新</span><br/><br/>&nbsp;&nbsp;1.&nbsp;&nbsp;全服玩家都可挑战BOSS，BOSS每次死亡后会在一定时间后以更高的等级出现。<br/><br/>&nbsp;&nbsp;2.&nbsp;&nbsp;击杀BOSS到达一定量时可领取全服成就奖励（需要手动领取）。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>三、伤害积分</span><br/><br/>&nbsp;&nbsp;通过对BOSS造成的伤害值都会转换成积分，积分可以累积，累积后可以在排行榜上获得对应名次的奖励。<br/><br/><span style='color:rgb(255, 108, 0);font-size:20px;font-weight:normal;'>四、特殊奖励</span><br/><br/>&nbsp;&nbsp;1.&nbsp;&nbsp;BOSS在一定血量时会触发幸运一击，造成该伤害的玩家会额外获得奖励。<br/><br/>&nbsp;&nbsp;2.&nbsp;&nbsp;终结BOSS的玩家也会获得额外的奖励。"]
 	}
 };
+

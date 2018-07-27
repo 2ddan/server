@@ -1,0 +1,5 @@
+{
+    "tpl":"./frame.tpl",
+    "js":"../endless_boss.ts",
+    "forelet":"../endless_boss.ts"
+}

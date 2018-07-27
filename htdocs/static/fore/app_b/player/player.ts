@@ -11,7 +11,7 @@ import { globalSend, refresh, Pi, InfoToPt } from "app/mod/pi";
 import { open, close } from "app/mod/root";
 import { insert, updata, listen, data as localDB } from "app/mod/db";
 import { listenBack } from "app/mod/db_back";
-import { setShield } from "app/scene/ui_fun";
+import { setShield,UiFunTable } from "app/scene/ui_fun";
 import { changeMusicState } from "app/mod/music";
 //scene
 import { setRole } from "app/scene/ui_fun";
@@ -107,7 +107,8 @@ let _db = {
 	wx_share_award: 0,
 	function_record: -1
 };
-let funArr = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss"];
+let funArr = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss", "UiFunTable.showDamage"];
+
 /**
  * @description  处理原始数据
  */
@@ -127,6 +128,9 @@ const stateChange = function (index) {
 		fun(index, changeMusicState);
 	} else if (index == 5) {
 		fun(index, changeAutoFinght);
+	} else if (index == 6) {
+		// 调取关闭冒字接口
+		fun(index,UiFunTable.showDamage);
 	} else {
 		fun(index, setShield);
 	}
@@ -151,10 +155,10 @@ listenBack("app/role@read", initData);
 listen("player", () => {
 	forelet.paint();
 });
-//上传玩家信息到平台
-listen("player.level",()=>{
-	InfoToPt.upload(4, localDB);
-});
+// //上传玩家信息到平台
+// listen("player.level",()=>{
+// 	InfoToPt.upload(4, localDB);
+// });
 /**
  * 监听战斗力是否变化
  */
@@ -207,6 +211,8 @@ net_message("other_place_login", (msg) => {
 			changeMusicState(v, true);
 		} else if (i >= 2 && i < 5 && loc) {
 			setShield(v, true);
+		} else if (i == 6 && loc) {
+			UiFunTable.showDamage();
 		} else if (i == 5) {
 			loc &&　changeAutoFinght(v, true);
 			!loc && changeAutoFinght(v, false);

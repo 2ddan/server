@@ -11,6 +11,7 @@
         <app_a-widget-line-line style="position: absolute;left: 0;top: -15px;z-index:3;">
             {"line":"line_7"} 
         </app_a-widget-line-line>
+        
         <div w-class="bg_1">
             <app_c-weapon_soul-weapon_module-weapon_module style="top:95px;">
                 {"effect":[]}

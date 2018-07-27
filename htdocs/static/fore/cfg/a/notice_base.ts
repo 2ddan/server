@@ -3,7 +3,7 @@ let tab = {};
 
 tab["update"] = {
     "type": "update",
-    "name": "更新公告",
+    "name": "温馨提示",
     "num": 2,
     "show": 1
 }

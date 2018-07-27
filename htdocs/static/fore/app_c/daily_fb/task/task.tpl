@@ -10,6 +10,7 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"材料副本","coin":["money","diamond"],"left":12,"top":16,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
     </widget>
+    
     <app_a-widget-text-text style="position: absolute;top:72px;left: 22px;line-height: 25px;height: 25px;z-index:2">
         {"text":"{{'我的战力:'+common.numberCarry(parseInt(player.power || 0),1000000)}}","textCfg":"powerNum","fontSize":22}
     </app_a-widget-text-text>

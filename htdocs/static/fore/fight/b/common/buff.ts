@@ -9,7 +9,7 @@
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9810111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -46,7 +46,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9810611000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -83,7 +83,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9811111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -120,7 +120,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9820111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -157,7 +157,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9820611000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -194,7 +194,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9821111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -231,7 +231,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9830111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -268,7 +268,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9830611000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -305,7 +305,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9831111000,
 		lifeTime: 20000,
 		eventType: 1,
 		excitationCount: 1,
@@ -342,7 +342,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9999991000,
 		lifeTime: 2000,
 		eventType: 1,
 		excitationCount: 1,
@@ -374,12 +374,12 @@ table[s.id] = s;
 table[s.id] = s;
 	s = {
 		id: 9000001,
-		name: "血之狂暴",
+		name: "吸血术",
 		targetType: 2,
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000001000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -416,7 +416,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000002000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -426,7 +426,7 @@ table[s.id] = s;
 		attackHP: 0,
 		attackCD: 0,
 		effect: [],
-		show: "eff_particle_godweapon_rolem03",
+		show: "eff_particle_godweapon_rolem01",
 		audio: undefined,
 		icon: "",
 		bodyType: 0,
@@ -448,12 +448,12 @@ table[s.id] = s;
 table[s.id] = s;
 	s = {
 		id: 9000003,
-		name: "毁天灭地",
+		name: "心魔狂暴",
 		targetType: 2,
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000003000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -463,7 +463,7 @@ table[s.id] = s;
 		attackHP: 0,
 		attackCD: 0,
 		effect: [],
-		show: "eff_particle_godweapon_rolef02",
+		show: "eff_particle_godweapon_rolem01",
 		audio: undefined,
 		icon: "",
 		bodyType: 0,
@@ -485,17 +485,17 @@ table[s.id] = s;
 table[s.id] = s;
 	s = {
 		id: 9000004,
-		name: "魔神附体",
+		name: "必杀一击",
 		targetType: 2,
-		probability: 1,
+		probability: 0.1,
 		addTime: 1,
 		buffType: 1,
-
-		lifeTime: 5000,
-		eventType: 1,
+		effectiveTime:9000004000,
+		lifeTime: 6000,
+		eventType: 2,
 		excitationCount: 1,
 		triggerTarget:"F",
-		excitationMaxCount: 1,
+		excitationMaxCount: 9,
 		timerInterval: 0,
 		attackHP: 0,
 		attackCD: 0,
@@ -512,8 +512,8 @@ table[s.id] = s;
 	};
 	
 	s.effect[0] = {
-		type: "hp",
-		value: "F.max_hpCount*0.05",
+		type: "attackCount",
+		value: "F.attackCount*0.05",
 		parm: {},
 		addValue: 0,
 		shieldIndex: -1
@@ -527,7 +527,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000011000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -564,7 +564,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000012000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -601,7 +601,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000013000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -638,7 +638,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000014000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -675,7 +675,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000015000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -712,7 +712,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000016000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -749,7 +749,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000017000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -786,7 +786,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000018000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -823,7 +823,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000019000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -860,7 +860,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000020000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -897,7 +897,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000021000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -934,7 +934,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000022000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -971,7 +971,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000023000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1008,7 +1008,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000024000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1045,7 +1045,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000025000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1082,7 +1082,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000026000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1119,7 +1119,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000027000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1156,7 +1156,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000028000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1193,7 +1193,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000029000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1230,7 +1230,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000030000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1264,15 +1264,15 @@ table[s.id] = s;
 		id: 9000101,
 		name: "养精蓄锐",
 		targetType: 2,
-		probability: 1,
+		probability: 0.5,
 		addTime: 1,
 		buffType: 1,
-
-		lifeTime: 5000,
-		eventType: 1,
+		effectiveTime:9000101000,
+		lifeTime: 6000,
+		eventType: 5,
 		excitationCount: 1,
 		triggerTarget:"F",
-		excitationMaxCount: 1,
+		excitationMaxCount: 9,
 		timerInterval: 0,
 		attackHP: 0,
 		attackCD: 0,
@@ -1304,7 +1304,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000102000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1341,7 +1341,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000103000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1378,7 +1378,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000104000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1415,7 +1415,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000201000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1452,7 +1452,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000202000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1489,7 +1489,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000203000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1526,7 +1526,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000204000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1563,7 +1563,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000301000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1600,7 +1600,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000302000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1637,7 +1637,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000303000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1674,7 +1674,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000304000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1711,7 +1711,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000401000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1748,7 +1748,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000402000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1785,7 +1785,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000403000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1822,7 +1822,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000404000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1859,7 +1859,7 @@ table[s.id] = s;
 		probability: 1,
 		addTime: 1,
 		buffType: 1,
-
+		effectiveTime:9000405000,
 		lifeTime: 5000,
 		eventType: 1,
 		excitationCount: 1,
@@ -1889,5 +1889,4 @@ table[s.id] = s;
 	};
 	
 table[s.id] = s;
-
 export const buff = table;

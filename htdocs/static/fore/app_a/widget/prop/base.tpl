@@ -9,8 +9,7 @@
         <img src="app_a/widget/prop/images/prop_border_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;z-index:1"/>
             {{if it.type === "gest" && filter===6}}
             <img src="app_a/widget/prop/images/gest_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;z-index:1"/>
-            {{end}}
-            {{if it.prop}}
+            {{elseif it.prop}}
             <img src="app_a/widget/prop/images/prop_bg_{{filter}}.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;" />
             {{else}}
             <img src="app_a/widget/prop/images/prop_bg_no.png" style="position:absolute;top:0;left:0;width:100%;;height:100%;" />
@@ -25,10 +24,10 @@
         {{end}}
         {{let top = (it.top || 25) + "px"}}
         <div style="position:absolute;width:100%;line-height:12px;text-align:right;top:calc(100% - {{top}});right:{{it.right || 10}}px;">
-            {{it.count==="none" ? "" : ((it.count+"").indexOf("Lv") > -1 ? (it.count) : Common.numberCarry(parseInt(it.count||it.prop.count),10000))}}
+            {{it.count=="none" ? "" : ((it.count+"").indexOf("Lv") > -1 ? (it.count) : Common.numberCarry(parseInt(it.count||it.prop.count),10000))}}
         </div>
         {{if !it.hidden_name}}
-        <div style="color: rgb(255, 255, 255);position: absolute;bottom: -{{it.bottom || 16}}px;width: 120%;line-height: 19px;text-align: center;font-family: mnjsh;z-index: 4;left:50%;transform:translate(-50%);">
+        <div style="color: rgb(255, 255, 255);position: absolute;bottom: -{{it.bottom || 16}}px;width: 120%;line-height: 19px;text-align: center;font-family: mnjsh;z-index: 4;left:50%;transform:translate(-50%);white-space: nowrap;">
             {{it.name==="none"?"":(it.name||it.prop.name)}}
         </div>
         {{end}}
@@ -55,4 +54,5 @@
     {{let scale = (it.width||80)/98}}
     <div class="equipBorderAnim" style="position: absolute; left: 50%; top: 47%; z-index: 2; transform:translate(-50%,-50%) scale({{scale}}) ; pointer-events: none;"></div>
     {{end}}
+    
 </div>

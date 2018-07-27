@@ -10,6 +10,7 @@
     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:458px;left:50%;margin-left:-246px;top:186px;">
         {"bgName":"bg_frame21"} 
     </widget>
+    
     <app_a-widget-pic_other-pic_other style="position:absolute;left:0px;top:183px;">
         {"icon":"lantern"}
     </app_a-widget-pic_other-pic_other>

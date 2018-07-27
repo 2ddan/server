@@ -3,7 +3,6 @@
 	<widget w-class="3" w-tag="app_a-widget-bg_frame-bg" w-sid="3">
 		{"bgName":"bg_frame21"} 
 	</widget>
-	
 	<div w-class="3" w-sid="3" >
 		<div w-class="39" w-sid="39">
 			{{let state = it1.rune_data.rune_state}}

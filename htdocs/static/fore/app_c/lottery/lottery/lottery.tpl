@@ -9,6 +9,7 @@
 			<widget w-tag="app_a-widget-pic_other-pic_other" style=" position:absolute;bottom: -12px;left: -18px;" >
 				{"icon":"flower_1"} 
 			</widget>
+			
 			<widget w-tag="app_a-widget-pic_other-pic_other" style=" position:absolute;bottom: 45px;left: 19px;" >
 				{"icon":"butterfly_1"} 
 			</widget>

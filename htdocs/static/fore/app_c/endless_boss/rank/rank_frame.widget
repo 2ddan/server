@@ -1,0 +1,6 @@
+{
+    "tpl":"./rank_frame.tpl",
+    "css":"./rank.wcss",
+    "js":"../endless_boss.ts",
+    "forelet":"../endless_boss.ts"
+}

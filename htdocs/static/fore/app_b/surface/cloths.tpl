@@ -58,7 +58,6 @@
             {"name":"uiscene","type":"fighter","module":{"module":{{module}},"weapond":{{weapon_m}},"w_eff":{{w_eff}},"body_eff":{{body_eff}},"s_eff":{{s_eff}},"position":[0,1.7,-0.1],"scale":0.8,"rotate":[0,0,0],"scene_bg":"sce_ui_szjm"},"width":540,"height":910}
         </app-scene-base-scene>
     </div>
-
     <div w-class="4" w-sid="4" style="left: 50%;margin-left: -270px;">
         <div w-class="5" w-sid="5">
 

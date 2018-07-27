@@ -11,6 +11,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"查看玩家","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
+        
         {{let base = it1.role.base_info}}
         <div w-class="9" w-sid="9">
             <widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">
@@ -23,9 +24,11 @@
                 <div w-class="12">
                     <div w-class="13">{{base.level}}</div>
                     <span style="margin:0 5px 0 15px;">{{"S"+base.area + " " +base.name}}</span>
-                    <widget style="position:absolute;right: -50px;top: 6px;" w-tag="app_a-widget-pic_text-pic_text">
-                        {"icon":"chat_vip_bg","width":54,"height":17,"align":"center","marginLeft":3,"text":{{"VIP"+base.vip}},"textCfg":"gangVip","space":0,"fontSize":16,"top":0,"left":0} 
+                    {{if base.vip}}
+                    <widget class="shadow7" style="position:absolute;right: -50px;top: 0px;font-size:16px;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+                        {"icon":{{"vip_lv_" + (it1.vip_advantage[base.vip].lv_frame || 1)}},"width":52,"height":25,"text":{{"VIP" + base.vip}},"top":0,"left":0} 
                     </widget>
+                    {{end}}
                 </div>
                 <widget w-class="14" w-tag="app_a-widget-power-power" w-sid="14">
                     {"type":2,"top":14,"left":49,"power":{{base.fight_power}},"fontSize":22,"textCfg":"powerNum","left":54} 
@@ -70,9 +73,9 @@
 
                 {{:module = it1.roleCfg[career_id].module }}
 
-                {{if it1.role.base_info.clothes}}
-                    {{: _index = it1.clothes_module[it1.role.base_info.clothes].career_id.indexOf(career_id)}}
-                    {{: module = it1.clothes_module[it1.role.base_info.clothes].module[_index]}}
+                {{if it1.role.clothes}}
+                    {{: _index = it1.clothes_module[it1.role.clothes].career_id.indexOf(career_id)}}
+                    {{: module = it1.clothes_module[it1.role.clothes].module[_index]}}
                 {{else}}
                     {{: weapon= it1.role.equip_set[0]}}
                     {{: _index = weapon?weapon.career_id.indexOf(career_id):null}}
@@ -131,7 +134,7 @@
                     {{: pet_module = it1.pet_module[it1.pet_upgrade[it1.role.pet.pet_info[0]].module].module}}
                 {{end}}
                 {{:type = "pet"}}
-                {{:position = [0,-0.2,0]}}
+                {{:position = [0,1.9,-0.1]}}
                 {{:scale = 1.6}}
                 {{:rotate = [0,0.7,0]}}
                 {{:s_eff = null}}                

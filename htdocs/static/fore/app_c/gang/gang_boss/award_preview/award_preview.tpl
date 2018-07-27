@@ -8,7 +8,6 @@
     <widget w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;left:-37px;bottom:-20px;">
         {"icon":"tips_bottom"} 
     </widget>
-
     <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;left: 50%;transform: translate(-50%);top:-22px;">
         {"icon":"cover_title","width":181,"height":31,"align":"center","marginLeft":3,"text":"宝箱预览","textCfg":"singleTitle","space":0,"fontSize":22,"top":0,"left":0} 
     </widget>

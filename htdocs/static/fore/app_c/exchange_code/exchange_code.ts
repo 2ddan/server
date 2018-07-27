@@ -6,6 +6,7 @@ import { net_request } from "app_a/connect/main";
 
 import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
+import { showNewRes } from "app_b/bag/bag";
 
 export const forelet = new Forelet();
 
@@ -21,24 +22,20 @@ export class wx_share_w extends Widget {
         }
         net_request({ "param": { cdkey: node.value }, "type": "app/cdkey@use_cdkey" }, (data) => {
             if (data.error) {
-                if (data.error) globalSend("screenTipFun", { words: data.error });
+                if (data.error) globalSend("screenTipFun", { words: data.why });
                 if (data.reason) globalSend("screenTipFun", { words: data.reason });
                 console.log(data.why);
                 return;
             }
-            let result: any = Common.changeArrToJson(data.ok);
-            let prop: any = Common_m.mixAward(result.award);
-            prop.auto = 1;
-
-            // showNewRes(prop, (result) => {
-            //     result.open();
-            // });
+            let prop: any = Common.changeArrToJson(data.ok);
+            let result = Common_m.mixAward(prop);
+            result.auto = 1;
+            showNewRes(result, function (result) {
+                result.open();
+            });
         });
     };
-    //物品详情objectInfoShow
-    propInfoShow(arg) {
-        globalSend("showBagPropInfo", { "index": null, "obj": Pi.sample[arg] });
-    };
+
     getClick() {
         let node = (this.tree.link as any).querySelector("#input1");
         node.value = "";

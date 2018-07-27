@@ -9,7 +9,6 @@
         <div style="position: absolute;top: 10px;left: 10px;right: 10px;bottom: 10px;margin: auto;">
             <pi-ui-html style="display:inline-block;">{{it.text}}</pi-ui-html>
         </div>
-
     </div>
 
 </div>

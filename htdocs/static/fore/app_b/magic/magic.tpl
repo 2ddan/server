@@ -6,7 +6,6 @@
 	{{let player = appCfg.player}}
 	{{let treasureId = appCfg.magic.treasure[0]}}
 	
-	
 	<widget w-class="3" w-tag="app_a-widget-bg_frame-bg" w-sid="3">
 		{"bgName":"bg_frame21"} 
 	</widget>
@@ -43,17 +42,19 @@
 				<div w-class="20" w-sid="20">
 					<span style="text-align:center;width:20px;height:18px;position:absolute;left:6px;top:7px;">{{it1.treasur}}</span>
 				</div>
-				<div w-class="21" w-sid="21">
-					{{if JSON.stringify(it1.TreasurePhase.attr_add) !== "{}"}}
-						{{for j, e in it1.TreasurePhase.attr_add}}
-						<div w-class="23" w-sid="23">
-							{{it1.attribute_config[j] + "+" + e}}
-						</div>
+				<div style="width: 100%;height: 43px;overflow: hidden;position: relative;">
+					<div w-class="21" w-sid="21">
+						{{if JSON.stringify(it1.TreasurePhase.attr_add) !== "{}"}}
+							{{for j, e in it1.TreasurePhase.attr_add}}
+							<div w-class="23" w-sid="23">
+								{{it1.attribute_config[j] + "+" + e}}
+							</div>
+							{{end}}
+						{{else}}
+							<span style="color:#f00">进阶神兵将获得属性</span>
 						{{end}}
-					{{else}}
-						<span style="color:#f00">进阶神兵将获得属性</span>
-					{{end}}
-					
+						
+					</div>
 				</div>
 				<div w-class="28" w-sid="28"></div>
 			</div>

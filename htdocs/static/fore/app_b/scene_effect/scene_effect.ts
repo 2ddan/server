@@ -4,8 +4,9 @@ import { handScene } from "app_b/fight_ol/handscene";
 import { open, close, } from "app/mod/root"
 import { openUiEffect } from "app/scene/anim/scene" 
 import { getSelf } from "app_b/fight/fight";
-import { get, listen } from "app/mod/db";
+import { get, listen, data as localDB } from "app/mod/db";
 import { Music } from "app/mod/music";
+import { InfoToPt } from "app/mod/pi";
 
 export let forelet = new Forelet();
 
@@ -51,6 +52,8 @@ listen("player.level", () => {
         oldLevel = level;
         Music.skillSound('role_level_up');
         levelUpEffect();
+        // 等级提升上传玩家信息到平台
+        InfoToPt.upload(4, localDB);
     }
 });
 

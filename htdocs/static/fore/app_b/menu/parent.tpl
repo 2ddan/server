@@ -10,6 +10,7 @@
         <div w-class="parent_bg_right" style="position:absolute;right:0px;bottom:0px;"></div>
         <div w-class="parent_bg_middle" style="width:auto;position:absolute;left:69px;right:69px;bottom:0px;background-repeat:repeat-x;"></div>
     </div>
+    
     <div style="position: absolute;left:-5px;bottom: 2px;height: 75px;width: 100%;text-align: center;">
         {{for i,v of menus}}
         {{let id = function_open[v.key] ? function_open[v.key].id : -2}}

@@ -1,0 +1,6 @@
+{
+    "tpl": "./arrange.tpl",
+    "cfg": "./arrange.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

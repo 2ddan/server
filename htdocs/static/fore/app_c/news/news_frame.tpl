@@ -12,6 +12,7 @@
         <widget w-class="11" w-tag="app_a-widget-title-single" w-sid="11">
             {"padding":8,"type":9,"width":124,"text":{{it.title}},"textCfg":"","fontSize":18,"space":-2,"color":"#523017","wear":1,"class":1} 
         </widget>
+        
         {{if !it.receive}}
         <img w-class="6" w-sid="6" src="app/widget/tip/images/new.png" />
         {{end}}
@@ -21,6 +22,7 @@
             <div style="overflow:hidden;position: absolute;width: 277px;white-space: nowrap;bottom: 90px;left: 32px;top: 9px; height: 70px;">
                 <div style="width: 100%;overflow-x: auto;overflow-y: hidden;position: absolute;height: 88px;">
                     {{for k ,v of it.prop}}
+                    {{if v[1]}}
                         {{if v[0] != "exp" && v[0] != "rmb"}}
                             {{let id = ( v[0] == "money" ? 100001 : v[0] == "diamond" ? 100002 : v[0] )}}
                             {{let prop = Pi.sample[id]}}
@@ -32,17 +34,18 @@
                                 <app_a-widget-prop-base on-tap='showPropInfo("{{id}}")' style="position:relative;margin:0 5px;display:inline-block;color:#fff">
                                     {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{prop.type =="equip" ? "Lv"+prop.level :v[1]}},"name":"none","bg":0}
                                 </app_a-widget-prop-base>
-                            {{elseif v[0] == "exp"}}
-                            {{: url = "app/scene_res/res/Item/res_100003.png"}}
-                                <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
-                                    {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
-                                </app_a-widget-prop-base>
-                            {{elseif v[0] == "rmb"}}
-                            {{: url = "app/scene_res/res/Item/res_100002.png"}}
-                                <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
-                                    {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
-                                </app_a-widget-prop-base>
+                        {{elseif v[0] == "exp"}}
+                        {{: url = "app/scene_res/res/Item/res_100003.png"}}
+                            <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
+                                {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
+                            </app_a-widget-prop-base>
+                        {{elseif v[0] == "rmb"}}
+                        {{: url = "app/scene_res/res/Item/res_100002.png"}}
+                            <app_a-widget-prop-base style="position:relative;margin:0 5px;display:inline-block;color:#fff">
+                                {"prop":"","url":{{url}},"quality":5,"width":60,"height":60,"count":{{v[1]}},"name":"none","bg":0}
+                            </app_a-widget-prop-base>
                         {{end}}
+                    {{end}}
                     {{end}}
 
                 </div>

@@ -1,0 +1,5 @@
+{
+    "tpl": "./share.tpl",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

@@ -20,6 +20,7 @@
     {{let icon = prop ? prop.module[prop.career_id.indexOf(career_id)][0] : ''}}
     {{let img = prop ? Pi.pictures[icon] : ''}}
     {{let level = it1.redEquipPos[v] ? (prop.level) : it1.equip_lv}}
+    
     <div style="width:88px;height:88px;position:absolute;top:{{i%5  * 119 + 75}}px;{{i<5?'left:18':'right:18'}}px;z-index:1">
         <app_a-widget-prop-equip on-tap='selectRedEquip("{{i+','+v}}")' style="width:52px;height:52px;position: absolute;">
             {"prop":{{prop}},"url":{{img}},"width":88,"height":88,"type":"equip","solt":{{i-0+1}},"level":{{level}},"tip_keys":[{{"equip.wash."+v}}],"quality":{{prop ? '' : 6}},"bottom":22,"text":"未锻造","bg":1}
@@ -82,7 +83,7 @@
             </app_a-widget-prop-equip>
             <img src="../images/red_lock.png" style="position:absolute;top: 116px;left: 132px;z-index: 2;" />
         {{end}}
-        <div style="height: 191px;position: absolute;bottom: 10px;left: 15px;right: 10px;">
+        <div style="height: 191px;position: absolute;bottom: 10px;left: 0px;right: 0px;">
             <div class="attr_bg_left" style="left:0px;bottom:0px;"></div>
             <div class="attr_bg_middle" style="left:95px;right:95px;bottom:0px;background-repeat:repeat-x;"></div>
             <div class="attr_bg_right" style="right:0px;bottom:0px"></div>
@@ -99,19 +100,19 @@
                 {{if m_add !== "erl_type"}}
                 {{let lev = it1.equip_wash_num[prop_1.id][m_add - 0 + 1]}}
                 {{let open = prop_1.level < lev}}
-                <div on-tap="{{if !open}}selectAttr({{m_add}}){{end}}" style="position:relative;width:284px;height:30px;left:0px;right:0px;line-height:32px;margin-bottom:2px;z-index:3;margin:0 auto;">
+                <div on-tap="{{if !open}}selectAttr({{m_add}}){{end}}" style="position:relative;width:300px;height:30px;left:0px;right:0px;line-height:32px;margin-bottom:2px;z-index:3;margin:0 auto;">
                     {{%%let add = 0}}
                     {{if addArr[0] == n_add[0]}}
                     {{%%:add = n_add[1] - Math.ceil(n_add[1]/(1+addArr[1]))}}
 
-                    <div class="the_fire" style="left: 8px;top: -2px;z-index: 3;"></div>
+                    <div class="the_fire" style="left: 0px;top: -2px;z-index: 3;"></div>
                     {{end}}
                     {{let max = Math.ceil(evolution.addition_attr[n_add[0]] * it1.equip_wash[prop_1.id][it1.equip_wash[prop_1.id].length-1][1])}}
-                    <div style="position: relative;line-height: 32px;width: 138px;text-align: left;display: inline-block;margin-left: 30px;color:{{addArr[0] == n_add[0] ? '#51e650' : '#e8dfb2'}}">{{attribute[n_add[0]].name}}+{{n_add[1]}}</div>
+                    <div style="position: relative;line-height: 32px;width: 140px;text-align: left;display: inline-block;margin-left: 20px;color:{{addArr[0] == n_add[0] ? '#51e650' : '#e8dfb2'}}">{{attribute[n_add[0]].name}}+{{n_add[1]}}</div>
                     {{if !open}}
-                    <div style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;color:{{addArr[0] == n_add[0] ? '#51e650' : '#e8dfb2'}}">最大值:{{addArr[0] == n_add[0] ? Math.ceil(max * (1+addArr[1])) : max}}</div>
+                    <div style="position: relative;line-height: 32px;width: 135px;right: 0px;text-align: left;display:inline-block;color:{{addArr[0] == n_add[0] ? '#51e650' : '#e8dfb2'}}">最大值:{{addArr[0] == n_add[0] ? Math.ceil(max * (1+addArr[1])) : max}}</div>
                     {{else}}
-                    <app_a-widget-text-text style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;top:5px">{"text":{{"("+ lev + "级可洗练)"}},"textCfg":"heroEquipGray","fontSize":16,"fontFamily":"MNNNNN","space":"0"}</app_a-widget-text-text>
+                    <app_a-widget-text-text style="position: relative;line-height: 32px;width: 105px;right: 0px;text-align: left;display:inline-block;top:0px">{"text":{{"("+ lev + "级可洗练)"}},"textCfg":"heroEquipGray","fontSize":16,"fontFamily":"MNNNNN","space":"0"}</app_a-widget-text-text>
                     {{end}}
                 </div>
                 {{end}}
@@ -139,7 +140,6 @@
                     {{:wash_attr = val[1]}}
                     {{end}}
                     {{end}}
-    
                     {{%%计算当前属性的评分}}
                     {{let a = prop_1.addition_attr[it1.attr_index]}}
                     {{let grade = Math.ceil(a[1] * attribute[a[0]].prower_ratio * evolution.grade_rate)}}

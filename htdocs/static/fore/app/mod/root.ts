@@ -160,7 +160,7 @@ export const getRootWidget = function (name) {
 	}
 };
 //存储所有打开的界面，一旦界面
-let openList:any = {};
+export let openList:any = {};
 
 /**
  * @description 打开根组件,关联背景组件

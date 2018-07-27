@@ -12,7 +12,6 @@
 		{{let Pi = _get("app/mod/pi").exports.Pi}}
 		{{let gang = appCfg.gang.data}}
 		
-
 		<div style="width:100%;position:absolute;left:0;top:108px;bottom:15px">
 			<div class="line_6" style="position: absolute; top: 26px; z-index: 4;"></div>
 			<app-widget-tab-navtab style="position:absolute;width:100%;top:-6px;bottom:0;left:0px;" ev-change = 'changeColumns'>

@@ -14,7 +14,6 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"排行榜","coin":["money","diamond"],"left":0,"top":15,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}}}
     </widget>
-
     <div w-class="8" w-sid="8" style="top:147px;">
         {{let obj = {"normal":"普通榜","plush":"精英榜"} }}
         <div data-desc="tab_btn" style="position:absolute;top:-48px;">

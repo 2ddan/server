@@ -9,6 +9,7 @@
 			<div style="position: absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(2);z-index:3" class="anim_lottery_{{it1.lock==1 ? 'prop' : 'diamond'}}"></div>
 		</div>
 	{{end}}
+	
 	<div style="position:absolute;width:540px;height:868px;left:50%;margin-left:-270px">
 
 		<div style="width:100%;position:absolute;left:0;top:108px;bottom:15px">

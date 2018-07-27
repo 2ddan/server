@@ -1,0 +1,6 @@
+{
+    "tpl": "./rank_award.tpl",
+    "cfg": "./rank_award.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

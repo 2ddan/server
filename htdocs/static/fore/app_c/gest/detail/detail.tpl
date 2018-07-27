@@ -41,7 +41,7 @@
                         <div data-desc="属性"  w-class="16">
                             {{for m,n of v.attr}}
                             <div w-class="14">
-                                {{it1.attribute_config[n[0]]+":"+n[1]}}
+                                {{it1.attribute_config[n[0]]}}:{{n[1]<1 ? Math.floor(n[1]*100) + "%" : n[1]}}
                             </div>
                             {{end}}
                         </div>

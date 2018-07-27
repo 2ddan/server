@@ -1,7 +1,8 @@
-let tab = [];
+let tab = {};
 
 
-    tab.push({
+    tab["point"] = tab["point"] || [];
+    tab["point"].push({
         "id": 1,
         "type": "point",
         "condition": 1000,
@@ -13,7 +14,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["point"] = tab["point"] || [];
+    tab["point"].push({
         "id": 2,
         "type": "point",
         "condition": 2000,
@@ -25,7 +27,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["point"] = tab["point"] || [];
+    tab["point"].push({
         "id": 3,
         "type": "point",
         "condition": 4000,
@@ -37,7 +40,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["point"] = tab["point"] || [];
+    tab["point"].push({
         "id": 4,
         "type": "point",
         "condition": 10000,
@@ -49,7 +53,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["kill_num"] = tab["kill_num"] || [];
+    tab["kill_num"].push({
         "id": 5,
         "type": "kill_num",
         "condition": 5,
@@ -61,7 +66,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["kill_num"] = tab["kill_num"] || [];
+    tab["kill_num"].push({
         "id": 6,
         "type": "kill_num",
         "condition": 10,
@@ -73,7 +79,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["kill_num"] = tab["kill_num"] || [];
+    tab["kill_num"].push({
         "id": 7,
         "type": "kill_num",
         "condition": 15,
@@ -85,7 +92,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["kill_num"] = tab["kill_num"] || [];
+    tab["kill_num"].push({
         "id": 8,
         "type": "kill_num",
         "condition": 20,
@@ -97,7 +105,8 @@ let tab = [];
         ]
     });
 
-    tab.push({
+    tab["kill_num"] = tab["kill_num"] || [];
+    tab["kill_num"].push({
         "id": 9,
         "type": "kill_num",
         "condition": 25,

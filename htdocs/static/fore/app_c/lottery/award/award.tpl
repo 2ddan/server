@@ -4,6 +4,7 @@
 		<div  w-class="s2">
 			<div w-class="new_auto_title"></div>
 		</div>
+		
 		{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 		{{let Common = _get("app/mod/common").exports.Common}}
 		{{let Pi = it1.Pi}}

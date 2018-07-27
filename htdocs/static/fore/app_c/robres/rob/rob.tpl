@@ -6,6 +6,7 @@
     <widget w-tag="app_a-widget-line-line" w-class="4">
         {"line":"line_7"} 
     </widget>
+    
     {{let info = it1.info}}
     <div w-class="5">
 		<widget w-tag="app_a-widget-bg_frame-bg" w-class="10">
@@ -30,9 +31,10 @@
             {{end}}   
             {{let position = [[251,97],[49,5],[1,305],[256,300]]}}
             <div data-desc="帮会列表" w-class="13" style="top:100px;">
-                {{for i,v of it1.gangInfo.slice(0).splice((it1.page*4),(it1.page+1)*4)}}
+                {{for i,v of it1.gangInfo.slice(0).splice((it1.page*4),4)}}
                 {{if v}}
-                {{let name1 = it1.Common.fromCharCode(v[2])}}
+                {{let name1 = it1.checkTypeof(v[2],"Array") ? it1.Common.fromCharCode(v[2]) : v[2]}}
+
                 <div on-tap="gotoRob({{v[0]}},{{count[0]}},'{{name1}}')"  w-class="16" style="top:{{position[i][0]}}px;left:{{position[i][1]}}px;">
                     <div style="height:127px;line-height: 127px;">
                         <img style="vertical-align: middle" src="../images/d{{i+1}}.png" />
@@ -73,9 +75,9 @@
                     </app_a-widget-pic_text-pic_text>
                     <div  w-class="23">
                         (
-                        <app-widget-cdTime1 ev-countdownend="timeEnd" style="display:inline-block;vertical-align: middle;color:#12ff00">
+                        <app-widget-cdtime ev-countdownend="timeEnd" style="display:inline-block;vertical-align: middle;color:#12ff00">
                             {"cd_time":{{count[1][1]}},"now_time":{{count[1][0]}}}
-                        </app-widget-cdTime1>
+                        </app-widget-cdtime>
                         后增长1次)
                     </div>
                 </div>

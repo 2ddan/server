@@ -1,0 +1,7 @@
+{
+    "tpl": "./reward.tpl",
+    "cfg": "./reward.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts",
+    "css": "./reward.wcss"
+}

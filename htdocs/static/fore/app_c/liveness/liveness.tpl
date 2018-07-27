@@ -1,14 +1,16 @@
 
 {{let arr = it1.mySort()}}
-<div style="width:540px;position:absolute;max-height:720px;left:0px;top:-10px;bottom:0;overflow:hidden;z-index:2;">
+<div style="width:540px;position:absolute;left:0px;top:-10px;bottom:0;overflow:hidden;z-index:2;">
     <div class="line_6" style="position: absolute; top: 0px; z-index: 4;left: -4px;width: 545px;"></div>			
     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:645px;top:15px;left:25px">
         {"bgName":"bg_frame21"} 
     </widget>
-    <div data-desc="活跃度宝箱" style="position:absolute;top:13px;left:50px;height:195px;width:82%;text-align:center">        
+    <div class="bg_1" style="position:absolute;width:492px;height:auto;top:15px;left:25px;bottom: 0px;"></div>
+    <div data-desc="活跃度宝箱" style="position:absolute;top:13px;left:50px;height:195px;width:82%;text-align:center">
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:494px;height:181px;top:15px;left:-28px">
             {"bgName":"bg_frame40"} 
         </widget>
+        
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:345px;height:39px;top:30px;left:-10px">
             {"bgName":"bg_frame42"} 
         </widget>
@@ -52,7 +54,7 @@
         </div>     
     </div>
 
-    <div data-desc="列表" scroller="1" style="position:relative;top:210px;box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;height:448px;">
+    <div data-desc="列表" scroller="1" style="position:absolute;top:210px;box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;bottom: 10px;">
         {{for i,v of arr}}
         {{let task = v.task}}
         {{if !task.fun_key || it1.fun_id >= it1.function_open[task.fun_key].id}}

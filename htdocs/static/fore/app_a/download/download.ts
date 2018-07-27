@@ -404,7 +404,7 @@ const loadDir = (__process) => {
 		func();
 		return;
 	}
-	console.log(__process.files);
+	// console.log(__process.files);
 	let t = Date.now();
 	//console.log("loadDir start : "+__process.files.join(","),__process);
 	//下载开始

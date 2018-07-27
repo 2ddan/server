@@ -92,6 +92,8 @@ table["204014"] = {content:"每日心法副本挑战次数：#",css:"undefined"}
 
 table["204016"] = {content:"开启天庭秘境免费快速扫荡",css:"undefined"};
 
+table["205000"] = {content:"少侠在荒野除魔40级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
+
 table["205001"] = {content:"少侠在荒野除魔40级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
 
 table["205002"] = {content:"少侠在荒野除魔60级boss战役中伤害突出,特发此邮件奖励",css:"undefined"};
@@ -159,6 +161,42 @@ table["207013"] = {content:"道友举世无双,在水晶掠夺战中位列战区
 table["207014"] = {content:"道友举世无双,在水晶掠夺战中位列战区5--10名，特发奖励以资鼓励",css:"undefined"};
 
 table["207015"] = {content:"道友举世无双,在水晶掠夺战中位列战区11--20名，特发奖励以资鼓励",css:"undefined"};
+
+table["207016"] = {content:"道友举世无双,在水晶掠夺战中位列战区21--50名，特发奖励以资鼓励",css:"undefined"};
+
+table["207021"] = {content:"慷慨解囊！#大方的赠送了#水晶给你，快去谢谢他吧……",css:"undefined"};
+
+table["208001"] = {content:"报……有盖世无双的年轻人攻破了敌方的一座内城，爆了一地的物资，请少侠查收",css:"undefined"};
+
+table["208011"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第一，天降祥瑞",css:"undefined"};
+
+table["208012"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第二，天降祥瑞",css:"undefined"};
+
+table["208013"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第三，天降祥瑞",css:"undefined"};
+
+table["208014"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第4-5，天降祥瑞",css:"undefined"};
+
+table["208015"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第6-10，天降祥瑞",css:"undefined"};
+
+table["208016"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第11-20，天降祥瑞",css:"undefined"};
+
+table["208017"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第21-50，天降祥瑞",css:"undefined"};
+
+table["208018"] = {content:"九霄龙云惊天变！恭喜大侠在门派战绩排行榜位列第51-100，天降祥瑞",css:"undefined"};
+
+table["208021"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第一",css:"undefined"};
+
+table["208022"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第二",css:"undefined"};
+
+table["208023"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第三",css:"undefined"};
+
+table["208024"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第4-5",css:"undefined"};
+
+table["208025"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第6-10",css:"undefined"};
+
+table["208026"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第11-20",css:"undefined"};
+
+table["208027"] = {content:"长江黄河般的艰难险阻在你们门派都算不了什么！恭喜获得门派战绩排行榜第21-50",css:"undefined"};
 
 
 export const msg = table;

@@ -118,9 +118,24 @@ export class Arena extends Widget {
 
     //购买挑战次数
     buyCount = () => {
-        let vip = get("player.vip"),
+        let player = get("player"),
             num = get("arena.buy_fight_times"),
             use = get("arena.fight_times");
+        if((arena_base.buycount_cost[num] || arena_base.buycount_cost[arena_base.buycount_cost.length-1]) > player.diamond){
+            globalSend("popTip", {
+                title: "<div>元宝不足</div><div>是否前往充值</div>",
+                btn_name: ["充值","取消"],
+                cb: [
+                    //确认
+                    () => {
+                        globalSend("gotoRecharge");
+                    },
+                    //取消
+                    () => {}
+                ]
+            });
+            return
+        }
         //购买的数据
         let buyData = {
             "title": "购买次数",
@@ -130,7 +145,7 @@ export class Arena extends Widget {
             "price": arena_base.buycount_cost,
             "max_buy": undefined,
             "already_buy": num,
-            "has_count":  vip_advantage[vip].jjc_free_times + num - use,
+            "has_count":  vip_advantage[player.vip].jjc_free_times + num - use,
             "buy_count": 1,//购买数量初始值默认为1
             "callBack": (r) => {//参数为本次购买次数
                 buy(r);
@@ -514,6 +529,7 @@ export const totalData = {
     "referTime": 0,
     "freeTimes": [],
     "delay" : true,
+    "vip_advantage":vip_advantage
 }
 
 export const updataHtml = (isSet?: boolean) => {

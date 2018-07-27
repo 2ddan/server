@@ -11,7 +11,6 @@
         <widget w-class="8" on-tap="{{it1.open_type == 'rank_info' ? 'gobackrank' : 'goback'}}" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="8" style="z-index: 1;">
             {"guide":"returnTo","icon":"close"} 
         </widget>
-
         <widget w-class="10" w-tag="app_a-widget-pic_text-pic_text" w-sid="10">{"icon":"cover_title","width":187,"height":33,"align":"center","marginLeft":3,"text":"本周试炼排名","textCfg":"gangCoverTitle","space":0,"fontSize":21,"top":4,"left":0} 
         </widget>
         <app_a-widget-rank-rank_title style="position: absolute;top: 0px;left: -8px;width: 102%;height: 50px;">
@@ -43,13 +42,13 @@
                     <span style="width:32%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;">{{p.gang_name}}</span>
 
                     <span style="width:20%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;">{{p.record[0]}}关</span>
-
+                    {{if it1.guild_rank[q + 1]}}
                     <span style="width:24%;height:100%;line-height:50px;color:#fde7ca;font-size:18px;text-align:center;font-family:mnjsh;position: relative;display: inline-block;">
                         <app_a-widget-coin-coin style="width: 100%;text-align: center;">
                             {"icon":"contribute","text":[{{it1.Common.numberCarry(it1.guild_rank[q + 1].contribute[1], 10000)}}],"height":24,"width":24}
                         </app_a-widget-coin-coin>
                     </span>
-                    
+                    {{end}}
                     <widget w-tag="app_a-widget-line-line" style="position: absolute;bottom: 0px;width: 100%;left: 0;">
                         {"line":"line_1"} 
                     </widget>

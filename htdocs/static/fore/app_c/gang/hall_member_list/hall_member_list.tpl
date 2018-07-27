@@ -16,7 +16,6 @@
 				<widget w-class="82" w-tag="app_a-widget-bg_frame-bg" w-sid="82">
 					{"bgName":"bg_frame19"} 
 				</widget>
-
 				{{let img = ""}}
 
 				{{: img = (Pi.pictures['playerhead'+(v.head || v.career_id)])}}

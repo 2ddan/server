@@ -6,7 +6,6 @@
 {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 {{let career_id = it1.player.career_id}}
 
-
 <div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%;z-index:2;">
     <div w-class="s8" style="height:710px;margin-top:-370px;">
         <div w-class="s12" >
@@ -63,7 +62,7 @@
                             "type":"monster",
                             "module":{
                                 "module":{{it[0]}},
-                                "position":[0,-3,0],
+                                "position":[0,0,0],
                                 "scale":{{it[1]*2.2}},
                                 "rotate":[0,0,0]
                             },

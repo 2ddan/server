@@ -12,6 +12,7 @@
         </widget>
         <widget w-class="6" w-tag="app_a-widget-bg_frame-bg" w-sid="6">{"bgName":"bg_frame21"} 
         </widget>
+        
         <div w-class="9" w-sid="9">
             <div w-class="15" w-sid="15">
                 {{let cfg_list = it1.shopData.arena_award_shop}}

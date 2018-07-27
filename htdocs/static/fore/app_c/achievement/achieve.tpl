@@ -1,12 +1,9 @@
 {{let Common = _get("app/mod/common").exports.Common }}
 {{let arr = it1.task()}}
-<div style="width:540px;position:absolute;max-height:720px;left:0px;top:-10px;bottom:0;overflow:hidden;z-index:2;">
+<div style="width:540px;position:absolute;left:0px;top:-10px;bottom:0;overflow:hidden;z-index:2;">
     <div class="line_6" style="position: absolute; top: 0px; z-index: 4;left: -4px;width: 545px;"></div>			
-    <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:645px;top:15px;left:25px">
-        {"bgName":"bg_frame21"} 
-    </widget>
-
-    <div scroller="1" style="box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;height:642px;position:relative;top:15px;">
+    <div class="bg_1" style="position:absolute;width:492px;height:auto;top:15px;left:25px;bottom: 15px;"></div>
+    <div scroller="1" style="box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;height:95%;position:relative;top:15px;">
         {{for i,v of arr}}
         {{let task = v.task}}
         {{if !task.fun_key || it1.fun_id >= it1.function_open[task.fun_key].id}}

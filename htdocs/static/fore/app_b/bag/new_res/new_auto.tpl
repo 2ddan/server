@@ -4,6 +4,7 @@
 		<div style="position: absolute;top: -35px;width: 100%;height: 238px;z-index: 2;">
 			<div w-class="new_auto_title"></div>
 		</div>
+		
 		<div w-class="new_auto_bg" >
 			{{let appCfg = _get("app/mod/db").exports.data}}
 			{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}

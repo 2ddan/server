@@ -1,5 +1,6 @@
 {
     "type": "node",
+    "name":"perspectiveCamera",
     "transform": {
         "position": [{{it.x}}, {{it.z || 0}}, {{it.y}}],
         "scale":  [1,1,1],

@@ -16,4 +16,5 @@
 <widget w-tag={{v.widget||it.widget}}>{{r}}</widget>
 {{end}}
 <div style="width: 50%;height: 10px;"></div>
+
 </div>

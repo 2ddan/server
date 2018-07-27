@@ -16,7 +16,6 @@
         {{end}}
     </div>
 
-
     <div w-class="43">
         <app_a-widget-text-text style="vertical-align: middle;margin-top: -3px;">
                 {"text":"积分达到{{it.need}}可领取","textCfg":"heroEquip","fontSize":20,"space":0}

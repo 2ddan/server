@@ -11,11 +11,10 @@
   
     <div  style="pointer-events: none;width: 540px;height: 860px;position: absolute;top: 40px;left: 50%;margin-left: -270px;">
         <app-scene-base-scene  style="width: 100%;height: 100%;">
-            {"name":"uiscene","type":"effect","module":"" }
+            {"name":"uiscene","type":"effect","module":"","width":540,"height":900 }
         </app-scene-base-scene>
     </div>
    
-    
     <div style="width:540px;position:absolute;left:50%;top:0;bottom:0;margin-left:-270px;">
         <widget w-class="s7" class="shadow7" w-tag="app_a-widget-btn-ling" on-tap="openSelect" >
             {"class":"default","fontsize":20,"color":"#49312E","text":"    未满    三星","width":77,"height":77,"color":"#fde7ca"} 
@@ -65,7 +64,7 @@
         {{let id = point%5 }}
         {{let fight = (it1.index === index && i == id) ? 1 : 0 }}
 
-        <div w-class="index_{{i}}" on-tap="openMission({{v.mission_id}})" style="position:absolute;width: 120px;height: 120px;">
+        <div w-class="index_{{i}}" on-tap="openMission({{v.mission_id}})" style="position:absolute;width: 160px;height: 160px;">
             {{%===关卡宝箱=====}}
             {{if it1.equip_fb_star[it1.index-1][i] > 0}}
             {{let flag = equip_fb_welfare_box[v.mission_id]}}
@@ -78,13 +77,13 @@
             {{end}}
             {{let r = (v.level_limit>player.level ? v.level_limit : 0)? 100 : 0}}
             {{if fight}}
-            <div class="fightStateAnim" style="transform: scale(0.5);position: absolute;top: -85px;left: 8px;pointer-events: none;"></div>
+            <div class="fightStateAnim" style="transform: scale(0.5);position: absolute;top: -75px;left: 30px;pointer-events: none;z-index: 3;"></div>
             <app_a-widget-guide-guide>
                 {{"equip_curr"}}
             </app_a-widget-guide-guide>
             {{end}}
             {{if !r}}
-            <app_b-widget-star-star style="position: absolute;top: -9px;left: 50%;transform: translateX(-50%);white-space: nowrap;">
+            <app_b-widget-star-star style="position: absolute;bottom: -26px;left: 50%;transform: translateX(-50%);white-space: nowrap;">
                 {"star_light":{{star_num}},"star_dark":{{3-star_num}} }
             </app_b-widget-star-star>    
 

@@ -11,6 +11,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"我的资源","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
+        
         <div style="width: 450px;position: relative; top: 26px;left: 45px;height: 365px;">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" style="opacity: 0.95;">
                 {"bgName":"bg_frame26"} 
@@ -24,9 +25,9 @@
                     {{let t = it1.getFixTime()}}
                     <div>个人水晶:{{it1.info.own_total_forage}}</div>
                     <div>
-                        <app-widget-cdTime1 ev-countdownend="timeEnd1" style="display:inline-block;vertical-align: middle;color:#12ff00">
+                        <app-widget-cdtime ev-countdownend="timeEnd1" style="display:inline-block;vertical-align: middle;color:#12ff00">
                             {"cd_time":{{t[1]}},"now_time":{{t[0]}}}
-                        </app-widget-cdTime1>
+                        </app-widget-cdtime>
                         后可获得<span style="color:#12ff00">{{it1.robres_base.spell_get_fixed_provender[1]}}</span>固定水晶
                     </div>
 
@@ -48,7 +49,11 @@
                     </div>
                 </div>
             </div>
-                
+
+            <widget w-class="s18" w-tag="app_a-widget-btn-ling" style="right:10px;top:278px;" on-tap="openGive">
+                {"class":"default","fontsize":20,"color":"#fdedd7;","text":"赠送","width":60,"height":60,"textCfg":"lingBtn"} 
+            </widget>
+
             <widget  w-tag="app_a-widget-pic_other-pic_other" style="position: absolute;left: -4.7%;bottom: -20px;width: 109%;">
                 {"icon":"tips_bottom"} 
             </widget>

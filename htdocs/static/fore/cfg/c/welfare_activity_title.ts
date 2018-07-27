@@ -32,6 +32,17 @@ let s:any = {};
     "type" : "gift_main",
     "path" : "app_c-vip_daily_gift-vip_daily_gift",
     "tips" : ["welfare_act.daily_gift"]
+};
+    s["3"]  = {
+    "index" : "3",
+    "id" : "105",
+    "name" : "兑换码",
+    "icon" : "menu_dailyGift_icon",
+    "level_limit" : -1,
+    "desc" : null,
+    "type" : "undefined",
+    "path" : "app_c-exchange_code-exchange_code",
+    "tips" : undefined
 };
 
 

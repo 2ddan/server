@@ -5,7 +5,7 @@ import { Pi } from "app/mod/pi";
 import { hiddenTable } from "app/mod/hidden";
 
 hiddenTable.addHandler('hidden', function (arg):any {
-    let ua = navigator.userAgent.toLowerCase();
+    // let ua = navigator.userAgent.toLowerCase();
     // if (/iphone|ipad|ipod/.test(ua)) {
     //     //alert("iphone");		
     // } else if (/android/.test(ua)) {

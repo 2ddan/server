@@ -1,4 +1,5 @@
 import * as fight from "fight/a/fight";
+import { buff } from "fight/b/common/buff";
 import { Init_Fighter as initFighter } from "fight/a/common/init_fighter";
 import { EType, blend } from "../fight/a/analyze";
 
@@ -6,7 +7,7 @@ import { EType, blend } from "../fight/a/analyze";
 //创建场景
 export const createScene = function (data) {
     var isScreen = !!data.is_screen,
-        fightScene = fight.FMgr.create(data.type);
+        fightScene = fight.FMgr.create(data.type,buff);
     fightScene.start();
     return fightScene;
 };
@@ -216,7 +217,7 @@ export const calcDeath = function (scene, erlangDeals) {
 }
 
 //计算场景内玩家人数
-export const calcFighterCount = function (scene, ID) {
+export const calcFighterCount = function (scene, ID?) {
     var len = 0,
         list = [];
     for (var e of scene.fighters) {

@@ -16,6 +16,7 @@
     <app_a-widget-text-text style="position:absolute;top:73px;left:327px;">
         {"text":"超值","fontSize":32,"textCfg":"activity","space":-6 }
     </app_a-widget-text-text>
+    
     <app_a-widget-text-text style="position:absolute;top:77px;left:387px;">
         {"text":"好礼","fontSize":26,"textCfg":"activity","space":-4 }
     </app_a-widget-text-text>

@@ -1,6 +1,7 @@
 {{let cfg = _get("app/mod/pi").exports.cfg}}
 {{let menus = cfg.menu_explore.menu_explore || []}}
 {{let isOpen = _get("app_c/robres/robres").exports.isOpen}}
+{{let isOpen1 = _get("app_c/endless_boss/endless_boss").exports.isOpen}}
 
 <div style="width:100%;height:100%;position:absolute;z-index:2;"> 
     <div w-class="bg"></div>
@@ -15,6 +16,7 @@
             <app_a-widget-guide-guide>
                 {{v.fun_key}}
             </app_a-widget-guide-guide>
+            
             <widget w-tag="app_a-widget-pic_text-pic_text">
                 {"icon":"fun_name_bg","width":57,"height":120,"text":""}
             </widget>
@@ -24,8 +26,9 @@
                 {"tip_keys":{{v.tips}}}
             </app-widget-tip-tip>
             {{end}}
-            {{if v.interface == "gotoRobres"}}
-                {{if  isOpen()}}
+            {{if v.interface == "gotoRobres" || v.interface == "gotoEndlessBoss"}}
+            {{let _isOpen = v.interface == "gotoRobres" ? isOpen : isOpen1}}
+                {{if _isOpen()}}
                 <app_a-widget-pic_text-pic_text style="position:absolute;top:113px;">
                     {"icon":"open","width":68,"height":25,"text":" "} 
                 </app_a-widget-pic_text-pic_text>

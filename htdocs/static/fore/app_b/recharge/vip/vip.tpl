@@ -16,9 +16,6 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"充值特权","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
-
-        
-
         <div w-class="s13">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" >
                 {"bgName":"bg_frame26"} 

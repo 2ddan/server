@@ -398,8 +398,8 @@ export class Gang extends Widget {
     }
     //打开门派战
     openGangBattle() {
-        // globalSend("openGangBattle");
-        globalSend("attrTip", { words: `敬请期待....` })
+        globalSend("openGangBattle");
+        // globalSend("attrTip", { words: `敬请期待....` })
     }
     funInfo() {
         globalSend("funInfo", {
@@ -960,10 +960,13 @@ const createGang = function (name) {
             //关闭界面
             gangFun.closeW("app_c-gang-create-create");
             gangFun.closeW("app_c-gang-main-main");
-            readAllData(() => {
-                forelet.paint(getData());
-                open("app_c-gang-hall-hall_m");
-            });
+            setTimeout(()=>{
+                readAllData(() => {
+                    forelet.paint(getData());
+                    open("app_c-gang-hall-hall_m");
+                });
+            },50)
+            
         })
         .catch((data) => {
             globalSend("screenTipFun", {

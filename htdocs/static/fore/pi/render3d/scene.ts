@@ -461,10 +461,9 @@ class SceneImpl implements Scene {
 				attachment: obj.attachment  // 3D对应3D场景，2D对应2D场景
 			}
 		};
-
 		if (!obj.ref) {
 			let resCount = { "tatal": 0, "curr": 0 };
-			this.initSceneChildren(parent, [obj], resCount, resTab);
+			this.initSceneChildren(parent, [obj], resCount, resTab,obj.keep);
 		} else {
 			throw new Error("insert failed, obj.ref is already exist");
 		}
@@ -513,7 +512,11 @@ class SceneImpl implements Scene {
 		let targetObj = findProperty(obj, keys);
 
 		if (this[propertyIndex])
-			this[propertyIndex].call(this, targetObj[propertyIndex], obj.ref.impl, keys, obj.resTab);
+			if(propertyIndex == "scale" && obj.textCon && obj.textCon.textcfg){
+				this[propertyIndex].call(this, targetObj[propertyIndex], obj.ref.impl, obj.textCon.textcfg, obj.resTab);
+			}else{
+				this[propertyIndex].call(this, targetObj[propertyIndex], obj.ref.impl, keys, obj.resTab);
+			}
 		else {
 			let targetimpl = findProperty(obj.ref.impl, keys);
 			targetimpl[propertyIndex] = targetObj[propertyIndex];
@@ -723,7 +726,7 @@ class SceneImpl implements Scene {
 	}
 
 	/*************************************************初始化场景********************************************/
-	private initSceneChildren(parent, children, resCount, resTab) {
+	private initSceneChildren(parent, children, resCount, resTab, keep?) {
 		if (!children || children.length === 0){
 			parent.ref.impl.childReadyOk();
 			return;
@@ -756,6 +759,9 @@ class SceneImpl implements Scene {
 
 			// 2D相机返回undefined
 			if (!impl) continue;
+			if (keep !== undefined){
+				impl.keep = keep;
+			}
 			children[i].ref = {
 				impl: impl
 			};
@@ -810,7 +816,7 @@ class SceneImpl implements Scene {
 			}
 
 			obj.children && (impl.childrenCount = obj.children.length);
-			this.initSceneChildren(obj, obj.children, resCount, resTab);
+			this.initSceneChildren(obj, obj.children, resCount, resTab,keep);
 		}
 
 		//不是和骨骼节点一起插入进场景的蒙皮模型，需要去场景数上找到对应骨骼

@@ -4,6 +4,7 @@ import { getWidth, getHeight, getScale,open,destory } from "pi/ui/root";
 import { Forelet } from "pi/widget/forelet";
 import { objCall, call } from 'pi/util/util';
 import { set as task } from 'pi/util/task_mgr';
+import { GeometryRes } from 'pi/render3d/load';
 import { THREE } from "pi/render3d/three";
 import { getGlobal } from "pi/widget/frame_mgr";
 //mod
@@ -153,6 +154,7 @@ export class handScene {
 				
 				
 				mgr.setOnlyPos(mgr_data.camera[mgr_data.name], [e.fighter.x, e.fighter.y, e.fighter.z]);
+				// setCamera(mgr_data.camera[mgr_data.name],e.fighter,[e.fighter.x, e.fighter.y, e.fighter.z],{x:0,y:0,z:0});
 				//handScene.initFighterImage(__self.skill);
                 //cuurUI.push({ "param": { head: null, f: __self , mapList : mapList}, "fun": UiFunTable.curTargetEffect });
 				// if(mgr_data.name == "fight"){
@@ -203,8 +205,15 @@ export class handScene {
 			func = function () {
 				if(f.type == "monster"){
 					mgr.setOnlyPos(f,[1000,0,0]);
+					//调用dispose
+					// let mmm  = f._show.old.ref.impl.clone(true);
 					f._show.time = Date.now();
 					handScene.cach.add(f.sid,f._show);
+					// let _res = new GeometryRes();
+					// removeGeo(f._show.old.ref.impl,(data)=>{
+					// 	_res.link = data;
+					// 	_res.destroy();
+					// });
 				}else{
 					task(objCall, [mgr, "remove", [f],mgr_data.name], 60000, 1);
 					if(handScene.pet[e.fighter]){
@@ -261,25 +270,10 @@ export class handScene {
         let c = mgr_data.camera[mgr_data.name],
             cp = c._show.old.transform.position,
             fp = __self._show.old.transform.position,
-            r,
-			b = c.fixto;
+            r;
 
-        if(!c.hand && (cp[0] != fp[0] || cp[2] != fp[2])){
-            r = setCamera(cp,fp,__self.speed,1);
-			r && mgr.setOnlyPos(c, r);
-			if(e.moveto){
-				c.fixto = calcRang(fighter,{x:e.moveto.x,y:e.moveto.z})||b;
-				// console.log(c.fixto);
-				//Util.slope(fighter,{x:e.moveto.x,y:e.moveto.z}) || 0;
-			}
-			// if(!c.fixing && !isNaN(c.fixto)){
-				// cuurUI.push({ "param": {camera:c}, "fun": UiFunTable.rotateCamera });
-				
-				// c.fixing = true;
-			// }
-			if(isNaN(c.fixto)){
-				c.fixto = b;
-			}
+        if(fighter == __self && (cp[0] != fp[0] || cp[2] != fp[2])){
+            setCamera(c,__self,fp,e.moveto);
 		}
 		if(__self){
 			let fighterPosition = [fp[0],fp[1],fp[2]];
@@ -572,6 +566,7 @@ export class handScene {
 		let func = (f,type?) => {
 			delete f._show;
 			if (f.sid == id)
+				// setCamera(mgr_data.camera[mgr_data.name],f,[f.x,f.y,f.z]);
 				mgr.setCameraPos(mgr_data.camera[mgr_data.name], [f.x, f.y, f.z]);
 			f.state = "standby";
 			mgr.create(f, type || f.type);
@@ -747,7 +742,7 @@ let toCallBack,_limit,
  */
 const modifyTargetHead = (fighter,e) => {
 	let target_mark = false;
-	if(fighter.curTarget && (mgr_data.name == "public_boss" || mgr_data.name == "wild" || mgr_data.name == "gang_boss" || (FMgr.scenes && FMgr.scenes.type == "fight"))){
+	if(fighter.curTarget && (mgr_data.name == "public_boss" || mgr_data.name == "wild" || mgr_data.name == "gang_boss" || mgr_data.name == "endless_boss" || (FMgr.scenes && FMgr.scenes.type == "fight"))){
 		if(handScene.mapList[fighter.curTarget] && handScene.mapList[fighter.curTarget].type == "monster" && handScene.mapList[fighter.curTarget].show_type == 1 && handScene.mapList[fighter.curTarget].name.indexOf("宝箱守卫") == -1){			
 			if(cuurUI.length == 0){
 				cuurUI.push({ "param": { head: null, f: e ,mapList:handScene.mapList }, "fun": UiFunTable.targetHead });	
@@ -872,6 +867,21 @@ const updateStarEffect = ( f ) => {
 		f.body_eff = body_eff;
 	}
 }
+
+/**
+ * @description 递归查找geometry属性并移除
+ */
+const removeGeo = (data,cb?) => {
+	if(data.geometry){
+		cb && cb(data.geometry)
+	}
+	if(data.children){
+		data.children.forEach(v=>{
+			removeGeo(v,cb)
+		})
+	}
+}
+
 /**
  * 计算两点的直线与y正方向的夹角
  * @param src 
@@ -1073,21 +1083,35 @@ const cDd = (t,p) => {
  * @param s 
  * @param n 
  */
-const setCamera = (c,f,s,n) => {
-    // let d = cDd({x:c[0],y:c[2]},{x:f[0],y:f[2]}),r;
-    return [f[0],f[2],0];
+const setCamera = (c,f,fp,moveto?) => {
+	// let d = cDd({x:c[0],y:c[2]},{x:f[0],y:f[2]}),r;
+	let oldTotate = c.fixto;
+	mgr.setOnlyPos(c, [fp[0],fp[2],0]);
+	if(moveto){
+		c.fixto = calcRang(f,{x:moveto.x,y:moveto.z})||oldTotate;
+		// console.log(c.fixto);
+		//Util.slope(fighter,{x:e.moveto.x,y:e.moveto.z}) || 0;
+	}
+	// if(!c.fixing && !isNaN(c.fixto)){
+		// cuurUI.push({ "param": {camera:c}, "fun": UiFunTable.rotateCamera });
+		
+		// c.fixing = true;
+	// }
+	if(isNaN(c.fixto)){
+		c.fixto = oldTotate;
+	}
 };
 //相机旋转
 const rotateCamera = () => {
 	let DELAY = 300,
+		rotate: number,
+		diff: number,
+		dtime: number,
 		perRotate = Math.PI/400,
-		camera = mgr_data.camera[mgr_data.name];
-	
-	if(!camera || mgr_data.name !== "wild" || (FMgr.scenes && FMgr.scenes.type == "fight")) return;
-
-	let	rotate = camera.rotate[1],
-		diff = camera.fixto-rotate,
-		dtime,
+		camera = mgr_data.camera[mgr_data.name],
+		per : number,
+		abs : number,
+		mark : number,
 		func = () => {
 			if(camera.rotate[1]>=Math.PI*2){
 				camera.rotate[1]-=Math.PI*2;
@@ -1098,13 +1122,22 @@ const rotateCamera = () => {
 			camera.time = Date.now()+10000000;
 			camera.fixing = false;
 		};
+	
+	if(!camera || mgr_data.name !== "wild" || (FMgr.scenes && FMgr.scenes.type == "fight")) return;
+	if(camera._show){
+		rotate = camera._show.old.transform.rotate[1];
+	}else{
+		return;
+	}
+	
+	diff = camera.fixto-rotate;
 	if(!__self){
 		return;
 	}
 	// console.log(__self.moving,__self.state);
 	if(__self.moving === 0 || diff == 0){
 		func();
-		camera.fixto = camera.rotate[1];
+		camera.fixto = rotate;
 		return;
 	}else if(__self.moving > 0 && !camera.fixing){
 		camera.time = Date.now()+DELAY;
@@ -1117,12 +1150,10 @@ const rotateCamera = () => {
 	}
 	camera.time = Date.now();
 	perRotate *= (dtime/16);
-	let per,
-		abs = Math.abs(diff),
-		mark = abs/diff;
+	abs = Math.abs(diff);
+	mark = abs/diff;
 	if(abs>Math.PI){
-		camera.rotate[1] +=  mark*2*Math.PI;
-		rotate = camera.rotate[1];
+		rotate += mark*2*Math.PI;
 		diff = camera.fixto-rotate;
 	}
 	per = diff/perRotate;
@@ -1151,6 +1182,7 @@ const permanent = ()=>{
 	// 	}
 	// });
 }
+
 // ================================= 立即执行
 setShieldBack("fighter",refreshRand);
 (renderHandlerList as any).add((msg)=>{

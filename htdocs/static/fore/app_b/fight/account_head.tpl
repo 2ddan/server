@@ -18,4 +18,5 @@
     </div>
     {{let title = it1.account.outcome === 'lose' ? "lose_title" : (it1.account.extra && it1.account.extra.source ==="exp_fb") ? "end_title" : "win_title"}}
     <div w-class="{{title}}"></div>
+    
 </div>

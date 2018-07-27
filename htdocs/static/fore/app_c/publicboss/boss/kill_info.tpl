@@ -15,6 +15,7 @@
         </widget>
         <widget w-class="7" w-tag="app_a-widget-pic_other-pic_other" w-sid="7" style="z-index:2">{"icon":"pendant"} 
         </widget>
+        
         <widget w-class="8" on-tap="{{it1.open_type == 'rank_info' ? 'gobackrank' : 'goback'}}" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="8" style="z-index: 1;">
             {"guide":"returnTo","icon":"close"} 
         </widget>

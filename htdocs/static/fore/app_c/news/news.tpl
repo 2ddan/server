@@ -10,6 +10,7 @@
 		<widget w-class="4" w-tag="app_a-widget-bg_frame-bg" w-sid="4">
 			{"bgName":"bg_frame21"} 
 		</widget>
+		
 		<div w-class="5" w-sid="5">
 			{{if it1.list && it1.list.length}}
             <app-widget-step style="position: absolute;width:105%;height: inherit;top:20px;bottom:0;left:0;line-height:18px;">

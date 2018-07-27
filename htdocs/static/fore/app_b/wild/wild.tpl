@@ -11,6 +11,7 @@
 {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 {{let Util = _get("app/mod/util").exports.Util}}        
 
+
 <div style="visibility:{{it1.visible ? 'hidden' : 'visible'}};position:absolute;width:100%;height:100%;left:0;top:0;">
         {{let un_defence = player.allAttr ? player.allAttr.un_defence : 0}}
         {{let a =  (it1.wild_mission[wild.wild_boss_order].A/(it1.attackCount + 0.25*un_defence )) }}
@@ -76,8 +77,14 @@
         {{let prop_id = it1.bossMisson ? it1.wild_boss[curMission.skip_boss].show_award :  wild.task.guide ? curMission.guide_drop_id : curMission.drop_id[wild.task.award_index]}}
         {{let propName = Pi.sample[prop_id] }}
         <div {{if it1.task_anima.border_opacity}}class="taskInOut"{{else}}{{end}} style="width:207px;height:127px;background:rgba(0,0,0,0.6);border-radius: 5px;right: 50%;margin-right: -{{root.getWidth() / 2 - 10}}px;bottom: 140px;padding-top: 5px;position: absolute;display:{{ chatShow ? 'block' : 'none'}};">
-            {{let complete = wild.wild_task_num+wild.guide_num + (wild.task.killNum >= wild.task.needKillNum ? 1:0)}}
-            {{let total = wild.wild_boss[wild.wild_boss_order].task_num +wild.wild_boss[wild.wild_boss_order].guide_num}}
+           
+            {{let wild_task_num = wild.wild_task_num + (wild.task.killNum >= wild.task.needKillNum ? 1:0)}}
+            {{if wild_task_num > wild.wild_boss[wild.wild_boss_order].task_num}}
+            {{: wild_task_num = wild.wild_boss[wild.wild_boss_order].task_num}}
+            {{end}}
+
+            {{let complete = wild_task_num + wild.guide_num}}
+            {{let total = wild.wild_boss[wild.wild_boss_order].task_num + wild.wild_boss[wild.wild_boss_order].guide_num}}
             {{let bol = wild.task.killNum >= wild.task.needKillNum}}
             <div style="position:absolute;top: 13px;left: 7px;overflow:hidden;height:26px;width:191px;">
                 <div class="shadow" w-class="mission_title" style="position:absolute;top: 0;left: 0;">
@@ -157,6 +164,7 @@
     <app_b-open_fun-open_fun></app_b-open_fun-open_fun>
 
     <app_b-player-top style="width:{{root.getWidth()}}px;top:0px"></app_b-player-top>
+    <app_b-wild_pk-wild_pk style="position: absolute;bottom: 340px;left: 0px;"></app_b-wild_pk-wild_pk>
 
     <app_b-menu-parent style="bottom:5px;width:{{root.getWidth()}}px;z-index:2"></app_b-menu-parent>
     <app_b-random_boss-random_boss></app_b-random_boss-random_boss>
@@ -169,9 +177,9 @@
     <app_b-playermission-playermission style="display:{{ chatShow ? 'block' : 'none'}}"></app_b-playermission-playermission>
     
 
-    <app_b-online_gift-online_gift style="left: 15px;bottom: 260px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-online_gift-online_gift>
+    <app_b-online_gift-online_gift style="left: 15px;bottom: 230px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-online_gift-online_gift>
 
-    <app_b-limit_gift-limit_gift style="left: 15px;bottom: 350px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-limit_gift-limit_gift>
+    <app_b-limit_gift-limit_gift style="left: 120px;bottom: 230px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-limit_gift-limit_gift>
 
     {{if it1.publicboss_obj && it1.publicboss_obj.type == "revive"}}
     <div style="width: 244px;height: 120px;position: absolute;left: 50%;bottom: 265px;margin-left: -125px;">

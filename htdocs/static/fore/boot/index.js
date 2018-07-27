@@ -25,6 +25,21 @@ winit.setLog = (function(){
 		if(self.pi_modules && scores.pi_modules)log("pi_modules");
 	} 
 })();
+winit.ptLog = (function(){
+	var h = "http://bt.17youx.cn";
+	var img = new Image();
+	var join = function(obj){
+		var s = "";
+		for(let k in obj){
+			s += (k+"="+obj[k]+"&");
+		}
+		s+= ("_hash="+Math.random());
+		return s;
+	}
+	return function(key,param){
+		img.src = h + key + "?" + join(param);
+	}
+})();
 if(winit.wifi){
     winit.step = 0;
 
@@ -38,20 +53,4 @@ if(winit.wifi){
     winit.loadJS(winit.domains, "/dst/boot/next.js?636", "utf8", winit.initFail, "load next error");
 
     winit.loadJS(winit.domains, winit.path + ".depend?" + Math.random(), "utf8", winit.initFail, "load list error");
-}
-// alert(navigator.userAgent);
-var userAgent = navigator.userAgent.toLocaleLowerCase();
-try{
-	if(userAgent.indexOf("yineng") >= 0){
-		if(userAgent.indexOf("tbs") >= 0){
-			if(/chrome/g.test(userAgent)){
-				var text = userAgent.split("chrome/");
-				if(text[1].split(".")[0] - 0 < 36){
-					alert("更新中！请稍后进入游戏！请不要关闭游戏");
-				}
-			}
-		}
-	}
-} catch (log) {
-	console.log(log);
 }

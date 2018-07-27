@@ -16,7 +16,6 @@
         <div w-class="player_top_namebg" style="left: 81px;top: 36px;"></div>
         <div w-class="wild_name_bg" style="left: 102px;top: 72px;"></div>
     </div>
-
     <div class="shadow" style="top: 43px;width: 134px;left: 110px;height: 20px;line-height:20px;color:#fde7ca;font-size:18px;position: absolute;font-family: mnjsh;">
         {{player.name}}
     </div>

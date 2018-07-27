@@ -503,10 +503,12 @@ let list = [
      * 抢夺水晶----领奖
      */
     {
-        depend: ["robres.achieve_record.get_res", "robres.achieve_record.grab_time", "robres.award_record"],
+        depend: ["open_fun.id", "robres.achieve_record.get_res", "robres.achieve_record.grab_time", "robres.award_record"],
         fun: [
             [
-                ["==", function () {
+                [">=", { dkey: "open_fun.id" }, function () {
+                    return function_open["robres"].id;
+                }], ["==", function () {
                     let get_res = db.get("robres.achieve_record.get_res") || 0;
                     let times = db.get("robres.achieve_record.grab_time") || 0;
                     let award_record = db.get("robres.award_record") || [];

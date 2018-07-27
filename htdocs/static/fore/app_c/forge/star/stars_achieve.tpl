@@ -15,7 +15,6 @@
     <div w-class="role_bottom" style="width:100%;bottom:0px;"></div>
 
     <div style="position:absolute;left:0;right:0;top:75px;margin-top:-75px;bottom:0;">
-
     {{let module = it1.role_base[player.career_id].module}}
     {{let weapon= null}}
     {{let _index = 0}}

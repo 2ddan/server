@@ -15,6 +15,7 @@
     {{let treasureNum = ["一","二","三","四","五","六","七","八","九","十"]}}
     
     {{if rankData.length}}
+    
     <div style="width:490px;height:400px;position:absolute;left:0px;top:0px;">
         {{let module = it1.role_base[rankData[0].career_id].module}}
         {{let weapon= null}}
@@ -129,13 +130,14 @@
             {{:text1 = topData.equip_garde}}
         {{elseif it1.tabSwitch == "treasure_rank"}}
             {{if topData.treasure_level - 10 <= 0}}
-            {{:text1 = treasureNum[topData.treasure_level - 1] + "阶"}}
+            {{:text1 =( treasureNum[topData.treasure_level - 1] || "零" )+ "阶"}}
             {{else}}
             {{:text1 = treasureNum[9] + treasureNum[topData.treasure_level%10 - 1] + "阶"}}
             {{end}}
         {{elseif it1.tabSwitch == "pet_rank"}}
             {{:text1 = topData.pet_class + "阶" + topData.pet_star + "星"}}
         {{end}}
+
         <img src="../images/rank_one_bg.png" style="position:absolute;" />
 
         <app_a-widget-rank-rank_num style="width: 74px;height: 66px;position: absolute;top: 4px;left: 17px;z-index:1">{"num":1}</app_a-widget-rank-rank_num>
@@ -150,14 +152,16 @@
             <app_a-widget-head-friend on-tap="seeOther({{topData.role_id}})" style="position: absolute;left: 69px;top: 31px;width: 90px;height: 90px;">
                 {"url":{{imgX}},"top":3.5,"level":{{topData.level}},"width":60,"height":60}    
             </app_a-widget-head-friend>
-            
-            <app_a-widget-pic_text-pic_text style="position: absolute;top: 94px;left: 5px;right: 0px;margin: 0px auto;">
-				{"icon":"equip_level_bg","width":63,"height":19,"align":"center","marginLeft":3,"textCfg":"","space":0,"fontSize":16,"top":0,"left":0}
-			</app_a-widget-pic_text-pic_text>
 
             <div style="width: 100%;height: 29px;position: absolute;font-size: 18px;color: #fde7ca;top: 118px;line-height: 30px;text-align: center;font-family: mnjsh;">{{Common.fromCharCode(topData.name)}}</div>
 
-            <app_a-widget-text-text style="position: absolute;left: 0;top: 96px;right: 0;margin: 0 auto;">{"text":{{"VIP "+topData.vip}},"textCfg":"gangVip","fontSize":18}</app_a-widget-text-text>
+            {{let vip_lv = topData.vip || 0}}
+            {{if vip_lv}}
+            <widget class="shadow7" style="position: absolute;left: 5px;top: 96px;right: 0;margin: 0 auto;font-size:14px;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+                {"icon":{{"vip_lv_"+(it1.vip_advantage[vip_lv].lv_frame || 1)}},"width":52,"height":25,"align":"center","text":{{"VIP"+vip_lv}},"top":0,"left":0} 
+            </widget>
+            {{end}}
+          
 
             <img src="../images/{{it1.tabSwitch}}.png" style="position: absolute;left: 4px;right: 0px;margin: 0 auto;top: 160px;" />
 
@@ -195,7 +199,7 @@
                     {{:text = v.equip_garde}}
                 {{elseif it1.tabSwitch == "treasure_rank"}}
                     {{if v.treasure_level - 10 <= 0}}
-                    {{:text = treasureNum[v.treasure_level - 1] + "阶"}}
+                    {{:text = (treasureNum[v.treasure_level - 1] || "零") + "阶"}}
                     {{else}} 
                     {{:text = treasureNum[9] + treasureNum[v.treasure_level%10 - 1] + "阶"}}
                     {{end}}
@@ -230,7 +234,14 @@
 
                         <div class="shadow7" style="width:165px;height:20px;position:absolute;font-size:18px;color:#f3d6af;top:10px;line-height: 20px;left: 200px;font-family:mnjsh">
                             <span style="position:relative;display:inline-block">{{Common.fromCharCode(v.name)}}</span>
-                            <app_a-widget-text-text style="position:relative;display:inline-block;vertical-align:middle;margin-left: 10px;top: 2px;">{"text":{{"VIP "+v.vip}},"textCfg":"gangVip","fontSize":16}</app-widget-text-text>
+
+                            {{let vip_lv = v.vip || 0}}
+                            {{if vip_lv}}
+                            <widget class="shadow7" style="position:relative;display:inline-block;margin-left: 10px;top: 6px;font-size:14px;color:#fff" w-tag="app_a-widget-pic_text-pic_text">
+                                {"icon":{{"vip_lv_"+(it1.vip_advantage[vip_lv].lv_frame || 1)}},"width":52,"height":25,"align":"center","text":{{"VIP"+vip_lv}},"top":0,"left":0} 
+                            </widget>
+                            {{end}}
+                           
                         </div>
 
                         <div style="position: absolute;left: 190px;top: 31px;height: 53px;width: auto;">

@@ -1,4 +1,4 @@
-<div maxId="34" test="test" style="position: absolute;width: 100%;height: 100%" w-sid="2">
+<div maxId="34" test="test" style="position: absolute;width: 100%;height: 100%" w-sid="2" on-tap='cancel'>
 	{{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
 	{{let career_id = it1.player.career_id}}
 	<div w-class="3" w-sid="3">
@@ -6,7 +6,7 @@
 			<widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">
 				{"icon":"tips_top_1"} 
 			</widget>
-			<widget w-class="9" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="9" on-tap='cancel'>
+			<widget w-class="9" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="9" >
 				{"icon":"close"} 
 			</widget>
 			<widget w-class="13" w-tag="app_a-widget-pic_other-pic_other" w-sid="13">
@@ -52,10 +52,12 @@
 					{"icon":"skill_name_bg","width":124,"height":25,"align":"center","marginLeft":3,"text":"获取途径","textCfg":"","space":0,"fontSize":20} 
 				</widget>
 				<div  w-class="25" w-sid="25">
-					{{for i,v in it1.dropData}}
-					<widget w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31"  on-tap="gotoFun({{JSON.stringify(v)}})" style="margin:0 8px;">
-						{"class":"default","fontsize":24,"color":"#fdedd7;","text":{{v.name}},"width":110,"height":40} 
-					</widget>
+					{{if it1.dropData}}
+						{{for i,v in it1.dropData}}
+						<widget w-class="31" w-tag="app_a-widget-btn-rect" w-sid="31"  on-tap="gotoFun({{JSON.stringify(v)}})" style="margin:0 8px;">
+							{"class":"default","fontsize":24,"color":"#fdedd7;","text":{{v.name}},"width":110,"height":40} 
+						</widget>
+						{{end}}
 					{{end}}
 				</div>
 			</div>

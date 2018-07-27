@@ -12,5 +12,4 @@
 			</app_a-widget-prop-base>
 		{{end}}
 	</div>
-
 </div>

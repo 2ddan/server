@@ -12,6 +12,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"战况回顾","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
+        
         <div style="width: 450px;position: relative; top:15px;left: 45px;height: 576px;">
             <div style="position:relative;left:72px;top:20px;width:310px;height: 25px;font-family:mnjsh;color:#51e650;z-index:2;font-size: 22px;">
                 <widget  w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 0;left: 0;">

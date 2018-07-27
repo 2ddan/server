@@ -58,6 +58,8 @@ export class Mail extends Widget {
      */
     buy(arg,index){
         let consume = Common_m.getConsume(cfg.shop_price.shop_price[shopType][arg]);
+        let discount = vip_advantage[localDB.player.vip || 0].discount;
+        consume[1] = Math.ceil(consume[1] * discount / 100);
         //检查消费物资是否充足
         if(!Common_m.checkConsume(consume))
             return;

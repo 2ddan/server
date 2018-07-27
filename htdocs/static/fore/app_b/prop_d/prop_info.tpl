@@ -8,8 +8,7 @@
         {{let cfg = _get("app/mod/pi").exports.cfg}}
         {{let Common = _get("app/mod/common").exports.Common}}
         {{let Common_m = _get("app_b/mod/common").exports.Common_m}}
-        <app_a-widget-img_stitch-stitch style="position: absolute;left: 0px;width: 284px;height: 100%;">{"type":1,"height":15,"width":15}</app_a-widget-img_stitch-stitch>
-            
+        <app_a-widget-img_stitch-stitch style="position: absolute;left: 0px;width: 284px;height: 100%;">{"type":1,"height":15,"width":15}</app_a-widget-img_stitch-stitch> 
         <widget style="position: absolute;top:-25px;right: -15px;z-index:1" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="6">{"icon":"close"}</widget>
 
         {{let prop = Pi.sample[it[0]]}}

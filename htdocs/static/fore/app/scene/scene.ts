@@ -18,6 +18,7 @@ import * as Genhjson from "pi/compile/genhjson";
 import { commonjs } from 'pi/lang/mod';
 //scene
 import {Camera2d, Camera3d} from "./class";
+// import { create } from "app/scene/stats_d";
 //MOD
 import { Pi } from 'app/mod/pi';
 import { Device } from "app/mod/device";
@@ -40,6 +41,8 @@ let resTab = {},
     scale = 1,
     //模型的配置文件
     _cfg = {},
+    //帧率图
+    stats,
     //帧率
     ftime,
     _FPS = 0,
@@ -255,6 +258,7 @@ export class mgr {
                     if(Pi.debug){
                         FpsNode.text = "fps:"+this._FPS+";task:" + getSize()+";slowtime:"+slowCost.frame.slowCost.toFixed(1);
                         mgr.modify(FpsNode);
+                        // stats.update()
                     }
                     this._FPS = 0;
                 }
@@ -345,6 +349,7 @@ export class mgr {
         renderer.setSize(width[name], height[name]);
         let scene1 = renderer.createScene(sceneData);
         scene[name] = scene1;
+        scene[name].scene.radius = 10;
         //创建2D摄像机
         scene1.insert(new Camera2d(width[name],height[name]));
         //创建3D摄像机
@@ -356,6 +361,8 @@ export class mgr {
         div[mgr_data.name] = this.initDiv(width[mgr_data.name], height[mgr_data.name]);
         if(Pi.debug){
             mgr.create(FpsNode,"text");
+            // stats = create();
+            // document.appendChild(stats);
         }
     }
 

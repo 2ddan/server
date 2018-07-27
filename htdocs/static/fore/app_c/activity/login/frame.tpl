@@ -11,7 +11,6 @@
     <app-widget-text-text style="position:absolute;top:16px;left:18px;">
         {"text":"累计登录{{it.condition}}天","fontSize":16.49,"textCfg":"iconCircle" }
     </app-widget-text-text>
-
     <div data-desc="奖励" style="position: absolute;top:44px;left:16px;height:60px;width:260px;">
         {{for i, n of it.prop}}
         {{let prop_id = (n[0] == "money" ? 100001 : (n[0] == "diamond" ? 100002 : n[0]))}}

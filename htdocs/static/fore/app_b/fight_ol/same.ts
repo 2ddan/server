@@ -13,6 +13,7 @@ import { Util } from "fight/a/util";
 import { Fighter } from "fight/a/class";
 import { createSkill } from "fight/a/common/init_fighter";
 import { role_base } from "fight/b/common/role_base";
+import { buff } from "fight/b/common/buff";
 //scene
 import { mgr_data, mgr } from "app/scene/scene";
 import { UiFunTable, initValue } from "app/scene/ui_fun";
@@ -40,7 +41,7 @@ export class SMgr{
      */
     static start(type: string,events: Array<any>, arr: Array<Function>, navMesh: any, pause?: boolean){
         this.setPause(pause);
-        fightScene = FMgr.create(type,1,Net);
+        fightScene = FMgr.create(type,buff,1,Net);
         fightScene.setNavMesh(navMesh);
         fightScene.listener = dealLocEvents;
         handlerList.set(type, arr);

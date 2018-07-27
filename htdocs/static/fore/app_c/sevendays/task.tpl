@@ -8,7 +8,7 @@
     {{let career_id = player.career_id}}
     {{let act = it1.list[it.btn.act_type][it1.currDay-1] }}
     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:450px;left:0;top:0;">
-            {"bgName":"bg_frame21"} 
+        {"bgName":"bg_frame21"} 
     </widget>
     <app_a-widget-pic_other-pic_other style="position:absolute;left:-30px;top:0;">
         {"icon":"lantern_1"}
@@ -41,7 +41,7 @@
                         {{let count = prop.type !== "equip" ? v[1] : "none"}}
                         <div class="shadow1" w-class="s5">
                             <app_a-widget-prop-base  on-tap='propInfoShow({{v[0]}})'>
-                                {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{count}},"name":"none","bg":0,"right":7,"top":22}
+                                {"prop":{{prop}},"url":{{url}},"width":60,"height":60,"count":{{count}},"name":"none","bg":0,"right":7,"top":22,"effect":{{prop.effect}}}
                             </app_a-widget-prop-base>
                             {{if count == "none"}}
                             <div  w-class="s9">{{"Lv"+prop.level[1] || 20}}</div>

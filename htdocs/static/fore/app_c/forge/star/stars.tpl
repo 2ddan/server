@@ -16,6 +16,7 @@
         <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5" w-sid="5">
             {"icon":"tips_top"} 
         </widget>
+        
         <widget w-class="6" w-tag="app_a-widget-pic_other-pic_other" w-sid="6" w-sid="6">
             {"icon":"tips_bottom"} 
         </widget>

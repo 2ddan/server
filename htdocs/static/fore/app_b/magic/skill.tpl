@@ -13,6 +13,7 @@
         <div style="width:170px;height:170px;position: absolute;top: -19px;left: -23.5px;z-index: 1;transform: scale(0.8);overflow:hidden">
             <div class="treasure_full" style="position: absolute;"></div>
         </div>
+        
         {{else}}
         {{:scaleNum = Math.sqrt(0.25 -Math.pow(Math.abs(0.5-r),2)) * 2 }}
         {{%% :console.log("skill.tpl能量更新+++++",r,scaleNum)}}

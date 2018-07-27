@@ -16,6 +16,7 @@
             </widget>
             <widget w-class="6" w-tag="app_a-widget-pic_other-pic_other" w-sid="6">{"icon":"tips_bottom"} 
             </widget>
+            
             <widget w-class="7" w-tag="app_a-widget-pic_other-pic_other" w-sid="7">{"icon":"pendant"} 
             </widget>
             <widget w-class="8" on-tap="goback" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="8">

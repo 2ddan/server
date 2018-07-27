@@ -1,0 +1,7 @@
+{
+    "tpl": "./beaten_gang.tpl",
+    "cfg": "./beaten_gang.cfg",
+    "css": "../main/main.wcss",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

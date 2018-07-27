@@ -14,7 +14,6 @@
     <app_a-widget-pic_other-pic_other style="position:absolute;right:-25px;top:0;z-index: 1;">
         {"icon":"lantern_1"}
     </app_a-widget-pic_other-pic_other>
-    
     <div w-class="s11">
         {{let time_close = Common_m.changeTimeToDate(act[0]["end_time"],act[0]["open_type"])}}
         <div class="shadow6" w-class="s1">
@@ -30,7 +29,7 @@
             {{let count = prop.type !== "equip" ? arr[1] : "none"}}
             <div class="shadow1 center_h" style="width:84px;height:84px;position:absolute;top:20px;color: #fff;">
                 <app_a-widget-prop-base  on-tap="propInfoShow({{arr[0]}})">
-                    {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{count}},"name":"none","bg":0}
+                    {"prop":{{prop}},"url":{{url}},"width":84,"height":84,"count":{{count}},"name":"none","bg":0,"effect":{{prop.effect}}}
                 </app_a-widget-prop-base>
                 {{if count == "none"}}
                 <div  w-class="s9">{{"Lv"+prop.level[1] || 20}}</div>

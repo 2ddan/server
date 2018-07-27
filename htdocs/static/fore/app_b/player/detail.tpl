@@ -1,4 +1,4 @@
-<div style="position:absolute;width:450px;height:508px;left:50%;margin-left:-225px;top:160px;color:white;">
+<div style="position:absolute;width:450px;height:540px;left:50%;margin-left:-225px;top:160px;color:white;">
     {{let Pi = _get("app/mod/pi").exports.Pi}}
     {{let player_exp = _get("app/mod/pi").exports.cfg.player_exp.player_exp}}
     {{let appCfg = _get("app/mod/db").exports.data}}
@@ -10,7 +10,7 @@
     {{let mission = _get("app/mod/db").exports.data.wild.wild_max_mission}}
     {{let vip_advantage = _get("app/mod/pi").exports.cfg.vip_advantage.vip_advantage}}
 
-    <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:450px;height:508px;left:0;top:0;">
+    <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:450px;height:540px;left:0;top:0;">
         {"bgName":"bg_frame35"} 
     </widget>
     <widget w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;left:-37px;top:-20px;">
@@ -27,8 +27,6 @@
         {"guide":"returnTo","icon":"close"} 
     </widget>
         
-    
-
     <widget style="position:absolute;left:-14px;top:7px;z-index:3;" w-tag="app_a-widget-pic_other-pic_other">
         {"icon":"pendant"} 
     </widget>
@@ -97,10 +95,10 @@
         </ul>
     </div>
 
-    {{let words = ["关闭音乐", "关闭音效", "关闭特效", "关闭震屏", "隐藏其他玩家","自动挑战首领"]}}
-    {{let fun = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss"]}}
-    {{let arr = [1, 1, 1, 1, 1, 1]}}
-    <div style="position:absolute;width:390px;height:150px;top:355px;left:60px;">
+    {{let words = ["关闭音乐", "关闭音效", "关闭特效", "关闭震屏", "隐藏其他玩家", "自动挑战首领", "关闭冒字"]}}
+    {{let fun = ["bgMusic", "btnMusic", "effect", "shake", "fighter", "autoFightBoss", "UiFunTable.showDamage"]}}
+    {{let arr = [1, 1, 1, 1, 1, 1, 1]}}
+    <div style="position:absolute;width:390px;height:176px;top:355px;left:60px;">
         {{for i, v of arr}}
             {{let num = (Pi.localStorage[fun[i]] || 0) - 0}}
             {{if (i < 5) || (mission > 3)}}

@@ -3081,6 +3081,28 @@ monster_base["617102"] = {
 }
 
 
+monster_base["618000"] = {
+    
+"id":618000,
+"name":[27494,35013,34597,34612],
+"speed":0.15,
+"passive":false,
+"round":8,
+"maximum":10,
+"skill":[990109],
+"skill_action":{
+"990109":["act_monster09_skill1_1"]
+},
+"module":46009,
+"head":"undefined",
+"des":"武装蜥蜴",
+"dieSound":"undefined",
+"scale":2.5,
+"attr_id":638001,
+"tips":"荒野降魔boss20"
+}
+
+
 monster_base["618001"] = {
     
 "id":618001,
@@ -4332,6 +4354,72 @@ monster_base["619040"] = {
 "scale":1,
 "attr_id":639001,
 "tips":"门派boss"
+}
+
+
+monster_base["620001"] = {
+    
+"id":620001,
+"name":[29275,39764,39318,39046],
+"speed":0.15,
+"passive":false,
+"round":3,
+"maximum":10,
+"skill":[990211,9902121],
+"skill_action":{
+"990211":["act_boss01_attack"],"9902121":["act_boss01_sk1"]
+},
+"module":47001,
+"head":"undefined",
+"des":"牛魔首领",
+"dieSound":"undefined",
+"scale":0.85,
+"attr_id":640001,
+"tips":"无尽boss"
+}
+
+
+monster_base["620002"] = {
+    
+"id":620002,
+"name":[37329,21018,24040,20687],
+"speed":0.15,
+"passive":false,
+"round":3,
+"maximum":10,
+"skill":[990221,9902221],
+"skill_action":{
+"990221":["act_boss02_attack"],"9902221":["act_boss02_sk1"]
+},
+"module":47002,
+"head":"undefined",
+"des":"金刚巨像",
+"dieSound":"undefined",
+"scale":0.85,
+"attr_id":640001,
+"tips":"无尽boss"
+}
+
+
+monster_base["620003"] = {
+    
+"id":620003,
+"name":[19977,30028,37034,29579],
+"speed":0.15,
+"passive":false,
+"round":3,
+"maximum":10,
+"skill":[990251,990252],
+"skill_action":{
+"990251":["act_boss05_attack"],"990252":["act_boss05_sk1"]
+},
+"module":47005,
+"head":"undefined",
+"des":"三界邪王",
+"dieSound":"undefined",
+"scale":0.8,
+"attr_id":640001,
+"tips":"无尽boss"
 }
 
 

@@ -46,7 +46,7 @@ export const listenerList = createHandlerList();
  * @example
  */
 export const cfg = {
-	width: 420, height: 700, wscale: 0.25, hscale: 0, full: false
+	width: 420, height: 700, wscale: 0.5, hscale: 0.5, full: false
 };
 
 /**
@@ -626,7 +626,8 @@ forelet.listener = (cmd: string, widget: Widget): void => {
 	};
 	const forbidTouch = (e) => {
 		if (forbidEventTime > 0) {
-			if (now() < forbidEventTime && !checkAllowRect(e.touches[0].pageX, e.touches[0].pageY, allowEventRect)) {
+			let t:any = e.touches[0] || {};
+			if (now() < forbidEventTime && !checkAllowRect(t.pageX, t.pageY, allowEventRect)) {
 				e.stopPropagation();
 			} else {
 				forbidEventTime = 0;

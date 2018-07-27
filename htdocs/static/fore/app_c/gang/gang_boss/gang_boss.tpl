@@ -11,6 +11,7 @@
         <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-14px;left:0px;right: 0px;margin: auto;">
             {"line":"line_7"} 
         </widget>
+        
         {{let boss = it1.gangBoss.boss_info[it1.index]}}
         {{let monster = it1.monster_base[boss[0]]}}
         
@@ -30,7 +31,7 @@
                     "type":"monster",
                     "module":{
                         "module": {{monster.module}},
-                        "position": [-0.2, -2.8, 0],
+                        "position": [-0.2, -0.5, 0],
                         "scale": {{it1.guild_boss[it1.index].show_rate}},
                         "rotate": [0, 0.52, 0]
                     },
@@ -167,7 +168,17 @@
                 <app_a-widget-btn-rect style="top:0px;position:absolute;left: 0px;" on-tap="fightBoss">
                     {"text":"挑  战","class":"hl","fontsize":24,"width":116,"height":45}
                 </app_a-widget-btn-rect>
-                <div style="position: absolute;width: 130px;left: 50%;margin-left: -65px;top: 50px;height: 20px;line-height: 20px;color: #ffd8a6;font-size: 16px;text-align:center;">剩余次数:{{it1.guild_base.init_count - it1.gangBoss.fight_count}}次</div>
+
+                <div data-desc="剩余次数" class="shadow8" style="position: absolute;width: 130px;left: 50%;margin-left: -65px;top: 48px;font-size:17px;color:#ffd8a6;line-height: 26px;height: 29px;white-space: nowrap;padding-left: 7px;">
+                    {{let count = it1.guild_base.init_count + it1.gangBoss.buy_count - it1.gangBoss.fight_count}}
+                    <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top:0;left:0;opacity: 0.9;">
+                        {"icon":"resource_bar","width":130,"height":27,"align":"center","marginLeft":0,"text":" ","textCfg":"","space":0,"fontSize":12} 
+                    </widget>
+                    <span style="position:relative;top:0;left:0;">剩余次数: <span style="color:{{!count ? '#f00' : ''}}">{{count}}</span></span> 
+                    <widget style="position:absolute;top:0;left:112px;" w-tag="app_a-widget-btn_pic-btn_pic"  on-tap="buyCount">
+                        {"icon":"add_btn"} 
+                    </widget> 
+                </div>
                 {{end}}
             </div>
         </div>

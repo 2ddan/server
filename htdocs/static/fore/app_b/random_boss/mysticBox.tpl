@@ -9,6 +9,7 @@
         <app_a-widget-bg_frame-bg style="position:absolute;top:110px;left:24px;width:492px;height:670px">
             {"bgName":"bg_frame21"}
         </app_a-widget-bg_frame-bg>
+        
         <div w-class="main_header">
             <app_a-widget-text-text style="position:absolute;top:54px;right:95px;">
                 {"text":"野外挂机","fontSize":25,"textCfg":"activity","space":-4 }
@@ -44,7 +45,7 @@
                             </app_a-widget-pic_text-pic_text>
                             <div  style="display:inline-block;position:absolute;top:2;left:0;width:125px;height:22px;">
                                 <app-widget-cdtime ev-countdownend="cdEnd" style="display:inline-block">
-                                    { "cd_time":{{v.end_time}},"now_time":{{Util.serverTime()}} }
+                                    { "cd_time":{{v.end_time}},"now_time":{{now}} }
                                 </app-widget-cdtime>
                                 <span>后消失</span>    
                             </div>                      

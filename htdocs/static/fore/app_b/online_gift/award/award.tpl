@@ -10,6 +10,7 @@
             <widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">
                 {"bgName":"bg_frame34"} 
             </widget>
+            
             <div style="position:absolute;width:90px;height:60px;left:60px;top:25px;">
                 <span w-class="13" w-sid="13">即将领取</span>
                 {{let nowTime = it1.Util.serverTime()}}

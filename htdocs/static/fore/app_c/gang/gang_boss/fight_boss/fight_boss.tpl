@@ -12,6 +12,7 @@
     <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 114px;right: 50%;margin-right: -267px;">
         {"icon":"equip_level_bg","width":108,"height":24,"align":"center","marginLeft":3,"text":" ","textCfg":"","space":0,"fontSize":18,"top":0,"left":0} 
     </widget>
+    
     {{let end_time = it1.guild_base.fight_time * 1000 + Util.serverTime()}}
     {{if it1.fight_ing}}
     <app-widget-cdtime ev-countdownend="timeEnd" style="position: absolute;top: 115px;font-size: 16px;width: 108px;right: 50%;margin-right: -270px;text-align:center;color:#78f300;">{cd_time:{{end_time}},"now_time":{{Util.serverTime()}} }</app-widget-cdtime>

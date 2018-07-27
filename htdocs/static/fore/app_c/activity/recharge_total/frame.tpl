@@ -14,6 +14,7 @@
 {{:get = it.get }}
 {{:sum = it.init_count}}
 {{end}}
+
 <div style="width:469;height:113px;position:relative;display:flex;align-items:center;height:113px;margin:0 0 0px 10px;">
     <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:469px;height:113px;">
         {"bgName":"bg_frame34"} 

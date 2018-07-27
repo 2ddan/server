@@ -12,6 +12,7 @@
         <widget w-tag="app_a-widget-prop-base" on-tap="propInfoShow({{prop_id}})" style="position:absolute">
             {"width":60,"height":60,"prop":{{prop}} ,"url":{{url}},"count":{{it.prop[0][1]}},"hidden_name":1,"top":22,"right":6} 
         </widget>
+        
         <div data-desc="元宝" style="font-size:14px;position: absolute;bottom: 0px;color:{{it.condition>it1.player.diamond ?'#f00' : '#f3d6af'}};width:80px;left:-10px;text-align:center;">
             <app_a-widget-coin-coin>
                 {"icon":"diamond","text":[{{it.condition}}],"left":3}

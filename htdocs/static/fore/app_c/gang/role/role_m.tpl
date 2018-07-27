@@ -12,6 +12,7 @@
 			<widget w-class="4" w-tag="app_a-widget-pic_other-pic_other" w-sid="4">{"icon":"pendant"} 
 			</widget>
 		</div>
+		
 		<div w-class="9" w-sid="9">
 			<widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">
 				{"bgName":"bg_frame26"} 

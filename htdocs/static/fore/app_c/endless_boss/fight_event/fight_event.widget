@@ -1,0 +1,7 @@
+{
+    "tpl":"./fight_event.tpl",
+    "css":"./fight_event.wcss",
+    "cfg":"./fight_event.cfg",
+    "js":"../endless_boss.ts",
+    "forelet":"../endless_boss.ts"
+}

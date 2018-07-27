@@ -16,6 +16,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"扫荡结果","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
+        
         <div style="width: 450px;height: auto;position: relative; top: 26px;left: 45px;padding-bottom: 110px;padding-top: 27px;">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" style="opacity: 0.95;">
                 {"bgName":"bg_frame26"} 

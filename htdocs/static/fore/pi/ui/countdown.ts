@@ -121,12 +121,13 @@ const initCd_time = (props: Json) => {
 	}
 
 	const now = (new Date()).getTime();
-	props.cd_time +=  now - props.now_time || now;
+	props.cd_time +=  now - (props.now_time || now);
+	console.log("增加的时间--->", now - props.now_time || now)
 };
 
 // 计算倒计时
-const calcCd  = (e, now) => {
-	now = e.cd_time - (now || (new Date()).getTime());
+const calcCd  = (e, _now) => {
+	let now = e.cd_time - (_now || (new Date()).getTime());
 	
 	// tslint:disable-next-line:no-object-literal-type-assertion
 	const cdInfo = {} as CdInfo;
@@ -137,7 +138,6 @@ const calcCd  = (e, now) => {
 	now = show(e, now, 1000, 2, (time) => {cdInfo.second = time;});
 	now = show(e, now, 1, 3, (time) => {cdInfo.ms = time;});
 	cdInfo.tms = e.cd_time - now;
-	
 	return cdInfo as CdInfo;
 };
 

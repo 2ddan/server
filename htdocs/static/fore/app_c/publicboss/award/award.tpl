@@ -9,7 +9,6 @@
 {{let publicboss_base = cfg.publicboss_base.publicboss_base}}
 <div style="position: absolute;width: 100%;height: 100%;z-index:2;left: 50%;margin-left: -270px;">
     {{let root = _get("pi/ui/root").exports}}
-
     <div style="position: absolute;width: 330px;height: 23px;bottom: 30px;left: 105px;">
         <widget  w-tag="app_a-widget-pic_text-pic_text" style="text-align: center;position: absolute;top: 0px;left: 0px;font-size: 18px;color: #ffd8a6;font-family: mnjsh;">
             {"icon":"little_tips_bg","text":"每天3:00将未分配的装备返回给归属者","width":345,"height":23,"top":2} 

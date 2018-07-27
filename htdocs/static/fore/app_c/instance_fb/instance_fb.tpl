@@ -7,11 +7,10 @@
   
     <div style="pointer-events: none;width: 540px;height: 860px;position: absolute;top: 40px;left: 50%;margin-left: -270px;">
         <app-scene-base-scene style="width: 100%;height: 100%;">
-            {"name":"uiscene","type":"effect","module":"" }
+            {"name":"uiscene","type":"effect","module":"" ,"width":540,"height":900 }
         </app-scene-base-scene>
     </div>
    
-
     <div style="width:540px;position:absolute;left:50%;top:0;bottom:0;margin-left:-270px;">
         <widget w-class="s4" w-tag="app_a-widget-title-single" >
             {"padding":10,"type":9,"width":124,"text":{{ it1.instance_drop[it1.chapter_id][0].chapter_name }},"textCfg":"gangCoverTitle","fontSize":22,"space":-2,"color":"#b27d5c","wear":0} 
@@ -47,10 +46,10 @@
         {{let id = point%5 }}
         {{let fight = (it1.chapter_id === index && i == id) ? 1 : 0 }}
 
-        <div w-class="index_{{i}}" on-tap="openMission({{v.guard_id}})" style="position:absolute;width: 120px;height: 120px;">
+        <div w-class="index_{{i}}" on-tap="openMission({{v.guard_id}})" style="position:absolute;width: 160px;height: 160px;">
 
             {{if fight}}
-            <div class="fightStateAnim" style="transform: scale(0.5);position: absolute;top: -85px;left: 8px;pointer-events: none;"></div>
+            <div class="fightStateAnim" style="transform: scale(0.5);position: absolute;top: -75px;left: 30px;pointer-events: none;"></div>
             <app_a-widget-guide-guide>
                 {{"instance_curr"}}
             </app_a-widget-guide-guide>

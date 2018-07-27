@@ -13,6 +13,7 @@
             <widget w-class="29" w-tag="app_a-widget-pic_text-pic_text">
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"积分奖励","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
+            
         </div>
         <widget w-class="35" w-tag="app_a-widget-pic_other-pic_other">{"icon":"tips_bottom"} 
         </widget>

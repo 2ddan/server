@@ -22,8 +22,8 @@
   "children"  : [
     {
       "name" : "scene_map6_dibiao1",
-      "type" : "node",
       "rayID":-1001,
+      "type" : "node",
       "transform" : {
         "position" : [
           0.0,
@@ -61,6 +61,116 @@
             },
             "transparent" : true,
             "layer"       : 3000
+          }
+        ]
+      }
+    },
+    {
+      "name" : "skybox3",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale"    : [
+          1.65657866001129,
+          1.65657830238342,
+          1.65657830238342
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "AtRo4GNoC2tr38nwmB6tNb.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshBasicMaterial",
+            "map"  : {
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "EtAJC1YErtktGxXpowZ3Yc.jpg"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name" : "map06di",
+      "type" : "node",
+      "transform" : {
+        "position" : [
+          -2.03999996185303,
+          -0.279999732971191,
+          0.0
+        ],
+        "scale"    : [
+          9.30412197113037,
+          9.30411243438721,
+          9.30411243438721
+        ],
+        "rotate"   : [
+          4.71238899230957,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry"  : {
+        "type" : "BufferGeometry",
+        "res"  : "2CWQjnZmEYh3L5HViKRaQr.geo"
+      },
+      "meshRender" : {
+        "material" : [
+          {
+            "type" : "MeshT4M3Material",
+            "_Splat0" : {
+              "repeat" : [
+                12.0,
+                12.0
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "YUKMspEQTrSh77U9ef2rMo.jpg"
+              }
+            },
+            "_Splat1" : {
+              "repeat" : [
+                16.0,
+                16.0
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "QZGmgTpGzHzFWQSnkezVuE.jpg"
+              }
+            },
+            "_Splat2" : {
+              "repeat" : [
+                12.0,
+                12.0
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "Tfzv2v9y5oBzwFBmcc49eX.jpg"
+              }
+            },
+            "_Control" : {
+              "wrap" : [
+                1001,
+                1001
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "8tEKvnhWTgyjyB9WohqWi.jpg"
+              }
+            }
           }
         ]
       }
@@ -127,7 +237,7 @@
                 "lightMap" : {
                   "offset" : [
                     0.0350195430219173,
-                    0.21688124537468
+                    0.399091511964798
                   ],
                   "repeat" : [
                     0.0285270214080811,
@@ -143,7 +253,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -192,8 +302,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0722034052014351,
-                    0.177672162652016
+                    0.0624377802014351,
+                    0.12924300134182
                   ],
                   "repeat" : [
                     0.0159281976521015,
@@ -209,7 +319,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -258,8 +368,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0722267404198647,
-                    0.195273607969284
+                    0.0780861154198647,
+                    0.1505126953125
                   ],
                   "repeat" : [
                     0.00995512399822474,
@@ -275,7 +385,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -324,8 +434,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0653390884399414,
-                    0.237130329012871
+                    0.0624346770346165,
+                    0.110957957804203
                   ],
                   "repeat" : [
                     0.0167227368801832,
@@ -341,7 +451,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -390,8 +500,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.065331406891346,
-                    0.216919660568237
+                    0.0624269917607307,
+                    0.0907473042607307
                   ],
                   "repeat" : [
                     0.0186901167035103,
@@ -407,7 +517,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -456,8 +566,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0610233284533024,
-                    0.45967960357666
+                    0.0614657998085022,
+                    0.150493949651718
                   ],
                   "repeat" : [
                     0.0147553561255336,
@@ -473,7 +583,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -522,8 +632,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000198912093765102,
-                    0.536370813846588
+                    0.709182918071747,
+                    -0.000198912093765102
                   ],
                   "repeat" : [
                     0.0509214960038662,
@@ -539,7 +649,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -588,8 +698,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207223206758499,
-                    0.9376540184021
+                    0.152422323822975,
+                    0.576459527015686
                   ],
                   "repeat" : [
                     0.0609061010181904,
@@ -605,7 +715,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -654,8 +764,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000237914457102306,
-                    0.475543826818466
+                    0.647620439529419,
+                    -0.000237914457102306
                   ],
                   "repeat" : [
                     0.0609061010181904,
@@ -671,7 +781,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -720,8 +830,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0614504292607307,
-                    0.475708723068237
+                    0.0581000335514545,
+                    0.370700746774673
                   ],
                   "repeat" : [
                     0.0186901167035103,
@@ -737,7 +847,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -786,8 +896,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0610002726316452,
-                    0.437532514333725
+                    0.056559931486845,
+                    0.595763146877289
                   ],
                   "repeat" : [
                     0.0206574983894825,
@@ -803,7 +913,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 },
                 "transparent" : true,
@@ -875,8 +985,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0418807454407215,
-                    0.177622929215431
+                    0.0580615997314453,
+                    0.340497761964798
                   ],
                   "repeat" : [
                     0.0285290405154228,
@@ -892,7 +1002,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -909,9 +1019,9 @@
               4.41949987411499
             ],
             "scale"    : [
-              1.0,
-              1.0,
-              1.21413350105286
+              0.701136469841003,
+              0.701136529445648,
+              0.851273357868195
             ],
             "rotate"   : [
               5.225661277771,
@@ -939,12 +1049,12 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207222923636436,
-                    0.559864282608032
+                    0.0437801145017147,
+                    0.951669096946716
                   ],
                   "repeat" : [
-                    0.0609771683812141,
-                    0.0609771683812141
+                    0.0422906167805195,
+                    0.0422906167805195
                   ],
                   "wrap"   : [
                     1001,
@@ -956,7 +1066,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -969,13 +1079,13 @@
           "transform" : {
             "position" : [
               -12.4094543457031,
-              6.70699787139893,
+              6.69000005722046,
               -2.12530517578125
             ],
             "scale"    : [
-              1.0,
-              1.0,
-              1.0
+              0.970000028610229,
+              0.970000028610229,
+              0.970000028610229
             ],
             "rotate"   : [
               4.71238899230957,
@@ -1003,12 +1113,12 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.427593410015106,
-                    0.344420939683914
+                    0.225032329559326,
+                    0.200004622340202
                   ],
                   "repeat" : [
-                    0.223439648747444,
-                    0.223439648747444
+                    0.216488182544708,
+                    0.216488182544708
                   ],
                   "wrap"   : [
                     1001,
@@ -1020,7 +1130,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1067,7 +1177,7 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.320493400096893,
+                    0.196407347917557,
                     -0.000391365843825042
                   ],
                   "repeat" : [
@@ -1084,7 +1194,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1096,9 +1206,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -11.5868682861328,
-              17.9184875488281,
-              11.7991676330566
+              -12.5200004577637,
+              15.6899995803833,
+              14.5299997329712
             ],
             "scale"    : [
               1.26650285720825,
@@ -1107,7 +1217,7 @@
             ],
             "rotate"   : [
               4.71238899230957,
-              3.49691106293903E-07,
+              5.21073436737061,
               0.0
             ]
           },
@@ -1131,8 +1241,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.92105907201767,
-                    0.067209504544735
+                    0.647685050964355,
+                    0.0606146678328514
                   ],
                   "repeat" : [
                     0.0443670377135277,
@@ -1148,7 +1258,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1195,7 +1305,7 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.42207482457161,
+                    0.484613031148911,
                     -0.000372441834770143
                   ],
                   "repeat" : [
@@ -1212,7 +1322,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1259,8 +1369,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207221820950508,
-                    0.497559159994125
+                    0.0899209380149841,
+                    0.576458156108856
                   ],
                   "repeat" : [
                     0.0612609945237637,
@@ -1276,7 +1386,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1323,8 +1433,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207226023077965,
-                    0.619598686695099
+                    -0.000235089319176041,
+                    0.150316491723061
                   ],
                   "repeat" : [
                     0.0601828657090664,
@@ -1340,7 +1450,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1387,7 +1497,7 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.609178364276886,
+                    0.297986686229706,
                     -0.000374523777281865
                   ],
                   "repeat" : [
@@ -1404,7 +1514,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1452,7 +1562,7 @@
                 "lightMap" : {
                   "offset" : [
                     0.0896303728222847,
-                    -0.000529865734279156
+                    0.106892012059689
                   ],
                   "repeat" : [
                     0.135645627975464,
@@ -1468,7 +1578,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1515,8 +1625,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000334045791532844,
-                    0.0904862657189369
+                    0.0898261889815331,
+                    0.852534651756287
                   ],
                   "repeat" : [
                     0.0855157226324081,
@@ -1532,7 +1642,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1544,9 +1654,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -3.26999998092651,
+              -2.70000004768372,
               11.9099998474121,
-              -41.1199989318848
+              -40.7200012207031
             ],
             "scale"    : [
               0.725282907485962,
@@ -1579,8 +1689,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000349404203006998,
-                    0.259612023830414
+                    0.671096861362457,
+                    0.200500875711441
                   ],
                   "repeat" : [
                     0.0894474759697914,
@@ -1596,7 +1706,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1608,8 +1718,8 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -13.7799997329712,
-              11.9099998474121,
+              -14.1199998855591,
+              12.9399995803833,
               -31.3299999237061
             ],
             "scale"    : [
@@ -1643,8 +1753,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.704690456390381,
-                    -0.00035708342329599
+                    0.847668528556824,
+                    0.107064791023731
                   ],
                   "repeat" : [
                     0.0914133563637733,
@@ -1660,7 +1770,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1707,8 +1817,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000241895220824517,
-                    0.350539833307266
+                    0.440479844808578,
+                    0.318772435188293
                   ],
                   "repeat" : [
                     0.0619251765310764,
@@ -1724,7 +1834,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1736,9 +1846,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -8.95600032806396,
+              -8.86999988555908,
               12.8109998703003,
-              -39.201000213623
+              -38.8199996948242
             ],
             "scale"    : [
               0.42106106877327,
@@ -1747,8 +1857,8 @@
             ],
             "rotate"   : [
               4.74042701721191,
-              5.04039001464844,
-              1.29928112030029
+              5.2435245513916,
+              1.29926872253418
             ]
           },
           "geometry"  : {
@@ -1771,8 +1881,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000234216000535525,
-                    0.414024084806442
+                    0.0899260193109512,
+                    0.939548552036285
                   ],
                   "repeat" : [
                     0.0599592961370945,
@@ -1788,7 +1898,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1835,7 +1945,7 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.518070101737976,
+                    0.393502682447433,
                     -0.000353243813151494
                   ],
                   "repeat" : [
@@ -1852,7 +1962,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1900,7 +2010,7 @@
                 "lightMap" : {
                   "offset" : [
                     -0.000328190944856033,
-                    0.821705102920532
+                    0.7142014503479
                   ],
                   "repeat" : [
                     0.0840168818831444,
@@ -1916,7 +2026,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -1964,7 +2074,7 @@
                 "lightMap" : {
                   "offset" : [
                     -0.000234216000535525,
-                    0.760275661945343
+                    0.799256384372711
                   ],
                   "repeat" : [
                     0.0599592961370945,
@@ -1980,7 +2090,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2027,8 +2137,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0898415520787239,
-                    0.463139146566391
+                    -0.00031868735095486,
+                    0.441853016614914
                   ],
                   "repeat" : [
                     0.0815839618444443,
@@ -2044,7 +2154,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2057,7 +2167,7 @@
           "transform" : {
             "position" : [
               -30.0100002288818,
-              11.960000038147,
+              13.0500001907349,
               -13.4499998092651
             ],
             "scale"    : [
@@ -2091,8 +2201,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0898223519325256,
-                    0.767807424068451
+                    -0.00033788537257351,
+                    0.252380669116974
                   ],
                   "repeat" : [
                     0.0864986553788185,
@@ -2108,7 +2218,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2155,8 +2265,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.225509390234947,
-                    -0.000368602253729478
+                    0.0897916331887245,
+                    0.756796956062317
                   ],
                   "repeat" : [
                     0.0943621769547462,
@@ -2172,7 +2282,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2219,8 +2329,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.488140851259232,
-                    0.136261835694313
+                    0.0897033214569092,
+                    0.63854455947876
                   ],
                   "repeat" : [
                     0.116969779133797,
@@ -2236,7 +2346,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2283,8 +2393,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000303328939480707,
-                    0.906690895557404
+                    0.0898569077253342,
+                    0.49729260802269
                   ],
                   "repeat" : [
                     0.077652208507061,
@@ -2300,7 +2410,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2347,8 +2457,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0897762775421143,
-                    0.85565197467804
+                    0.760755658149719,
+                    -0.000383960665203631
                   ],
                   "repeat" : [
                     0.0982939302921295,
@@ -2364,7 +2474,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2411,8 +2521,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207104042172432,
-                    0.344936668872833
+                    0.859666526317596,
+                    -0.00035708342329599
                   ],
                   "repeat" : [
                     0.0914133563637733,
@@ -2428,7 +2538,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2475,8 +2585,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0897033214569092,
-                    0.344836860895157
+                    0.440264850854874,
+                    0.200393363833427
                   ],
                   "repeat" : [
                     0.116969779133797,
@@ -2492,7 +2602,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2540,7 +2650,7 @@
                 "lightMap" : {
                   "offset" : [
                     -0.000349404203006998,
-                    -0.000349404203006998
+                    0.86066460609436
                   ],
                   "repeat" : [
                     0.0894474759697914,
@@ -2556,7 +2666,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2603,8 +2713,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.796662569046021,
-                    -0.000483790441649035
+                    0.0896764472126961,
+                    0.243656828999519
                   ],
                   "repeat" : [
                     0.123850353062153,
@@ -2620,7 +2730,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2667,8 +2777,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.86534172296524,
-                    0.13639622926712
+                    0.402680546045303,
+                    0.10709934681654
                   ],
                   "repeat" : [
                     0.0825669020414352,
@@ -2684,7 +2794,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2731,8 +2841,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.605652868747711,
-                    0.2742018699646
+                    0.65288257598877,
+                    0.107176139950752
                   ],
                   "repeat" : [
                     0.0629081130027771,
@@ -2748,7 +2858,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2795,8 +2905,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.20713859796524,
-                    0.853585064411163
+                    0.486055612564087,
+                    0.10709934681654
                   ],
                   "repeat" : [
                     0.0825669020414352,
@@ -2812,7 +2922,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2859,7 +2969,7 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.920975148677826,
+                    0.58070433139801,
                     -0.000257253646850586
                   ],
                   "repeat" : [
@@ -2876,7 +2986,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2923,8 +3033,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0897186845541,
-                    0.546024084091187
+                    0.557581067085266,
+                    0.200408726930618
                   ],
                   "repeat" : [
                     0.113038018345833,
@@ -2940,7 +3050,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -2988,7 +3098,7 @@
                 "lightMap" : {
                   "offset" : [
                     0.0897455587983131,
-                    0.66030877828598
+                    -0.000414677517255768
                   ],
                   "repeat" : [
                     0.106157444417477,
@@ -3004,7 +3114,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3051,8 +3161,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.669664859771729,
-                    0.274224907159805
+                    -0.000222697184653953,
+                    0.340386509895325
                   ],
                   "repeat" : [
                     0.0570104792714119,
@@ -3068,7 +3178,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3115,8 +3225,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000159924224135466,
-                    0.177574455738068
+                    0.0457385145127773,
+                    0.209660798311234
                   ],
                   "repeat" : [
                     0.0409406013786793,
@@ -3132,7 +3242,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3145,13 +3255,13 @@
           "transform" : {
             "position" : [
               -39.2099990844727,
-              15.9499998092651,
+              14.4499998092651,
               -26.9200000762939
             ],
             "scale"    : [
               1.59605324268341,
               1.59605312347412,
-              1.59605360031128
+              1.00953614711761
             ],
             "rotate"   : [
               4.71238899230957,
@@ -3179,12 +3289,12 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    -0.000330423208652064,
-                    0.674998641014099
+                    -0.000272791250608861,
+                    0.524906694889069
                   ],
                   "repeat" : [
-                    0.0845883414149284,
-                    0.0845883414149284
+                    0.0698345601558685,
+                    0.0698345601558685
                   ],
                   "wrap"   : [
                     1001,
@@ -3196,7 +3306,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3243,8 +3353,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0629004463553429,
-                    0.350662589073181
+                    0.0614042952656746,
+                    0.166793331503868
                   ],
                   "repeat" : [
                     0.0305005889385939,
@@ -3260,7 +3370,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3307,8 +3417,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.86534172296524,
-                    0.22038060426712
+                    0.569430708885193,
+                    0.10709934681654
                   ],
                   "repeat" : [
                     0.0825669020414352,
@@ -3324,7 +3434,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3371,8 +3481,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.20713859796524,
-                    0.769600689411163
+                    0.31930547952652,
+                    0.10709934681654
                   ],
                   "repeat" : [
                     0.0825669020414352,
@@ -3388,7 +3498,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3435,8 +3545,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207111716270447,
-                    0.67875349521637
+                    -0.000349404203006998,
+                    -0.000349404203006998
                   ],
                   "repeat" : [
                     0.0894474759697914,
@@ -3452,7 +3562,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3499,8 +3609,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.562193095684052,
-                    0.0916213467717171
+                    -0.000175526598468423,
+                    0.209645196795464
                   ],
                   "repeat" : [
                     0.0449348092079163,
@@ -3516,7 +3626,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3563,8 +3673,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.548036515712738,
-                    0.254702210426331
+                    0.709201216697693,
+                    0.0509623065590858
                   ],
                   "repeat" : [
                     0.0462367199361324,
@@ -3580,7 +3690,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3627,8 +3737,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.207222923636436,
-                    0.43782901763916
+                    -0.000238192063989118,
+                    0.0905821174383163
                   ],
                   "repeat" : [
                     0.0609771683812141,
@@ -3644,7 +3754,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3692,7 +3802,7 @@
                 "lightMap" : {
                   "offset" : [
                     -0.000161419447977096,
-                    0.216831251978874
+                    0.399041533470154
                   ],
                   "repeat" : [
                     0.0413233786821365,
@@ -3708,7 +3818,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3755,8 +3865,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0629119724035263,
-                    0.382900685071945
+                    0.0652967989444733,
+                    0.399095326662064
                   ],
                   "repeat" : [
                     0.0275489185005426,
@@ -3772,7 +3882,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3819,8 +3929,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0516329929232597,
-                    0.536444902420044
+                    -0.000124818907352164,
+                    0.595719039440155
                   ],
                   "repeat" : [
                     0.0319536402821541,
@@ -3836,7 +3946,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3883,8 +3993,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.518258094787598,
-                    0.091631680727005
+                    -0.000165197721798904,
+                    0.951669096946716
                   ],
                   "repeat" : [
                     0.0422906167805195,
@@ -3900,7 +4010,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3912,9 +4022,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -7.67000007629395,
-              18.4400005340576,
-              11.5600004196167
+              -6.38000011444092,
+              15.4499998092651,
+              12.1300001144409
             ],
             "scale"    : [
               1.31015288829803,
@@ -3947,8 +4057,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.4883171916008,
-                    0.254602253437042
+                    0.788125693798065,
+                    0.107141315937042
                   ],
                   "repeat" : [
                     0.0718239694833755,
@@ -3964,7 +4074,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -3976,14 +4086,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -2.84999990463257,
-              19.2800006866455,
-              7.61999988555908
+              -1.83000004291534,
+              17.1499996185303,
+              7.94999980926514
             ],
             "scale"    : [
-              1.26895320415497,
-              1.26895391941071,
-              1.26895391941071
+              1.05023562908173,
+              1.05023622512817,
+              0.798462510108948
             ],
             "rotate"   : [
               4.71238899230957,
@@ -4011,12 +4121,12 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.769592761993408,
-                    0.136350408196449
+                    0.716844797134399,
+                    0.107149451971054
                   ],
                   "repeat" : [
-                    0.0942961499094963,
-                    0.0942961499094963
+                    0.0697398632764816,
+                    0.0697398632764816
                   ],
                   "wrap"   : [
                     1001,
@@ -4028,7 +4138,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -4076,7 +4186,7 @@
                 "lightMap" : {
                   "offset" : [
                     0.0350886546075344,
-                    0.24675852060318
+                    0.428968787193298
                   ],
                   "repeat" : [
                     0.0108346771448851,
@@ -4092,7 +4202,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -4139,8 +4249,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.0609964244067669,
-                    0.414173752069473
+                    0.0331185832619667,
+                    0.595759332180023
                   ],
                   "repeat" : [
                     0.0216427203267813,
@@ -4156,7 +4266,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -4164,27 +4274,6 @@
           }
         }
       ]
-    },
-    {
-      "name" : "tree",
-      "type" : "node",
-      "transform" : {
-        "position" : [
-          2.03999996185303,
-          -15.3500003814697,
-          -14.789999961853
-        ],
-        "scale"    : [
-          1.0,
-          1.0,
-          1.0
-        ],
-        "rotate"   : [
-          0.0,
-          3.14159274101257,
-          0.0
-        ]
-      }
     },
     {
       "name" : "other",
@@ -4227,70 +4316,6 @@
               0.0
             ]
           }
-        },
-        {
-          "name" : "hgyj3_42",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              -6.4655613899231,
-              7.1100001335144,
-              5.90346145629883
-            ],
-            "scale"    : [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              3.49691106293903E-07,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "9V9ozKSs9P38rEQHYttseX.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "U6deD8u6JAKuhACbnqXE81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.225728094577789,
-                    0.0955532342195511
-                  ],
-                  "repeat" : [
-                    0.0383722819387913,
-                    0.0383722819387913
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
-                  }
-                }
-              }
-            ]
-          }
         }
       ]
     },
@@ -4315,134 +4340,6 @@
         ]
       },
       "children"  : [
-        {
-          "name" : "hgyj3_20",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              -12.4094543457031,
-              6.70699787139893,
-              -2.12530517578125
-            ],
-            "scale"    : [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              3.49691106293903E-07,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "2hvrUSREATXhN6UMWR9fsh.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "U6deD8u6JAKuhACbnqXE81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.60526043176651,
-                    0.13608056306839
-                  ],
-                  "repeat" : [
-                    0.163373976945877,
-                    0.163373976945877
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "name" : "hgyj3_01",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              5.98231840133667,
-              15.1400003433228,
-              -18.5627212524414
-            ],
-            "scale"    : [
-              0.976090431213379,
-              1.09879803657532,
-              1.0
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              1.74845553146952E-07,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "WnHGoYjX4UFALK1ksRKyYd.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "LhHvc6zJiP7gUZX61hQgjt.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0885992050170898,
-                    0.135157719254494
-                  ],
-                  "repeat" : [
-                    0.399623274803162,
-                    0.399623274803162
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        },
         {
           "name" : "hgyj3_18",
           "type" : "node",
@@ -4483,8 +4380,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.299057573080063,
-                    0.344791352748871
+                    0.0896578207612038,
+                    0.368638217449188
                   ],
                   "repeat" : [
                     0.128617823123932,
@@ -4500,7 +4397,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -4548,7 +4445,7 @@
                 "lightMap" : {
                   "offset" : [
                     -0.000341428443789482,
-                    0.587371230125427
+                    0.626571774482727
                   ],
                   "repeat" : [
                     0.0874056816101074,
@@ -4564,7 +4461,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }
@@ -4611,8 +4508,8 @@
                 },
                 "lightMap" : {
                   "offset" : [
-                    0.769600212574005,
-                    0.23195543885231
+                    0.225517109036446,
+                    0.107060998678207
                   ],
                   "repeat" : [
                     0.0923850387334824,
@@ -4628,114 +4525,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "GezcqPwyTBa5LFQRmpia7E.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name" : "skybox",
-      "type" : "node",
-      "transform" : {
-        "position" : [
-          2.03999996185303,
-          -15.3500003814697,
-          -14.789999961853
-        ],
-        "scale"    : [
-          1.0,
-          1.0,
-          1.0
-        ],
-        "rotate"   : [
-          0.0,
-          3.14159274101257,
-          0.0
-        ]
-      },
-      "children"  : [
-        {
-          "name" : "skybox3",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              5.90000009536743,
-              60.2799987792969,
-              -33.5999984741211
-            ],
-            "scale"    : [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              0.0,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "C3TjLucsixn8oYDAvUYPGY.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "814pE6bY6UBcNppCqF1opt.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "name" : "road3",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              5.39617872238159,
-              0.0,
-              -8.88207626342773
-            ],
-            "scale"    : [
-              1.0,
-              1.0,
-              1.0
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              0.0,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "WQK1kjBNRXPj4ypLYy2oKE.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "UzihJEnbHJxwrSYhwgxjgj.jpg"
+                    "name" : "Y3s6uVwcaWTCuYfvhHqeot.jpg"
                   }
                 }
               }

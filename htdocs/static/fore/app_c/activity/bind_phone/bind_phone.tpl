@@ -3,7 +3,6 @@
 	<div w-class="bindphone_bg"></div>
 	<img style="position:absolute;top:2px;left:0px;width:100%;" src="../images/fest_title.png" />
     <div style="position:absolute;top:25px;left:50%;transform:translateX(-50%);">{"text":"绑定手机即可领取","textCfg":"festTitle","fontSize":20}</div>
-
     {{let Pi = _get("app/mod/pi").exports.Pi}}
     {{let appCfg = _get("app/mod/db").exports.data}}
 	{{let special_reward =_get("cfg/c/special_reward").exports.special_reward}}

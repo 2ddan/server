@@ -1,0 +1,6 @@
+{
+    "tpl": "./apply_page.tpl",
+    "cfg": "./apply_page.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

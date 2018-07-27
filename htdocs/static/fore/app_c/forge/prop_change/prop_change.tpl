@@ -15,7 +15,6 @@
     <widget style="position:absolute;right:-21px;top:-24px;" w-tag="app_a-widget-btn_pic-btn_pic" on-tap="goback">
         {"icon":"close_light"} 
     </widget>
-        
     <widget style="position:absolute;left:-14px;top:7px;z-index:3;" w-tag="app_a-widget-pic_other-pic_other">
         {"icon":"pendant"} 
     </widget>

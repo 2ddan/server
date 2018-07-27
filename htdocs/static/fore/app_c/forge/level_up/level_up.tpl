@@ -18,6 +18,7 @@
         {{let module = v ? (v.module[v.career_id.indexOf(career_id)][0] ? v.module[v.career_id.indexOf(career_id)][0] : v.module[v.career_id.indexOf(career_id)][0]): ''}}
         {{let img = v?Pi.pictures[module]:""}} 
         {{let attr1 = type[i].base_attr}}
+        
         <div style="width:98px;height:98px;position:absolute;top:{{i%5  * 119 + 75}}px;{{i<5?'left:18':'right:18'}}px;z-index:1">
             <app_a-widget-prop-equip on-tap="{{if player.level >= equip_level_limit[i-0+1].open_level && v}} lookEquip({{i}}) {{end}}" style="z-index:2;">
                 {"prop":{{v?v:0}},"url":{{img}},"solt":{{i-0+1}},"width":98,"height":98,"type":"equip","bg":{{!v ? 1 : ''}},"lock":{{player.level >= equip_level_limit[i-0+1].open_level ? 0 : equip_level_limit[i-0+1].open_level}},"tip_keys":[{{"equip.level."+i}}],"bottom":{{!v ? 18 : ''}}}

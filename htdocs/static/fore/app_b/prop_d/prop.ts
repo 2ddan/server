@@ -248,8 +248,8 @@ export class prop_m extends Widget {
     goback = function (arg) {
         close(arg.widget);
     };
-    selectcount = (e) => {
-        _count = e.count || e.node.child.count;
+    selectcount = (obj) => {
+        _count = obj.count
         if (choose.costFun && Common.isExist(forelet, "app_b-prop_d-choose_count")) {
             let w = forelet.getWidget("app_b-prop_d-choose_count");
             choose.count = _count;
@@ -322,7 +322,8 @@ export class prop_m extends Widget {
     }
     //物品详情objectInfoShow
     propInfoShow = function (arg) {
-        showBagPropInfo({ "index": null, "obj": Pi.sample[arg] });
+        // showBagPropInfo({ "index": null, "obj": Pi.sample[arg] });
+        showPropInfo(arg);
     };
     submitBuy = function (arg, num) {
         if (choose.callback) choose.callback(choose.index, _count);
@@ -344,10 +345,14 @@ export class prop_m extends Widget {
 	 */
     destroy(): boolean {
         //选择宝箱时，关闭查看物品详情还是关闭选择界面
+        if(this && this.name === "app_b-prop_d-prop_info"){
+            this.tpl = undefined;
+            this.forelet && this.forelet.removeWidget(this);
+            return false;
+        }
         if (propObj) {
             propObj = undefined;
-        }
-        else {
+        }else {
             chooseIndex = undefined;
             propObjChoose = undefined;
             _count = 1;

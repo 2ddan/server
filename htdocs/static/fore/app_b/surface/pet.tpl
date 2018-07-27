@@ -14,7 +14,6 @@
 			{"name":"uiscene","type":"pet","module":{"module":{{module_info.module}},"position":[0,1.9,-0.1],"scale":{{module_info.scale}},"state":{{it1.pose}},"rotate":[0,{{it1.player.pet_rotate ? it1.player.pet_rotate : 0.7}},0],"parent":{"hiddle":1},"scene_bg":"sce_ui_cwjm","type":"pet"},"width":540,"height":900}
 		</app-scene-base-scene>
 	</div>
-
 	<div w-class="4" w-sid="4" style="left: 50%;margin-left: -270px;">
 		{{let bol = it1.pet.pet_star_info.length}}
 		{{let n1 = !bol ? 0 : it1.pet.pet_star_info[1] > 9 ? 0 : it1.pet.pet_star_info[1]-0+1 }}

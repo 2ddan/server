@@ -8,6 +8,7 @@
 		<widget w-class="4" w-tag="app_a-widget-btn-ling" w-sid="4" on-tap="practiceAttr" >
 			{"class":"default","fontsize":20,"color":"#49312E","text":" 属性 总览","width":77,"height":77,"textCfg":"lingBtn"} 
 		</widget>
+		
 		<div w-class="39" w-sid="39">
 			<img w-class="40" src="app_c/rune/images/practice_bg.jpg" w-sid="40"/>
 			<img w-class="42" src="app_c/rune/images/practice_2.png" w-sid="42"/>

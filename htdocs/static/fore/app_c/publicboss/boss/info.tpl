@@ -15,7 +15,6 @@
     {{let Count = allCount - it1.initData.count }}
     <div w-class="4" w-sid="4" style="bottom:10px;height:55px;">
 		<div w-class="5" w-sid="5">
-
             <app_a-widget-pic_text-pic_text style="width:143px;height:28px;position: absolute;color: #ffd8a6;font-size: 16px;">{"icon":"resource_bar","width":143,"height":28,"align":"left","marginLeft":"10","text":{{"挑战次数:" + it1.total_count + "/" + Cfg.publicboss_config.publicboss_config.fight_times}}} 
             </app_a-widget-pic_text-pic_text>
             <widget on-tap="buyCount" w-tag="app_a-widget-btn_pic-btn_pic" style="left: 125px;"></widget>

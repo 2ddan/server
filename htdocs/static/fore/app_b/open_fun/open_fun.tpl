@@ -11,6 +11,7 @@
         </app_a-widget-pic_other-pic_other>
         {{end}}
 
+        
         {{let icon=it1.next_fun.icon}}
         {{let name=it1.next_fun.name}}
         {{if key=="skill"}}

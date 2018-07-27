@@ -15,7 +15,7 @@ export const menu_explore = [
         fun_key: "robres"
     },
     {
-        name:"无尽之战",
+        name:"无尽战斗",
         interface:"gotoEndlessBoss",
         tips: undefined,
         level_limit: 0,

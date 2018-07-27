@@ -16,7 +16,6 @@ import { Music } from "app/mod/music";
 import { data as db,listen} from "app/mod/db";
 import { open, close } from "app/mod/root";
 import { Pi, globalSend, cfg } from "app/mod/pi";
-import { Util } from "app/mod/util";
 
 //scene
 import { mgr, mgr_data } from "app/scene/scene";
@@ -26,7 +25,7 @@ import { UiFunTable, initValue } from "app/scene/ui_fun";
 import { Scene as FightScene, FMgr } from "fight/a/fight";
 import { Request } from "fight/a/request";
 import { blend } from "fight/a/analyze";
-
+import { buff } from "fight/b/common/buff";
 //app
 import { Fight_common } from "fight/a/fore/fight_common";
 import { Init_Fighter } from "fight/a/common/init_fighter";
@@ -136,7 +135,6 @@ export class Fightm extends Widget {
                     //确认
                     () => {
                         goback("app_b-fight-fight");
-                        // globalSend("exitFb");
                     },
                     //取消
                     () => { }
@@ -231,7 +229,7 @@ export const showAccount = (msg, callback) => {
         getData.player = db.player;
         getData.fun_id = (db.open_fun && db.open_fun.id) || 0;
         getData.timeStr = timeStr;
-        getData.exitStartTime = Util.serverTime();
+        getData.exitStartTime = Date.now();
         forelet.paint(getData);
         globalSend("popBack");
         if(msg.extra.source === "wild_boss_lose"){
@@ -462,6 +460,7 @@ const _fight = (msg, callback?) => {
     // overBack = overBack || over;
     //closeAccount(0);
     mgr_data.name = "fight";
+    msg.nowTime = (new Date()).getTime();
     //设置怪物波数
     _enemy(msg);
     if (!fightScene) {
@@ -622,7 +621,7 @@ const initFightScene = (msg) => {
         return UiFunTable.aniBack(id);
     })
     
-    fightScene = FMgr.create("fight");
+    fightScene = FMgr.create("fight",buff);
     fightScene.setNavMesh(FMgr.createNavMesh(mgr.getSceneBuffer(msg.cfg.scene, ".nav")));
     mgr_data.sceneTab["fight"] = fightScene;
     //战斗事件监听

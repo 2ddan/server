@@ -17,6 +17,7 @@ import * as rebel from "./rebel";
 import * as world_boss from "./world_boss";
 import * as wilderness_boss from "./wilderness_boss";
 import * as gang_expand from "./gang_expand";
+import * as endless_boss from "./endless_boss";
 import { EType, realType } from "../fight/a/analyze";
 
 // ================================ 导出  
@@ -175,6 +176,9 @@ export const refreshAttr = function (roomID, ID, info, type) {
 
 // 比较两个列表是否相等
 function compareList(list, list1) {
+    if (!list) {
+        return true;
+    }
     if (list.length != list1.length) {
         return false;
     }
@@ -247,7 +251,7 @@ export const loadSceneNav = function (name, str) {
 }
 
 // ==================================== 本地
-var functionFileObj = { "wild": wild, "rebel": rebel, "world_boss": world_boss, "wilderness_boss": wilderness_boss, "gang_expand": gang_expand };
+var functionFileObj = { "wild": wild, "rebel": rebel, "world_boss": world_boss, "wilderness_boss": wilderness_boss, "gang_expand": gang_expand, "endless_boss": endless_boss };
 
 //保留参数
 var attr = {

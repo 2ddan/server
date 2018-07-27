@@ -70,7 +70,7 @@ table[51]={
 "level_limit":1,
 "time_type":"server",
 "care":[60041],
-"open_date":11,"close_date":17,"delay_date":17,
+"open_date":1,"close_date":7,"delay_date":7,
 "img":"recharge_all"
 }
 table[101]={
@@ -109,9 +109,18 @@ table[104]={
 
 "img":"menu_growthFund_icon"
 }
+table[105]={
+"id":105,
+"index":12,
+"level_limit":1,
+"time_type":"undefined",
+"care":undefined,
+
+"img":"menu_growthFund_icon"
+}
 table[1001]={
 "id":1001,
-"index":12,
+"index":13,
 "level_limit":1,
 "time_type":"server",
 "care":[60088],
@@ -120,7 +129,7 @@ table[1001]={
 }
 table[1002]={
 "id":1002,
-"index":13,
+"index":14,
 "level_limit":1,
 "time_type":"server",
 "care":[60089],
@@ -129,7 +138,7 @@ table[1002]={
 }
 table[1003]={
 "id":1003,
-"index":14,
+"index":15,
 "level_limit":1,
 "time_type":"server",
 "care":[60090],
@@ -138,7 +147,7 @@ table[1003]={
 }
 table[1004]={
 "id":1004,
-"index":15,
+"index":16,
 "level_limit":1,
 "time_type":"server",
 "care":[60091],
@@ -147,7 +156,7 @@ table[1004]={
 }
 table[1005]={
 "id":1005,
-"index":16,
+"index":17,
 "level_limit":1,
 "time_type":"server",
 "care":[60092],
@@ -156,7 +165,7 @@ table[1005]={
 }
 table[1006]={
 "id":1006,
-"index":17,
+"index":18,
 "level_limit":1,
 "time_type":"server",
 "care":[60093],
@@ -165,7 +174,7 @@ table[1006]={
 }
 table[1007]={
 "id":1007,
-"index":18,
+"index":19,
 "level_limit":1,
 "time_type":"server",
 "care":[60094],
@@ -174,7 +183,7 @@ table[1007]={
 }
 table[1008]={
 "id":1008,
-"index":19,
+"index":20,
 "level_limit":1,
 "time_type":"server",
 "care":[60095],
@@ -183,7 +192,7 @@ table[1008]={
 }
 table[1009]={
 "id":1009,
-"index":20,
+"index":21,
 "level_limit":1,
 "time_type":"server",
 "care":[60096],
@@ -192,7 +201,7 @@ table[1009]={
 }
 table[1010]={
 "id":1010,
-"index":21,
+"index":22,
 "level_limit":1,
 "time_type":"server",
 "care":[60097],
@@ -201,7 +210,7 @@ table[1010]={
 }
 table[1011]={
 "id":1011,
-"index":22,
+"index":23,
 "level_limit":1,
 "time_type":"server",
 "care":[60098],
@@ -210,7 +219,7 @@ table[1011]={
 }
 table[1012]={
 "id":1012,
-"index":23,
+"index":24,
 "level_limit":1,
 "time_type":"server",
 "care":[60099],
@@ -219,7 +228,7 @@ table[1012]={
 }
 table[1013]={
 "id":1013,
-"index":24,
+"index":25,
 "level_limit":1,
 "time_type":"server",
 "care":[60100],
@@ -228,7 +237,7 @@ table[1013]={
 }
 table[1014]={
 "id":1014,
-"index":25,
+"index":26,
 "level_limit":1,
 "time_type":"server",
 "care":[60101],
@@ -237,7 +246,7 @@ table[1014]={
 }
 table[1015]={
 "id":1015,
-"index":26,
+"index":27,
 "level_limit":1,
 "time_type":"server",
 "care":[60102],
@@ -246,7 +255,7 @@ table[1015]={
 }
 table[1016]={
 "id":1016,
-"index":27,
+"index":28,
 "level_limit":1,
 "time_type":"server",
 "care":[60103],
@@ -255,7 +264,7 @@ table[1016]={
 }
 table[1017]={
 "id":1017,
-"index":28,
+"index":29,
 "level_limit":1,
 "time_type":"server",
 "care":[60104],
@@ -264,7 +273,7 @@ table[1017]={
 }
 table[1018]={
 "id":1018,
-"index":29,
+"index":30,
 "level_limit":1,
 "time_type":"server",
 "care":[60105],
@@ -273,7 +282,7 @@ table[1018]={
 }
 table[2001]={
 "id":2001,
-"index":30,
+"index":31,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -282,7 +291,7 @@ table[2001]={
 }
 table[2002]={
 "id":2002,
-"index":31,
+"index":32,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -291,7 +300,7 @@ table[2002]={
 }
 table[2003]={
 "id":2003,
-"index":32,
+"index":33,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -300,7 +309,7 @@ table[2003]={
 }
 table[2004]={
 "id":2004,
-"index":33,
+"index":34,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -309,7 +318,7 @@ table[2004]={
 }
 table[2005]={
 "id":2005,
-"index":34,
+"index":35,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -318,7 +327,7 @@ table[2005]={
 }
 table[2006]={
 "id":2006,
-"index":35,
+"index":36,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -327,7 +336,7 @@ table[2006]={
 }
 table[2007]={
 "id":2007,
-"index":36,
+"index":37,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -336,7 +345,7 @@ table[2007]={
 }
 table[2008]={
 "id":2008,
-"index":37,
+"index":38,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -345,7 +354,7 @@ table[2008]={
 }
 table[2009]={
 "id":2009,
-"index":38,
+"index":39,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -354,7 +363,7 @@ table[2009]={
 }
 table[2010]={
 "id":2010,
-"index":39,
+"index":40,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -363,7 +372,7 @@ table[2010]={
 }
 table[2011]={
 "id":2011,
-"index":40,
+"index":41,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -372,7 +381,7 @@ table[2011]={
 }
 table[2012]={
 "id":2012,
-"index":41,
+"index":42,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -381,7 +390,7 @@ table[2012]={
 }
 table[2013]={
 "id":2013,
-"index":42,
+"index":43,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -390,7 +399,7 @@ table[2013]={
 }
 table[2014]={
 "id":2014,
-"index":43,
+"index":44,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -399,7 +408,7 @@ table[2014]={
 }
 table[2015]={
 "id":2015,
-"index":44,
+"index":45,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -408,7 +417,7 @@ table[2015]={
 }
 table[2016]={
 "id":2016,
-"index":45,
+"index":46,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -417,7 +426,7 @@ table[2016]={
 }
 table[2017]={
 "id":2017,
-"index":46,
+"index":47,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -426,7 +435,7 @@ table[2017]={
 }
 table[2018]={
 "id":2018,
-"index":47,
+"index":48,
 "level_limit":1,
 "time_type":"server",
 "care":undefined,
@@ -435,16 +444,16 @@ table[2018]={
 }
 table[3001]={
 "id":3001,
-"index":48,
+"index":49,
 "level_limit":1,
 "time_type":"server",
 "care":[60114],
-"open_date":1,"close_date":7,"delay_date":7,
+"open_date":8,"close_date":14,"delay_date":14,
 "img":"menu_loginAward_icon"
 }
 table[3002]={
 "id":3002,
-"index":49,
+"index":50,
 "level_limit":1,
 "time_type":"server",
 "care":[60115],
@@ -453,7 +462,7 @@ table[3002]={
 }
 table[3003]={
 "id":3003,
-"index":50,
+"index":51,
 "level_limit":1,
 "time_type":"server",
 "care":[60116],
@@ -462,7 +471,7 @@ table[3003]={
 }
 table[3004]={
 "id":3004,
-"index":51,
+"index":52,
 "level_limit":1,
 "time_type":"server",
 "care":[60117],
@@ -471,7 +480,7 @@ table[3004]={
 }
 table[3005]={
 "id":3005,
-"index":52,
+"index":53,
 "level_limit":1,
 "time_type":"server",
 "care":[60118],
@@ -480,7 +489,7 @@ table[3005]={
 }
 table[3006]={
 "id":3006,
-"index":53,
+"index":54,
 "level_limit":1,
 "time_type":"server",
 "care":[60119],
@@ -489,7 +498,7 @@ table[3006]={
 }
 table[3007]={
 "id":3007,
-"index":54,
+"index":55,
 "level_limit":1,
 "time_type":"server",
 "care":[60120],
@@ -498,7 +507,7 @@ table[3007]={
 }
 table[3008]={
 "id":3008,
-"index":55,
+"index":56,
 "level_limit":1,
 "time_type":"server",
 "care":[60121],
@@ -507,7 +516,7 @@ table[3008]={
 }
 table[3009]={
 "id":3009,
-"index":56,
+"index":57,
 "level_limit":1,
 "time_type":"server",
 "care":[60122],
@@ -516,7 +525,7 @@ table[3009]={
 }
 table[3010]={
 "id":3010,
-"index":57,
+"index":58,
 "level_limit":1,
 "time_type":"server",
 "care":[60123],
@@ -525,7 +534,7 @@ table[3010]={
 }
 table[3011]={
 "id":3011,
-"index":58,
+"index":59,
 "level_limit":1,
 "time_type":"server",
 "care":[60124],
@@ -534,7 +543,7 @@ table[3011]={
 }
 table[3012]={
 "id":3012,
-"index":59,
+"index":60,
 "level_limit":1,
 "time_type":"server",
 "care":[60125],
@@ -543,7 +552,7 @@ table[3012]={
 }
 table[3013]={
 "id":3013,
-"index":60,
+"index":61,
 "level_limit":1,
 "time_type":"server",
 "care":[60126],
@@ -552,7 +561,7 @@ table[3013]={
 }
 table[3014]={
 "id":3014,
-"index":61,
+"index":62,
 "level_limit":1,
 "time_type":"server",
 "care":[60127],
@@ -561,7 +570,7 @@ table[3014]={
 }
 table[3015]={
 "id":3015,
-"index":62,
+"index":63,
 "level_limit":1,
 "time_type":"server",
 "care":[60128],
@@ -570,7 +579,7 @@ table[3015]={
 }
 table[3016]={
 "id":3016,
-"index":63,
+"index":64,
 "level_limit":1,
 "time_type":"server",
 "care":[60129],
@@ -579,7 +588,7 @@ table[3016]={
 }
 table[3017]={
 "id":3017,
-"index":64,
+"index":65,
 "level_limit":1,
 "time_type":"server",
 "care":[60130],

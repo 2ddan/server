@@ -6,6 +6,7 @@
 		<widget w-class="4" w-tag="app_a-widget-pic_other-pic_other" w-sid="4" w-sid="4">
 			{"icon":"tips_top"} 
 		</widget>
+		
 		<widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5" w-sid="5">
 			{"icon":"tips_bottom"} 
 		</widget>
@@ -35,7 +36,7 @@
 
 			{{if it.use_mode != "recharge"}}
 			{{let _obj = {"default":1,"step":[1,10],"minCount":1,"maxCount":( count ? count[1].count : 0)} }}
-			<widget w-class="23" w-tag="app_a-widget-number-number" w-sid="23" on-tap="selectcount">{{_obj}}</widget>
+			<widget w-class="23" w-tag="app_a-widget-number-number" w-sid="23" ev-selectcount="selectcount">{{_obj}}</widget>
 			{{end}}
 			<widget w-class="24" w-tag="app_a-widget-btn-rect" w-sid="24" on-tap="usePropx({{count[0]}})">{"class":"default","fontsize":24,"color":"#fdedd7;","text":"使  用","width":110,"height":40,"marginLeft":0} 
 			</widget>

@@ -10,7 +10,6 @@
     </widget>
     <div class="line_6" style="position: absolute; top: 96px; left:50%;margin-left:-270px;width:540px;z-index: 2;"></div>
     <div style="width:540px;position:absolute;left:50%;top:110px;bottom:83px;margin-left:-270px;">
-		
 		<widget w-class="78" w-tag="app_a-widget-bg_frame-bg" w-sid="78">
             {"bgName":"bg_frame21"} 
         </widget>

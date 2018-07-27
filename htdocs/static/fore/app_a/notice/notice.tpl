@@ -36,7 +36,7 @@
                     {{for i,v in it1.base}}
                     {{if v.show}}
                     <app-widget-tab-tab_btn on-tap="selectTab('{{i}}')" style="width: 97px;height:43px;margin:5px 0px;display:inline-block">
-                        {"layout":0,"bType":1,"cfg":{"text":{{v.name}},"type":"border","type_m":"normal","fontSize":24},"select":{{i == it1.index}},"type":{{i == it1.index ? "border active":"border"}} }
+                        {"layout":0,"bType":1,"cfg":{"text":{{v.name}},"type":"border","type_m":"normal","fontSize":20},"select":{{i == it1.index}},"type":{{i == it1.index ? "border active":"border"}} }
                     </app-widget-tab-tab_btn>
                     {{end}}
                     {{end}}
@@ -71,9 +71,6 @@
                     {"class":"hl","fontsize":24,"color":"#fdedd7;","text":"本仙已阅","width":116,"height":45,"marginLeft":0} 
                 </app_a-widget-btn-rect>
             </div>
-               
-            
-           
         </div>
         <widget w-class="19" w-tag="app_a-widget-pic_other-pic_other" w-sid="19">{"icon":"tips_bottom"} </widget>
     </div>

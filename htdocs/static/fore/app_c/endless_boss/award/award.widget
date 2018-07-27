@@ -1,0 +1,7 @@
+{
+    "tpl":"./award.tpl",
+    "js":"../endless_boss.ts",
+    "forelet":"../endless_boss.ts",
+    "css":"../rank/rank.wcss",
+    "cfg": "../rank/rank.cfg"
+}

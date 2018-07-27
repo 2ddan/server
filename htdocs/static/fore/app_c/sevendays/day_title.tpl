@@ -8,7 +8,6 @@
         <div>{{it.index}}</div>
         天
     </div>
-
     {{if it1.clearFun(it.index-1)}}    
     <img style="position:absolute;top:0;left:0;z-index:2" src="./images/title_bg_2.png"/>
     <app_a-widget-pic_text-pic_text style="position: absolute;left: -11px;top: 91px;z-index:2">

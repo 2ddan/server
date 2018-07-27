@@ -1,0 +1,7 @@
+{
+    "tpl":"./open_tips.tpl",
+    "cfg":"./open_tips.cfg",
+    "css":"./open_tips.wcss",
+    "js":"./open_tips.ts",
+    "forelet":"./open_tips.ts"
+}

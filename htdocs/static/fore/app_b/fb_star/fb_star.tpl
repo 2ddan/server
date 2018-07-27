@@ -17,6 +17,7 @@
         <widget  w-tag="app_a-widget-bg_frame-bg" w-class="s3" >
             {"bgName":"fb_time_bg"} 
         </widget>
+        
         {{for i,v in obj}}
         <div style="width:180px;position:relative;">
             {{i}}

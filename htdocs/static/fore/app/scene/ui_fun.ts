@@ -62,6 +62,7 @@ let randomNum: number,
     star_position = [],
     newPosition = [],
     flag = false,
+    show_damage = true,
     drop_list = {}; //存储场景上的2D节点
 
 let time = Date.now();
@@ -285,24 +286,25 @@ export class UiFunTable {
         } else {
             //对怪物的伤害冒字
             if (arg.node.type == "damage") {
-                if (!random[index]) {
-                    let Rand = Math.random();
-                    random[index] = 1 + Math.round(Rand * 3); //四舍五入
-                }
-                p = cfg.damage_type[random[index] - 1].damagePZ; //高度
-                x = cfg.damage_type[random[index] - 1].damagePX; //左右偏移量
-                s = cfg.damage_type[random[index] - 1].scale; //缩放
-                o = cfg.damage_type[random[index] - 1].opacity //透明度
+                // if (!random[index]) {
+                //     let Rand = Math.random();
+                //     random[index] = 1 + Math.round(Rand * 3); //四舍五入
+                // }
+                // p = cfg.damage_type[random[index] - 1].damagePZ; //高度
+                // x = cfg.damage_type[random[index] - 1].damagePX; //左右偏移量
+                // s = cfg.damage_type[random[index] - 1].scale; //缩放
+                // o = cfg.damage_type[random[index] - 1].opacity //透明度
+                p = cfg.damage_type[0].damagePZ; //高度
+                s = cfg.damage_type[0].scale; //缩放
+                o = cfg.damage_type[0].opacity //透明度
                 a = { "value": [254, 254] };
             } else if (arg.node.type == "damageM") {  //怪物对人物的伤害冒字
                 p = cfg.damageM_type[0].damagePZ //高度
-                x = cfg.damageM_type[0].damagePX //左右偏移量
                 s = cfg.damageM_type[0].scale //缩放
                 o = cfg.damageM_type[0].opacity //透明度
                 a = { "value": [254, 254] };
             } else if (arg.node.type == "critical") { //暴击的伤害冒字
                 p = cfg.critical_type[0].damagePZ //高度
-                x = cfg.critical_type[0].damagePX //左右偏移量
                 s = cfg.critical_type[0].scale //缩放
                 o = cfg.critical_type[0].opacity //透明度
                 a = { "value": [254, 254] };
@@ -698,7 +700,9 @@ export class UiFunTable {
             return;
         }
 
-        _damageFunc();
+        
+        _damageFunc();            
+
 
         //hitEffect.position = skill.hitEffectPos;
         if (ss.hitEffect.length) {
@@ -806,6 +810,13 @@ export class UiFunTable {
         
         delete cuurUI[index];
     }
+
+    //显示隐藏冒字效果
+    static showDamage() {
+        show_damage = show_damage ? false : true;
+        return show_damage;
+    }
+
     //更新figher/monster的血条
     static modifyHP(arg) {
         let hp = arg.show_hp <= 0 ? 0 : arg.show_hp;
@@ -824,6 +835,7 @@ export class UiFunTable {
      * 更新飘字
      */
     static damgeText(node) {
+        if(!show_damage){ return; }
         const cach = UiFunTable.cach.one(node.value+"-"+node.type);
         if(cach){
             node._show = cach;
@@ -1085,7 +1097,7 @@ export class UiFunTable {
         let timer = Date.now();
         frame.setPermanent(()=>{
             let time = Date.now();
-            if(time - timer < 38)
+            if(time - timer < 28)
                 return;
             timer = time;
             for (let i in cuurUI) {

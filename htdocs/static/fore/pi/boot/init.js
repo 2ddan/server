@@ -1,5 +1,7 @@
 'use strict';
 var pi_modules = pi_modules || {};
+// 优先加载本地资源
+var useLocalRes = true;
 // 定义基础函数模块
 pi_modules.butil = { id: 'butil', exports: undefined, loaded: true };
 pi_modules.butil.exports = (function () {
@@ -607,6 +609,8 @@ pi_modules.load.exports = (function () {
 			fileMap: {}, /*:Map*/
 			// 加载文件的数据
 			fileTab: {}, /*:Map*/
+			// 安卓加载
+			android: {},
 			// 下载超时时间，默认20秒
 			timeout: 20000, /*:number*/
 			// url为键，值为ajax请求对象
@@ -653,6 +657,8 @@ pi_modules.load.exports = (function () {
 	var initWait = []; /*:Array<Load>*/
 	// 下载等待
 	var loadWait = []; /*:Array<Load>*/
+	// 本地正在下载
+	var localWait = [];
 	// 限制url的长度
 	var LimitLength = 1024 - 100;
 	// 是否为本地浏览器
@@ -711,6 +717,9 @@ pi_modules.load.exports = (function () {
 			info = depend.get(k);
 			if (info && getSign(k) === info.sign)
 				continue;
+			if (getSign(k)) {
+			    continue;
+			}
 			store.delete(localStore, k);
 			delete localSign[k];
 			save = true;
@@ -808,19 +817,35 @@ pi_modules.load.exports = (function () {
 			if (findWait(name, load))
 				continue;
 			s = localSign[name];
-			sign = formatSign(s);
-			if (info.sign === sign) {
-				load.loadAmount++;
-				load.fileMap[name] = 0;
-				if(s === sign)
-					store.read(localStore, name, loadOK, butil.curryFirst(loadError, name));
-				else
-					ajax.get("file:///android_asset/res/"+name, undefined, undefined, ajax.RESP_TYPE_BIN, 0, butil.curryFirst(loadOK, name), butil.curryFirst(loadError, name));
+			if (s.charCodeAt(0) === 45 && useLocalRes) {
+			    load.loadAmount++;
+                load.fileMap[name] = 0;
+                load.android[name] = 1;
+                if(localWait.length < 500){
+                    localWait.push(name);
+                    ajax.get("file:///android_asset/res/"+name, undefined, undefined, ajax.RESP_TYPE_BIN, 0, butil.curryFirst(loadOK, name), butil.curryFirst(loadError, name));
+                }
 			} else {
-				load.downAmount++;
-				load.fileMap[name] = null;
-				arr.push(info); // 将要下载的文件放入数组
+			    sign = formatSign(s);
+                if (info.sign === sign) {
+                    load.loadAmount++;
+                    load.fileMap[name] = 0;
+                    if(s === sign)
+                        store.read(localStore, name, loadOK, butil.curryFirst(loadError, name));
+                    else {
+                        load.android[name] = 1;
+                        if(localWait.length < 500){
+                            localWait.push(name);
+                            ajax.get("file:///android_asset/res/"+name, undefined, undefined, ajax.RESP_TYPE_BIN, 0, butil.curryFirst(loadOK, name), butil.curryFirst(loadError, name));
+                        }
+                    }
+                } else {
+                    load.downAmount++;
+                    load.fileMap[name] = null;
+                    arr.push(info); // 将要下载的文件放入数组
+                }
 			}
+
 		}
 	};
 	// 从等待的加载中获取文件数据，返回false表示没有加载该文件
@@ -846,7 +871,7 @@ pi_modules.load.exports = (function () {
 
 	// 加载指定的文件成功，通知所有正在等待的加载器
 	var loadOK = function (data, file/*:string*/, down) {
-		var i, load;
+		var i, load, loadlocal_next;
 		for (i = loadWait.length - 1; i >= 0; i--) {
 			load = loadWait[i];
 			if (load.fileMap[file] === undefined)
@@ -860,12 +885,34 @@ pi_modules.load.exports = (function () {
 				load.loadCount++;
 				load.onprocess({ type: "loadFile", file: file, data: data, total: load.loadAmount, count: load.loadCount });
 			}
+			let index = localWait.indexOf(file);
+            if (index >= 0) {
+                delete load.android[file];
+                localWait.splice(index, 1);
+            }
+			if(localWait.length === 0){
+                loadlocal_next = true;
+            }
 			if (load.downCount < load.downAmount || load.loadCount < load.loadAmount)
 				continue;
 			if (i < loadWait.length - 1)
 				loadWait[i] = loadWait[loadWait.length - 1];
 			loadWait.length--;
 			load.onsuccess(load.fileMap);
+		}
+		if(loadlocal_next){
+			for (i = loadWait.length - 1; i >= 0; i--) {
+				load = loadWait[i];
+				for(var k in load.android){
+					if(localWait.length < 800){
+						localWait.push(k);
+						ajax.get("file:///android_asset/res/"+k, undefined, undefined, ajax.RESP_TYPE_BIN, 0, butil.curryFirst(loadOK, k), butil.curryFirst(loadError, k));
+					}else{
+						return;
+					}
+				}
+				
+			}
 		}
 	};
 

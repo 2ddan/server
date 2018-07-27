@@ -15,6 +15,7 @@
         <widget w-tag="app_a-widget-line-line" style="position:absolute;top:34px;left:0px;">
             {"line":"line_7"} 
         </widget>
+        
         <app-widget-tab-navtab data-desc="tab内容">
             {"cur":{{it1.cur ? it1.cur : 0}},
             "btn_box":"btnBag",            

@@ -17,6 +17,7 @@
                 {"prop":{{v?v:0}},"url":{{img}},"solt":{{i-0+1}},"width":98,"height":98,"type":"equip","bg":{{!v ? 1 : ''}},"lock":{{player.level >= equip_level_limit[i-0+1].open_level ? 0 : equip_level_limit[i-0+1].open_level}},"tip_keys":[{{"equip.diam."+i}}],"bottom":{{!v ? 18 : ''}} }
             </app_a-widget-prop-equip>
             {{if type[i]}}
+            
                 <div style="height: 20px;position: absolute;z-index: 3;bottom: 12px;right: 10px;width:50px;">
                     <div style="font-size: 20px;text-align: right;height:20px;position: absolute;top:0px;right: 20px;color: #ffffff;letter-spacing: -1px;line-height:20px;">{{(equip_diam[i][0] ? equip_diam[i][0][1]-0 : 0)+(equip_diam[i][1] ? equip_diam[i][1][1]-0 : 0)+(equip_diam[i][2] ? equip_diam[i][2][1]-0 : 0)+(equip_diam[i][3] ? equip_diam[i][3][1]-0 : 0)}}</div>
                     <app_a-widget-pic_other-pic_other style="position: absolute;width:20px;height:20px;right:0px;">

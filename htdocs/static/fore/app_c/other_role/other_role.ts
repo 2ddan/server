@@ -3,7 +3,7 @@ import { Forelet } from "pi/widget/forelet";
 import { Widget } from "pi/widget/widget";
 import { net_request } from "app_a/connect/main";
 import { Common } from "app/mod/common";
-import {  get as getDB } from "app/mod/db";
+import {  get as getDB,checkTypeof } from "app/mod/db";
 import { open, close } from "app/mod/root";
 import { Pi,globalSend} from "app/mod/pi";
 import * as piSample from "app/mod/sample";
@@ -24,6 +24,7 @@ import { equip_diam_equip } from "cfg/c/equip_diam_equip";//宝石
 import { equip_diam_promote } from "cfg/c/equip_diam_promote";//宝石属性
 import { equip_level_up } from "cfg/c/equip_level_up";//宝石属性
 import { DiamPictur } from "cfg/b/DiamPictur";//宝石属性
+import { vip_advantage } from "cfg/c/vip_advantage";
 
 
 
@@ -261,7 +262,8 @@ let _data:any = {
     "attribute_config":attribute_config,
     "weapon_soul_base":weapon_soul_base,
     "equip_star_achieve":equip_star_achieve,
-    "clothes_module":clothes_module
+    "clothes_module":clothes_module,
+    "vip_advantage": vip_advantage
 };
 
 
@@ -289,7 +291,11 @@ const otherInfo = function (id) {//其它玩家信息
         let baseData = Common.changeArrToJson(data.ok);
         let role:any = {};
         for(let key in baseData){
-            role[key] =  Common.changeArrToJson(baseData[key]);
+            if(checkTypeof(baseData[key],"Array")){
+                role[key] =  Common.changeArrToJson(baseData[key]);
+            }else{
+                role[key] = baseData[key];
+            }
         }
         role.equip_set = read(role.equip_info.equip_set);
         role.base_info.name = Common.fromCharCode(role.base_info.name);

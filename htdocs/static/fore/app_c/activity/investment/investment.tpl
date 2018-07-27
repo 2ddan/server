@@ -11,6 +11,7 @@
         <app_a-widget-text-text style="position:absolute;top:50px;right:64px;">
             {"text":{{desc[1]}},"fontSize":18,"textCfg":"activity","space":-2 }
         </app_a-widget-text-text>
+        
         <div w-class="buy_gifts" style="position:absolute">
             <div class="center_h" style="font-size: 16px; width: 16px; font-family: mnjsh; color: #f7d4c2; position: absolute; left: 18px; top: 73px;">购买即赠</div>
             <div w-class="award_list" style="position:absolute;height:54px;width:270px;overflow:hidden;top:77px;left:38px">

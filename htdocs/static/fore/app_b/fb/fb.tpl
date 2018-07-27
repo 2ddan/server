@@ -5,7 +5,8 @@
     <div w-class="bg"></div>
 	<widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
 		{"text":"副 本","coin":["money","diamond"],"left":35,"top":20,"r":[["money",0],["dimond",0],["dimond",0]],"type":""} 
-	</widget>
+    </widget>
+    
     <div style="width:100%;position:absolute;height:100%;left:0;top:0;overflow:hidden;">
         {{let position = [[485,6],[164,375],[570,385],[303,480],[145,190],[200,0],[686,76],[368,193]]}}
             {{for i,v of menus}}

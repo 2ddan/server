@@ -165,8 +165,8 @@ export const award = function (obj) {
         })
         .catch((data) => {
             globalSend("screenTipFun", {
-                "words": `通讯失败`
-            })
+                "words": data.why
+            });
             console.log(data);
         })
 };

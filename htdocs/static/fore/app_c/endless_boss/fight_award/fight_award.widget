@@ -1,0 +1,6 @@
+{
+    "tpl": "./fight_award.tpl",
+    "cfg": "./fight_award.cfg",
+    "js": "../endless_boss.ts",
+    "forelet": "../endless_boss.ts"
+}

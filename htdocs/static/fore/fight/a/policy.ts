@@ -184,8 +184,8 @@ const isAi = (f: Fighter, s: Scene) => {
   */
 const notAi = (f: Fighter, s: Scene) => {
     let t,mt;
-    if(s.level < 2 && f.moveto && f.moveto.status && f.moveto.curTarget){
-        t = s.fighters.get(f.curTarget);
+    if(s.level < 2 && f.moveto && f.moveto.curTarget){
+        t = s.fighters.get(f.moveto.curTarget);
         if(t && f.moveto.near && Util.getPPDistance(f,t).d <= f.moveto.near){
             mt = {x:f.x,y:f.z||0,z:f.y,status:1};
             checkEventRepeat(s,EType.move,[1,"fighter"]);
@@ -254,12 +254,12 @@ const linkMovePath = (f: Fighter,s: Scene): void => {
         if(f.path.length == 0){
             f.path = undefined;
             f.moveto.status = 1;
-            //发送目标点以及靠近距离，缓解移动过程中进入可放技能范围时，前后台位置不一致
-            if(f.curTarget){
-                f.moveto.curTarget = f.curTarget;
-                if(f.curSkill){
-                    f.moveto.near = f.curSkill.distance;
-                }
+        }
+        //发送目标点以及靠近距离，缓解移动过程中进入可放技能范围时，前后台位置不一致
+        if(f.curTarget){
+            f.moveto.curTarget = f.curTarget;
+            if(f.curSkill){
+                f.moveto.near = f.curSkill.distance;
             }
         }
         // if(f.sid == 10000){
@@ -514,10 +514,7 @@ const addBuff = (fighter, target, skill, buff, s: Scene) => {
     var i = -1;
     var same = 0;
     skill = skill || {};
-    if (!Util.checkProbability(buff.probability, s))//检查生效概率
-        return;
-    if (target.god && buff.buffType === 2)//bufftype---1:增益，2：减益 （如果目标无敌，减益不生效）
-        return;
+    
     //eventType为8、9时为叠加类buff，8：叠到要求层数时才触发效果，中途没效果，9：每叠一次都多一层效果
 
     //增加了一个 buff等级  取决于技能等级
@@ -541,19 +538,19 @@ const addBuff = (fighter, target, skill, buff, s: Scene) => {
         buff.T = target.mapId;
         buff.F = fighter.mapId;
         //如果再次触发相同buff 应该覆盖旧buff
-        var _i = Util.indexByAttr(target.buff, "id", buff.id);
-        if (_i < 0) {
+        i = Util.indexByAttr(target.buff, "id", buff.id);
+        if (i < 0) {
             target.buff.push(buff);
-        } else {
-            target.buff[_i].startTime = s.now;
-            return false
+            s.addEvents([EType.addBuff,fighter.mapId,target.mapId,skill.id,buff.id]);
+        }else {
+            buff = target.buff[i];
         }
-        s.addEvents([EType.addBuff,fighter.mapId,target.mapId,skill.id,buff.id]);
+        
     }
-    buff.startTime = s.now;//buff添加时间
+    buff.startTime = s.fightTime;//buff添加时间
     if (buff.eventType === 1 && buff.timerInterval >= 0) {
         // 立即执行的时间触发的buff
-        excitationBuff(fighter, target, buff, s);
+        if(!buff.effective)excitationBuff(fighter, target, buff, s);
     } else if ((buff.eventType === 8 || buff.eventType === 9) && buff.eventCount <= buff.excitationCount * buff.excitationMaxCount && buff.eventCount % buff.excitationCount === 0) {
         // 立即执行的叠加触发的buff
         excitationBuff(fighter, target, buff, s);
@@ -575,7 +572,7 @@ const fireBuff = (fighter, target, eventType, scene: Scene) => {
         b.eventCount++;
         if (b.eventCount <= b.excitationCount * b.excitationMaxCount && b.eventCount % b.excitationCount === 0) {
             // 事件次数到了，触发buff  新增buff目标判断
-            b.triggerTarget == "T" ? excitationBuff(fighter, target, b, scene) : excitationBuff(fighter, fighter, b, scene);
+            b.triggerTarget == "T" ? excitationBuff(fighter, target, b, scene) : excitationBuff(fighter, fighter, b, scene, target);
         }
     }
 };
@@ -628,6 +625,9 @@ const calcDamage = (f, t, s, arg,scene: Scene) => {
             t.hp -= damage;
             if (t.hp > t.max_hpCount)
                 t.hp = t.max_hpCount;
+            if(t.hp <= 0){
+                t.killed = f.mapId;
+            }
         } else {
             //抛吸收
             scene.addEvents([EType.effect,f.mapId,t.mapId,"shield",damage]);
@@ -656,13 +656,18 @@ const calcHealth = (f, t, s, arg,scene: Scene) => {
     return { critical: critical, health: health };
 };
 // 激发buff效果
-const excitationBuff = (f, t, b, scene: Scene) => {
+const excitationBuff = (f, t, b, scene: Scene,rt?) => {
     var arr = b.effect, r, v, per;
     if (b.attackCD){
         b.cdNextTime = scene.now + b.attackCD;
     }
+    console.log("excitationBuff",b.id);
+    if (!Util.checkProbability(b.probability, scene))//检查生效概率
+        return;
+    b.effective = scene.fightTime;//设置buff生效时间
     if (t.god && b.buffType === 2)
         return;
+    console.log("excitationBuff ok :: ",b.id);
     // debugger;
     for (var i = 0, len = b.effect.length; i < len; i++) {
         var e = b.effect[i];
@@ -680,6 +685,10 @@ const excitationBuff = (f, t, b, scene: Scene) => {
             t.shield.length++;
             t.shield[b.id] = r;
             e.addValue = b.id;
+        } else if(e.type === "buff"){
+            v = scene.buffs[r];
+            //如果主buff目标是自己，但子buff目标又是技能目标，则需要修正目标，不能继承主buff目标
+            addSkillBuff(f,(v.targetType == 1 && b.targetType == 2)?[rt]:[t],{buff:[v]},v.addTime,scene);
         } else if (e.type === "skill") {
             // TODO
         } else if (e.type === "repel") {
@@ -687,6 +696,9 @@ const excitationBuff = (f, t, b, scene: Scene) => {
         } else if (e.type === "hp") {
             r = t.max_hpCount > t.hp + r ? r : t.max_hpCount - t.hp;
             t[e.type] += r;
+            if(t.hp <= 0){
+                t.killed = f.mapId;
+            }
         } else if (e.type === "energy") {
             r = t.max_energyCount > t.energy + r ? r : t.max_energyCount - t.energy;
             t[e.type] += r;
@@ -753,16 +765,21 @@ const clearBuff = (f, b, scene: Scene) => {
             f[e.type] -= e.addValue;
         }
     }
+    b.effective = e.addValue = 0;
     scene.addEvents([EType.clearBuff,f.mapId,b.id]);
     // scene.listener && scene.listenEvent.push({ type: "clearBuff", fighter: f, buff: b });
 };
 // 清理临时buff
 const clearTempBuff = (f, s:Scene) => {
     Util.traversal(f.buff, function (b) {
+        //清除超时的buff效果
+        if(b.effectiveTime&& b.effective && b.effective + b.effectiveTime < s.fightTime){
+            return clearBuff(f, b, s);
         // 类型9，或有生命周期并没有到达最大激发次数，不清除
-        if (b.eventType === 9 || (b.lifeTime > 0 && b.eventCount < b.excitationCount * b.excitationMaxCount))
+        }else if (b.eventType === 9 || b.excitationCount == 0 || b.excitationMaxCount == 0 || b.eventCount < b.excitationCount * b.excitationMaxCount)
             return;
-        clearBuff(f, b, s);
+        console.log("buffTimerCalc",b.id);
+        if(b.effective)clearBuff(f, b, s);
         return true;
     });
 };
@@ -779,16 +796,22 @@ const buffTimerCalc = function (f,scene: Scene) {
     Util.traversal(f.buff, function (b) {
         var c1, c2;
         if (b.timerInterval > 0) {
-            c1 = ((scene.now - b.startTime) / b.timerInterval) | 0;
-            c2 = ((scene.now + FMgr.frame - b.startTime) / b.timerInterval) | 0;
+            c1 = ((scene.fightTime - b.startTime) / b.timerInterval) | 0;
+            c2 = ((scene.fightTime + 1000/FMgr.FPS - b.startTime) / b.timerInterval) | 0;
             // 是否跨作用间隔
             if (c2 - c1) {
                 excitationBuff(f, f, b, scene);
             }
         }
-        if (b.startTime + b.lifeTime > scene.now)
+        //清除超时的buff效果
+        if(b.effectiveTime && b.effective && b.effective + b.effectiveTime < scene.fightTime){            
+            return clearBuff(f, b, scene);
+        }else if (b.lifeTime == 0 || b.startTime == 0 || b.startTime + b.lifeTime > scene.fightTime)
             return;
-        clearBuff(f, b, scene);
+        console.log("buffTimerCalc",b.id);
+        if(b.effective){
+            clearBuff(f, b, scene);
+        }
         return true;
     });
 };

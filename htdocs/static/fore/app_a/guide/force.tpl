@@ -11,4 +11,5 @@
         <div style="position:absolute;top:60%;width:100%;text-align:center;color:#fff;font-family:mnjsh;font-size:30px;opacity:0.7">引导中，请稍后……</div>        
     </div>
     {{end}}
+    
 </div>

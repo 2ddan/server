@@ -8,8 +8,7 @@
 //pi
 import { NavMesh } from "pi/ecs/navmesh";
 //fight
-import { Fighter , Skill, Buff } from "./class";
-import { EType, blend } from "./analyze";
+import { Fighter} from "./class";
 import { Policy } from "./policy";
 import { Util } from "./util";
 
@@ -26,10 +25,13 @@ export class Scene {
      */
     constructor(
       readonly type:any, 
+      buffs,
       level?
     ){
         this.level = level || 10;
         this.now = Date.now();
+        this.buffs = buffs;
+        Util.checkProbability(0,this);
     }
     id = 0
     /**
@@ -64,6 +66,8 @@ export class Scene {
     group = {}
     // 寻路
     navMesh: NavMesh
+    //buff配置表，策划需求buff内部嵌套buff，战斗过程中需要在配置表中寻找新的触发buff,此方法最简单
+    buffs = {}
 
     /**
      * @description 事件监听函数
@@ -173,8 +177,8 @@ export class FMgr{
     /**
      * @description 创建场景
      */
-    static create(type:any,level?:number,server?:any){
-        let s: Scene = new Scene(type,level);
+    static create(type:any,buffs,level?:number,server?:any){
+        let s: Scene = new Scene(type,buffs,level);
         this.server = server;
         this.scenes = s;
         return s;

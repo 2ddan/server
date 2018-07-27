@@ -12,7 +12,6 @@
 			{"progress":100,"text":"{{it1.opening}}/100","fontsize":15,collect:1}
 		</widget>	
 			
-		
 		<widget w-class="10" w-tag="app_a-widget-text-text" w-sid="10">
 			{"text":"寻宝中……","show":"","space":-4,"fontSize":20,"lineHeight":20,"color":"","textCfg":"singleTitle"} 
 		</widget>

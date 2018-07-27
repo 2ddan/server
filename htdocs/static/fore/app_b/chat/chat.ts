@@ -457,13 +457,15 @@ net_message("gang_chat", (msg) => {
     //     },2000)
     // } 
     forelet.paint(getData());
-    console.log(gang_list);
+    // console.log(gang_list);
 });
 
 //接收后台推送current_chat
 net_message("current_chat", (msg) => {
     var _data : any = {};
-    _data.chat = Common.fromCharCode(msg.chat);
+    let content = JSON.parse(Common.fromCharCode(msg.chat));
+    _data.chat = checkTypeof(content,"Array") && content[1] || content;
+    // _data.chat = Common.fromCharCode(msg.chat);
     var info : any = Common.changeArrToJson(msg.role_info);
     info.name = Common.fromCharCode(info.name);
     info.gang_name = Common.fromCharCode(info.gang_name);
@@ -490,7 +492,7 @@ net_message("current_chat", (msg) => {
     //     },2000)
     // } 
     forelet.paint(getData());
-    console.log(gang_list);
+    // console.log(gang_list);
 });
 
 //向数据库中插入聊天字段

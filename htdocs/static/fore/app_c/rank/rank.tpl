@@ -12,6 +12,7 @@
 		<app_a-widget-line-line style="position: absolute;left: -23px;top: 33px;z-index: 3;pointer-events: none;">
 			{"line":"line_7"} 
 		</app_a-widget-line-line>
+		
 		<app_a-widget-bg_frame-bg style="position: absolute;left: 0px;top: 45px;width: 100%;height: 666px;">				{"bgName":"bg_frame21"} 
 		</app_a-widget-bg_frame-bg> 
 		

@@ -10,10 +10,6 @@
     {{let career_id = it1.role.base_info.career_id}}
     {{let level = it1.role.base_info.level}}
     
-    
-
-
-
     <div  w-class="20">
     {{let equip_diam = friend_battle.equip_diam}}            
     {{for i, v of type}}

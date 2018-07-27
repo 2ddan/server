@@ -11,6 +11,7 @@
 		</widget>
 		<widget w-class="8" w-tag="app_a-widget-rank-rank_title" w-sid="8">{"keys":["排名","门派信息"],"split":[40,45],"padding":5,"fontSize":17,"va":""} 
 		</widget> 
+		
 		<div w-class="9" w-sid="9" style="overflow: hidden;">
 			<div w-class="10" w-sid="10" style="overflow-x: hidden;overflow-y: auto;">
 				{{for i, v of it1.gang_list}}
@@ -29,7 +30,8 @@
 					<div w-class="14" w-sid="14">
 						<img src="{{img}}" />
 					</div>
-					<widget w-class="15" w-tag="app_a-widget-pic_text-pic_text" w-sid="15">{"icon":"equip_txt_bg","width":97,"height":27,"align":"center","marginLeft":3,"text":{{"Lv"+v.gang_level}},"textCfg":"","space":0,"fontSize":12,"top":0,"left":-28} 
+					<widget w-class="15" w-tag="app_a-widget-pic_text-pic_text" w-sid="15">
+						{"icon":"equip_txt_bg","width":97,"height":27,"align":"center","marginLeft":3,"text":{{"Lv"+v.gang_level}},"textCfg":"","space":0,"fontSize":12,"top":0} 
 					</widget>
 
 					<widget w-class="16" w-tag="app_a-widget-line-line" w-sid="16">{"line":"line_9"} 

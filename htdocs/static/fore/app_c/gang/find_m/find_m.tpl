@@ -8,6 +8,7 @@
 			</widget>
 			<widget on-tap='closeCover' w-class="6" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="6">{"icon":"close"} 
 			</widget>
+			
 			<widget w-class="4" w-tag="app_a-widget-pic_other-pic_other" w-sid="4">{"icon":"pendant"} 
 			</widget>
 			<widget w-class="1" w-tag="app_a-widget-pic_text-pic_text" w-sid="1">

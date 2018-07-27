@@ -6,14 +6,15 @@
         <div  w-class="11">
             {{let t = it1.getEndTime()}}
             <div>距离结束:
-                <app-widget-cdTime1 ev-countdownend="timeEnd" style="display:inline-block;vertical-align: middle;color:#12ff00">
+                <app-widget-cdtime ev-countdownend="closeRobres" style="display:inline-block;vertical-align: middle;color:#12ff00">
                     {"cd_time":{{t[1]}},"now_time":{{t[0]}}}
-                </app-widget-cdTime1>
+                </app-widget-cdtime>
             </div>
             <div>个人水晶:{{it1.info.own_total_forage}}</div>
             <div>抢夺水晶:{{it1.info.achieve_record && it1.info.achieve_record["plunder"] || 0}}</div>
         </div>
     </div>
+    
     <div data-desc="menu" w-class="9" >
         {{for i,v in it1.menu}}
         <div style="position: relative;display: inline-block;width: 80px;height: 80px;">

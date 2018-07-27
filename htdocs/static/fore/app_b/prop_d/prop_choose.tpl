@@ -8,6 +8,7 @@
         <widget w-class="4" w-tag="app_a-widget-pic_other-pic_other" w-sid="4">
             {"icon":"tips_top"} 
         </widget>
+        
         <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">
             {"icon":"tips_bottom"} 
         </widget>
@@ -43,7 +44,6 @@
                 </div>
                 {{end}}
             </div>
-            {{:console.log(11111111111,it)}}
             {{let _obj = {count:1,step:[1,10],minCount:1,maxCount:count[1].count} }}
             <widget w-class="23" w-tag="app_a-widget-number-number" w-sid="23" ev-selectcount="selectcount">
                 {{_obj}}

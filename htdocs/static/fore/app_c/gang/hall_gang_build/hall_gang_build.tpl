@@ -10,6 +10,7 @@
         {{else}}
         <img src="../images/flag_two.png" alt="" style="position: absolute;left: 50%;margin-left: -101px;top: 23px;" />
         {{end}}
+        
         <div style="position: absolute;width: 492px;height: 36px;bottom: 0px;left: 50%;margin-left: -246px;">
             <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:36px;left:50%;margin-left:-246px;">
                 {"bgName":"bg_frame47"} 

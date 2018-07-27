@@ -12,6 +12,7 @@
                 {"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"协助同伴","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
             </widget>
         </div>
+        
         {{let count = it1.robres_base.init_help_times + it1.info.assist_buy_count - it1.info.assist_count}}
 
         <div style="width: 450px;position: relative; top:15px;left: 45px;height: 576px;">

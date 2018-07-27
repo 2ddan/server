@@ -16,9 +16,10 @@
           </app_a-widget-guide-guide>
       </div>
     </div>
+    
     <div style="position: absolute;bottom:{{bottom}}px;font-size:20px;width: 100%;color:#ff4830;text-align:center;left:0;">
       <app-widget-cdTime1 ev-countdownend="timeEnd1" style="display:inline-block;vertical-align: middle;">
-        {"cd_time":{{it1.exitStartTime+15*1000}},"now_time":{{it1.exitStartTime}},"cd_type":"x" }
+        {"cd_time":{{it1.exitStartTime+15*1000+50}},"now_time":{{it1.exitStartTime}},"cd_type":"x" }
       </app-widget-cdTime1>
       <span style="font-family:mnjsh;color:rgb(81, 230, 80);padding-left:5px;">秒后退出</span>  
     </div>

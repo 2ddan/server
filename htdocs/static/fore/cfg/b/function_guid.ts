@@ -49,7 +49,7 @@ tab.push({
     "name": "神兵",
     "key": "magic_activate",
     "desc": "神兵一出八方皆灭，瞬间消灭大量敌人",
-    "award": [[150002,100], ["100001", 0], ["100002", 0]],
+    "award": [[150002,100],[100017,20], ["100001", 0], ["100002", 0]],
     "icon": "menu_magic_icon",
     "target_point": [0,0],
     "guide_text": "使用神兵可以瞬间消灭大量敌人！",
@@ -128,7 +128,7 @@ tab.push({
 
 tab.push({
     "id": 9,
-    "level_limit": 18,
+    "level_limit": 32,
     "stage_id": null,
     "name": "技能开启",
     "key": "skill4",
@@ -324,6 +324,20 @@ tab.push({
 
 tab.push({
     "id": 23,
+    "level_limit": 75,
+    "stage_id": null,
+    "name": "掠夺水晶",
+    "key": "robres",
+    "desc": "战区掠夺的战鼓已经敲响，你还在等什么！",
+    "award": [0,0, ["100001", 100000], ["100002", 0]],
+    "icon": "menu_gestFb_icon",
+    "target_point": [0,5],
+    "guide_text": "水晶掠夺，大侠战力和谋略越高，收获越大！",
+    "func_tips": "undefined"
+})
+
+tab.push({
+    "id": 24,
     "level_limit": 80,
     "stage_id": null,
     "name": "神装锻造",
@@ -337,7 +351,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 24,
+    "id": 25,
     "level_limit": 85,
     "stage_id": null,
     "name": "神装洗练",
@@ -351,7 +365,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 25,
+    "id": 26,
     "level_limit": 90,
     "stage_id": null,
     "name": "阵法",
@@ -365,7 +379,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 26,
+    "id": 27,
     "level_limit": 90,
     "stage_id": null,
     "name": "心法奇遇",
@@ -379,7 +393,7 @@ tab.push({
 })
 
 tab.push({
-    "id": 27,
+    "id": 28,
     "level_limit": 95,
     "stage_id": null,
     "name": "赋灵",
@@ -390,20 +404,6 @@ tab.push({
     "target_point": [0,0],
     "guide_text": "给武器赋灵不仅可以提供强力属性，还可以激活炫酷武器外观！",
     "func_tips": "role-weapon_soul"
-})
-
-tab.push({
-    "id": 28,
-    "level_limit": 100,
-    "stage_id": null,
-    "name": "掠夺水晶",
-    "key": "robres",
-    "desc": "战区掠夺的战鼓已经敲响，战力越强谋略越高收获越大！",
-    "award": [0,0, ["100001", 100000], ["100002", 0]],
-    "icon": "menu_gestFb_icon",
-    "target_point": [0,5],
-    "guide_text": "水晶掠夺，大侠战力和谋略越高，收获越大！",
-    "func_tips": "undefined"
 })
 
 

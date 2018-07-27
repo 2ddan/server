@@ -18,8 +18,6 @@
             </widget>
         </div>
 
-        
-
         <div w-class="s13" style="height:676px;opacity:1">
             <widget w-class="s14" w-tag="app_a-widget-bg_frame-bg" >
                 {"bgName":"bg_frame26"} 
@@ -62,7 +60,7 @@
                             "type":"monster",
                             "module":{
                                 "module":{{it.module}},
-                                "position":[0,-3,0],
+                                "position":[0,0,0],
                                 "scale":{{it.scale*2.2}},
                                 "rotate":[0,0,0]
                             },

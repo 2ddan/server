@@ -13,6 +13,7 @@
 {{let career_id = player.career_id}}
 <div style="width:100%;height:100%;position:relative;text-shadow: 1px 1px 0px #000, -1px -1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000;">
     <div class="cost_bg" style="position:absolute;top: 600px;left: 0px;right:0px;margin:0 auto"></div>
+    
     {{for i, v of type}}
         {{let module = v ? (v.module[v.career_id.indexOf(career_id)][0] ? v.module[v.career_id.indexOf(career_id)][0] : v.module[v.career_id.indexOf(career_id)][0]): ""}}
         {{let img3 = v?Pi.pictures[module]:""}}

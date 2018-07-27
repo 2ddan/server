@@ -1,0 +1,5 @@
+{
+    "tpl":"./result.tpl",
+    "js":"./wild_pk.ts",
+    "forelet":"./wild_pk.ts"
+}

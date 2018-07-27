@@ -7,7 +7,6 @@
     <app_a-widget-bg_frame-bg style="position: absolute;left: 24px;top: 0px;width: 496px;height: 642px;">
         {"bgName":"bg_frame21"} 
     </app_a-widget-bg_frame-bg>
-
     {{let can_buy = it1.vip_advantage[it1.player.vip].daily_money_treeTimes}}
     {{%%let color = (info.buy_count>=can_buy && it1.moneyTreeInfo.free_config[0] == it1.surplus) ?"disabled":"hl"}}
     <app_a-widget-btn-rect on-tap="toShake" style="position: absolute;left: 214px;top: 554px;">

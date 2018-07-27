@@ -155,22 +155,27 @@ export class GangBoss extends Widget {
             });
             return;
         }
-        globalSend("popTip", {
-            title: `<div>是否要打开${i - 0 + 1}号宝箱?</div>`,
-            btn_name: ["是", "否"],
-            cb: [
-                //确认
-                () => {
-                    getBoxAward(index + 1, i - 0 + 1);
-                },
-                //取消
-                () => { }
-            ]
-        })
+        getBoxAward(index + 1, i - 0 + 1);
+        // globalSend("popTip", {
+        //     title: `<div>是否要打开${i - 0 + 1}号宝箱?</div>`,
+        //     btn_name: ["是", "否"],
+        //     cb: [
+        //         //确认
+        //         () => {
+        //             getBoxAward(index + 1, i - 0 + 1);
+        //         },
+        //         //取消
+        //         () => { }
+        //     ]
+        // })
     }
     //宝箱预览
     lookAward() {
         open("app_c-gang-gang_boss-award_preview-award_preview");
+    }
+    //购买挑战次数
+    buyCount(){
+        logic.canBuyCount();
     }
     //关闭结算页面
     closeFightAward() {
@@ -238,6 +243,50 @@ const logic = {
         let attr_id = monster_base[boss.monster_id].attr_id;
         let info = monster_attribute[`${attr_id}-${level}`];
         return info.attr.max_hp;
+    },
+    //购买挑战次数
+    canBuyCount: function () {
+        let player = getDB("player"),
+        num = getDB("gang.gangBoss.buy_count"),
+        use = getDB("gang.gangBoss.fight_count");
+        if(num >= guild_base.buy_count_limit){
+            globalSend("screenTipFun", {
+                words: `购买次数已达上限`
+            });
+            return;
+        }
+        if((guild_base.buy_count_cost[num] || guild_base.buy_count_cost[guild_base.buy_count_cost.length-1]) > player.diamond){
+            globalSend("popTip", {
+                title: "<div>元宝不足</div><div>是否前往充值</div>",
+                btn_name: ["充值","取消"],
+                cb: [
+                    //确认
+                    () => {
+                        globalSend("gotoRecharge");
+                    },
+                    //取消
+                    () => {}
+                ]
+            });
+            return
+        }
+        //购买的数据
+        let buyData = {
+            "title": "购买次数",
+            "type": "门派试炼",
+            "coin": "diamond",
+            "btn_name": "购 买",
+            "price": guild_base.buy_count_cost,
+            "max_buy": guild_base.buy_count_limit,
+            "already_buy": num,
+            "has_count":  guild_base.init_count + num - use,
+            "buy_count": 1,//购买数量初始值默认为1
+            "callBack": (r) => {//参数为本次购买次数
+                buyCount(r);
+            }
+        };
+        globalSend("gotoBuyCount", buyData);
+       
     },
     //挑战boss
     challenge: function () {
@@ -347,6 +396,27 @@ export const gangBossNet = function (param) {
     })
 };
 
+//购买挑战次数通讯
+const buyCount = async function (count) {
+    let arg = {
+        "param": {
+            count:count
+        },
+        "type": "app/gang/expand@buy_count"
+    };
+    let data
+    try {
+        data = await gangBossNet(arg);
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+   
+    let prop:any = Common.changeArrToJson(data.ok);
+    Common_m.deductfrom(prop);
+    updata("gang.gangBoss.buy_count",prop.buy_count);
+    forelet.paint(getData());
+};
 /**
  * 进入门派boss(创建战斗场景) 
  */

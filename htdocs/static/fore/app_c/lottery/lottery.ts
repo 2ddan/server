@@ -66,6 +66,9 @@ export class lottery extends Widget {
     }
     //抽奖
     getAward = function (prop_id, id) {//消耗id,抽奖id
+        if(lock){
+            return;
+        }
         if (id == -1) {
             if (prop_id == 100002) {
                 globalSend("popTip", {
@@ -94,8 +97,7 @@ export class lottery extends Widget {
             lock = 3;//关闭背景蒙版
             forelet.paint(getData());
             logic.getAward(id);
-        },1800)
-        // logic.getAward(id,(prop_id == 100002?2:1));
+        },1800);
     }
     //奖励预览
     seeAward = function (type) {

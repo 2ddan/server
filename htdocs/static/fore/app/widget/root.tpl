@@ -15,6 +15,5 @@
 <div group="touch" style="position:absolute;left:0;top:0;width:100%;height:0; pointer-events: none; z-index:24;"></div>
 <div group="drama" style="position:absolute;left:0;top:0;width:100%;height:100%; z-index:25;"></div>
 <div group="anim" style="position:absolute;left:0;top:0;width:100%;height:100%; pointer-events: none; z-index:7;"></div>
-
 <pre group="log" style="color:white; position:absolute;left:0;bottom:0;width:100%;height:auto; pointer-events: none; z-index:100; background-color:rgba(0,0,0,0.6);"></pre>
 </div>

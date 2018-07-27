@@ -7,6 +7,7 @@
 
 <div maxId="61" test="test" style="position: absolute;width: 100%;height: 100%">
     <div w-class="s8" >
+        
         <div w-class="s12" >
             <widget w-class="s10" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"tips_top"} 
             </widget>

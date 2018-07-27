@@ -8,7 +8,6 @@
         {{let prop = it1.buffCfg[it.id]}}
         {{let img = it1.Pi.pictures[prop.icon]}}
         <div style="position: relative;width: 100%;height: 68px;margin-top: 10px;">
-
             <app_a-widget-prop-base style="position: absolute;left: 12px;top: 0px;">
                 {"width":68,"height":68,"prop":{"quality":4} ,"url":{{img}},"count":"none","name":"none","bg":0} 
             </app_a-widget-prop-base>

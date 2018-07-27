@@ -6,7 +6,6 @@
     {{let appCfg = _get("app/mod/db").exports.data}}
     {{let pet_info = appCfg.pet}}
     {{let id = it1.pet_id }}
-    
     {{let currCloth = it1.Pi.sample[it1.pet_id]}}
     {{let has = pet_info.own_skin.indexOf(it1.pet_id - 0) < 0 ?false:true}}
 

@@ -2,7 +2,7 @@ import { Widget } from "pi/widget/widget";
 import { Forelet } from "pi/widget/forelet";
 import { listenBack } from "app/mod/db_back";
 import { globalSend, Pi, cfg } from "app/mod/pi";
-import { open, close } from "app/mod/root";
+import { open, close, openList  } from "app/mod/root";
 import { destory,closeBack } from "pi/ui/root"
 import { Common_m } from "app_b/mod/common";
 import { Common } from "app/mod/common";
@@ -143,23 +143,28 @@ export const globalReceive: any = {
             }
         }
     },
+    soulClosed: () => {
+        let w = forelet.getWidget("app_b-magic-magic");
+        if(!w){
+            return;
+        }
+        let data = setResetCanvas("app_b-magic-magic");
+        resetcanvas(data);
+        magicFl(data);
+    },
     //treasure打开时，关闭其他页面
     secondaryClose:()=>{
-        
         let timer = setTimeout(()=>{
-            let w = forelet.getWidget("app_b-magic-magic");
-            if(!w){
-                clearTimeout(timer);
-                timer = null;
-                return;
-            }
             clearTimeout(timer);
             timer = null;
+            let w = forelet.getWidget("app_b-magic-magic");
+            if(!w || openList["app_b-surface-pet"]){
+                return;
+            }
             let data = setResetCanvas("app_b-magic-magic");
             resetcanvas(data);
             magicFl(data);
         },100)
-        
     },
     //前往野外并关闭二级界面
     gotoWild:()=>{
@@ -418,7 +423,7 @@ export class magicWidget extends Widget {
 
     //下级属性
     nextAttr() {
-        let data = TreasurePhase[localDB.magic.treasure[0]];
+        let data = TreasurePhase[getDB("magic.treasure")[0]];
         let attr:any = {
             "attr":data[selected-0+1].attr_add,
             "describe":data[selected].describe
@@ -519,7 +524,7 @@ const removeAllStone = ()=>{
  */
 const createStone = (type,modu,index?) => {//取名,特效名字,位置
     let w = forelet.getWidget("app_b-magic-treasure-treasure")
-    if(!w || w.parentNode.attrs.style.indexOf("hidden") > -1){
+    if(!w || w.parentNode.attrs["style"].indexOf("hidden") > -1){
         return;
     }
     if(!index && index!== 0){
@@ -560,12 +565,7 @@ const removeOneStone = (key) => {
     mgr.remove(node_list[key]);
     delete node_list[key];
 };
-/**
- * @description 获取配置表
- */
-const getCfg = (name) => {
-    return cfg[name][name];
-};
+
 /**
  * @description 激活
  */
@@ -601,7 +601,7 @@ const up = () => {
             selected = result.treasure[1];
             forelet.paint(getMagicHtmlData());
             //选中当前阶位
-            let _node: any = forelet.getWidget("app_b-magic-magic");
+            // let _node: any = forelet.getWidget("app_b-magic-magic");
             // if (localDB.magic.treasure[0] >= 6) {
                 // let list: any = getRealNode(findNodeByAttr(_node.tree,"data-desc", "_repeat"));
                 // list.scrollLeft = (localDB.magic.treasure[1] - 5) * 65;
@@ -664,35 +664,51 @@ const initData = (data) => {
     }else if(data.skill_energy !== 0 && data.treasure[0] > 0){
         expendEnergy(0);
     }
+
+    //设置神兵自动释放帧管理
+    let testTime = Date.now();
+    frame_mgr.setPermanent(()=>{
+        let now = Date.now();
+        if( testTime+3000 > now){
+            return;
+        }
+        testTime = now;
+        if(isAutoRelease && !release_signal && getDB("magic.skill_energy") >= 1500){
+            release_signal = true;
+            rskill();
+        }else if(!updateTimer && getDB("magic.skill_energy") < 1500){
+            updateEnergy();
+        }
+    });
 }
 //获取页面数据
 const getMagicHtmlData = () => {
     let data: any = {};
     data.function_open = function_open;
-    career_id = localDB.magic.treasure[0];
+    career_id = getDB("magic.treasure")[0];
     data.limit = function_open.magic_activate;
-    data.player = localDB.player;
+    data.player = getDB("player");
     data.index = index;
-    data.fun_id = localDB.open_fun.id || 0; //功能开放id
+    data.fun_id = getDB("open_fun.id") || 0; //功能开放id
     data.Pi = Pi;
     data.magicFlog = magicFlog;
     data.treasure_bar_anima = treasure_bar_anima;
     data.isAutoRelease = isAutoRelease; //自动释放标识位
-    data.attribute_config = getCfg("attribute_config");
+    data.attribute_config = attribute_config;
     if (!career_id) return data;
     data.magic_id = career_id;//神兵ID
     data.magic_atrr = magic_atrr;//神兵战斗属性
-    data.magic_atrr.energy = getCfg("TreasureBase")[career_id].energy;//神兵回复能量值
-    data.magic_atrr.max_energy = getCfg("TreasureBase")[career_id].max_energy;//神兵能量最大值
-    data.magic_atrr.energySpacing = getCfg("TreasureBase")[career_id].energySpacing;//回复能量间隔
-    data.magic_atrr.skill_energy = localDB.magic.skill_energy;//当前能量
+    data.magic_atrr.energy = TreasureBase[career_id].energy;//神兵回复能量值
+    data.magic_atrr.max_energy = TreasureBase[career_id].max_energy;//神兵能量最大值
+    data.magic_atrr.energySpacing = TreasureBase[career_id].energySpacing;//回复能量间隔
+    data.magic_atrr.skill_energy = getDB("magic.skill_energy");//当前能量
     data.treasur = selected;//神兵阶级属性
-    data.TreasurePhase = getCfg("TreasurePhase")[localDB.magic.treasure[0]][selected];//神兵阶级属性属性
+    data.TreasurePhase = TreasurePhase[career_id][selected];//神兵阶级属性属性
     data.TreasurePhase.getHave = (a) => (getDB("bag*sid=" + a).pop());
-    data.allTreasurePhase = getCfg("TreasurePhase")[localDB.magic.treasure[0]];//神兵阶级属性属性
-    data.getAttr = setAttr(getCfg("TreasurePhase")[localDB.magic.treasure[0]][selected].resonance);//神兵进阶条件
+    data.allTreasurePhase = TreasurePhase[career_id];//神兵阶级属性属性
+    data.getAttr = setAttr(TreasurePhase[career_id][selected].resonance);//神兵进阶条件
     data.skill = skill;//技能
-    //data.nextAttr = setAttr(getCfg("TreasurePhase")[localDB.magic.treasure[0]][selected+1 ? selected+1 : selected].resonance)
+    //data.nextAttr = setAttr(TreasurePhase[localDB.magic.treasure[0]][selected+1 ? selected+1 : selected].resonance)
 
     //神兵八卦数据
     data.treasure_up = treasure_up;
@@ -711,14 +727,14 @@ const getMagicHtmlData = () => {
     return data;
 }
 const rskill = () => {
-    let md = localDB.magic;
-    if(md.skill_energy < getCfg("TreasureBase")[md.treasure[0]].max_energy){
+    let md = getDB("magic");
+    if(md.skill_energy < TreasureBase[md.treasure[0]].max_energy){
         globalSend("screenTipFun", { words: "能量不足" });
         return;
     }
     try{
         showSkillName();
-        SMgr.useSkill(getCfg("TreasurePhase")[md.treasure[0]][md.treasure[1]].skill_id);    
+        SMgr.useSkill(TreasurePhase[md.treasure[0]][md.treasure[1]].skill_id);    
     }finally{
         updata("magic.skill_energy", 0);
         expendEnergy(0);
@@ -898,6 +914,7 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
             treasure_light();            
             eff_loop(0);
             let tim = setTimeout(function(){
+                level_type = false;
                 //更新孔位
                 updata("magic.hexagram_exp", prop.hexagram_exp);
                 updata("magic.hexagram_level", prop.hexagram_level);
@@ -912,7 +929,6 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
                     levelSite++;
                 }
                 // treasure_flag = 0;
-                level_type = false;
                 forelet.paint(getMagicHtmlData());
                 clearTimeout(tim);
                 tim = null;
@@ -922,7 +938,7 @@ const hexagramLevelUp = function (site, type, vip?,_index?) {
             prop = getDB(`bag*sid=${obj.material_id}`).pop();
             if ((vip < TreasureBase[career_id].one_key_up_vip) && prop && prop.count >= costCount()) {
                 let w = forelet.getWidget("app_b-magic-treasure-treasure")
-                if(!w || w.parentNode.attrs.style.indexOf("hidden") > -1){
+                if(!w || w.parentNode.attrs["style"].indexOf("hidden") > -1){
                     eff_loop(0);
                     level_type = false;
                     // treasure_flag = 0;
@@ -1050,7 +1066,7 @@ const hexagramBreak = function (type,_type) {
             Common_m.deductfrom(prop);   
             Music.skillSound("other_two");         
             let w = forelet.getWidget("app_b-magic-treasure-treasure")
-            if(!w || w.parentNode.attrs.style.indexOf("hidden") > -1){
+            if(!w || w.parentNode.attrs["style"].indexOf("hidden") > -1){
                 // break_flag = 0;
                 treasure_type = false;           
                 eff_absorb(0);
@@ -1072,9 +1088,13 @@ const hexagramBreak = function (type,_type) {
                         hexagramBreak(2,1);
                         clearTimeout(treasure_timer);
                         treasure_timer = null;
-                    },500);
+                    },300);
                 }else{
                     treasure_type = false;
+                    if(_type == 1){
+                        eff_absorb(0);
+                    }
+                    
                     // let timer = setTimeout(()=>{
                     //     clearTimeout(timer);
                     //     timer = null;
@@ -1264,9 +1284,10 @@ const updateEnergy = (() => {
         _dur,
         _ite,
         func = () => {
-            if (localDB.magic.skill_energy < _max) {
+            let skill_energy = getDB("magic.skill_energy") || 0;
+            if (skill_energy < _max) {
                 let _speed = exp_fb_open ? _max/exp_fb_base["treasure_power"] : 1;   //恢复速度为基础的几倍             
-                let e = localDB.magic.skill_energy + _ite * _speed;
+                let e = skill_energy + _ite * _speed;
                 // console.log("magic.ts能量更新++++",e)
                 e = e >= _max ? _max : e;
                 updata("magic.skill_energy", e);
@@ -1296,7 +1317,7 @@ const updateEnergy = (() => {
                     
                 },100);
             }*/
-            if(localDB.magic.skill_energy >= _max){
+            if(skill_energy >= _max){
                 clearTimeout(updateTimer);
                 updateTimer = null;
                 expendEnergy(_max);
@@ -1318,12 +1339,12 @@ const updateEnergy = (() => {
             }
         };
     return () => {
-        career_id = localDB.magic.treasure[0];
-        _cfg = getCfg("TreasureBase")[career_id];
+        career_id = getDB("magic.treasure")[0] || 43106;
+        _cfg = TreasureBase[career_id];
         _max = _cfg.max_energy;
         _dur = _cfg.energySpacing;
         _ite = _cfg.energy;
-        setTimeout(func, _dur);
+        updateTimer = setTimeout(func, _dur);
         forelet.paint(getMagicHtmlData());
     }
 })();
@@ -1339,7 +1360,7 @@ const updateEnergy = (() => {
 //     //     globalSend("screenTipFun", { words: cfg.function_open.function_open.magic_activate + "级开放！" });
 //     // else if (!md.treasure[0])
 //     //     activate();
-//     // else if (md.skill_energy >= getCfg("TreasureBase")[md.treasure[0]].max_energy) {
+//     // else if (md.skill_energy >= TreasureBase[md.treasure[0]].max_energy) {
 //     //     rskill(md);
 //     //     // node_fun();
 //     // } else
@@ -1369,19 +1390,6 @@ const showSkillName = function () {
     }, 100);
 }
 
-
-//设置神兵自动释放帧管理
-frame_mgr.setPermanent(()=>{
-    if(isAutoRelease && !release_signal && getDB("magic.skill_energy") >= 1500){
-        release_signal = true;
-        rskill();
-        // let timer = setTimeout(()=>{
-        //     release_signal && (release_signal = false);
-        //     clearTimeout(timer);
-        //     timer = null;
-        // },2500);
-    }
-});
 
 // ============================================ 立即执行
 

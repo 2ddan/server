@@ -8,6 +8,7 @@
             <widget w-class="s25" w-tag="app_a-widget-btn_pic-btn_pic" on-tap='goback'>
                 {"icon":"close"} 
             </widget>
+            
             <widget w-class="s26" w-tag="app_a-widget-pic_other-pic_other">
                 {"icon":"pendant"} 
             </widget>
@@ -42,7 +43,7 @@
                         </widget>
                         {{end}}
                     {{else}}
-                     <div class="shadow6" style="font-size:20px;font-family:mnjsh;color:#fff;"> 恭喜您已三星通关所有管卡</div> 
+                     <div class="shadow6" style="font-size:20px;font-family:mnjsh;color:#fff;"> 恭喜您已三星通关所有关卡</div> 
                     {{end}}
                 </div>
             </div>

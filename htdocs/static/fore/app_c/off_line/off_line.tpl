@@ -14,6 +14,7 @@
     <app_a-widget-bg_frame-bg style="position: absolute;left: 24px;top: 0px;width: 490px;height: 701px;">
         {"bgName":"bg_frame21"} 
     </app_a-widget-bg_frame-bg>
+    
     <div style="width:488px;height:701px;margin:0 auto;position:relative;background:url(./images/bg_1.png) no-repeat">    
         <div style="display:inline-block;width:226px;height:637px;margin-top:55px;position:relative;background:url(./images/bg_2.png) no-repeat;z-index: 1;">
             <app_a-widget-pic_text-pic_text style="position:absolute;top:-12px;left:48px;width:118px;height:31px">
@@ -76,9 +77,11 @@
                         <span style="color:#38d11e">
                             
                             {{for i in it1.gain_bonus}}
-                                {{:_add = _add + it1.gain_bonus[i][0]}}
+                                {{:_add = _add + it1.gain_bonus[i][0]*100}}
                             {{end}}
-                            {{" +"+it1.formatNum(_add * 100,2) + "%"}}
+                            {{:_add = _add/100}}
+
+                            {{" +"+Math.floor(_add*100) + "%"}}
                         </span>
                     </span>
                     

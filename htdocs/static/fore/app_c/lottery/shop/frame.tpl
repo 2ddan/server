@@ -8,7 +8,6 @@
         {"bgName":"bg_frame52"} 
     </widget>
 
-    
     {{let prop = it1.Pi.sample[ it.prop[0] ]}}
     {{let icon = prop.module ? prop.module[prop.career_id.indexOf(career_id)][0] : prop.icon}}
     {{let url = it1.Pi.pictures[icon]}}

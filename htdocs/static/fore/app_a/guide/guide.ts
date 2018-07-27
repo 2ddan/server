@@ -6,7 +6,6 @@ import { getGlobal } from "pi/widget/frame_mgr";
 import { listenerList, lastBack, closeBack, getHeight, getWidth, open } from "pi/ui/root";
 import { listenerList as guideListen, init as initGuide, start as start_force,end, setGuideForceWidgetName,guideFind } from "pi/ui/guide";
 import { listenBack } from "app/mod/db_back";
-import { Util } from "app/mod/util";
 //mod
 import { net_request } from "app_a/connect/main";
 import { Pi, setLog } from "app/mod/pi";
@@ -242,6 +241,9 @@ const findIgnore = () => {
  */
 const guideEv = {
 	"guideOver" : (state) => {
+		if(record.curr === ""){
+			return;
+		}
 		let _curr = guide_cfg[record.curr][record.start];
 		updateCover(true);
 		postTimer = (new Date()).getTime();

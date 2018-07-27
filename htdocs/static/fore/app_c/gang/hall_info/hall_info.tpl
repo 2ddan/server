@@ -9,6 +9,7 @@
 	</widget>
 	<widget w-class="8" w-tag="app_a-widget-bg_frame-bg" w-sid="8">{"bgName":"bg_frame25"} 
 	</widget>
+	
 	<div w-class="9" w-sid="9">
 		{{let img = Pi.pictures[it1.guild_upgrade[gang.gang_level].icon_id]}}
 		<div w-class="10" w-sid="10">
@@ -150,7 +151,7 @@
 				{{end}}
 			</div>
 			{{end}}
-			{{if 1 == 2}}
+
 			{{let base = it1.guild_battle_base}}
 			{{let time = it1.Util.serverTime()}}
 			{{let date = new Date(time)}}
@@ -173,7 +174,6 @@
 				</app_a-widget-pic_text-pic_text>
 				{{end}}
 			</div>
-			{{end}}
 		</div>
 	</div>
 </div>

@@ -1,7 +1,5 @@
-<div style="position:absolute;width:492px;height:638px;left:50%;margin-left:-246px;">
-    <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:638px;left:0px;top:0;">
-        {"bgName":"bg_frame21"} 
-    </widget>
+<div style="position:absolute;width:492px;left:50%;margin-left:-246px;top: 0px;bottom: 70px;">
+    <div class="bg_1" style="position:absolute;width:492px;height: auto;;left:0px;top:0;bottom: 0px;"></div>
     <div w-class="bg"></div>
     <app_a-widget-pic_other-pic_other style="position:absolute;left:-26px;top:4px;">
         {"icon":"lantern_1"}
@@ -13,6 +11,7 @@
     <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-11px;left:-20px;">
         {"line":"line_7"} 
     </widget>
+    
     <app_a-widget-pic_other-pic_other style="position:absolute;left:0px;top:-20px;">
         {"icon":"butterfly"}
     </app_a-widget-pic_other-pic_other>

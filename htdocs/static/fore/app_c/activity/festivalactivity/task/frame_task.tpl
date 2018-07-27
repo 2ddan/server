@@ -7,6 +7,7 @@
         {{let arr = it.desc.split("#")}}
         {{arr[0]}} <span style="color:#35e04d;padding:0 5px;">{{it.condition}}</span>{{arr[1]}}
     </div>
+    
     {{let career_id = it1.player.career_id}}
     <div data-desc="奖励" style="position: absolute;top:40px;left:16px;height:60px;width:260px;">
         {{for i, n of it.prop}} 

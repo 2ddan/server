@@ -33,7 +33,7 @@ export let globalReceive = {
     "gotoEquipFB": ( i? ) => {
         if (funIsOpen("equip_fb")) {
             let time = i ? 150 : 100;
-            index = i || Math.floor(getDB("equip_fb.mission_point") / 5) + 1;
+            index = parseInt(i) || Math.floor(getDB("equip_fb.mission_point") / 5) + 1;
             if (equip_fb_data[index][0].level_limit > getDB("player.level")) {
                 index -= 1;
             }
@@ -354,12 +354,16 @@ let logic = {
     //收集未满15星的副本
     notThreeStar: function () {
         let n = 0,
-            num = Math.floor(fb_data.mission_point / 5);
+            num = Math.floor((fb_data.mission_point-1) / 5);
         for (; n <= num; n++) {
             let flag = fb_data.equip_fb_star[n].some((x) => {
                 return x < 3;
             })
             if (flag) {
+                let level = getDB("player.level");
+                if((equip_fb_data[n][0] && equip_fb_data[n][0].level_limit) > level){
+                    continue;
+                }
                 selectArr.push(n + 1);
             }
 
@@ -459,8 +463,8 @@ let fb = {
     challenge: function () {
         let arg = {
             "param": {
-                "chapter_id": index,
-                "mission_id": mission_id //关卡id
+                "chapter_id": index-0,
+                "mission_id": mission_id-0 //关卡id
             },
             "type": "app/pve/equip_instance@start_fight"
         };
@@ -504,9 +508,7 @@ let fb = {
                         }
                     } else {
                         globalSend("fbStar", 0);
-                        Common_m.openAccount(fightData, "equip_fb",{},0,()=>{
-                            logic.resetScene();
-                        })
+                        Common_m.openAccount(fightData, "equip_fb",{},0)
                         return true;
                     }
                 })
@@ -559,9 +561,7 @@ let fb = {
 
                 //     Common_m.openAccount(result, "equip_fb", prop, prop.star_info[0][1]);
                 // });
-                Common_m.openAccount(result, "equip_fb", prop, prop.star_info[0][1],()=>{
-                    logic.resetScene();
-                });
+                Common_m.openAccount(result, "equip_fb", prop, prop.star_info[0][1]);
             }
         })
     },

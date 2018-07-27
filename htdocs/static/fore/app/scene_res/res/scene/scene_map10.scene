@@ -21,9 +21,9 @@
   },
   "children"  : [
     {
-      "name" : "scene_map10_dibiao1",
-      "type" : "node",
+      "name" : "scene_map10_dibiao11",
       "rayID":-1001,
+      "type" : "node",
       "transform" : {
         "position" : [
           0.0,
@@ -48,15 +48,45 @@
       "meshRender" : {
         "material" : [
           {
-            "type" : "MeshBasicMaterial",
-            "map"  : {
-              "filter" : [
-                1006,
-                1007
+            "type" : "MeshT4M3Material",
+            "_Splat0" : {
+              "repeat" : [
+                16.0,
+                16.0
               ],
-              "generateMipmaps" : true,
+              "generateMipmaps" : false,
               "image"           : {
-                "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                "name" : "FmoKf4eH2uQ4t2eGRmWGq2.jpg"
+              }
+            },
+            "_Splat1" : {
+              "repeat" : [
+                10.0,
+                10.0
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "4FFqGwpvcP1oNcbbBs3qbG.jpg"
+              }
+            },
+            "_Splat2" : {
+              "repeat" : [
+                16.0,
+                16.0
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "KMuP432YyVvqhJ25T26PPE.jpg"
+              }
+            },
+            "_Control" : {
+              "wrap" : [
+                1001,
+                1001
+              ],
+              "generateMipmaps" : false,
+              "image"           : {
+                "name" : "Rkj3x2qTkAM2RyYd8N65oc.jpg"
               }
             }
           }
@@ -70,7 +100,7 @@
         "position" : [
           0.0,
           0.0,
-          1.08000004291534
+          0.0
         ],
         "scale"    : [
           1.0,
@@ -85,7 +115,7 @@
       },
       "geometry"  : {
         "type" : "BufferGeometry",
-        "res"  : "6PUGszJhyFRy9gogwcJUbG.geo"
+        "res"  : "AtRo4GNoC2tr38nwmB6tNb.geo"
       },
       "meshRender" : {
         "material" : [
@@ -98,7 +128,7 @@
               ],
               "generateMipmaps" : true,
               "image"           : {
-                "name" : "XGCPL4RmcC5vznBef81G4z.jpg"
+                "name" : "yTfubQHrp2sjkfBxy3KgA.jpg"
               }
             }
           }
@@ -134,13 +164,9 @@
           {
             "type" : "MeshBasicMaterial",
             "map"  : {
-              "filter" : [
-                1006,
-                1007
-              ],
-              "generateMipmaps" : true,
+              "generateMipmaps" : false,
               "image"           : {
-                "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
               }
             }
           }
@@ -203,7 +229,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "YNkGNStTksSo7V2WG5Ujz3.jpg"
+                    "name" : "Q89AeZYJzBQjwpB1oZKRNa.jpg"
                   }
                 }
               }
@@ -245,7 +271,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "YNkGNStTksSo7V2WG5Ujz3.jpg"
+                    "name" : "Q89AeZYJzBQjwpB1oZKRNa.jpg"
                   }
                 }
               }
@@ -287,7 +313,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "YNkGNStTksSo7V2WG5Ujz3.jpg"
+                    "name" : "Q89AeZYJzBQjwpB1oZKRNa.jpg"
                   }
                 }
               }
@@ -329,7 +355,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -371,7 +397,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -407,13 +433,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -449,13 +471,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -491,13 +509,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -562,7 +576,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -604,7 +618,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -646,7 +660,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -688,7 +702,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -730,7 +744,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -766,13 +780,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -808,13 +818,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -850,13 +856,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "CLqa9uC2eEHFBkGc8944Xd.jpg"
+                    "name" : "VqKbUm77Y8mxeww4kzPxs4.jpg"
                   }
                 }
               }
@@ -898,7 +900,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "EhBUde7wtFgPBbSe1mrfxJ.png"
+                    "name" : "HUiThjA6rqRLLJMxWMSdab.png"
                   }
                 },
                 "transparent" : true,
@@ -942,7 +944,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "EhBUde7wtFgPBbSe1mrfxJ.png"
+                    "name" : "HUiThjA6rqRLLJMxWMSdab.png"
                   }
                 },
                 "transparent" : true,
@@ -1009,7 +1011,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1051,7 +1053,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1093,7 +1095,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1135,7 +1137,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1177,7 +1179,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1219,7 +1221,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }
@@ -1261,7 +1263,7 @@
                   ],
                   "generateMipmaps" : true,
                   "image"           : {
-                    "name" : "DZehj5Yk7zW4bPQA8xfywH.jpg"
+                    "name" : "B858C9fTSdgxuJvSpLwMbk.jpg"
                   }
                 }
               }

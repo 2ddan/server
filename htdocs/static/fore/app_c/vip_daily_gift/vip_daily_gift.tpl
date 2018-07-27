@@ -1,7 +1,5 @@
-<div style="position:absolute;width:100%;top:0;height:642px;">
-    <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:642px;left:50%;margin-left:-246px;">
-        {"bgName":"bg_frame21"} 
-    </widget>
+<div style="position:absolute;width:100%;top:0;height:auto;bottom: 0px">
+    <div class="bg_1" style="position:absolute;width:492px;height:auto;left:50%;margin-left:-246px;top: 0;bottom: 0px;"></div>
     <widget w-tag="app_a-widget-line-line" style="position:absolute;top:-14px;left:0px;">
         {"line":"line_7"} 
     </widget>
@@ -13,15 +11,17 @@
         <app_a-widget-pic_other-pic_other style="position:absolute;left:-13px;">
             {"icon":"remind"}
         </app_a-widget-pic_other-pic_other>
+        
         <app_a-widget-pic_text-pic_text style="font-family:mnjsh;font-size:16px;font-family:mnjsh;line-height:24px;">
             {"icon":"little_tips_bg","textCfg":"","width":300,"height":24,"fontSize":20,"text":"每天可领取一次当前VIP等级礼包","marginLeft":8}
         </app_a-widget-pic_text-pic_text>
     </div>
 
-    <div data-desc="奖励列表" scroller="1" style="position: absolute;width: 490px;height:560px;left:50%;margin-left:-245px;z-index:1;top:75px;overflow:hidden;">
+    <div data-desc="奖励列表" scroller="1" style="position: absolute;width: 490px;height:auto;left:50%;margin-left:-245px;z-index:1;top:75px;overflow:hidden;bottom: 4px;">
         <div style="position:absolute;width:105%;height:100%;overflow-y: auto;overflow-x: hidden;">
             {{let arr = it1.dailyData.slice(it1.vip,it1.vip-0+3)}}
             {{for i,v of arr}}
+                {{if v}}
                 <div style="width:448px;height:127px;position:relative;display:flex;align-items:center;margin:0 0 10px 21px;">
                     <app_a-widget-img_stitch-stitch style="position: absolute;width: 448px;height: 127px;">
                         {"type":2,"height":20,"width":30}
@@ -58,6 +58,7 @@
                     </app_a-widget-pic_text-pic_text>
                     {{end}}
                 </div>
+                {{end}}
             {{end}}
         </div>
     </div>

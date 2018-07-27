@@ -12,6 +12,7 @@
             {"icon":"other_1"} 
         </widget>
     </div>
+    
     <div style="position: absolute;top: 83px;left:-1px;width:100%">
         <img style="position: absolute;top: 0;left: 4px;" src="./images/num_bg.png"/>
         <div style="position:relative;top:13px;height:54px;line-height:60px;text-align: center;">

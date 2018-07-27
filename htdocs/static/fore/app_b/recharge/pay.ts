@@ -48,7 +48,8 @@ export const testPay = function (id, type, money) {
  * @param {number} count 购买数量
  */
 export const pay = (goodsId, type, count?) =>{
-    if(JSON.parse(Pi.localStorage.ptFrom).from === "soeasy"){
+    // if(JSON.parse(Pi.localStorage.ptFrom).from === "soeasy"){
+    if((window as any).pi_modules.load.exports.isNativeBrowser()){
         let msg = {
             "param": {
                 "goods_id": goodsId,

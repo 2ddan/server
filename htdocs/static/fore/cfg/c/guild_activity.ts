@@ -15,9 +15,9 @@ let tab = [];
     tab.push({
         "id": 2,
         "type": "guild_charge",
-        "type_desc": "祭天2次",
+        "type_desc": "门派祈福2次",
         "param": 2,
-        "desc": "祭天2次",
+        "desc": "门派祈福2次",
         "icon": "",
         "award": {
             "gain_contribute": [150005,50],
@@ -27,9 +27,9 @@ let tab = [];
     tab.push({
         "id": 3,
         "type": "guild_charge2",
-        "type_desc": "元宝祭天共2次",
+        "type_desc": "元宝祈福共2次",
         "param": 2,
-        "desc": "元宝祭天共2次",
+        "desc": "元宝祈福共2次",
         "icon": "",
         "award": {
             "gain_contribute": [150005,200],

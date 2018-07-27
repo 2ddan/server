@@ -2,6 +2,7 @@
     <div w-class="38">
         我的积分:<span style="color:#35e04d;position: relative;">{{it1.cardData.score}}</span>
     </div>
+    
     {{let Pi = _get("app/mod/pi").exports.Pi}}
     {{let Common = _get("app/mod/common").exports.Common}}
 

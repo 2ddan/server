@@ -1,22 +1,22 @@
 .index_0 {
-    left: 99px;
-    top: 636px;
+    left: 80px;
+    top: 613px;
 }
 .index_1 {
-    left: 338px;
-    top: 462px;
+    left: 306px;
+    top: 445px;
 }
 .index_2 {
-    left: 128px;
-    top: 430px;  
+    left: 90px;
+    top: 398px;  
 }
 .index_3 {
-    left: 174px;
-    top: 247px;
+    left: 130px;
+    top:181px;
 }
 .index_4 {
-    left: 348px;
-    top: 136px;
+    left: 320px;
+    top: 105px;
 }
 
 .s1 {

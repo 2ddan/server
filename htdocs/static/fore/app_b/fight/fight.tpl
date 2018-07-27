@@ -7,6 +7,7 @@
     <app-scene-base-scene>
         {"name":"fight","newscene":{{it1.scene.fightData.cfg.scene}},"type":{{it1.scene.fightData.type}} }
     </app-scene-base-scene>
+    
     <app_b-magic-skill style="position:absolute;right:0;bottom:110px;display:{{ chatShow ? 'block' : 'none'}}"></app_b-magic-skill>
     <div style="position:absolute;right:6px;top:7px;width: 90px;height: 94px;" on-tap='goback_tips("{{it1.scene.fightData.type}}")'>
         <app_a-widget-btn_pic-btn_pic style="right:0;">
@@ -18,16 +19,36 @@
     </div>
     <app_b-chat-chat></app_b-chat-chat>
     {{if it1.scene.fightData.type == "tower" || it1.scene.fightData.type == "exp_mission"}}
-        {{let text = it1.scene.fightData.type == "tower" ? "第"+it1.scene.fightData.floor_point+"层" : "数量:"+it1.scene.fightData.count[0]+"/"+it1.scene.fightData.count[1]}}
+        {{if it1.scene.fightData.type == "tower"}}
         <app_a-widget-pic_text-pic_text style="position:absolute;left:-14px;">
-            {"icon":"now_attr_bg","width":200,"height":48,"align":"center","marginLeft":3,"text":{{text}},"textCfg":"menu_main","space":0,"fontSize":20,"top":12,"left":0}
+            {"icon":"now_attr_bg","width":200,"height":48,"align":"center","marginLeft":3,"text":{{"第"+it1.scene.fightData.floor_point+"层"}},"textCfg":"menu_main","space":0,"fontSize":20,"top":12,"left":0}
         </app_a-widget-pic_text-pic_text>
+        {{else}}
+        <div style="position:absolute;left:-14px;height:48px;width:200px;">
+            <app_a-widget-pic_text-pic_text style="position:absolute;">
+                {"icon":"now_attr_bg","width":200,"height":48}
+            </app_a-widget-pic_text-pic_text>
+            <div data-desc="文字" style="position:absolute;left:30px;top:13px;pointer-events:none;">
+                <app_a-widget-text-text  style="display:inline-block;vertical-align: middle;">
+                    {"text":"数量:","textCfg":"menu_main","fontSize":20,"space":0}
+                </app_a-widget-text-text>
+
+                <app_a-widget-text-text  style="display:inline-block;vertical-align: middle;">
+                    {"text":{{it1.scene.fightData.count[0]}},"textCfg":"menu_main","fontSize":20,"space":0}
+                </app_a-widget-text-text>
+
+                <app_a-widget-text-text  style="display:inline-block;vertical-align: middle;">
+                    {"text":{{"/"+it1.scene.fightData.count[1]}},"textCfg":"menu_main","fontSize":20,"space":0}
+                </app_a-widget-text-text>
+            </div>
+        </div>
+        {{end}}
         <div style="position:absolute;width:139px;height:65px;top:54px;left:13px;">
             <app_a-widget-pic_text-pic_text style="position:absolute">
                 {"icon":"fight_time_bg","width":139,"height":65,"align":"center","marginLeft":3,"text":"倒计时","textCfg":"lingBtn","space":0,"fontSize":18,"top":10,"left":0}
             </app_a-widget-pic_text-pic_text>
-            {{if it1.scene.fightData.time >= Util.serverTime()}}
-            <app-widget-cdtime ev-countdownend="timeEnd" style="position: absolute;top:35px;font-size: 16px;width: 100%;left: 0px;text-align:center;color:#78f300;">{cd_time:{{it1.scene.fightData.time}},"now_time":{{Util.serverTime()}} }</app-widget-cdtime>
+            {{if it1.scene.fightData.time >= it1.scene.fightData.nowTime}}
+            <app-widget-cdtime ev-countdownend="timeEnd" style="position: absolute;top:35px;font-size: 16px;width: 100%;left: 0px;text-align:center;color:#78f300;">{cd_time:{{it1.scene.fightData.time}},"now_time":{{it1.scene.fightData.nowTime}} }</app-widget-cdtime>
             {{end}}
         </div>
         {{if it1.scene.fightData.type == "exp_mission"}}

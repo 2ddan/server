@@ -16,6 +16,7 @@ import { sendGangChat } from "app_b/chat/chat";
 //导入配置
 import { funIsOpen } from "app_b/open_fun/open_fun";
 import { robres_base } from "cfg/c/robres_base";
+import { robres_battle } from "cfg/c/robres_battle";
 import { robres_reward } from "cfg/c/robres_reward";
 import { robres_rank } from "cfg/c/robres_rank";
 import { robres_global_rank } from "cfg/c/robres_global_rank";
@@ -27,6 +28,8 @@ export const forelet: any = new Forelet();
 
 let page = 0,//水晶页卡
     gangInfo = null,//门派水晶列表
+    giveInfo = null,//帮会赠送列表
+    give_detail:any = {},//赠送的具体信息
     fight_name = [],//[击败玩家,协助玩家(如无则是自己掠夺)]
     rank_index = 0,
     fighting = false,//战斗状态
@@ -59,15 +62,10 @@ export const globalReceive: any = {
                     words: `请先加入门派`
                 });
             }else{
-                globalSend("funInfo", {
-                    width: 320,
-                    hieght: 100,
-                    top: 502,
-                    text: `<div class="shadow" style="color:#ffd8a6;text-align:center;width:300px;line-height:26px;"> 
-                            <div>掠夺水晶开启时间为: </div>
-                            <div>星期${open_day}</div>
-                            <div>${open_time}</div>
-                        </div>`
+                globalSend("gotoOpenTips", {
+                    title:"掠夺水晶",
+                    week: open_day,
+                    time:open_time
                 });
             }
         }
@@ -92,7 +90,7 @@ export class robres extends Widget {
     }
     //排行榜tab切换
     changeColumns(msg){
-        let index = msg.type_m == "area" ? 0 : 1;
+        let index = msg.type_m == "detail" ? 0 : msg.type_m == "area" ? 1 : 2;
         if(rank_index == index){
             return;
         }
@@ -118,6 +116,20 @@ export class robres extends Widget {
     timeEnd2(){
         refresh_time = null;
         forelet.paint(getData());
+    }
+    //活动结束倒计时
+    closeRobres(){
+        let w = forelet.getWidget("app_c-robres-robres");
+        if(w){
+            if(fighting){
+                fighting = false;
+                logic.endFight(null,null);
+            }
+            closeBack();
+            globalSend("screenTipFun", {
+                words: "活动已结束"
+            }); 
+        }
     }
     //资源排行
     gotoRank(){
@@ -191,6 +203,98 @@ export class robres extends Widget {
 
         }
         logic.startFight(0,id,null,null);
+    }
+    //掠夺排行榜上的水晶
+    fightRank(arr){
+        let obj:any = Common.changeArrToJson(arr);
+
+        if(!logic.getCount()[0]){
+            globalSend("screenTipFun", {
+                words: `掠夺次数不足`
+            });
+            return;
+        }
+        let data = getDB("robres.plunder_info");
+        if(data){
+            for(let v of data){
+                if(v[0] == obj.id){
+                    if(v[1] >= robres_base.most_beaten_times){
+                        globalSend("screenTipFun", {
+                            words: `他已经很可怜了，得饶人处且饶人吧`
+                        });
+                        return;
+                    }
+                    break;
+                }
+            }
+        }
+        let gang_name = checkTypeof(obj.gang_name,"Array") ? Common.fromCharCode(obj.gang_name) : obj.gang_name;
+
+        if(gang_name === update_data.myGang[1][0]){
+            globalSend("popTip",{
+                title:`是否掠夺${checkTypeof(obj.name,"Array") ? Common.fromCharCode(obj.name) : obj.name}<span style="color:#f00">(同门派)</span>的水晶？`,
+                btn_name:["掠 夺","取 消"],
+                cb:[
+                    //确认
+                    ()=>{
+                        logic.startFight(0,obj.role_id,null,null);
+                        let w = forelet.getWidget("app_c-robres-rank-rank");
+                        w && close(w);
+                    },
+                    //取消
+                    ()=>{
+                       
+                    }
+                ]
+            })
+            return;
+        }
+        logic.startFight(0,obj.role_id,null,null);
+        let w = forelet.getWidget("app_c-robres-rank-rank");
+         w && close(w);
+    }
+    //打开赠送弹窗
+    openGive(){
+        give_detail = {};
+        logic.readGang(myGang[0],true);
+    }
+    //选择赠送多少粮草
+    giveSelect(id,name,index){
+        let count = robres_base.give_count - update_data.info.give_count;
+        if(count <= 0){
+            globalSend("screenTipFun", {
+                words: `赠送次数不足`
+            });
+            return;
+        }
+        give_detail.id = id;
+        give_detail.name = name;
+        give_detail.index = index;
+        give_detail.rate = robres_base.range[1];
+        forelet.paint(getData());
+        open("app_c-robres-my_source-give_select",give_detail);
+    }
+     //选择赠送比例
+     selectcount = (count) => {
+         give_detail.rate += count;
+        if (give_detail.rate > robres_base.range[1]) {
+            globalSend("screenTipFun", {
+                words: "已达到赠送的最大值!"
+            });
+            give_detail.rate = robres_base.range[1];
+        }else if(give_detail.rate < robres_base.range[0]){
+            globalSend("screenTipFun", {
+                words: "已达到赠送的最小值!"
+            });
+            give_detail.rate = robres_base.range[0];
+        }
+        forelet.paint(getData());
+    }
+    //赠送
+    giveOther(give_id,rate){
+        let w = forelet.getWidget("app_c-robres-my_source-give_select");
+        w && close(w);
+        logic.giveOther(give_id,rate)
     }
     //打开复仇弹窗
     openRevenge(data){
@@ -370,13 +474,14 @@ export class robres extends Widget {
 let update_data:any = {
     "Pi": Pi,
     "menu":{
-        "rank": ["资源排行","pic_ranking","gotoRank"],
+        "rank": ["排行","pic_ranking","gotoRank"],
         "achieve": ["成就","menu_achieve_icon","gotoAchieve","new_fun.robres.award"],
         "resource": ["我的资源","menu_shop_icon","gotoResource", "new_fun.robres.event"]
     },
     "robres_reward": robres_reward,
     "robres_base": robres_base,
     "robres_rank": robres_rank,
+    "robres_battle": robres_battle,
     "robres_global_rank": robres_global_rank
 
 }
@@ -389,9 +494,11 @@ const getData = function () {
     update_data.info = getDB("robres");
     update_data.getCount = logic.getCount;
     update_data.checkTypeof = checkTypeof;
+    update_data.giveInfo = giveInfo;
     update_data.gangInfo = gangInfo;
     update_data.myGang = myGang;
     update_data.Common = Common;
+    update_data.getFixed = logic.getFixed;
     update_data.getPropCount = logic.getPropCount;
     update_data.getEndTime = logic.getEndTime;
     update_data.getFixTime = logic.getFixTime;
@@ -408,30 +515,22 @@ export const isOpen = function(){
     }
     return false;           
 }
-//替换开放日期数字为汉字
-const replaceOpenDay = function () {
-    let day = ["一", "二", "三", "四", "五", "六", "日"]
-    return robres_base.open_day.replace(/,/g,"、").replace(/\d/g, function (a, b) {
-        return day[a];
-    });
-}
-//计算活动开放时间
-const openTime = function () {
-    let t = robres_base.open_time;
-    let arr = [];
-    arr[0] = Math.floor(t[0]/60)+":" + (Math.floor(t[0]%60)<10 ? ("0" + Math.floor(t[0]%60)) : Math.floor(t[0]%60));
-    arr[1] = Math.floor(t[1]/60)+":" + (Math.floor(t[1]%60)<10 ? ("0" + Math.floor(t[1]%60)) : Math.floor(t[1]%60));
-    return arr.join("-");
-}
-open_day = replaceOpenDay();
-open_time = openTime();
+
+open_day = Common_m.changeNumToWeek(robres_base.open_day);
+open_time = Common_m.changeMinToTime(robres_base.open_time);
 
 let logic = {
+    //计算获得开始到现在获得的固定水晶
+    getFixed(){
+        let now = Util.serverTime();
+        let arr = Util.arrDate(now);
+        return  Math.floor((arr[3] * 60 + arr[4] - robres_base.open_time[0])/robres_base.spell_get_fixed_provender[0]) * robres_base.spell_get_fixed_provender[1] + robres_base.init_fixed_provender;
+    },
     //计算活动结束剩余时间
     getEndTime(){
         let now = Util.serverTime();
         let arr = Util.arrDate(now);
-        return [now, now + (robres_base.open_time[1] - arr[3] * 60 + arr[4])*60*1000 - arr[5]*1000];
+        return [now, now + (robres_base.open_time[1] - arr[3] * 60 - arr[4])*60*1000 - arr[5]*1000];
     },
     //计算[可掠夺剩余次数,下一次增加次数时间]
     getCount(){
@@ -495,6 +594,10 @@ let logic = {
                 if(checkTypeof(prop.achieve_record,"Array")){
                     prop.achieve_record = Common.changeArrToJson(prop.achieve_record);
                 }
+                if(prop.gang_assist_list){
+                    let list = logic.filterAssist([data.refresh_help_info]);
+                    prop.gang_assist_list = list.length ? list : "";
+                }
                 updata("robres",prop);
                 forelet.paint(getData());
             }
@@ -514,7 +617,7 @@ let logic = {
                 //非第一次刷新需要走倒计时
                 if(!first){
                     let now = Util.serverTime();
-                    refresh_time = [now,now+5000];
+                    refresh_time = [now,now+5030];
                     globalSend("screenTipFun", {
                         words: `已刷新水晶据点`
                     });
@@ -530,7 +633,7 @@ let logic = {
      * @param gang_id 门派ID
      * 
     */
-    readGang(gang_id){
+    readGang(gang_id,give?){//是否是赠送读取本帮会成员
         let arg = {
             "param": {
                 gang_id: gang_id
@@ -546,6 +649,16 @@ let logic = {
                 return;
             } else {
                 let msg:any = Common.changeArrToJson(data.ok);
+
+                //赠送读取内容
+                if(give){
+                    giveInfo = msg.match_detail;
+                    forelet.paint(getData());
+                    open("app_c-robres-my_source-give");
+                    return;
+                }
+
+                //首页进入帮会读取内容
                 gangInfo = msg.match_detail;
                 if(!gangInfo){
                     globalSend("screenTipFun", {
@@ -556,6 +669,43 @@ let logic = {
                 forelet.paint(getData());
                 let w = forelet.getWidget("app_c-robres-rob-rob");
                 !w && open("app_c-robres-rob-rob");
+            }
+        })
+    },
+     /**
+     * 赠送粮草
+     * @param %通讯参数  %通讯参数 {"give_id", 0}, {"rate", 0}
+                        % give_id 赠送对象id
+                        % rate : 赠送百分比 范围 0 -100
+     * 
+    */
+    giveOther(give_id,rate){
+        let arg = {
+            "param": {
+                give_id: give_id,
+                rate:rate
+            },
+            "type": "app/pve/take_food@give_forage"
+        };
+        net_request(arg, function (data) {
+            if (data.error) {
+                globalSend("screenTipFun", {
+                    words: `${data.why}`
+                });
+                return;
+            } else {
+                let result:any = Common.changeArrToJson(data.ok);
+                let count = getDB("robres.forage_info");
+                let give = Math.ceil(give_detail.rate * count[1]/100);
+                globalSend("screenTipFun", {
+                    words: `已将${give}水晶赠给${give_detail.name}`
+                });
+                giveInfo[give_detail.index][1] = Math.ceil(giveInfo[give_detail.index][1]+give*robres_battle.battle)
+                let total = getDB("robres.own_total_forage");
+                updata("robres.own_total_forage", total - give);
+                updata("robres.forage_info", result.forage_info);
+                updata("robres.give_count", result.give_count);
+                forelet.paint(getData());
             }
         })
     },
@@ -605,7 +755,10 @@ let logic = {
                 let msg:any = Common.changeArrToJson(data.ok);
                 update_data.rank = msg;
                 forelet.paint(getData());
-                open("app_c-robres-rank-rank");
+                let w = forelet.getWidget("app_c-robres-rank-rank");
+                if(!w){
+                    open("app_c-robres-rank-rank");
+                }
             }
         })
     },
@@ -697,6 +850,7 @@ let logic = {
                 if(!result){
                     return;
                 }
+
                 let r: any = Common.changeArrToJson(data.ok);
 
                 /**********打输了***********/
@@ -748,6 +902,7 @@ let logic = {
                 award.role_name = fight_name;
                 Common_m.openAccount(result, "robres", award,"none");
                 forelet.paint(getData());
+                // logic.readRank();
 
             }
         })
@@ -952,6 +1107,15 @@ net_message("robres_help_list_refresh",(data)=>{
             return;
         }
     }
+})
+//接收到赠送粮草推送
+net_message("robres_give_info",(data)=>{
+    let a = getDB("robres.own_total_forage") || 0;
+    updata("robres.own_total_forage", a + data.add_forage);
+
+    let prop: any = Common.changeArrToJson(data.achieve_record);
+    updata("robres.achieve_record", prop);
+    forelet.paint(getData());
 })
 
 //监听加入门派

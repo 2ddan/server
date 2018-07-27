@@ -7,12 +7,12 @@
     {{let img = type ? "win" : "lose"}}
     <img style="position:absolute;top:0;left:0;z-index:1;" src="./images/{{img}}_top.png"/>
     <img style="position:absolute;bottom:0;left:0;z-index:1;" src="./images/{{img}}_bottom.png"/>
-    <div style="position:relative;top:9px;left:0;z-index:2;">
+    <div style="position:relative;top:9px;left:0;min-height: 200px;z-index:2;">
         {{if it1.account.extra.source === "world_boss" && it1.account.extra.error}}
         
-                <div style="position: relative;top: 50%;text-align: center;font-size: 24px;color: #f79f01;font-family:mnjsh">   
-                    世界boss已被{{it1.account.extra.name}}杀死
-                </div> 
+        <div style="position: relative;top: 50%;text-align: center;font-size: 24px;color: #f79f01;font-family:mnjsh">   
+            世界boss已被{{it1.account.extra.name}}杀死
+        </div> 
         
         {{else}}
             {{if type}} 

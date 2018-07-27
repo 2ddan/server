@@ -1,0 +1,7 @@
+{
+    "tpl":"./endless_boss.tpl",
+    "js":"./endless_boss.ts",
+    "forelet":"./endless_boss.ts",
+    "cfg":"./endless_boss.cfg",
+    "css":"./endless_boss.wcss"
+}

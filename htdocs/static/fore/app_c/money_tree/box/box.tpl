@@ -41,7 +41,7 @@
             {{let url = Pi.pictures[icon]}}
             {{let name = checkTypeof(prop.name,"Array") ? prop.name[prop.career_id.indexOf(career_id)] : prop.name}}
             <app_a-widget-prop-base on-tap='propInfoShow({{v[0]}})' style="position:relative;display:inline-block;margin:0 3px;margin-top: 20px;">
-                {"prop":{{prop}},"url":{{url}},"width":76,"height":76,"count":{{v[1]}},"name":{{name}},"bg":1}
+                {"prop":{{prop}},"url":{{url}},"width":76,"height":76,"count":{{v[1]}},"name":{{name}},"bg":1,"effect":{{prop.effect}}}
             </app_a-widget-prop-base>
             {{end}}
             {{let dia_prop = Pi.sample[100002]}}

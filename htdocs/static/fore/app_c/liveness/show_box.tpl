@@ -10,6 +10,7 @@
         <widget w-class="78" w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;top:185px;left:-28px;width:505px">
             {"icon":"tips_bottom"}
         </widget>
+        
         <widget w-class="78" w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;top:-18px;left:-23px;width:497px">
             {"icon":"tips_top"}
         </widget>

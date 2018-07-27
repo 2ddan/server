@@ -1,0 +1,7 @@
+{
+    "tpl": "./look_more.tpl",
+    "cfg": "./look_situation.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts",
+    "css": "./look_situation.wcss"
+}

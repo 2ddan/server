@@ -3,6 +3,42 @@ export const guide_cfg = {};
 let s:any = {};
 
     s = {};
+    guide_cfg["1"] = guide_cfg["1"] || [];
+    s.widget = "app_b-wild-wild";guide_cfg["1"].music = "music-playermission";guide_cfg["1"].count = 10;guide_cfg["1"].trigger = `playermission.guide&&player.level<50&&chat.guide&&!wild.flagHitBoss`;guide_cfg["1"].widget = "app_b-wild-wild";guide_cfg["1"].guide_text = "去完成新手任务";
+    s = {};
+    guide_cfg["1"] = guide_cfg["1"] || [];
+    s.type = "force";s.name = "playermission";
+    s.purpose = (db) => {
+        return db.player.level>50;
+    };
+    
+    guide_cfg["1"].push(s);
+    
+    s = {};
+    guide_cfg["2"] = guide_cfg["2"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["2"].music = "music-wildboss";guide_cfg["2"].count = 1;guide_cfg["2"].trigger = `wild.flagHitBoss&&wild.wild_max_mission==1&&wild.autoNotFight&&chat.guide&&wild.wild_history==wild.wild_max_mission`;guide_cfg["2"].widget = "app_b-wild-wild";guide_cfg["2"].guide_text = "挑战BOSS";
+    s = {};
+    guide_cfg["2"] = guide_cfg["2"] || [];
+    s.type = "force";s.name = "wildBoss";s.net_ok = "app/pve/wild@start";
+    s.purpose = (db) => {
+        return db.wild.wild_max_mission>=2;
+    };
+    
+    guide_cfg["2"].push(s);
+    
+    s = {};
+    guide_cfg["3"] = guide_cfg["3"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["3"].music = "music-wildboss";guide_cfg["3"].count = 1;guide_cfg["3"].trigger = `wild.flagHitBoss&&wild.wild_max_mission==2&&wild.autoNotFight&&chat.guide&&wild.wild_history==wild.wild_max_mission`;guide_cfg["3"].widget = "app_b-wild-wild";guide_cfg["3"].guide_text = "挑战BOSS";
+    s = {};
+    guide_cfg["3"] = guide_cfg["3"] || [];
+    s.type = "force";s.name = "wildBoss";s.net_ok = "app/pve/wild@start";
+    s.purpose = (db) => {
+        return db.wild.wild_max_mission>=3;
+    };
+    
+    guide_cfg["3"].push(s);
+    
+    s = {};
     guide_cfg["4"] = guide_cfg["4"] || [];
     s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["4"].music = "music-exp_fb";guide_cfg["4"].count = 1;guide_cfg["4"].trigger = `open_fun.id==${function_open.exp_fb.id-1}&&wild.wild_max_mission>=${function_open.exp_fb.stage_id}&&wild.wild_task_num>=0`;guide_cfg["4"].widget = "app_b-wild-wild";guide_cfg["4"].guide_text = "开放试炼副本";guide_cfg["4"].fun_key = "exp_fb";guide_cfg["4"].need = "1";guide_cfg["4"].need_map = "1";guide_cfg["4"].next_guide = 46;
     s = {};
@@ -18,6 +54,42 @@ let s:any = {};
     guide_cfg["4"] = guide_cfg["4"] || [];
     s.type = "force";s.name = "mission08";s.fix = "fo";s.net_ok = "app/activity@open_function";
     guide_cfg["4"].push(s);
+    
+    s = {};
+    guide_cfg["5"] = guide_cfg["5"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["5"].music = "music-wildboss";guide_cfg["5"].count = 1;guide_cfg["5"].trigger = `wild.flagHitBoss&&wild.wild_max_mission==3&&wild.autoNotFight&&chat.guide&&wild.wild_history==wild.wild_max_mission`;guide_cfg["5"].widget = "app_b-wild-wild";guide_cfg["5"].guide_text = "挑战BOSS";
+    s = {};
+    guide_cfg["5"] = guide_cfg["5"] || [];
+    s.type = "force";s.name = "wildBoss";s.net_ok = "app/pve/wild@start";
+    s.purpose = (db) => {
+        return db.wild.wild_max_mission>=4;
+    };
+    
+    guide_cfg["5"].push(s);
+    
+    s = {};
+    guide_cfg["6"] = guide_cfg["6"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["6"].count = 2;guide_cfg["6"].trigger = `chat.guide&&magic.guide&&wild.wild_max_mission<7`;guide_cfg["6"].widget = "app_b-wild-wild";guide_cfg["6"].guide_text = "释放神兵";
+    s = {};
+    guide_cfg["6"] = guide_cfg["6"] || [];
+    s.type = "force";s.name = "magic_release";
+    s.purpose = (db) => {
+        return db.wild.wild_max_mission>6;
+    };
+    
+    guide_cfg["6"].push(s);
+    
+    s = {};
+    guide_cfg["7"] = guide_cfg["7"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["7"].count = 1;guide_cfg["7"].trigger = `chat.guide&&magic.guide&&wild.wild_max_mission>=7`;guide_cfg["7"].widget = "app_b-wild-wild";guide_cfg["7"].guide_text = "自动释放神兵";
+    s = {};
+    guide_cfg["7"] = guide_cfg["7"] || [];
+    s.type = "force";s.name = "magic_auto";
+    s.purpose = (db) => {
+        return db.wild.wild_max_mission>10;
+    };
+    
+    guide_cfg["7"].push(s);
     
     s = {};
     guide_cfg["8"] = guide_cfg["8"] || [];
@@ -96,6 +168,19 @@ let s:any = {};
     guide_cfg["11"] = guide_cfg["11"] || [];
     s.type = "force";s.name = "mission08";s.fix = "fo";s.net_ok = "app/activity@open_function";
     guide_cfg["11"].push(s);
+    
+    s = {};
+    guide_cfg["12"] = guide_cfg["12"] || [];
+    s.type = "force";s.widget = "app_b-fight-account";guide_cfg["12"].count = 1;guide_cfg["12"].trigger = `player.level`;guide_cfg["12"].widget = "app_b-fight-account";guide_cfg["12"].guide_text = "退出副本";
+    s = {};
+    guide_cfg["12"] = guide_cfg["12"] || [];
+    s.type = "force";s.name = "close_account";
+    guide_cfg["12"].push(s);
+    
+    s = {};
+    guide_cfg["12"] = guide_cfg["12"] || [];
+    s.type = "force";s.name = "close_all";s.ignore = true;
+    guide_cfg["12"].push(s);
     
     s = {};
     guide_cfg["13"] = guide_cfg["13"] || [];
@@ -448,6 +533,141 @@ let s:any = {};
     guide_cfg["35"].push(s);
     
     s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["36"].count = 2;guide_cfg["36"].trigger = `reclaim.bagFull`;guide_cfg["36"].widget = "app_b-wild-wild";guide_cfg["36"].guide_text = "熔炼";
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "menu_bag_icon";
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim_1";s.fix = "re";s.net_ok = "app/prop/melt@melt";
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "close";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["36"] = guide_cfg["36"] || [];
+    s.type = "force";s.name = "close_all";s.ignore = true;
+    guide_cfg["36"].push(s);
+    
+    s = {};
+    guide_cfg["37"] = guide_cfg["37"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["37"].music = "music_auto_fight";guide_cfg["37"].count = 1;guide_cfg["37"].trigger = `wild.wild_max_mission>=4&&wild.autoNotFight`;guide_cfg["37"].widget = "app_b-wild-wild";guide_cfg["37"].guide_text = "设置自动挑战BOSS";
+    s = {};
+    guide_cfg["37"] = guide_cfg["37"] || [];
+    s.type = "force";s.name = "auto_reclaim_head";
+    guide_cfg["37"].push(s);
+    
+    s = {};
+    guide_cfg["37"] = guide_cfg["37"] || [];
+    s.type = "force";s.name = "auto_reclaim_gou";s.fix = "wd";
+    guide_cfg["37"].push(s);
+    
+    s = {};
+    guide_cfg["37"] = guide_cfg["37"] || [];
+    s.type = "force";s.name = "close";s.ignore = true;
+    guide_cfg["37"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["38"].count = 1;guide_cfg["38"].trigger = `reclaim.bagFull&&reclaim.reclaim_guide`;guide_cfg["38"].widget = "app_b-wild-wild";guide_cfg["38"].guide_text = "熔炼";
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "menu_bag_icon";
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim";s.ignore = true;s.widget = "app_b-bag-main-bag";
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim_1";s.fix = "re";s.net_ok = "app/prop/melt@melt";s.widget = "app_c-reclaim_share-reclaim_bg1";
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "reclaim_1";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "close";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["38"] = guide_cfg["38"] || [];
+    s.type = "force";s.name = "close_all";s.ignore = true;
+    guide_cfg["38"].push(s);
+    
+    s = {};
+    guide_cfg["39"] = guide_cfg["39"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["39"].music = "music-first_recharge";guide_cfg["39"].count = 1;guide_cfg["39"].trigger = `player.level>=20&&recharge.first_pay_gift_state.length==0&&!wild.flagHitBoss`;guide_cfg["39"].widget = "app_b-wild-wild";guide_cfg["39"].guide_text = "点击首充";
+    s = {};
+    guide_cfg["39"] = guide_cfg["39"] || [];
+    s.type = "force";s.name = "gotoFirstGift";
+    guide_cfg["39"].push(s);
+    
+    s = {};
+    guide_cfg["39"] = guide_cfg["39"] || [];
+    s.type = "force";s.name = "weapon_click";s.ignore = true;
+    guide_cfg["39"].push(s);
+    
+    s = {};
+    guide_cfg["40"] = guide_cfg["40"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["40"].music = "music-online_gift";guide_cfg["40"].count = 1;guide_cfg["40"].trigger = `online_gift.get_award&&chat.guide`;guide_cfg["40"].widget = "app_b-wild-wild";guide_cfg["40"].guide_text = "领取在线礼包";
+    s = {};
+    guide_cfg["40"] = guide_cfg["40"] || [];
+    s.type = "force";s.name = "online_gift";s.net_ok = "app/activity/online_gift@award";
+    guide_cfg["40"].push(s);
+    
+    s = {};
     guide_cfg["41"] = guide_cfg["41"] || [];
     s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["41"].count = 1;guide_cfg["41"].trigger = `open_fun.id>=${function_open.magic_activate.id}&&chat.guide&&!wild.flagHitBoss`;guide_cfg["41"].widget = "app_b-wild-wild";guide_cfg["41"].guide_text = "神兵界面操作";
     s = {};
@@ -689,7 +909,7 @@ let s:any = {};
     
     s = {};
     guide_cfg["51"] = guide_cfg["51"] || [];
-    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["51"].count = 1;guide_cfg["51"].trigger = `open_fun.id>=${function_open.daily_fb.id}`;guide_cfg["51"].widget = "app_b-wild-wild";guide_cfg["51"].guide_text = "去材料副本战斗";
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["51"].count = 1;guide_cfg["51"].trigger = `open_fun.id>=${function_open.daily_fb.id}&&daily_fb.star_total&&daily_fb.star_total[0]<3`;guide_cfg["51"].widget = "app_b-wild-wild";guide_cfg["51"].guide_text = "去材料副本战斗";
     s = {};
     guide_cfg["51"] = guide_cfg["51"] || [];
     s.type = "force";s.name = "menu_fb_icon";
@@ -799,4 +1019,22 @@ let s:any = {};
     guide_cfg["56"] = guide_cfg["56"] || [];
     s.type = "force";s.name = "mission08";s.fix = "fo";s.net_ok = "app/activity@open_function";
     guide_cfg["56"].push(s);
+    
+    s = {};
+    guide_cfg["57"] = guide_cfg["57"] || [];
+    s.type = "force";s.widget = "app_b-wild-wild";guide_cfg["57"].count = 1;guide_cfg["57"].trigger = `player.level>=50&&skill[4]&&!skill[4][1]`;guide_cfg["57"].widget = "app_b-wild-wild";guide_cfg["57"].guide_text = "查看技能5";
+    s = {};
+    guide_cfg["57"] = guide_cfg["57"] || [];
+    s.type = "force";s.name = "menu_role_icon";
+    guide_cfg["57"].push(s);
+    
+    s = {};
+    guide_cfg["57"] = guide_cfg["57"] || [];
+    s.type = "force";s.name = "skill_btn";s.ignore = true;s.widget = "app_b-role-role";
+    guide_cfg["57"].push(s);
+    
+    s = {};
+    guide_cfg["57"] = guide_cfg["57"] || [];
+    s.type = "force";s.name = "skill_big";s.ignore = true;s.widget = "app_b-skill_up-skill_up";
+    guide_cfg["57"].push(s);
     

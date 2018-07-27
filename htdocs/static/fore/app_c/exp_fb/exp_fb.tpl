@@ -9,6 +9,7 @@
     <widget w-tag="app_b-widget-title-title" style="position: absolute;left: 0px;top: 0px;z-index: 2;width: 540px;height: 116px;">
         {"text":"试炼副本","coin":["money","diamond"],"left":15,"top":22,"width":540,"r":[["money",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
     </widget>
+    
     <img style="position:absolute;top:0;left:0;width:100%" src="./images/bg_1.png"/>
     <div  w-class="3">
         <app_a-widget-text-text style="position:absolute;top:0;left:50%;transform:translateX(-50%)">

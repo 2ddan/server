@@ -11,7 +11,6 @@
         <app_a-widget-bg_frame-bg style="position: absolute;left: 24px;top: 0;width:492px;height: 701px;">
             {"bgName":"bg_frame21"} 
         </app_a-widget-bg_frame-bg>
-
         <div style="position: absolute;width: 492px;height: 350px;top:0px;left:50%;overflow-x: hidden;margin-left: -246px;">
             <img src="../images/skill_bg_1.png" alt="" style="position: absolute;width: 540px;height: 315px;top:0px;left:50%;margin-left: -270px;" />
             <img src="../images/skill_bg_2.png" alt="" style="position: absolute;width: 362px;height: 269px;top:0px;left: 50%;margin-left: -181px;" />

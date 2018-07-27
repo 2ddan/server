@@ -7,5 +7,6 @@
     </app_a-widget-guide-guide>
     {{else}}
     <app_a-widget-btn_sound-btn_sound></app_a-widget-btn_sound-btn_sound>
-    {{end}}       
+    {{end}}
+        
 </div>

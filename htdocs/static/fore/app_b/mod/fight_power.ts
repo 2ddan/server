@@ -582,7 +582,7 @@ export const weapon_soul = {
     //突破阶段属性
     gradeAttr: function () {
         let grade = get("weapon_soul.class");
-        let arr = weapon_soul_base[grade].attr;
+        let arr = weapon_soul_base[grade].attr.slice(0);
         //计算buff属性
         if (grade > 0) {
             arr.push(weapon_soul_base[grade].buff_value);

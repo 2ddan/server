@@ -10,7 +10,6 @@
             <img src="app_b/fight/images/win_bottom.png" style="position:absolute;bottom:0px;"/>
 
                 <div style="position: absolute;left: 50%;margin-left: -150px;top: 35px;font-size: 23px;color: #fde7ca;font-family: mnjsh;width: 300px;text-align: center;">我的伤害: {{it1.Common.numberCarry(it1.my_damage, 10000)}}</div>
-
                 <app_a-widget-line-line style="position:absolute;top:80px;left:0px;right:0px;margin:0 auto;">{"line":"line_3"}</app_a-widget-line-line>
 
                 <div style="width: 80%;height: 220px;position: absolute;left: 55px;top: 120px;overflow: hidden;color: #fff;text-align: center;">

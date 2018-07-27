@@ -12,7 +12,6 @@
     <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 114px;right: 50%;margin-right: -267px;">
         {"icon":"equip_level_bg","width":108,"height":24,"align":"center","marginLeft":3,"text":" ","textCfg":"","space":0,"fontSize":18,"top":0,"left":0} 
     </widget>
-    
     {{if it1.fight_time >= Util.serverTime()}}
     <app-widget-cdtime ev-countdownend="exitFight(1)" style="position: absolute;top: 115px;font-size: 16px;width: 108px;right: 50%;margin-right: -270px;text-align:center;color:#78f300;">{cd_time:{{it1.fight_time}},"now_time":{{Util.serverTime()}} }</app-widget-cdtime>
     {{end}}

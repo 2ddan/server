@@ -5,7 +5,6 @@
 		{"text":"秘 籍","coin":["money","diamond"],"left":33,"top":16,"width":540,"r":[["money",0],["dimond",0]],"type":"","width":{{root.getWidth()}} } 
 	</widget>
 	<div style="position:absolute;width:540px;height:868px;left:50%;margin-left:-270px">
-
 		<div style="width:100%;position:absolute;left:0;top:108px;bottom:15px">
 			<div class="line_6" style="position: absolute; top: 26px; z-index: 4;"></div>
 			<app-widget-tab-navtab style="position:absolute;width:100%;top:-6px;bottom:0;left:0px;" ev-change = 'changeColumns'>

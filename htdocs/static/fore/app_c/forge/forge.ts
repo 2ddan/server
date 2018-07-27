@@ -405,9 +405,9 @@ const countOnceCost = (index) => {
 
 //单次强化
 const onceStrong = (index) => {
-    // if (!levelFlog) {
-    //     return;
-    // }
+    if (!level_ok) {
+        return;
+    }
     level_ok = false;
     forelet.paint(getData());
     let msg = {
@@ -418,12 +418,12 @@ const onceStrong = (index) => {
     };
     // levelFlog = false;
     net_request(msg, function (data) {
+        level_ok = true;
         if (data.error) {
             globalSend("screenTipFun", {
                 words: `${data.why},强化失败`
             });
         } else {
-            level_ok = true;
             forelet.paint(getData());
             let prop = Common.changeArrToJson(data.ok);
             //扣除花费
@@ -457,12 +457,13 @@ const onceStrong = (index) => {
 
 //一键强化
 const getOnekeyup = () => {
-    // if (!levelFlog) {
-    //     return;
-    // }
-    // levelFlog = false;
+    if (!level_ok) {
+        return;
+    }
+    level_ok = false;
     let msg = { "param": {}, "type": "app/prop/equip@one_key_level_up" };
     net_request(msg, function (data) {
+        level_ok = true;
         if (data.error) {
             console.log(data.error)
         } else {
@@ -1055,7 +1056,7 @@ export class forge extends Widget {
                 }
             }
             //当前洗练出来的是对应的天命属性
-            if (redEquipPos[red_id] && redEquipPos[red_id].prop.wash.length > 0 && redEquipPos[red_id].prop.wash[0][1][0][0] == attr_add[red_id][0]) {
+            if (getGoodAttr(redEquipPos[red_id].prop)) {
                 globalSend("popTip", {
                     title: "<div>已洗练出此装备的天命属性, 是否放弃此属性继续洗练?</div>",
                     btn_name: ["确定", "取消"],
@@ -1139,6 +1140,32 @@ export class forge extends Widget {
         globalSend("showOtherInfo", sid);
     }
 }
+
+//判断当前洗练位置属性是否是天命属性，
+const getGoodAttr = (obj)=>{
+    let wash = obj.wash;
+    let good_attr_key = attr_add[red_id][0];
+    let old_wash = undefined;
+    if(wash.length == 0 ){
+        return false;
+    }
+    for(let v of wash){
+        if(v[0] == attr_index-0+1){
+            old_wash = v[1][0];
+            break;
+        }
+    }
+
+    if(old_wash && old_wash[0] === good_attr_key){
+        let curr = obj.addition_attr[attr_index];
+        if(curr[0] === good_attr_key && old_wash[1] > curr[1] || curr[0] !== good_attr_key){
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 //监听背包中所需消耗材料的变化从，并更新界面
 listen("bag*sid=" + equip_level_up[0][0][0], function () {

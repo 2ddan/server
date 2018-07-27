@@ -10,7 +10,6 @@
     {{let Util = _get("app/mod/util").exports.Util}}
     <div w-class="79" w-sid="79">
         <div  scroller="1" w-class="80" w-sid="80">
-
             {{for i, v of it1.gangData.gang_event_record}}
             {{if i!="erl_type"}}
             <div style="position: relative;line-height:20px;font-size:16px;width:490px;height:100px;box-sizing:border-box;padding:28px;">

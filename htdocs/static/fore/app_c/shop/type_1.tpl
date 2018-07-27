@@ -11,6 +11,7 @@
 	<widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
 		{"text":"商 店","coin":["money","diamond"],"left":15,"top":10,"r":[["money",0],["dimond",0],["dimond",0]],"type":""} 
     </widget>
+    
     <div style="position:absolute;width:540px;height:100%;left:50%;transform:translate(-50%)">
         <widget w-class="5" w-tag="app_a-widget-pic_other-pic_other" w-sid="5">
             {"icon":"tips_top"} 

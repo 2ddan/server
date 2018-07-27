@@ -11,8 +11,7 @@
             <app_a-widget-pic_text-pic_text style="top:0;left:0;position: absolute;">
                 {"icon":"text_bg_8","width":32,"height":105,"align":"center","marginLeft":3,"textCfg":""}
             </app_a-widget-pic_text-pic_text>
-            <div class="center_h" w-class="f10">节日兑换</div>
-           
+            <div class="center_h" w-class="f10">节日兑换</div>   
         </div>
         
         <app_a-widget-text-text w-class="f3" >

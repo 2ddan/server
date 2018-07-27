@@ -14,4 +14,5 @@
         /<span style="color:{{it.color || ''}}">{{it.text[1] || 0}}</span>
         {{end}}
     </span>
+    
 </div>

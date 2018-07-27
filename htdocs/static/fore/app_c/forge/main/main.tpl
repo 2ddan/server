@@ -41,5 +41,4 @@
 			</app-widget-tab-navtab>
 		</div>
 	</div>	
-
 </div>

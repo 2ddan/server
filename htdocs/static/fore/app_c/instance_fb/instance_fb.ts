@@ -501,9 +501,7 @@ export let challenge = function (chapter_id, guard_id) {
                 if (fightData.r === 1) {
                     winFight(guard_id, fightData);
                 } else {
-                    Common_m.openAccount(fightData, "instance_fb",{},0,()=>{
-                        logic.resetScene();
-                    });
+                    Common_m.openAccount(fightData, "instance_fb",{},0);
                 }
                 globalSend("popBack");
                 return true;
@@ -553,9 +551,7 @@ let winFight = function (guard_id, result) {
         // drop_outFun(prop.award.prop, function () {
         //     Common_m.openAccount(result, "instance_fb", prop, prop.star_info[0][1]);
         // });
-        Common_m.openAccount(result, "instance_fb", prop, prop.star_info[0][1],()=>{
-            logic.resetScene();
-        });
+        Common_m.openAccount(result, "instance_fb", prop, prop.star_info[0][1]);
     }).catch((data) => {
         console.log(data);
     })

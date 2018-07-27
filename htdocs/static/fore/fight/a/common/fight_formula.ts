@@ -45,6 +45,7 @@ export class Fight_formula {
                 }
             }
         }
+        tab = undefined;
         // 将中间公式的参数默认设为0
         for (i = 0; i < calcArgNames.length; i++){
             calcArgNames[i] = 0;

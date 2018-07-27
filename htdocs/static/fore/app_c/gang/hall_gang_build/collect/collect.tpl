@@ -6,6 +6,7 @@
 			<widget w-tag="app_a-widget-line-line"  style="position: absolute;left:0;top:0;width:100%;height:2px;z-index:2">
 				{"line":"line_11"} 
 			</widget>
+			
 			<widget  w-tag="app_a-widget-bg_frame-bg"  w-class="6" >
 				{"bgName":"bg_frame54"} 
 			</widget>

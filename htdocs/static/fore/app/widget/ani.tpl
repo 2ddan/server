@@ -12,4 +12,5 @@
     <div style="transform: translate(-51%,-51%) scale(0.9);width:126px;height:126px;position: absolute;overflow:hidden;left: 50%;top: 50%;">
         <div class="menu_seven_avtive" style="position: absolute;"></div>
     </div>
+    
 </div>

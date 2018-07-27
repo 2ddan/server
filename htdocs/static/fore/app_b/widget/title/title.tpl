@@ -8,7 +8,6 @@
         <div w-class="title_middle" style="position:absolute;left:264px;right:0px;top:0px;background-repeat:repeat-x;"></div>
         <div w-class="title_right" style="position:absolute;right:0px;top:0px;"></div>
     </div>
-
     <app_a-widget-text-text style="position:absolute;left:{{it.left || '30'}}px;top:{{it.top || 0}}px;display:inline-block;">
         {"text":{{it.text}},"textCfg":"gangCoverTitle","fontSize":30}
     </app_a-widget-text-text>

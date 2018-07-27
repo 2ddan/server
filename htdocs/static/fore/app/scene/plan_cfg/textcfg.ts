@@ -415,10 +415,11 @@ export const textcfg = {
         "hfactor":2.0,
         "factor":1.4,
         "strokeWidth": 2,
+        "zoomfactor": 2,
         "strokeColor": "rgb(24,13,9)",
         // "isCommon":true,
         "isPowerOfTwo":true,
-        "space": -6,
+        "space": -6
         // "text": "+-0123/:456789万"
     },
     "damageM":{
@@ -428,10 +429,11 @@ export const textcfg = {
         "hfactor":1.8,
         "factor":1.4,
         "strokeWidth": 2,
+        "zoomfactor": 2,
         "strokeColor": "rgb(24,13,9)",
         // "isCommon":true,
         "isPowerOfTwo":true,
-        "space": -6,
+        "space": -6
         // "text": "+-0123/:456789万"
     },
     "stealHP":{
@@ -441,10 +443,11 @@ export const textcfg = {
         "hfactor":1.8,
         "factor":1.4,
         "strokeWidth": 2,
+        "zoomfactor": 2,
         "strokeColor": "rgb(24,13,9)",
         // "isCommon":true,
         "isPowerOfTwo":true,
-        "space": -6,
+        "space": -6
         // "text": "+-0123/:456789万"
     },
     "critical":{
@@ -456,8 +459,9 @@ export const textcfg = {
         "strokeWidth": 1,
         "strokeColor": "rgb(24,13,9)",
         "space": -8,
+        "zoomfactor": 2,
         // "isCommon":true,
-        "isPowerOfTwo":true,
+        "isPowerOfTwo":true
         // "text":"0123456789:/+-万暴击"
     },
     //荒野降魔我的伤害

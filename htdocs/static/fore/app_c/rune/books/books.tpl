@@ -2,7 +2,6 @@
 	<widget w-class="3" w-tag="app_a-widget-bg_frame-bg" w-sid="3">
 		{"bgName":"bg_frame21"} 
 	</widget>
-	
 	<div w-class="3" w-sid="3" style="color:#fff">
 		<widget w-class="4" w-tag="app_a-widget-btn-ling" w-sid="4" on-tap="booksAttr" >
 			{"class":"default","fontsize":20,"color":"#49312E","text":" 效果 总览","width":77,"height":77,"textCfg":"lingBtn"} 

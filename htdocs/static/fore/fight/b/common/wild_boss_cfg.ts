@@ -8,8 +8,8 @@ wild_boss["1"] = {
     "guide_num":0,
     "boss_level":1,
     "boss_id":[610102],
-    "boss_site": 1,
-    "story":90012,
+    "boss_site": undefined,
+    "story":undefined,
     "show_award":440003,
     "after_story": undefined
 };
@@ -21,8 +21,8 @@ wild_boss["2"] = {
     "guide_num":1,
     "boss_level":4,
     "boss_id":[610101],
-    "boss_site": 1,
-    "story":90013,
+    "boss_site": undefined,
+    "story":undefined,
     "show_award":440002,
     "after_story": undefined
 };
@@ -34,8 +34,8 @@ wild_boss["3"] = {
     "guide_num":1,
     "boss_level":6,
     "boss_id":[610103],
-    "boss_site": 1,
-    "story":90014,
+    "boss_site": undefined,
+    "story":undefined,
     "show_award":430001,
     "after_story": undefined
 };
@@ -47,8 +47,8 @@ wild_boss["4"] = {
     "guide_num":1,
     "boss_level":9,
     "boss_id":[610104],
-    "boss_site": 1,
-    "story":90015,
+    "boss_site": undefined,
+    "story":undefined,
     "show_award":450004,
     "after_story": undefined
 };
@@ -60,8 +60,8 @@ wild_boss["5"] = {
     "guide_num":1,
     "boss_level":12,
     "boss_id":[610105],
-    "boss_site": 1,
-    "story":90016,
+    "boss_site": undefined,
+    "story":undefined,
     "show_award":450102,
     "after_story": undefined
 };

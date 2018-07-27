@@ -1,0 +1,7 @@
+{
+    "tpl":"./give_select.tpl",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts",
+    "css":"./give_select.wcss",
+    "cfg": "./my_source.cfg"
+}

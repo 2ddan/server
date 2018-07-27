@@ -20,6 +20,7 @@
 {{let img1 = type[index[0]] ? Pi.pictures[equipic] : '' }}
 {{let eq = type[index[0]]}}
 {{let diam_icon = ''}}
+
 <div style="line-height:normal;position:relative;width:310px;height:470px;left:0;top:70px;bottom:0;right:0;margin:auto;margin-top:0;padding:10px;color:#FFF;">
     <div w-class="forge_equip_bg" style="top: 27px;z-index: 1;left: 15px;right: 0;margin: 0 auto;"></div>
 

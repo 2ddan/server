@@ -23,9 +23,9 @@
                         "type":"monster",
                         "module":{
                             "module":{{module_id}},
-                            "x":-0.7,
-                            "y":-2.8,
-                            "z":-2,
+                            "x":0
+                            "y":0,
+                            "z":0,
                             "scale":1.3,
                             "rotate":[0,0,0]
                         },

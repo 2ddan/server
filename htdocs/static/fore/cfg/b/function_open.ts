@@ -66,7 +66,7 @@ let table = {
     "skill4":{
         "key": "skill4",
         "name": "技能开启",
-        "level_limit": 18,
+        "level_limit": 32,
         "stage_id": null,
         "id": 9
     },
@@ -161,45 +161,45 @@ let table = {
         "stage_id": 26,
         "id": 22
     },
+    "robres":{
+        "key": "robres",
+        "name": "掠夺水晶",
+        "level_limit": 75,
+        "stage_id": null,
+        "id": 23
+    },
     "equip_red_forge":{
         "key": "equip_red_forge",
         "name": "神装锻造",
         "level_limit": 80,
         "stage_id": null,
-        "id": 23
+        "id": 24
     },
     "equip_red_wash":{
         "key": "equip_red_wash",
         "name": "神装洗练",
         "level_limit": 85,
         "stage_id": null,
-        "id": 24
+        "id": 25
     },
     "gest":{
         "key": "gest",
         "name": "阵法",
         "level_limit": 90,
         "stage_id": null,
-        "id": 25
+        "id": 26
     },
     "gest_fb":{
         "key": "gest_fb",
         "name": "心法奇遇",
         "level_limit": 90,
         "stage_id": null,
-        "id": 26
+        "id": 27
     },
     "weapon_soul":{
         "key": "weapon_soul",
         "name": "赋灵",
         "level_limit": 95,
-        "stage_id": null,
-        "id": 27
-    },
-    "robres":{
-        "key": "robres",
-        "name": "掠夺水晶",
-        "level_limit": 100,
         "stage_id": null,
         "id": 28
     }

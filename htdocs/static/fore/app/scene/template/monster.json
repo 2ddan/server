@@ -127,18 +127,18 @@
             ]
         }
         : null}},
-        {{it.iscurr ?
+        {{it.isCurr ? 
         {
             "type":"prefab",
             "tpl":"eff_selected01",
+            "visible":it.iscurr ? true : false,
             "rayID":it.rayID || 0,
             "playAnim":{
                 "isOnce":it.isOnce || false,
                 "name":effect["eff_selected01"][0],
                 "id":it.id || 0
             }
-        }
-        : null}},
+        } : null}},
         {{scenename !=="loginscene" ?
         {
             "type":"prefab",
@@ -147,7 +147,7 @@
             "position":it.position || [0,0,0]
         }
         : null}},
-        {{scene_eff ? 
+        {{scene_eff ?  
         {
             "type":"node",
             "transform":{

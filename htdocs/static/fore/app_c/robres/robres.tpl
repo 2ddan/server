@@ -3,6 +3,7 @@
     <widget w-tag="app_b-widget-title-title"  w-class="3">
         {"text":"掠夺水晶","coin":["money","diamond"],"left":8,"top":17,"width":540,"width":{{root.getWidth()}} } 
     </widget>
+    
     <widget w-tag="app_a-widget-line-line" w-class="4">
         {"line":"line_7"} 
     </widget>
@@ -81,9 +82,9 @@
                     </app_a-widget-pic_text-pic_text>
                     <div  w-class="23">
                         (
-                        <app-widget-cdTime1 ev-countdownend="timeEnd" style="display:inline-block;vertical-align: middle;color:#12ff00">
+                        <app-widget-cdtime ev-countdownend="timeEnd" style="display:inline-block;vertical-align: middle;color:#12ff00">
                             {"cd_time":{{count[1][1]}},"now_time":{{count[1][0]}}}
-                        </app-widget-cdTime1>
+                        </app-widget-cdtime>
                         后增长1次)
                     </div>
 

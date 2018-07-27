@@ -355,7 +355,6 @@ net_message("gang_build", (msg) => {
  * 后台捐献 [门派捐献]
  */
 net_message("gang_donate", (msg) => {
-    console.log(msg);
     updata("gang.gangExpandData.donate_record", msg.donate_info);
     let gang_money = getDB("gang.gangExpandData.gang_money");
     updata("gang.gangExpandData.gang_money", msg.gang_money);

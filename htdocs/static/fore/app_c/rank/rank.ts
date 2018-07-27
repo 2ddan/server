@@ -17,6 +17,7 @@ import { role_base } from "fight/b/common/role_base";
 import { equip_star_achieve } from "cfg/c/equip_star_achieve";
 import { pet_upgrade } from "cfg/b/pet_upgrade";
 import { pet_module } from "cfg/b/pet_module";
+import { vip_advantage } from "cfg/c/vip_advantage";
 
 export const forelet = new Forelet();
 
@@ -126,6 +127,7 @@ const getData = () => {
     data.role_base = role_base;
     data.pet_module = pet_module;
     data.pet_upgrade = pet_upgrade;
+    data.vip_advantage = vip_advantage;
     return data;
 }
 

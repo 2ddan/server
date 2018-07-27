@@ -10,6 +10,7 @@
         <widget w-class="6" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="6">
             {"icon":"close"} 
         </widget>
+        
         <div w-class="41" w-sid="41">
             <widget w-class="5" w-tag="app_a-widget-prop-base" w-sid="5">
                 {"width":68,"height":68,"prop":{{it.prop}} ,"url":{{it.url}},"count":"none","name":"none","bg":0} 

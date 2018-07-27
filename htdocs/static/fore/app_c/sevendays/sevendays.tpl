@@ -15,7 +15,6 @@
 			{"index":{{i+1}},"curr":1,"bag":{{v== 2 ?[act[1][0].goods,it1.record["2"]]:v==7?[act[6][0].goods,it1.record["7"]]:0 }} }
 		</app_c-sevendays-day_title>		
 		{{end}}
-
 		<div style="position:absolute;top:220px;left:147px;width:241px;height:41px;background-image:url(./images/title_bg_3.png);text-align:center;line-height: 74px;">
 			<app_a-widget-text-text style="position:relative;display:inline-block;">
 				{"text":"新服狂欢七天乐","fontSize":30,"textCfg":"rebelInfo","space":0 }

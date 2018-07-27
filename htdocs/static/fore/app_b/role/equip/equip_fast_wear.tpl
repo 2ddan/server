@@ -29,7 +29,7 @@
         {{if time+11*1000 >= Util.serverTime() }}
         <div w-class="shadowm" style="width:auto;height:21px;pointer-events: none;color:#fdedd7;top:111.5px;left: 60px;font-family: mnjsh;line-height:21px;font-size:18px;position: absolute;">(
             <app-widget-cdTime1 ev-countdownend='fastWear("{{it1.equip_info.bag_pos}},{{it1.equip_info.equip_pos}}")' style="position:relative;display:inline-block">
-                {"cd_time":{{ time+6*1000 }},"now_time":{{Util.serverTime()}},"cd_type":"x","full":1,"show_lastTime":0}
+                {"cd_time":{{ time+6*1000 }},"now_time":{{time}},"cd_type":"x","full":1,"show_lastTime":0}
             </app-widget-cdTime1>
         )
         </div>

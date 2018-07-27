@@ -11,6 +11,7 @@
                 查看特权
             </div>
         </div>
+        
         <div w-class="11">
             <div w-class="12" class="shadow6">
                 再充值
@@ -38,12 +39,9 @@
     </div>
 
 	<div style="width:100%;position:absolute;left:50%;top:195px;bottom:83px;margin-left:-270px;">
-		<div class="line_6" style="position: absolute; top: -14px; z-index: 4;left: 0;width: 540px;"></div>			
-		<widget w-class="5" w-tag="app_a-widget-bg_frame-bg" >
-			{"bgName":"bg_frame21"} 
-		</widget>
-		<div w-class="6" >
-			<div  scroller="1" w-class="7" >
+		<div class="line_6" style="position: absolute; top: -14px; z-index: 4;left: 0;width: 540px;"></div>
+		<div w-class="6" class="bg_1" style="height: auto;">
+			<div scroller="1" w-class="7" >
                 {{for i,v of it1.card}}
                 {{let str = i ? "month" : "week"}}
                 {{let data = it1.vipcard[i?0:1]}}

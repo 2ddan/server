@@ -291,7 +291,9 @@ insert("mail", []);
 /**
  * @description 获取邮件数据
  */
-listenBack("app/mail@read", readMail);
+listenBack("app/mail@read", (data) =>{
+    readMail(data);
+});
 /**
  * @description 监听邮件推送
  */

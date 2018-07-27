@@ -24,4 +24,5 @@
         {"tip_keys":{{it.tip_keys}} }
     </app-widget-tip-tip>
     {{end}}
+    
 </div>

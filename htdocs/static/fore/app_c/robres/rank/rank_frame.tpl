@@ -2,7 +2,7 @@
     {{let Pi = it1.Pi}}
     {{let career_id = it1.player.career_id}}    
     {{let Common = it1.Common}}
-    {{let data =  it1.rank_index == 0 ? it1.robres_rank : it1.robres_global_rank}}
+    {{let data =  it1.rank_index == 1 ? it1.robres_rank : it1.robres_global_rank}}
     <div style="position: relative; width: 110%; height: 310px;overflow-x: hidden;overflow-y: auto;">
     {{for k,v of data}}
         <div style="position: relative; width: 414px; height: 100px;margin-bottom:12px;">
@@ -19,6 +19,7 @@
             <widget w-tag="app_a-widget-text-text" style="position: absolute;top: 40px;left: 5px;">
                 {"text":{{"第" + v.rank.join("-") + "名"}},"show":"","space":0,"fontSize":24,"lineHeight":20,"textCfg":"heroEquip"} 
             </widget>
+            
             <div class="shadow" style="width: 270px;overflow: hidden;height:64px;position: absolute;top: 22px;left:132px;">
                 <div style="width: 100%;overflow-x: auto;overflow-y: hidden;position: absolute;height: 70px;color:#fff">
                     {{for j,p of v.award}}

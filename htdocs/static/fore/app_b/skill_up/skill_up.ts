@@ -41,38 +41,40 @@ const getSkillHtmlData = () =>{
     data.skill_describe=skill_describe;
     data.playerLevel=playerLevel;//人物等级
     data.Pi = Pi;
-    data.strokes = strokesCondition;//大招当前激活条件
+    // data.strokes = strokesCondition;//大招当前激活条件
     data.skill_coin = getSkillCount(skill_icon_id);//技能升级材料
     data.money = money;
     data.diamond = diamond;
     data.id = skill_icon_id;
     data.fun_id = getDB("open_fun.id");
     data.function_open = function_open;
+    data.wild_max_misssion = getDB("wild.wild_max_mission");
+    data.getWildName = getWildName;
     return data;
 }
 
 // /**
 //  * @description  计算大招当期激活条件
 //  */
-const strokesCondition = () =>{
-    let data = skill[skill.length-1];
-    let arr = [];
-    for(let i=0,len=data.activate_other.length;i<len;i++){
-        for(let v of skill){
-            if(data.activate_other[i][0] == v.id){
-                if(data.activate_other[i][1] > v.level){
-                    arr.push(0);
-                }else{
-                    arr.push(1);
-                }
-                break;
-            }
+// const strokesCondition = () =>{
+//     let data = skill[skill.length-1];
+//     let arr = [];
+//     for(let i=0,len=data.activate_other.length;i<len;i++){
+//         for(let v of skill){
+//             if(data.activate_other[i][0] == v.id){
+//                 if(data.activate_other[i][1] > v.level){
+//                     arr.push(0);
+//                 }else{
+//                     arr.push(1);
+//                 }
+//                 break;
+//             }
            
-        }
+//         }
         
-    }
-    return arr;
-}
+//     }
+//     return arr;
+// }
 
 /**
  * @description  计算技能等级属性(直接放入技能描述)
@@ -114,7 +116,7 @@ const initData = (data) => {
         skillOBJ.name = skill_describe[arr[0]].skill_name; // 技能名字
         skillOBJ.describe = countSkill(arr[0],arr[1]); // 技能效果描述放入技能对象
         skillOBJ.activate = skill_describe[arr[0]].activate_level; // 激活需要的人物等级
-        skillOBJ.activate_other = skill_describe[arr[0]].activate_other_level; // 激活需要的人物等级
+        skillOBJ.wild = skill_describe[arr[0]].wild; // 激活需要的人物等级
         skillOBJ.up = skill_level[arr[0]]; // 技能升级对象
         for(var key in skillOBJ.up){
             full_level += 1;
@@ -197,7 +199,7 @@ export const globalReceive: any = {
         globalSend("openNewFun", "skill2");
     },
     "activateSkill": (index) => {
-        if(index>4){return;}
+        // if(index>4){return;}
         activate(index);
     }
 }
@@ -253,29 +255,50 @@ export class skillUp extends Widget {
     }
     //技能未激活提示
     openTip(index){
+        // let level = getDB("player.level");
+        // let limit_level = function_open["skill"+index].level_limit;
+        // let fun_id = getDB("open_fun.id");
+        // if( limit_level > level){
+        //     globalSend("screenTipFun", { words: `${limit_level}级开放` });
+        //     return;
+        // }else if(function_open["skill"+index].id > fun_id){
+        //     for(let len = function_guid.length,i = function_open["skill"+index].id-1;i>-1;i--){
+        //         if(function_guid[i].stage_id){
+        //             let guard_name = wild_mission[function_guid[i].stage_id].guard_name.split(",");
+        //             globalSend("screenTipFun", {
+        //                 words: `通过${guard_name[1]} ${guard_name[0]}开放`
+        //             });
+        //             return;
+        //         }
+        //     }
+        // }else{
+        //     globalSend("screenTipFun", { words: `请在主页面新功能激活该技能` });
+        // }
         let level = getDB("player.level");
         let limit_level = function_open["skill"+index].level_limit;
-        let fun_id = getDB("open_fun.id");
-        if( limit_level > level){
+        let skill = getDB("skill");
+        let wild_max_mission = getDB("wild.wild_max_mission");
+        let limit_mission = skill_describe[skill[index-1][0]].wild;
+        if(limit_mission > wild_max_mission){
+            let guard_name = wild_mission[limit_mission].guard_name.split(",");
+            globalSend("screenTipFun", {
+                words: `通过${guard_name[1]} ${guard_name[0]}开放`
+            });
+            return;
+        }else if( limit_level > level){
             globalSend("screenTipFun", { words: `${limit_level}级开放` });
             return;
-        }else if(function_open["skill"+index].id > fun_id){
-            for(let len = function_guid.length,i = function_open["skill"+index].id-1;i>-1;i--){
-                if(function_guid[i].stage_id){
-                    let guard_name = wild_mission[function_guid[i].stage_id].guard_name.split(",");
-                    globalSend("screenTipFun", {
-                        words: `通过${guard_name[1]} ${guard_name[0]}开放`
-                    });
-                    return;
-                }
-            }
-            
         }else{
             globalSend("screenTipFun", { words: `请在主页面新功能激活该技能` });
         }
     }
 }
 
+//获得当前关卡名字
+const getWildName = (arg)=>{
+    let guard_name = wild_mission[arg].guard_name.split(",");
+    return guard_name[1];
+}
 //技能激活
 const activate = function (arg) {
     if(arg){

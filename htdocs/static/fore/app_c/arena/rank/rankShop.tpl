@@ -8,6 +8,7 @@
 
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond"],"top":"13","left":10}</widget>
     <div w-class="8" w-sid="8">
+        
         <widget w-class="5" w-tag="app_a-widget-line-line" w-sid="5">{"line":"line_7"} 
         </widget>
         <widget w-class="6" w-tag="app_a-widget-bg_frame-bg" w-sid="6">{"bgName":"bg_frame21"} 

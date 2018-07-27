@@ -15,6 +15,7 @@
     {{let icon = prop ? prop.module[prop.career_id.indexOf(career_id)][0] : ""}}
     {{let img = prop ? Pi.pictures[icon] : ""}}
     {{let level = it1.redEquipPos[v] ? (prop.level) : it1.equip_lv}}
+    
     <div style="width:88px;height:88px;position:absolute;top:{{i%5  * 119 + 75}}px;{{i<5?'left:18':'right:18'}}px;z-index:1">
         <app_a-widget-prop-equip on-tap='selectRedEquip("{{i+','+v}}")' style="width:52px;height:52px;position: absolute;">
             {"prop":{{prop}},"url":{{img}},"width":88,"height":88,"type":"equip","solt":{{i-0+1}},"level":{{level}},"tip_keys":[{{"equip.red."+v}}],"quality":{{prop ? '' : 6}},"text":"未锻造","bottom":22,"bg":1}

@@ -13,6 +13,7 @@
                 <div w-class="line_close"></div>
                 {{end}}
             </div>
+            
             {{if (it1.player_level < v.open_level)}}
             <app_a-widget-pic_other-pic_other  w-class="closed">
                 {"icon":"closed"}

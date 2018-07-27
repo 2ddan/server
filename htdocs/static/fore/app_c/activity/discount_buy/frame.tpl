@@ -10,6 +10,7 @@
         {"icon":"sell_over","width":94,"height":60,"align":"center","marginLeft":3,"textCfg":""}
     </app_a-widget-pic_text-pic_text>
     {{else}}
+    
     <div style="position:absolute;top:20px;right:83px;font-size:16px;height:61px;width:83px;text-align:center;">
         <div style="width:140px;text-align:center;height:30px;line-height:30px;position:absolute;left:50%;margin-left:-70px;color:#f2e6bb;font-family:mnjsh;">今日已购: <span style="color:rgb(255,255,255);">{{it.get}}/{{it.init_count}}</span></div>
         {{let _bol = it.condition>player.diamond}}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* 非ios -->
+    <meta name="keywords" content="TODO">
+    <meta name="description" content="TODO">
+    <meta name="author" content="author,email address">
+    <!--定义网页搜索引擎索引方式，robotterms 是一组使用英文逗号「,」分割的值，通常有如下几种取值：none,noindex,nofollow,all,index和follow-->
+    <meta name="robots" content="index">
+
+
+    <!--Google Android原生浏览器-->
+    <!-- 定义你的网页为 Web 应用，添加到主屏  -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!--Apple iOS原生浏览器-->
+    <!--启用 WebApp 全屏模式-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--状态栏透明-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <!--APP在主屏上显示的名字-->
+    <meta name="apple-mobile-web-app-title" content="TODO title">
+    <!--App在主屏上显示的图标-->
+    <link rel="apple-touch-icon" sizes="128x128" href="icon/128.png">
+
+    <!--QQ 浏览器（X5 内核）同样适用于微信，QQ等第三方应用页面开发 -->
+    <!-- 设置锁定横屏、竖屏显示模式，portrait（竖屏），landscape（横屏）-->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 设置全屏显示页面 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- 开启页面以应用模式显示（全屏显示等） -->
+    <meta name="x5-page-mode" content="app">
+
+    <!--UC 浏览器 -->
+    <!--portrait 为竖屏，landscape 为横屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!--设置全屏 -->
+    <meta name="full-screen" content="yes">
+    <!--开启应用模式 -->
+    <meta name="browsermode" content="application">
+    <!--缩放字体 -->
+    <meta name="wap-font-scale" content="no">
+
+    <!--360浏览器 -->
+    <!--设置 360 浏览器渲染模式：webkit 为极速内核，ie-comp 为 IE 兼容内核，ie-stand 为 IE 标准内核-->
+    <meta name="renderer" content="webkit">
+
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	<section id="PAY_WINDOW_CONTAINER"></section>
+    <style>
+		.closeBtn {position: absolute;display: inline-block;right: 5px;top: 5px;width: 20px;height: 20px;overflow: hidden;}
+		.closeBtn::before,
+		.closeBtn::after {content: '';position: absolute;height: 2px;width: 100%;top: 50%;left: 0;margin-top: -1px;background: #767676;}
+		.closeBtn::before {-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);height: 1px;}
+		.closeBtn::after {-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-o-transform: rotate(-45deg);transform: rotate(-45deg);height: 1px}
+		#qqLoginBtn a{position: absolute;opacity: 0;left: 0px;top: 0px;display: block;width: 100%;height: 100%;}
+	</style>
+    <script type="text/javascript">
+        //alert("just for debug");
+        var winit = {};
+        winit.win = {};
+        var channel = 1;
+
+        (function(){
+            var k;
+            for(k in window){
+                if(window.hasOwnProperty(k))
+                    winit.win[k] = 1;
+            }
+            winit.startTime = Date.now();
+            //if(!localStorage.json){
+            //    location.href = "http://www.17youx.cn/pt/access/ad_ios/13";
+            //    return;
+            //}
+            var json = {
+                url:"http://xzxd.17youx.cn",
+                game:13
+            };
+             // 每个项目需要定义自己的名称，该名称决定了访问域名和本地存储名
+            var name = json.url.split("//")[1].split('.')[0];
+            var main = "17youx.cn";
+            winit.store = name;
+            //winit.debug = !remote;
+            winit.debug = true;
+            main = location.port ? main+":"+location.port:main;
+            winit.remote = "";
+            winit.domains = ["http://cxzxd.17youx.cn", "http://xzxd.17youx.cn"];
+            // 调试权宜之计
+            winit.main = "xzxd.17youx.cn";
+
+            winit.loadJS = function (roots, url, charset, callback, errText, i) {
+                var u, n, head;
+                if(i >= roots.length) {
+                    return callback && callback(roots[0] + url, errText);
+                }
+                head = document.head || document.getElementsByTagName('head')[0] || document.documentElement;
+                n = document.createElement('script');
+                n.charset = charset;
+                n.onerror = function () {
+                    n.onload = n.onerror = undefined;
+                    head.removeChild(n);
+                    winit.loadJS(roots, url, charset, callback, errText, i === undefined ? 0 : i + 1);
+                };
+                n.onload = function () {
+                    n.onload = n.onerror = undefined;
+                    head.removeChild(n);
+                    callback&&callback(roots[i || 0] + url);
+                };
+                n.async = true;
+                n.crossorigin = true;
+                n.src = roots[i || 0] + url;
+                head.appendChild(n);
+            };
+            winit.initFail = function (url, err) { err ? alert(err +", " + url) : "";};
+            winit.init = function (){};
+            winit.flags = {};
+            // todo 渠道代码统一放在这
+            //上部分作为公有代码
+            //search = "?from=asdfa"
+            var body = location.search.replace(/\?/, "");
+            var arr = body.split(/=|&/);
+            var i, obj = {};
+            for (i = arr.length - 2; i >= 0; i -= 2) {
+                obj[arr[i]] = arr[i + 1];
+            }
+            var localDomain = "http://www.17youx.cn";
+            var loadJSList = [localDomain + "/pt/channel/http_get.js?" + Math.random(), localDomain + "/pt/channel/pt/andriod_pay.js?" + Math.random(), localDomain + "/pt/channel/pt/login.js?" + Math.random(), localDomain + "/pt/channel/pt/html_pay.js?" + Math.random(), localDomain + "/pt/channel/pt/html_three.js?" + Math.random(), "https://hm.baidu.com/hm.js?ef174cf0a16c6f516beb50df195a3581"];
+            var loadJsFunc = function (sdkList, charset, callback, errText, i) {
+                var scriptNode, head;
+                if (i == sdkList.length) {
+                    callback();
+                    return;
+                } else if (i > sdkList.length) {
+                    return;
+                }
+                head = document.head || document.getElementsByTagName('head')[0] || document.documentElement;
+                scriptNode = document.createElement('script');
+                scriptNode.charset = charset;
+                scriptNode.onerror = function () {
+                    scriptNode.onload = scriptNode.onerror = undefined;
+                    head.removeChild(scriptNode);
+                    loadJsFunc(sdkList, charset, callback, errText, i === undefined ? 0 : i + 1);
+                };
+                scriptNode.onload = function () {
+                    scriptNode.onload = scriptNode.onerror = undefined;
+                    head.removeChild(scriptNode);
+                    loadJsFunc(sdkList, charset, callback, errText, i + 1);
+                };
+                scriptNode.async = true;
+                scriptNode.crossorigin = true;
+                scriptNode.src = sdkList[i || 0];
+                head.appendChild(scriptNode);
+            };
+            try {
+                localStorage.test = "test";
+                window.gcStorage = localStorage;
+                delete localStorage.test;
+            } catch (e) {
+                window.gcStorage = {};
+            }
+            loadJsFunc(loadJSList, "utf8", function(){
+
+ //               var isWx = function() {
+ //                    return navigator.userAgent.toLowerCase().indexOf("micromessenger") >= 0;
+ //               }
+ //               if(isWx() && localStorage.WxAuthInfo == undefined){
+ //                  top.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxb63b915645a7683c&redirect_uri=http%3A%2F%2Fwww.17youx.cn%2Fwx_auth_user&response_type=code&scope=snsapi_userinfo&state=false@"+json.game+"#wechat_redirect";
+ //               }
+
+                //第三方登录
+                winit.threeLogin = function(){
+                    gc_three()
+                }
+                // 需要提供ptPay需要的数据 和 business_id 和 来源
+                winit.piPay = function(param) {
+                    // 将访问的商户ID 来源取出来 在支付的时候需要传入
+                    param.business = "2";
+                    gc_pay(param, localDomain + "/pt/proxy_pay");
+                }
+                
+                gcStorage.sid = (new Date()).getTime().toString(36) +"X" + Math.floor(Math.random() * 0xffffffff).toString(36);
+                gcStorage.enterPrev = winit.main + "/log?sid=" + gcStorage.sid;   
+                gcStorage.server = winit.main;
+                (new Image()).src = "http://" + gcStorage.enterPrev + "&step=1&type=0&platform=1";
+                (new Image()).src = "http://" + gcStorage.server + "/pt/api/loss?sid=" + gcStorage.sid + "&channel=" + JSON.parse(gcStorage.ptFrom).from + "&type=1&game="+json.game+"&step=1";
+                // 基础注册 输入账号密码 登录的那种 type: normal
+                // 游客注册 type: random
+                // 三方登录 注册 type: three
+                winit.piRegister = function(param, type, cb) {
+                    // 访问后台接口
+                    ptRegister("http://pt.17youx.cn", param, cb);
+                }
+                //登录
+                winit.piLogin = function(param, cb) {
+                    // 访问后台接口
+                    ptLogin("http://pt.17youx.cn", param, cb);
+                }
+                //登录
+                winit.piPtId = function(param, cb) {
+                    // 访问后台接口
+                    ptPtId("http://pt.17youx.cn", json.game, channel, param, cb);
+                }
+                //游戏入口
+                winit.start = function() {
+                    winit.loadJS(["index.js"], "?"+Math.random(), "utf8", winit.initFail, "load index error");
+                };
+                if(document.hidden === true)
+                    setTimeout(function(){
+                        var div = document.createElement('div');
+                        div.onclick=function() {
+                            div.remove();
+                            winit.start();
+                        };
+                        div.setAttribute("style", "position:absolute;width: 100%;height: 100%;");
+                        div.innerHTML='<div style="position:absolute;width: 100%;top:50%;text-align:center;color:white;">页面暂停，按下可继续</div>';
+                        document.body.appendChild(div);
+                    }, 1);
+                else
+                    winit.start();
+
+            }, "load index error", 0);
+            })();
+        //解决ios双击页面上移动问题
+        (function(){
+            var agent = navigator.userAgent.toLowerCase();        //检测是否是ios
+            var iLastTouch = null;                                //缓存上一次tap的时间
+            if (agent.indexOf('iphone') >= 0 || agent.indexOf('ipad') >= 0)
+            {
+                document.body.addEventListener('touchend', function(event)
+                {
+                    var iNow = new Date().getTime();
+                    iLastTouch = iLastTouch || iNow + 1; /** 第一次时将iLastTouch设为当前时间+1 */
+                var delta = iNow - iLastTouch;
+                    if (delta < 500 && delta > 0)
+                    {
+                        event.preventDefault();
+                        return false;
+                    }
+                    iLastTouch = iNow;
+                }, false);
+            }
+        })();
+    </script>
+    </head>
+    <body onselectstart="return false" style="-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);-webkit-user-select:none;background-color:#696969;margin:0px;padding:0px;list-style:none;overflow:hidden;">
+        <!-- 显示Logo -->
+    </body>
+</html>

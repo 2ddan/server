@@ -92,9 +92,18 @@ export const getAward = function () {
 					let _data: any = Common.changeArrToJson(data.ok);
 					lastTask = currTask;
 					currTask = _data.id;
-					let task_type = playermission[_data.id].type;
-					let type = playermission_base[task_type].type;
-					readData = type_mission(_data.id , type , {"task_status":Common.changeArrToJson(_data.task_status)});
+					if(playermission[_data.id]){
+						let task_type = playermission[_data.id].type;
+						let type = playermission_base[task_type].type;
+						readData = type_mission(_data.id , type , {"task_status":Common.changeArrToJson(_data.task_status)});
+						updata("playermission.curr", parseInt(currTask));
+						submitState = false;
+						listenFun();
+						//checkTask();
+					}else{
+						currTask = undefined;
+					}
+					
 					let result: any = Common_m.mixAward(_data);
 					result.auto = 1;
 					globalSend("showNewRes", {
@@ -102,10 +111,6 @@ export const getAward = function () {
 							result1.open();
 						}
 					});
-					updata("playermission.curr", parseInt(currTask));
-					submitState = false;
-					listenFun();
-					//checkTask();
 					updataHtml();
 				})
 			} else {
@@ -318,6 +323,9 @@ net_message("task_status", (msg) => {
 
 
 listenBack("app/activity/task@read", (_data) => {
+	if(!playermission[_data.id]){
+		return;
+	}
 	let task_type = playermission[_data.id].type;
 	let type = playermission_base[task_type].type;
 	readData = type_mission(_data.id , type , _data);
@@ -381,7 +389,7 @@ insert("playermission", {
  * @description 注册root监听事件
  */
 (<any>listenerList).add((cmd) => {
-	if (!cmd || !cmd.group) return;
+	if (!cmd || !cmd.group || !playermission[currTask]) return;
 	if(cmd.group.name === "secondary" || cmd.group.name === "cover" ||  cmd.group.name === "scene"){
 		if(cmd.type == "add"){
 			widgetsMap.push(cmd.widget.name);

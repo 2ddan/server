@@ -8,7 +8,7 @@
     {{let checkTypeof = _get("app/mod/db").exports.checkTypeof}}
     {{let time = Util.serverTime()}}
     {{let publicboss_config = Cfg.publicboss_config.publicboss_config}}
-    <div w-sid="3" style="position: absolute;width: 520px;height: 590px;left: 50%;top: 50%;margin-left: -260px;margin-top: -400px;">
+    <div w-sid="3" style="position: absolute;width: 520px;height: 590px;left: 50%;top: 50%;margin-left: -260px;margin-top: -400px;"> 
         {{let _height = 378}}
         {{let boss_id = 0}}
         {{for q,p of it1.initData.boss_info}}
@@ -19,6 +19,7 @@
             {{: _height = 455}}
             {{end}}
         {{end}}
+        
         {{let publicboss_award = Cfg.publicboss_award.publicboss_award}}
         {{let ___award = publicboss_award[boss_id].distribute_showaward}}
         <img src='app_b/fight/images/win_{{_height == 455 ? "text" : "end"}}.png' style="position:absolute;left: 20px;right: 0px;margin: 0 auto;"/>
@@ -150,11 +151,13 @@
                 </app_a-widget-btn-rect>
                 {{end}}
 
-                {{let time = 10 * 1000 + Util.serverTime()}}
-                {{if time >= Util.serverTime() && it1.aaaaaa}}
+                {{let time = 10 + Util.serverTime(true)}}
+                {{let now_time = Util.serverTime(true)}}
+
+                {{if time > now_time}}
                     <span style="position: absolute;left: 0px;right: 0px;margin: 0px auto;bottom: -135px;color: rgb(253, 231, 202);font-size: 20px;z-index: 1;border-bottom: 2px solid rgb(253, 231, 202);width: 105px;font-family: mnjsh;">
                         <app-widget-cdTime1 ev-countdownend="closeFightAward" style="position: relative;display: inline-block;margin-left: 2px;">
-                            { "cd_time":{{time}},"now_time":{{Util.serverTime()}},"cd_type":"x","full":"0"}
+                            { "cd_time":{{time * 1000}},"now_time":{{Util.serverTime()}},"cd_type":"x","full":"0"}
                         </app-widget-cdTime1>
                         <span style="display: inline-block;">秒后退出</span>
                     </span>

@@ -12,6 +12,7 @@
         </widget>
         <widget w-class="7" w-tag="app_a-widget-pic_other-pic_other" w-sid="7" style="z-index:2">{"icon":"pendant"} 
         </widget>
+        
         <widget w-class="8" on-tap="goback" w-tag="app_a-widget-btn_pic-btn_pic" w-sid="8" style="z-index: 1;">
             {"guide":"returnTo","icon":"close"} 
         </widget>
@@ -43,7 +44,7 @@
                 {{let _color = it1.gain_bonus[k][0] == 0 ? "#919191" : "#51e650"}}
                 <div style="width:100%;height:25%;position:relative;font-size:17px;color:{{_color}};">
                     <pre style="height:100%;position:relative;display:inline-block;font-family: mnjsh;margin: 0;">
-                        {{ k + " +" + (it1.formatNum(it1.gain_bonus[k][0] * 100,2) + "% ")}}
+                        {{ k + " +" + (Math.floor(it1.gain_bonus[k][0] * 100) + "% ")}}
                     </pre>
 
                     {{if it1.gain_bonus[k][0] == 0}}

@@ -38,6 +38,9 @@ export const globalReceive :any = {
 	} ,
 	magicClosed: ()=>{
 		reset();
+	},
+	soulClosed: () => {
+		reset();
 	}
 }
 

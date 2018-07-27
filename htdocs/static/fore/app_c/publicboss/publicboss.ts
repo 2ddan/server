@@ -1172,8 +1172,8 @@ const dealFightEvents = (events) => {
 // 伤害事件
 const damageFun = (e) => {
     let role_id = getDB("player.role_id"),
-        target = FMgr.scenes.fighters.get(e.target),
-        _fighter = FMgr.scenes.fighters.get(e.fighter),
+        target = typeof e.target == "number" ?  FMgr.scenes.fighters.get(e.target) : e.target,
+        _fighter = typeof e.fighter == "number" ? FMgr.scenes.fighters.get(e.fighter) : e.fighter,
         r = e.r,
         d;
     //自己死亡
@@ -1268,7 +1268,9 @@ net_message("publicboss_rank_info", (msg) => {
     let player = getDB("player");
     let own_damage : any = 0;
     let fight_rank_clone = s_clone(fight_rank);//fight_rank;
-    fight_rank[msg.index - 1] = initRankData(msg.rank_info[1]);
+
+    fight_rank[msg.index - 1] = msg.rank_info[1].length == 0 && fight_rank[msg.index - 1] && fight_rank[msg.index - 1].length != 0 ? fight_rank[msg.index - 1] : initRankData(msg.rank_info[1]);
+    
     let rank = fight_rank[msg.index - 1];
     if(rank.length == 0)return;
     node_list["my_rank"].text ="归属: " + rank[0].name + Common.numberCarry(rank[0].damage || 0,10000);

@@ -11,6 +11,7 @@
 				{"icon":"pendant"} 
 			</widget>
 		</div>
+		
 		<div w-class="10" w-sid="10">
 			<widget w-class="17" w-tag="app_a-widget-bg_frame-bg" w-sid="17">
 				{"bgName":"bg_frame26"} 

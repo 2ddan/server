@@ -7,6 +7,7 @@
             </widget>
             <widget on-tap='cancel' w-class="s11" w-tag="app_a-widget-btn_pic-btn_pic" >{"icon":"close"} 
             </widget>
+            
             <widget w-class="s9" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"pendant"} 
             </widget>
             <widget w-class="s17" w-tag="app_a-widget-pic_text-pic_text">

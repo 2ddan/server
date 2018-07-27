@@ -19,7 +19,7 @@ export const globalReceive: any = {
     //自己死亡
 	self_die:()=>{
         sendDie(conFlag,()=>{
-            let t = cfg.config_reset.config_reset.revive*1000;
+            let t = cfg.config_reset.config_reset.revive*1000+100 + Date.now();
             globalSend("popTip",{
                 title:"s 后自动复活!",
                 btn_name:["立即复活"],

@@ -4,17 +4,17 @@ let tab = {};
     tab["1"] = tab["1"] || [];
     tab["1"].push({
         "id": 101901,
-        "max_count": 600
+        "max_count": 400
     });
     tab["1"] = tab["1"] || [];
     tab["1"].push({
         "id": 101902,
-        "max_count": 600
+        "max_count": 320
     });
     tab["1"] = tab["1"] || [];
     tab["1"].push({
         "id": 101903,
-        "max_count": 100
+        "max_count": 80
     });
     tab["2"] = tab["2"] || [];
     tab["2"].push({

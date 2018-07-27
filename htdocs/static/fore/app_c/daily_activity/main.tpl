@@ -10,7 +10,6 @@
                 {"bgName":"bg_frame30"} 
             </app_a-widget-bg_frame-bg>
 
-           
             <div data-desc="活动滚动box" style="position:absolute;z-index:3;width:440px;top:-2px;height:80px;overflow:hidden;left:50px;">
                 <div style="position:absolute;top:0px;width:100%;height:124%;overflow-y:hidden;overflow-x:auto;white-space:nowrap;z-index:3;top:-2px" scroller="1">
         

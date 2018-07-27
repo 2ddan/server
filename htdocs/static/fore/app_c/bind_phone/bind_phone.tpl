@@ -16,7 +16,6 @@
             </div>
         {{end}}
 	</div>
-
 	{{let _phoneNum = appCfg.player.phone}}
 	<div style="position: absolute;top:197px;left: 0px;width: 100%;height: 160px;">
 		{{if !_phoneNum}}

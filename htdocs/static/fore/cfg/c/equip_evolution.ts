@@ -136,7 +136,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
@@ -159,7 +159,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
@@ -182,7 +182,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460501] = tab[460501]?tab[460501]:{};
     tab[460501]["solt"] = 1;
@@ -412,7 +412,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
@@ -435,7 +435,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
@@ -458,7 +458,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460502] = tab[460502]?tab[460502]:{};
     tab[460502]["solt"] = 2;
@@ -688,7 +688,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
@@ -711,7 +711,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
@@ -734,7 +734,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460503] = tab[460503]?tab[460503]:{};
     tab[460503]["solt"] = 5;
@@ -964,7 +964,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
@@ -987,7 +987,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
@@ -1010,7 +1010,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460504] = tab[460504]?tab[460504]:{};
     tab[460504]["solt"] = 4;
@@ -1240,7 +1240,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
@@ -1263,7 +1263,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
@@ -1286,7 +1286,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460505] = tab[460505]?tab[460505]:{};
     tab[460505]["solt"] = 3;
@@ -1516,7 +1516,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
@@ -1539,7 +1539,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
@@ -1562,7 +1562,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460506] = tab[460506]?tab[460506]:{};
     tab[460506]["solt"] = 10;
@@ -1792,7 +1792,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
@@ -1815,7 +1815,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
@@ -1838,7 +1838,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460507] = tab[460507]?tab[460507]:{};
     tab[460507]["solt"] = 9;
@@ -2068,7 +2068,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
@@ -2091,7 +2091,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
@@ -2114,7 +2114,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460508] = tab[460508]?tab[460508]:{};
     tab[460508]["solt"] = 8;
@@ -2344,7 +2344,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
@@ -2367,7 +2367,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
@@ -2390,7 +2390,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460509] = tab[460509]?tab[460509]:{};
     tab[460509]["solt"] = 7;
@@ -2620,7 +2620,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,300],
-        "wash_num": 3
+        "wash_num": 4
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
@@ -2643,7 +2643,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,450],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;
@@ -2666,7 +2666,7 @@ let tab = {};
         },
         "grade_rate": 0.6,
         "cost": [100027,600],
-        "wash_num": 4
+        "wash_num": 5
     };
     tab[460510] = tab[460510]?tab[460510]:{};
     tab[460510]["solt"] = 6;

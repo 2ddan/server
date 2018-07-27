@@ -21,4 +21,5 @@
 {{:j++}}
 <span style="background-image:url(./images/{{dark}}.png);background-repeat:no-repeat;background-size:100%;display:inline-block;width:{{it.width || 19}}px;height:{{it.height || 18}}px;"></span>
 {{end}}
+
 </div>

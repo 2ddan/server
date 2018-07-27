@@ -8,7 +8,6 @@
     <div style="height: 223px; width:240px;position:absolute;padding: 25px 7px;box-sizing: border-box;line-height: 20px;overflow:hidden;">
         <div style="position: relative;height: 150px;width: 100%; top:20px;left:20px">
             <div style="position: absolute;width:100%;text-align:center;top:50%;transform:translateY(-50%)">
-
             {{for j,k of it1.gest_attribute[soul_id][lv==full_lv?lv-1:lv]["need_gest"]}}
             {{let prop = it1.Pi.sample[ k[0]] }}
             {{let url = it1.Pi.pictures[prop.icon]}}

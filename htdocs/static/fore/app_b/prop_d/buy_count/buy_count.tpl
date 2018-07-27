@@ -13,7 +13,8 @@
 			<widget w-class="6" w-tag="app_a-widget-pic_text-pic_text" w-sid="6">
 				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"购买次数","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>
-		</div>
+        </div>
+        
 		<div w-class="8" w-sid="8">
 			<div style="opacity:0.95">
 				<widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">

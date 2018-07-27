@@ -15,13 +15,19 @@
 	<widget w-class="5" w-tag="app_a-widget-btn-ling" w-sid="5" on-tap="seeAttr()">
 		{"class":"default","fontsize":20,"color":"#fdedd7;","text":" 属性 详情","width":77,"height":77,"textCfg":"lingBtn"} 
 	</widget>
+	
 	<app_b-widget-buff-buff style="position: absolute;top: 5px;right: 40px;z-index:2;">
 		{"width":60,"height":296,"type":"magic","level":{{it1.break_info[0]}},"top":25}
 	</app_b-widget-buff-buff>
+	
+	{{let obj = upInfo[magic.hexagram_level[it1.levelSite-1]]}}
+	{{let countInfo = obj.material_id && it1.TreasurePhase.getHave(obj.material_id)}}
+	{{let max = it1.treasure_break[it1.break_info[0]].prop_max}}
+	{{let _count = countInfo?countInfo.count:0}}
 	<div class="shadow6" w-class="35" style="top: 498px;width: 494px;left: 23px;z-index:2;text-align:right;">
-		<div style="position:relative;text-align:left;display:inline-block;width:260px;height: 23px;">
+		<div style="position:relative;text-align:left;display:inline-block;width:205px;height: 23px;">
 			<widget  w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 0;width: 270px;left: 0;">
-				{"icon":"little_tips_bg","text":"每击杀一个怪物增加一块灵魂残片","width":270,"height":23,"top":2} 
+				{"icon":"little_tips_bg","text":"击杀怪物可获得灵魂残片","width":210,"height":23,"top":2} 
 			</widget>
 			<widget  w-tag="app_a-widget-pic_other-pic_other" style="position:absolute;width:21px;top:1px;left:-6px;">
 				{"icon":"remind"} 
@@ -29,7 +35,8 @@
 		</div>
 		
 		<div style="color:#fffc00;display:inline-block;position: relative;margin-top: -15px;vertical-align: middle;margin-right: 10px;">
-			魂器容量上限为<span style="color:#f13a16">{{Common.numberCarry(it1.treasure_break[it1.break_info[0]].prop_max,10000)}}</span>
+			魂器容量上限为<span style="color:#f13a16">{{Common.numberCarry(max,10000)}}</span>
+			{{if _count>=max}}<span style="color:#fffc00">(已达上限)</span>{{end}}
 		</div>
 	</div>
 	<widget w-class="7" w-tag="app_a-widget-pic_text-pic_text" class="shadow6">
@@ -45,8 +52,6 @@
 		</widget>
 		
 		{{if bol}}
-		{{let obj = upInfo[magic.hexagram_level[it1.levelSite-1]]}}
-		{{let countInfo = obj.material_id && it1.TreasurePhase.getHave(obj.material_id)}}
 		<div w-class="13" w-sid="13">
 			<widget w-class="14" w-tag="app_a-widget-pic_other-pic_other" w-sid="14"></widget>
 			<app_a-widget-text-text style="vertical-align: middle;padding: 0 3px;">
@@ -76,9 +81,8 @@
 			</div>
 		</div>
 		{{if obj.material_id}}
-		{{let max = it1.treasure_break[it1.break_info[0]].prop_max}}
-		{{let _count = countInfo?countInfo.count:0}}
-		<div w-class="24" class="shadow6">铸魂消耗:<span style="color:{{obj.one_cost_times>_count ? '#f13a16':''}}">{{Common.numberCarry(_count,10000)}}</span>/{{obj.one_cost_times}}{{if _count>=max}}<span style="color:#fffc00">(已达上限)</span>{{end}}</div>
+		
+		<div w-class="24" class="shadow6">铸魂消耗:<span style="color:{{obj.one_cost_times>_count ? '#f13a16':''}}">{{Common.numberCarry(_count,10000)}}</span>/{{obj.one_cost_times}}</div>
 		{{end}}	  
 		{{else}}
 		
@@ -130,10 +134,18 @@
 				{"guide":{{it1.treasure_ok ? "treasure_up": ""}},"class":"hl","fontsize":24,"color":"#fdedd7;","text":"铸  魂","width":116,"height":45,"tip_keys":["role.magic_activate.bg.hexagram"]} 
 			</widget>
 			<div w-class="25" w-sid="25" style="left:345px">
-				{{let text = it1.level_type ? "铸魂中" : player.vip >= it1.TreasureBase[it1.magic_id].one_key_up_vip ? "快速铸魂" :"自动铸魂"}}
+				{{if it1.level_type}}
+				<div  on-tap="hexagramLevelUp(1)" style="font-family: mnjsh;font-size:19px;color:#ffd8a6;width: 116px;height: 45px;text-align: center;padding-top: 4px;" class="shadow7">
+					正在铸魂
+					<div style="text-decoration: underline;color:#51e650">取消</div>
+				</div>
+				
+				{{else}}
+				{{let text = player.vip >= it1.TreasureBase[it1.magic_id].one_key_up_vip ? "快速铸魂" :"自动铸魂"}}
 				<widget w-tag="app_a-widget-btn-rect" on-tap="hexagramLevelUp(1)">
 					{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{text}},"width":116,"height":45} 
 				</widget>
+				{{end}}
 				{{if player.level >= it1.config_shortcut["treasure_up"].type[1] || player.month_card_due_time}}
 				<app-widget-tip-tip style="right: 0;top: 0;">
 					{"tip_keys":["role.magic_activate.bg.hexagram"]}
@@ -142,20 +154,28 @@
 			</div>
 
 		{{else}}
-		{{let info = it1.treasure_break[it1.break_info[0]]}}
-		{{let text = it1.break_info[1] >= info.need_exp ? "突  破" : it1.treasure_type ? '淬炼中' : '淬炼'}}
+			{{let info = it1.treasure_break[it1.break_info[0]]}}
+			{{if it1.treasure_type}}
+			<div w-class="25" on-tap="canBreak(1)" style="font-family: mnjsh;font-size:19px;color:#ffd8a6;width: 116px;height: 45px;text-align: center;padding-top: 4px;" class="shadow7">
+				正在淬炼
+				<div style="text-decoration: underline;color:#51e650" >取消</div>
+			</div>
+			{{else}}
 
-		<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="canBreak(1)" style="left:200px">
-			{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{text}},"width":116,"height":45,"tip_keys":["role.magic_activate.bg.break"]} 
-		</widget>
-		{{let sid = info.prop}}
-		{{let propInfo = it1.TreasurePhase.getHave(sid)}}
-		{{let need_prop = info.need_exp / info.per_exp}}
-	
-		{{let color = (propInfo ? propInfo.count : 0) < need_prop-it1.break_info[1] ? "#ff3232" : "#e2bf93"}}      
-		<widget w-class="40" w-tag="app_a-widget-coin-coin" w-sid="40" style="color:#e2bf93;z-index:2;margin-left:-46px">
-			{"icon":"weapon_coin","width":25,"height":21,"left":3,"text":[{{propInfo ? propInfo.count : 0}}],"color":"#e2bf93"} 
-		</widget>
+			{{let text = it1.break_info[1] >= info.need_exp ? "突  破" : it1.treasure_type ? '淬炼中' : '淬炼'}}
+			<widget w-class="25" w-tag="app_a-widget-btn-rect" w-sid="25" on-tap="canBreak(1)" style="left:200px">
+				{"class":"hl","fontsize":24,"color":"#fdedd7;","text":{{text}},"width":116,"height":45,"tip_keys":["role.magic_activate.bg.break"]} 
+			</widget>
+			{{let sid = info.prop}}
+			{{let propInfo = it1.TreasurePhase.getHave(sid)}}
+			{{let need_prop = info.need_exp / info.per_exp}}
+		
+			{{let color = (propInfo ? propInfo.count : 0) < need_prop-it1.break_info[1] ? "#ff3232" : "#e2bf93"}}      
+			<widget w-class="40" w-tag="app_a-widget-coin-coin" w-sid="40" style="color:#e2bf93;z-index:2;margin-left:-42px">
+				{"icon":"treasure_coin","width":20,"height":21,"left":3,"text":[{{propInfo ? propInfo.count : 0}}],"color":"#e2bf93"} 
+			</widget>
+			{{end}}
+			
 		{{end}}
 	{{else}}
 	<widget w-class="25" w-tag="app_a-widget-pic_text-pic_text"  w-sid="25">

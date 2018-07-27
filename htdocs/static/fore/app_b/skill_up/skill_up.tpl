@@ -4,6 +4,7 @@
 	<widget w-class="55" w-tag="app_b-widget-title-title" w-sid="55">
 		{"text":"技 能","coin":["money","diamond"],"left":40,"top":15,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"width":{{root.getWidth()}} }
 	</widget>
+	
 	<widget w-class="3" w-tag="app_a-widget-line-line" w-sid="3">
 		{"line":"line_7"} 
 	</widget>
@@ -12,7 +13,7 @@
 	</widget>
 	{{let len = it1.skill.length}}	
 	{{let data = it1.skill[len-1]}}
-	<div w-class="25" style="{{if data.level}} height:140px;{{end}}">
+	<div w-class="25" style="height:140px;">
 		<widget  w-tag="app_a-widget-bg_frame-bg" style="width:100%;height:95%;left:0;top:4px;">
 			{"bgName":"bg_frame31"} 
 		</widget>
@@ -22,7 +23,7 @@
 		<app_a-widget-line-line style="position:absolute;bottom:0px;left:0px;right:0px;margin:0 auto;width:100%">
 			{"line":"line_17"}
 		</app_a-widget-line-line>
-		<div w-class="5" w-sid="5" style="height:159px;top: 5px;z-index:2">
+		<div w-class="5" w-sid="5" style="height:140px;top: 5px;z-index:2">
 			<app_a-widget-guide-guide>
 				{{"skill_big"}}
 			</app_a-widget-guide-guide>
@@ -63,20 +64,7 @@
 				{{end}}
 			
 			{{else}}
-				{{let bol = true}}
-				<div w-class="26" style="left:26px;">
-					激活条件:
-					<div w-class="27">
-						{{let arr = it1.strokes()}}
-						{{for i,v of data.activate_other }}
-						{{if !arr[i]}}
-						{{: bol = false}}
-						{{end}}
-						<div style="width:50%;display:inline-block;color:{{if arr[i]}} #fff {{end}}"> {{it1.skill_describe[v[0]].skill_name}}达到{{v[1]}} 级</div>
-						{{end}}
-					</div>
-				</div>
-				{{if bol && (it1.playerLevel >= data.activate)}}
+				{{if  it1.playerLevel >= data.activate && it1.wild_max_misssion >= data.wild}}
 				<widget w-class="48" w-tag="app_a-widget-btn-rect" w-sid="48" on-tap="activate" style="left:331px;">
 					{"class":"hl","fontsize":24,"color":"#fdedd7;","text":"激 活","width":116,"height":45,"tip_keys":["role.skill.active"]} 
 				</widget>
@@ -85,17 +73,24 @@
 					{"class":"disabled","fontsize":24,"color":"#fdedd7;","text":"未激活","width":116,"height":45} 
 				</widget>
 				{{end}}
+				{{if data.wild && data.wild > it1.wild_max_misssion}}
+
+				<widget w-class="53" w-tag="app_a-widget-text-text" w-sid="53" style="left:341px;">
+					{"text":{{"通过"+it1.getWildName(data.wild)+"开启"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"heroEquipGreen"} 
+				</widget>
+				{{else}}
 				<widget w-class="53" w-tag="app_a-widget-text-text" w-sid="53" style="left:349px;">
 					{"text":{{data.activate+"级可开启"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"heroEquipGreen"} 
 				</widget>
+				{{end}}
 				
 			{{end}}
 		</div>
 	</div>
-	<widget w-class="31" w-tag="app_a-widget-title-single" w-sid="31" style="top:{{data.level ? 327 : 347}}px;left:112px">
+	<widget w-class="31" w-tag="app_a-widget-title-single" w-sid="31" style="top:327px;left:112px">
 		{"padding":10,"type":9,"width":124,"text":"基础技能","textCfg":"singleTitle","fontSize":20,"space":-2,"color":"#b27d5c","wear":0} 
 	</widget>
-	<div style="position: absolute;box-sizing: border-box;width: 100%;height:{{data.level ? 470 : 455}}px;top: {{data.level ? 343 : 360}}px;padding: 20px 0;overflow:hidden;left: 50%;margin-left: -270px;">
+	<div style="position: absolute;box-sizing: border-box;width: 100%;height:470px;top: 343px;padding: 20px 0;overflow:hidden;left: 50%;margin-left: -270px;">
 		<div scroller="1" style="box-sizing:border-box;width:105%;overflow-y: auto; overflow-x: hidden;height:100%;">
 		{{for i,v of it1.skill}}
 		{{if i < len-1 }}	
@@ -142,9 +137,17 @@
 				<widget w-class="48" on-tap="openTip({{i+1}})" w-tag="app_a-widget-btn-rect" w-sid="48">
 					{"class":"disabled","fontsize":24,"color":"#fdedd7;","text":" 未激活","width":116,"height":45} 
 				</widget>
+				
+			
+				{{if v.wild && v.wild > it1.wild_max_misssion}}
+				<widget w-class="53" w-tag="app_a-widget-text-text" w-sid="53">
+					{"text":{{"通过"+it1.getWildName(v.wild)+"开启"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"heroEquipGreen"} 
+				</widget>
+				{{else}}
 				<widget w-class="53" w-tag="app_a-widget-text-text" w-sid="53">
 					{"text":{{v.activate+"级可开启"}},"show":"","space":-2,"fontSize":18,"lineHeight":20,"color":"","textCfg":"heroEquipGreen"} 
 				</widget>
+				{{end}}
 			{{end}}
 		</div>
 		{{end}}

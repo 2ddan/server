@@ -13,6 +13,7 @@
 		<widget w-class="78" w-tag="app_a-widget-bg_frame-bg" w-sid="78">
 			{"bgName":"bg_frame21"} 
 		</widget>
+		
 		<div w-class="79" w-sid="79">
 			<div  scroller="1" w-class="80" w-sid="80">
 				{{let last = daily_fb_base.length-1}}

@@ -2,7 +2,7 @@
     <app_b-widget-title-title style="top:0;z-index:9;">
     {"text":"阵 法","coin":["money","diamond",150001],"left":35,"top":12,"type":"gest_coin"}
     </app_b-widget-title-title>
-    <div  style="position:absolute;top:100px;width:100%;height:720px;left:50%;margin-left:-273px;">        
+    <div  style="position:absolute;top:100px;width:100%;height:auto;left:50%;margin-left:-273px;bottom: 140px;">        
         <div style="position:absolute;top:5px;left:30px;z-index:3">
             {{let arr = ["初级","中级","高级"]}} 
             {{for i,v of arr}} 
@@ -12,12 +12,11 @@
                 </app-widget-tab-tab_btn>
             {{end}}
         </div>
-        <div class="line_6" style="position: absolute; top: 33px; z-index: 4;left: 0;width: 545px;"></div>			
-        <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;width:492px;height:615px;top:48px;left:27px">
-            {"bgName":"bg_frame21"} 
-        </widget>
-        <div style="position:absolute;height:613px;overflow:hidden;width:490px;top:48px;left:30px">
-            
+        
+        <div class="line_6" style="position: absolute; top: 33px; z-index: 4;left: 0;width: 545px;"></div>	
+        <div class="bg_1" style="position:absolute;width:492px;height:auto;top:48px;left:27px;bottom: 0px;"></div>
+
+        <div style="position:absolute;height:auto;overflow:hidden;width:490px;top:48px;left:30px;bottom: 10px;">
             {{%=========阵法==========}}
             <app-widget-step style="position: absolute;width:105%;height: inherit;top:0px;bottom:0;left:0;line-height:18px;">
                 {"widget":"app_c-gest-gest_list","arr":{{it1.selectGest(it1.gest_info).sort(it1.mySort)}},"initCount":4,"addCount":4,"orientation":2 }

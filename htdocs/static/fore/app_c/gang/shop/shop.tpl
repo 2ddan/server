@@ -3,7 +3,6 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"藏宝阁","coin":["money","diamond",150005],"type":"contribute","left":30,"top":15,"width":540,"width":{{root.getWidth()}}} 
     </widget>
-
     <div w-class="8" w-sid="8">
         <widget w-class="5" w-tag="app_a-widget-line-line" w-sid="5">{"line":"line_7"} 
         </widget>

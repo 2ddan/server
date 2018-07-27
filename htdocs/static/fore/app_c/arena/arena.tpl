@@ -12,7 +12,6 @@
     {{let root = _get("pi/ui/root").exports}}
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">{"text":"竞技场","coin":["money","diamond", 150004],"left":0,"top":15,"width":540,"type":"jjc_score","width":{{root.getWidth()}}}
     </widget>
-    
     <div w-class="8" w-sid="8">
         <widget w-class="5" w-tag="app_a-widget-line-line" w-sid="5">{"line":"line_7"} 
         </widget>
@@ -55,7 +54,7 @@
                     {{else}}
                     {{: imgX = Pi.pictures[robot_cfg[v.sid].head]}}
                     {{end}}
-                    {{let id = v.detail.role_id || null}}
+                    {{let id = v.role_type === "player" ? v.sid : null}}
                     <widget w-class="48" w-tag="app_a-widget-head-friend" w-sid="48" on-tap="seeOther({{id}})">
                         {"url":{{imgX}},"top":23.5,"level":0,"width":107,"height":108}    
                     </widget>

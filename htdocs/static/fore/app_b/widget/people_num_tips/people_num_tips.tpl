@@ -15,6 +15,7 @@
             </widget>
         </div>
         <div w-class="8" w-sid="8">
+            
             <widget w-class="10" w-tag="app_a-widget-bg_frame-bg" w-sid="10">
                 {"bgName":"bg_frame26"} 
             </widget>

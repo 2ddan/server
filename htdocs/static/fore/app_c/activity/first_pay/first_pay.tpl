@@ -10,6 +10,7 @@
         {{let module = weapon[module_info[1]].module[0][0]}}	
         {{let double = career_id == "700002" ? true : false}}
         {{let position = career_id == "700001" ? [0,2.3,0] : career_id == "700002" ? [0.3,2.3,0] : [0.25,2.0,0]}}
+        
         <div style="position:absolute;top:0px;width:540px;height:900px;left:50%;transform:translate(-50%);">
             <app-scene-base-scene style="position:absolute;width:100%;height:100%;">
                 {

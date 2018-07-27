@@ -4,7 +4,6 @@
 	{{let Common = _get("app/mod/common").exports.Common}}
 	{{let player = appCfg.player}}
 	<div w-class="3" w-sid="3">
-
 		{{let v = it1.gang_member[it1.role_index]}}
 		
 		{{let img = ''}}

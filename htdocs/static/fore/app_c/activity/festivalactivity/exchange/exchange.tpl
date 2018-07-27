@@ -7,6 +7,7 @@
     {{let time_delay = it1.Common_m.changeTimeToDate(currAct[0]["delay_date"],currAct[0]["time_type"])}}  
     <div w-class="30">
         <div w-class="34">
+            
             <widget w-class="32" w-tag="app_a-widget-pic_other-pic_other" >{"icon":"tips_top"} 
             </widget>
             <widget on-tap='cancel' w-class="33" w-tag="app_a-widget-btn_pic-btn_pic">{"icon":"close"} 

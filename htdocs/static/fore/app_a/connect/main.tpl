@@ -9,5 +9,4 @@
 	{{end}}
 	
 	<div style="position:absolute;visibility:{{!b?'visible':'hidden'}};pointer-events:{{!b?'all':'none'}};width:{{root.getWidth()}}px;height:{{root.getHeight()}}px;line-height:{{root.getHeight()}}px;" w-class="connectTxt">{{if it1 && text}}{{text}}{{end}}</div>
-	
 </div>

@@ -10,7 +10,6 @@
             {"text":"可以领取对应的超值好礼","fontSize":16.49,"textCfg":"activity" }
         </app-widget-text-text>
     </div>
-
     <div data-desc="奖励列表" scroller="1" style="position: absolute;width: 105%;height:366px;z-index: 1;top:46px;">
         <app-widget-step style="width: 100%;height:366px">
             {"widget":"app_c-activity-recharge_total-frame","arr":{{it1.act_info}},"initCount":5,"addCount":4 }

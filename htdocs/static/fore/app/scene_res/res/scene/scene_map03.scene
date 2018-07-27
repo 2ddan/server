@@ -22,6 +22,7 @@
   "children"  : [
     {
       "name" : "scene_map3_dibiao1",
+      "rayID":-1001,
       "type" : "node",
       "transform" : {
         "position" : [
@@ -123,7 +124,7 @@
             "map"  : {
               "generateMipmaps" : false,
               "image"           : {
-                "name" : "2qACWDwQo6PCefxAnAWknr.jpg"
+                "name" : "9214VQdeWM6P3vT73zXHe5.jpg"
               }
             }
           }
@@ -486,7 +487,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -524,7 +525,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -600,7 +601,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -638,7 +639,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -676,7 +677,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -736,8 +737,8 @@
               1.84093999862671
             ],
             "rotate"   : [
-              4.71287775039673,
-              5.14536619186401,
+              4.71238899230957,
+              5.14536714553833,
               0.0
             ]
           },
@@ -1094,7 +1095,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1106,9 +1107,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -18.2199993133545,
-              -2.45000004768372,
-              5.48999977111816
+              -17.6000003814697,
+              -1.92999994754791,
+              5.65999984741211
             ],
             "scale"    : [
               1.67898416519165,
@@ -1132,45 +1133,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "name" : "map03_aa5a1",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              6.86299991607666,
-              0.486999988555908,
-              1.64100003242493
-            ],
-            "scale"    : [
-              0.617754340171814,
-              0.617754459381104,
-              0.71522456407547
-            ],
-            "rotate"   : [
-              4.71238899230957,
-              3.59870648384094,
-              0.0
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "KPU6vxXeJHqAiBjij1SxVn.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "generateMipmaps" : false,
-                  "image"           : {
-                    "name" : "9KMNLkwbAY2q6BWCoLVWmF.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1246,7 +1209,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1284,7 +1247,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1309,44 +1272,6 @@
               4.82621192932129,
               -6.55986184483481E-07,
               0.522097527980804
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "KPU6vxXeJHqAiBjij1SxVn.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "generateMipmaps" : false,
-                  "image"           : {
-                    "name" : "9KMNLkwbAY2q6BWCoLVWmF.jpg"
-                  }
-                }
-              }
-            ]
-          }
-        },
-        {
-          "name" : "map03_aa5a4",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              18.0669994354248,
-              -0.310000002384186,
-              -0.465999990701675
-            ],
-            "scale"    : [
-              0.49395552277565,
-              0.493955582380295,
-              0.493955582380295
-            ],
-            "rotate"   : [
-              4.82621192932129,
-              5.68179559707642,
-              0.522098541259766
             ]
           },
           "geometry"  : {
@@ -1398,7 +1323,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1486,14 +1411,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -6.02799987792969,
+              -6.13000011444092,
               0.437999993562698,
-              7.97399997711182
+              8.64999961853027
             ],
             "scale"    : [
-              0.65835040807724,
-              0.658350706100464,
-              0.658350944519043
+              0.958403408527374,
+              0.95840460062027,
+              0.958404958248138
             ],
             "rotate"   : [
               4.71238899230957,
@@ -1550,7 +1475,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1601,7 +1526,7 @@
           "transform" : {
             "position" : [
               -9.1569995880127,
-              -1.27900004386902,
+              -0.560000002384186,
               5.60900020599365
             ],
             "scale"    : [
@@ -1638,18 +1563,18 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -7.10200023651123,
-              -0.549000024795532,
-              6.61299991607666
+              -7.27400016784668,
+              -0.46000000834465,
+              6.5
             ],
             "scale"    : [
-              0.858353734016418,
-              1.05166971683502,
-              1.0516699552536
+              1.16508996486664,
+              1.21377635002136,
+              1.21377658843994
             ],
             "rotate"   : [
               4.71238899230957,
-              2.76533341407776,
+              2.44755101203918,
               0.0
             ]
           },
@@ -1677,7 +1602,7 @@
           "transform" : {
             "position" : [
               17.0200004577637,
-              -2.55999994277954,
+              -1.12000000476837,
               -0.370000004768372
             ],
             "scale"    : [
@@ -1714,14 +1639,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              14.6400003433228,
+              13.8699998855591,
               -0.829999983310699,
-              -1.20000004768372
+              -1.02999997138977
             ],
             "scale"    : [
-              0.615176618099213,
-              0.615176916122437,
-              0.615176916122437
+              0.899650514125824,
+              0.899651110172272,
+              0.899651110172272
             ],
             "rotate"   : [
               4.71238899230957,
@@ -1740,7 +1665,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -1778,7 +1703,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -2018,14 +1943,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -4.98999977111816,
-              -0.790000021457672,
-              10.9200000762939
+              -4.80000019073486,
+              -0.0299999993294477,
+              11.0500001907349
             ],
             "scale"    : [
-              1.28404450416565,
-              1.28404486179352,
-              1.2840451002121
+              1.81244516372681,
+              1.47436428070068,
+              1.47436451911926
             ],
             "rotate"   : [
               4.71238899230957,
@@ -2056,14 +1981,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -2.6800000667572,
+              -1.97000002861023,
               0.370000004768372,
-              12.3500003814697
+              13.0100002288818
             ],
             "scale"    : [
-              1.2840404510498,
-              1.28405046463013,
-              1.28405046463013
+              1.74629485607147,
+              1.7463082075119,
+              1.7463082075119
             ],
             "rotate"   : [
               4.71238899230957,
@@ -2132,9 +2057,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              4.30000019073486,
+              4.69999980926514,
               0.143999993801117,
-              10.6499996185303
+              9.96000003814697
             ],
             "scale"    : [
               0.721180081367493,
@@ -2673,54 +2598,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              12.3199996948242,
-              0.509999990463257,
-              -0.660000026226044
+              11.5609998703003,
+              0.931999981403351,
+              0.172000005841255
             ],
             "scale"    : [
-              0.918410301208496,
-              0.918410122394562,
-              0.918410420417786
-            ],
-            "rotate"   : [
-              5.07747745513916,
-              5.93706512451172,
-              5.59764099121094
-            ]
-          },
-          "geometry"  : {
-            "type" : "BufferGeometry",
-            "res"  : "tbieLbhqcSe3grJb6tDGF.geo"
-          },
-          "meshRender" : {
-            "material" : [
-              {
-                "type" : "MeshBasicMaterial",
-                "map"  : {
-                  "generateMipmaps" : false,
-                  "image"           : {
-                    "name" : "KEU95jWotcZZY68iw6shYh.png"
-                  }
-                },
-                "transparent" : true,
-                "layer"       : 3000
-              }
-            ]
-          }
-        },
-        {
-          "name" : "map03_bb2a5",
-          "type" : "node",
-          "transform" : {
-            "position" : [
-              13.8920001983643,
-              0.0570000000298023,
-              0.610000014305115
-            ],
-            "scale"    : [
-              0.913266718387604,
-              0.913266360759735,
-              0.913266599178314
+              1.25567722320557,
+              1.2556768655777,
+              1.25567722320557
             ],
             "rotate"   : [
               5.07747745513916,
@@ -2923,9 +2808,9 @@
               1.25205445289612
             ],
             "rotate"   : [
-              5.05955934524536,
-              0.160616204142571,
-              5.05857276916504
+              4.88182258605957,
+              5.59790277481079,
+              5.94577550888062
             ]
           },
           "geometry"  : {
@@ -2993,7 +2878,7 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              -0.600000023841858,
+              -0.119999997317791,
               1.80999994277954,
               12.6000003814697
             ],
@@ -3059,7 +2944,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }
@@ -3071,12 +2956,12 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              3.41000008583069,
-              -1.30999994277954,
-              11.8299999237061
+              3.91000008583069,
+              -0.439999997615814,
+              11.710000038147
             ],
             "scale"    : [
-              0.680191576480865,
+              0.855085849761963,
               0.947223722934723,
               0.258692473173141
             ],
@@ -3097,7 +2982,7 @@
                 "map"  : {
                   "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "VSJ52gxFFxbgm1Xv1LbDUD.jpg"
+                    "name" : "YWmChkq8smvwa39jmh9JmH.jpg"
                   }
                 }
               }

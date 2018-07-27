@@ -22,8 +22,8 @@
   "children"  : [
     {
       "name" : "scene_map2_dibiao1",
-      "type" : "node",
       "rayID":-1001,
+      "type" : "node",
       "transform" : {
         "position" : [
           0.0,
@@ -50,13 +50,9 @@
           {
             "type" : "MeshBasicMaterial",
             "map"  : {
-              "filter" : [
-                1006,
-                1007
-              ],
-              "generateMipmaps" : true,
+              "generateMipmaps" : false,
               "image"           : {
-                "name" : "2Qj4tjUB4zNjAQQsjL1hYW.png"
+                "name" : "KEU95jWotcZZY68iw6shYh.png"
               }
             },
             "transparent" : true,
@@ -178,35 +174,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.355288982391357,
-                    -0.000179771726834588
-                  ],
-                  "repeat" : [
-                    0.0460215620696545,
-                    0.0460215620696545
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -242,35 +212,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.22803108394146,
-                    0.502139508724213
-                  ],
-                  "repeat" : [
-                    0.124043807387352,
-                    0.124043807387352
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -306,35 +250,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.253398656845093,
-                    0.064852699637413
-                  ],
-                  "repeat" : [
-                    0.129943326115608,
-                    0.129943326115608
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -370,35 +288,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0911740139126778,
-                    0.064737431704998
-                  ],
-                  "repeat" : [
-                    0.159451574087143,
-                    0.159451574087143
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -434,35 +326,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.386518657207489,
-                    0.142811313271523
-                  ],
-                  "repeat" : [
-                    0.0512208007276058,
-                    0.0512208007276058
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -498,35 +364,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.384188771247864,
-                    0.189424321055412
-                  ],
-                  "repeat" : [
-                    0.147671192884445,
-                    0.147671192884445
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -562,35 +402,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.679110646247864,
-                    0.189424321055412
-                  ],
-                  "repeat" : [
-                    0.147671192884445,
-                    0.147671192884445
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -626,35 +440,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0913128033280373,
-                    0.453171610832214
-                  ],
-                  "repeat" : [
-                    0.123922511935234,
-                    0.123922511935234
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -713,35 +501,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.507150232791901,
-                    -0.00406192988157272
-                  ],
-                  "repeat" : [
-                    0.199447974562645,
-                    0.199447974562645
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -777,35 +539,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.228194415569305,
-                    0.180100202560425
-                  ],
-                  "repeat" : [
-                    0.486154437065125,
-                    0.486154437065125
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -841,35 +577,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.663951337337494,
-                    0.121814265847206
-                  ],
-                  "repeat" : [
-                    0.168284237384796,
-                    0.168284237384796
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -905,35 +615,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0916321501135826,
-                    0.624363541603088
-                  ],
-                  "repeat" : [
-                    0.249309971928597,
-                    0.249309971928597
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -969,35 +653,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00015648863336537,
-                    0.536003649234772
-                  ],
-                  "repeat" : [
-                    0.236844480037689,
-                    0.236844480037689
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1009,14 +667,14 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              6.44899988174438,
-              1.29299998283386,
-              13.581000328064
+              6.42999982833862,
+              0.0399999991059303,
+              13.6099996566772
             ],
             "scale"    : [
-              0.908317446708679,
-              0.908316969871521,
-              0.821239411830902
+              1.29889392852783,
+              1.29889297485352,
+              1.17437207698822
             ],
             "rotate"   : [
               4.74143981933594,
@@ -1033,35 +691,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "XkQeG3jwS9SQthjgvxGyhu.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.59754091501236,
-                    0.128034070134163
-                  ],
-                  "repeat" : [
-                    0.174516975879669,
-                    0.174516975879669
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1120,35 +752,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.219293132424355,
-                    -0.124574393033981
-                  ],
-                  "repeat" : [
-                    0.256060004234314,
-                    0.256060004234314
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1184,35 +790,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00176249141804874,
-                    0.22538748383522
-                  ],
-                  "repeat" : [
-                    0.320075005292892,
-                    0.320075005292892
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1248,35 +828,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00193874060641974,
-                    -0.0145485699176788
-                  ],
-                  "repeat" : [
-                    0.352082520723343,
-                    0.352082520723343
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1312,35 +866,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.901286244392395,
-                    0.0383357480168343
-                  ],
-                  "repeat" : [
-                    0.192045003175735,
-                    0.192045003175735
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1376,35 +904,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.596246242523193,
-                    -0.0592141002416611
-                  ],
-                  "repeat" : [
-                    0.256060004234314,
-                    0.256060004234314
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1440,35 +942,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.529839992523193,
-                    -0.0592141002416611
-                  ],
-                  "repeat" : [
-                    0.256060004234314,
-                    0.256060004234314
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1504,35 +980,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.320352613925934,
-                    0.679802060127258
-                  ],
-                  "repeat" : [
-                    0.280065625905991,
-                    0.280065625905991
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1568,35 +1018,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.226092204451561,
-                    0.391311973333359
-                  ],
-                  "repeat" : [
-                    0.440103143453598,
-                    0.440103143453598
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1632,35 +1056,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00167436699848622,
-                    0.314981788396835
-                  ],
-                  "repeat" : [
-                    0.30407127737999,
-                    0.30407127737999
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1696,35 +1094,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.156579226255417,
-                    0.585319101810455
-                  ],
-                  "repeat" : [
-                    0.248058140277863,
-                    0.248058140277863
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1760,35 +1132,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.304792106151581,
-                    0.28824582695961
-                  ],
-                  "repeat" : [
-                    0.280065625905991,
-                    0.280065625905991
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1824,35 +1170,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00123374408576638,
-                    0.573110938072205
-                  ],
-                  "repeat" : [
-                    0.224052518606186,
-                    0.224052518606186
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1911,35 +1231,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0218506306409836,
-                    0.0261586550623178
-                  ],
-                  "repeat" : [
-                    0.155511483550072,
-                    0.155511483550072
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -1975,35 +1269,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.00152593851089478,
-                    0.0121911205351353
-                  ],
-                  "repeat" : [
-                    0.233267232775688,
-                    0.233267232775688
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2039,35 +1307,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.00231938064098358,
-                    0.0261586550623178
-                  ],
-                  "repeat" : [
-                    0.155511483550072,
-                    0.155511483550072
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2103,35 +1345,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0413818806409836,
-                    0.0261586550623178
-                  ],
-                  "repeat" : [
-                    0.155511483550072,
-                    0.155511483550072
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2199,29 +1415,7 @@
                     "name" : "2Qj4tjUB4zNjAQQsjL1hYW.png"
                   }
                 },
-                "lightMap" : {
-                  "offset" : [
-                    0.534442782402039,
-                    -0.131231710314751
-                  ],
-                  "repeat" : [
-                    0.253061234951019,
-                    0.253061234951019
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
-                  }
-                },
-                "color"    : 9803157,
+                "color" : 9803157,
                 "transparent" : true,
                 "layer"       : 3000
               }
@@ -2233,9 +1427,9 @@
           "type" : "node",
           "transform" : {
             "position" : [
-              0.768999993801117,
-              2.79200005531311,
-              14.8210000991821
+              0.652999997138977,
+              2.36899995803833,
+              15.0909996032715
             ],
             "scale"    : [
               0.72201007604599,
@@ -2243,9 +1437,9 @@
               0.72205650806427
             ],
             "rotate"   : [
-              4.93890619277954,
-              2.04521608352661,
-              4.13609075546265
+              5.28322172164917,
+              2.72460746765137,
+              3.49757432937622
             ]
           },
           "geometry"  : {
@@ -2266,29 +1460,7 @@
                     "name" : "2Qj4tjUB4zNjAQQsjL1hYW.png"
                   }
                 },
-                "lightMap" : {
-                  "offset" : [
-                    0.405811548233032,
-                    -0.0586620569229126
-                  ],
-                  "repeat" : [
-                    0.244897961616516,
-                    0.244897961616516
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
-                  }
-                },
-                "color"    : 9803157,
+                "color" : 9803157,
                 "transparent" : true,
                 "layer"       : 3000
               }
@@ -2333,29 +1505,7 @@
                     "name" : "2Qj4tjUB4zNjAQQsjL1hYW.png"
                   }
                 },
-                "lightMap" : {
-                  "offset" : [
-                    0.149127081036568,
-                    -0.209275349974632
-                  ],
-                  "repeat" : [
-                    0.269387751817703,
-                    0.269387751817703
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
-                  }
-                },
-                "color"    : 9803157,
+                "color" : 9803157,
                 "transparent" : true,
                 "layer"       : 3000
               }
@@ -2414,35 +1564,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.546100616455078,
-                    0.0294277761131525
-                  ],
-                  "repeat" : [
-                    0.132722571492195,
-                    0.132722571492195
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2478,35 +1602,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.900359988212585,
-                    -0.00247280136682093
-                  ],
-                  "repeat" : [
-                    0.132722571492195,
-                    0.132722571492195
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2565,35 +1663,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.355586022138596,
-                    0.0404606461524963
-                  ],
-                  "repeat" : [
-                    0.891081035137177,
-                    0.891081035137177
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2629,35 +1701,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.348251849412918,
-                    0.120707452297211
-                  ],
-                  "repeat" : [
-                    0.876473128795624,
-                    0.876473128795624
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2693,35 +1739,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.311581134796143,
-                    -0.396396100521088
-                  ],
-                  "repeat" : [
-                    0.80343371629715,
-                    0.80343371629715
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2757,35 +1777,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.2822445333004,
-                    -0.215999186038971
-                  ],
-                  "repeat" : [
-                    0.745002150535584,
-                    0.745002150535584
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -2865,35 +1859,9 @@
                   {
                     "type" : "MeshBasicMaterial",
                     "map"  : {
-                      "filter" : [
-                        1006,
-                        1007
-                      ],
-                      "generateMipmaps" : true,
+                      "generateMipmaps" : false,
                       "image"           : {
                         "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                      }
-                    },
-                    "lightMap" : {
-                      "offset" : [
-                        -0.0653278902173042,
-                        0.247463405132294
-                      ],
-                      "repeat" : [
-                        0.12981578707695,
-                        0.12981578707695
-                      ],
-                      "wrap"   : [
-                        1001,
-                        1001
-                      ],
-                      "filter" : [
-                        1006,
-                        1007
-                      ],
-                      "generateMipmaps" : true,
-                      "image"           : {
-                        "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                       }
                     }
                   }
@@ -2954,35 +1922,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0117537826299667,
-                    -0.000655443756841123
-                  ],
-                  "repeat" : [
-                    0.205440118908882,
-                    0.205440118908882
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3018,35 +1960,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.13388566672802,
-                    -0.000802584167104214
-                  ],
-                  "repeat" : [
-                    0.251559317111969,
-                    0.251559317111969
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3082,35 +1998,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.289963573217392,
-                    -0.000682196579873562
-                  ],
-                  "repeat" : [
-                    0.213825419545174,
-                    0.213825419545174
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3146,35 +2036,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.374493449926376,
-                    0.189038053154945
-                  ],
-                  "repeat" : [
-                    0.301871180534363,
-                    0.301871180534363
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3210,35 +2074,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.638175308704376,
-                    0.188850790262222
-                  ],
-                  "repeat" : [
-                    0.36056837439537,
-                    0.36056837439537
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3274,35 +2112,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.53438138961792,
-                    0.0641965419054031
-                  ],
-                  "repeat" : [
-                    0.364761024713516,
-                    0.364761024713516
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3338,35 +2150,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0599402189254761,
-                    0.189091563224792
-                  ],
-                  "repeat" : [
-                    0.28510057926178,
-                    0.28510057926178
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3402,35 +2188,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0532459318637848,
-                    0.324604898691177
-                  ],
-                  "repeat" : [
-                    0.27252259850502,
-                    0.27252259850502
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3466,35 +2226,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.226055949926376,
-                    0.0643971934914589
-                  ],
-                  "repeat" : [
-                    0.301871180534363,
-                    0.301871180534363
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3530,35 +2264,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0433071106672287,
-                    0.334471136331558
-                  ],
-                  "repeat" : [
-                    0.347990393638611,
-                    0.347990393638611
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3617,35 +2325,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.500733435153961,
-                    -0.0434283949434757
-                  ],
-                  "repeat" : [
-                    0.161509498953819,
-                    0.161509498953819
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3681,35 +2363,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0762531757354736,
-                    0.269317716360092
-                  ],
-                  "repeat" : [
-                    0.161509498953819,
-                    0.161509498953819
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3745,35 +2401,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "4if9JUCc71P3rLAX4o1rqS.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.289177596569061,
-                    0.0887258946895599
-                  ],
-                  "repeat" : [
-                    0.201886877417564,
-                    0.201886877417564
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -3840,28 +2470,6 @@
                   "image"           : {
                     "name" : "WnKyUXNJKJy5qEwR8Q1uyh.jpg"
                   }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.176312670111656,
-                    -0.19901131093502
-                  ],
-                  "repeat" : [
-                    0.352012932300568,
-                    0.352012932300568
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
-                  }
                 }
               }
             ]
@@ -3919,35 +2527,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "A2NsHpDXScJVFMn1Sih1z1.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.573629975318909,
-                    -0.00034926479565911
-                  ],
-                  "repeat" : [
-                    0.0450089685618877,
-                    0.0450089685618877
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4006,35 +2588,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.821017265319824,
-                    0.0638030916452408
-                  ],
-                  "repeat" : [
-                    0.253915399312973,
-                    0.253915399312973
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4070,35 +2626,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.00986126810312271,
-                    0.905900895595551
-                  ],
-                  "repeat" : [
-                    0.317394256591797,
-                    0.317394256591797
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4134,35 +2664,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.111608758568764,
-                    0.813816845417023
-                  ],
-                  "repeat" : [
-                    0.365003407001495,
-                    0.365003407001495
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4198,35 +2702,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.0104703679680824,
-                    0.704443335533142
-                  ],
-                  "repeat" : [
-                    0.253915399312973,
-                    0.253915399312973
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4262,35 +2740,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0813265070319176,
-                    0.244782656431198
-                  ],
-                  "repeat" : [
-                    0.253915399312973,
-                    0.253915399312973
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4326,35 +2778,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0124027207493782,
-                    0.543461441993713
-                  ],
-                  "repeat" : [
-                    0.325329124927521,
-                    0.325329124927521
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4390,35 +2816,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.101658143103123,
-                    0.738604784011841
-                  ],
-                  "repeat" : [
-                    0.317394256591797,
-                    0.317394256591797
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4454,35 +2854,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0914923325181007,
-                    0.820830702781677
-                  ],
-                  "repeat" : [
-                    0.285654842853546,
-                    0.285654842853546
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4518,35 +2892,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0864094272255898,
-                    0.895146787166595
-                  ],
-                  "repeat" : [
-                    0.269785135984421,
-                    0.269785135984421
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4582,35 +2930,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.451288282871246,
-                    0.266046404838562
-                  ],
-                  "repeat" : [
-                    0.261850267648697,
-                    0.261850267648697
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4646,35 +2968,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.131940394639969,
-                    0.422649890184402
-                  ],
-                  "repeat" : [
-                    0.301524549722672,
-                    0.301524549722672
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4710,35 +3006,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.776015937328339,
-                    -0.00145987700670958
-                  ],
-                  "repeat" : [
-                    0.238045692443848,
-                    0.238045692443848
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4774,35 +3044,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.589241564273834,
-                    -0.00145987700670958
-                  ],
-                  "repeat" : [
-                    0.238045692443848,
-                    0.238045692443848
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4838,35 +3082,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.83827406167984,
-                    -0.00145987700670958
-                  ],
-                  "repeat" : [
-                    0.238045692443848,
-                    0.238045692443848
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4902,35 +3120,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    -0.0838679671287537,
-                    0.612148284912109
-                  ],
-                  "repeat" : [
-                    0.261850267648697,
-                    0.261850267648697
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -4966,35 +3158,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.103984400629997,
-                    0.714061439037323
-                  ],
-                  "repeat" : [
-                    0.388807982206345,
-                    0.388807982206345
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -5030,35 +3196,9 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
-                  }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.713757812976837,
-                    -0.00145987700670958
-                  ],
-                  "repeat" : [
-                    0.238045692443848,
-                    0.238045692443848
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
-                  "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
                   }
                 }
               }
@@ -5094,35 +3234,47 @@
               {
                 "type" : "MeshBasicMaterial",
                 "map"  : {
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                  "generateMipmaps" : false,
                   "image"           : {
                     "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
                   }
-                },
-                "lightMap" : {
-                  "offset" : [
-                    0.651499688625336,
-                    -0.00145987700670958
-                  ],
-                  "repeat" : [
-                    0.238045692443848,
-                    0.238045692443848
-                  ],
-                  "wrap"   : [
-                    1001,
-                    1001
-                  ],
-                  "filter" : [
-                    1006,
-                    1007
-                  ],
-                  "generateMipmaps" : true,
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name" : "scene_map1_c2a11a",
+          "type" : "node",
+          "transform" : {
+            "position" : [
+              2.24000000953674,
+              -1.01999998092651,
+              15.7799997329712
+            ],
+            "scale"    : [
+              1.50650370121002,
+              1.53583872318268,
+              1.32019758224487
+            ],
+            "rotate"   : [
+              4.71238899230957,
+              1.94939637184143,
+              0.0
+            ]
+          },
+          "geometry"  : {
+            "type" : "BufferGeometry",
+            "res"  : "Btg9YsPsgWvgDeGYZausJi.geo"
+          },
+          "meshRender" : {
+            "material" : [
+              {
+                "type" : "MeshBasicMaterial",
+                "map"  : {
+                  "generateMipmaps" : false,
                   "image"           : {
-                    "name" : "DmuQUFJw1g1JG9fFDhCsbC.jpg"
+                    "name" : "NYEtF88QcZvo13cHLMPV81.jpg"
                   }
                 }
               }

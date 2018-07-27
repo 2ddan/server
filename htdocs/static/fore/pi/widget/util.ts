@@ -840,7 +840,7 @@ self["$difineTPL"] = (name,func) => {
 		loadTplMap.splice(idx,1);
 		// setCache(name, {value:func,compile:0, path: name, wpath: null});
 	}
-	console.log(loadTplMap);
+	// console.log(loadTplMap);
 	if(loadTplMap.length === 0 && (loadTplMap as any).success){
 		(loadTplMap as any).success();
 		delete (loadTplMap as any).success;

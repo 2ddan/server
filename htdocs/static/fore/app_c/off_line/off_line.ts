@@ -91,7 +91,7 @@ const getData = function () {
     off_data.gain_bonus = gain_bonus;
     off_data.award_list = award_list;
     off_data.resolve_prop = resolve_prop;
-    off_data.formatNum = formatNum;
+    // off_data.formatNum = formatNum;
     off_data.showExp = showExp;
     return off_data;
 }
@@ -101,6 +101,9 @@ export class OffLine extends Widget {
         canGetAward();
     }
     selectTimes(i){
+        // if(!i && get_num[0] || i && !get_num[0]){
+        //     return;
+        // }
         if(i==0){
            get_num[0]=1;
            get_num[1]=0;
@@ -465,10 +468,10 @@ const allBonus = () => {
 }
 
 //处理双精度计算误差
-const formatNum = (f, digit) => { 
-    let m = Math.pow(10, digit); 
-    return Math.ceil(f * m) / m; 
-} 
+// const formatNum = (f, digit) => { 
+//     let m = Math.pow(10, digit); 
+//     return Math.ceil(f * m) / m; 
+// } 
 
 /**
  * 监听等级

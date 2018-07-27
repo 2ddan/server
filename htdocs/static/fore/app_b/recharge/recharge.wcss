@@ -20,7 +20,7 @@
 .6 {
     position: absolute;
     width: 490px;
-    height: 608px;
+    bottom: 0px;
     left: 25px;
     top: 0px;
     overflow-x: hidden;
@@ -31,7 +31,8 @@
 .7{
     position: absolute;
     width: 105%;
-    height:  588px;
+    top: 10px;
+    bottom: 0px;
     overflow-x: hidden;
     overflow-y: auto;
 }

@@ -49,8 +49,8 @@ export class money_tree_w extends Widget {
             "effect": "eff_ui_yaoqianshu01",
             "isOnce": false,
             "x":0,
-            "y":6,
-            "z":-2.5,
+            "y":2,
+            "z":0.03,
             "index": 1
         });
         effectcallback(effid, () => {

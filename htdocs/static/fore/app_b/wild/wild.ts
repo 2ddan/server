@@ -1,7 +1,7 @@
 //==========================================导入
 //pi
 import { Forelet } from "pi/widget/forelet";
-import {  open, destory } from "pi/ui/root";
+import {  open, destory,forbidEvent } from "pi/ui/root";
 import { Widget } from "pi/widget/widget";
 import { getSize } from 'pi/util/task_mgr';
 //mod
@@ -38,6 +38,7 @@ import { Init_Fighter } from "fight/a/common/init_fighter";
 import { Scene, FMgr } from "fight/a/fight";
 import { blend } from "fight/a/analyze";
 import { analyseFighter } from "fight/a/fore/node_fight";
+import { buff } from "fight/b/common/buff";
 //掉落效果
 import { Music } from "app/mod/music";
 import { guide_cfg } from "cfg/a/guide_cfg";
@@ -721,8 +722,8 @@ const getPosition = (target,_fighter) => {
  */
 
 const updateTaskDb = (taskInfo) => {
-    // if(!taskInfo){return;}
-    if(guide_task() || !taskInfo){return;}
+    if(!taskInfo){return;}
+    // if(guide_task()){return;}
     taskInfo.bossName = monster_base[taskInfo.task].name;
     //设置怪物目标
     SMgr.setCondistion([["sid",taskInfo.task]]);
@@ -791,7 +792,7 @@ export const submitGuideTask = () => {
             if (wild.wild_task_num >= cur_task.task_num && d.guide_num >= cur_task.guide_num) {
                 flagHitBoss = 1;
                 openFlagHitBoss.icon = 1;
-                updata("wild.flagHitBoss", flagHitBoss);             
+                updata("wild.flagHitBoss", flagHitBoss);              
                 let timer = setTimeout(()=>{
                     openFlagHitBoss.inhert = 1;
                     forelet.paint(getData());
@@ -831,7 +832,12 @@ const refreshTask = () => {
 //满足条件刷新成引导任务
 const guide_task = ()=>{
     let wild = get("wild");
-    
+    let curr_boss = wild_boss[wild.wild_boss_order];
+
+    if(wild.wild_history != wild.wild_max_mission || wild.guide_num >= curr_boss.guide_num){
+        return false;
+    }
+
     //已有引导任务，更新状态
     if(wild.task && wild.task.guide){
         if(!wild.task.guide[1]){
@@ -849,7 +855,6 @@ const guide_task = ()=>{
             return false;//完成刷新任务
         }
     }
-
     //刷新成引导任务
     let curr = wild_mission[wild.wild_history].guide;
     if(wild.wild_history == wild.wild_max_mission && curr ){
@@ -874,7 +879,17 @@ const guide_task = ()=>{
                 return true;
             }
         }
-        
+    }
+    //防意外情况引起的第一次未更新到引导任务，无法跳关
+    if(wild.wild_task_num >= curr_boss.task_num && curr_boss.guide_num > wild.guide_num){
+        net_request({ "param": {}, "type": "app/pve/wild@record_guide_num" }, function (data) {
+            if (data.error) {
+                console.log(data.why);
+            } else if (data.ok) {
+                let d:any = Common.changeArrToJson(data.ok);
+                updata("wild.guide_num", d.guide_num);
+            }
+        });
     }
     return false;
 }
@@ -925,7 +940,7 @@ const clickBossFight = function (result) {
 const initFightScene = function () {
     //创建战斗场景
     let sn = wild_map[wild_mission[db.wild.wild_history].map_id].res;
-    fightScene = FMgr.create("fight");
+    fightScene = FMgr.create("fight",buff);
     fightScene.setNavMesh(FMgr.createNavMesh(mgr.getSceneBuffer(sn, ".nav")));
     // node_fun()
     mgr_data.sceneTab["fight"] = fightScene;
@@ -1182,24 +1197,24 @@ const fightWildBossEnd = function (r) {
         // uiEffectId = openUiEffect(data, null, "effect_2d");
         //领奖
         getAward((result) => {
+            forbidEvent(3000);
             let back = (r) => {
                 bossNum = 1;
                 forelet.paint(getData());
-                refresh_task_anima();
-                // console.log("wild forelet paint");
+                setTimeout(refresh_task_anima,800);
                 globalSend("translate", {
                     "fighter": handScene.getSelf(),
                     "type": "eff_rwcstx01",
                     "cb": function () {
-                        if(!fightScene)
+                        if(!fightScene){
                             return;
+                        }
                         bossBackWild = ((r)=>{return ()=>{
                             back(r);
                             destoryFight();
                             UiFunTable.removeProp();
                             //切换地图通讯
                             let cur = db.wild.wild_history;
-                            console.log(r);
                             updata("wild.flagHitBoss", flagHitBoss);
                             for (let k in r) {
                                 if (k == "award")
@@ -1296,9 +1311,22 @@ const sceneBack = () => {
             if(line_flag && publicboss_obj != null){
                 lineUpNode(line_time)
             }
+            //更新老的fighter
+            handScene.reInsert(SMgr.getScene().fighters,changed);
+        } else {
+            handScene.cach.clear();
+            for(let k in handScene.mapList){
+                delete handScene.mapList[k];
+                delete handScene.pet[k];
+            }
+            initValue();
+            SMgr.getScene().fighters.forEach((f:any) => {
+                delete f._show;
+                handScene.insert({fighter:f},Date.now());
+            });
         }
         //更新老的fighter
-        handScene.reInsert(SMgr.getScene().fighters,changed);
+        // handScene.reInsert(SMgr.getScene().fighters,changed);
         if(!SMgrPause){
             SMgr.setPause(false);            
         }
@@ -1392,7 +1420,11 @@ const refresh_task_anima = function(){
         clearTimeout(timer_1);
         timer_1 = null;
     },2100);
-
+    let timer_out = setTimeout(()=>{
+        bossNum && (bossNum = 0);
+        clearTimeout(timer_out);
+        timer_out = null;
+    },1300);
     // let timer_out = setTimeout(()=>{//出现+刷新
     //     anima_after();
     //     clearTimeout(timer_out);

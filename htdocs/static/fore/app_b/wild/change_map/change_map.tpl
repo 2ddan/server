@@ -8,6 +8,7 @@
       "大漠遗址":"damo","断壁残垣":"duanbi","敦煌洞窟":"dunhuang","旱地绿洲":"handi","枯木古堡":"gumu","骷髅地宫":"kulou","暖冬春雪":"nuanxue","三尺冰川":"sanchi","青青草原":"qingqing","山涧水榭":"shujian","兽人雪窟":"shouren","沼泽湿地":"zaoze"  
     } }}
     {{let minn1 = mission[0]}}
+    
     <div {{if it1.change_map_length >= 1.5}}class="opacityAnim2"{{end}} w-class="change_map_bg " style="width:{{it1.change_map_width * 459}}px;top: 50%;left: 0px;top: 50%;right: 0px;margin: 0 auto;margin-top: -190px;">
         {{if it1.change_map_width>0}}
         <div w-class="map_tips_left" style="position:absolute;left:0px;top:-15px"></div>

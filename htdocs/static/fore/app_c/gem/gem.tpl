@@ -12,7 +12,6 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"宝石迷阵","coin":["money","diamond"],"left":12,"top":16,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}}}
     </widget>
-    
     <div w-class="8" w-sid="8">
         <widget w-class="5" w-tag="app_a-widget-line-line" w-sid="5">
             {"line":"line_7"} 

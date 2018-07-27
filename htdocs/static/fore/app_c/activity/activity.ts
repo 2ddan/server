@@ -361,8 +361,12 @@ const sortProp = (act_info) => {
     }
     return act.done.concat(act.todo, act.got);
 }
+let readData;
 //从服务器读取所有活动
 const read = (data) => {
+    if(!getDB("player.area_time")){
+        readData = data;
+    }
     //初始化今日活动
     initToday();
     //添加监听(红点提示)
@@ -373,6 +377,13 @@ const read = (data) => {
     forelet.getWidget("app_c-activity-activity") && forelet.paint(actData);
 }
 
+
+listen("player.area_time",()=>{
+    if(readData){
+        read(readData);
+        readData = undefined;
+    }
+})
 //从服务器读取领奖记录
 const readRecord = (i) => {
     let actList = [
@@ -426,12 +437,6 @@ net_message("activity", (msg) => {
         forelet.paint(actData);
     }
 })
-//====================================立即执行
-// //初始化今日活动
-// initToday();
-//添加监听(红点提示)
-// initActTipsList(actData.todayActivity);
-// TipFun.init(getActTipsList());
 
 
 listenBack("app/activity/various@read", (data) => {

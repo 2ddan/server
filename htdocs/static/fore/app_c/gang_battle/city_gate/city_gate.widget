@@ -1,0 +1,6 @@
+{
+    "tpl": "./city_gate.tpl",
+    "cfg": "./city_gate.cfg",
+    "js": "../gang_battle.ts",
+    "forelet": "../gang_battle.ts"
+}

@@ -6,7 +6,6 @@
     {{let player = _get("app/mod/db").exports.data.player}}
     {{let Common = _get("app/mod/common").exports.Common}}
 
-
     {{let career_id = player.career_id}}
     {{let Pi = _get("app/mod/pi").exports.Pi}} 
     {{let prop_id = (it.award[0][0] == "money" ? 100001 : (it.award[0][0] == "diamond" ? 100002 : it.award[0][0]))}}

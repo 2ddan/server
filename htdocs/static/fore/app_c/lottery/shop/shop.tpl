@@ -10,6 +10,7 @@
 			</app-widget-step>
 		</div>
 	</div>
+	
 	<div w-class="4">
 		<widget class="shadow7"  w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;top: 0;width:150px;left: 0;">
 			{"icon":"little_tips_bg","text":"当前积分：{{it1.score_num}}","width":150,"height":23,"top":2,"align":"left","marginLeft":18} 

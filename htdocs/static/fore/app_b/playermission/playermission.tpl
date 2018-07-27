@@ -2,7 +2,6 @@
 {{let scenename = _get("app/scene/scene").exports.mgr_data.name}}
 <div class="playermission"  group="main" animate="show_v" animate_time="10" style="z-index: 1;position: absolute;bottom:200px;width: 420px;left: 50%;margin-left: -{{root.getWidth() / 2}}px;">
 	{{if it1 && !!(it1.currTask - 0)}}
-	
 	<div style="width:206px;height:54px;position:absolute;left:0px;top:0;font-family: mnjsh;" {{if it1.currList.type !== 'jjc_rank'}}{{if it1.progress < it1.currList.arg}}on-tap="gotoMission('{{it1.currList.func}}')"{{else}}on-tap="getAward"{{end}}{{else}}{{if it1.progress <= it1.currList.arg}}on-tap="getAward"{{else}}on-tap="gotoMission('{{it1.currList.func}}')"{{end}}{{end}}>
 		<app_a-widget-guide-guide>
 			{{"mission"}}

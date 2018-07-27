@@ -1,0 +1,7 @@
+{
+    "tpl":"./rank_detail.tpl",
+    "css":"../my_source/my_source.wcss",
+    "cfg":"../my_source/my_source.cfg",
+    "js":"../robres.ts",
+    "forelet":"../robres.ts"
+}

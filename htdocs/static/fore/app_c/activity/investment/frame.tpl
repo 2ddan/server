@@ -13,6 +13,7 @@
                 </app_a-widget-prop-base>
             {{end}}   
         </div>
+        
         {{if it1.baseData.buy_record[0] == it1.investment_base.id }}
             {{if it1.baseData.award_record[it.id - 1]}}
                 <app_a-widget-pic_text-pic_text style=" position: absolute;right:10px;top: 24px;">

@@ -65,6 +65,29 @@ export class Common_m {
         return now - day;
     };
     /**
+     * 计算活动周几开放
+     * @param str 开放时间周几  "1,2,3,4,5,6,7"
+     * 
+     */
+    static changeNumToWeek(str) {
+        let day = [0,"一", "二", "三", "四", "五", "六", "日"]
+        return str.replace(/,/g,"、").replace(/\d/g, function (a, b) {
+            return "周" + day[a];
+        });
+    };
+     /**
+     * 计算活动开放时间
+     * @param msg 开放时间段 [0,1000] 单位:分钟
+     * 
+     */
+    //计算活动开放时间
+    static changeMinToTime = function (msg) {
+        let arr = [];
+        arr[0] = Math.floor(msg[0]/60)+":" + (Math.floor(msg[0]%60)<10 ? ("0" + Math.floor(msg[0]%60)) : Math.floor(msg[0]%60));
+        arr[1] = Math.floor(msg[1]/60)+":" + (Math.floor(msg[1]%60)<10 ? ("0" + Math.floor(msg[1]%60)) : Math.floor(msg[1]%60));
+        return arr;
+    }
+    /**
      * @description 获取消耗
      * @param {Json}_cfg {diamond:2334||0,money:2323||0,coin:[prop_sid,123]||0}
      * @return [消耗类型||物品sid, 消耗数量] => ["money"||"diamon"|| prop || prop_sid , number]

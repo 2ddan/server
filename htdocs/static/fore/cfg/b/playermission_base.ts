@@ -33,7 +33,7 @@ export const playermission_base = {
 	}
 	,instance:{
 		"type":0,
-		"comment":"通关九幽幻境第一章第5关"
+		"comment":"通关九幽幻境第一章第5关，是大于等于5关"
 	}
 	,jjc_rank:{
 		"type":2,
@@ -41,7 +41,7 @@ export const playermission_base = {
 	}
 	,mission:{
 		"type":0,
-		"comment":"通关装备副本第一章第一关1次"
+		"comment":"通关装备副本第一章第一关1次，是大于等于1关"
 	}
 	,mystic_box:{
 		"type":0,

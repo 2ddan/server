@@ -9,6 +9,7 @@
     {{let vip_advantage = cfg.vip_advantage.vip_advantage}}
     {{let chat_color = {"world_chat":["#51e650","世界"],"current_chat":["#fde7ca","当前"],"gang_chat":["#ffea01","门派"], "system":["#ff6600","系统"]} }}
     <div maxId="7" test="test" style="position: absolute;width: 100%;height: 100%;display:{{ chatShow ? 'block' : 'none'}};    pointer-events: none;" w-sid="2">
+        
         <div class="shadow" w-class="3" w-sid="3" on-tap="showChat" style="pointer-events: all;bottom: {{scenename == 'wild' ? 87 : 0}}px;">
             {{let new_chat = it1.all_chat[it1.all_chat.length - 1]}}
             {{if new_chat}}

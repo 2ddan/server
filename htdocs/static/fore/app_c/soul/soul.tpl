@@ -38,7 +38,6 @@
         <app-widget-btn-menu style="position:absolute;left:12px;top:50px;" on-tap="openSoulBag">
             {"icon":"pic_common_bag","text":"龙魂背包","width":78,"height":78,"bottom":0,"fontSize":20,"textCfg":"iconCircle","bg":4,"top":-7}
         </app-widget-btn-menu>
-
         <div class="shadow7" style="position:absolute;left: 121px;top: 41px;font-family:mnjsh;font-size:20px;color:#ffd8a6">
             龙魂等级：{{it1.total_level}}
         </div>
@@ -87,7 +86,7 @@
 
     <div style="pointer-events: none;width: 540px;position: absolute;top: 10px;left: 50%;margin-left: -270px;height:500px">
         <app-scene-base-scene>
-            {"name":"uiscene","type":"effect","module":"" }
+            {"name":"uiscene","type":"effect","module":"","height":900,"width":540}
         </app-scene-base-scene>
     </div>
 

@@ -20,6 +20,7 @@
     {{let w_eff = it.effect[index] || obj.effect[index]}}
     {{let double = it1.career_id == "700002" ? true : false}}
     {{let position = it1.career_id == "700001" ? [0,2.3,0] : it1.career_id == "700002" ? [0.3,2.7,0] : [0.25,2.0,0]}}
+    
     <app-scene-base-scene style="position:absolute;width:100%;height:100%;">
         {
             "name":"uiscene",

@@ -261,6 +261,7 @@ const sellPropx = function (arg, e?) {
 /***************** 外部接口 **************/
 export const globalReceive: any = {
     gotoBag: (msg) => {
+        console.log("%cwaiwang","font-size:28;color:green","使用的外网的");
         forelet.paint(getBagHtmlData());
         open("app_b-bag-main-bag");
     },

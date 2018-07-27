@@ -43,7 +43,7 @@
                             "type":"monster",
                             "module":{
                                 "module":{{it.module}},
-                                "position":[-0.5,-3,0],
+                                "position":[-0.5,0,0],
                                 "scale":1,
                                 "rotate":[0,0,0],
                                 "scene_eff":"eff_fb01"

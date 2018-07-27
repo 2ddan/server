@@ -487,7 +487,7 @@ var getCoinCount = function () {
 }
 
 
-let logic: any = {
+let logic = {
     //人物穿戴、
     roleWear() {
         let data = getDB("bag*sid=" + cloth_id).pop();

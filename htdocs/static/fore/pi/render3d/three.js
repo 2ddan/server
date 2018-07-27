@@ -25458,6 +25458,24 @@ _$define("pi/render3d/three", function (require, exports, module) {
 		function isObjectViewable(object) {
 
 			var geometry = object.geometry;
+			var obj_position = object.position;
+			var camera, _length, _data;			
+			
+			for(var k in object.scene.children){
+				if(object.scene.children[k].name == "perspectiveCamera"){
+					camera = object.scene.children[k];
+				}
+			}
+			var fun = function(data) {
+				if(data.parent && data.parent.type !== "Scene"){
+					_data = data.parent;					
+					fun(data.parent);
+				}
+				_data = _data ? _data : data.parent
+				return _data;
+			}
+
+			obj_position = fun(object);
 
 			if (geometry.boundingSphere === null)
 				geometry.computeBoundingSphere();
@@ -25466,7 +25484,11 @@ _$define("pi/render3d/three", function (require, exports, module) {
 			copy(geometry.boundingSphere).
 			applyMatrix4(object.matrixWorld);
 
-			if (!_frustum.intersectsSphere(sphere)) return false;
+			if (camera && obj_position){
+				_length = Math.abs(obj_position.position.distanceTo(camera.position));
+			}
+			var _bol = object.scene.radius < _length && _length && obj_position && (obj_position.name ? (obj_position.name.indexOf("map") > -1 ? false : true) : true); 
+			if (!_frustum.intersectsSphere(sphere) || _bol ) return false;
 			if (_numClippingPlanes === 0) return true;
 
 			var planes = _this.clippingPlanes,

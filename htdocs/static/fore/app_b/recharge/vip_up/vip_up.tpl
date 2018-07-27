@@ -16,7 +16,6 @@
 				</widget>
 			</div>
 		</div>
-
 		<div data-desc="右边部分" style="position: absolute;left: 195px;top: 21px;width: 322px;height: 318px;text-align: left;">
 			<div data-desc="贵族VIP等级" style="position:absolute;left:0;top:0;width:100%;height:54px;line-height: 54px;">
 				<widget  w-tag="app_a-widget-bg_frame-bg" style="width: 100%;height: 100%;left: 0;top: 0;">

@@ -6,7 +6,7 @@
 	<div style="width:103%;height:100%;overflow:hidden;">
 		{{if it1.allProp[1]}}
 		<app-widget-step style="position: absolute;width:105%;height: initial;top:20px;left: 20px; bottom: 20px;line-height: 22px;">
-			{"widget":"app_b-bag-main-equip_frame","arr":{{it1.allProp[1]}},"initCount":32,"addCount":10,"needIndex":0 }
+			{"widget":"app_b-bag-main-equip_frame","arr":{{it1.allProp[1]}},"initCount":81,"addCount":10,"needIndex":0 }
 		</app-widget-step>
 		{{end}}
 	</div>

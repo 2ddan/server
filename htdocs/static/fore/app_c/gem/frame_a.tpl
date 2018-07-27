@@ -18,6 +18,7 @@
             </widget>
         </div>
         {{end}}
+        
     </div>
     <div style="position: absolute;width: 280px;height: 30px;left: 18px;top: 12px;justify-content: left;align-items: center;display: flex;">
         <app_a-widget-text-text style="display: inline-block;position: relative;">

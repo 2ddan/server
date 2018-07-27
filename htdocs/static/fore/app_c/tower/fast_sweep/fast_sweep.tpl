@@ -11,6 +11,7 @@
         {{let tower_fast_sweep = cfg.tower_fast_sweep.tower_fast_sweep}}
         {{let tower_base = cfg.tower_base.tower_base}}
         {{let flag = 0}}
+        
         <widget w-tag="app_a-widget-bg_frame-bg" style="position:absolute;top:5px;width:455px;height:620px">
             {"bgName":"bg_frame38"}
         </widget>

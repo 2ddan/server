@@ -19,8 +19,7 @@
 				{{if (v.key != "recharge_all" || (v.key == "recharge_all" && !it1.state)) && it1.fun_open_id >= v.fun_id}}
 
 					{{if k == 0}}
-					<div style="margin:0 3px;display: inline-block;width:48px;height:46px;">
-						
+					<div style="margin:0 3px;display: inline-block;width:48px;height:46px;">	
 					</div>
 					{{end}}
 					{{if v.interface != "undefined" &&  v.name != "七日活动" &&  v.name != "节日活动" &&  v.name != "宝石迷阵" &&  v.name != "翻翻乐"}}

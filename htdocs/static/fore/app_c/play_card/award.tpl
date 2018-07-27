@@ -3,7 +3,6 @@
     <widget w-class="4" w-tag="app_b-widget-title-title" w-sid="4">
         {"text":"翻翻乐","coin":["money","diamond"],"left":30,"top":15,"width":540,"r":[["money",0],["dimond",0],["dimond",0]],"type":"","width":{{root.getWidth()}}}
     </widget>
-   
 
     <div style="position:absolute;width:540px;height:868px;left:50%;margin-left:-270px">		
 		<div style="width:100%;position:absolute;left:0;top:108px;bottom:15px">

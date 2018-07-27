@@ -3,8 +3,6 @@
 
 {{let list = it1.sort(it1.fa_actlist[currAct.id])}}
 
-
-
 <div data-desc="奖励列表" style="position:absolute;width:492px;height:440px;left:50%;margin-left:-246px;top:57px;overflow:hidden;">
     <div scroller="1" style="position:absolute;width:105%;height:100%;overflow-y: auto;overflow-x: hidden;">
         <app-widget-step style="width: 100%;height:100%">

@@ -12,6 +12,7 @@
     <widget w-tag="app_a-widget-pic_text-pic_text" style="position:absolute;left: 50%;transform: translate(-50%);top:-22px;">
         {"icon":"cover_title","width":181,"height":31,"align":"center","marginLeft":3,"text":"祈福","textCfg":"singleTitle","space":0,"fontSize":22,"top":0,"left":0} 
     </widget>
+    
     <widget style="position:absolute;right:-21px;top:-24px;" w-tag="app_a-widget-btn_pic-btn_pic" on-tap="goback">
         {"icon":"close_light"} 
     </widget>

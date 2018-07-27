@@ -14,6 +14,7 @@
 				{"icon":"cover_title","width":180,"height":27,"marginLeft":0,"text":"下阶效果","textCfg":"gangCoverTitle","space":0,"fontSize":22} 
 			</widget>
 		</div>
+		
 		<div w-class="10" w-sid="10">
 			<widget w-class="13" w-tag="app_a-widget-bg_frame-bg" w-sid="13">
 				{"bgName":"bg_frame26"} 
