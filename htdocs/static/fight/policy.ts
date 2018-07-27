@@ -39,6 +39,20 @@ export class Policy{
             return 0;
         return left > 0 ? 1 : 2;
     };
+    /**
+     * @description 重置牌堆
+     */
+    static sortCards(f: Fighter,scene: FScene): void{
+        let scrap = f.cards_scrap;
+        f.cards_scrap = [];
+        //怪物的牌不排序，按照配置顺序出牌
+        if(f.type == "monster"){
+            f.cards = f.cards.concat(scrap);
+            return ;
+        }
+        Util.randomSort(scrap);
+        f.cards = f.cards.concat(scrap);
+    }
      /**
      * 获取下次出手的英雄
      * 

@@ -6,6 +6,21 @@ import { FScene } from "./scene"
 
 // ==================================== 导出
 export class Util{
+    /**
+     * @description 随机排序,只适合对象排序，基础类型排序不实用
+     */
+    static randomSort(arr: Array<any>): void{
+        let seed = this.randNumber(0);
+        for(let i = 0,len = arr.length;i<len;i++){
+            arr[i].__rand = seed;
+            seed = this.randNumber(seed);
+        }
+        arr.sort((seed / 2147483647)>.5?(a,b)=>{
+            return a.__rand - b.__rand;
+        }:(a,b)=>{
+            return b.__rand - a.__rand;
+        })
+    }
     //在列表中获取指定字段的对象
     /**
      * 
