@@ -1,5 +1,5 @@
  /**
-  * 
+  * 战斗逻辑场景
   */
 // ==================================== 导入
 import { Fighter, Card } from "./class";
@@ -42,6 +42,8 @@ export class FScene{
     buffs: {}
     // 战斗时间限制
     limitTime:number = Infinity
+    // 战斗帧率
+    FPS = 20
     // 战斗定时器
     timerRef = null
     //每回合战斗事件
@@ -64,13 +66,9 @@ export class FScene{
         if(this.pause)
             return false;
         // this.fightTime += (this.now - t);
-        this.fightTime += 50;
-        //移动，当前技能释放 
+        this.fightTime += 1000/this.FPS;
+        //执行战斗逻辑 
         Policy.run(this);
-        let evs = this.events;
-        // console.log("events list length:: ",evs.length);
-        this.events = [];
-        this.listener && this.listener({now:this.now,events:evs});
     }
     /**
      * @deprecated 设置战斗定时器，第一次运行不执行loop, 给战斗逻辑1帧的缓冲时间。
@@ -84,7 +82,12 @@ export class FScene{
         }
         //设置下一帧循环调用
         console.log("The diffrence between near frame::",d);
-        this.timerRef = setTimeout(this.frame,50-d);
+        this.timerRef = setTimeout(this.frame,1000/this.FPS-d);
+        //抛出所有战斗事件
+        let evs = this.events;
+        // console.log("events list length:: ",evs.length);
+        this.events = [];
+        this.listener && this.listener({now:this.now,events:evs});
         //检查战斗阵营胜负
         r = Policy.check(this);
         if(r && this.overBack){
@@ -151,19 +154,27 @@ export class FScene{
      * @description 加入战斗者
      * @param f 战斗者
      */
-    public insert(f){
-        
+    public insert(f: Fighter){
+        this.fighter_id ++;
+        this.fighters.set(this.fighter_id, f);
+
+        //初始化抽牌堆
+        Policy.initCards(f,this);
+
+        this.addEvents([EType.insert,f]);
     }
     /**
      * 使用卡牌
      * @param index 卡牌位置
      * @param tid 目标的fighter_id
      */
-    public useCard(index,tid?: number): void{
-        let f: Fighter = this.fighters.get(this.round),
-            t: Fighter = this.fighters.get(tid),
-            c: Card = f.cards_hand[index];
+    public useCard(fid: number,index: number,tid?: number): string{
+        if(fid !== this.cur_fighter){
+            return "It's not your turn!!";
+        }
         
+        Policy.useOneCard(fid,index,tid,this);
+        return "";
     }
     /**
      * 使用技能
@@ -177,15 +188,13 @@ export class FScene{
      * 一个英雄回合结束,选择下回合出手英雄
      * 如果所有英雄都出手了，则结束整个大回合
      */
-    public endSingleRound():void{
-        let next = Policy.nextFighter(this);
-        this.cur_fighter = next;
-        if(!next){
-            // 当前回合没有可出手英雄，则回合结束，重新抽牌
-            this.addEvents([EType.endRound,this.round]);
-        }else{
-            this.addEvents([EType.singleRound,this.round]);
+    public endSingleRound(fighter: number): String{
+        let f = this.fighters.get(fighter);
+        if(fighter !== this.cur_fighter || !f){
+            return "The fighter is wrong!";
         }
+        Policy.endSingleRound(f,this);
+        return "";
     }
    
     

@@ -7,18 +7,18 @@
 export enum EType{
     insert             = "a", // fighter进入场景
     singleRound        = "b", // 单回合开始，某个fighter出手
-    endRound           = "c", 
-    move               = "d",
-    useSkill           = "e",
-    spreadSkill        = "f", 
-    addBuff            = "g", 
-    clearBuff          = "h", 
-    effect             = "i", 
-    addGroup           = "j", 
-    removeGroup        = "k",
-    damage             = "l",
-    refreshAttr        = "m",
-    refreshPet         = "n",
+    endSingleRound     = "c", // fighter结束自己的单回合
+    useCard            = "d", // 使用卡牌
+    endRound           = "e", // 大回合结束
+    takeCards          = "f", // 抽卡
+    restCards          = "g", // 重置牌堆，把弃牌堆排序放入抽牌堆
+    releaseCard        = "h", // 释放卡牌
+    restAttr           = "i", // 重置属性
+    damage             = "j", // 技能或卡牌造成的伤害
+    effect             = "k", // buff效果
+    clearBuff          = "l", // 清除buff效果
+    addBuff            = "m", // 添加buff
+    updateBuff         = "n", // 更新buff属性
     refreshClothes     = "o",
     refreshSkill       = "p",
     task               = "q",
@@ -33,13 +33,21 @@ export enum EType{
 export const eventsKeys = {
     insert             : ["type","fighter"],
     singleRound        : ["type","fighter"],
+    endSingleRound     : ["type","fighter","scrap","expend"],
+    useCard            : ["type","fighter","index","target"],
     endRound           : ["type"],
-    spreadSkill        : ["type","fighter","target","skill"],
-    addBuff            : ["type","fighter","target","skill","buff"],
-    clearBuff          : ["type","fighter","buff"],
-    effect             : ["type","fighter","target","effect","value"],
-    damage             : ["type","fighter","curTarget","target","r","skill"],//curTarget 是否为主目标
-    remove             : ["type","fighter"],
+    takeCards          : ["type","fighter","cards_add"],
+    restCards          : ["type","fighter","cards"],
+    releaseCard        : ["type","fighter","target","skill","buff"],
+    restAttr           : ["type","fighter","attrs"],
+    damage             : ["type","fighter","target","r"],
+    effect             : ["type","fighter","target","buff","effect","value"],
+    clearBuff          : ["type","fighter","effect","value"],
+    addBuff            : ["type","fighter","target","buff"],
+    updateBuff         : ["type","fighter","buff","key","value"],
+    
+    
+    
     move               : ["type","fighter","moveto","moving"],
     moveto             : ["type","fighter","moveto"],
 
