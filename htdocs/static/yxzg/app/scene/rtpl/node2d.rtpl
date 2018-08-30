@@ -1,0 +1,28 @@
+{
+    "transform" : {
+      "position" : {{it.position || [0,0,0]}},
+      "scale"    : [1,1,1],
+      "rotate"   : [0,0,0]
+    },
+    "meshRender": {
+        "visible": true,
+        "material": {
+            "transparent": true,
+            "map": {
+                "image": {
+                    "name": "images/gray_bg_mini.png"
+                }
+            }                    
+        } 
+    },
+    "name":"node2d",
+    "type" : "node",
+    "attachment":"2D",
+    "geometry":{
+        "type":"Plane", 
+        "width":{{it.width}}, 
+        "height":{{it.height}},
+        "horizontalAlign":"left",
+        "verticalAlign":"top"
+    }
+}

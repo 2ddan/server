@@ -1,0 +1,26 @@
+{{let scale = it.attachment ? 1 : 1.3}}
+{
+    "name":"2dimage",
+    "type" : "node",
+    "transform" : {
+        "position" : {{[it.position[0]*scale,it.position[1]*scale,it.position[2]] || [0,0,0]}},
+        "scale"    : {{it.scale || [1,1,1]}},
+        "rotate"   : [0,0,0]
+    },
+    "attachment":"{{it.attachment || '2D'}}",
+    "geometry":{
+        "type":"Plane", 
+        "width":{{it.width*scale}}, 
+        "height":{{it.height*scale}},
+        "horizontalAlign":"{{it.horizontalAlign || 'left'}}",
+        "verticalAlign":"{{it.verticalAlign || 'top'}}"
+    }, 
+    "meshRender":{
+        "visible" :{{it.visible? it.visible:false }},
+        "material":{
+            "map":{"image":{"name":"{{it.image}}" }},
+            "transparent": {{it.transparent ? it.transparent : false}}
+        }
+    },
+    "children" : {{it.children || null}}
+}

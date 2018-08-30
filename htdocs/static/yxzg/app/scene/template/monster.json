@@ -1,0 +1,171 @@
+{{let monster = _get("app/scene/art_cfg/monster").exports["default"]}}
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{{let module_cfg = _get("app/scene/plan_cfg/monster_config").exports.monster_cfg}}
+{{let weapon = _get("app/scene/art_cfg/weapon").exports["default"]}}
+{{let m2d = _get("app/scene/plan_cfg/config_m2d").exports.config_m2d}}
+{{let _m = module_cfg[it.module]}}
+{{let module_name = _m.name}}
+{{let weapond = it.weapond || _m.init_weapon}}
+{{let anim = it.state || "standby"}}
+{{let playAnim = it.playAnim || {"name":_m[anim]} }}
+{{let effect = _get("app/scene/art_cfg/effect").exports["default"]}}
+{{let mgr = _get("app/scene/scene").exports.mgr}}
+
+{{let weapons = [{},{},{}]}}
+{{if weapond}}
+
+{{for k, v of weapond}}
+{{: weapons[k] = {"type":"prefab","tpl":"weapon","res":weapon[v[0]].res,"bindBone":v[1]} }}
+{{end}}
+{{end}}
+
+{{let scene_eff = null}}
+{{if it.scene_eff}}
+    {{: scene_eff = mgr.getSceneFile(it.scene_eff)}}
+{{end}}
+
+{{let scale = it.scale || _m.scale || 1}}
+{{let boold_visible = it.hidden?false:it.boold_visible}}
+{{: boold_visible = boold_visible === false?false:true}}
+
+{{let uis = null}}
+{{let image = (it.camp === 1)?"role_blood":"boss_blood"}}
+{{let p = it.show_hp/it.max_hpCount}}
+{{let v = false}}
+{{if boold_visible && it.show_hp>0}}
+{{: v = true}}
+{{else}}
+{{: v = false}}
+{{end}}
+{{: uis = {
+    "type":"node",
+    "transform":{
+        "position":[0,scale*_m.high,0],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "children":[
+        {
+            "type": "prefab",
+            "tpl": "2dtext",
+            "horizontalAlign": "center",
+            "verticalAlign": "center",
+            "visible":it.n_visible !== undefined ? it.n_visible : true ,
+            "textcfg": it.passive ? textcfg["fight_noactive_enemy"] : textcfg["fight_active_enemy"],
+            "show": it.name,
+            "position": [3, m2d.name, 0]
+        },(it.show_type === 3?{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "width": 128,
+            "height": 64,
+            "position": [3,m2d.jingying,0],
+            "image": "images/fighter_show_"+it.show_type+".png",
+            "horizontalAlign":"center",
+            "verticalAlign":"bottom"
+        }:null),
+        {
+            "type" : "prefab",
+            "name" : "hp",
+            "tpl":"skill_image",
+            "width": 60,
+            "height": 6,
+            "position": [3,m2d.blood,0],
+            "image": "images/blood_bg.jpg",
+            "horizontalAlign":"center",
+            "verticalAlign":"bottom",
+            "visible":v,
+            "children":[{
+                "type" : "prefab",
+                "tpl":"skill_image",
+                "width":57.2,
+                "height":4,
+                "visible":v,
+                "image":"images/"+image+".jpg",
+                "position":[28.5,5,1],
+                "horizontalAlign":"left",
+                "scale":[it.show_hp>0?p:1,1,1]
+            }]
+        }
+    ]
+} }}
+
+
+{
+    "type":"Node",
+    "name":"{{it.module}}",
+    "transform":{
+        "position":[{{it.x || 0}}, {{it.z || 0}}, {{it.y || 0}}],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "children":[
+        {
+            "type" : "prefab",
+            "tpl"  : "monster",
+            "res"  : {{monster[module_name].res}},
+            "visible":{{!it.hidden}},
+            "playAnim":{{playAnim}},
+            "position":{{it.position || [0,0,0]}},
+            "scale":[{{scale}},{{scale}},{{scale}}],
+            "aniBox":{{monster[module_name].aniBoxs}},
+            "rootbone":"{{monster[module_name].rootbone || 'Bip01 Pelvis'}}",
+            "bones":{{monster[module_name].bones}},
+            "bounds":{{monster[module_name].bounds}},
+            "rotate":{{it.rotate || [0,0,0]}},
+            "rayID":"fight-{{it.mapId || 0}}",
+            "controller":{{monster.ainMod[monster[module_name].aniControl]}},
+            
+            "lookatOnce":{{it.lookat?{
+                "value":[it.lookat.value[0]-it.x,(it.lookat.value[2] || 0)-(it.z || 0),it.lookat.value[1]-it.y],
+                "sign":it.lookat.sign || 0
+            }:null}},
+            "filtercolor": {{it.filtercolor ? [["gray"]] : null}},
+            "sternum" : {"type":"node","transform":{
+                "position":[0,0,0],
+                "scale":[1,1,1],
+                "rotate":[0,0,0]
+            },"bindBone":"Bip001","children":[null]},
+            "weapon":{{weapons?weapons:null}}
+        },{{uis}},
+        {
+            "type":"prefab",
+            "tpl":"eff_selected01",
+            "visible":{{it.isCurr !== undefined ? it.isCurr : false }},
+            "playAnim":{
+                "isOnce":{{it.isOnce || false}},
+                "name":"{{effect["eff_selected01"][0]}}",
+                "id":{{it.id || 0}}
+            }
+        },
+        {
+            "type":"prefab",
+            "tpl":"yingzi",
+            "res":["DfrHPKoi1F3as85e1t6QgL.geo","255a3HGzcN6nD5L4xxpVLU.png"],
+            "position":{{it.position || [0,0,0]}}
+        },
+        {{scene_eff?
+        {
+            "type":"node",
+            "transform":{
+                "position":[0.5,-2.1,9],
+                "scale":[0.3,0.25,0.3],
+                "rotate":[0,0,0]
+            },
+            "children":[
+                scene_eff
+            ]
+        }:null}},
+        {{scene_eff?{
+            "type":"node",
+            "transform":{
+                "position":[1.5,-2.1,9],
+                "scale":[0.3,0.25,0.3],
+                "rotate":[0,0,0]
+            },
+            "children":[
+                scene_eff
+            ]
+        }:null}}
+    ]
+}

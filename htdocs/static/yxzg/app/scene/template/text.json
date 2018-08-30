@@ -1,0 +1,13 @@
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{
+    "type":"prefab",
+    "attachment": "2D",
+    "name":"text",
+    "tpl":"2dtext",
+    "position":[{{it.x || 0}},{{it.y || 0}},{{it.z || 5}}],
+    "show":"{{it.text}}",
+    "textcfg":{{textcfg[it.textcfg]}},
+    "horizontalAlign":"{{it.horizontalAlign ? it.horizontalAlign : 'center'}}",
+    "verticalAlign":"{{it.verticalAlign || 'center'}}",
+    "visible":{{it.visible !== undefined ? it.visible : true }}
+}   

@@ -1,0 +1,31 @@
+{{let bindBone = ""}}
+{{if it.bindBone}}
+{{: bindBone = it.bindBone +""}}
+{{end}}
+{
+  "bindBone": "{{bindBone}}",
+  "type" : "node",
+  "transform" : {
+    "position" : {{it.position?[it.position[0], it.position[1], it.position[2]]:[0,0,0]}},
+    "scale"    : {{it.scale?[it.scale[0], it.scale[1], it.scale[2]]:[1,1,1]}},
+    "rotate"   : {{it.rotate?[it.rotate[0], it.rotate[1], it.rotate[2]]:[0,0,4.71238899230957]}}
+  },
+  "geometry"  : {
+    "type" : "BufferGeometry",
+    "res"  : "{{it.res[0]}}"
+  },
+  "meshRender" : { 
+    "visible" :{{it.visible !== undefined ? it.visible : true }},
+    "material" : [
+      {
+        "map" : {
+          "generateMipmaps" : false,
+          "image": {
+            "name" : "{{it.res[1]}}"
+          }
+        }
+      }
+    ]
+  },
+  "children":{{it.child || null}}
+}

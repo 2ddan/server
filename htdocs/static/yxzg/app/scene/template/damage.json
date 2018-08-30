@@ -1,0 +1,48 @@
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{
+    "type":"node",
+    "name":"damage",
+    "transform":{
+        "position":[{{it.x/100}},{{it.z/100}},{{it.y/100}}],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "children":[
+       {{if it.type == "dodge" || it.type == "god" || it.type == "stun" || it.type == "shield"}}
+    {
+      "type" : "prefab",
+      "tpl":"skill_image",
+      "width": 128,
+      "height": 64,
+      "opacity":{{it.opacity || 0}},
+      "position": [20, 80, 0],
+      "scale": {{if it.scale}}[{{it.scale}},{{it.scale}},{{it.scale}}]{{else}}[1,1,1]{{end}},
+      "image": "img/{{it.text_type}}.png"
+    }
+    {{else}}
+    {{let arr = ((it.value>999999?(parseInt(it.value/10000)+"w"):parseInt(it.value))+"").split("")}}
+    {{let _show = ((it.value>999999?(parseInt(it.value/10000)+"万"):parseInt(it.value))+"")}}
+    {{let m = it.type == "stealHP" ? "+":"-"}}
+    {{if it.type == "critical"}}
+      {{:_show = "暴击" + m + "" + _show}}
+    {{else}}
+      {{:_show = m + "" + _show}}
+    {{end}}
+    
+    {{let _type = it.goal + it.type + it.isCrits}}
+    
+    {
+      "type":"prefab",
+      "tpl":"2dtext",
+      "name":"damageText",
+      "position": [-18, 80, 0],
+      "show": "{{_show}}",
+      "opacity":{{it.opacity || 0}},
+      "textcfg":{{textcfg[it.type]}},
+      "scale": {{if it.scale}}[{{it.scale}},{{it.scale}},{{it.scale}}]{{else}}[1,1,1]{{end}}
+    
+    } 
+    
+    {{end}}
+    ]
+}

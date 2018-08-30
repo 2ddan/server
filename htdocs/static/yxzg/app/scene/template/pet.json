@@ -1,0 +1,116 @@
+{{let monster = _get("app/scene/art_cfg/monster").exports["default"]}}
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{{let module_cfg = _get("app/scene/plan_cfg/monster_config").exports.monster_cfg}}
+{{let m2d = _get("app/scene/plan_cfg/config_m2d").exports.config_m2d}}
+{{let player = _get("app/mod/db").exports.data.player}}
+{{let mgr = _get("app/scene/scene").exports.mgr}}
+{{let module_name = module_cfg[it.module].name}}
+{{let anim = it.state || "standby"}}
+{{let playAnim = it.playAnim || {"name":module_cfg[it.module][anim]} }}
+{{let lookat = it.lookat || {value:[0,0,0]} }}
+{{let scale = it.scale || 1}}
+{{let parent = it.parent || {} }}
+
+{{let scene2d = "" }} 
+{{if it.scene_bg}}
+{{: scene2d = mgr.getSceneFile(it.scene_bg)}}
+{{end}}
+
+{{let pet_eff = null}}
+{{if it.pet_eff}}
+{{: pet_eff = {
+                "type":"node",
+                "transform":{
+                    "position":[0,0,0],
+                    "scale":[1,1,1],
+                    "rotate":[0,0,0]
+                },
+                "children":[
+                    mgr.getSceneFile(it.pet_eff)
+                ]
+            }
+}}
+{{end}}
+
+{{let lookatOnce = null}}
+{{if it.lookat}}
+{{: lookatOnce = {
+    "value":[lookat.value[0]-(it.x || 0),lookat.value[2]-(it.z || 0),lookat.value[1]-(it.y || 0)],
+    "sign":lookat.sign || 0
+} }}
+{{end}}
+
+{{let name = null}}
+{{if it.name}}
+{{: name = {
+    "type":"node",
+    "transform":{
+        "position":[0,scale*2,0],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "visible":!parent.hidden,
+    "children":[
+        (parent.name?{
+            "type": "prefab",
+            "tpl": "2dtext",
+            "horizontalAlign": "center",
+            "verticalAlign": "center",
+            "visible":it.n_visible !== undefined ? it.n_visible : true ,
+            "textcfg": parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"],
+            "show": parent.name,
+            "position": [3, m2d.name-50, 0]
+        }:null),
+        {
+            "type": "prefab",
+            "tpl": "2dtext",
+            "horizontalAlign": "center",
+            "verticalAlign": "center",
+            "visible":it.n_visible !== undefined ? it.n_visible : true ,
+            "textcfg": parent.sid === player.role_id ? textcfg["fight_own"] : textcfg["fight_other"],
+            "show": it.name,
+            "position": [3, m2d.name-65, 0]
+        }
+    ]
+} }}
+{{end}}
+
+
+{
+    "type":"Node",
+    "transform":{
+        "position":[{{it.x || 0}}, {{it.z || 0}}, {{it.y || 0}}],
+        "scale":[1,1,1],
+        "rotate":[0,0,0]
+    },
+    "visible":{{!parent.hidden}},
+    "children":[
+        {{it.scene_bg?scene2d:null}},
+        {
+            "type" : "prefab",
+            "tpl"  : "pet",
+            "name" : "{{module_name}}",
+            "res"  : {{monster[module_name].res}},
+            "visible":{{!parent.hidden}},
+            "playAnim":{{playAnim}},
+            "position":{{it.position || [0,0,0]}},
+            "scale":[{{scale}},{{scale}},{{scale}}],
+            "aniBox":{{monster[module_name].aniBoxs}},
+            "rootbone":"{{monster[module_name].rootbone || 'Bip01 Pelvis'}}",
+            "bones":{{monster[module_name].bones}},
+            "bounds":{{monster[module_name].bounds}},
+            "rotate":{{it.rotate || [0,0,0]}},
+            "rayID":0,
+            "controller":{{monster.ainMod[monster[module_name].aniControl]}},
+            "lookatOnce":{{lookatOnce}}
+            "headeff":{{pet_eff}}
+        },{{name}},
+        {
+            "type":"prefab",
+            "tpl":"yingzi",
+            "visible":{{!parent.hidden}},
+            "res":["DfrHPKoi1F3as85e1t6QgL.geo","255a3HGzcN6nD5L4xxpVLU.png"],
+            "position":{{it.position || [0,0,0]}}
+        }
+    ]
+}

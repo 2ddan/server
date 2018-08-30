@@ -1,0 +1,90 @@
+{{let textcfg = _get("app/scene/plan_cfg/textcfg").exports.textcfg}}
+{{let Common = _get("app/mod/common").exports.Common}}
+{{let mgr_data = _get("app/scene/scene").exports.mgr_data}}
+
+{{let _position = [160,30,0]}}
+{{let _scale = [0.8,0.8,0.8]}}
+{
+    "type":"node",
+    "attachment": "2D",
+    "transform":{ 
+        "position":{{[it.x,it.y,it.z]}},
+        "scale":{{[it.scale,it.scale,it.scale]}},
+        "rotate":[0,0,0]
+    },
+    "children":[
+        {{if it.name}} 
+        {
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":128,
+            "width":128,
+            "image":"images/fight_boos_bg.png",
+            "position":[200, 310, 2]
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "width":281,
+            "height":18,
+            "image":"images/fight_boss_blood.png",
+            "position":[118, 260, 1],
+            {{let hp = it.hp/it.max_hpCount}}
+            "scale":[{{it.hp > 0 ?  hp : 1}},1,1],
+            "visible": {{if it.hp>0}}true{{else}}false{{end}}
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "width": 512,
+            "height": 64,
+            "position": [120, 262, 0],
+            "image": "images/boss_blood_bg.png"
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":64,
+            "width":256,
+            "image":"images/fight_name_bg.png",
+            "position":[126, 300, 0]
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":64,
+            "width":64,
+            "image":"images/boss_bg_vein.png",
+            "position":[-155, 272, 10]
+        },{
+            "type" : "prefab",
+            "tpl":"2dtext",
+            "textcfg":{{textcfg["boss_boold"]}},
+            "show":"{{Common.numberCarry(parseInt(it.hp),1000000)}}/{{Common.numberCarry(parseInt(it.max_hpCount),1000000)}}",
+            "position":[-10, 237, 4]
+        },{
+            "type" : "prefab",
+            "tpl":"2dtext",
+            "textcfg":{{textcfg["fight_name"]}},
+            "show":"{{it.name}}",
+            "position":[80, 293 ,0],
+            "horizontalAlign":"left", 
+            "verticalAlign":"top"
+        },{
+            "type" : "prefab",
+            "tpl":"skill_image",
+            "height":32,
+            "width":32,
+            "image":"images/level_bg.png",
+            "position":[127, 310, 10],
+            "children":[
+                {
+                    "type" : "prefab",
+                    "tpl":"2dtext",
+                    "textcfg":{{textcfg["boss_level"]}},
+                    "show":{{it.level}},
+                    "position":[-16, -54, 11],
+                    "horizontalAlign":"center",
+                    "verticalAlign":"bottom"
+                }
+            ]
+        }
+        {{end}}
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "name": "{{it.name || "skill_image"}}",
+    "type": "node",
+    "transform": {
+        "position" : {{[it.position[0]*1.3,it.position[1]*1.3,it.position[2]] || [0,0,0]}},
+        "scale"    : {{it.scale || [1,1,1]}},
+        "rotate"   : {{it.rotate || [0,0,0]}}
+    },
+    "meshRender": {
+        "visible" :{{it.visible !== undefined? it.visible:true }},
+        "material": {
+            "opacity": {{it.opacity || 1}},
+            "transparent": true, 
+            "map": {
+                "image": {
+                    "name": "{{it.image}}"
+                }
+            }                    
+        }
+    },
+    "rayID":{{it.rayID || 0}},
+    "attachment": "2D",
+    "geometry": {
+        "type": "Plane",
+        "width": {{it.width*1.3}},
+        "height": {{it.height*1.3}},
+        "horizontalAlign":"{{it.horizontalAlign || 'left'}}",
+        "verticalAlign":"{{it.verticalAlign || 'top'}}"
+    },
+    "children":{{it.children || null}}
+}
