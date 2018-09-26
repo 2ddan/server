@@ -1,0 +1,24 @@
+
+/**
+ * Card公式表
+ */
+// =================================== 导入
+import { Formula } from "app/mod/formula";
+<!--{$ arr = []}-->
+<!--{@ i v = it.ability}--><!--{? v.condition_use &&  isNaN(v.condition_use) && arr.indexOf(v.condition_use)<0}--><!--{$ a = arr.push(v.condition_use)}-->Formula.set("<!--{v.condition_use}-->",function(db, f, t, card, scene, buff,af){return <!--{v.condition_use}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula11 && isNaN(v.fix_formula11)  && arr.indexOf(v.fix_formula11)<0}--><!--{$ a = arr.push(v.fix_formula12)}-->Formula.set("<!--{v.fix_formula11}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula11}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula12 && isNaN(v.fix_formula12) && arr.indexOf(v.fix_formula12)<0}--><!--{$ a = arr.push(v.fix_formula12)}-->Formula.set("<!--{v.fix_formula12}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula12}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula21 && isNaN(v.fix_formula21) && arr.indexOf(v.fix_formula21)<0}--><!--{$ a = arr.push(v.fix_formula21)}-->Formula.set("<!--{v.fix_formula21}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula21}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula22 && isNaN(v.fix_formula22) && arr.indexOf(v.fix_formula22)<0}--><!--{$ a = arr.push(v.fix_formula22)}-->Formula.set("<!--{v.fix_formula22}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula22}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula31 && isNaN(v.fix_formula31) && arr.indexOf(v.fix_formula31)<0}--><!--{$ a = arr.push(v.fix_formula31)}-->Formula.set("<!--{v.fix_formula31}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula31}-->;});<!--{?}-->
+<!--{? v.buff1 && v.fix_formula32 && isNaN(v.fix_formula32) && arr.indexOf(v.fix_formula32)<0}--><!--{$ a = arr.push(v.fix_formula32)}-->Formula.set("<!--{v.fix_formula32}-->",function(db, f, t, card, scene, buff,af){return <!--{v.fix_formula32}-->;});<!--{?}-->
+<!--{? v.des}-->
+<!--{$ m = v.des.match(/\{\{([^(\{\{)(\}\})]+)\}\}/g)}-->
+<!--{? m}-->
+<!--{@ k mm = m}-->
+<!--{$ mmm = mm.replace("{{","").replace("}}","")}-->
+<!--{? mm && arr.indexOf(mm) === -1 && !(/[\u4E00-\u9FA5]/).test(mm) && mmm !== "damage_normal" && mmm !== "damage_true" && mmm !== "block"}--><!--{$ t = arr.push(mm)}-->Formula.set("<!--{mmm}-->",function(db, f, t, card, scene, buff,af){return <!--{mmm}-->;});<!--{?}-->
+<!--{@}-->
+<!--{?}-->
+<!--{?}-->
+<!--{@}-->

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<script type="text/javascript">
+			pi.config = pi.config || {};
+			pi.config.domains = ["file:///"];
+			pi.config.libPath = "/$root/pi/";
+			pi.v8 = true;
+
+		</script>
+		<script type="text/javascript" src="file:////$root/pi/mod.js"></script>
+		<script type="text/javascript" src="file:////$root/pi/mod_config.js"></script>
+		<script type="text/javascript">
+		<!--
+			pi.mod.domains = pi.config.domains;
+			// 所有 forelet 需要的模块都在此加载
+			pi.mod.require(["pi.tool.xls2cfg", "pi.res_helper", "pi.forelet"], function () {
+					pi.log("----------------------start");
+					pi.tool.xls2cfg.parseXlsFiles("xls2cfg/output.json", "/$root/xls");
+				}
+			);
+		//-->
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

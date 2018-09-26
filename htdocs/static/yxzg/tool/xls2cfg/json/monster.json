@@ -1,0 +1,17 @@
+{
+	"sheet": "monster",
+	"start": 3,
+    "data": {
+        "id": "$怪物ID",
+        "name": "$名字",
+        "hp_rang": "$血量",
+        "visible":"$是否可见",
+        "buff_init": "$初始BUFF",
+        "cards": "$牌库ID",
+        "start":"$起始牌位",
+        "model": "$模型",
+        "scale": "$缩放比例",
+        "remarks": "$备注"
+    }
+}
+

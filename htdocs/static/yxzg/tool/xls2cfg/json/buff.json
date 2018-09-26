@@ -1,0 +1,33 @@
+{
+	"sheet": "buff",
+	"start": 3,
+    "data": {
+        "id": "$ID",
+        "name": "$名字",
+        "probability": "$生效几率",
+        "trigger_add": "$生效时间点",
+        "effect_type1":"$效果类型",
+        "effect_formula1": "$效果公式",
+        "effect_type2":"$效果类型2",
+        "effect_formula2": "$效果公式2",
+        "trigger_excitation": "$触发时间",
+        "trigger_condition": "$触发条件",
+        "condition": "$生效条件",
+        "effectiv_target": "$生效对象",
+        "target_param": "$对象参数",
+        "excitation_expect_count": "$激发次数期望",
+        "excitation_max_count": "$最大激发次数",
+        "continue_round": "$持续回合",
+        "continue_field": "$持续战斗",
+        "effective_life": "$效果有效回合",
+        "cover_rule": "$叠加规则",
+        "effect_rule": "$特效规则",
+        "effect_name": "$特效",
+        "music":"$音效",
+        "icon": "$图标",
+        "debuff": "$是否减益",
+        "des": "$描述",
+        "remarks": "$备注"
+    }
+}
+

@@ -1,0 +1,12 @@
+{
+	"sheet": "camp",
+	"start": 3,
+    "data": {
+        "id": "$ID",
+        "name": "$功能名",
+        "type": "$功能类型",
+        "value": "$数值",
+        "desc": "$描述",
+        "icon": "$图标"
+    }
+}

@@ -1,0 +1,20 @@
+/**
+ * buff公式表
+ */
+// =================================== 导入
+import { Formula } from "app/mod/formula";
+<!--{$ arr = []}-->
+<!--{@ i v = it.ability}--><!--{? isNaN(v.condition-0)}-->Formula.set("<!--{v.condition}-->",function(db, f, t, card, scene, buff,af){return <!--{v.condition}-->;});<!--{?}-->
+<!--{? isNaN(v.trigger_condition-0)}-->Formula.set("<!--{v.trigger_condition}-->",function(db, f, t, card, scene, buff,af){return <!--{v.trigger_condition}-->;});<!--{?}-->
+<!--{? isNaN(v.effect_formula1-0)}-->Formula.set("<!--{v.effect_formula1}-->",function(db, f, t, card, scene, buff,af){return <!--{v.effect_formula1}-->;});<!--{?}-->
+<!--{? isNaN(v.effect_formula2-0)}-->Formula.set("<!--{v.effect_formula2}-->",function(db, f, t, card, scene, buff,af){return <!--{v.effect_formula2}-->;});<!--{?}-->
+<!--{? v.des}-->
+<!--{$ m = v.des.match(/\{\{([^(\{\{)(\}\})]+)\}\}/g)}-->
+<!--{? m}-->
+<!--{@ k mm = m}-->
+<!--{$ mmm = mm.replace("{{","").replace("}}","")}-->
+<!--{? mm && arr.indexOf(mm) === -1}--><!--{$ t = arr.push(mm)}-->Formula.set("<!--{mm}-->",function(number){return <!--{mmm}-->;});<!--{?}-->
+<!--{@}-->
+<!--{?}-->
+<!--{?}-->
+<!--{@}-->
