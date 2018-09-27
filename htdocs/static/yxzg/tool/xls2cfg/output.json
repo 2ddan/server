@@ -1,0 +1,194 @@
+{
+    "buff.xls": [
+        {
+            "path": "xls2cfg/json/buff.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/buff.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/buff.cfg"
+                },
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/buff_formula.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/fight/cfg/buff_formula.ts"
+                }
+            ],
+            "method": "buff"
+        }
+    ],
+    "card.xls": [
+        {
+            "path": "xls2cfg/json/card.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/card.cfg"
+                },
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card_formula.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/fight/cfg/card_formula.ts"
+                }
+            ],
+            "method": "card"
+        },
+        {
+            "path": "xls2cfg/json/card_warrior.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/card_warrior.cfg"
+                },
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card_formula.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/fight/cfg/card_warrior_formula.ts"
+                }
+            ],
+            "method": "card"
+        },
+        {
+            "path": "xls2cfg/json/card_monster.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card_monster.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/card_monster.cfg"
+                },
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card_group.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/card_group.cfg"
+                },
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/card_formula.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/fight/cfg/card_monster_formula.ts"
+                }
+            ],
+            "method": "card"
+        }
+    ],
+    "formula.xls": [
+        {
+            "path": "xls2cfg/json/formula.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/formula.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/fight/cfg/formula.ts"
+                }
+            ],
+            "method": "formula"
+        }
+    ],
+    "monster.xls": [
+        {
+            "path": "xls2cfg/json/monster.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/monster.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/monster.cfg"
+                }
+            ],
+            "method": "monster"
+        },
+        {
+            "path": "xls2cfg/json/floor_monster.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/floor_monster.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/floor_monster.cfg"
+                }
+            ],
+            "method": "floor_monster"
+        }
+    ],
+    "occupation.xls": [
+        {
+            "path": "xls2cfg/json/occupation.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/occupation.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/occupation.cfg"
+                }
+            ],
+            "method": "occupation"
+        }
+    ],
+    "stage.xls": [
+        {
+            "path": "xls2cfg/json/stage.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/stage.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/stage.cfg"
+                }
+            ],
+            "method": "stage"
+        }
+    ],
+    "drop.xls": [
+        {
+            "path": "xls2cfg/json/drop.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/drop.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/drop.cfg"
+                }
+            ],
+            "method": "drop"
+        }
+    ],
+    "intention.xls": [
+        {
+            "path": "xls2cfg/json/intention.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/intention.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/intention.cfg"
+                }
+            ],
+            "method": "intention"
+        }
+    ],
+    "camp.xls": [
+        {
+            "path": "xls2cfg/json/camp.json",
+            "output": [
+                {
+                    "interpreter": [],
+                    "template": "xls2cfg/template/camp.json",
+                    "saveType": "js",
+                    "outputFile": "/$root/cfg/camp.cfg"
+                }
+            ],
+            "method": "camp"
+        }
+    ]
+}

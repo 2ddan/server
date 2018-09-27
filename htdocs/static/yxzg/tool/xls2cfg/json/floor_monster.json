@@ -1,0 +1,14 @@
+{
+	"sheet": "flo_mon",
+	"start": 3,
+    "data": {
+        "floor": "$层数",
+        "little": "$小怪组",
+        "elite": "$精英组",
+        "boss": "$BOSS组",
+        "drop_little": "$小怪掉落",
+        "drop_elite": "$精英掉落",
+        "drop_boss": "$BOSS掉落"
+    }
+}
+

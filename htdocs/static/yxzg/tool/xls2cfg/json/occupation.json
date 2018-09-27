@@ -1,0 +1,13 @@
+{
+	"sheet": "occupation",
+	"start": 3,
+    "data": {
+        "id": "$职业",
+        "name": "$名字",
+        "name_en": "$英文名",
+        "hp": "$血量",
+        "money": "$金币",
+        "cards":"$初始卡牌"
+    }
+}
+

@@ -1,0 +1,7 @@
+/**
+ * 战斗公式表
+ */
+// =================================== 导入
+import { Formula } from "app/mod/formula";
+
+<!--{@ i v = it.ability}-->Formula.set('<!--{v.name}-->',function(db,f, t, card, scene, buff,af){return <!--{v.formula}-->;});<!--{@}-->

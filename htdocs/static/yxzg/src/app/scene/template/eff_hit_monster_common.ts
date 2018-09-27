@@ -1,0 +1,1 @@
+export default {"eff_hit_monster_common":["eff_hit_monster_common"]}
