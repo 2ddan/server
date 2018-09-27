@@ -67,6 +67,7 @@ export class Policy{
      */
     static initCards(f: Fighter, scene: FScene){
         let inherent = [];
+        Util.initObjValue(f.cards_type_number,0);
         f.cards_draw = f.cards.slice();
         for(let i = 0,len = f.cards_draw.length;i<len;i++){
             let c = f.cards_draw[i];

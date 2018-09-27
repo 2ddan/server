@@ -217,6 +217,11 @@ export class Fighter{
 	field = 0
 	//是否被移除显示
 	remove = 0
+	//重置属性
+	reset(){
+		this.cards_hand = [];
+        this.cards_draw = [];
+	}
 }
 
 /**

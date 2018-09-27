@@ -87,7 +87,7 @@ exports.init = (cfg,callback) => {
         // response.writeHead(_d.statue, { 'Content-Type': _d.contenttype });
         // response.write(_d.data);
         // response.end();
-        console.log(_url.query);
+        console.log("_url.query:: ",_url.query);
         if(!_url.query.type){
             static.response(request, response);
         }else{

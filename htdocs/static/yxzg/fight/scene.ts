@@ -130,6 +130,9 @@ export class FScene{
             this.fighters_camp[f.camp] += 1;
         }else{
             _f = this.fighters.get(1);
+            _f.cards = f.cards;
+            _f.cards_hand = [];
+            _f.cards_draw = [];
         }
         //初始化抽牌堆
         Policy.initCards(f,this);

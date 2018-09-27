@@ -130,9 +130,9 @@ exports.init = (cfg,callback) => {
  * @param {string}path file name 
  * @param {string}encode "utf8" or null(return binary)
  */
-exports.getFile = (realPath,response,callback) => {
+exports.getFile = (realPath, request,response,callback) => {
     fs.exists(realPath, function (exists) {
-        // console.log( realPath + ' %d', exists ? 200 : 404 );
+        console.log( realPath + ' %d', exists ? 200 : 404 );
         if (!exists) {
             response.writeHead(404, "Not Found", {'Content-Type': 'text/plain'});
             response.write(ERR[404]);
@@ -185,8 +185,8 @@ exports.response = (request,response, callback) => {
     var qs = querystring.unescape(request.url);
     var pathname = url.parse(qs).pathname;
     var realPath = path.resolve(path.join("../static", pathname));
-    // console.log(qs,realPath);
-    exports.getFile(realPath, response, callback);
+    console.log(qs,realPath);
+    exports.getFile(realPath, request, response, callback);
 }
 
 /***** local running ******/

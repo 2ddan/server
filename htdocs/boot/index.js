@@ -54,10 +54,10 @@ hotfix.init(hotfixDir,() => {
 /**
  * @description init mongodb connect
  */
-mongodb.init(cfg.dbpath,(err)=>{
-    if(err)console.log("Fail!!! Mongodb connect.",err);
-    else console.log("OK!!! Mongodb connect.");
-});
+// mongodb.init(cfg.dbpath,(err)=>{
+//     if(err)console.log("Fail!!! Mongodb connect.",err);
+//     else console.log("OK!!! Mongodb connect.");
+// });
 /**
  * @description init log
  */
@@ -67,6 +67,6 @@ log.init(path.resolve(cfg.log));
  */
 process.on('SIGINT', function() {
     console.log('Got SIGINT.  Press Control-D/Control-C to exit.');
-    mongodb.close();
+    // mongodb.close();
     process.exit(0);
 });
