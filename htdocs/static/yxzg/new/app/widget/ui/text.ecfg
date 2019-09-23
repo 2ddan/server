@@ -1,0 +1,19 @@
+{
+    "it": {
+        "text": "文字",
+        "textCfg": "layerCard",
+        "fontSize": 16,
+        "space": 0
+    },
+    "itCfg": {
+        "text": true,
+        "textCfg":  {
+            "eDesc": "text.ts 中查找合适的文字格式"
+        },
+        "fontSize": {
+            "eLimit": [12,null]
+        },
+        "space": true
+    },
+    "noEdit": true
+}

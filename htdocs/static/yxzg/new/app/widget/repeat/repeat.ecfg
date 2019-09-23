@@ -1,0 +1,19 @@
+{
+    "it": {
+        "split": "15 15 15 15",
+        "src": "app_b/widget/images/bg/1.png"
+    },
+    "itCfg": {
+        "show":true,
+        "src": {
+            "eArr": [
+                "app_b/widget/images/bg/1.png"
+            ]
+        },
+        "split": {
+            "eArr": [
+                "15 15 15 15"
+            ]
+        }
+    }
+}

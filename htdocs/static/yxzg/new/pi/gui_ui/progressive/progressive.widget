@@ -1,0 +1,4 @@
+{
+    "tpl": "./progressive.tpl",
+    "widget": "./progressive.ts"
+}

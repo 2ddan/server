@@ -1,0 +1,13 @@
+{
+    "it": {
+        "isGray": false,
+        "quality": 1,
+        "text": "我会变色哦"
+    },
+    "itCfg": {
+        "eShow": true,
+        "quality": {
+            "eArr": [0,1,2,3,4,5]
+        }
+    }
+}

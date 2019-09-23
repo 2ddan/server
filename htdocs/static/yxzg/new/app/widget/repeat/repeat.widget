@@ -1,0 +1,5 @@
+{
+    "tpl": "./repeat.tpl",
+    "cfg": "./repeat.cfg",
+    "widget": "./repeat.ts"
+}

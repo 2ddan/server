@@ -1,0 +1,2 @@
+{{:it = it || {} }}
+<img src="{{it.src}}" imageClip="{{it.imageClip}}" />

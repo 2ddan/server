@@ -1,0 +1,15 @@
+{
+    "it": {
+        "src": "app/widget/ui/images/filter.png",
+        "filter": "default"
+    },
+    "itCfg": {
+        "src": {
+            "eDesc": "变色图片的绝对路径"
+        },
+        "filter": {
+            "eDesc": "变色配置，从filter.ts 中获取"
+        }
+    },
+    "noEdit": true
+}

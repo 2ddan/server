@@ -1,0 +1,1 @@
+<span style="{{it.style}}">{{it.text}}</span>

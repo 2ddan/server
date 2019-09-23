@@ -1,0 +1,4 @@
+{
+    "widget": "./imgfilter.ts",
+    "tpl": "./imgfilter.tpl"
+}

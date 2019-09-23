@@ -1,0 +1,5 @@
+{
+    "tpl": "./root.tpl",
+    "forelet": "./root.ts",
+    "widget": "./root.ts"
+}

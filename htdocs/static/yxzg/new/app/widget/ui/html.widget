@@ -1,0 +1,4 @@
+{
+    "tpl": "./html.tpl",
+    "widget": "./html.ts"
+}

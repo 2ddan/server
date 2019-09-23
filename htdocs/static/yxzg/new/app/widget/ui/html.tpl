@@ -1,0 +1,1 @@
+<widget w-tag="{{it.tag}}">{{it.props}}</widget>

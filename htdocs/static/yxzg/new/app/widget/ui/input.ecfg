@@ -1,0 +1,27 @@
+{
+    "it": {
+        "text": "输入类容",
+        "placeholder": "",
+        "readOnly": false,
+        "color": "#fff",
+        "fontSize": 16,
+        "textAlign": "left"
+    },
+    "itCfg": {
+        "show": true,
+        "fontSize": {
+            "limit": [
+                12,
+                null
+            ]
+        },
+        "textAlign": {
+            "arr": [
+                "left",
+                "center",
+                "right"
+            ]
+        }
+    },
+    "noEdit": true
+}
