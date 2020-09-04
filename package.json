@@ -9,7 +9,7 @@
   "author": "tang2dan",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^2.2.35"
+    "mongodb": "^3.1.13"
   },
   "repository": {
     "type": "git",
